@@ -1,0 +1,49 @@
+[%- IF test_case == 'Old user paid upgrade' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+login_url = 'www.meetin.gs'
+user_name = 'Jonathan Davis'
+
+%]
+[%- END%]
+
+[%- IF test_case == 'new user paid upgrade' %]
+[%-
+
+new_user = 1
+server_host = 'http://dev.meetin.gs'
+login_url = 'www.meetin.gs'
+user_name = 'Jonathan Davis'
+
+%]
+[%- END%]
+
+[%- IF test_case == 'partner provisioned' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+login_url = 'www.meetin.gs'
+user_name = 'Jonathan Davis'
+provisioned_user = 1
+partner_support_url = 'http://kpn.com/support/'
+provisioner_user_name = 'Dandelions Ltd'
+branding_disabled = 1
+
+%]
+[%- END%]
+
+[%- IF test_case == 'cmeet provisioned' %]
+[%-
+
+customize_for_cmeet = 1
+server_host = 'http://dev.meetin.gs'
+login_url = 'www.meetin.gs'
+user_name = 'Jonathan Davis'
+provisioned_user = 1
+partner_support_url = 'http://kpn.com/support/'
+provisioner_user_name = 'Dandelions Ltd'
+branding_disabled = 1
+
+%]
+[%- END%]

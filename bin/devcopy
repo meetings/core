@@ -1,0 +1,2 @@
+#!/bin/bash
+find pkg/*/html -type f |grep -v CVS |egrep '(js$|css$|png$|gif$)'|grep -v tinymce|grep -v uncompressed|perl -pe 's/(.*?\/html\/)(.*)/$1$2 $ENV{OPENINTERACT2}\/html\/$2/'|xargs -n2 cp -v

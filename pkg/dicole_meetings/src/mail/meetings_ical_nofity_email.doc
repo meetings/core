@@ -1,0 +1,5 @@
+SPECIAL TEMPLATE
+
+* Title is used as the ICAL notify email title
+* HTML of this template is discarded (html content + ical attachment don't play well together in outlook)
+* TEXT of this template will be attached to the ical information

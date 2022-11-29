@@ -1,0 +1,112 @@
+use strict;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my ( $domain_id, $limit_to_prefix, $all ) = split /\s*\,\s*/, $params;
+
+    die "missing domain id in parameters" unless $domain_id;
+
+    $limit_to_prefix ||= 'live';
+
+    my $self = CTX->lookup_action('meetings_api');
+
+    my $prefixes = [ $limit_to_prefix ];
+    if ( $limit_to_prefix eq 'live' ) {
+        $prefixes = [ qw( meetings beta cmeet swipetomeet beta_swipetomeet ) ];
+    }
+    if( $limit_to_prefix eq 'dev' ) {
+        $prefixes = [ qw( swipetomeet ) ];
+    }
+
+    for my $prefix ( @$prefixes ) {
+        $prefix = '' if $prefix eq 'meetings';
+        my $auth = $self->_determine_prefixed_urban_airship_auth( $prefix );
+        die "No such UA auth: $prefix" unless $auth;
+
+        for my $type ( qw( ios android ) ) {
+            my $tokens = _fetch_device_tokens( $self, $auth, $prefix, $type, $all );
+            my $count = 0;
+            for my $token ( @$tokens ) {
+                my $processed = _process_token( $self, $token, $prefix, $domain_id ) ? 1 : 0;
+
+                next if $all;
+
+                $count += $processed;
+                last if $count > 10;
+            }
+        }
+    }
+}
+
+sub _process_token {
+    my ( $self, $token, $prefix, $domain_id ) = @_;
+
+    return 0 unless $token->{alias};
+    print Data::Dumper::Dumper( $token ) if $token->{alias} eq '12721';
+
+    my $type = $token->{device_token} ? 'iOS' : 'Android';
+    my $available_note = join( "_", ( $prefix || () ), lc( $type ), 'device_available' );
+
+    my $user = CTX->lookup_object('user')->fetch( $token->{alias} );
+    return 0 unless $user;
+
+    if ( my $real_id = $self->_get_note_for_user( meetings_merged_to_other_user => $user, $domain_id ) ) {
+        $user = CTX->lookup_object('user')->fetch( $real_id );
+        return 0 unless $user;
+    }
+
+    if ( ! $token->{active} ) {
+        return 0;
+        # TODO: this algorithm is not ready! It deactivates all pushes if one gets inactive.
+        # TODO: this would need for the active devices to be kept in record too..
+        # TODO: this gets fixed in the next full run, though...
+
+        if ( $self->_get_note_for_user( $available_note, $user, $domain_id ) ) {
+            my $device = $token->{device_token} || $token->{apid};
+            my $deactivated_devices = $self->_get_note_for_user( deactivated_devices => $user, $domain_id ) || {};
+            return 0 if $deactivated_devices->{ lc( $device ) };
+
+            $deactivated_devices->{ lc( $device ) } = time;
+            $self->_set_note_for_user( deactivated_devices => $deactivated_devices, $user, $domain_id, { skip_save => 1 } );
+            $self->_set_note_for_user( $available_note => undef, $user, $domain_id );
+            $self->_queue_user_segment_event( $user, "Push enabled $type device deactivated" );
+            print "Removed activation for " . $user->id . ' (' . ( $user->email || $user->phone ) . ')' . "\n";
+            return 1;
+        }
+
+        return 0;
+    }
+
+
+    if ( ! $self->_get_note_for_user( $available_note, $user, $domain_id ) ) {
+        $self->_set_note_for_user( $available_note => time, $user, $domain_id );
+        $self->_queue_user_segment_event( $user, "Push enabled $type device registered" );
+        print "Device activated for " . $user->id . ' (' . ( $user->email || $user->phone ) . ')' . "\n";
+    }
+    else {
+        print "Device was already activated for " . $user->id . ' (' . ( $user->email || $user->phone ) . ')' . "\n";
+    }
+    return 1;
+}
+
+sub _fetch_device_tokens {
+    my ( $self, $auth, $prefix, $type, $all ) = @_;
+
+    my $tokens = [];
+
+    my $next_url = 'https://go.urbanairship.com/api/' . ( ( $type eq 'ios' ) ? 'device_tokens/' : 'apids/' );
+    my $page = 1;
+    while ( $next_url ) {
+        print " ** Fetching $prefix $type page $page: $next_url\n";
+        my $tokens_json = `curl -s -u '$auth' '$next_url'`;
+
+        my $data = Dicole::Utils::JSON->decode( $tokens_json );
+        push @$tokens, @{ $data->{device_tokens} || $data->{apids} || [] };
+        $next_url = $all ? $data->{next_page} : '';
+        $page++;
+    }
+    return $tokens;
+}
+
+1;

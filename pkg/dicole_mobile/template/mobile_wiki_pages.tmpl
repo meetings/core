@@ -1,0 +1,10 @@
+[%- WRAPPER dicole_mobile::mobile_main title = 'Dicole' -%]>
+<div class="toolbar anchorTop">Pages ([% wiki_pages.size %])</div>
+<a class="button" href="/m/logout">Logout</a>
+<a id="homeButton" class="button" href="/m/groups/[% group.id %]/">Back</a>
+<div class="center">
+[% FOREACH page = wiki_pages %]
+<div class="item"><a href="/m/group_wiki/[% group.id %]/[% page.title %]">[% page.readable_title %]</a></div>
+[% END %]
+</div>
+[%- END -%]

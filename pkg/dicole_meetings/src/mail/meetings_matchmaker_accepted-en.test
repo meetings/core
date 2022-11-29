@@ -1,0 +1,108 @@
+[%- IF test_case == 'Name_and_company' %]
+[%-
+
+meeting_slots = '1'
+user_name = 'Mr. Investor'
+matchmaker_name = 'Jorma Perälä'
+matchmaker_company = 'Superstartup'
+matchmaker_email = 'jorma@superstartup.co'
+server_host = 'http://dev.meetin.gs'
+matchmaking_url = 'http://dev.meetin.gs/meetings/confirm/'
+meeting_title = 'tapaaminen'
+meeting_location = 'Arctic15'
+meeting_time = '13.30-14.00'
+matchmaking_event = 'Arctic15 startup matchmaking'
+
+%]
+[% END %]
+
+[%- IF test_case == 'no-company' %]
+[%-
+
+meeting_slots = '1'
+user_name = 'Mr. Investor'
+matchmaker_name = 'Jorma Perälä'
+matchmaker_company = ''
+matchmaker_email = 'jorma@superstartup.co'
+server_host = 'http://dev.meetin.gs'
+matchmaking_url = 'http://dev.meetin.gs/meetings/confirm/'
+meeting_title = 'tapaaminen'
+meeting_location = 'Arctic15'
+meeting_time = '13.30-14.00'
+matchmaking_event = 'Arctic15 startup matchmaking'
+
+%]
+[% END %]
+
+
+[%- IF test_case == 'no-company_no_name' %]
+[%-
+
+meeting_slots = '1'
+user_name = 'Mr. Investor'
+matchmaker_name = 'jorma@superstartup.co'
+matchmaker_company = ''
+matchmaker_email = 'jorma@superstartup.co'
+server_host = 'http://dev.meetin.gs'
+matchmaking_url = 'http://dev.meetin.gs/meetings/confirm/'
+meeting_title = 'tapaaminen'
+meeting_location = 'Arctic15'
+meeting_time = '13.30-14.00'
+matchmaking_event = 'Arctic15 startup matchmaking'
+
+%]
+[% END %]
+
+[%- IF test_case == 'no-name' %]
+[%-
+
+user_name = 'Mr. Investor'
+meeting_slots = '2'
+matchmaker_name = 'jorma@superstartup.co'
+matchmaker_company = 'Superstartup'
+matchmaker_email = 'jorma@superstartup.co'
+server_host = 'http://dev.meetin.gs'
+matchmaking_url = 'http://dev.meetin.gs/meetings/confirm/'
+meeting_title = 'tapaaminen'
+meeting_location = 'Arctic15'
+meeting_time = '13.30-14.00'
+matchmaking_event = 'Arctic15 startup matchmaking'
+
+%]
+[% END %]
+
+[%- IF test_case == 'infinite_slots' %]
+[%-
+
+meeting_slots = '-1'
+user_name = 'Mr. Investor'
+matchmaker_name = 'Jorma Perälä'
+matchmaker_company = 'Superstartup'
+matchmaker_email = 'jorma@superstartup.co'
+server_host = 'http://dev.meetin.gs'
+matchmaking_url = 'http://dev.meetin.gs/meetings/confirm/'
+meeting_title = 'tapaaminen'
+meeting_location = 'Arctic15'
+meeting_time = '13.30-14.00'
+matchmaking_event = 'Arctic15 startup matchmaking'
+
+%]
+[% END %]
+
+
+[%- IF test_case == 'meet_me' %]
+[%-
+
+meeting_slots = '0'
+user_name = 'Mr. Investor'
+matchmaker_name = 'Jorma Perälä'
+matchmaker_company = 'Superstartup'
+matchmaker_email = 'jorma@superstartup.co'
+server_host = 'http://dev.meetin.gs'
+matchmaking_url = 'http://dev.meetin.gs/meetings/confirm/'
+meeting_title = 'tapaaminen'
+meeting_location = 'Arctic15'
+meeting_time = '13.30-14.00'
+
+%]
+[% END %]

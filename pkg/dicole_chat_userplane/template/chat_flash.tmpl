@@ -1,0 +1,108 @@
+<html>
+<head>
+  <meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+  <title>AV Webchat</title>
+  <script language="JavaScript">
+  <!--
+    function csEvent( strEvent, strParameter1, strParameter2 )
+    {
+      if( strEvent == "InstantCommunicator.StartConversation" )
+      {
+         var strUserID = strParameter1;
+         var bServer = strParameter2;
+         // open up an InstantCommunicator window.
+         launchWM( "[% strSessionGUID %]");
+      }
+      else if( strEvent == "User.ViewProfile" )
+      {
+         var strUserID = strParameter1;
+      }
+      else if( strEvent == "User.Block" )
+      {
+        var strBlockedUserID = strParameter1;
+        var bBlocked = strParameter2;
+      }
+      else if( strEvent == "User.AddFriend" )
+      {
+        var strFriendUserID = strParameter1;
+        var bFriend = strParameter2;
+      }
+      else if( strEvent == "Chat.Help" )
+      {
+      }
+      else if( strEvent == "User.NoTextEntry" )
+      {
+      }
+      else if( strEvent == "Connection.Success" )
+      {
+      }
+      else if( strEvent == "Connection.Failure" )
+      {
+      }
+    }
+
+    function launchWM( userID, destinationUserID )
+    {
+      var popupWindowTest = window.open( "wm.php?strDestinationMemberID=" + destinationUserID, "WMWindow_" + replaceAlpha(userID) + "_" + replaceAlpha(destinationUserID), "width=360,height=397,toolbar=0,directories=0,menubar=0,status=0,location=0,scrollbars=0,resizable=1" );
+      if( popupWindowTest == null )
+      {
+        alert( "Your popup blocker stopped an IM window from opening" );
+      }
+    }
+
+    function replaceAlpha( strIn )
+    {
+      var strOut = "";
+      for( var i = 0 ; i < strIn.length ; i++ )
+      {
+        var cChar = strIn.charAt(i);
+        if( ( cChar >= 'A' && cChar <= 'Z' )
+          || ( cChar >= 'a' && cChar <= 'z' )
+          || ( cChar >= '0' && cChar <= '9' ) )
+        {
+          strOut += cChar;
+        }
+        else
+        {
+          strOut += "_";
+        }
+      }
+      return strOut;
+    }
+    //-->
+  </script>
+</head>
+<body bgcolor="#ffffff" bottommargin="0" leftmargin="0" marginheight="0" marginwidth="0" rightmargin="0" topmargin="0">
+<object 
+  classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+  codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+  width="100%" 
+  height="100%" 
+  name="ch"
+  id="ch" 
+  align="">
+  <param name="movie" value="http://[% strSwfServer %]/[% strApplicationName %]/ch.swf"> 
+  <param name="quality" value="best"> 
+  <param name="scale" value="noscale"> 
+  <param name="bgcolor" value="#FFFFFF">
+  <param name="menu" value="0">
+  <param name="salign" value="LT"> 
+  <param name="FlashVars" value="[% strFlashVars %]">
+  <embed 
+    src="http://[% strSwfServer %]/[% strApplicationName %]/ch.swf"
+    quality="best"
+    scale="noscale"
+    bgcolor="#FFFFFF"
+    menu="0"
+    width="100%" 
+    height="100%"
+    name="ch" 
+    align=""
+    salign="LT"
+    type="application/x-shockwave-flash" 
+    pluginspage="http://www.macromedia.com/go/getflashplayer"
+    flashvars="[% strFlashVars %]">
+  </embed>
+</object>                
+</body>
+</html>

@@ -1,0 +1,10 @@
+<div
+[%- IF itemparams.id %] id="[% itemparams.id %]"[% END %]
+[%- IF itemparams.class %] class="[% itemparams.class %]"[% END %]
+[%- IF itemparams.title %] title="[% itemparams.title %]"[% END %]>
+[%- FOREACH item = itemparams.contents %]
+<div class="verticalContent">
+    [% PROCESS dicole_base::include_widget widget = item %]
+</div>
+[%- END %]
+</div>

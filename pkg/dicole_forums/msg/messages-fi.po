@@ -1,0 +1,344 @@
+# $Id: messages-fi.po,v 1.8 2009-01-07 14:42:33 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:07:17+0000\n"
+"PO-Revision-Date: 2005-03-22 02:07:17+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add forum"
+msgstr "Lisää foorumi"
+
+msgid "Add new message"
+msgstr "Lisää uusi viesti"
+
+msgid "Add new topic"
+msgstr "Aloita uusi keskustelu"
+
+msgid "Add topic"
+msgstr "Aloita uusi keskustelu"
+
+msgid "Are you sure you want to remove this forum?"
+msgstr "Haluatko varmasti poistaa tämän foorumin?"
+
+msgid "Author"
+msgstr "Kirjoittaja"
+
+msgid "Cancel"
+msgstr "Keskeytä"
+
+msgid "Category"
+msgstr "Kategoria"
+
+msgid "Changes were saved."
+msgstr "Muutokset tallennettiin onnistuneesti."
+
+msgid "Changing type sets of a live discussion forum is not a good idea."
+msgstr "Emme suosittele tyyppikokoelman muuttamista käynnissä olevan keskustelun aikana."
+
+msgid "Confirmation"
+msgstr "Vahvistus"
+
+msgid "Content"
+msgstr "Sisältö"
+
+msgid "Created"
+msgstr "Luotu"
+
+msgid "Deny forums moderation"
+msgstr "Estä foorumien muokkaus"
+
+msgid "Deny forums use"
+msgstr "Estä foorumien käyttö"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Display forum details"
+msgstr "Näytä foorumin tiedot"
+
+msgid "Display message"
+msgstr "Näytä viesti"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "Edit forum"
+msgstr "Muokkaa foorumia"
+
+msgid "Edit forum messages"
+msgstr "Muokkaa foorumin viestejä"
+
+msgid "Edit forum messages owned by the user"
+msgstr "Muokkaa käyttäjän omia viestejä"
+
+msgid "Error removing forum %1."
+msgstr "Virhe poistettaessa foorumia %1."
+
+msgid "Error removing topic %1."
+msgstr "Virhe poistettaessa aihetta %1."
+
+msgid "Failed adding forum: %1"
+msgstr "Virhe luotaessa foorumia: %1"
+
+msgid "Failed adding message: %1"
+msgstr "Virhe luotaessa viestiä: %1"
+
+msgid "Failed adding topic: %1"
+msgstr "Virhe luotaessa aihetta: %1"
+
+msgid "Failed modifying forum: %1"
+msgstr "Virhe muokattaessa foorumia: %1"
+
+msgid "Forum %1 successfully removed."
+msgstr "Foorumi %1 poistettiin onnistuneesti."
+
+msgid "Forum details"
+msgstr "Foorumin tiedot"
+
+msgid "Forum has been saved."
+msgstr "Foorumi tallennettiin onnistuneesti."
+
+msgid "Forum with id %1 does not exist."
+msgstr "Foorumia id-tunnisteella %1 ei ole olemassa."
+
+msgid "Forums"
+msgstr "Foorumit"
+
+msgid "Forums moderator"
+msgstr "Foorumin ylläpitäjä"
+
+msgid "Forums user"
+msgstr "Foorumin käyttäjä"
+
+msgid "Group forums is a bulletin board where discussions are gathered in forums, topics and trees of messages."
+msgstr "Foorumit toimivat ryhmien sisäisinä keskustelupalstoina, jossa viestit näkyvät aihekokonaisuuksina ja puumaisina keskustelusäikeinä."
+
+msgid "Icon"
+msgstr "Ikoni"
+
+msgid "Impossible to remove root message %1."
+msgstr "Keskustelun avausta %1 ei voida poistaa."
+
+msgid "Latest forum posts"
+msgstr "Viimeisimmät viestit"
+
+msgid "List of forums"
+msgstr "Foorumien listaus"
+
+msgid "List of topics"
+msgstr "Aiheiden listaus"
+
+msgid "Manage forum threads"
+msgstr "Muokkaa foorumien viestiketjuja"
+
+msgid "Manage forums"
+msgstr "Foorumien muokkaus"
+
+msgid "Message"
+msgstr "Viesti"
+
+msgid "Message contents"
+msgstr "Viestin sisältö"
+
+msgid "Message has been saved."
+msgstr "Viesti tallennettiin onnistuneesti."
+
+msgid "Message information"
+msgstr "Viestin tiedot"
+
+msgid "Message part type set"
+msgstr "Viestin osan tyyppikokoelma"
+
+msgid "Message type set"
+msgstr "Viestin tyyppikokoelma"
+
+msgid "Message with id %1 does not exist."
+msgstr "Viestiä id %1 ei ole olemassa."
+
+msgid "Modify forum details"
+msgstr "Muokkaa foorumin tietoja"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "New forum details"
+msgstr "Uuden foorumin tiedot"
+
+msgid "New message details"
+msgstr "Uuden viestin tiedot"
+
+msgid "New topic details"
+msgstr "Uuden aiheen tiedot"
+
+msgid "Next"
+msgstr "Seuraava"
+
+msgid "No messages found."
+msgstr "Viestejä ei ole saatavilla."
+
+msgid "Not available"
+msgstr "Ei saatavilla"
+
+msgid "Posted"
+msgstr "Lähetetty"
+
+msgid "Posts"
+msgstr "Viestit"
+
+msgid "Previous"
+msgstr "Edellinen"
+
+msgid "Read forums"
+msgstr "Lue foorumeita"
+
+msgid "Remove"
+msgstr "Poista"
+
+msgid "Remove forum"
+msgstr "Poista foorumi"
+
+msgid "Remove forum messages"
+msgstr "Poista viestejä"
+
+msgid "Remove forum messages owned by the user"
+msgstr "Poista käyttäjän omia viestejä"
+
+msgid "Remove message"
+msgstr "Poista viesti"
+
+msgid "Remove topic"
+msgstr "Poista aihe"
+
+msgid "Reply"
+msgstr "Vastaa"
+
+msgid "Reply to message"
+msgstr "Vastaus viestiin"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Save and add new"
+msgstr "Tallenna ja lisää uusi"
+
+msgid "Select paragraphs to quote"
+msgstr "Valitse kappaleet joita lainataan"
+
+msgid "Select paragraphs to quote in your message"
+msgstr "Valitse viestiisi lainattavat kappaleet"
+
+msgid "Show"
+msgstr "Näytä"
+
+msgid "Show forum management"
+msgstr "Näytä foorumin hallinta"
+
+msgid "Show forums"
+msgstr "Näytä foorumit"
+
+msgid "Show topic listing"
+msgstr "Näytä aihelistaus"
+
+msgid "Show topics"
+msgstr "Näytä aiheet"
+
+msgid "Status"
+msgstr "Tila"
+
+msgid "This is the first post to a topic and removing it will remove the topic including all messages posted into it. Are you sure you want to remove this topic?"
+msgstr "Tämä on aiheen ensimmäinen viesti ja sen poistaminen poistaa koko aiheen ja kaikki siihen liittyvät viestit. Haluatko varmasti poistaa tämän aiheen?"
+
+msgid "This message and all replies below this message will be removed. Are you sure you want to remove this message?"
+msgstr "Tämä viesti ja kaikki siihen liittyvät viestit tuhotaan. Haluatko varmasti poistaa tämän viestin?"
+
+msgid "Thread type set"
+msgstr "Viestiketjun tyyppikirjasto"
+
+msgid "Thread with id %1 does not exist."
+msgstr "Viestiketjua id-tunnisteella %1 ei ole olemassa."
+
+msgid "Title"
+msgstr "Otsikko"
+
+msgid "Topic"
+msgstr "Aihe"
+
+msgid "Topic %1 successfully removed."
+msgstr "Aihe %1 poistettiin onnistuneesti."
+
+msgid "Topic has been saved. Now write the first message."
+msgstr "Aihe tallennettiin onnistuneesti. Voit nyt kirjoittaa ensimmäisen viestin aiheeseen."
+
+msgid "Topics"
+msgstr "Aiheet"
+
+msgid "Tree of messages in topic"
+msgstr "Aiheen viestit puurakenteena"
+
+msgid "Type"
+msgstr "Tyyppi"
+
+msgid "Updated"
+msgstr "Päivitetty"
+
+msgid "User can edit any forum message in this group"
+msgstr "Käyttäjä voi muokata kaikkia viestejä tässä foorumissa"
+
+msgid "User can edit messages owned by the user in this group"
+msgstr "Käyttäjä voi muokata kirjoittamiaan viestejä tässä foorumissa"
+
+msgid "User can manage forum threads in this group"
+msgstr "Käyttäjä voi hallinnoida viestiketjuja tässä foorumissa"
+
+msgid "User can manage forums in this group"
+msgstr "Käyttäjä voi hallinnoida ryhmän foorumia"
+
+msgid "User can read forums in this group"
+msgstr "Käyttäjä voi lukea ryhmän foorumia"
+
+msgid "User can remove any forum message in this group"
+msgstr "Käyttäjä voi poistaa ryhmän foorumin viestejä"
+
+msgid "User can remove forum messages owned by the user in this group"
+msgstr "Käyttäjä voi poistaa omia viestejään tässä foorumissa"
+
+msgid "User can write and reply forum messages in this group"
+msgstr "Käyttäjä voi kirjoittaa ja vastata viesteihin tässä foorumissa"
+
+msgid "Viewed # times"
+msgstr "Katsottu # kertaa"
+
+msgid "Warning: all data you have currently written will be lost. Are you sure you want to cancel?"
+msgstr "Varoitus: Sisältö, jota olet kirjoittanut, tuhoutuu. Haluatko varmasti keskeyttää?"
+
+msgid "Warning: all data you have currently written will be lost. Are you sure you want to return back to selecting message paragraphs?"
+msgstr "Varoitus: Sisältö, jota olet kirjoittanut, tuhoutuu. Haluatko varmasti palata palata kappalevalintaan?"
+
+msgid "Write forum messages"
+msgstr "Kirjoita viesti foorumiin"
+
+msgid "Topic has no messages. Please write the first message."
+msgstr "Aiheella ei ole viestejä. Kirjoita ensimmäinen viesti."
+
+msgid "Quote and reply"
+msgstr "Lainaa ja vastaa"
+
+msgid "Edit message"
+msgstr "Muokkaa viestiä"
+
+msgid "Forum rights"
+msgstr "Foorumin oikeudet"
+
+msgid "Unread"
+msgstr "Lukematta"
+
+msgid "Unread messages"
+msgstr "Lukemattomat viestit"

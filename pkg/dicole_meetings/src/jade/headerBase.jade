@@ -1,0 +1,65 @@
+div#header
+    div#header-menu-positioner
+    div#header-logo
+        // TODO: Logolink
+        a(href= user && user.new_user_flow ? '#' : (dicole.get_global_variable('meetings_logo_link') || '/meetings/summary/'))
+            h1(class= locals.user && locals.user.is_pro ? 'pro' : '')
+    div#header-right
+        if( user && user.id && ( user.email_confirmed === 0 || user.email_confirmed === '0') )
+            a#header-cancel.header-toplink(href='#')!=MTN.t('Cancel registration')
+        else if(user && user.id && ! user.new_user_flow)
+            div#header-search(title!=MTN.t('Search meetings'))
+                i.ico-search
+                div#header-quickbar(style='display:none;')
+                    div#meetings-quickbar-wrap
+                        select#meetings-quickbar.chosen(data-placeholder!=MTN.t('Choose a meeting...'))=templatizer.headerSearchOptions({ meetings : meetings })
+            if ( ! admin_return_link )
+                div#header-notifications(title!=MTN.t('Notifications'))
+                    i.ico-notification
+                    div.counter
+            if ( ! dicole.get_global_variable('meetings_user_is_visitor') )
+                div#header-my-meetings
+                    !=MTN.t('My Meetings')
+                    div.menu-arrow
+            if ( admin_return_link )
+                a#header-admin-absences-link.header-admin-link(href='/meetings/agent_absences')='Poissaolot'
+                a#header-admin-return-link.header-admin-link(href=admin_return_link)='Lopeta ' + locals.user.name
+            else
+                a#header-profile-image(href='#')
+                    img(src=locals.user.image ? locals.user.image : '/images/theme/default/default-user-avatar-36px.png', alt='User Image')
+                    div.menu-arrow
+                    span.initials
+
+        else if(view_type === 'matchmaking' && dicole.get_global_variable('meetings_event_listing_registration_url') )
+            if( dicole.get_global_variable('meetings_event_matchmaker_found_for_user') )
+                a#header-event-configure.header-toplink(href='#')!='Configure your matchmaking settings'
+            else
+                a#header-event-configure.header-toplink(href='#')!='Join the matchmaking and get your own Schedule button'
+        else if(view_type === 'matchmaking' && ! app.auth.user )
+            a#header-login.header-toplink(href='#')!=MTN.t('Already a Meetin.gs user? Sign in here')
+
+div#header-meeting-menu.header-menu(style='display:none;',data-open-selector='#header-my-meetings',data-x-adjust='0')
+    div.header-menu-top
+    div.header-menu-main
+        a.add-new.js_meetings_new_meeting_open(href='#')!=MTN.t('Add new')
+        a#header-timeline.timeline(href='/meetings/summary',target='_self')!=MTN.t('Timeline')
+        a.meetme-config.js-open-url(href='/meetings/meetme_config',target='_self')!=MTN.t('Meet Me page')
+        each extra_link in extra_meeting_links
+            a.extra-link(href=extra_link.url,target='_self')!=extra_link.title
+
+
+div#header-profile-menu.header-menu(style='display:none;',data-open-selector='#header-profile-image',data-x-adjust='96')
+    div.header-menu-top
+    div.header-menu-main
+        a#header-profile.js_meetings_edit_my_profile_open(href='#',target='_self')!=MTN.t('Profile')
+        a.js-open-url(href='/meetings/user/settings',target='_self')!=MTN.t('Settings')
+        a(href='/meetings_global/logout',target='_self')!=MTN.t('Logout')
+
+div#header-notifications-menu.header-menu.notifications(style='display:none;',data-open-selector='#header-notifications',data-x-adjust='365')
+    div.triangle
+    div.triangle.white
+    div.header-menu-main
+        h3.head!=MTN.t('Notifications')
+        div.notifications-container
+            div.notification
+                img(src='/images/meetings/showcase_spinner.gif')

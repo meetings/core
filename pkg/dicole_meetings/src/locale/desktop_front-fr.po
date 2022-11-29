@@ -1,0 +1,4122 @@
+# 
+# Translators:
+# Translation Team <translationteam@meetin.gs>, 2014-2015
+msgid ""
+msgstr ""
+"Project-Id-Version: meetings_core\n"
+"PO-Revision-Date: 2015-02-17 21:12+0000\n"
+"Last-Translator: Translation Team <translationteam@meetin.gs>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/meetings_core/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "Type an email, a name or a meeting name"
+msgstr "Entrez un e-mail, un nom ou un nom de réunion"
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid ""
+"HINT: You can also copy & paste a list of email addresses above (separated "
+"by a comma)."
+msgstr "CONSEIL : Vous pouvez également copier-coller une liste d'adresses e-mail ci-dessus (séparées par des virgules)."
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "not found."
+msgstr "non trouvé(e)."
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "not found yet, we are still working to fetch your contacts..."
+msgstr "pas encore trouvés, nous continuons d'essayer de rapatrier vos contacts…"
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "Address book is empty."
+msgstr "Le carnet d'adresse est vide."
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "We are working hard to fetch your contacts..."
+msgstr "Nous faisons de notre mieux pour rapatrier vos contacts…"
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "Address book"
+msgstr "Carnet d'adresses"
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "Add all"
+msgstr "Tout ajouter"
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "Selected:"
+msgstr "Sélectionné(e) :"
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "Click here to select all"
+msgstr "Cliquez ici pour tout sélectionner"
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+#. html/js/dicole/meetings/dtmpl/invite_participants_new.html
+#. src/jade/meetmeMatchmakerSelect.jade
+msgid "Add"
+msgstr "Ajouter"
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "%1$s is already added."
+msgstr "%1$s a déjà été ajouté(e)."
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "Add %1$s"
+msgstr "Ajouter %1$s"
+
+#. html/js/dicole/meetings/vendor/addressbook.js
+msgid "Email is required."
+msgstr "L'e-mail est requis."
+
+#. html/js/dicole/meetings/views/agentBookingConfirmView.js
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid ""
+"Sorry, the 15 min reservation on the slot expired and we freed it. Please "
+"try again."
+msgstr "Désolés, les 15 minutes de réservation du créneau ont expiré et il a été libéré. Veuillez réessayer."
+
+#. html/js/dicole/meetings/views/agentBookingConfirmView.js
+msgid "Booking..."
+msgstr ""
+
+#. html/js/dicole/meetings/views/agentBookingConfirmView.js
+msgid "Back to booking"
+msgstr ""
+
+#. html/js/dicole/meetings/views/agentBookingConfirmView.js
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "Saving profile failed. Please try again!"
+msgstr "La sauvegarde du profil a échoué. Veuillez réessayer !"
+
+#. html/js/dicole/meetings/views/agentBookingView.js
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+#. src/jade/meetmeCalendar.jade
+msgid "Loading calendar..."
+msgstr "Chargement du calendrier..."
+
+#. html/js/dicole/meetings/views/agentBookingView.js
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "Searching for free times..."
+msgstr "Recherche d'heures libres..."
+
+#. html/js/dicole/meetings/views/agentBookingView.js
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "Stopped searching after 8 weeks with no free times."
+msgstr "Arrêt des recherches après 8 semaines sans temps libre."
+
+#. html/js/dicole/meetings/views/agentBookingView.js
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "Reserving..."
+msgstr "Réservation…"
+
+#. html/js/dicole/meetings/views/agentBookingView.js
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "Oops, something went wrong. Please try again!"
+msgstr "Oups, une erreur est survenue. Merci de réessayer !"
+
+#. html/js/dicole/meetings/app.js
+msgid "Elisa (Finland)"
+msgstr "Elisa (Finlande)"
+
+#. html/js/dicole/meetings/app.js
+msgid "9 EUR / month"
+msgstr "9 EUR / mois"
+
+#. html/js/dicole/meetings/app.js
+msgid "Telia (Sweden)"
+msgstr "Telia (Suède)"
+
+#. html/js/dicole/meetings/app.js
+msgid "79 SEK / month"
+msgstr "79 SEK / mois"
+
+#. html/js/dicole/meetings/app.js
+#. html/js/dicole/meetings/views/meetingLctView.js
+#. html/js/dicole/meetings/views/meetingSettingsView.js
+#. html/js/dicole/meetings.js
+#. html/js/dicole/meetings/views/meetmeCoverView.js
+msgid "Saving..."
+msgstr "Enregistrement…"
+
+#. html/js/dicole/meetings/app.js
+#. html/js/dicole/meetings.js
+msgid "Done"
+msgstr "Fait"
+
+#. html/js/dicole/meetings/vendor/btdcalendar.js
+msgid "No free times for week %1$s."
+msgstr "Aucun horaire de libre pour la semaine %1$s."
+
+#. html/js/dicole/meetings/vendor/btdcalendar.js
+#. html/js/dicole/meetings/dtmpl/matchmaking_list.html
+msgid "Choose"
+msgstr "Choisir"
+
+#. html/js/dicole/meetings.js
+msgid ""
+"Are you sure you want to leave the page? Unsaved changes will be lost. Save "
+"changes by clicking the \"Save\" button below the editor."
+msgstr "Êtes-vous sûr(e) de vouloir quitter la page ? Toute modification non enregistrée sera perdue. Enregistrez les modifications en cliquant sur le bouton « Enregistrer » sous l'éditeur."
+
+#. html/js/dicole/meetings.js
+msgid "Creating follow-up..."
+msgstr "Création de la suite…"
+
+#. html/js/dicole/meetings.js
+msgid "Invite resent for %1$s"
+msgstr "Invitation pour %1$s envoyée à nouveau"
+
+#. html/js/dicole/meetings.js
+msgid "%1$s has been removed succesfully"
+msgstr "%1$s a été retiré(e) avec succès"
+
+#. html/js/dicole/meetings.js
+msgid "Uploading %1$s"
+msgstr "Envoi de %1$s"
+
+#. html/js/dicole/meetings.js
+msgid "Search for a city or a location:"
+msgstr "Chercher une ville ou un lieu :"
+
+#. html/js/dicole/meetings.js
+msgid "No nearby locations found for %1$s people on %2$s."
+msgstr "Aucun lieu à proximité n'a été trouvé pour %1$s personnes sur %2$s."
+
+#. html/js/dicole/meetings.js
+msgid "Added following pending users: %1$s"
+msgstr "Les utilisateurs en attente suivants ont été ajoutés : %1$s"
+
+#. html/js/dicole/meetings.js
+msgid "You need to add people."
+msgstr "Vous devez ajouter des personnes."
+
+#. html/js/dicole/meetings.js
+msgid "Meeting confirmed"
+msgstr "Réunion confirmée"
+
+#. html/js/dicole/meetings.js
+msgid "You are now \"Attending\"."
+msgstr "Vous êtes maintenant « Présent »"
+
+#. html/js/dicole/meetings.js
+msgid "You are now \"Not Attending\"."
+msgstr "Vous êtes maintenant « Absent »."
+
+#. html/js/dicole/meetings.js
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+#. html/js/dicole/meetings/views/wizardProfileView.js
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "Upload photo"
+msgstr "Envoyer une photo"
+
+#. html/js/dicole/meetings.js
+msgid "Uploading done. Processing."
+msgstr "Mise en ligne terminée. Traitement en cours."
+
+#. html/js/dicole/meetings.js
+msgid ""
+"Are you sure you want to change the material? Unsaved changes will be lost. "
+"Save changes by clicking the \"Save\" button below the editor."
+msgstr "Voulez-vous vraiment changer le contenu ? Les changements non-enregistrés seront perdus. Enregistrez les changements en cliquant sur le bouton « Enregistrer » sous l'éditeur."
+
+#. html/js/dicole/meetings.js
+msgid ""
+"Oops, we couldn't find any future meetings. Please click \"Continue with "
+"blank\" to continue manually."
+msgstr "Oups, aucune réunion future n'a été trouvée. Veuillez cliquer sur « Continuer avec une réunion vierge » pour continuer manuellement."
+
+#. html/js/dicole/meetings.js
+#. src/jade/notification.jade
+msgid "Untitled meeting"
+msgstr "Rendez-vous sans titre"
+
+#. html/js/dicole/meetings.js
+#. src/jade/newsBar.jade
+msgid "Next"
+msgstr "Suivant"
+
+#. html/js/dicole/meetings.js
+msgid ""
+"People have shared these materials. Click on a material to see more of it."
+msgstr "Des personnes ont partagé ces contenus. Cliquez sur un contenu pour en voir les détails."
+
+#. html/js/dicole/meetings.js
+msgid "Meeting Materials"
+msgstr "Contenus de rendez-vous"
+
+#. html/js/dicole/meetings.js
+msgid "Here you can comment and print the selected material."
+msgstr "Ici vous pouvez commenter et imprimer le contenu sélectionné."
+
+#. html/js/dicole/meetings.js
+msgid "Current Material Preview"
+msgstr "Aperçu du contenu actuel"
+
+#. html/js/dicole/meetings.js
+msgid ""
+"These people will get notified if materials or meeting details change. You "
+"can invite more people from the 'invite' button."
+msgstr "Ces personnes seront prévenues si des contenus ou certaines informations concernant le rendez-vous changent. Vous pouvez inviter davantage de personnes avec le bouton « inviter »."
+
+#. html/js/dicole/meetings.js
+msgid "Meeting Participants"
+msgstr "Participants au rendez-vous"
+
+#. html/js/dicole/meetings.js
+msgid "Thanks!"
+msgstr "Merci !"
+
+#. html/js/dicole/meetings.js
+msgid ""
+"Do you like what you see? Open the menu and click the Add new -button to "
+"start organizing meetings - give it a try, it's free."
+msgstr "Aimez-vous ce que vous voyez ? Ouvrez le menu et cliquez sur le bouton Ajouter nouveau pour commencer à organiser vos rendez-vous - faites l'essai, c'est gratuit."
+
+#. html/js/dicole/meetings.js
+msgid "Organize Your Own Meetings"
+msgstr "Organisez vos propres rendez-vous."
+
+#. html/js/dicole/meetings.js
+msgid "Ok"
+msgstr "OK"
+
+#. html/js/dicole/meetings.js
+msgid ""
+"To help you out, we copied over the previous meeting's title, location, "
+"participants and materials.  The meeting is now a draft. Feel free to change"
+" everything as you like. You at least need to specify the date."
+msgstr "Pour vous aider, nous avons copié le titre du rendez-vous précédent, le lieu, les participants et les contenus. Le rendez-vous est maintenant un brouillon. Vous êtes libre de changer tout ce qui plaît. Vous devez au moins préciser la date. "
+
+#. html/js/dicole/meetings.js
+msgid "Meeting contents copied over"
+msgstr "Contenus de rendez-vous copiés"
+
+#. html/js/dicole/meetings.js
+msgid "Hide"
+msgstr "Cacher"
+
+#. html/js/dicole/meetings.js
+msgid "Never show again"
+msgstr "Ne plus afficher"
+
+#. html/js/dicole/meetings.js
+msgid "Note: This will be in the title of the invitation email."
+msgstr "Remarque : Cela apparaîtra dans le titre du courriel d'invitation."
+
+#. html/js/dicole/meetings.js
+msgid "Set the meeting title"
+msgstr "Définir le titre du rendez-vous"
+
+#. html/js/dicole/meetings.js
+msgid ""
+"Hint: You can add multiple suggestions, if you don't know the date yet."
+msgstr "Astuce : Vous pouvez ajouter plusieurs suggestions, si vous ne connaissez pas encore la date."
+
+#. html/js/dicole/meetings.js
+msgid "Set the meeting date"
+msgstr "Fixer la date de rendez-vous"
+
+#. html/js/dicole/meetings.js
+msgid "Note: We won't send the invitations until you are ready."
+msgstr "Remarque : Nous n'enverrons pas les invitations avant que vous soyez prêt."
+
+#. html/js/dicole/meetings.js
+msgid "Add meeting participants"
+msgstr "Ajouter des participants au rendez-vous"
+
+#. html/js/dicole/meetings.js
+msgid "Hint: The meeting can be online, face-to-face or both."
+msgstr "Astuce : le rendez-vous peut être en ligne, en tête-à-tête ou les deux. "
+
+#. html/js/dicole/meetings.js
+msgid "Set the meeting location"
+msgstr "Fixer le lieu du rendez-vous"
+
+#. html/js/dicole/meetings.js
+msgid "Note: We will send the agenda later with the invitation email."
+msgstr "Remarque : Nous enverrons l'agenda plus tard avec le courriel d'invitation."
+
+#. html/js/dicole/meetings.js
+msgid "Fill in the agenda"
+msgstr "Remplir l'agenda"
+
+#. html/js/dicole/meetings.js
+msgid "End tutorial"
+msgstr "Terminer le tutoriel"
+
+#. html/js/dicole/meetings.js
+msgid ""
+"You can also drag & drop materials from your desktop.%(N$%)%(N$%) Hint: "
+"Participants will be able to comment the materials."
+msgstr "Vous pouvez également faire glisser et déposer des contenus depuis votre bureau. %(N$%)%(N$%) Astuce : Les participants auront las possibilité de commenter les contenus."
+
+#. html/js/dicole/meetings.js
+msgid "Add materials"
+msgstr "Ajouter des contenus"
+
+#. html/js/dicole/meetings.js
+msgid "No results found."
+msgstr "Aucun résultat trouvé."
+
+#. html/js/dicole/meetings.js
+msgid "We screwed up. Please try refreshing the page."
+msgstr "Nous avons fait une boulette. Veuillez recharger la page. "
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "please check your network connection and reload the page"
+msgstr "veuillez vérifier votre connexion au réseau et recharger la page"
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "Sorry, this Meet Me calendar has expired."
+msgstr "Désolé, cet agenda Rencontrez-moi a expiré."
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of January"
+msgstr "%1$ de janvier"
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of February"
+msgstr "%1$s de février"
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of March"
+msgstr "%1$s de mars"
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of April"
+msgstr "%1$s d'avril"
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of May"
+msgstr "%1$s mai"
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of June"
+msgstr "%1$s juin"
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of July"
+msgstr "%1$s juillet"
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of August"
+msgstr "%1$s d'août "
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of September"
+msgstr "%1$s de septembre "
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of October"
+msgstr "%1$s d'octobre"
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of November"
+msgstr "%1$s de novembre"
+
+#. html/js/dicole/meetings/views/meetmeCalendarView.js
+msgid "%1$s of December"
+msgstr "%1$s décembre"
+
+#. html/js/dicole/meetings/views/meetmeConfigView.js
+msgid "Live communication tools disabled for this event."
+msgstr "Outils de communication en direct désactivés pour cet événement. "
+
+#. html/js/dicole/meetings/views/meetmeConfigView.js
+msgid "Working..."
+msgstr "En cours ..."
+
+#. html/js/dicole/meetings/views/meetmeConfigView.js
+#. src/jade/meetmeConfig.jade
+msgid "Meeting"
+msgstr "Rencontre"
+
+#. html/js/dicole/meetings/views/meetmeConfigView.js
+#. src/jade/meetmeConfig.jade
+msgid "E.g. if booked now, the first available meeting slot would be on %1$s."
+msgstr "Par exemple, pour une réservation immédiate, le premier créneau horaire de réunion disponible serait le %1$s."
+
+#. html/js/dicole/meetings/views/notificationsView.js
+msgid "You don't have any notifications yet."
+msgstr "Vous n'avez encore pas de notifications."
+
+#. html/js/dicole/meetings/views/sellProView.js
+msgid "Starting..."
+msgstr "Démarrage…"
+
+#. html/js/dicole/meetings/views/summaryPastView.js
+msgid "Yesterday"
+msgstr "Hier"
+
+#. html/js/dicole/meetings/views/summaryPastView.js
+#. html/js/dicole/meetings/views/summaryUpcomingView.js
+msgid "This week"
+msgstr "Cette semaine"
+
+#. html/js/dicole/meetings/views/summaryPastView.js
+msgid "Last week"
+msgstr "La semaine dernière"
+
+#. html/js/dicole/meetings/views/summaryPastView.js
+msgid "Past"
+msgstr "Passé"
+
+#. html/js/dicole/meetings/views/summaryUpcomingView.js
+msgid "Scheduling"
+msgstr "Programmation"
+
+#. html/js/dicole/meetings/views/summaryUpcomingView.js
+msgid "Tasks"
+msgstr "Tâches"
+
+#. html/js/dicole/meetings/views/summaryUpcomingView.js
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. html/js/dicole/meetings/views/summaryUpcomingView.js
+msgid "Next week"
+msgstr "La semaine prochaine"
+
+#. html/js/dicole/meetings/views/summaryUpcomingView.js
+msgid "Future"
+msgstr "Futur"
+
+#. html/js/dicole/meetings/views/upgradePayView.js
+msgid ""
+"There was an error processing the card. Please check the card details! If "
+"this problem persists, you should contact our %(L$support%)."
+msgstr "Une erreur s'est produite lors du traitement de la carte. Veuillez vérifier les informations de la carte ! Si ce problème persiste, contactez notre %(L$assistance%). "
+
+#. html/js/dicole/meetings/views/upgradePayView.js
+msgid "You seem to already have an active PRO subscription!"
+msgstr "Il semblerait que vous ayez déjà un abonnement PRO actif !"
+
+#. html/js/dicole/meetings/views/upgradePayView.js
+msgid ""
+"We seem to have an active PRO subscription associated with the provided "
+"email already! Please, %(L$log in%) and enjoy your PRO account."
+msgstr "Il semble que nous ayons déjà un abonnement PRO actif associé à l'adresse électronique fournie ! Veuillez %(L$vous connecter%) et profitez de votre compte PRO."
+
+#. html/js/dicole/meetings/views/upgradePayView.js
+msgid ""
+"There was an error processing the form. Please check your details! If this "
+"problem persists, you should contact our %(L$support%)."
+msgstr "Une erreur s'est produite lors du traitement du formulaire. Veuillez vérifier vos informations ! Si ce problème persiste, contactez notre %(L$assistance%). "
+
+#. html/js/dicole/meetings/views/userSettingsView.js
+msgid "Sending..."
+msgstr "Envoi..."
+
+#. html/js/dicole/meetings/views/userSettingsView.js
+msgid "Receipt sent."
+msgstr "Reçu envoyé."
+
+#. html/js/dicole/meetings/dtmpl/add_material.html
+msgid "Add Material"
+msgstr "Ajouter contenu"
+
+#. html/js/dicole/meetings/dtmpl/add_material.html
+msgid "Upload a document"
+msgstr "Mettre en ligne un document"
+
+#. html/js/dicole/meetings/dtmpl/add_material.html
+msgid "Create an editable document"
+msgstr "Créer un document modifiable"
+
+#. html/js/dicole/meetings/dtmpl/add_material.html
+#. html/js/dicole/meetings/dtmpl/add_material_previous.html
+msgid "Copy material from another meeting"
+msgstr "Copier le contenu depuis un autre rendez-vous"
+
+#. html/js/dicole/meetings/dtmpl/add_material_previous.html
+msgid "1. Choose a meeting"
+msgstr "1. Choisissez un rendez-vous"
+
+#. html/js/dicole/meetings/dtmpl/add_material_previous.html
+msgid "Search..."
+msgstr "Recherche ..."
+
+#. html/js/dicole/meetings/dtmpl/add_material_previous.html
+msgid "2. Choose Materials"
+msgstr "2. Choisir les éléments"
+
+#. html/js/dicole/meetings/dtmpl/add_material_previous.html
+msgid "Choose a meeting on the left to see available materials!"
+msgstr "Choisissez un rendez-vous à gauche pour voir les contenus disponibles !"
+
+#. html/js/dicole/meetings/dtmpl/add_material_previous.html
+msgid "%(S$0%) materials selected"
+msgstr "%(S$0%) éléments sélectionnés"
+
+#. html/js/dicole/meetings/dtmpl/add_material_previous.html
+#. html/js/dicole/meetings/dtmpl/manage_participant_rights.html
+#. src/jade/meetingSettingsRights.jade
+msgid "Add material"
+msgstr "Ajouter un élément"
+
+#. html/js/dicole/meetings/dtmpl/add_material_previous.html
+#. html/js/dicole/meetings/dtmpl/add_material_wiki.html
+#. html/js/dicole/meetings/dtmpl/delete_comment_confirm.html
+#. html/js/dicole/meetings/dtmpl/edit_comment.html
+#. html/js/dicole/meetings/dtmpl/edit_media_embed.html
+#. html/js/dicole/meetings/dtmpl/facebook_email.html
+#. html/js/dicole/meetings/dtmpl/fill_skype.html
+#. html/js/dicole/meetings/dtmpl/inplace_page_editor.html
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+#. html/js/dicole/meetings/dtmpl/invite_participants.html
+#. html/js/dicole/meetings/dtmpl/invite_transfer.html
+#. html/js/dicole/meetings/dtmpl/matchmaking_confirm.html
+#. html/js/dicole/meetings/dtmpl/matchmaking_decline.html
+#. html/js/dicole/meetings/dtmpl/remove_media.html
+#. html/js/dicole/meetings/dtmpl/remove_meeting.html
+#. html/js/dicole/meetings/dtmpl/remove_page.html
+#. html/js/dicole/meetings/dtmpl/set_date_confirm.html
+#. src/jade/agentBookingConfirm.jade
+#. src/jade/meetingSettings.jade
+#. src/jade/meetmeConfig.jade
+#. src/jade/meetmeConfirmDelete.jade
+#. src/jade/meetmeEditDescription.jade
+#. src/jade/startTrial.jade
+#. src/jade/userSettingsAccountRemove.jade
+msgid "Cancel"
+msgstr "Annuler"
+
+#. html/js/dicole/meetings/dtmpl/add_material_uploading.html
+msgid "Uploading"
+msgstr "Envoi"
+
+#. html/js/dicole/meetings/dtmpl/add_material_uploading.html
+msgid "Cancel upload"
+msgstr "Annuler l'envoi"
+
+#. html/js/dicole/meetings/dtmpl/add_material_wiki.html
+msgid "New document"
+msgstr "Nouveau document"
+
+#. html/js/dicole/meetings/dtmpl/add_material_wiki.html
+msgid "Title://context:material title"
+msgstr "Titre:"
+
+#. html/js/dicole/meetings/dtmpl/add_material_wiki.html
+msgid "Create"
+msgstr "Créer"
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+#. src/jade/userSettingsCover.jade
+#. src/jade/userSettings.jade
+msgid "Branding"
+msgstr "Gestion de l'image de marque"
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid ""
+"Customize your appearance (change logo, background image and colors) to "
+"match your brand."
+msgstr "Personnalisez votre apparence (changement de logo, image et couleurs d'arrière-plan) pour qu'elle corresponde à votre marque."
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid "Header image"
+msgstr "Image d'en-tête"
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid "Upload logo"
+msgstr "Mettre en ligne le logo"
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid "Reset logo"
+msgstr "Réinitialiser le logo"
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid ""
+"Maximum dimensions are 180 px by 40 px. Images larger than that will be "
+"scaled down. We support png and gif with transparency."
+msgstr "Les dimensions maximales sont 180 px par 40 px. Les images de taille supérieure seront réduites. Nous acceptons les png et les gif avec transparence."
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid "Highlight color"
+msgstr "Couleur de surlignage "
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid "Background image"
+msgstr "Image d'arrière-plan"
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid "Upload image"
+msgstr "Mettre en ligne l'image"
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid "Remove image"
+msgstr "Retirer l'image"
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+#. html/js/dicole/meetings/dtmpl/change_timezone.html
+#. html/js/dicole/meetings/dtmpl/edit_comment.html
+#. html/js/dicole/meetings/dtmpl/edit_media_embed.html
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+#. html/js/dicole/meetings/dtmpl/fill_skype.html
+#. html/js/dicole/meetings/dtmpl/inplace_page_editor.html
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. html/js/dicole/meetings/dtmpl/manage_email.html
+#. html/js/dicole/meetings/dtmpl/manage_participant_rights.html
+#. html/js/dicole/meetings/dtmpl/manage_password.html
+#. html/js/dicole/meetings/dtmpl/manage_virtual.html
+#. html/js/dicole/meetings/dtmpl/set_date_confirm.html
+#. html/js/dicole/meetings/dtmpl/set_date.html
+#. html/js/dicole/meetings/dtmpl/set_location.html
+#. html/js/dicole/meetings/dtmpl/set_title.html
+#. src/jade/meetingLctCustomUrl.jade
+#. src/jade/meetingLctHangouts.jade
+#. src/jade/meetingLctLync.jade
+#. src/jade/meetingLctSkype.jade
+#. src/jade/meetingLctTeleconf.jade
+#. src/jade/meetingSettingsEmail.jade
+#. src/jade/meetingSettingsRights.jade
+#. src/jade/meetmeConfig.jade
+#. src/jade/meetmeEditDescription.jade
+#. src/jade/userProfile.jade
+#. src/jade/userSettingsLogin.jade
+#. src/jade/userSettingsRegional.jade
+#. src/jade/userSettingsTimeline.jade
+#. src/jade/userSettingsTimezone.jade
+msgid "Save"
+msgstr "Sauver"
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid ""
+"Try out this and all the other features included in the full suite by "
+"activating your free 30-day trial."
+msgstr "Essayez cette fonctionnalité et toutes les autres comprises dans la série complète en activant votre période d'essai gratuite de 30 jours."
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+msgid ""
+"Upgrade your account to Meetin.gs PRO and start using this and all the other"
+" features included in the full suite."
+msgstr "Passer à la version PRO de Meetin.gs et commencez à utiliser cette fonctionnalité et toutes les autres comprises dans la série complète."
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+#. src/jade/meetmeConfig.jade
+#. src/jade/sellSubscription.jade
+#. src/jade/userSettingsAccount.jade
+msgid "Upgrade now"
+msgstr "Mettre à niveau maintenant"
+
+#. html/js/dicole/meetings/dtmpl/admin_appearance.html
+#. src/jade/userSettingsAccount.jade
+msgid "Learn more about %(L$paid subscriptions%)."
+msgstr "Apprenez-en plus sur les %(L$abonnements payants%)."
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Click to change title."
+msgstr "Cliquez pour changer le titre."
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Click to edit date and time."
+msgstr "Cliquez pour modifier la date et l'heure."
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Set the date and time"
+msgstr "Régler la date et l'heure"
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Date and time not set."
+msgstr "Date et heure non réglées"
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Click to change location."
+msgstr "Cliquez pour changer le lieu."
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Click to configure live communication tools."
+msgstr "Cliquez pour configurer les outils de communication en direct."
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "You"
+msgstr "Vous"
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "click to see profile"
+msgstr "Cliquez pour voir le profil"
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Click to edit meeting."
+msgstr "Cliquez pour modifier le rendez-vous."
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Click to edit theme."
+msgstr "Cliquez pour modifier le thème."
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Change date"
+msgstr "Changer la date"
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Set date"
+msgstr "Fixer une date"
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Suggest dates"
+msgstr "Proposer des dates"
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Add to MS Outlook"
+msgstr "Ajouter à MS Outlook"
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Add to Google Calendar"
+msgstr "Ajouter à Google Agenda"
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Download ICS"
+msgstr "Télécharger ICS"
+
+#. html/js/dicole/meetings/dtmpl/basic_info.html
+msgid "Details"
+msgstr "Détails"
+
+#. html/js/dicole/meetings/dtmpl/change_timezone.html
+msgid "Choose Your Timezone"
+msgstr "Choisissez votre fuseau horaire"
+
+#. html/js/dicole/meetings/dtmpl/change_timezone.html
+#. src/jade/userSettingsTimezone.jade
+msgid ""
+"When you select a new time zone, our service converts all your meeting "
+"starting times to match your new time zone setting."
+msgstr "Quand vous sélectionnez un nouveau fuseau horaire, notre service convertit toutes vos heures de début de rencontre pour correspondre à votre nouveau fuseau horaire."
+
+#. html/js/dicole/meetings/dtmpl/change_timezone.html
+#. src/jade/userSettingsTimezone.jade
+msgid "Time Zone:"
+msgstr "Fuseau horaire : "
+
+#. html/js/dicole/meetings/dtmpl/comment.html
+msgid "Remove comment"
+msgstr "Retirer le commentaire"
+
+#. html/js/dicole/meetings/dtmpl/comment.html
+msgid "Edit comment"
+msgstr "Modifier le commentaire"
+
+#. html/js/dicole/meetings/dtmpl/confirm_page_edit_cancel.html
+msgid "Stop editing"
+msgstr "Arrêter les modifications"
+
+#. html/js/dicole/meetings/dtmpl/confirm_page_edit_cancel.html
+msgid "Are you sure you want to stop editing and lose your changes?"
+msgstr "Voulez-vous vraiment arrêter les modifications et perdre vos changements ?"
+
+#. html/js/dicole/meetings/dtmpl/confirm_page_edit_cancel.html
+#. html/js/dicole/meetings/dtmpl/remove_self_from_meeting.html
+msgid "Yes"
+msgstr "Oui"
+
+#. html/js/dicole/meetings/dtmpl/confirm_page_edit_cancel.html
+msgid "No! Continue editing"
+msgstr "Non ! Continuer les modifications"
+
+#. html/js/dicole/meetings/dtmpl/connect_service_account_return.html
+#. html/js/dicole/meetings/dtmpl/facebook_email_return.html
+#. html/js/dicole/meetings/dtmpl/login_return.html
+msgid "Success"
+msgstr "Succès"
+
+#. html/js/dicole/meetings/dtmpl/connect_service_account_return.html
+msgid "A verification link has been sent to %1$s"
+msgstr "Un lien de vérification a été envoyé à %1$s"
+
+#. html/js/dicole/meetings/dtmpl/connect_service_account_return.html
+msgid "Something went wrong"
+msgstr "Une erreur est survenue"
+
+#. html/js/dicole/meetings/dtmpl/connect_service_account_return.html
+msgid "There was an error while contacting the server. Please try again!"
+msgstr "Il y a eu une erreur lors du contact avec le serveur. Veuillez réessayer !"
+
+#. html/js/dicole/meetings/dtmpl/connect_service_account_return.html
+msgid "Back to login"
+msgstr "Retour à la connexion"
+
+#. html/js/dicole/meetings/dtmpl/delete_comment_confirm.html
+msgid "Delete comment"
+msgstr "Supprimer commentaire"
+
+#. html/js/dicole/meetings/dtmpl/delete_comment_confirm.html
+msgid "Are you sure you want to remove the comment?"
+msgstr "Voulez-vous vraiment retirer le commentaire ?"
+
+#. html/js/dicole/meetings/dtmpl/delete_comment_confirm.html
+#. html/js/dicole/meetings/dtmpl/edit_media_embed.html
+#. html/js/dicole/meetings/dtmpl/manage_remove.html
+#. html/js/dicole/meetings/dtmpl/remove_media.html
+#. html/js/dicole/meetings/dtmpl/remove_meeting.html
+#. html/js/dicole/meetings/dtmpl/remove_page.html
+#. src/jade/meetingSettings.jade
+#. src/jade/meetmeConfirmDelete.jade
+#. src/jade/userSettingsAccountRemove.jade
+msgid "Remove"
+msgstr "Retirer"
+
+#. html/js/dicole/meetings/dtmpl/edit_comment.html
+msgid "Edit Comment"
+msgstr "Modifier le commentaire"
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+msgid "Your Information"
+msgstr "Vos informations"
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+msgid ""
+"Please confirm your personal information before we send out invititations."
+msgstr "Veuillez confirmer vos informations personnelles avant que nous n'envoyions les invitations."
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+msgid "Fill profile with Facebook"
+msgstr "Remplir le profil avec Facebook"
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+msgid "* Note: We will never post anything on your behalf to Facebook."
+msgstr "* Remarque : Nous ne publierons jamais rien en votre nom sur Facebook."
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+#. html/js/dicole/meetings/dtmpl/facebook_email.html
+#. html/js/dicole/meetings/dtmpl/invite_participants_new.html
+#. html/js/dicole/meetings/dtmpl/invite_transfer.html
+#. src/jade/agentBookingConfirm.jade
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "Email"
+msgstr "E-mail"
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "First name"
+msgstr "Prénom"
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "Last name"
+msgstr "Nom"
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "Organization"
+msgstr "Organisation"
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "Title//context:organizational title"
+msgstr "Titre"
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "Phone"
+msgstr "Téléphone"
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+msgid "Copy and paste your LinkedIn profile link here"
+msgstr "Copiez-collez le lien de votre profil LinkedIn ici"
+
+#. html/js/dicole/meetings/dtmpl/edit_my_profile.html
+msgid "Logged in as: %1$s"
+msgstr "Connecté en tant que : %1$s "
+
+#. html/js/dicole/meetings/dtmpl/facebook_email.html
+msgid "Connect Your Account"
+msgstr "Connectez votre compte"
+
+#. html/js/dicole/meetings/dtmpl/facebook_email.html
+msgid ""
+"Your Facebook account is not connected to any existing Meetin.gs account. If"
+" you are already an user, please provide us with the email address that you "
+"are using with your Meetin.gs account. We will send you an email to confirm "
+"that you would like to use your Facebook to log in to Meetin.gs in the "
+"future."
+msgstr "Votre compte Facebook n'est connecté à aucun compte Meetin.gs existant. Si vous êtes déjà un utilisateur, merci de nous fournir l'adresse e-mail que vous utilisez pour votre compte Meetin.gs. Nous vous enverrons un e-mail pour que vous puissiez confirmer que vous souhaitez utiliser votre Facebook pour vous connecter sur Meetin.gs à l'avenir."
+
+#. html/js/dicole/meetings/dtmpl/facebook_email.html
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+#. html/js/dicole/meetings/dtmpl/invite_transfer.html
+msgid "Send"
+msgstr "Envoyer"
+
+#. html/js/dicole/meetings/dtmpl/facebook_email_return.html
+msgid "A verification link has been sent to %1$s."
+msgstr "Un lien de vérification a été envoyé à %1$s."
+
+#. html/js/dicole/meetings/dtmpl/facebook_email_return.html
+#. html/js/dicole/meetings/dtmpl/login_return.html
+msgid ""
+"We encountered an unknown error while contacting the server. Please try "
+"again!"
+msgstr "Une erreur inconnue est survenue pendant le contact avec le serveur. Veuillez réessayer !"
+
+#. html/js/dicole/meetings/dtmpl/fill_skype.html
+msgid "Meeting Skype Account"
+msgstr "Compte Skype de rendez-vous"
+
+#. html/js/dicole/meetings/dtmpl/fill_skype.html
+msgid "Which Skype account will participants call?"
+msgstr "Quel compte Skype les participants appelleront-ils ?"
+
+#. html/js/dicole/meetings/dtmpl/fill_skype.html
+#. src/jade/userSettingsCover.jade
+#. src/jade/userSettings.jade
+msgid "Account"
+msgstr "Compte"
+
+#. html/js/dicole/meetings/dtmpl/fill_skype.html
+msgid "What teleconferencing number will participants call?"
+msgstr "Quel numéro de téléconférence les participants appelleront-ils ?"
+
+#. html/js/dicole/meetings/dtmpl/fill_skype.html
+msgid "Number"
+msgstr "Numéro"
+
+#. html/js/dicole/meetings/dtmpl/fill_skype.html
+#. src/jade/meetingLctTeleconf.jade
+#. src/jade/meetmeConfig.jade
+msgid "Pin (optional)"
+msgstr "Épingle (facultatif)"
+
+#. html/js/dicole/meetings/dtmpl/gcal_view.html
+msgid "Connect calendar"
+msgstr "Connecter le calendrier"
+
+#. html/js/dicole/meetings/dtmpl/gcal_view.html
+msgid "It seems that your calendar has not been connected yet."
+msgstr "Il semblerait que votre agenda ne soit pas encore connecté."
+
+#. html/js/dicole/meetings/dtmpl/gcal_view.html
+#. src/jade/wizardProfile.jade
+msgid "Connect Google"
+msgstr "Connecter Google"
+
+#. html/js/dicole/meetings/dtmpl/gcal_view.html
+msgid "Select a meeting"
+msgstr "Sélectionner une rencontre"
+
+#. html/js/dicole/meetings/dtmpl/gcal_view.html
+msgid "Choose meeting"
+msgstr "Choisir une rencontre"
+
+#. html/js/dicole/meetings/dtmpl/ics_feed_instructions.html
+msgid "ICS Calendar Feed Instructions"
+msgstr "Instructions des événements du Calendrier ICS "
+
+#. html/js/dicole/meetings/dtmpl/ics_feed_instructions.html
+msgid "Copy your ICS calendar feed:"
+msgstr "Copier le fil d'information ICS de l'agenda : "
+
+#. html/js/dicole/meetings/dtmpl/inplace_comments.html
+msgid "Write your comment here..."
+msgstr "Écrivez votre commentaire ici..."
+
+#. html/js/dicole/meetings/dtmpl/inplace_comments.html
+msgid "Add comment"
+msgstr "Ajouter un commentaire"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "Click to rename."
+msgstr "Cliquez pour renommer"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "Download"
+msgstr "Télécharger"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid "Edit"
+msgstr "Éditer"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "This document is locked by you"
+msgstr "Ce document a été verrouillé par vous"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid ""
+"Your previous session with this page was left open. To continue editing, "
+"click the link below."
+msgstr "Votre session précédente sur cette page est restée ouverte. Pour continuer les modifications, cliquez sur le lien ci-dessous."
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "Continue editing"
+msgstr "Continuer modifications"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "This document is locked by user:"
+msgstr "Ce document a été verrouillé par l'utilisateur :"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "You can edit the document once the user has finished editing the page."
+msgstr "Vous pourrez modifier le document une fois que l'utilisateur aura fini de modifier la page."
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "Click \"Edit\" button above to start editing."
+msgstr "Cliquez sur le bouton « Modifier » ci-dessus pour commencer les modifications."
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid ""
+"%(S$READ the following instructions carefully.%) These instructions will be "
+"replaced when you fill the document. The other party will receive anything "
+"you write here as part of the invitation when you click \"Ready\"."
+msgstr "%(S$LISEZ les instructions suivantes attentivement.%) Ces instructions seront remplacées quand vous remplirez le document. L'autre partie recevra tout ce que vous écrirez ici comme élément de l'invitation quand vous cliquerez sur « Prêt »."
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "When filling the agenda, consider the following:"
+msgstr "Quand vous arrangez l'agenda, pensez à ceci :"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid ""
+"Did the other party propose a preliminary agenda below? Take into account "
+"their wishes."
+msgstr "L'autre partie a-t-elle proposé un agenda préliminaire ci-dessous ? Prenez en compte leurs souhaits."
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "What is your company all about and what stage are you in?"
+msgstr "Quelle est l'activité de votre société et à quel stade en êtes-vous ?"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "What are you expecting from the other party?"
+msgstr "Qu'attendez-vous de l'autre partie ?"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid ""
+"What materials have you uploaded for the other party to look at before the "
+"meeting takes place? Consider uploading the following documents: executive "
+"summary and company presentation / pitch deck. You can add them on the left."
+msgstr "Quels contenus avez-vous mis en ligne à la disposition de l'autre partie avant la tenue du rendez-vous ? Pensez à mettre en ligne les documents suivants : résumé opérationnel et présentation de la société / argumentaire. Vous pouvez les ajouter à gauche."
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid ""
+"Are you providing a link to a product demo? Add instructions for getting "
+"started with the demo."
+msgstr "Vous donnez un lien vers une démonstration de produit ? Ajoutez des instructions pour faire fonctionner la démonstration."
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "Clear? Now click \"Edit\" button above to fill the information."
+msgstr "Prêt ? Maintenant cliquez sur le bouton « Modifier » ci-dessus pour entrer les informations."
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid ""
+"%(S$Click \"Edit\" button%) above to fill the agenda, so participants will "
+"know why the meeting takes place:"
+msgstr "%(S$Cliquez le bouton « Modifier »%) ci-dessus pour remplir l'agenda, afin que les participants sachent pourquoi le rendez-vous a lieu :"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "What is the objective and desired outcome of the meeting?"
+msgstr "Quel est l'objectif et le résultat souhaité du rendez-vous ?"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "What happens during the meeting?"
+msgstr "Que se passe-t-il pendant le rendez-vous ?"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "How participants should prepare?"
+msgstr "Comment doivent se préparer les participants ?"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "NOTE: We'll send the agenda along with the invitation email."
+msgstr "REMARQUE : Nous enverrons l'agenda en même temps que le courriel d'invitation."
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "%(S$Click \"Edit\" button%) above to fill in the action points:"
+msgstr "%(S$Cliquez le bouton « Modifier »%) ci-dessus pour remplir les éléments d'action :"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "What actions are we committing to?"
+msgstr "À quelles actions nous engageons-nous ?"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "Who is responsible for each action?"
+msgstr "Qui est responsable pour chaque action ?"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "When will those actions be completed?"
+msgstr "Quand ces actions seront-elles terminées ?"
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid ""
+"NOTE: We'll send the action points along with the meeting summary email 12 "
+"hours after the meeting."
+msgstr "REMARQUE : Nous enverrons les éléments d'action en même temps que le courriel récapitulatif du rendez-vous 12 heures après le rendez-vous. "
+
+#. html/js/dicole/meetings/dtmpl/inplace.html
+msgid "%(S$Click \"Edit\" button%) above to edit this document."
+msgstr "%(S$Cliquez le bouton% « Modifier ») ci-dessus pour modifier ce document."
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+msgid "Confirm & accept meeting"
+msgstr "Confirmer et accepter la réunion"
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+msgid "Confirm meeting details"
+msgstr "Confirmer les détails de la réunion"
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+msgid "(before sending the invites)"
+msgstr "(avant que nous n'envoyions les invitations)"
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+msgid "Confirm sending invites"
+msgstr "Confirmer l'envoi des invitations"
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+msgid "Meeting title"
+msgstr "Titre de la réunion"
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+#. src/jade/meetingCard.jade
+msgid "Time is not set"
+msgstr "L'heure n'est pas réglée"
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+msgid "Location is not set"
+msgstr "Le lieu n'est pas défini"
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+msgid "Agenda"
+msgstr "Programme"
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+msgid "You probably want an agenda for a great meeting!"
+msgstr ""
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+msgid "Require participants to RSVP"
+msgstr "Exiger des participants une confirmation de présence"
+
+#. html/js/dicole/meetings/dtmpl/invite_customize_message.html
+msgid ""
+"We will require participants to let you know whether they are coming or not."
+" We will also remind them from time to time until they answer."
+msgstr "Nous exigerons des participants qu'ils vous fassent savoir s'ils viennent ou non. Nous leur rappellerons également de temps en temps jusqu'à ce qu'ils répondent. "
+
+#. html/js/dicole/meetings/dtmpl/invite_participants.html
+msgid "Add People to Your Meeting"
+msgstr "Ajouter des personnes à votre rendez-vous"
+
+#. html/js/dicole/meetings/dtmpl/invite_participants.html
+msgid "(Don't worry, we won't send them anything yet)"
+msgstr "(Pas d'inquiétude, nous ne leur enverrons rien pour l'instant)"
+
+#. html/js/dicole/meetings/dtmpl/invite_participants.html
+msgid "Get your contacts:"
+msgstr "Obtenez vos contacts :"
+
+#. html/js/dicole/meetings/dtmpl/invite_participants.html
+#. html/js/dicole/meetings/dtmpl/matchmaking_confirm.html
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+#. src/jade/agentBookingConfirm.jade
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. html/js/dicole/meetings/dtmpl/invite_participants_new.html
+msgid "New Contact"
+msgstr "Nouveau Contact"
+
+#. html/js/dicole/meetings/dtmpl/invite_participants_new.html
+msgid "Name"
+msgstr "Nom"
+
+#. html/js/dicole/meetings/dtmpl/invite_transfer.html
+msgid "Transfer Your Invite"
+msgstr "Transférer votre invitation"
+
+#. html/js/dicole/meetings/dtmpl/invite_transfer.html
+msgid "What email would you like to use to receive the meeting updates?"
+msgstr "Quel e-mail souhaiteriez-vous utiliser pour recevoir les mises à jour de la rencontre ?"
+
+#. html/js/dicole/meetings/dtmpl/invite_transfer.html
+msgid ""
+"You can also set Meetin.gs to do this transfer automatically in the future."
+msgstr "Vous pouvez aussi régler Meetin.gs pour faire ce transfert automatiquement dans le futur."
+
+#. html/js/dicole/meetings/dtmpl/invite_transfer.html
+msgid "Transfer automatically in the future"
+msgstr "Transférer automatiquement à l'avenir"
+
+#. html/js/dicole/meetings/dtmpl/login_return.html
+msgid "A log in link has been sent to %1$s."
+msgstr "Un lien de connexion a été envoyé à %1$s."
+
+#. html/js/dicole/meetings/dtmpl/login_return.html
+msgid "Failure"
+msgstr "Échec"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. html/js/dicole/meetings/dtmpl/manage_navi.html
+msgid "Basic Information"
+msgstr "Informations de base"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. html/js/dicole/meetings/dtmpl/set_title.html
+msgid "Title//context:meeting title"
+msgstr "Titre"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. src/jade/meetmeConfig.jade
+msgid "Change"
+msgstr "Changer"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. html/js/dicole/meetings/dtmpl/set_date.html
+#. src/jade/datePicker.jade
+msgid "Date"
+msgstr "Date"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. html/js/dicole/meetings/dtmpl/set_date.html
+msgid "Meeting is being scheduled."
+msgstr "La réunion est en cours de programmation."
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. html/js/dicole/meetings/dtmpl/set_date.html
+msgid "Show current status"
+msgstr "Afficher l'état actuel"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. html/js/dicole/meetings/dtmpl/set_date.html
+msgid "Cancel scheduling"
+msgstr "Annuler la programmation"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+msgid "Not set"
+msgstr "Non défini(e)"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. html/js/dicole/meetings/dtmpl/set_date.html
+#. src/jade/meetmeConfig.jade
+msgid "Time"
+msgstr "Heure"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. html/js/dicole/meetings/dtmpl/set_date.html
+msgid "Duration"
+msgstr "Durée"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+msgid "Set time"
+msgstr "Définir l'heure"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+msgid ""
+"Do you want to suggest multiple dates to participants instead of setting the"
+" date directly?"
+msgstr "Voulez-vous suggérer plusieurs dates aux participants au lieu de régler la date directement ?"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+msgid "Start suggesting dates"
+msgstr "Commencer à suggérer des dates"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+#. html/js/dicole/meetings/dtmpl/set_location.html
+#. src/jade/meetmeConfig.jade
+msgid "Location"
+msgstr "Lieu"
+
+#. html/js/dicole/meetings/dtmpl/manage_basic.html
+msgid "Online"
+msgstr "En ligne"
+
+#. html/js/dicole/meetings/dtmpl/manage_email.html
+msgid "Edit Meeting Email Settings"
+msgstr "Modifier les paramètres de courriel de rendez-vous"
+
+#. html/js/dicole/meetings/dtmpl/manage_email.html
+#. src/jade/meetingSettingsEmail.jade
+msgid "Email notification settings for the current meeting:"
+msgstr "Réglages de notifications e-mail pour la rencontre actuelle : "
+
+#. html/js/dicole/meetings/dtmpl/manage_email.html
+#. src/jade/meetingSettingsEmail.jade
+msgid "Meeting start reminder"
+msgstr "Rappel du début de la rencontre"
+
+#. html/js/dicole/meetings/dtmpl/manage_email.html
+#. src/jade/meetingSettingsEmail.jade
+msgid "Participant digest"
+msgstr "Aperçu du participant"
+
+#. html/js/dicole/meetings/dtmpl/manage_email.html
+#. src/jade/meetingSettingsEmail.jade
+msgid "New participant notification"
+msgstr "Notification de nouveau participant"
+
+#. html/js/dicole/meetings/dtmpl/manage_email.html
+#. src/jade/meetingSettingsEmail.jade
+msgid "New material notification"
+msgstr "Notification de nouvel élément"
+
+#. html/js/dicole/meetings/dtmpl/manage_email.html
+#. src/jade/meetingSettingsEmail.jade
+msgid "New comment notification"
+msgstr "Notification de nouveau commentaire"
+
+#. html/js/dicole/meetings/dtmpl/manage_navi.html
+msgid "Participant Rights"
+msgstr "Droits de participant"
+
+#. html/js/dicole/meetings/dtmpl/manage_navi.html
+msgid "Email Settings"
+msgstr "Paramètres de courriel"
+
+#. html/js/dicole/meetings/dtmpl/manage_navi.html
+#. html/js/dicole/meetings/dtmpl/manage_remove.html
+msgid "Remove Meeting"
+msgstr "Retirer la rencontre"
+
+#. html/js/dicole/meetings/dtmpl/manage_participant_rights.html
+msgid "Edit Participant Rights"
+msgstr "Éditer les droits des participants"
+
+#. html/js/dicole/meetings/dtmpl/manage_participant_rights.html
+#. src/jade/meetingSettingsRights.jade
+msgid "Participants of this meeting are allowed to:"
+msgstr "Les participants de cette rencontre ont le droit de : "
+
+#. html/js/dicole/meetings/dtmpl/manage_participant_rights.html
+#. src/jade/meetingSettingsRights.jade
+msgid "Invite new participants"
+msgstr "Inviter de nouveaux participants"
+
+#. html/js/dicole/meetings/dtmpl/manage_participant_rights.html
+#. src/jade/meetingSettingsRights.jade
+msgid "Edit material"
+msgstr "Éditer l'élément"
+
+#. html/js/dicole/meetings/dtmpl/manage_password.html
+msgid "Edit Meeting Password"
+msgstr "Éditer le mot de passe de la rencontre"
+
+#. html/js/dicole/meetings/dtmpl/manage_remove.html
+msgid ""
+"Note: By removing this meeting, you and your participants will no longer be "
+"able to access this meeting and content related to it."
+msgstr "Note : En enlevant cette rencontre, vous et vos participants ne pourront plus avoir accès à cette rencontre et au contenu qui y est lié."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_confirm.html
+msgid "Confirm the time"
+msgstr "Confirmer l'heure"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_confirm.html
+msgid "12h clock"
+msgstr "Horloge 12h"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_confirm.html
+msgid "24h clock"
+msgstr "Horloge 24h"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_confirm.html
+msgid "show in my timezone"
+msgstr "afficher dans mon fuseau horaire"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_confirm.html
+msgid "show in their timezone"
+msgstr "afficher dans leur fuseau horaire"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_confirm.html
+msgid ""
+"You have %(B$15 minutes%) to complete this form. Leave a note or preliminary"
+" agenda on why you want to meet."
+msgstr "Vous avez %(B$15 minutes%) pour compléter ce formulaire. Laissez une note ou un programme préliminaire sur la raison de votre demande de rencontre."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_confirm.html
+msgid "Why do you want to meet and what the proposed agenda will be?"
+msgstr "Pourquoi voulez-vous un rendez-vous et quel sera l'agenda proposé ?"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_decline.html
+msgid ""
+"A notification about the declination will be sent to %1$s. This meeting page"
+" will be removed in the process."
+msgstr "Une notification du refus sera envoyée à %1$s. Cette page de réunion sera également retirée."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_decline.html
+msgid ""
+"Leave a comment on why you had to decline the request to meet (optional):"
+msgstr "Laisser un commentaire sur la raison de votre refus de la requête de rencontre (facultatif) : "
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_decline.html
+#. src/jade/meetingNextAction.jade
+msgid "Decline"
+msgstr "Refuser"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_limit_reached.html
+msgid "You have reached your limit for matchmaking"
+msgstr "Vous avez atteint votre limite de rapprochement"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_limit_reached.html
+msgid ""
+"To guarantee that everybody has a fair chance for scheduling an appointment,"
+" the matchmaking has been limited to 4 appointments per person."
+msgstr "Pour garantir à tout le monde une chance équitable d'organiser un rendez-vous, le rapprochement a été limité à 4 rendez-vous par personne."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_list.html
+msgid "Matchmaking"
+msgstr "Mise en relation"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_list.html
+#. src/jade/footer.jade
+msgid "Website"
+msgstr "Site web"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_list.html
+msgid "Watch pitch video"
+msgstr "Regarder la présentation vidéo"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_list.html
+msgid "More info"
+msgstr "Plus d'informations"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_list.html
+#. src/jade/meetmeCover.jade
+msgid "Schedule"
+msgstr "Emploi du temps"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_lock_expired.html
+msgid "The link has expired"
+msgstr "Le lien a expiré."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_lock_expired.html
+msgid "The meeting request link is valid only for 1 hour."
+msgstr "Le lien de demande de rendez-vous n'est valable qu'une heure."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_lock_expired.html
+msgid "Suggest a new time"
+msgstr "Proposer un nouvel horaire."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_lock_expired.html
+msgid "Back to matchmaking"
+msgstr "Retour à la mise en relation"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_register_success.html
+msgid "Thank you for registering for matchmaking"
+msgstr "Merci de vous être inscrit au rapprochement"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_register_success.html
+msgid "You will soon receive requests to meet from matchmaking participants."
+msgstr "Vous recevrez bientôt des requêtes de rencontre des participants au rapprochement."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_register_success.html
+msgid ""
+"%(B$The invitations will be sent from info@meetin.gs %). Make sure you add "
+"%(B$info@meetin.gs%) to your email client's address book to ensure safe "
+"delivery of the invitation emails."
+msgstr "%(B$The invitations will be sent from info@meetin.gs %). Make sure you add %(B$info@meetin.gs%) to your email client's address book to ensure safe delivery of the invitation emails."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_register_success.html
+msgid ""
+"You should also subscribe to the ICS calendar feed to get upcoming meetings "
+"automatically into your calendar."
+msgstr "Vous devriez également vous abonner au fil d'information ICS du calendrier pour récupérer les futures rencontres automatiquement dans votre calendrier."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_register_success.html
+msgid "Subscribe to ICS calendar feed"
+msgstr "S'abonner au fil d'information ICS du calendrier"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_register_success.html
+msgid "If you have any questions, you can contact us at %(L$%(B$%1$s%)%)."
+msgstr "Si vous avez des question, vous pouvez nous contacter à %(L$%(B$%1$s%)%)."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_register_success.html
+msgid "Return to website"
+msgstr "Retour au site web"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+#. src/jade/thanksForPaying.jade
+msgid "Thank you!"
+msgstr "Merci !"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid ""
+"%(B$%1$s%) is now preparing the online meeting page where you can further "
+"discuss details, create an agenda, and share materials before the actual "
+"meeting."
+msgstr "%(B$%1$s%) est maintenant en train de préparer la page de rencontre en ligne ou vous pourrez ensuite discuter des détails, créer un agenda, et partager des éléments avant la vraie rencontre."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid ""
+"When ready, we will send you an automated notification containing a link to "
+"the meeting page."
+msgstr "Une fois prêt, nous vous enverrons une notification automatisée contenant un lien vers la page de la rencontre."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "Title://context:meeting title"
+msgstr "Titre:"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "When:"
+msgstr "Quand :"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "We've sent the meeting request"
+msgstr "Nous avons envoyé la demande de rendez-vous"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+msgid "%1$s will now accept or decline your request."
+msgstr "%1$s vont accepter ou décliner votre demande."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "Where:"
+msgstr "Où :"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "Who:"
+msgstr "Qui :"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+msgid "Add to calendar:"
+msgstr "Ajouter à l'agenda :"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "Google calendar"
+msgstr "Google Agenda"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "Other ICS"
+msgstr "Autre ICS"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+msgid ""
+"What happens next? The recipient will now accept or decline your request to "
+"meet. We will send you a notification when we have a response."
+msgstr "Que se passe-t-il ensuite ? Le destinataire va accepter ou décliner votre demande de rendez-vous. Nous vous enverrons une notification lorsque nous aurons une réponse."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "Back to matchmaking list"
+msgstr "Retour à la liste de rapprochement"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid ""
+"Do you want to have a similar meeting page? It's easy and works with your "
+"calendar."
+msgstr "Voulez-vous avoir une page de rencontre similaire ? C'est facile et ça fonctionne avec votre agenda."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "Claim your free Meet Me page now"
+msgstr "Réclamez votre page Me Rencontrer gratuite maintenant"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_user_register_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "Check your inbox to continue"
+msgstr "Vérifiez votre boîte de réception pour continuer"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_user_register_success.html
+#. src/jade/meetmeSuccess.jade
+msgid "We have sent you an email to %(B$%1$s%) from %(B$info@meetin.gs%)."
+msgstr "Nous vous avons envoyé un e-mail à %(B$%1$s%) venant de %(B$info@meetin.gs%)."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_user_register_success.html
+#. src/jade/meetmeSuccess.jade
+msgid ""
+"Open the email and %(B$confirm your request to meet%) by following the link "
+"in the email. If you have not received the email, please check your spam "
+"folder."
+msgstr "Ouvrez l'e-mail et %(B$confirmez votre requête de rencontre%) en cliquant sur le lien dans l'e-mail. Si vous n'avez pas reçu l'e-mail, veuillez vérifier votre dossier de courrier indésirable."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_user_register_success.html
+#. src/jade/meetmeSuccess.jade
+msgid ""
+"You have %(B$24 hours%) to confirm, after which the reservation we're "
+"holding will be released to others."
+msgstr "Vous avez %(B$24 heures%) pour confirmer, après quoi la réservation que nous retenons sera mise à disposition d'autres personnes. "
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_validate.html
+msgid "Confirm your registration"
+msgstr "Confirmez votre inscription"
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_validate.html
+msgid ""
+"Check your email %(B$%1$s%) and follow the instructions on how to complete "
+"the registration to the matchmaking."
+msgstr "Vérifiez votre e-mail %(B$%1$s%) et suivez les instructions sur comment compléter votre inscription au rapprochement."
+
+#. html/js/dicole/meetings/dtmpl/matchmaking_validate.html
+msgid ""
+"The email was sent from %(B$info@meetin.gs%). Be sure to check your junk "
+"mail folder in case you did not receive the email."
+msgstr "L'e-mail a été envoyé par %(B$info@meetin.gs%). Veuillez vous assurez de vérifier votre dossier de courrier indésirable au cas où vous n'auriez pas reçu le mail."
+
+#. html/js/dicole/meetings/dtmpl/mobile_upload_instructions.html
+msgid "Mobile Upload Instructions"
+msgstr "Instructions pour l'envoi par mobile"
+
+#. html/js/dicole/meetings/dtmpl/mobile_upload_instructions.html
+msgid "You can mail materials to:"
+msgstr "Vous pouvez envoyer des éléments par mail à : "
+
+#. html/js/dicole/meetings/dtmpl/mobile_upload_instructions.html
+msgid "Mail Integration"
+msgstr "Intégration au mail"
+
+#. html/js/dicole/meetings/dtmpl/mobile_upload_instructions.html
+msgid ""
+"You can add comments and material by mailing to the meeting's unique "
+"address. Text will be added as meeting notes and attachments as meeting "
+"materials."
+msgstr "Vous pouvez ajouter des commentaires et des éléments en envoyant un mail à l'adresse unique de la rencontre. Du texte sera ajouté en tant que notes de réunion et les pièces jointes comme des éléments de réunion."
+
+#. html/js/dicole/meetings/dtmpl/mobile_upload_instructions.html
+msgid "You can join the meeting by sending this email:"
+msgstr "Vous pouvez rejoindre la rencontre en envoyant cet e-mail : "
+
+#. html/js/dicole/meetings/dtmpl/mobile_upload_instructions.html
+msgid "To:"
+msgstr "À :"
+
+#. html/js/dicole/meetings/dtmpl/mobile_upload_instructions.html
+msgid "Subject:"
+msgstr "Sujet :"
+
+#. html/js/dicole/meetings/dtmpl/mobile_upload_instructions.html
+msgid "JOIN"
+msgstr "DEVENIR MEMBRE"
+
+#. html/js/dicole/meetings/dtmpl/mobile_upload_instructions.html
+msgid "Easy way for others to invite themselves"
+msgstr "Moyen facile pour les autres de s'inviter eux-mêmes"
+
+#. html/js/dicole/meetings/dtmpl/mobile_upload_instructions.html
+msgid ""
+"Sometimes you don't know the email addresses for all of the people you are "
+"meeting with. If you are in the meeting with them, you can just share the "
+"meeting email address from above and ask them to send in an email with JOIN "
+"%1$s as the subject."
+msgstr "Quelques fois vous ne connaissez pas les adresses e-mail de toutes les personnes que vous allez rencontrer. Si vous êtes dans la rencontre avec eux, vous pouvez juste partager l'adresse e-mail de la rencontre ci-dessus et leur demander d'envoyer un e-mail avec REJOINDRE %1$s comme sujet."
+
+#. html/js/dicole/meetings/dtmpl/navigation_create_buttons.html
+msgid "ORGANIZE A MEETING"
+msgstr "ORGANISER UNE RENCONTRE"
+
+#. html/js/dicole/meetings/dtmpl/navigation_create_buttons.html
+msgid "Create a New Meeting"
+msgstr "Créer une nouvelle rencontre"
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+#. src/jade/meetingNextAction.jade
+msgid "The meeting is over. Do you want to organize a follow-up meeting?"
+msgstr "La rencontre est terminée. Voulez-vous organiser un suivi de rencontre ?"
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+#. src/jade/meetingNextAction.jade
+msgid "Schedule a follow-up"
+msgstr "Arranger un suivi"
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+msgid ""
+"Click \"Confirm\" to customize and send the confirmation after preparing the"
+" meeting page."
+msgstr "Cliquer sur « Confirmer » pour personnaliser et envoyer la confirmation après avoir préparé la page de la rencontre."
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+msgid ""
+"Click \"Ready\" to customize and send the invitations after preparing the "
+"meeting page."
+msgstr "Cliquez sur « Prêt » pour personnaliser et envoyer les invitations après avoir préparé la page de la rencontre."
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+msgid "You can set the meeting \"Ready\" after adding at least one participant."
+msgstr "Vous pouvez afficher la rencontre comme « Prête » après avoir ajouté au moins un participant."
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+msgid "Draft"
+msgstr "Brouillon"
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+msgid ""
+"This meeting is not yet confirmed. Fill in the meeting details and click "
+"confirm to proceed."
+msgstr "Cette rencontre n'est pas encore confirmée. Remplissez les détails de la rencontre et cliquez sur confirmer pour poursuivre."
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+msgid ""
+"This meeting is a draft. Fill in the meeting details and choose who you want"
+" to invite. We will send the invitations after you click ready."
+msgstr "Cette rencontre est un brouillon. Remplissez les détails de la rencontre et choisissez qui vous voulez inviter. Nous n'enverrons les invitations qu'après que vous cliquiez sur prêt."
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+msgid ""
+"This meeting is a draft. Fill in the meeting details and choose who you want"
+" to invite. We will send the invitations only after you are ready."
+msgstr "Cette rencontre est un brouillon. Remplissez les détails de la rencontre et choisissez qui vous voulez inviter. Nous n'enverrons les invitations que lorsque vous serez prêt."
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+msgid "Ready"
+msgstr "Prêt"
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+msgid "You need to add people before setting the meeting ready."
+msgstr "Vous devez ajouter des personnes avant d'afficher la rencontre comme prête."
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+#. html/js/dicole/meetings/dtmpl/rsvp_bar.html
+msgid "Are you attending the meeting?"
+msgstr "Assisterez-vous à la rencontre ?"
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+#. html/js/dicole/meetings/dtmpl/rsvp_bar.html
+#. html/js/dicole/meetings/dtmpl/rsvp_profile.html
+msgid "Attending"
+msgstr "Participe"
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+#. html/js/dicole/meetings/dtmpl/rsvp_bar.html
+#. html/js/dicole/meetings/dtmpl/rsvp_profile.html
+msgid "Not attending"
+msgstr "Ne participera pas"
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+msgid "Can we help you get started?"
+msgstr "Pouvons-nous vous aider à démarrer ?"
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+#. html/js/dicole/meetings/dtmpl/tutorial_chooser.html
+msgid "Watch tutorial"
+msgstr "Regarder le tutoriel"
+
+#. html/js/dicole/meetings/dtmpl/next_action_bar.html
+#. html/js/dicole/meetings/dtmpl/tutorial_chooser.html
+msgid "Hide forever"
+msgstr "Cacher définitivement"
+
+#. html/js/dicole/meetings/dtmpl/no_shared_notes_found.html
+msgid "No notes found."
+msgstr "Pas de notes trouvées."
+
+#. html/js/dicole/meetings/dtmpl/quickbar.html
+#. src/jade/headerBase.jade
+msgid "Choose a meeting..."
+msgstr "Choisissez une rencontre..."
+
+#. html/js/dicole/meetings/dtmpl/remove_media.html
+msgid "Remove file"
+msgstr "Enlever le fichier"
+
+#. html/js/dicole/meetings/dtmpl/remove_media.html
+#. html/js/dicole/meetings/dtmpl/remove_page.html
+msgid "Are you sure you want to remove"
+msgstr "Êtes-vous sûr(e) de vouloir retirer"
+
+#. html/js/dicole/meetings/dtmpl/remove_meeting.html
+msgid "Confirm remove"
+msgstr "Confirmer le retrait"
+
+#. html/js/dicole/meetings/dtmpl/remove_meeting.html
+msgid "Are you sure you want to remove %1$s?"
+msgstr "Êtes-vous sûr(e) de vouloir retirer %1$s ?"
+
+#. html/js/dicole/meetings/dtmpl/remove_page.html
+msgid "Remove document"
+msgstr "Retirer le document"
+
+#. html/js/dicole/meetings/dtmpl/remove_self_from_meeting.html
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid "Leave meeting"
+msgstr "Quitter la rencontre"
+
+#. html/js/dicole/meetings/dtmpl/remove_self_from_meeting.html
+msgid ""
+"Are you sure you want to remove yourself from this meeting? You need to be "
+"invited to access it again."
+msgstr "Êtes-vous sûr(e) de vouloir vous retirer de cette rencontre ? Vous devrez être invité pour y regagner l'accès."
+
+#. html/js/dicole/meetings/dtmpl/remove_self_from_meeting.html
+msgid "No"
+msgstr "Non"
+
+#. html/js/dicole/meetings/dtmpl/rename_media.html
+msgid "Rename Material"
+msgstr "Renommer l'élément"
+
+#. html/js/dicole/meetings/dtmpl/rename_media.html
+#. html/js/dicole/meetings/dtmpl/rename_page.html
+msgid "Rename"
+msgstr "Renommer"
+
+#. html/js/dicole/meetings/dtmpl/rename_page.html
+msgid "Rename Document"
+msgstr "Renommer le document"
+
+#. html/js/dicole/meetings/dtmpl/replace_media.html
+msgid "Replace Material"
+msgstr "Remplacer l'élément"
+
+#. html/js/dicole/meetings/dtmpl/replace_media.html
+msgid "Choose a file from your computer"
+msgstr "Choisissez un fichier depuis votre ordinateur"
+
+#. html/js/dicole/meetings/dtmpl/replace_media.html
+msgid "Replacing the material will retain all the associated comments."
+msgstr "Remplacer l'élément conservera tous les commentaires associés."
+
+#. html/js/dicole/meetings/dtmpl/rsvp_profile.html
+msgid "RSVP status"
+msgstr "Statut RSVP"
+
+#. html/js/dicole/meetings/dtmpl/set_date_confirm.html
+msgid "Confirm changes"
+msgstr "Confirmer les changements"
+
+#. html/js/dicole/meetings/dtmpl/set_date_confirm.html
+msgid "We'll notify everyone about the changed time."
+msgstr "Nous préviendrons tout le monde des changements d'horaires."
+
+#. html/js/dicole/meetings/dtmpl/set_date_confirm.html
+msgid "Ask participants to RSVP again?"
+msgstr "Demander à nouveau aux participants de bien vouloir confirmer leur présence ?"
+
+#. html/js/dicole/meetings/dtmpl/set_date_confirm.html
+msgid "Note that we'll clear the old answers if you ask for new RSVP."
+msgstr "Sachez que nous effacerons les anciennes réponses si vous souhaitez une nouvelle demande de confirmation de présence."
+
+#. html/js/dicole/meetings/dtmpl/set_date.html
+msgid "Date and time settings"
+msgstr "Réglages de la date et de l'heure"
+
+#. html/js/dicole/meetings/dtmpl/set_date.html
+msgid "OR"
+msgstr "OU"
+
+#. html/js/dicole/meetings/dtmpl/set_date.html
+msgid "Manage scheduling options"
+msgstr "Gérer les options de planification"
+
+#. html/js/dicole/meetings/dtmpl/set_date.html
+msgid "Suggest multiple dates"
+msgstr ""
+
+#. html/js/dicole/meetings/dtmpl/set_date.html
+msgid "Date locked"
+msgstr "Date verrouillée"
+
+#. html/js/dicole/meetings/dtmpl/set_date.html
+#. html/js/dicole/meetings/dtmpl/set_location.html
+msgid "This is meeting is linked to a matchmaking event."
+msgstr "Ce rendez-vous est lié à un événement de mise en relation."
+
+#. html/js/dicole/meetings/dtmpl/set_location.html
+msgid "Choose the Meeting Location"
+msgstr "Choisissez le lieu du rendez-vous"
+
+#. html/js/dicole/meetings/dtmpl/set_location.html
+msgid ""
+"Do you need a physical meeting space near %1$s (%(L$change%))? Here are a "
+"few options: "
+msgstr "Avez-vous besoin d'un lieu de rendez-vous physique près de %1$s (%(L$changer%))? Voici quelques options :"
+
+#. html/js/dicole/meetings/dtmpl/set_location.html
+#. html/js/dicole/meetings/dtmpl/set_title.html
+#. src/jade/meetmeClaim.jade
+msgid "Skip"
+msgstr "Passer"
+
+#. html/js/dicole/meetings/dtmpl/set_location.html
+msgid "Location locked"
+msgstr "Lieu verrouillé"
+
+#. html/js/dicole/meetings/dtmpl/set_title.html
+msgid "Set Title"
+msgstr "Régler le titre"
+
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid "Download vCard"
+msgstr "Télécharger une vCard"
+
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid ""
+"Looking a bit empty here. Fill out your profile so others know who you are."
+msgstr "Ça à l'air un peu vide par ici. Remplissez votre profil pour que les autres sachent qui vous êtes."
+
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid "Fill profile"
+msgstr "Remplir le profil"
+
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid "Options"
+msgstr "Options"
+
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid "Send updates through email for this meeting"
+msgstr "Envoyer des mises à jour pour cette rencontre via e-mail"
+
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid "Manage"
+msgstr "Gérer"
+
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid "Participant can manage this meeting?"
+msgstr "Le participant peut gérer cette rencontre ?"
+
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid "Resend invite"
+msgstr "Renvoyer une invitation"
+
+#. html/js/dicole/meetings/dtmpl/show_user.html
+msgid "Remove participant"
+msgstr "Enlever un participant"
+
+#. html/js/dicole/meetings/dtmpl/template_chooser.html
+msgid "New meeting"
+msgstr "Nouveau rendez-vous"
+
+#. html/js/dicole/meetings/dtmpl/template_chooser.html
+msgid "Welcome to Your Meeting Page"
+msgstr "Bienvenue sur votre Page Rendez-vous"
+
+#. html/js/dicole/meetings/dtmpl/template_chooser.html
+msgid ""
+"This is where you collaborate around the meeting. Start from scratch or use "
+"an existing calendar event as a foundation for the meeting:"
+msgstr "C'est ici que vous collaborez autour du rendez-vous. Démarrez de zéro ou utilisez un agenda d'événement existant comme base pour le rendez-vous :"
+
+#. html/js/dicole/meetings/dtmpl/template_chooser.html
+msgid "Blank meeting"
+msgstr "Rendez-vous vide"
+
+#. html/js/dicole/meetings/dtmpl/template_chooser.html
+msgid "Copy from calendar"
+msgstr "Copier depuis l'agenda"
+
+#. html/js/dicole/meetings/dtmpl/tutorial_chooser.html
+msgid "Welcome to the meeting page. Can we help you get started?"
+msgstr "Bienvenue sur la page de rencontre. Pouvons-nous vous aider à démarrer ?"
+
+#. html/js/dicole/meetings/dtmpl/user_guide_email.html
+msgid "Download (pdf | 0.2mb)"
+msgstr "Télécharger (PDF | 0,2 Mo)"
+
+#. html/js/dicole/meetings/dtmpl/user_guide_email.html
+#. html/js/dicole/meetings/dtmpl/user_guide.html
+#. html/js/dicole/meetings/dtmpl/user_guide_pro.html
+msgid "Is the text too small? Click above for fullscreen."
+msgstr "Le texte est-il trop petit ? Cliquez ci-dessus pour passer en plein écran"
+
+#. html/js/dicole/meetings/dtmpl/user_guide.html
+msgid "Download (pdf | 2mb)"
+msgstr "Télécharger (PDF | 2 Mo)"
+
+#. html/js/dicole/meetings/dtmpl/user_guide_menu.html
+msgid "Getting Started Guide (Basic features)"
+msgstr "Guide de démarrage (fonctionnalités de base)"
+
+#. html/js/dicole/meetings/dtmpl/user_guide_menu.html
+msgid "Getting Started Guide (Pro features)"
+msgstr "Guide de démarrage (fonctionnalités Pro)"
+
+#. html/js/dicole/meetings/dtmpl/user_guide_menu.html
+msgid "Email Communications Instructions"
+msgstr "Instructions sur les communications e-mail"
+
+#. html/js/dicole/meetings/dtmpl/user_guide_pro.html
+msgid "Download (pdf | 0.7mb)"
+msgstr "Télécharger (PDF | 0,7 Mo)"
+
+#. src/jade/agentBookingConfirm.jade
+msgid "Confirm reservation"
+msgstr ""
+
+#. src/jade/agentBookingConfirm.jade
+msgid "Change location"
+msgstr ""
+
+#. src/jade/agentBookingConfirm.jade
+msgid "Homepage"
+msgstr ""
+
+#. src/jade/agentBookingConfirm.jade
+msgid "Customer service agent"
+msgstr ""
+
+#. src/jade/agentBookingConfirm.jade
+msgid "Customer name"
+msgstr ""
+
+#. src/jade/agentBookingConfirm.jade
+#. src/jade/meetingLctTeleconf.jade
+#. src/jade/meetmeConfig.jade
+msgid "Phone number"
+msgstr "Numéro de téléphone"
+
+#. src/jade/agentBookingConfirm.jade
+msgid "Birth date"
+msgstr ""
+
+#. src/jade/agentBookingConfirm.jade
+msgid "Address"
+msgstr ""
+
+#. src/jade/agentBookingConfirm.jade
+#. src/jade/agentBooking.jade
+msgid "Area"
+msgstr ""
+
+#. src/jade/agentBookingConfirm.jade
+#. src/jade/agentBooking.jade
+msgid "Language"
+msgstr ""
+
+#. src/jade/agentBookingConfirm.jade
+msgid "Message to agenda:"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Reserve a time"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Choose an area"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Type"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Choose meeting type"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Choose a language"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Office"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Choose an office"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Level"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Choose a level"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Agent"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "Choose an agent"
+msgstr ""
+
+#. src/jade/agentBooking.jade
+msgid "You need to select meeting type and either an office or an agent."
+msgstr ""
+
+#. src/jade/agentBookingThanks.jade
+msgid "The booking has been completed succesfully."
+msgstr ""
+
+#. src/jade/browserWarning.jade
+msgid ""
+"Please note that Meetin.gs might still have some problems with your browser."
+" If possible, please consider using a more modern browser while we fix "
+"things."
+msgstr "Veuillez noter que Meetin.gs pourrait encore avoir quelques problèmes avec votre navigateur. Si possible, veuillez envisager d'utiliser un navigateur plus récent pendant que nous arrangeons les choses."
+
+#. src/jade/connectionError.jade
+msgid "Sorry"
+msgstr "Pardon"
+
+#. src/jade/connectionError.jade
+msgid "Unfortunately we are unable to connect to our servers."
+msgstr "Malheureusement nous ne pouvons pas établir la connexion avec nos serveurs."
+
+#. src/jade/connectionError.jade
+msgid "Try again"
+msgstr "Réessayer"
+
+#. src/jade/footer.jade
+msgid "Getting Started"
+msgstr "Démarrer"
+
+#. src/jade/footer.jade
+msgid "Powered by %(L$Meetin.gs%)"
+msgstr "Fonctionne grâce à %(L$Meetin.gs%) "
+
+#. src/jade/footer.jade
+msgid "Blog"
+msgstr "Blog"
+
+#. src/jade/footer.jade
+msgid "Support"
+msgstr "Support"
+
+#. src/jade/footer.jade
+msgid "Contact"
+msgstr "Contact"
+
+#. src/jade/footer.jade
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#. src/jade/footer.jade
+msgid "Takedown policy"
+msgstr "Politique de retrait"
+
+#. src/jade/footer.jade
+msgid "Terms of Service"
+msgstr "Conditions d'utilisation"
+
+#. src/jade/headerBase.jade
+msgid "Cancel registration"
+msgstr "Annuler l'inscription"
+
+#. src/jade/headerBase.jade
+msgid "Search meetings"
+msgstr "Réglages de la recherche"
+
+#. src/jade/headerBase.jade
+msgid "Notifications"
+msgstr "Notifications"
+
+#. src/jade/headerBase.jade
+msgid "My Meetings"
+msgstr "Mes rendez-vous"
+
+#. src/jade/headerBase.jade
+msgid "Already a Meetin.gs user? Sign in here"
+msgstr "Déjà utilisateur de Meetin.gs ? Connectez-vous ici"
+
+#. src/jade/headerBase.jade
+msgid "Add new"
+msgstr "Ajouter nouveau"
+
+#. src/jade/headerBase.jade
+#. src/jade/userSettingsCover.jade
+#. src/jade/userSettings.jade
+msgid "Timeline"
+msgstr "Historique"
+
+#. src/jade/headerBase.jade
+#. src/jade/meetmeMatchmakerSelect.jade
+msgid "Meet Me page"
+msgstr "Page Me Rencontrer"
+
+#. src/jade/headerBase.jade
+msgid "Agent booking"
+msgstr ""
+
+#. src/jade/headerBase.jade
+msgid "Profile"
+msgstr "Profil"
+
+#. src/jade/headerBase.jade
+#. src/jade/meetmeConfig.jade
+msgid "Settings"
+msgstr "Paramètres"
+
+#. src/jade/headerBase.jade
+msgid "Logout"
+msgstr "Se déconnecter"
+
+#. src/jade/headerSearchOptions.jade
+msgid "Time not set"
+msgstr "Heure non réglée"
+
+#. src/jade/highlightCard.jade
+msgid "Created on %1$s"
+msgstr "Créé le %1$s "
+
+#. src/jade/meetingCard.jade
+msgid "Imported from Google Calendar. Click here to hide."
+msgstr "Importé depuis Google Agenda. Cliquez ici pour cacher."
+
+#. src/jade/meetingCard.jade
+msgid "Imported from your phone calendar. Click here to hide."
+msgstr "Importé depuis l'agenda de votre téléphone. Cliquez ici pour masquer."
+
+#. src/jade/meetingCard.jade
+msgid "More"
+msgstr "Plus"
+
+#. src/jade/meetingLctBar.jade
+msgid "Open Skype to receive calls"
+msgstr "Ouvrez Skype pour recevoir des appels"
+
+#. src/jade/meetingLctBar.jade
+msgid "Join Skype conference call"
+msgstr "Joindre la conférence Skype"
+
+#. src/jade/meetingLctBar.jade
+msgid "You need to have %(L$Skype 5.0%) or greater installed."
+msgstr "Vous devez avoir installé %(L$Skype 5.0%) ou supérieur."
+
+#. src/jade/meetingLctBar.jade
+msgid ""
+"Make sure that under \"Skype > Preferences > Privacy\" you allow calls from "
+"anyone."
+msgstr "Assurez-vous que sous « Skype > Préférences > Vie privée » vous autorisez les appels venant de n'importe qui."
+
+#. src/jade/meetingLctBar.jade
+msgid "Join the teleconference"
+msgstr "Rejoindre la téléconférence"
+
+#. src/jade/meetingLctBar.jade
+msgid "Is the button not working? Call manually"
+msgstr "Le bouton ne marche pas ? Appeler manuellement"
+
+#. src/jade/meetingLctBar.jade
+msgid "with pin %1$s"
+msgstr "avec l'épingle %1$s"
+
+#. src/jade/meetingLctBar.jade
+msgid "Open the Hangout"
+msgstr "Ouvrir le Hangout"
+
+#. src/jade/meetingLctBar.jade
+msgid ""
+"This meeting has an active Google Hangout. Click the button above to join."
+msgstr "Cette rencontre a un Google Hangout actif. Cliquez sur le bouton ci-dessus pour rejoindre."
+
+#. src/jade/meetingLctBar.jade
+msgid ""
+"Please open the Hangout to allow participants to join the online conference."
+msgstr "Veuillez ouvrir le Hangout pour permettre aux participants de rejoindre la conférence en ligne."
+
+#. src/jade/meetingLctBar.jade
+msgid "Please wait while the organizer prepares the hangout."
+msgstr "Veuillez patienter pendant que l'organisateur prépare le Hangout."
+
+#. src/jade/meetingLctBar.jade
+msgid "Open Lync"
+msgstr "Ouvrir Lync"
+
+#. src/jade/meetingLctBar.jade
+msgid ""
+"This meeting is using Microsoft Lync. Click the button above to open Lync."
+msgstr "Cette rencontre utilise Microsoft Lync. Cliquez sur le bouton ci-dessus pour ouvrir Lync."
+
+#. src/jade/meetingLctBar.jade
+msgid "This meeting is using a custom tool. Click the button above to join."
+msgstr "Cette rencontre utilise un outil personnalisé. Cliquez sur le bouton ci-dessus pour rejoindre."
+
+#. src/jade/meetingLctCustomUrl.jade
+msgid "Custom URL settings"
+msgstr "Réglages personnalisés d'URL"
+
+#. src/jade/meetingLctCustomUrl.jade
+#. src/jade/meetmeConfig.jade
+msgid ""
+"Enter a link with instructions for joining the meeting with your custom "
+"tool."
+msgstr "Entrez un lien avec des instructions pour rejoindre la réunion avec votre outil personnalisé."
+
+#. src/jade/meetingLctCustomUrl.jade
+#. src/jade/meetmeConfig.jade
+msgid "Web address (URL)"
+msgstr "Adresse Web (URL)"
+
+#. src/jade/meetingLctCustomUrl.jade
+#. src/jade/meetmeConfig.jade
+msgid "Copy the URL here"
+msgstr "Copier l'URL ici"
+
+#. src/jade/meetingLctCustomUrl.jade
+#. src/jade/meetmeConfig.jade
+msgid "Name of the tool"
+msgstr "Nom de l'outil"
+
+#. src/jade/meetingLctCustomUrl.jade
+#. src/jade/meetmeConfig.jade
+msgid "Tool instructions for participants"
+msgstr "Instructions des outils pour les participants"
+
+#. src/jade/meetingLctHangouts.jade
+msgid "Hangouts settings"
+msgstr "Réglages Hangouts"
+
+#. src/jade/meetingLctHangouts.jade
+#. src/jade/meetmeConfig.jade
+msgid "Hangouts will be enabled for this meeting."
+msgstr "Hangouts sera activé pour cette rencontre."
+
+#. src/jade/meetingLctHangouts.jade
+#. src/jade/meetmeConfig.jade
+msgid ""
+"NOTE: You and the participants will receive the Hangouts url before the "
+"meeting."
+msgstr "REMARQUE : Les participants et vous-même recevrez l'URL des Hangouts avant la réunion."
+
+#. src/jade/meetingLctLync.jade
+msgid "Lync settings"
+msgstr "Réglages Lync"
+
+#. src/jade/meetingLctLync.jade
+msgid "Select one the options below to activate Lync for this meeting."
+msgstr "Sélectionnez une des options ci-dessous pour activer Lync pour cette rencontre."
+
+#. src/jade/meetingLctLync.jade
+msgid "Paste your Lync invitation"
+msgstr "Coller votre invitation Lync"
+
+#. src/jade/meetingLctLync.jade
+msgid "How to get the invitation?"
+msgstr "Comment obtenir l'invitation ?"
+
+#. src/jade/meetingLctLync.jade
+msgid "Office 365 user: Create a new meeting in the  %(L$Web scheduler%)."
+msgstr "Utilisateur Office 365 : Créez une nouvelle réunion dans le %(L$planificateur Web%)."
+
+#. src/jade/meetingLctLync.jade
+msgid "Desktop user: Press \"New Lync Meeting\" in your Outlook Calendar."
+msgstr "Utilisateur Desktop : Appuyez sur « Nouvelle réunion Lync » dans votre calendrier Outlook."
+
+#. src/jade/meetingLctLync.jade
+msgid "Use Lync address (SIP)"
+msgstr "Utiliser l'adresse Lync (SIP)"
+
+#. src/jade/meetingLctLync.jade
+#. src/jade/meetmeConfig.jade
+msgid "Your Lync address"
+msgstr "Votre adresse Lync"
+
+#. src/jade/meetingLctPicker.jade
+msgid "Live communication"
+msgstr "Communication en live"
+
+#. src/jade/meetingLctPicker.jade
+msgid "Choose the live communication tool for this meeting."
+msgstr "Choisir l'outil de communication en live pour cette rencontre."
+
+#. src/jade/meetingLctPicker.jade
+#. src/jade/meetmeConfig.jade
+msgid ""
+"15 minutes before the meeting participants will receive a notification "
+"containing instructions and a link to join the meeting remotely."
+msgstr "15 minutes avant la réunion, les participants recevront une notification contenant des instructions et un lien pour rejoindre la réunion à distance."
+
+#. src/jade/meetingLctPicker.jade
+#. src/jade/meetmeConfig.jade
+msgid "Skype call"
+msgstr "Appel Skype"
+
+#. src/jade/meetingLctPicker.jade
+#. src/jade/meetmeConfig.jade
+msgid "Teleconference"
+msgstr "Téléconférence"
+
+#. src/jade/meetingLctPicker.jade
+#. src/jade/meetmeConfig.jade
+msgid "Custom Tool"
+msgstr "Outil personnalisé"
+
+#. src/jade/meetingLctPicker.jade
+#. src/jade/meetmeConfig.jade
+msgid "Disable"
+msgstr "Désactiver"
+
+#. src/jade/meetingLctSkype.jade
+msgid "Skype settings"
+msgstr "Réglages Skype"
+
+#. src/jade/meetingLctSkype.jade
+#. src/jade/meetmeConfig.jade
+msgid ""
+"Type in the Skype account that will be used to receive the calls from the "
+"participants."
+msgstr "Entrez le compte Skype qui sera utilisé pour recevoir les appels des participants."
+
+#. src/jade/meetingLctSkype.jade
+#. src/jade/meetmeConfig.jade
+msgid "Skype account name"
+msgstr "Compte Skype"
+
+#. src/jade/meetingLctSkype.jade
+#. src/jade/meetmeConfig.jade
+msgid ""
+"NOTE: If you are not connected with the participants in Skype, remember to "
+"allow incoming calls from anyone using Skype privacy settings."
+msgstr "REMARQUE : Si vous n'êtes pas connecté avec les participants sur Skype, n'oubliez pas d'autoriser les appels entrants de tout le monde dans les paramètres de vie privée de Skype."
+
+#. src/jade/meetingLctTeleconf.jade
+msgid "Teleconference settings"
+msgstr "Réglages de la téléconférence"
+
+#. src/jade/meetingLctTeleconf.jade
+#. src/jade/meetmeConfig.jade
+msgid "Enter the teleconference number given by your chosen operator."
+msgstr "Entrez le numéro de téléconférence donné par l'opérateur de votre choix."
+
+#. src/jade/meetingLctTeleconf.jade
+#. src/jade/meetmeConfig.jade
+msgid ""
+"NOTE: If you know your pin code you can preset it here to allow participants"
+" to join without having to type the pin when making the call."
+msgstr "REMARQUE : Si vous connaissez votre code PIN, vous pouvez le prédéfinir ici pour autoriser les participants à rejoindre la réunion sans avoir à taper le PIN lors de l'appel."
+
+#. src/jade/meetingMaterials.jade
+msgid "No material for this meeting."
+msgstr "Pas d'élément pour cette rencontre."
+
+#. src/jade/meetingMaterialUploads.jade
+#. src/jade/meetmePresetFiles.jade
+msgid "Add new material"
+msgstr "Ajouter un nouvel élément"
+
+#. src/jade/meetingMaterialUploads.jade
+msgid "Drag & drop materials here"
+msgstr "Faites glisser les éléments ici"
+
+#. src/jade/meetingNextAction.jade
+msgid "%1$s wants to meet you"
+msgstr "%1$s veut vous rencontrer"
+
+#. src/jade/meetingNextAction.jade
+msgid "Accept or decline?"
+msgstr "Accepter ou refuser ?"
+
+#. src/jade/meetingNextAction.jade
+msgid "Accept"
+msgstr "Accepter"
+
+#. src/jade/meetingSettingsEmail.jade
+#. src/jade/meetingSettings.jade
+msgid "Email settings"
+msgstr "Réglages de l'e-mail"
+
+#. src/jade/meetingSettings.jade
+msgid "Meeting settings"
+msgstr "Réglages de la rencontre"
+
+#. src/jade/meetingSettings.jade
+msgid "Manage meeting email notifications."
+msgstr "Gérer les notifications d'e-mail de la rencontre"
+
+#. src/jade/meetingSettings.jade
+msgid "Participant rights"
+msgstr "Droits des participants"
+
+#. src/jade/meetingSettings.jade
+msgid "Decide what participants are allowed to do."
+msgstr "Décidez ce que les participants ont le droit de faire."
+
+#. src/jade/meetingSettings.jade
+msgid "Upgrade to PRO"
+msgstr "Mettre à niveau pour PRO"
+
+#. src/jade/meetingSettings.jade
+msgid "Customize meetings and get all the benefits of the full suite!"
+msgstr "Personnalisez les réunions et recevez tous les bénéfices de la version complète !"
+
+#. src/jade/meetingSettings.jade
+msgid "Remove meeting"
+msgstr "Retirer la rencontre"
+
+#. src/jade/meetingSettings.jade
+msgid ""
+"If you remove this meeting, you and the participants will no longer be able "
+"to access this meeting and its content."
+msgstr "Si vous retirez cette rencontre, vous et les participants ne pourrez plus accéder à cette rencontre et son contenu."
+
+#. src/jade/meetingSettings.jade
+msgid "Removing meeting..."
+msgstr "Suppression du rendez-vous ..."
+
+#. src/jade/meetingSettings.jade
+msgid "Removing meeting... done. Redirecting to timeline."
+msgstr "Suppression du rendez-vous ... terminée. Redirection vers l'historique."
+
+#. src/jade/meetingSettingsRights.jade
+msgid "Edit participant rights"
+msgstr "Modifier droits participant"
+
+#. src/jade/meetmeBgSelector.jade
+msgid "Select background"
+msgstr "Sélectionner le fond d'écran"
+
+#. src/jade/meetmeBgSelector.jade
+msgid "Upload your own"
+msgstr "Envoyer la vôtre"
+
+#. src/jade/meetmeButtonTips.jade
+msgid "Please take note:"
+msgstr "Veuillez noter : "
+
+#. src/jade/meetmeButtonTips.jade
+msgid ""
+"It is recommended to have at least one public meeting scheduler available to"
+" share your Meet Me cover page. Please add one now."
+msgstr "Il est recommandé d'avoir au moins un planificateur de rencontre public disponible pour partager votre page de couverture Me Rencontrer. Veuillez en ajouter un maintenant."
+
+#. src/jade/meetmeButtonTips.jade
+msgid ""
+"When you are done you can use the \"sharing\" link on top of this screen to "
+"easily embed your \"schedule\" button and share your Meet Me cover page as "
+"well as your private meeting schedulers."
+msgstr "Après avoir fini vous pouvez utiliser le lien « Partager » en haut de cet écran pour intégrer votre bouton « emploi du temps » et partager votre page de couverture Me Rencontrer tout comme vos planificateurs de rencontres privées."
+
+#. src/jade/meetmeButtonTips.jade
+msgid "Ok, got it"
+msgstr "OK, je l'ai"
+
+#. src/jade/meetmeCalendar.jade
+msgid "Already a user? Login here"
+msgstr "Déjà utilisateur ? Se connecter ici"
+
+#. src/jade/meetmeCalendar.jade
+msgid "Linkedin Profile"
+msgstr "Profil Linkedin"
+
+#. src/jade/meetmeCalendar.jade
+msgid "Suggest below the best time to meet with %1$s."
+msgstr "Suggérez en dessous le meilleur moment pour rencontrer %1$s"
+
+#. src/jade/meetmeCalendarOptions.jade
+msgid "Connected calendars: %1$s active %2$s inactive and %3$s new calendars"
+msgstr "Agendas connectés : %1$s actif(s) %2$s inactif(s) et %3$s nouveaux agendas"
+
+#. src/jade/meetmeCalendarOptions.jade
+msgid "change"
+msgstr "changer"
+
+#. src/jade/meetmeCalendarOptions.jade
+msgid "( NOTE: Calendars not configured )"
+msgstr "( NOTE : Agendas non configurés )"
+
+#. src/jade/meetmeCalendarOptions.jade
+msgid "Select which calendars you want to check for your availability"
+msgstr "Sélectionnez sur quels agendas vous voulez vérifier votre disponibilité"
+
+#. src/jade/meetmeClaim.jade
+msgid "Do you want to claim a %(B$Meet Me%) page?"
+msgstr "Voulez-vous demander une page %(B$Rencontrez-moi%) ?"
+
+#. src/jade/meetmeClaim.jade
+msgid ""
+"You are about to register for matchmaking. First select and claim your "
+"personal URL above. Next we'll take you to create and customize your own "
+"%(B$Meet Me%) page for the event. It enables people to use a handy scheduler"
+" to easily propose meetings with you. Later you will also be able to create "
+"additional schedulers for your personal use."
+msgstr "Vous êtes sur le point de vous inscrire aux rencontres. Commencez par sélectionner et revendiquer votre URL personnelle ci-dessus. Nous allons ensuite vous proposer de créer et de personnaliser votre propre page %(B$Me Rencontrer%) pour l'événement. Cela permet aux gens d'utiliser un emploi du temps pratique pour vous proposer facilement des réunions. Vous pourrez ensuite créer d'autres emplois du temps pour votre usage personnel."
+
+#. src/jade/meetmeClaim.jade
+msgid ""
+"%(B$Meet Me%) page is your private or public meeting scheduler page through "
+"which other people can propose meetings with you."
+msgstr "La page %(B$Rencontrez-moi%) est votre page de planification de rendez-vous privée ou publique par laquelle d'autres personnes peuvent vous proposer des rendez-vous. "
+
+#. src/jade/meetmeClaim.jade
+#. src/jade/wizardProfile.jade
+msgid "Save & continue"
+msgstr "Enregistrer et continuer"
+
+#. src/jade/meetmeConfig.jade
+msgid "Preview"
+msgstr "Aperçu"
+
+#. src/jade/meetmeConfig.jade
+msgid "Edit meeting scheduler"
+msgstr "Modifier planificateur de rendez-vous"
+
+#. src/jade/meetmeConfig.jade
+msgid "Meeting scheduler name"
+msgstr "Nom du planificateur de la rencontre"
+
+#. src/jade/meetmeConfig.jade
+msgid "Meeting with %1$s"
+msgstr "Rendez-vous avec %1$s"
+
+#. src/jade/meetmeConfig.jade
+msgid "Hide from the public cover page"
+msgstr "Cacher de la page de couverture publique"
+
+#. src/jade/meetmeConfig.jade
+msgid "Enable direct link & custom background"
+msgstr "Activation du lien direct et de l'arrière-plan personnalisé"
+
+#. src/jade/meetmeConfig.jade
+msgid "Ask for email authentication from requesters"
+msgstr "Demander une authentification par courriel des requérants"
+
+#. src/jade/meetmeConfig.jade
+#. src/jade/meetmeCover.jade
+msgid "Configure Meet Me page"
+msgstr "Configurer la page Me Rencontrer"
+
+#. src/jade/meetmeConfig.jade
+msgid "Direct link"
+msgstr "Lien direct"
+
+#. src/jade/meetmeConfig.jade
+msgid "copy to clipboard"
+msgstr "Copier dans le presse-papier"
+
+#. src/jade/meetmeConfig.jade
+msgid "Your greeting on the %(B$Meet Me%) page:"
+msgstr "Votre salutation sur la page %(B$Me Rencontrer%) : "
+
+#. src/jade/meetmeConfig.jade
+msgid "Pitch video link:"
+msgstr "Lien de la vidéo de présentation :"
+
+#. src/jade/meetmeConfig.jade
+msgid ""
+"The pitch video will be shared with relevant investors and should focus on "
+"your team, product, market, opportunity, stage of your company and what you "
+"are looking for. Product demos are also great. The video behind this link "
+"should be max 2 minutes."
+msgstr "La vidéo de présentation sera partagée avec les investisseurs potentiels et devrait se concentrer sur votre équipe, votre produit, votre marché, votre opportunité, sur le stade auquel se trouve votre entreprise et sur ce que vous recherchez. Les démonstrations de produits sont également une bonne idée. La vidéo derrière ce lien ne devrait pas durer plus de deux minutes."
+
+#. src/jade/meetmeConfig.jade
+#. src/jade/meetmeCover.jade
+msgid "Change background"
+msgstr "Changer le fond d'écran"
+
+#. src/jade/meetmeConfig.jade
+msgid "Communication"
+msgstr "Communication"
+
+#. src/jade/meetmeConfig.jade
+msgid "Calendars"
+msgstr "Agendas"
+
+#. src/jade/meetmeConfig.jade
+msgid "Date picker"
+msgstr "Sélecteur de date"
+
+#. src/jade/meetmeConfig.jade
+#. src/jade/meetmePresetFiles.jade
+msgid "Preset materials"
+msgstr "Contenus prédéfinis"
+
+#. src/jade/meetmeConfig.jade
+msgid "Meeting location:"
+msgstr "Lieu de la rencontre : "
+
+#. src/jade/meetmeConfig.jade
+msgid "The meeting location is fixed for this event."
+msgstr "Le lieu de rendez-vous est fixé pour cet événement."
+
+#. src/jade/meetmeConfig.jade
+msgid "Default meeting location"
+msgstr "Lieu de rencontre par défaut"
+
+#. src/jade/meetmeConfig.jade
+msgid "Choose the live communication tool for the scheduler."
+msgstr "Choisir l'outil de communication en live pour le planificateur."
+
+#. src/jade/meetmeConfig.jade
+msgid "Google Hangouts"
+msgstr "Google Hangouts"
+
+#. src/jade/meetmeConfig.jade
+msgid "Microsoft Lync"
+msgstr "Microsoft Lync"
+
+#. src/jade/meetmeConfig.jade
+msgid "Lync address (SIP)"
+msgstr "Adresse Lync (SIP)"
+
+#. src/jade/meetmeConfig.jade
+msgid ""
+"Preset agenda and upload materials for all the meetings that are booked "
+"using this scheduler. You will be able to fine-tune each individual meeting "
+"before sharing the meeting page with participants."
+msgstr "Prédéfinissez un agenda et mettez en ligne des contenus pour tous les rendez-vous programmés en utilisant ce planificateur. Vous pourrez peaufiner chaque rendez-vous individuel avant de partager la page de rendez-vous avec les participants."
+
+#. src/jade/meetmeConfig.jade
+msgid "Preset meeting title"
+msgstr "Prédéfinir titre de rendez-vous"
+
+#. src/jade/meetmeConfig.jade
+msgid "Preset meeting agenda"
+msgstr "Prédéfinir agenda de rendez-vous"
+
+#. src/jade/meetmeConfig.jade
+msgid "Preset meeting materials are a PRO feature of Meetin.gs."
+msgstr "Les contenus de rendez-vous prédéfinis sont une fonctionnalité PRO de Meetin.gs."
+
+#. src/jade/meetmeConfig.jade
+msgid ""
+"Get your Meetin.gs PRO now to start enjoying all the features included in "
+"the full suite."
+msgstr "Obtenez dès maintenant votre Meetin.gs PRO pour profiter de toutes les fonctionnalités comprises dans la série complète."
+
+#. src/jade/meetmeConfig.jade
+msgid ""
+"Start your free 30-day PRO trial to explore all the features included in the"
+" full suite."
+msgstr "Démarrez votre période d'essai PRO gratuite de 30 jours afin d'explorer toutes les fonctionnalités comprises dans la série complète. "
+
+#. src/jade/meetmeConfig.jade
+msgid "Start your free trial"
+msgstr "Démarrez votre période d'essai gratuite."
+
+#. src/jade/meetmeConfig.jade
+msgid ""
+"Connect your Google Calendar so we can take your calendar into account:"
+msgstr "Connectez votre Agenda Google pour que nous puissions prendre votre calendrier en compte : "
+
+#. src/jade/meetmeConfig.jade
+msgid "Preview availability"
+msgstr "Aperçu de la disponibilité"
+
+#. src/jade/meetmeConfig.jade
+#. src/jade/userSettingsRegional.jade
+msgid "Time zone:"
+msgstr "Fuseau horaire : "
+
+#. src/jade/meetmeConfig.jade
+msgid "Set time zone for the times shown"
+msgstr "Établir le fuseau horaires pour les heures affichées"
+
+#. src/jade/meetmeConfig.jade
+msgid ""
+"Highlight the times you want to make available for others to schedule a "
+"meeting with you at %1$s:"
+msgstr "Mettez en évidence les heures que vous voulez rendre disponibles pour les autres pour arranger une rencontre avec vous à %1$s : "
+
+#. src/jade/meetmeConfig.jade
+msgid ""
+"People can schedule a meeting with me only between the time slots "
+"highlighted below on a weekly basis:"
+msgstr "Les gens ne peuvent arranger une rencontre avec moi que durant les périodes mises en évidence ci-dessous toutes les semaines : "
+
+#. src/jade/meetmeConfig.jade
+msgid ""
+"Note: Your Google Calendar will be taken into account to further block out "
+"unavailable time slots."
+msgstr "Note : Votre Agenda Google sera pris en compte pour bloquer ultérieurement les périodes indisponibles."
+
+#. src/jade/meetmeConfig.jade
+msgid "Previous meeting"
+msgstr "Réunion précédente"
+
+#. src/jade/meetmeConfig.jade
+msgid "Next meeting"
+msgstr "Prochaine réunion"
+
+#. src/jade/meetmeConfig.jade
+msgid "Meeting length"
+msgstr "Durée du rendez-vous"
+
+#. src/jade/meetmeConfig.jade
+msgid "The meeting length is fixed for this event."
+msgstr "La durée de la rencontre est fixée pour cet événement."
+
+#. src/jade/meetmeConfig.jade
+msgid "Time between meetings"
+msgstr "Temps entre les rencontres"
+
+#. src/jade/meetmeConfig.jade
+msgid "Reserve time between meetings"
+msgstr "Réserver du temps entre des réunions"
+
+#. src/jade/meetmeConfig.jade
+msgid "Advance notice"
+msgstr "Avancer la notification"
+
+#. src/jade/meetmeConfirmDelete.jade
+msgid "Remove scheduler"
+msgstr "Retirer le planificateur"
+
+#. src/jade/meetmeConfirmDelete.jade
+msgid "Are you sure you want to remove %1$s. There is no undo."
+msgstr "Êtes-vous sûr de vouloir supprimer %1$s. Il est impossible d'annuler."
+
+#. src/jade/meetmeCover.jade
+msgid "view page"
+msgstr "voir la page"
+
+#. src/jade/meetmeCover.jade
+msgid "sharing"
+msgstr "Partage"
+
+#. src/jade/meetmeCover.jade
+msgid "skip"
+msgstr "passer"
+
+#. src/jade/meetmeCover.jade
+msgid "Configure your %(B$Meet Me%) page"
+msgstr "Configurez votre page %(B$Me Rencontrer%)"
+
+#. src/jade/meetmeCover.jade
+msgid "Claim your free %(B$Meet Me%) page now"
+msgstr "Demandez votre page %(B$Rencontrez-moi%) gratuite dès maintenant"
+
+#. src/jade/meetmeCover.jade
+msgid "Edit profile"
+msgstr "Éditer le profil"
+
+#. src/jade/meetmeCover.jade
+msgid ""
+"Welcome to my meet me page. Unfortunately I have not made any of my "
+"calendars public yet!"
+msgstr "Bienvenue sur ma page rencontrez-moi. Malheureusement je n'ai rendu aucun de mes agendas public pour le moment !"
+
+#. src/jade/meetmeCover.jade
+msgid ""
+"Welcome to my meet me page. Please choose what kind of a meeting you would "
+"like to schedule with me below:"
+msgstr "Bienvenue sur ma page « me rencontrer ». Merci de choisir le type de réunion que vous souhaitez programmer avec moi ci-dessous :"
+
+#. src/jade/meetmeCover.jade
+msgid "Edit greeting text"
+msgstr "Modifier texte de salutation"
+
+#. src/jade/meetmeCover.jade
+msgid "Drag to reorder"
+msgstr "Faites glisser pour réarranger"
+
+#. src/jade/meetmeCover.jade
+msgid "Meeting with "
+msgstr "Réunion avec"
+
+#. src/jade/meetmeCover.jade
+msgid "Private"
+msgstr "Privé"
+
+#. src/jade/meetmeCover.jade
+msgid "Remove Meet Me page"
+msgstr "Enlever la page Rencontrez-moi"
+
+#. src/jade/meetmeCover.jade
+msgid "Add new meeting scheduler"
+msgstr "Ajouter un nouveau planificateur de rencontre"
+
+#. src/jade/meetmeCover.jade
+msgid "Start by adding your first meeting scheduler"
+msgstr "Commencez en ajoutant votre premier planificateur de rencontre"
+
+#. src/jade/meetmeEditDescription.jade
+msgid "Edit welcoming text"
+msgstr "Éditer le texte de bienvenue"
+
+#. src/jade/meetmeEditDescription.jade
+msgid ""
+"Hello! I have made my calendar available to you. Please click on the button "
+"below to start scheduling the meeting."
+msgstr "Bonjour ! Je vous ai donné accès à mon agenda. Veuillez cliquer sur le bouton ci-dessous pour commencer à planifier la rencontre."
+
+#. src/jade/meetmeMatchmakerSelect.jade
+msgid "--- Select ---"
+msgstr "--- Sélectionner ---"
+
+#. src/jade/meetmeMatchmakerSelect.jade
+msgid "Main Meet me page"
+msgstr "Page Me Rencontrer principale"
+
+#. src/jade/meetmeMatchmakerTimespan.jade
+msgid "The time period has been set as:"
+msgstr "La période a été réglée pour : "
+
+#. src/jade/meetmeMatchmakerTimespan.jade
+msgid "Scheduler availability"
+msgstr "Disponibilité du planificateur"
+
+#. src/jade/meetmeMatchmakerTimespan.jade
+msgid "Live starting today"
+msgstr "En direct à commencer d'aujourd'hui"
+
+#. src/jade/meetmeMatchmakerTimespan.jade
+msgid "Preset time period"
+msgstr "Période de temps préréglée"
+
+#. src/jade/meetmeMatchmakerTimespan.jade
+msgid "Starting date and time"
+msgstr "Date et heure de démarrage"
+
+#. src/jade/meetmeMatchmakerTimespan.jade
+msgid "Ending date and time"
+msgstr "Date et heure de fin"
+
+#. src/jade/meetmeMatchmakerUrl.jade
+msgid "Checking url..."
+msgstr "Vérification de l'URL"
+
+#. src/jade/meetmeShare.jade
+msgid "Share your %(B$meet me%) page"
+msgstr "Partagez votre page %(B$Me Rencontrer%)"
+
+#. src/jade/meetmeShare.jade
+#. src/jade/meetmeTimezonePrefs.jade
+#. src/jade/thanksForPaying.jade
+#. src/jade/upgradeSuccess.jade
+#. src/jade/verifyTimezone.jade
+#. src/jade/wizardApps.jade
+msgid "Continue"
+msgstr "Continuer"
+
+#. src/jade/meetmeShare.jade
+msgid "Back"
+msgstr "Retour"
+
+#. src/jade/meetmeShare.jade
+msgid "Choose Meet Me Page to share:"
+msgstr "Choisissez une page Me Rencontrer à partager : "
+
+#. src/jade/meetmeShare.jade
+msgid "Meet Me Cover Page"
+msgstr "Page de couverture « me rencontrer »"
+
+#. src/jade/meetmeShare.jade
+msgid "Default Meet Me page"
+msgstr "Page Me Rencontrer par défaut"
+
+#. src/jade/meetmeShare.jade
+msgid "Copy to clipboard"
+msgstr "Copier dans le presse-papiers"
+
+#. src/jade/meetmeShare.jade
+msgid "Copy and paste the following tagline to your email signature:"
+msgstr "Copiez-collez le slogan suivant dans votre signature e-mail :"
+
+#. src/jade/meetmeShare.jade
+msgid "Schedule a meeting: %1$s"
+msgstr "Organiser une rencontre : %1$s"
+
+#. src/jade/meetmeShare.jade
+msgid "Share with your social networks"
+msgstr "Partager avec vos réseaux sociaux"
+
+#. src/jade/meetmeShare.jade
+msgid "Share the Meet Me page with the contacts in your social networks:"
+msgstr "Partagez la page Rencontrez-moi avec les contacts de vos réseaux sociaux :"
+
+#. src/jade/meetmeShare.jade
+msgid "Here's my Meet Me page where you can book a meeting with me easily:"
+msgstr "Voici ma page Rencontrez-Moi où vous pouvez planifier un rendez-vous avec moi facilement :"
+
+#. src/jade/meetmeShare.jade
+msgid "Generate a %(B$meet me%) button"
+msgstr "Générer un bouton %(B$rencontrez-moi%)"
+
+#. src/jade/meetmeShare.jade
+msgid ""
+"Get your %(B$meet me%) button to share your availability on your website."
+msgstr "Obtenez votre bouton %(B$rencontrez-moi%) pour partager vos disponibilités sur votre site."
+
+#. src/jade/meetmeShare.jade
+msgid "Choose the button:"
+msgstr "Choisir le bouton : "
+
+#. src/jade/meetmeShare.jade
+msgid "Copy and paste the code below into the HTML of your site:"
+msgstr "Copiez-collez le code ci-dessous dans l'HTML de votre site :"
+
+#. src/jade/meetmeShare.jade
+msgid "Generate and send quickmeet links"
+msgstr "Générer et envoyer liens de rencontres rapides"
+
+#. src/jade/meetmeSuccess.jade
+msgid ""
+"Next %1$s will answer your request to meet. We will notify you once we have "
+"a response."
+msgstr "Ensuite %1$s répondra à votre demande de rendez-vous. Nous vous préviendrons lorsque nous aurons une réponse."
+
+#. src/jade/meetmeTimezonePrefs.jade
+msgid "Choose your time"
+msgstr "Choisissez votre horaire"
+
+#. src/jade/meetmeTimezonePrefs.jade
+msgid "Which time zone would you prefer for displaying the available times?"
+msgstr "Quel fuseau horaire préférez-vous pour l'affichage des heures disponibles ?"
+
+#. src/jade/meetmeTimezonePrefs.jade
+msgid "Timezone set for"
+msgstr "Fuseau horaire défini pour"
+
+#. src/jade/meetmeTimezonePrefs.jade
+msgid "Timezone set by"
+msgstr "Fuseau horaire défini par "
+
+#. src/jade/meetmeTimezonePrefs.jade
+#. src/jade/verifyTimezone.jade
+msgid "Current time for this zone is:"
+msgstr "L'heure actuelle pour ce fuseau est :"
+
+#. src/jade/meetmeTimezonePrefs.jade
+msgid "Your time zone "
+msgstr "Votre fuseau horaire"
+
+#. src/jade/meetmeTypeSelector.jade
+msgid "Select icon"
+msgstr "Sélectionner icône "
+
+#. src/jade/newsBar.jade
+msgid "Dismiss"
+msgstr "Rejeter"
+
+#. src/jade/notification.jade
+msgid "Please respond to the invitation: %1$s"
+msgstr "Veuillez répondre à l'invitation : %1$s"
+
+#. src/jade/notification.jade
+msgid "%1$s invited you to %2$s"
+msgstr "%1$s vous a invité à %2$s"
+
+#. src/jade/notification.jade
+msgid "somebody"
+msgstr "quelqu'un"
+
+#. src/jade/notification.jade
+msgid "%1$s added material %2$s in %3$s"
+msgstr "%1$s a ajouté l'élément %2$s dans %3$s"
+
+#. src/jade/notification.jade
+msgid "New participant: %1$s in %2$s"
+msgstr "Nouveau participant : %1$s dans %2$s"
+
+#. src/jade/notification.jade
+msgid "Meeting time was changed to %1$s for %2$s"
+msgstr "L'heure de la rencontre a été modifiée pour %1$s à la place de %2$s"
+
+#. src/jade/notification.jade
+msgid "Meeting time was removed from %1$s"
+msgstr "L'heure de la réunion a été retirée de %1$s"
+
+#. src/jade/notification.jade
+msgid "Meeting location changed to %1$s for %2$s"
+msgstr "Le lieu de la rencontre modifié en %1$s pour %2$s"
+
+#. src/jade/notification.jade
+msgid "%1$s commented %2$s in %3$s"
+msgstr "%1$s a commenté %2$s dans %3$s"
+
+#. src/jade/notification.jade
+msgid "%1$s changed the title of %2$s to %3$s"
+msgstr "%1$s a modifié le titre de %2$s en %3$s"
+
+#. src/jade/notification.jade
+msgid "Meeting time was changed to %1$s"
+msgstr "L'heure de la réunion a été modifiée pour %1$s"
+
+#. src/jade/notification.jade
+msgid "Meetin time was removed from"
+msgstr "L'heure de la réunion a été retirée de"
+
+#. src/jade/notification.jade
+msgid "Meeting location was set to %1$s for %2$s"
+msgstr "Le lieu de la rencontre a été prévu à %1$s pour %2$s"
+
+#. src/jade/notification.jade
+msgid "%1$s from %2$s would like to meet you. Please respond now."
+msgstr "%1$s de %2$s souhaite vous rencontrer. Merci de répondre rapidement."
+
+#. src/jade/notification.jade
+msgid "%1$s would like to meet you. Please respond now."
+msgstr "%1$s souhaiterait vous rencontrer. Merci de réponse rapidement."
+
+#. src/jade/notification.jade
+msgid "%1$s accepted your request to meet."
+msgstr "%1$s a accepté votre demande de rencontre."
+
+#. src/jade/notification.jade
+msgid "%1$s accepted your request and wants to double check your RSVP."
+msgstr "%1$s a accepté votre demande et souhaite que vous confirmiez votre réponse."
+
+#. src/jade/notification.jade
+msgid "%1$s is looking for a suitable time for a meeting."
+msgstr "%1$s recherche une heure appropriée pour une réunion."
+
+#. src/jade/notification.jade
+msgid "We need more input from you to schedule %1$s."
+msgstr "Nous avons besoin de plus de données de votre part pour planifier %1$s."
+
+#. src/jade/notification.jade
+msgid "Time found for %1$s on %2$s."
+msgstr "Heure trouvée pour %1$s le %2$s."
+
+#. src/jade/notification.jade
+msgid "We were unable to find a suitable time for %1$s."
+msgstr "Nous n'avons pas pu trouver une heure appropriée pour %1$s."
+
+#. src/jade/notification.jade
+msgid "Scheduling is stagnant. We are missing responses for %1$s."
+msgstr "La planification stagne. Il nous manque des réponses pour %1$s."
+
+#. src/jade/quickMeets.jade
+msgid "Send invite"
+msgstr "Envoyer invitation"
+
+#. src/jade/sellSubscription.jade
+msgid "Continue using Meetin.gs PRO "
+msgstr "Continuer à utiliser Meetin.gs PRO"
+
+#. src/jade/sellSubscription.jade
+#. src/jade/upgradeForm.jade
+msgid "Upgrade to Meetin.gs PRO"
+msgstr "Passez à la version Meetin.gs PRO"
+
+#. src/jade/sellSubscription.jade
+msgid "Your Meetin.gs trial has expired"
+msgstr "Votre période d'essai Meetin.gs a expiré"
+
+#. src/jade/sellSubscription.jade
+msgid ""
+"Upgrade Meetin.gs now to secure a seamless transition after your trial ends."
+" You will not be charged for the trial period anyways."
+msgstr "Passez à la version supérieure de Meetin.gs dès maintenant pour une transition fluide après l'arrêt de votre période d'essai. La période d'essai ne vous sera pas facturée dans tous les cas. "
+
+#. src/jade/sellSubscription.jade
+msgid ""
+"Thank you for trying Meetin.gs PRO. Upgrade now and claim your first year as"
+" a Meetin.gs PRO user for half the price."
+msgstr "Merci d'essayer Meetin.gs PRO. Abonnez-vous dès maintenant pour profiter de la première année de Meetin.gs PRO à moitié prix."
+
+#. src/jade/sellSubscription.jade
+msgid "Additional Meet Me pages is a Meetin.gs PRO feature."
+msgstr "Les pages Rencontrez-moi supplémentaires sont une fonctionnalité Meetin.gs PRO."
+
+#. src/jade/sellSubscription.jade
+msgid "Google Hangouts, Microsoft Lync and custom options are PRO features."
+msgstr "Google Hangouts, Microsoft Lync et les options de personnalisation sont des fonctionnalités PRO."
+
+#. src/jade/sellSubscription.jade
+msgid "Meetings with more than 6 participants is a PRO feature."
+msgstr "Les rencontres avec plus de six participants est une fonctionnalité PRO."
+
+#. src/jade/sellSubscription.jade
+msgid "Configuring user rights on a per meeting basis is a PRO feature."
+msgstr "La configuration des droits d'utilisateur sur la base du nombre de rendez-vous est une fonctionnalité PRO."
+
+#. src/jade/sellSubscription.jade
+msgid "$ 12"
+msgstr "12 $"
+
+#. src/jade/sellSubscription.jade
+msgid "/ month"
+msgstr "/ mois"
+
+#. src/jade/sellSubscription.jade
+#. src/jade/startTrial.jade
+msgid "Benefits for upgrading:"
+msgstr "Avantages de la version supérieure :"
+
+#. src/jade/sellSubscription.jade
+#. src/jade/startTrial.jade
+msgid "Save everyone from the pain of scheduling meetings."
+msgstr "Épargnez à tout le monde la corvée de planifier des rendez-vous."
+
+#. src/jade/sellSubscription.jade
+#. src/jade/startTrial.jade
+msgid ""
+"Avoid the hassle by gathering all the meeting materials into one place."
+msgstr "Évitez les prises de tête en regroupant tous les contenus de rendez-vous à un seul endroit. "
+
+#. src/jade/sellSubscription.jade
+#. src/jade/startTrial.jade
+msgid ""
+"No more access codes: Join in with phone, Skype, Lync and Hangouts with a "
+"single tap."
+msgstr "Plus de codes d'accès : participez par téléphone, Skype, Lync et Hangouts avec une simple touche."
+
+#. src/jade/sellSubscription.jade
+#. src/jade/startTrial.jade
+msgid "Be notified of meeting updates in an instant."
+msgstr "Soyez prévenu de toutes les informations nouvelles qui concernent vos rendez-vous en un instant. "
+
+#. src/jade/sellSubscription.jade
+#. src/jade/startTrial.jade
+msgid "Unlimited meeting schedulers"
+msgstr "Planificateurs de rendez-vous illimités"
+
+#. src/jade/sellSubscription.jade
+#. src/jade/startTrial.jade
+msgid "Expanded live communication tools"
+msgstr "Outils de communication directe étendus"
+
+#. src/jade/sellSubscription.jade
+#. src/jade/startTrial.jade
+msgid "Visual customization and branding"
+msgstr "Personnalisation visuelle et branding"
+
+#. src/jade/sellSubscription.jade
+#. src/jade/startTrial.jade
+msgid "Unlimited meeting participants"
+msgstr "Participants illimités pour la réunion "
+
+#. src/jade/sellSubscription.jade
+#. src/jade/startTrial.jade
+msgid "Unlimited meeting materials"
+msgstr "Documents de réunion illimités"
+
+#. src/jade/sellSubscription.jade
+msgid "Later"
+msgstr "Plus tard"
+
+#. src/jade/startTrial.jade
+msgid "Free gift! Access the full suite for 30 days."
+msgstr "Cadeau ! La série complète à votre disposition pendant 30 jours. "
+
+#. src/jade/startTrial.jade
+msgid ""
+"Have a good look at our service at your convenience without any commitments."
+" Embrace the full potential offered for increased meeting productivity and "
+"let us know what you think."
+msgstr "Testez nos services comme il vous convient et sans engagement. Laissez-vous tenter par le plein potentiel offert pour une productivité améliorée de vos rendez-vous et dîtes-nous ce que vous en pensez."
+
+#. src/jade/startTrial.jade
+msgid "Free"
+msgstr "Gratuit"
+
+#. src/jade/startTrial.jade
+msgid "1 month trial"
+msgstr "Période d'essai d'un mois."
+
+#. src/jade/startTrial.jade
+msgid ""
+"Explore the full suite for free for 30 days with the following benefits:"
+msgstr "Explorez la série complète gratuitement pendant 30 jours avec les avantages suivants :"
+
+#. src/jade/startTrial.jade
+msgid ""
+"Do you want to hear more or extend your trial? %(L$Schedule a meeting%) with"
+" our Head of Customer Happiness Antti and he will be happy to assist "
+"you."
+msgstr "Vous voulez en savoir plus ou prolonger votre période d'essai ? %(L$Planifiez un rendez-vous%) avec notre Responsable de la Satisfaction Client Antti et il sera ravi de vous aider."
+
+#. src/jade/startTrial.jade
+msgid "Ok, lets go!"
+msgstr "D'accord, c'est parti !"
+
+#. src/jade/startTrial.jade
+msgid "Start a free 30 day Meetin.gs PRO trial"
+msgstr "Démarrer un essai gratuit de Meetin.gs PRO de 30 jours"
+
+#. src/jade/startTrial.jade
+msgid ""
+"Additional Meet Me pages is a Meetin.gs PRO feature. We offer you a free 30 "
+"day trial including multiple Meet Me pages and other great PRO features. "
+"Would you like to start your free trial now?"
+msgstr "Les pages Me Rencontrer additionnelles sont une fonctionnalité PRO de Meetin.gs. Nous vous offrons un essai gratuit de 30 jours incluant les pages Me Rencontrer multiples et d'autres formidables fonctionnalités PRO. Voulez-vous démarrer votre essai gratuit maintenant ?"
+
+#. src/jade/startTrial.jade
+msgid ""
+"Google Hangouts, Microsoft Lync and custom options are PRO features. We "
+"offer you a free 30 day trial including all live communication tools and "
+"other great PRO features. Would you like to start your free trial now?"
+msgstr "Google Hangouts, Microsoft Lync et les options personnalisées sont des fonctionnalités PRO. Nous vous offrons un essai de 30 jours incluant tous les outils de communication en live et d'autres fonctionnalités PRO formidables. Voulez-vous commencer votre essai gratuit maintenant ?"
+
+#. src/jade/startTrial.jade
+msgid ""
+"Meetings with more than 6 participants are a PRO feature. We offer you a "
+"free 30 day trial including including all the benefits of Meetin.gs PRO."
+msgstr "Les réunions avec plus de 6 participants sont une fonctionnalité PRO. Nous vous offrons un essai gratuit de 30 jours incluant tous les avantages de Meetin.gs PRO."
+
+#. src/jade/startTrial.jade
+msgid ""
+"Configuring user rights on a per meeting basis is a PRO feature. We offer "
+"you a free 30 day trial including the user rights configuration and other "
+"great PRO features. Would you like to start your free trial now?"
+msgstr "La configuration des droits d'utilisateur sur la base du nombre de rendez-vous est une fonctionnalité PRO. Nous vous offrons une période d'essai gratuite qui comprend la configuration des droits d'utilisateur et d'autres fonctionnalités PRO très utiles. Voulez-vous démarrer votre période d'essai maintenant ?"
+
+#. src/jade/startTrial.jade
+msgid "Start trial"
+msgstr "Démarrer l'essai"
+
+#. src/jade/summaryGoogleLoaded.jade
+#. src/jade/summaryGoogleLoading.jade
+msgid "Connecting your calendar"
+msgstr "Connexion de votre calendrier"
+
+#. src/jade/summaryGoogleLoaded.jade
+msgid ""
+"We have now imported your calendar items. You can change the calendar "
+"integration settings anytime at your personal settings."
+msgstr "Nous avons maintenant importé vos éléments de calendriers. Vous pouvez changer les paramètres d'intégration du calendrier à tout moment dans vos paramètres personnels."
+
+#. src/jade/summaryGoogleLoaded.jade
+msgid ""
+"Next you should add Meetin.gs to your Google calendar. Do you want to "
+"subscribe to the meeting calendar feed now?"
+msgstr "Ensuite, vous devriez ajouter Meetin.gs à votre calendrier Google. Voulez-vous vous abonner au fil du calendrier de réunions maintenant ?"
+
+#. src/jade/summaryGoogleLoaded.jade
+msgid "Subscribe"
+msgstr "S'abonner"
+
+#. src/jade/summaryGoogleLoaded.jade
+msgid "Not now"
+msgstr "Pas maintenant"
+
+#. src/jade/summaryGoogleLoading.jade
+msgid "We are now importing your calendar items."
+msgstr "Nous importons actuellement vos éléments de calendriers."
+
+#. src/jade/summaryGoogleLoading.jade
+msgid "Please wait."
+msgstr "Veuillez patienter."
+
+#. src/jade/summaryPast.jade
+#. src/jade/summaryUpcoming.jade
+msgid "Organize a new meeting"
+msgstr "Organiser une nouvelle réunion"
+
+#. src/jade/summaryPast.jade
+msgid "Looking for %(L$Future meetings%)?"
+msgstr "En recherche de %(L$futures réunions%) ?"
+
+#. src/jade/summaryUpcoming.jade
+msgid "Share your Meet Me page"
+msgstr "Partager votre page Rencontrez-moi"
+
+#. src/jade/summaryUpcoming.jade
+msgid "Connect Google Calendar"
+msgstr "Connecter Google Agenda"
+
+#. src/jade/summaryUpcoming.jade
+msgid "Looking for %(L$Past meetings%)?"
+msgstr "Vous recherchez des %(L$réunions passées%) ?"
+
+#. src/jade/thanksForPaying.jade
+msgid ""
+"Your Meetin.gs PRO subscription is now active. You can continue with the PRO"
+" features enabled by clicking continue below."
+msgstr "Votre abonnement Meetin.gs PRO est maintenant actif. Vous pouvez continuer avec les fonctionnalités PRO activées en cliquant ci-dessous sur continuer."
+
+#. src/jade/upgradeCover.jade
+msgid "Upgrade Meetin.gs PRO"
+msgstr "Passez à la version supérieure de Meetin.gs PRO"
+
+#. src/jade/upgradeCover.jade
+msgid "Buy using credit card"
+msgstr "Acheter en utilisant une carte de crédit"
+
+#. src/jade/upgradeCover.jade
+msgid "$ 12 / month"
+msgstr "12$ / mois"
+
+#. src/jade/upgradeCover.jade
+msgid "or"
+msgstr "ou"
+
+#. src/jade/upgradeCover.jade
+msgid "$ 129 / year"
+msgstr "129$ / an "
+
+#. src/jade/upgradeCover.jade
+msgid "Buy from your local vendor"
+msgstr "Achetez chez votre vendeur local. "
+
+#. src/jade/upgradeCover.jade
+msgid "Other vendors"
+msgstr "Autres vendeurs"
+
+#. src/jade/upgradeForm.jade
+msgid "You are subscribing to Meetin.gs PRO monthly plan."
+msgstr "Vous avez souscrit à l'abonnement Meetin.gs PRO mensuel."
+
+#. src/jade/upgradeForm.jade
+msgid "You are subscribing to Meetin.gs PRO yearly plan."
+msgstr "Vous avez souscrit à l'abonnement Meetin.gs PRO annuel."
+
+#. src/jade/upgradeForm.jade
+msgid ""
+"Subscription will be renewed automatically at the end of each billing cycle."
+msgstr "L'abonnement sera renouvelé automatiquement à la fin de chaque période de facturation."
+
+#. src/jade/upgradeForm.jade
+msgid "You can unsubscribe any time during the billing cycle."
+msgstr "Vous pouvez vous désabonner à tout moment au cours de la période de facturation."
+
+#. src/jade/upgradeForm.jade
+msgid ""
+"We support all major credit cards. All transactions are secure and "
+"encrypted."
+msgstr "Nous acceptons la plupart des cartes de paiement. Toutes les transactions sont chiffrées et sécurisées."
+
+#. src/jade/upgradeForm.jade
+msgid "New Account"
+msgstr "Nouveau compte"
+
+#. src/jade/upgradeForm.jade
+msgid "Email address"
+msgstr "Adresse électronique"
+
+#. src/jade/upgradeForm.jade
+msgid "Credit Card"
+msgstr "Carte de crédit"
+
+#. src/jade/upgradeForm.jade
+msgid "Name on Card"
+msgstr "Nom sur la carte"
+
+#. src/jade/upgradeForm.jade
+msgid "Card number"
+msgstr "Numéro de carte"
+
+#. src/jade/upgradeForm.jade
+msgid "Expiry Date"
+msgstr "Date d'expiration"
+
+#. src/jade/upgradeForm.jade
+msgid "Security Code (CVC)"
+msgstr "Code de sécurité (CVC)"
+
+#. src/jade/upgradeForm.jade
+msgid "Company (optional)"
+msgstr "Société (optionnel)"
+
+#. src/jade/upgradeForm.jade
+msgid "Company Name"
+msgstr "Nom de la société"
+
+#. src/jade/upgradeForm.jade
+msgid "I have VAT number (Value Added Tax)"
+msgstr "J'ai le numéro de TVA (Taxe sur la Valeur Ajoutée)"
+
+#. src/jade/upgradeForm.jade
+msgid "VAT-ID"
+msgstr "Identification TVA"
+
+#. src/jade/upgradeForm.jade
+msgid "Billing Address"
+msgstr "Adresse de facturation"
+
+#. src/jade/upgradeForm.jade
+msgid "Street Address"
+msgstr "Adresse postale"
+
+#. src/jade/upgradeForm.jade
+msgid "City"
+msgstr "Ville"
+
+#. src/jade/upgradeForm.jade
+msgid "Postal code"
+msgstr "Code postal"
+
+#. src/jade/upgradeForm.jade
+msgid "Country"
+msgstr "Pays"
+
+#. src/jade/upgradeForm.jade
+msgid "Select country"
+msgstr "Choisir pays"
+
+#. src/jade/upgradeForm.jade
+msgid "Promotional code"
+msgstr "Code promotionnel"
+
+#. src/jade/upgradeForm.jade
+msgid "You will be billed monthly:"
+msgstr "Vous serez facturé mensuellement :"
+
+#. src/jade/upgradeForm.jade
+msgid "You will be billed yearly:"
+msgstr "Vous serez facturé annuellement :"
+
+#. src/jade/upgradeForm.jade
+msgid "(reverse tax applies)"
+msgstr "(l'autoliquidation s'applique)"
+
+#. src/jade/upgradeForm.jade
+msgid ""
+"Unfortunately due to recent changes in EU VAT legislation, purchasing "
+"without a valid VAT ID is temporarily disabled for your country."
+msgstr ""
+
+#. src/jade/upgradeForm.jade
+#. src/jade/waitingForPayment.jade
+msgid "Pay now"
+msgstr "Payer maintenant"
+
+#. src/jade/upgradeSuccess.jade
+msgid "Thank you, you're awesome!"
+msgstr "Merci, vous êtes génial !"
+
+#. src/jade/upgradeSuccess.jade
+msgid "Thank you for upgrading to Meetin.gs PRO. We really appreciate it!"
+msgstr "Nous vous remercions d'être passé à la version Meetin.gs PRO. Nous vous en sommes reconnaissants !"
+
+#. src/jade/upgradeSuccess.jade
+msgid ""
+"We have sent you an email with a login link and further instructions and "
+"tips on how to get the most out of your PRO subscription."
+msgstr "Nous vous avons envoyé un courriel contenant un lien de connexion et de nouvelles instructions et astuces pour profiter au mieux de votre abonnement PRO."
+
+#. src/jade/upgradeSuccess.jade
+msgid "You will also get a receipt of your transaction in a separate email."
+msgstr "Vous recevrez également un reçu de votre transaction dans un courriel séparé."
+
+#. src/jade/upgradeSuccess.jade
+msgid "Log in"
+msgstr "Se connecter"
+
+#. src/jade/userProfile.jade
+msgid "Provide your contact details"
+msgstr "Renseignez vos coordonnées"
+
+#. src/jade/userProfile.jade
+msgid ""
+"%(B$One last thing:%) please provide some basic information of yourself. We "
+"will create a profile for you and let %1$s know who you are."
+msgstr "%(B$Une dernière chose :%) veuillez renseigner quelques informations de base sur vous. Nous vous créerons un profil et nous vous ferons connaître auprès de %1$s."
+
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "Skype"
+msgstr "Skype"
+
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "Copy & paste your LinkedIn URL here"
+msgstr "Copiez-collez votre URL LinkedIn ici"
+
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "Time zone"
+msgstr "Fuseau horaire"
+
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "Time for this time zone:"
+msgstr "Heure pour ce fuseau horaire :"
+
+#. src/jade/userProfile.jade
+#. src/jade/wizardProfile.jade
+msgid "By continuing you accept the %(L$Terms of Service%)."
+msgstr "En continuant, vous acceptez les %(L$conditions de service%)."
+
+#. src/jade/userSettingsAccount.jade
+msgid "Your account settings"
+msgstr "Paramètres de votre compte"
+
+#. src/jade/userSettingsAccount.jade
+msgid "Manage your account and subscription."
+msgstr "Gérer votre compte et votre abonnement."
+
+#. src/jade/userSettingsAccount.jade
+msgid "Subscription"
+msgstr "Abonnement"
+
+#. src/jade/userSettingsAccount.jade
+msgid ""
+"You are using the limited version of Meetin.gs. Start your free 30-day trial"
+" to explore the full suite with all the benefits."
+msgstr "Vous utilisez la version limitée de Meetin.gs. Démarrez votre essai gratuit de 30 jours pour explorer la suite complète avec tous les avantages."
+
+#. src/jade/userSettingsAccount.jade
+msgid "Start the trial"
+msgstr "Démarrer l'essai"
+
+#. src/jade/userSettingsAccount.jade
+msgid "Your free trial sponsored by Meetin.gs will end %(B$%1$s%)."
+msgstr "Votre essai gratuit sponsorisé par Meetin.gs se terminera le %(B$%1$s%)."
+
+#. src/jade/userSettingsAccount.jade
+msgid ""
+"Upgrade Meetin.gs now to secure a seamless transition after your trial ends."
+" We will give you free credit for the time you have left on your trial. So "
+"your first billing cycle would start %1$s."
+msgstr "Mettez à niveau Meetin.gs dès maintenant pour sécuriser une transition homogène après la fin de votre essai. Nous vous offrirons du crédit gratuit pour le temps qu'il reste sur votre essai. Donc, votre premier cycle de facturation démarrerait le %1$s."
+
+#. src/jade/userSettingsAccount.jade
+msgid ""
+"Are you running out of time or require additional information on our "
+"service? Don't worry, just %(L$contact%) our Head of Customer happiness "
+"Antti to request an extension or %(A$schedule%) a short call with him to "
+"learn more."
+msgstr "Manquez-vous de temps ou avez-vous besoin d'informations supplémentaires sur notre service ? Ne vous inquiétez pas, %(L$contactez%) simplement Antti, notre Chef de satisfaction client, pour demander une extension ou %(A$programmer%) un appel rapide avec lui pour en savoir plus. "
+
+#. src/jade/userSettingsAccount.jade
+msgid ""
+"Your free trial of Meetin.gs has expired. Upgrade to PRO to continue using "
+"the full suite with only:"
+msgstr "Votre essai gratuit de Meetin.gs a expiré. Mettez à niveau avec PRO pour continuer à utiliser la suite complète avec seulement :"
+
+#. src/jade/userSettingsAccount.jade
+msgid "$12 / month / organizer"
+msgstr "12 $ / mois / organiseur"
+
+#. src/jade/userSettingsAccount.jade
+msgid "$129 / year / organizer (ten percent discount)"
+msgstr "129 $ / an / organiseur (dix pour cent de réduction)"
+
+#. src/jade/userSettingsAccount.jade
+msgid ""
+"Did you miss the trial or require additional information of the service? "
+"Don't worry, just %(L$contact%) our Head of Customer happiness Antti to "
+"request an extension or %(A$schedule%) a short call with him to learn more."
+msgstr "Avez-vous manqué l'essai ou avez-vous besoin d'informations supplémentaires sur le service ? Ne vous inquiétez pas, %(L$contactez%) simplement Antti, notre Chef de satisfaction client, pour demander une extension ou %(A$programmer%) un appel rapide avec lui pour en savoir plus."
+
+#. src/jade/userSettingsAccount.jade
+msgid ""
+"You are using the free PRO account sponsored by Meetin.gs. Your PRO "
+"subscription will stay active for the time being. We sincerely hope you are "
+"enjoying it and would appreciate any %(L$feedback%)."
+msgstr "Vous utilisez un compte PRO gratuit sponsorisé par Meetin.gs. Votre abonnement PRO restera actif pour le moment. Nous espérons sincèrement que vous l'appréciez et nous serions ravis d'avoir un %(L$feedback%)."
+
+#. src/jade/userSettingsAccount.jade
+msgid ""
+"Do you like our service? Support our cause and further development by "
+"upgrading to the paid PRO with only:"
+msgstr "Aimez-vous notre service ? Soutenez notre cause et notre futur développement en mettant à niveau avec le PRO payant avec seulement :"
+
+#. src/jade/userSettingsAccount.jade
+msgid "Support us & upgrade"
+msgstr "Soutenez nous et mettez à niveau"
+
+#. src/jade/userSettingsAccount.jade
+msgid "Thank you for your subscription. We really appreciate it."
+msgstr "Merci pour votre abonnement. Nous vous en sommes très reconnaissants."
+
+#. src/jade/userSettingsAccount.jade
+msgid "Use Paypal to manage your subscription:"
+msgstr "Utiliser Paypal pour gérer votre abonnement :"
+
+#. src/jade/userSettingsAccount.jade
+msgid "Manage your subscription"
+msgstr "Gérer votre abonnement"
+
+#. src/jade/userSettingsAccount.jade
+msgid ""
+"You have canceled your subscription. Your account will be downgraded once "
+"your last billing cycle ends %1$s."
+msgstr "Vous avez annulé votre abonnement. Votre compte sera rétrogradé une fois que votre dernier cycle de facturation sera terminé le %1$s."
+
+#. src/jade/userSettingsAccount.jade
+msgid "Re-subscribe"
+msgstr "Se réabonner"
+
+#. src/jade/userSettingsAccount.jade
+msgid "You are on the yearly Meetin.gs PRO plan."
+msgstr "Vous êtes sur le programme annuel Meetin.gs PRO."
+
+#. src/jade/userSettingsAccount.jade
+msgid "You are on the monthly Meetin.gs PRO plan."
+msgstr "Vous êtes sur le programme mensuel Meetin.gs PRO."
+
+#. src/jade/userSettingsAccount.jade
+msgid "Your next billing cycle starts %1$s."
+msgstr "Votre prochain cycle de facturation démarre le %1$s."
+
+#. src/jade/userSettingsAccount.jade
+#. src/jade/userSettingsCancelSubscription.jade
+msgid "Cancel subscription"
+msgstr "Annuler l'abonnement"
+
+#. src/jade/userSettingsAccount.jade
+msgid "Your %1$s PRO subscription is paid by %2$s."
+msgstr "Votre abonnement %1$s PRO est payé par %2$s."
+
+#. src/jade/userSettingsAccount.jade
+msgid "The administrator managing this company account is %1$s."
+msgstr "L'administrateur gérant le compte de cet entreprise est %1$s."
+
+#. src/jade/userSettingsAccount.jade
+#. src/jade/userSettingsAccountRemove.jade
+msgid "Remove account"
+msgstr "Supprimer le compte"
+
+#. src/jade/userSettingsAccount.jade
+msgid ""
+"Removing your account will delete all your personal information from the "
+"service, remove your Meet Me page, unsubscribe you from our mailing lists, "
+"and anonymise stored data like comments, meetings, and materials."
+msgstr "Supprimer votre compte effacera toutes vos informations personnelles du service, supprimera votre page Rencontrez-moi, vous désabonnera de nos listes de diffusion et anonymisera les données stockées comme les commentaires, les réunions et les documents."
+
+#. src/jade/userSettingsAccount.jade
+msgid ""
+"Note: Others will still be able to invite you as a new participant to a "
+"meeting using the same email address."
+msgstr "Remarque : Les autres pourront toujours vous inviter en tant que nouveau participant à une réunion en utilisant la même adresse e-mail."
+
+#. src/jade/userSettingsAccountReceipts.jade
+msgid "Get receipts"
+msgstr "Obtenir des reçus"
+
+#. src/jade/userSettingsAccountReceipts.jade
+msgid ""
+"Below you see all your transactions. You can get the receipt via email."
+msgstr "Ci-dessous sont affichées toutes vos transactions. Vous pouvez recevoir le reçu par e-mail."
+
+#. src/jade/userSettingsAccountReceipts.jade
+msgid "Send receipt"
+msgstr "Envoyer un reçu"
+
+#. src/jade/userSettingsAccountRemove.jade
+msgid ""
+"Are you sure you want to remove account with email %1$s. There is no undo."
+msgstr "Êtes-vous sûr de vouloir supprimer le compte avec l'e-mail %1$s. Il est impossible d'annuler."
+
+#. src/jade/userSettingsCalendar.jade
+#. src/jade/userSettingsCover.jade
+#. src/jade/userSettings.jade
+#. src/jade/userSettingsTimeline.jade
+msgid "Calendar integration"
+msgstr "Intégration du calendrier"
+
+#. src/jade/userSettingsCalendar.jade
+msgid ""
+"Connect your calendars to see your upcoming events on the Meeting Timeline "
+"and show your availability on the Meet Me page."
+msgstr "Connectez vos calendriers pour voir vos événements à venir sur la Chronologie de réunions et afficher votre disponibilité sur la page Rencontrez-moi."
+
+#. src/jade/userSettingsCalendar.jade
+msgid "Manage accounts"
+msgstr "Gérer les comptes"
+
+#. src/jade/userSettingsCalendar.jade
+msgid "Connect and disconnect third-party accounts."
+msgstr "Connecter et déconnecter les comptes tiers."
+
+#. src/jade/userSettingsCalendar.jade
+#. src/jade/userSettingsLogin.jade
+msgid "Connect with Google"
+msgstr "Se connecter avec Google"
+
+#. src/jade/userSettingsCalendar.jade
+#. src/jade/userSettingsLogin.jade
+msgid "Your account is connected to Google"
+msgstr "Votre compte est connecté à Google"
+
+#. src/jade/userSettingsCalendar.jade
+#. src/jade/userSettingsLogin.jade
+msgid "Disconnect"
+msgstr "Se déconnecter"
+
+#. src/jade/userSettingsCalendar.jade
+msgid "Manage connected devices"
+msgstr "Gérer les appareils connectés"
+
+#. src/jade/userSettingsCalendar.jade
+msgid "This is a list of your devices connected with the service."
+msgstr "Voici une liste de vos appareils connectés au service."
+
+#. src/jade/userSettingsCalendar.jade
+msgid "Note: Disconnected devices can only be reconnected using that device."
+msgstr "Remarque : Les appareils déconnectés peuvent seulement être reconnectés en utilisant cet appareil."
+
+#. src/jade/userSettingsCalendar.jade
+msgid "Disconnect %1$s"
+msgstr "Se déconnecter de %1$s"
+
+#. src/jade/userSettingsCalendar.jade
+msgid "Export meetings to your calendar"
+msgstr "Exporter les réunions dans votre calendrier"
+
+#. src/jade/userSettingsCalendar.jade
+msgid ""
+"Copy this ICS-calendar feed to your calendar software to automatically "
+"export all your meetings to your calendar. For more detailed instructions, "
+"click %(L$here%)."
+msgstr "Copiez ce fil de calendrier ICS dans votre logiciel de calendrier pour exporter automatiquement toutes vos réunions dans votre calendrier. Pour des instructions plus détaillées, cliquez %(L$ici%). "
+
+#. src/jade/userSettingsCalendar.jade
+msgid "Note: This is your private link and it should be handled with care."
+msgstr "Remarque : Ceci est votre lien privé et il doit être utilisé avec précaution."
+
+#. src/jade/userSettingsCancelSubscription.jade
+msgid ""
+"Are you sure you want to cancel your subscription? Doing this will end your "
+"subscription after the ongoing billing cycle. Your account will be "
+"downgraded to the limited version in %1$s."
+msgstr "Êtes-vous sûr de vouloir annuler votre abonnement ? Faire cela mettra fin à votre abonnement après le cycle de facturation en cours. Votre compte sera rétrogradé à la version limitée dans %1$s."
+
+#. src/jade/userSettingsCancelSubscription.jade
+msgid "Yes, cancel my subscription"
+msgstr "Oui, annuler mon abonnement"
+
+#. src/jade/userSettingsCancelSubscription.jade
+msgid "No, continue as a PRO user"
+msgstr "Non, continuer en tant qu'utilisateur PRO"
+
+#. src/jade/userSettingsCover.jade
+msgid "Manage your settings"
+msgstr "Gérer vos paramètres"
+
+#. src/jade/userSettingsCover.jade
+#. src/jade/userSettings.jade
+#. src/jade/userSettingsLogin.jade
+msgid "Login methods"
+msgstr "Méthodes de connexion"
+
+#. src/jade/userSettingsCover.jade
+msgid "Setup login with Google, Facebook or password."
+msgstr "Configurer la connexion avec Google, Facebook ou par mot de passe."
+
+#. src/jade/userSettingsCover.jade
+msgid "Integrate your calendar with Meetin.gs."
+msgstr "Intégrer votre calendrier avec Meetin.gs."
+
+#. src/jade/userSettingsCover.jade
+#. src/jade/userSettingsTimeline.jade
+msgid "Manage which of your calendars are shown on the timeline."
+msgstr "Gérer les calendriers qui sont affichés sur votre chronologie."
+
+#. src/jade/userSettingsCover.jade
+#. src/jade/userSettingsRegional.jade
+msgid "Regional settings"
+msgstr "Paramètres régionaux"
+
+#. src/jade/userSettingsCover.jade
+msgid "Change your time zone and language."
+msgstr "Changer votre fuseau horaire et la langue."
+
+#. src/jade/userSettingsCover.jade
+msgid "Customize the look and feel."
+msgstr "Personnaliser la présentation."
+
+#. src/jade/userSettingsCover.jade
+msgid "Manage your account & subscription."
+msgstr "Gérer votre compte et votre abonnement."
+
+#. src/jade/userSettingsDelete.jade
+msgid "Remove your account"
+msgstr "Supprimer votre compte"
+
+#. src/jade/userSettingsDelete.jade
+msgid "Here you can remove your account permanently."
+msgstr "Vous pouvez supprimer votre compte définitivement ici."
+
+#. src/jade/userSettings.jade
+msgid "Regional"
+msgstr "Régional"
+
+#. src/jade/userSettingsLogin.jade
+msgid "Manage how you log in to the service."
+msgstr "Gérer vos modes de connexion au service."
+
+#. src/jade/userSettingsLogin.jade
+msgid "Third-party login options"
+msgstr "Options de connexion des tiers"
+
+#. src/jade/userSettingsLogin.jade
+msgid "Connect one of your third-party accounts to login easily:"
+msgstr "Connectez un de vos comptes tiers pour vous connecter facilement :"
+
+#. src/jade/userSettingsLogin.jade
+msgid "Connect with Facebook"
+msgstr "Se connecter avec Facebook"
+
+#. src/jade/userSettingsLogin.jade
+msgid "Your account is connected to Facebook"
+msgstr "Votre compte est connecté à Facebook"
+
+#. src/jade/userSettingsLogin.jade
+msgid "Set up a password"
+msgstr "Définir un mot de passe"
+
+#. src/jade/userSettingsLogin.jade
+msgid "Create a password to easily login without your personal login link."
+msgstr "Créez un mot de passe pour vous connecter facilement sans votre lien de connexion personnel."
+
+#. src/jade/userSettingsLogin.jade
+msgid "Password"
+msgstr "Mot de passe"
+
+#. src/jade/userSettingsLogin.jade
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+#. src/jade/userSettingsRegional.jade
+msgid ""
+"Choose the language and time zone in which you want to use the service."
+msgstr "Choisissez la langue et le fuseau horaire dans lequel vous voulez utiliser le service."
+
+#. src/jade/userSettingsRegional.jade
+msgid "Select language"
+msgstr "Sélectionner la langue"
+
+#. src/jade/userSettingsRegional.jade
+msgid "Choose the language you want to use the service with."
+msgstr "Choisissez la langue avec laquelle vous voulez utiliser le service."
+
+#. src/jade/userSettingsRegional.jade
+msgid ""
+"Note: Your invitations to new meeting participants will be sent using the "
+"selected language by default."
+msgstr "Remarque : Vos invitations aux nouveaux participants de la réunion seront envoyées en utilisant la langue sélectionnée par défaut."
+
+#. src/jade/userSettingsRegional.jade
+msgid "Language:"
+msgstr "Langue :"
+
+#. src/jade/userSettingsRegional.jade
+msgid "Select time zone"
+msgstr "Sélectionner un fuseau horaire"
+
+#. src/jade/userSettingsRegional.jade
+msgid ""
+"After changing your time zone, we will automatically display all your "
+"meeting times according to your new setting."
+msgstr "Après avoir changé votre fuseau horaire, nous afficherons automatiquement toutes vos heures de réunions en fonction de votre nouveau paramètre."
+
+#. src/jade/userSettingsRegional.jade
+msgid "Current time in the selected time zone: "
+msgstr "Heure actuelle dans le fuseau horaire sélectionné :"
+
+#. src/jade/userSettingsTimeline.jade
+msgid "Timeline settings"
+msgstr "Paramètres de la chronologie"
+
+#. src/jade/userSettingsTimeline.jade
+msgid ""
+"You have no calendars connected with your account. Connect your third-party "
+"accounts or devices to import your calendar events to your Meeting Timeline."
+msgstr "Vous n'avez pas de calendriers connectés à votre compte. Connectez vos comptes ou appareils tiers pour importer vos événements de calendriers sur votre Chronologie de réunion."
+
+#. src/jade/userSettingsTimezone.jade
+msgid "Choose your timezone"
+msgstr "Choisir votre fuseau horaire"
+
+#. src/jade/userSettingsTimezone.jade
+msgid "Setup the timezone you want to use."
+msgstr "Définir le fuseau horaire que vous voulez utiliser."
+
+#. src/jade/verifyTimezone.jade
+msgid "Check your time zone"
+msgstr "Vérifier votre fuseau horaire"
+
+#. src/jade/verifyTimezone.jade
+msgid ""
+"Your currently chosen time zone is different from your device time zone. "
+"Which time zone would you like to use?"
+msgstr "Votre fuseau horaire actuel choisi est différent du fuseau horaire de votre appareil. Quel fuseau horaire voudriez-vous utiliser ?"
+
+#. src/jade/verifyTimezone.jade
+msgid "Your device's time zone"
+msgstr "Fuseau horaire de votre appareil"
+
+#. src/jade/verifyTimezone.jade
+msgid "Your time zone setting"
+msgstr "Votre réglage du fuseau horaire"
+
+#. src/jade/waitingForPayment.jade
+msgid "Waiting for transaction"
+msgstr "En attente de transaction"
+
+#. src/jade/waitingForPayment.jade
+msgid ""
+"A new window will now open where you can complete the transaction and "
+"activate Meetin.gs PRO subscription."
+msgstr "Une nouvelle fenêtre va maintenant s'ouvrir, vous pourrez y finaliser la transaction et activer l'abonnement à Meetin.gs PRO."
+
+#. src/jade/waitingForPayment.jade
+msgid ""
+"If the window does not open in a short while, please click the link below:"
+msgstr "Si la fenêtre ne s'ouvre pas rapidement, veuillez cliquer sur le lien ci-dessous :"
+
+#. src/jade/waitingForPayment.jade
+msgid "Cancel payment"
+msgstr "Annuler le paiement"
+
+#. src/jade/wizardApps.jade
+msgid "Get the most out of your Meetin.gs"
+msgstr "Tirez le maximum de votre Meetin.gs"
+
+#. src/jade/wizardApps.jade
+msgid "Sync your mobile calendar and contacts."
+msgstr "Synchroniser votre calendrier mobile et vos contacts."
+
+#. src/jade/wizardApps.jade
+msgid "Download for iPhone"
+msgstr "Télécharger pour iPhone"
+
+#. src/jade/wizardApps.jade
+msgid "Keep track of your meetings while on the move."
+msgstr "Gardez une trace de vos réunions lors de vos déplacements."
+
+#. src/jade/wizardApps.jade
+msgid "Download for Android"
+msgstr "Télécharger pour Android"
+
+#. src/jade/wizardApps.jade
+msgid "Organize meetings from Gmail, LinkedIn, Highrise and more."
+msgstr "Organisez des réunions à partir de Gmail, LinkedIn, Highrise et bien plus."
+
+#. src/jade/wizardApps.jade
+msgid "Install Chrome Extension"
+msgstr "Installer l'extension de Chrome"
+
+#. src/jade/wizardProfileError.jade
+msgid "Hang on for a while..."
+msgstr "Attendez un moment..."
+
+#. src/jade/wizardProfileError.jade
+msgid ""
+"We are now synchronizing the data and creating your matchmaking profile for "
+"%1$s. Don't worry, this might take several minutes."
+msgstr "Nous synchronisons actuellement les données et créons votre profil d'appariement pour %1$s. Ne vous inquiétez pas, cela peut prendre plusieurs minutes."
+
+#. src/jade/wizardProfileError.jade
+msgid ""
+"If your profile page doesn't show up in 5 minutes, please contact our "
+"support at %1$s."
+msgstr "Si votre page de profil n'apparaît pas dans 5 minutes, veuillez contacter notre assistance à %1$s."
+
+#. src/jade/wizardProfileError.jade
+msgid ""
+"Oops, seems like you haven't registered. Please register to the event at "
+"%1$s to proceed. If you have already registered, please contact us at %2$s "
+"for more information."
+msgstr "Oups, il semblerait que vous ne soyez pas inscrit. Veuillez vous inscrire à l'événement à %1$s  pour continuer. Si vous vous êtes déjà inscrit, veuillez nous contacter à %2$s pour plus d'informations."
+
+#. src/jade/wizardProfile.jade
+msgid "Provide your details"
+msgstr "Renseignez vos informations"
+
+#. src/jade/wizardProfile.jade
+msgid "Do not connect - provide your information manually."
+msgstr "Ne vous connectez pas - renseignez vos informations manuellement."
+
+#. src/jade/wizardProfile.jade
+msgid "Subscribe to our newsletter to receive important service updates"
+msgstr ""
+
+msgid "A notification about the cancellation will be sent to all participants of this meeting."
+msgstr "A notification about the cancellation will be sent to all participants of this meeting."
+
+msgid "Cancel Meeting"
+msgstr "Cancel Meeting"
+
+msgid "Cancel meeting?"
+msgstr "Cancel meeting?"
+
+msgid "Decline Request"
+msgstr "Decline Request"
+
+msgid "You can add your reason and additional requests to the form below:"
+msgstr "You can add your reason and additional requests to the form below:"
+
+msgid "The meeting length can not be changed."
+msgstr "The meeting length can not be changed."
+
+msgid "The meeting live communication tool can not be changed."
+msgstr "The meeting live communication tool can not be changed."
+
+msgid "The meeting location can not be changed."
+msgstr "The meeting location can not be changed."
+
+# manual
+msgid "Do you want to schedule an another meeting right away?"
+msgstr ""
+
+# manual
+msgid "Schedule Another Meeting"
+msgstr ""

@@ -1,0 +1,9 @@
+div#confirm-subscription-cancel.m-modal
+    div.modal-header
+        h3!=MTN.t('Cancel subscription')
+    div.modal-content
+        p!=MTN.t('Are you sure you want to cancel your subscription? Doing this will end your subscription after the ongoing billing cycle. Your account will be downgraded to the limited version in %1$s.', [ moment(user.subscription_user_next_payment_epoch*1000).fromNow() ] );
+    div.modal-footer 
+        div.buttons.right
+            a(href='#').confirm-cancel.button.blue!=MTN.t('Yes, cancel my subscription')
+            a(href='#').button.gray.js_hook_showcase_close!=MTN.t('No, continue as a PRO user')

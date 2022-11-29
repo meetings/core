@@ -1,0 +1,13 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_event add show_imedia int unsigned not null after show_map');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_event add show_freeform int unsigned not null after show_map');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_event add show_chat int unsigned not null after show_map');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_event add freeform_content text after require_invite');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_event add freeform_title text after require_invite');
+}
+
+1;

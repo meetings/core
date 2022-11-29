@@ -1,0 +1,26 @@
+sub execute {
+    my ( $self ) = @_;
+
+    my $gid = 819;
+
+    my $groups_api = CTX->lookup_action( 'groups_api' );
+
+
+    for my $collection (
+        'networking_profile_viewer',
+#        'group_member_viewer',
+#        'blogs_commenter',
+#        'presentations_viewer',
+#        'group_summary',
+#        'wiki_reader',
+#        'blogs_reader',
+     ) {
+        $groups_api->execute( remove_public_group_right => {
+            group_id => $gid,
+            collection => $collection,
+        } );
+    }
+    
+}
+
+1;

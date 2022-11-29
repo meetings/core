@@ -1,0 +1,255 @@
+=head1 NAME
+
+How to program using the dicole security framework.
+
+=head1 INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.5 $
+
+=item B<Status>
+
+New
+
+=back
+
+=head1 ABSTRACT
+
+This document gives some info and code examples on how to use dicole security
+framework in your applications.
+
+=head1 OVERVIEW
+
+Dicole security framework consists of security collections, which consist of
+one or more security levels which the collection either allows or denies..
+
+Typically the users see and use only the collections (unless they are managers
+who can create new collections from the existing levels).
+
+Typically the programmers see and use mainly the levels, which they create by
+registering then in their own packages (or which have already been registered
+by other packages). Programmes can also create default security collections
+but after creation they are users concern.
+
+As a programmer you just define a set of security levels and tell the users
+what these levels do by naming and describing them decently. After this
+you can concentrate on asking the system if the current user has the rights
+to do things allowed by this security level on the specified target. The
+target can be a user, a group or the whole system.
+
+Both levels and collections have pseudo characteristics called "archetypes"
+which determine the contents of default collections when collections and
+securities are installed simply by matching archetype names.
+
+=head1 ADDING A SECURITY LEVEL
+
+Registering of a new level is handled normally by oi2_manage register_tool
+task.
+
+Here is how to define a secutiry level in tool.ini:
+
+ [seclevel 1]
+ name = My action write
+ description = User can write things to my action database.
+
+ oi_module = OpenInteract2::Action::MyAction
+ id_string = write
+ secure = OpenInteract2::Action::MyAction::assign_write
+ archetype = group_moderator
+ archetype = myaction_moderator
+
+ target_type = 2
+
+The oi_module field acts as a kind of namespace for the securities so that
+you can have a right named "write" in all your actions. When you are checking
+for a security level the system presumes the namespace of the current class
+if no other is specified. This saves us lots of typing and provides us with
+clean security id's for our security levels.
+
+The target_type is one or more numbers defining which kind of targets this
+security level can have. 1 means that the level targets a user (for example
+"User can read this users diary"), 2 means that the level targets a group
+(for example "User can post to groups news") and 3 means that this level
+affects the whole system (for example "User can create groups").
+NOTE: This might change to 'user', 'group' or 'world'
+
+The secure field can be used to limit assigning of this right so that
+user must have the specified right to assign this right.
+
+The archetype definitions do not correspond (at least yet) to anything
+concrete. They are just names which determine to which collections this
+security level should be added when this level is registered to the system
+or a default collection with matching archetype is registered.
+
+Note that target type must be same for collection and level for archetypes
+to have effect.
+
+=head1 ADDING A DEFAULT SECURITY COLLECTION
+
+Registering of a new default colelction is handled normally by oi2_manage
+register_tool task.
+
+Here is how to define a secutiry collection in tool.ini:
+
+ [seccollection 1]
+ name = My action moderator rights
+
+ allowed = 1
+ archetype = myaction_moderator
+ target_type = 2
+
+The target type is just as described in security level creation.
+
+The allowed field defines if this collection grants or denies the rights
+associated with this collection. 1 means allow and 2 measn deny. 
+NOTE: This might change to 'allow' and 'deny'
+
+The archetype functions as described in security level.
+
+
+=head1 CHECKING SECURITIES
+
+After you have specifiead for example a write-right in the tool.ini you
+can check them easily by inheriting th class Dicole::Security::Checker
+and calling on of the functions chk_y, chk_n, chk_u, mchk_y, mchk_n or
+mchk_u. Here is an example:
+
+ package OpenInteract2::Action::MyAction;
+ use base 'Dicole::Security::Checker';
+
+ sub info {
+    if ( chk_y( 'write', CTX->request->active_group ) ) {
+
+        print "User can write in my action of this group!";
+    }
+    if ( chk_n( 'write', CTX->request->active_group ) ) {
+
+        print "User can not write in my action of this group!";
+    }
+    if ( mchk_u( 'OpenInteract2::Action::Groups',
+                 'remove_group',
+                  CTX->request->active_group ) ) {
+
+        print "User has not been assigned either an allow or a".
+              "deny for removing this group - decide what to do!";
+    }    
+    
+    }
+    if ( mchk_y( 'OpenInteract2::Action::Groups', 'create_group') ) {
+
+        print "But at least the user can create new groups!";        
+    }
+ }
+
+As you might already have figured out the mchk_? functions check rights
+from an another packages namespace and chk_? functions use the current
+package for the namespace. _y checks for allow, _n for deny and _u for
+not specified. How you handle not specified is your decission.
+
+The last parameter is the uid or gid of the target. It defaults to 0
+which means all groups, all users or just that the level hasn't got a
+target.
+
+If you are wondering the security checks do not cause any database
+queries and are just one check from a multi-level hash. So you can use
+them as much as you wish without fearing a slowdown.
+
+=head1 AUTOMATED SECURITY CHECKING
+
+There are many places in the system where checking of the rights are
+automated and the associated rights defined in the ini files. Failure
+on these checks result in a default page which informs that the user
+tried to do something that he/she is not allowed to do.
+
+These places include:
+
+=over 4
+
+=item *
+
+Task execution
+
+=item *
+
+Navigation item visibility
+
+=item *
+
+Tool tab visibility
+
+=item *
+
+Tool selection
+
+=item *
+
+Security assigning
+
+=back
+
+You specify the needed security for these elements in the ini file with
+the key "secure". You can specify also multiple securities which all
+are required. Here is an example of action.ini which holds security
+specifications for task execution and tool tab visibility:
+
+ [myaction]
+ class = OpenInteract2::Action::MyAction
+ task_default = list
+ tool_name = My Action Tool
+ active_navigation = group_my_action
+ 
+ [myaction secure]
+ default = OpenInteract2::Action::MyAction::use
+ list = OpenInteract2::Action::MyAction::execute_list
+ add = OpenInteract2::Action::MyAction::execute_add
+ add = OpenInteract2::Action::MyAction::admin
+
+ [myaction tab_1]
+ task = list
+ name = List
+ secure = OpenInteract2::Action::MyAction::execute_list
+
+ [myaction tab_2]
+ task = add
+ name = Add
+ secure = OpenInteract2::Action::MyAction::execute_add
+ secure = OpenInteract2::Action::MyAction::admin
+
+Note however that the security levels 'use' and 'execute_taskname'
+are not generated automatically and you must define them yourself
+(and thus use any name you like) in tool.ini.
+
+Likewise navigation items can be specified in tool.ini with security:
+
+ [navigation 1]
+ name = 
+ navid = group_my_action
+ navparent = group_tools
+ link = /myaction/list/%%groupid%%
+ secure = OpenInteract2::Action::MyAction::execute
+
+And the tool:
+
+ [tool 1]
+ toolid = group_my_action_tool
+ name = My Action Tool
+ description = My Action Tool Which does everything
+ type = group
+ summary = my_action_summary
+ secure = OpenInteract2::Action::MyAction::select
+
+Example for security assigning is presented earlier in this document
+when the security level creation is described. It follows the same
+idea.
+
+
+=head1 AUTHORS
+
+Antti Vähäkotamäki E<lt>antti@ionstream.fiE<gt>

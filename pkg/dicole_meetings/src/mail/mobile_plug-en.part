@@ -1,0 +1,14 @@
+[% IF in_html %]
+<table cellspacing="0" cellpadding="0" style="margin-left:50px; margin-top:35px; margin-right:50px; margin-bottom:15px;border-collapse:collapse;border-spacing:0;height:60px;">
+<tr>
+<td height="60" style="height:60px; margin-bottom:0px; text-align:left; vertical-align:top;" valign="top">
+<img align="right" src="[% server_host %]/images/meetings/email/gift_mobile.png" style="display:block;border:0;margin-top:0px;"/>
+</td>
+<td height="60" style="height:60px; margin-bottom:0px; text-align:left;" valign="top">
+<p style="line-height:20px; font-size:15px; color:#4a4a4a; margin-top:0px; margin-bottom:0px; margin-left:20px; margin-right:30px; font-family:Arial,Verdana,sans-serif; vertical-align:top;">
+[% MTN.t('We also have a cool mobile site. Create a meeting and go to %(L$https://m.meetin.gs%) to access your meeting details on the go. The mobile app is coming to App Store soon.', { L => { href => "https://m.meetin.gs"}}) %]
+</p>
+</td>
+</tr>
+</table>
+[% END %]

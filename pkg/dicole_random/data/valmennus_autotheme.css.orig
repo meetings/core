@@ -1,0 +1,53 @@
+body {
+    
+    background-image: none;
+    
+    
+    background-color: #FFFFFF;
+    
+}
+
+
+
+#navi_logo_link {
+	
+	background: transparent url("http://j-impact.fi/2012/assets/img/j-impact-logo.png") no-repeat scroll 20px 30px;
+	
+	
+	
+}
+
+
+
+#navi_logo_text {
+	display: none;
+}
+
+
+
+
+
+
+
+#navi_actions {
+    display: none;
+}
+
+
+
+
+
+#navi_tools a {
+    color: #000;
+}
+#navi_tools a:visited {
+    color: #000;
+}
+
+
+
+.no_group_admin_extras .wiki_search_box, .no_group_admin_extras .wiki_navigation_box, .no_group_admin_extras .wiki_backlink_box, .no_group_admin_extras .wiki_actions_box, .no_group_admin_extras .wiki_show_tags_box, .no_group_admin_extras .wiki_show_info_box, .no_group_admin_extras .wiki_attachments_box, .no_group_admin_extras .wiki_tag_cloud_box, .no_group_admin_extras .wiki_change_box, .no_group_admin_extras .wiki_comments_container_box, .no_group_admin_extras .wiki_link_box {
+	display: none !important;
+}
+
+

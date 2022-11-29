@@ -1,0 +1,13 @@
+h3.materials-title!=MTN.t('Preset materials')
+if preset_materials
+    ul#material-list
+        each material in preset_materials
+            // TODO: remove button
+            li.material(data-id=material.attachment_id)=material.name
+                i.ico-cross.remove-file
+
+div#upload-area
+    a#upload-button.button.blue(href='#')
+        i.ico-add
+        span.label.text!=MTN.t('Add new material')
+        input#fileupload(type="file",name="file") 

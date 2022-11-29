@@ -1,0 +1,25 @@
+[% MTN.t("Meetin.gs is missing you") %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Hello!') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+<<<bubble>>>
+
+<<<p>>>[% MTN.t("It's been a while since we last saw you.") %]<<</p>>>
+<<<p>>>[% MTN.t("Getting back to business is easy, just organize your next meeting.") %]<<</p>>>
+<<<p>>><<</p>>>
+[% url = create_events_url %]
+[% showtext = 1 %]
+[% text = MTN.t('Create a meeting') %]
+<<<blue_button>>>
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

@@ -1,0 +1,50 @@
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_id = $params ? $params : 0;
+    
+    my $entries = CTX->lookup_object('blogs_entry')->fetch_group;
+    my %entries_by_group = map { $_->group_id => 1 } @$entries;
+    
+    my $groups = CTX->lookup_object('groups')->fetch_group;
+    
+    my $networking_tools = CTX->lookup_object('tool')->fetch_group( {
+        where => 'toolid = ?',
+        value => [ "group_networking" ],
+    } );
+    my $blogs_tools = CTX->lookup_object('tool')->fetch_group( {
+        where => 'toolid = ?',
+        value => [ "group_blogs" ],
+    } );
+    
+    my $group_blog_tools = CTX->lookup_object('tool')->fetch_group( {
+        where => 'toolid = ?',
+        value => [ "group_weblog" ],
+    } );
+
+    for my $group ( @$groups ) {
+        my $gid = $group->id;
+       if ( $domain_id ) {
+            my $ok = eval { CTX->lookup_action('dicole_domains')->execute( group_belongs_to_domain => {
+                group_id => $gid, domain_id => $domain_id,
+            } ) };
+            next unless $ok;
+        }
+        
+        eval { $group->tool_remove( $networking_tools->[0]->id ); };
+        eval { $group->tool_add( $networking_tools->[0]->id ); };
+        print "Added networking to group $gid" . $/;
+    
+        next unless $entries_by_group{ $gid };
+        
+        eval { $group->tool_remove( $blogs_tools->[0]->id ); };
+        eval { $group->tool_add( $blogs_tools->[0]->id ); };
+        print "Added blogs to group $gid" . $/;
+        
+        eval { $group->tool_remove( $group_blog_tools->[0]->id ); };
+        print "Removed group weblog from group $gid" . $/;
+    }
+}
+
+1;

@@ -1,0 +1,9 @@
+[%- IF test_case == 'betakutsu' %]
+[%- 
+
+server_host = 'http://dev.meetin.gs'
+user_name = 'Viivi'
+register_url = 'http://www.dicole.com'
+
+%]
+[%- END %]

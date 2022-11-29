@@ -1,0 +1,10 @@
+
+use Dicole::Utils::User;
+
+sub execute {
+    my ( $self ) = @_;
+    my $users = CTX->lookup_object( 'user' )->fetch_group() || [];
+    Dicole::Utils::User->update_full_name( $_ ) for @$users;
+}
+
+1;

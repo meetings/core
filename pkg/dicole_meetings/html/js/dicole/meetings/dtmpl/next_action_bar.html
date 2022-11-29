@@ -1,0 +1,90 @@
+<div id="next-action-wrap">
+
+    <% if( p.type === 'followup' ) { %>
+    <div class="action">
+        <p><%= MTN.t('The meeting is over. Do you want to organize a follow-up meeting?') %></p>
+    </div>
+    <div class="buttons">
+        <a href="<%= p.params.create_followup_url %>" id="js_create_followup" class="button-small pink"><%= MTN.t('Schedule a follow-up') %></a>
+    </div>
+    <% } %>
+
+    <% if( p.type === 'ready_button' ) { %>
+    <div class="action">
+        <% if ( p.params.is_draft && ( p.params.draft_participant_count > 0 || p.params.participant_count > 1 ) && dicole.get_global_variable('meetings_meeting_matchmaker_id') ) { %>
+        <p class="icon"><i class="ico-note"></i><%= MTN.t('Click "Confirm" to customize and send the confirmation after preparing the meeting page.') %></p>
+        <% } else if ( p.params.is_draft && ( p.params.draft_participant_count > 0 || p.params.participant_count > 1 ) ) { %>
+        <p class="icon"><i class="ico-note"></i><%= MTN.t('Click "Ready" to customize and send the invitations after preparing the meeting page.') %></p>
+        <% } else { %>
+        <p class="icon"><i class="ico-note"></i><%= MTN.t('You can set the meeting "Ready" after adding at least one participant.') %></p>
+        <% } %>
+    </div>
+    <div id="draft-box">
+
+        <div class="draft">
+            <p>
+            <%= MTN.t('Draft') %>
+            <span class="help-icon js_tooltip" data-tooltip-nodeid="draft-mode-tooltip" data-tooltip-width="200"> </span>
+            </p>
+            <div style="display:none;" id="draft-mode-tooltip">
+                <% if ( p.params.is_draft && ( p.params.draft_participant_count > 0 || p.params.participant_count > 1 ) && dicole.get_global_variable('meetings_meeting_matchmaker_id') ) { %>
+                <%= MTN.t('This meeting is not yet confirmed. Fill in the meeting details and click confirm to proceed.') %>
+                <% } else if ( p.params.is_draft && ( p.params.draft_participant_count > 0 || p.params.participant_count > 1 ) ) { %>
+                <%= MTN.t('This meeting is a draft. Fill in the meeting details and choose who you want to invite. We will send the invitations after you click ready.') %>
+                <% } else { %>
+                <%= MTN.t('This meeting is a draft. Fill in the meeting details and choose who you want to invite. We will send the invitations only after you are ready.') %>
+                <% } %>
+            </div>
+
+        </div>
+        <div class="ready">
+            <% if ( p.params.draft_participant_count > 0 || p.params.participant_count > 1 ) { %>
+            <% if( dicole.get_global_variable('meetings_draft_ready_data_url') ) { %>
+            <% var button_text = dicole.get_global_variable('meetings_meeting_matchmaker_id') ? MTN.t('Confirm') : MTN.t('Ready'); %>
+            <a id="meeting-ready-button" class="js_meetings_invite_customize_message_open draft-button pink" href="<%= dicole.get_global_variable('meetings_draft_ready_data_url') %>" style="margin-top:0px">
+                <%== button_text %><i class="ico-rightarrow"></i>
+            </a>
+            <% } else if( dicole.get_global_variable('meetings_temp_draft_ready_data_url') ) { %>
+            <a id="meeting-ready-button" class="js_meetings_edit_my_profile_new_user_open draft-button pink" href="<%= dicole.get_global_variable('meetings_temp_draft_ready_data_url') %>" style="margin-top:0px">
+                <%= MTN.t('Ready') %> <i class="ico-rightarrow"></i>
+            </a>
+            <% } %>
+            <% } else { %>
+            <a href="#" onClick="return false;" data-tooltip-text="<%= MTN.t('You need to add people before setting the meeting ready.') %>" class="draft-button gray js_tooltip" style="margin-top:0px"><%= MTN.t('Ready') %><i class="ico-rightarrow"></i></a>
+            <% } %>
+        </div>
+    </div>
+    <% } %>
+
+    <% if ( p.type === 'rsvp' ) { %>
+    <div class="action">
+        <p class="icon"><i class="ico-note"></i><%= MTN.t('Are you attending the meeting?') %></p>
+    </div>
+    <!-- Buttons -->
+    <div class="buttons">
+        <a href="#" class="js_set_rsvp_true button-small blue">
+            <i class="ico-check"></i><%= MTN.t('Attending') %>
+        </a>
+        <a href="#" class="js_set_rsvp_false button-small gray">
+            <i class="ico-cross"></i><%= MTN.t('Not attending') %>
+        </a>
+    </div>
+</div>
+    <% } %>
+
+    <% if ( p.type === 'tutorial' ) { %>
+    <div class="action">
+        <p class="icon"><i class="ico-note"></i><%= MTN.t('Can we help you get started?') %></p>
+    </div>
+    <!-- Buttons -->
+    <div class="buttons">
+        <a href="#" id="js_start_tutorial" class="button-small blue">
+            <%= MTN.t('Watch tutorial') %>
+        </a>
+        <a href="#" id="js_disable_tutorial"  class="button-small gray">
+            <%= MTN.t('Hide forever') %>
+        </a>
+    </div>
+</div>
+    <% } %>
+</div>

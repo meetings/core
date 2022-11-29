@@ -1,0 +1,32 @@
+[% MTN.t('Welcome to Meetin.gs') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Welcome!') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t('Thanks for taking the time to sign up, we really appreciate it.') %]<<</p>>>
+[% url = login_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=firstlogin' %]
+[% showtext = 1 %]
+[% text = MTN.t('Continue to Meetin.gs') %]
+<<<blue_button>>>
+
+
+<<<p>>>[% MTN.t("We have tried to make Meetin.gs as easy to use as possible. In case you have trouble getting started, here's a short %(L\$guide%) to help you out.", { L => { href => 'http://www.slideshare.net/dicole/meetings-getting-started-complete/' }}) %]<<</p>>>
+
+<<<p>>>[% MTN.t('If there is anything else I can help you with, please give me or my team a shout.') %]<<</p>>>
+
+<<<p>>>[% MTN.t('Best regards,') %]<<<br>>>
+Teemu Arina<<</p>>>
+<<<p>>>
+<<<italic>>>Founder, CEO, Meetin.gs<<<br>>>
+Twitter: @meetin_gs<<</italic>>><<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

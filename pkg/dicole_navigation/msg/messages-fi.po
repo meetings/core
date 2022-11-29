@@ -1,0 +1,137 @@
+# $Id: messages-fi.po,v 1.14 2010-06-30 23:22:10 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:09:43+0000\n"
+"PO-Revision-Date: 2005-03-22 02:09:43+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Admin area"
+msgstr "Ylläpitoalue"
+
+msgid "Group area"
+msgstr "Ryhmäalue"
+
+msgid "My Area"
+msgstr "Oma alue"
+
+msgid "My groups"
+msgstr "Omat ryhmät"
+
+msgid "Other groups"
+msgstr "Muut ryhmät"
+
+msgid "Personal area"
+msgstr "Oma alue"
+
+msgid "Settings"
+msgstr "Asetukset"
+
+msgid "Summary"
+msgstr "Yhteenveto"
+
+msgid "Tools"
+msgstr "Työkalut"
+
+msgid "Log out"
+msgstr "Kirjaudu ulos"
+
+msgid "Feedback"
+msgstr "Palaute"
+
+msgid "Change area"
+msgstr "Vaihda aluetta"
+
+msgid "Logout"
+msgstr "Kirjaudu ulos"
+
+msgid "My area"
+msgstr "Oma alue"
+
+msgid "Visited blogs"
+msgstr "Vieraillut blogit"
+
+msgid "Visited general areas"
+msgstr "Vieraillut yleiset alueet"
+
+msgid "Visited groups"
+msgstr "Vieraillut ryhmät"
+
+msgid "Dicole"
+msgstr "Dicole"
+
+msgid "%%groupname%%"
+msgstr "%%groupname%%"
+
+msgid "Other areas"
+msgstr "Muut alueet"
+
+msgid "My weblog"
+msgstr "Oma blogi"
+
+msgid "Admin (action)"
+msgstr "Ylläpito"
+
+msgid "Write weblog"
+msgstr "Kirjoita blogiin"
+
+msgid "Blog (action)"
+msgstr "blogaa"
+
+msgid "Write to my weblog"
+msgstr "Kirjoita omaan blogiin"
+
+msgid "Write to weblog"
+msgstr "Kirjoita blogiin"
+
+msgid "Domain managing"
+msgstr "Domainhallinta"
+
+msgid "Look settings"
+msgstr "Ulkonäön asetukset"
+
+msgid "Custom CSS"
+msgstr "Räätälöity CSS"
+
+msgid "Logged in as"
+msgstr "Kirjautuneena"
+
+msgid "Login (header)"
+msgstr "Kirjautuminen"
+
+msgid "Login (submit)"
+msgstr "Kirjaudu"
+
+msgid "Log in to participate"
+msgstr "Kirjaudu osallistuaksesi"
+
+msgid "Join area"
+msgstr "Liity alueelle"
+
+msgid "Remember me on this machine"
+msgstr "Muista minut tällä koneella"
+
+msgid "Login (action)"
+msgstr "Kirjaudu"
+
+msgid "Connect with Facebook"
+msgstr "Yhdistä tunnuksesi Facebook-tunnukseesi"
+
+msgid "Login with your Facebook account"
+msgstr "Kirjaudu sisään Facebook-tunnuksellasi"
+
+msgid "You are not yet a member of area \"%1\". By joining the area your profile will be visible in the people -section and you can participate more!"
+msgstr "Et ole jäsen alueella \"%1\". Liityttyäsi profiilisi näkyy ihmiset -osiossa ja voit vaikuttaa enemmän!"
+
+msgid "Join this group!"
+msgstr "Liity joukkoon!"
+
+msgid "Personal"
+msgstr "Henkilökohtainen"

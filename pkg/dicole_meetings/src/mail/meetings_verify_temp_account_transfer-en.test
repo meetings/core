@@ -1,0 +1,20 @@
+[%- IF test_case == 'meet me transfer' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+user_name ='kääppä'
+transfer_url = 'http://www.meetin.gs/'
+meet_me_url = 'http://meetin.gs/meet/jussi'
+
+%]
+[% END %]
+
+[%- IF test_case == 'sign up transfer' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+user_name ='kääppä'
+transfer_url = 'http://www.meetin.gs/'
+
+%]
+[% END %]

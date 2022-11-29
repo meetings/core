@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+
+# Converts a file from character set to another.
+# 
+# The first parameter is the character set which
+# will be used for the conversion. The rest of
+# the parameters are files to convert.
+
+use Unicode::MapUTF8 qw(to_utf8 from_utf8);
+
+if ( scalar @ARGV < 2 ) {
+    print "Usage: $0 [charset] [to|from] [...FILES]\n";
+    exit;
+}
+
+my $charset = shift @ARGV;
+my $method = shift @ARGV;
+$method .= '_utf8';
+
+foreach $file (@ARGV)
+{
+        print "Converting $charset to UTF-8: $file\n";
+        next unless -f $file;
+        open FILE, "+< $file",          or die "Can't open file $file: $!";
+	my $content = undef;
+        while (<FILE>)
+        {
+                $content .= $_;
+        }
+	my $out = &$method({ -string => $content, -charset => $charset });
+        seek(FILE, 0, 0)                or die "Can't seek to start of file $file: $!";
+        print FILE $out                 or die "Can't print to file $file: $!";
+        truncate (FILE, tell(FILE))     or die "Can't truncate file $file: $!";
+        close FILE                      or die "Can't close file $file: $!";
+}

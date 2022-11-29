@@ -1,0 +1,17 @@
+sub execute {
+    my ( $self, $domain_id ) = @_;
+
+    my $m = CTX->lookup_action('meetings_api');
+    my $users = CTX->lookup_action('domains_api')->e( users_by_domain => { domain_id => $domain_id } );
+    for my $uid ( @$users ) {
+	my $user = CTX->lookup_object('user')->fetch( $uid );
+        next if $m->_user_has_accepted_tos( $user, $domain_id );
+        my $bgid = $m->_get_note_for_user( 'meetings_base_group_id', $user, $domain_id );
+        next unless $bgid;
+        my $group = CTX->lookup_object('groups')->fetch( $bgid );
+        next unless $group->created_date && $group->created_date < 1316667600;
+        print "Upgrading " . $user->email . $/;
+        $m->_set_note_for_user( 'beta_tos_accepted' => $group->created_date, $user, $domain_id );
+    }
+}
+1;

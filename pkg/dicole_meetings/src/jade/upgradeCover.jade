@@ -1,0 +1,34 @@
+div#upgrade-page.m-modal
+    div.modal-header
+        h3!=MTN.t('Upgrade Meetin.gs PRO')
+    div.modal-content
+        div.section.vendor.paypal
+            div.left
+                h3!=MTN.t('Buy using credit card')
+            div.right
+                p
+                    a.button.pink.open-pay(data-payment-type='monthly')!=MTN.t('$ 12 / month')
+                    span.or!=MTN.t('or')
+                    a.button.pink.open-pay(data-payment-type='yearly')!=MTN.t('$ 129 / year')
+        if(prefered_vendor)
+            div.section.vendor.prefered
+                div.left
+                    h3!=MTN.t('Buy from your local vendor')
+                div.right
+                    p
+                        a.prefered-image(href=app.vendors[prefered_vendor].url)
+                            img.logo(src=app.vendors[prefered_vendor].image,alt=app.vendors[prefered_vendor].name)
+                            span.price=app.vendors[prefered_vendor].price
+        div.section.vendor.others
+            div.left
+                h3!=MTN.t('Other vendors')
+            div.right
+                p
+                    - var i = 0;
+                    each vendor,key in app.vendors
+                        if(key !== prefered_vendor)
+                            = i > 0 ? ', ' : ''
+                            a.vendor-link.underline(href='/meetings/upgrade/'+key)=vendor.name
+                            - i++;
+
+

@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+`mkdir translations`;
+my @files = split "\n", `find pkg | grep msg/messages`;
+for my $file ( @files ) {
+  chomp $file;
+  my $to = $file;
+  $to =~ s/\//___/g;
+  $to =~ s/pkg___/translations\//;
+  system "cp", $file, $to;
+}
+`zip -r translations.zip translations`;
+`rm -Rf translations`;

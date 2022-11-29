@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+
+chdir `d swd`;
+die "Must be in staging" unless `git branch | grep \\*` eq "* staging\n";
+system git => 'stash';
+system git => checkout => $ARGV[0];
+system git => stash => 'pop',
+

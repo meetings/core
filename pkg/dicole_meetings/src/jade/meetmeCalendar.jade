@@ -1,0 +1,33 @@
+div#meetme-calendar
+    div.top-wrapper
+        div.top
+            a.back-to-cover(href="#")
+                img(src=user.image || '/images/meetings/new_profile.png')
+            if( ! app.auth.user )
+                a.login(href='#')!=MTN.t('Already a user? Login here')
+            h1.name=user.name
+            -if( user.organization && user.organization_title )
+                p.title=user.organization + ', '+user.organization_title
+            -if( user.organization && ! user.organization_title )
+                p.title=user.organization
+            -if( ! user.organization && user.organization_title )
+                p.title=user.organization_title
+            div.social-links
+                -if ( user.linkedin )
+                    a(href=user.linkedin,target="_blank")
+                        i.ico-linkedin
+                        !=MTN.t('Linkedin Profile')
+    div.info-bar
+        p
+            !=MTN.t('Suggest below the best time to meet with %1$s.', { params : [ user.name  ] } )
+            -if ( matchmaker.duration )
+                i.ico-time
+                = matchmaker.duration + ' min'
+            -if ( matchmaker.location )
+                i.ico-location
+                = rescheduled_meeting.location || matchmaker.location
+    div.middle
+        p.timezone=matchmaker.time_zone_string
+        div#calendar-container.btd-container
+            p!=MTN.t('Loading calendar...')
+            div.loader

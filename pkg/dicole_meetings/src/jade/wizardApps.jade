@@ -1,0 +1,18 @@
+#profile-apps
+    h1!=MTN.t('Get the most out of your Meetin.gs')
+    div.apps(style='padding:0 100px;')
+        div.app.ios.mr
+            span.logo
+            p!=MTN.t('Sync your mobile calendar and contacts.')
+            a.button.gray(href='http://bit.ly/swipetomeet-ios',target='_blank')!=MTN.t('Download for iPhone')
+        div.app.android.mr
+            span.logo
+            p!=MTN.t('Keep track of your meetings while on the move.')
+            a.button.gray(href='http://bit.ly/swipetomeet-android',target='_blank')!=MTN.t('Download for Android')
+        div.app.chrome
+            span.logo
+            p!=MTN.t('Organize meetings from Gmail, LinkedIn, Highrise and more.')
+            a.button.gray(href='http://chrome.meetin.gs/',target='_blank')!=MTN.t('Install Chrome Extension')
+    div.continue
+        a.next-step(href='#').button.blue!=MTN.t('Continue')
+

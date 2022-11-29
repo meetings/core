@@ -1,0 +1,7 @@
+conf linkki on: transfer_url
+tässä pitäisi olla myös meetingin perustiedot olemassa normaalisti parametreina:
+meeting_title
+meeting_location_string
+meeting_location
+meeting_time
+(meeting_email)

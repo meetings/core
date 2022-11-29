@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+
+unless ( -d 'pkg' || $ENV{OPENINTERACT2} ) {
+    die 'You must be in dicole source root to use this script and your'.
+        'OPENINTERACT2 environment variable must be set!\n';
+}
+
+unless ( scalar( @ARGV ) ) {
+    print "Usage: bin/install_dicole_package package_name package_name ...\n";
+    exit;
+}
+
+my $packages = join ",", @ARGV;
+chdir( 'pkg' );
+foreach my $package ( @ARGV ) {
+	print "Installing $package\n";
+	system("rm -f $package-0.01.zip");
+	system("oi2_manage export_package --package_dir=. --package=$package");
+	system("oi2_manage install_package --package_file=$package-0.01.zip");
+	system("rm -f $package-0.01.zip");
+}
+system("oi2_manage install_sql --package=$packages");
+system("oi2_manage register_tool --package=$packages");

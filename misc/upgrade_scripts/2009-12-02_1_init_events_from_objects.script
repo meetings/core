@@ -1,0 +1,82 @@
+use Dicole::Utils::SQL;
+
+my $group_domains = {};
+
+sub execute {
+    my ( $self ) = @_;
+
+    if ( 1 ) {
+        my $os = CTX->lookup_object('presentations_prese')->fetch_group;
+        for my $o ( @$os ) {
+            print "processing media object " . $o->id . $/;
+            CTX->lookup_action('presentations_api')->e( init_store_creation_event => {
+                object => $o, domain_id => $self->_domain_for_group( $o->group_id ),
+            } );
+        }
+    }
+    if ( 1 ) {
+        my $vs =  CTX->lookup_object('wiki_version')->fetch_group;
+        for my $v ( @$vs ) {
+            print "processing wiki version " . $v->id . $/;
+            CTX->lookup_action('wiki_api')->e( init_store_change_event => {
+                version => $v, domain_id => $self->_domain_for_group( $v->groups_id ),
+            } );
+        }
+    }
+
+    if ( 1 ) {
+        my $es =  CTX->lookup_object('blogs_entry')->fetch_group;
+        for my $e ( @$es ) {
+            $group_domains->{$e->group_id} ||= $self->_group_domains( $e->group_id );
+            my $d = $group_domains->{$e->group_id}->[0];
+            print "processing entry " . $e->id . $/;
+            CTX->lookup_action('blogs_api')->e( init_store_creation_event => {
+                entry => $e, domain_id => $self->_domain_for_group( $e->group_id ),
+            } );
+        }
+    }
+
+    if ( 1 ) {
+        my $threads = CTX->lookup_object('comments_thread')->fetch_group;
+    
+        for my $thread ( @$threads ) {
+            $thread->{domain_id} = $self->_domain_for_group( $thread->group_id );
+        }
+    
+        my %thread_by_id = map { $_->id => $_ } @$threads;
+    
+        my $posts = CTX->lookup_object('comments_post')->fetch_group;
+    
+        for my $post ( @$posts ) {
+            print "processing post " . $post->id . $/;
+            my $t = $thread_by_id{ $post->thread_id };
+            CTX->lookup_action('comments_api')->e( init_store_creation_event => {
+                post => $post, thread => $t, domain_id => $t->{domain_id}
+            } );
+        }
+    }
+}
+
+sub _domain_for_group {
+    my ( $self, $group_id ) = @_;
+    $group_domains->{$group_id} ||= $self->_group_domains( $group_id );
+    return $group_domains->{$group_id}->[0];
+}
+
+sub _group_domains {
+    my ( $self, $group_id ) = @_;
+    
+    return CTX->lookup_action('dicole_domains')->execute( get_group_domains => {
+        group_id => $group_id
+    } );
+}
+
+sub _user_domains {
+    my ( $self, $user_id ) = @_;
+    
+    return CTX->lookup_action('dicole_domains')->execute( get_user_domains => {
+        user_id => $user_id
+    } );
+}
+
+1;

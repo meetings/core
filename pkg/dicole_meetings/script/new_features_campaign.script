@@ -1,0 +1,69 @@
+
+my $domain_id = 76;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_host = Dicole::URL->get_domain_url( $domain_id ); 
+    
+    CTX->lookup_action('meetings_api')->e( send_campaign_email => {
+        domain_id => $domain_id,
+        dry_run => 1,
+#        single_send_limit => 10,
+        skip_sent_check => 1,
+#        limit_to_users => ['antti@dicole.com', 'antti@dicole.fi'],
+        template_key_base => 'meetings_new_features',
+        exclude_user_checker => sub {
+            my ( $self, $user ) = @_;
+            return 1 unless $self->_get_note_for_user('meetings_invited_to_beta_by', $user, $domain_id );
+            my $created = $self->_get_note_for_user('creation_time', $user, $domain_id );
+            my $visual_update_time = time - ( 10 * 24 * 60 * 60 );
+            return 1 if $created > $visual_update_time;
+            my $user_events = CTX->lookup_object('events_event')->fetch_group({
+                where => 'domain_id = ? AND creator_id = ?',
+         		value => [ $domain_id, $user->id ],
+            }) || [];
+            for my $meeting ( @$user_events ) {
+                return 1 if $meeting->created_date > time - ( 10 * 24 * 60 * 60 );
+            }
+            return 0;
+        },
+        template_params_generator => sub {
+            my ( $self, $user ) = @_;
+            my $params = {};
+
+	    	if ( my $bgid = $self->_get_note_for_user('meetings_base_group_id', $user, $domain_id) ) {
+		    	$params->{beta_accepted} = 1;
+                $params->{create_events_url} = $self->_form_user_create_meetings_url( $user, $domain_id, $domain_host );
+    		}
+            else {
+           		my $inviters = $self->_get_note_for_user('meetings_invited_to_beta_by', $user, $domain_id);
+                my $inviter;
+
+                $inviter = eval { Dicole::Utils::User->ensure_object( pop @$inviters ) } while ! $inviter && @$inviters;
+                if ( $inviter && $inviter->id != 2 ) {
+                    $params->{inviting_user_name} = Dicole::Utils::User->name( $inviter, 'us' );
+                }
+                else {
+                    $inviter = undef;
+                    $params->{inviting_user_name} = 'us';
+                }
+
+                $params->{register_account_url} = $self->_form_user_beta_signup_url( $user, $inviter, $domain_id, $domain_host );
+            }
+
+            my $user_events = CTX->lookup_object('events_event')->fetch_group({
+                where => 'domain_id = ? AND creator_id = ?',
+         		value => [ $domain_id, $user->id ],
+            }) || [];
+
+            $params->{no_events_created} = scalar( @$user_events ) ? 0 : 1;
+            $params->{user_name} = Dicole::Utils::User->first_name( $user ) || $user->email;
+
+            return $params;
+        },
+    } );
+}
+
+1;
+

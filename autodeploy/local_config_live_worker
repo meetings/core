@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+
+my $conf = {
+    disable_rollout_httpd => 1,
+};
+
+print $conf->{ $ARGV[0] };

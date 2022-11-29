@@ -1,0 +1,67 @@
+[% IF matchmaking_event %][% IF requester_company && requester_name == requester_email %][% MTN.t('%1$s has requested a meeting at %2$s', [requester_company, matchmaking_event]) %][% ELSIF requester_company %][% MTN.t('%1$s from %2$s has requested a meeting at %3$s', [requester_name, requester_company, matchmaking_event]) %][% ELSE %][% MTN.t('%1$s has requested a meeting at %2$s', [requester_name, matchmaking_event]) %][% END %][% ELSE %][% IF requester_company && requester_name == requester_email %][% MTN.t('%1$s has requested a meeting with you', [requester_company]) %][% ELSIF requester_company %][% MTN.t('%1$s from %2$s has requested a meeting with you', [requester_name, requester_company]) %][% ELSE %][% MTN.t('%1$s has requested a meeting with you', [requester_name]) %][% END %][% END %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('You have received an invitation to meet!')  %]
+
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<p>>>
+
+
+[% IF requester_company && requester_name == requester_email %]
+    [% MTN.t('%1$s suggested the following agenda:',[requester_company]) %]
+[% ELSIF requester_company %]
+    [% MTN.t('%1$s from %2$s suggested the following agenda:',[requester_name, requester_company]) %]
+[%ELSE %]
+    [% MTN.t('%1$s suggested the following agenda:',[requester_name]) %]
+[% END %]
+<<</p>>>
+
+<<<bubble>>>
+
+[% IF greeting_message_text && greeting_message_html %]
+
+<<<p>>>
+[% IF in_html %]
+[% greeting_message_html %]
+[% ELSE %]
+[% greeting_message_text %]
+[% END %]
+<<</p>>>
+<<<hr>>>
+[% END %]
+
+<<<p>>><<<bold>>>[% MTN.t('Title://context:meeting title') %]<<</bold>>> [%meeting_title%]
+<<<br>>>
+<<<bold>>>[% MTN.t('Where:') %]<<</bold>>> [%meeting_location%]
+<<<br>>>
+<<<bold>>>[% MTN.t('When:') %]<<</bold>>> [%meeting_time%]<<</p>>>
+
+
+[% tip = 1 %]
+<<<p>>>
+[% MTN.t('Please answer as soon as possible. Accepting the meeting request will take you to the online meeting page to send the invitation. If you decline the request, you will get the opportunity to respond why you cannot meet.') %]
+<<</p>>>
+
+[% IF decline_url %]
+[% decline_url = decline_url _ '&utm_source=matchmaking&utm_medium=email&utm_campaign=matchmaker_confirm_needed' %]
+[% END %]
+[% IF accept_url %]
+[% accept_url = accept_url _ '&utm_source=matchmaking&utm_medium=email&utm_campaign=matchmaker_confirm_needed' %]
+[% END %]
+
+<<<rsvp_matchmaking>>>
+
+[% IF rsvp_required %]
+<<<br>>>
+<<<hr>>>
+[% END %]
+[% tip = 1 %]
+<<<p>>>[% MTN.t('%1$s - The smartest way to meet', [ service_name ]) %]<<</p>>>
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

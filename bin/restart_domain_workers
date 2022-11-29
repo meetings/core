@@ -1,0 +1,29 @@
+#!/bin/bash
+if [ -x /usr/local/bin/run_logging_workers.sh ]
+then
+    if [ $(pgrep -c oi2_manage) -gt 8 ]
+    then
+        screen -d -m sh -c '/usr/local/bin/oi2_manage dicole_eval --website=`d lc website_dir` --code='"'"'CTX->lookup_action("meetings_worker")->e( work_on_bg => { run_for_seconds => 1, domain_id => '$1', require_my_version_on_startup => 1 } )'"'"' >/dev/null';
+        screen -d -m sh -c '/usr/local/bin/oi2_manage dicole_eval --website=`d lc website_dir` --code='"'"'CTX->lookup_action("meetings_worker")->e( work_on_fg => { run_for_seconds => 1, domain_id => '$1', require_my_version_on_startup => 1 } )'"'"' >/dev/null';
+        screen -d -m sh -c '/usr/local/bin/oi2_manage dicole_eval --website=`d lc website_dir` --code='"'"'CTX->lookup_action("meetings_worker")->e( work_on_ag => { run_for_seconds => 1, domain_id => '$1', require_my_version_on_startup => 1 } )'"'"' >/dev/null';
+        sleep 30
+    fi
+    if [ $(pgrep -c oi2_manage) -le 8 ]
+    then
+        /usr/local/bin/run_logging_workers.sh work_on_fg 180 &
+        /usr/local/bin/run_logging_workers.sh work_on_fg 360 &
+        /usr/local/bin/run_logging_workers.sh work_on_fg 540 &
+        /usr/local/bin/run_logging_workers.sh work_on_fg 720 &
+        /usr/local/bin/run_logging_workers.sh work_on_fg 900 &
+        /usr/local/bin/run_logging_workers.sh work_on_fg 1080 &
+        /usr/local/bin/run_logging_workers.sh work_on_bg 300 &
+        /usr/local/bin/run_logging_workers.sh work_on_bg 600 &
+        /usr/local/bin/run_logging_workers.sh work_on_bg 900 &
+        /usr/local/bin/run_logging_workers.sh work_on_ag 600 &
+        /usr/local/bin/run_logging_workers.sh work_on_ag 1200 &
+    fi
+else
+    screen -d -m sh -c '/usr/local/bin/oi2_manage dicole_eval --website=`d lc website_dir` --code='"'"'CTX->lookup_action("meetings_worker")->e( work_on_bg => { run_for_seconds => 1200, domain_id => '$1', require_my_version_on_startup => 1 } )'"'"' >/dev/null';
+    screen -d -m sh -c '/usr/local/bin/oi2_manage dicole_eval --website=`d lc website_dir` --code='"'"'CTX->lookup_action("meetings_worker")->e( work_on_fg => { run_for_seconds => 1200, domain_id => '$1', require_my_version_on_startup => 1 } )'"'"' >/dev/null';
+    screen -d -m sh -c '/usr/local/bin/oi2_manage dicole_eval --website=`d lc website_dir` --code='"'"'CTX->lookup_action("meetings_worker")->e( work_on_ag => { run_for_seconds => 1200, domain_id => '$1', require_my_version_on_startup => 1 } )'"'"' >/dev/null';
+fi

@@ -1,0 +1,88 @@
+[%#- Sent to matchmaking organizer when an user confirms the selection of a date -%]
+
+[%- IF test_case == 'Event-name-and-company' %]
+[%-
+
+greeting_message_text  = 'Hey I would love to meet and discuss more about your product and possible investment opportunities.'
+
+greeting_message_html = 'Hey I would love to meet and discuss more about your product and possible investment opportunities.'
+
+requester_company = 'Investor ltd'
+requester_name = 'Rube Massey'
+requester_email = 'rube.massey@investor.com'
+server_host = 'http://dev.meetin.gs'
+accept_url = 'http://dev.meetin.gs/meetings/accept/'
+decline_url = 'http://dev.meetin.gs/meetings/decline/'
+meeting_url = 'http://dev.meetin.gs/meetings/show/'
+meeting_title = 'Pitch meeting'
+meeting_location = 'Arctic15 meeting rooms'
+meeting_time = '13.30-14.00'
+rsvp_required = 1; 
+matchmaking_event = 'Arctic15 startup matchmaking'
+
+%]
+[% END %]
+
+
+[%- IF test_case == 'event-no-company' %]
+[%-
+
+greeting_message_text  = 'Hey I would love to meet and discuss more about your product and possible investment opportunities.'
+
+greeting_message_html = 'Hey I would love to meet and discuss more about your product and possible investment opportunities.'
+
+requester_company = ''
+requester_name = 'Rube Massey'
+requester_email = 'rube.massey@investor.com'
+server_host = 'http://dev.meetin.gs'
+accept_url = 'http://dev.meetin.gs/meetings/accept/'
+decline_url = 'http://dev.meetin.gs/meetings/decline/'
+meeting_url = 'http://dev.meetin.gs/meetings/show/'
+meeting_title = 'Pitch meeting'
+meeting_location = 'Arctic15 meeting rooms'
+meeting_time = '13.30-14.00'
+rsvp_required = 1; 
+matchmaking_event = 'Arctic15 startup matchmaking'
+
+%]
+[% END %]
+
+[%- IF test_case == 'meet_me-no-name' %]
+[%-
+
+greeting_message_text  = 'Hey I would love to meet and discuss more about your product and possible investment opportunities.'
+
+greeting_message_html = 'Hey I would love to meet and discuss more about your product and possible investment opportunities.'
+
+requester_company = 'Investor ltd'
+requester_name = 'rube.massey@investor.com'
+requester_email = 'rube.massey@investor.com'
+server_host = 'http://dev.meetin.gs'
+accept_url = 'http://dev.meetin.gs/meetings/accept/'
+decline_url = 'http://dev.meetin.gs/meetings/decline/'
+meeting_url = 'http://dev.meetin.gs/meetings/show/'
+meeting_title = 'Lunch'
+meeting_location = 'Restaurante del Diablo'
+meeting_time = '13.30-14.00'
+rsvp_required = 1; 
+
+%]
+[% END %]
+
+[%- IF test_case == 'meet_me-no-name-no-company' %]
+[%-
+
+requester_company = ''
+requester_name = 'rube.massey@investor.com'
+requester_email = 'rube.massey@investor.com'
+server_host = 'http://dev.meetin.gs'
+accept_url = 'http://dev.meetin.gs/meetings/accept/'
+decline_url = 'http://dev.meetin.gs/meetings/decline/'
+meeting_url = 'http://dev.meetin.gs/meetings/show/'
+meeting_title = 'Lunch'
+meeting_location = 'Restaurante del Diablo'
+meeting_time = '13.30-14.00'
+rsvp_required = 1; 
+
+%]
+[% END %]

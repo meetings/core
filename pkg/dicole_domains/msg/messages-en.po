@@ -1,0 +1,166 @@
+# $Id: messages-en.po,v 1.6 2006/04/02 20:13:55 inf Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:08:29+0000\n"
+"PO-Revision-Date: 2005-03-22 02:08:29+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+msgid "You are not allowed to login from this domain. Please try one of the following domains: %1"
+msgstr "You are not allowed to login from this domain. Please try one of the following domains: %1"
+
+msgid "Domain not yet configured."
+msgstr "Domain not yet configured."
+
+msgid "Add domain"
+msgstr "Add domain"
+
+msgid "Default"
+msgstr "Default"
+
+msgid "Domain details"
+msgstr "Domain details"
+
+msgid "Domain has been saved."
+msgstr "Domain has been saved."
+
+msgid "Domain Manager"
+msgstr "Domain Manager"
+
+msgid "Domain name"
+msgstr "Domain name"
+
+msgid "List domains"
+msgstr "List domains"
+
+msgid "List of domains"
+msgstr "List of domains"
+
+msgid "Location of logo"
+msgstr "Location of logo"
+
+msgid "Manage domains"
+msgstr "Manage domains"
+
+msgid "Modify domain details"
+msgstr "Modify domain details"
+
+msgid "Remove domains"
+msgstr "Remove domains"
+
+msgid "Selected domains removed."
+msgstr "Selected domains removed."
+
+msgid "Show list of domains"
+msgstr "Show list of domains"
+
+msgid "Theme"
+msgstr "Theme"
+
+msgid "User can add, edit and remove domains"
+msgstr "User can add, edit and remove domains"
+
+msgid "Are you sure you want to remove the selected domains?"
+msgstr "Are you sure you want to remove the selected domains?"
+
+msgid "New domain details"
+msgstr "New domain details"
+
+msgid "Groups that belong to this domain"
+msgstr "Groups that belong to this domain"
+
+msgid "Users who belong to this domain"
+msgstr "Users who belong to this domain"
+
+msgid "Users"
+msgstr "Users"
+
+msgid "Groups"
+msgstr "Groups"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Organization"
+msgstr "Organization"
+
+msgid "Identification number"
+msgstr "Identification number"
+
+msgid "Customer number"
+msgstr "Customer number"
+
+msgid "Address"
+msgstr "Address"
+
+msgid "Contact person"
+msgstr "Contact person"
+
+msgid "Phone number"
+msgstr "Phone number"
+
+msgid "Postal number"
+msgstr "Postal number"
+
+msgid "City"
+msgstr "City"
+
+msgid "Country"
+msgstr "Country"
+
+msgid "Services and notes"
+msgstr "Services and notes"
+
+msgid "Last payment"
+msgstr "Last payment"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Users last month"
+msgstr "Users last month"
+
+msgid "Account registration enabled"
+msgstr "Account registration enabled"
+
+msgid "New accounts default to disabled"
+msgstr "New accounts default to disabled"
+
+msgid "Domain admins"
+msgstr "Domain admins"
+
+msgid "This site has IP address restrictions and you are not allowed to access this site. Blocked IP: %1"
+msgstr "This site has IP address restrictions and you are not allowed to access this site. Blocked IP: %1"
+
+msgid "Custom navigation"
+msgstr "Custom navigation"
+
+msgid "Custom new user actions"
+msgstr "Custom new user actions"
+
+msgid "Default language"
+msgstr "Default language"
+
+msgid "URL after logout"
+msgstr "URL after logout"
+
+msgid "Default timezone"
+msgstr "Default timezone"
+
+msgid "URL after login"
+msgstr "URL after login"
+
+msgid "Users this month"
+msgstr "Users this month"
+
+msgid "Users month before last"
+msgstr "Users month before last"

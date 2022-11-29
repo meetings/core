@@ -1,0 +1,78 @@
+[%#
+	sections = [
+		{
+			id = '123',
+			areas = [
+				{
+					name = 'The Virtanen Band',
+					location = 'Helsinki',
+					number_of_members = 4,
+					image = 'http://userserve-ak.last.fm/serve/252/29620837.png',
+					url = '#',
+					precentage = '75%'
+				},
+				{
+					name = 'Cannibal Corpse',
+					location = 'USA',
+					number_of_members = 5,
+					image = 'http://www.theslowdown.com/blog/wp-content/uploads/2009/05/cannibalcorpse.jpg',
+					url = '#',
+					precentage = '666%'
+				},
+				{
+					name = 'Pink Floyd',
+					location = 'UK',
+					number_of_members = 4,
+					image = 'http://image3.examiner.com/images/blog/wysiwyg/image/ThePinkFloyd_%28photobucket%29%282%29.jpg',
+					url = '#',
+					precentage = 'infinite%'
+				},
+				{
+					name = 'Seasick Steve',
+					location = 'USA',
+					number_of_members = 1,
+					image = 'http://www.musicweek.com/pictures/468xAny/o/v/b/seasick_steve.jpg',
+					url = '#',
+					precentage = '1%'
+				}
+			]
+		}
+	];
+
+	more_url = "#"
+%]
+<div class="subgroups_box_content">
+	[% IF sections.size > 1 %][%- INCLUDE dicole_groups::component_subgroups_sections -%][% END %]
+	<div style="clear:both"></div>
+	[% FOREACH section IN sections %]
+	<div id="subgroups_section_container_[% section.id | html %]" class="subgroups_section_container" style="display:[% IF loop.first %]block[% ELSE %]none[% END %]">
+		[% IF section.areas.size == 0 %]
+		<div class="empty_areas">[% MSG("No areas found.") | html %]</div>
+		[% ELSE %]
+		[% FOREACH band IN section.areas %]
+		<a class="band" href="[% band.url | html %]">
+			<div class="container">
+				<img class="image" src="[% band.image or '/images/theme/default/default-subgroup-avatar.png' | html %]" alt="[% band.name | html %]" />
+				<div class="precentage alpha_png">[% band.precentage | html %]</div>
+				<div class="meta alpha_png">
+					<div class="container">
+						<div class="name">[% band.name | html %]</div>
+						<div>
+							[% IF band.location %]
+							<span class="location">[% band.location | html %]</span>
+							<span class="separator">/</span>
+							[% END %]
+							<span class="members">[% band.number_of_members | html %] [% MSG("members") | html %]</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+		[% END %]
+		[% END %]
+	</div>
+	[% END %]
+	<div style="clear:both"></div>
+	<a href="[% more_url | html %]" class="big-button alpha_png" style="float:right"><span class="alpha_png">[% MSG("More areas") | html %] &rarr;</span></a>
+	<div style="clear:both"></div>
+</div>

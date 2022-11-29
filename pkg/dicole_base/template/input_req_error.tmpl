@@ -1,0 +1,15 @@
+[%#- $Id: input_req_error.tmpl,v 1.5 2009-01-07 14:42:33 amv Exp $ -%]
+
+[%#-
+A BLUE '«' will be printed after the corresponding input field if it is required.
+A RED '«' will be printed after the corresponding input field if it was left blank when submitting, or the information was not in the right format.
+
+The two conditions can exist with a single input field.
+In this case the BLUE « comes first.
+-%]
+
+[%- IF itemparams.error %]
+<span class="fieldErrorMarker">&laquo;</span>
+[% ELSIF itemparams.required %]
+<span class="fieldRequiredMarker">&laquo;</span>
+[% END %]

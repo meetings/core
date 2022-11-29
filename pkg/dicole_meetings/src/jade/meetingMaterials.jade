@@ -1,0 +1,10 @@
+- if ( materials && materials.length )
+    each material in materials
+        a(class='js_'+material.fetch_type+' material-item js_material_link',href=material.data_url)
+            i(class="ico-material_"+material.type_class)
+            div.title-container
+                span.material-title=dicole.meetings_common.truncate_text(material.title, 40)
+            - if( material.comment_count > 0 )
+                span.material-comments=material.comment_count
+- else
+    p.no-material-message!=MTN.t('No material for this meeting.')

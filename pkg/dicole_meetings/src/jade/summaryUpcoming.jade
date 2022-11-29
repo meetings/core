@@ -1,0 +1,38 @@
+div#summary-upcoming.tab
+    div.loader
+    div.tab-items
+        div#upcoming-today.section
+        div#upcoming-highlights.section
+        div#upcoming-scheduling.section
+        div#upcoming-this-week.section
+        div#upcoming-next-week.section
+        div#upcoming-future.section
+        - if ( ! dicole.get_global_variable('meetings_user_is_visitor') ) {
+        div.section.share-organize
+            if( google_connected == 0 )
+                div.line.vertical
+            div.row
+                div.line.horizontal1
+                div.badge.bl
+                    i.ico-add
+                a.action.create-meeting(href="#")
+                    i.ico-schedule
+                    br
+                    !=MTN.t('Organize a new meeting')
+                a.action.goto-meetme(href="#")
+                    i.ico-emblem
+                    br
+                    !=MTN.t('Share your Meet Me page')
+        if ( google_connected == 0 )
+            div.section.google-connect
+                div.line.vertical
+                div.row
+                    div.line.horizontal1
+                    div.badge.bl
+                        i.ico-calendar
+                    a.action(href=google_connect_url)
+                        i.ico-calendar
+                        br
+                        !=MTN.t('Connect Google Calendar')
+        - }
+    p.bottom-tip!=MTN.t('Looking for %(L$Past meetings%)?', { L : { href : '#', classes : 'past' } } )

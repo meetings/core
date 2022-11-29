@@ -1,0 +1,18 @@
+[% more_treshold = 6 %]
+[% IF objects.size > more_treshold %]
+<div id="js_networking_profile_list_[% type %]" class="js_open_more">
+[% FOREACH object IN objects %]
+<div><a href="[% object.url %]">[% object.title | html %]</a></div>
+[% IF loop.count >= more_treshold - 1; BREAK; END %]
+[% END %]
+<div><a class="js_js_networking_profile_list_[% type %]_more_button" href="#">Show more &darr;</a></div>
+</div>
+[% END %]
+<div class="js_js_networking_profile_list_[% type %]_more_container"[% IF objects.size > more_treshold %] style="display: none"[% END %]>
+[% FOREACH object IN objects %]
+<div><a href="[% object.url %]">[% object.title | html %]</a></div>
+[% END %]
+[% IF objects.size > more_treshold %]
+<div><a class="js_js_networking_profile_list_[% type %]_more_button" href="#">Show less &uarr;</a></div>
+[% END %]
+</div>

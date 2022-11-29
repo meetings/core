@@ -1,0 +1,114 @@
+[%- # $Id: tree.tmpl,v 1.45 2009-01-07 14:42:33 amv Exp $ # -%]
+
+[%#-
+	# The template accepts the following information in itemparams:
+	itemparams.tree = [
+			{
+				images => [
+					{
+						href => "?open=1", # optional
+						img => 'image.gif'
+					},
+				],
+				href => "?node=15", # optional
+				content => 'Tree node'
+                template => '',
+                params => '',
+				type => 'jooseppi' # optional
+			},
+			{
+				images => [
+					{
+						href => "?open=1", # optional
+						img => 'image.gif'
+					},
+				],
+				href => "?node=15", # optional
+				content => 'Tree node'
+                template => '',
+                params => '',
+				type => 'nimi' # optional, same as itemparams.types.x.type
+			}
+		]
+-%]
+[%- DEFAULT
+	images.tree = images.theme _ '/tree/' _ itemparams.attributes.icon_resolution _ '/'
+-%]
+
+[%- tree = itemparams.tree -%]
+[%- attributes = itemparams.attributes -%]
+
+[%- IF attributes.no_icon_base %]
+[%- images.tree = '' %]
+[%- END -%]
+
+<div class="tree" id="tree">
+[% IF attributes.descentable -%]
+	<div>
+	[%- IF attributes.descent_icon %]<img src="[% UNLESS attributes.descent_icon.match('^(http|/)') %][% images.tree %][% END %][% attributes.descent_icon %]" />[% END -%]
+	[%- IF attributes.descent_href %]<a href="[% attributes.descent_href %]">[% END -%]
+	[%- attributes.descent_name -%]
+	[%- IF attributes.descent_href -%]</a>[% END -%]
+	</div>
+[%- END -%]
+	<div [%- 'class="selected"' IF attributes.root_selected %]>
+		<span>
+[%- IF attributes.selectable -%]
+	[%- PROCESS dicole_base::input_input itemparams.attributes = [
+        { key => 'type', value => 'checkbox' },
+        { key => 'name', value => attributes.tree_id _ '_' _ '0' },
+        { key => 'value', value => attributes.base_path }
+ 	]  -%]
+[%- END -%]
+
+[%- IF attributes.root_icon %]<img src="[% UNLESS attributes.root_icon.match('^(http|/)') %][% images.tree %][% END %][% attributes.root_icon %]" alt="" />[% END -%]
+			<span>
+[%- IF attributes.root_template %]
+[%- INCLUDE $attributes.root_template itemparams = attributes.root_params %]
+[%- ELSE -%]
+[%- IF attributes.root_href %]<a href="[% attributes.root_href %]" [%- IF attributes.root_type -%]onmouseover="fileActionPopup(this,'[%- attributes.root_type -%]')" onmouseout="fileActionPopupHide()"[%- END -%]>[% END -%]
+[%- attributes.root_name -%]
+[%- IF attributes.root_href -%]</a>[% END -%]
+[%- END -%]
+			</span>
+		</span>
+	</div>
+
+[%- FOREACH tree_row = tree %]
+	<div [%- 'class="selected"' UNLESS !tree_row.selected -%]>
+		<span>
+[%- IF attributes.selectable -%]
+	[%- UNLESS tree_row.selected -%]
+		[%- PROCESS dicole_base::input_input itemparams.attributes = [
+			{ key => 'type', value => 'checkbox' },
+			{ key => 'name', value => attributes.tree_id _ '_' _ loop.count },
+			{ key => 'value', value => tree_row.value }
+ 		]  -%]
+	[%- ELSE -%]
+		[%- PROCESS dicole_base::input_input itemparams.attributes = [
+			{ key => 'type', value => 'checkbox' },
+			{ key => 'name', value => attributes.tree_id _ '_' _ loop.count },
+			{ key => 'value', value => tree_row.value },
+			{ key => 'id', value => 'focusElement' }
+ 		]  -%]
+	[%- END -%]
+[%- END -%]
+
+[%- FOREACH tree_img = tree_row.images -%]
+	[%- IF tree_img.href -%]<a href="[% tree_img.href %]">[% END -%]
+<img src="[% UNLESS tree_img.img.match('^(http|/)') %][% images.tree %][% END %][% tree_img.img %]" alt="[% tree_img.img %]" />
+	[%- IF tree_img.href -%]</a>[% END -%]
+[%- END -%]
+			<span[% IF tree_row.class %] class="[% tree_row.class %]"[% END %]>
+[%- IF tree_row.template %]
+[%- INCLUDE $tree_row.template itemparams = tree_row.params %]
+[%- ELSIF tree_row.href %]
+<a id="[% loop.count %]" href="[% tree_row.href %]">[%- tree_row.content -%]</a>
+[%- ELSE %]
+[%- tree_row.content -%]
+[%- END -%]
+			</span>
+		</span>
+	</div>
+[%- END %]
+</div><!-- // tree -->

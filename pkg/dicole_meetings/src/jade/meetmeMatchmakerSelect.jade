@@ -1,0 +1,24 @@
+p!=MTN.t('Meet Me page')
+    if( mode === 'edit' )
+        input#mm-name(type='text')
+        a#mm-add(href='#')!=MTN.t('Add')
+    else if( mode === 'disabled' )
+        select#mm-select.chosen(style='width:200px;', disabled='disabled')
+            option(value=0)!=MTN.t('--- Select ---')
+            each mm in matchmakers.models
+                - var id = mm.id || mm.cid;
+                if( id == current_mm )
+                    option(value=id, selected='selected')=mm.get('name') || MTN.t('Main Meet me page')
+                else
+                    option(value=id)=mm.get('name') || MTN.t('Main Meet me page')
+    else
+        select#mm-select.chosen(style='width:200px;')
+            option(value=0)!=MTN.t('--- Select ---')
+            each mm in matchmakers.models
+                - var id = mm.id || mm.cid;
+                if( id == current_mm )
+                    option(value=id, selected='selected')=mm.get('name') || MTN.t('Main Meet me page')
+                else
+                    option(value=id)=mm.get('name') || MTN.t('Main Meet me page')
+        //-a#mm-start-add(href='#') add new
+        //-a#mm-remove(href='#') remove

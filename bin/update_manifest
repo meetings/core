@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+my @a = @ARGV;
+@a = ( '.' ) if ! @a;
+
+for my $dir ( @a ) {
+    chdir "pkg/$dir" unless $dir eq '.';
+
+    use ExtUtils::Manifest;
+    unlink( "MANIFEST" );
+    ExtUtils::Manifest::mkmanifest();
+    unlink( "MANIFEST.bak" );
+
+    chdir "../.." unless $dir eq '.';
+}

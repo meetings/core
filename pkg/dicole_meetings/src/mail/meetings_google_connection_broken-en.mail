@@ -1,0 +1,29 @@
+[% MTN.t("We are having problems connecting to your Google account") %]
+
+<<<html_wrapper>>>
+
+[% IF user_name %]
+[% action_text = MTN.t("Hi %1\$s,",[user_name ]) %]
+[% ELSE %]
+[% action_text = MTN.t("Hi,") %]
+[% END %]
+<<<text_and_logo>>>
+<<<bubble>>>
+<<<p>>>
+[% MTN.t("It seems that the connection between Meetin.gs and your Google account has been broken.") %]
+<<</p>>>
+[% url = reconnect_google %]
+[% text = MTN.t('Reconnect Google account') %]
+<<<blue_button>>>
+<<<p>>>
+[% url = 'http://support.meetin.gs/' %]
+[% text = 'support' %]
+
+[% MTN.t('If the problem persists, please contact our %(L$support%).',{ L => { href => link } } ) %]
+<<</p>>>
+<<</bubble>>>
+[% tip = 1 %]
+<<<p>>>
+[% MTN.t("%(B\$Why is this important?%) We are using your data to suggest you upcoming meetings, help you in scheduling and in checking your availability for Meet Me pages.") %]
+<<<p>>>
+<<</html_wrapper>>>

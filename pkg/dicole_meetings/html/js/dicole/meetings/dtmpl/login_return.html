@@ -1,0 +1,16 @@
+<% if ( p.result && p.result.success ) { %>
+<div class="info_container_visible">
+    <h2><%= MTN.t('Success') %></h2>
+    <p><%= MTN.t('A log in link has been sent to %1$s.', { params : [ p.result.success ]}) %></p>
+</div>
+<% } else if (p.result && p.result.failure) { %>
+<div class="error_container_visible">
+    <h2><%= MTN.t('Failure') %></h2>
+    <p><%== p.result.failure %></p>
+</div>
+<% } else { %>
+<div class="error_container_visible">
+    <p><%= MTN.t('We encountered an unknown error while contacting the server. Please try again!') %></p>
+</div>
+<% }%>
+

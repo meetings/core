@@ -1,0 +1,83 @@
+[% # $Id: list_horizontal.tmpl,v 1.15 2009-01-07 14:42:33 amv Exp $ # %]
+
+[%#-
+
+    The template accepts the following information in itemparams:
+    {
+        list =
+            [
+                {
+                    *key    =>
+                        {
+                            name            => the name of the key is printed on the page
+                            *template   => name of the template
+                            *params     =>
+                                    {
+                                        template parameters passed to the template in itemparams
+                                    }
+                            *width          => deprecated, use attributes.width instead
+                            *attributes     =>
+                                {
+                                    XHTML attributes for the TD-tag
+                                }
+                        }
+                    values  =>
+                        [
+                            {
+                                *width      => deprecated, use attributes.width instead
+                                *attributes     =>
+                                    {
+                                        XHTML attributes for the TD-tag
+                                    }
+                                template    => name of the template
+                                params      =>
+                                    {
+                                        template parameters passed to the template in itemparams
+                                    }
+                            },
+                            {
+
+                            }
+                        ]
+                },
+                {
+                    ...
+                }
+            ]
+    }
+
+
+* optional
+
+-#%]
+
+[%- list = itemparams.list -%]
+
+<table class="valuePairList">
+[%- FOREACH item = list -%]
+
+    [%#- Establishes a separate loop count var that can be used within the inner foreach loop that processes values -#%]
+    [%- lc = loop.count - 1 -%]
+    <tr>
+        [%#- assigning width ( item.key.width ) to the first key element (default 15%) -#%]
+        [%#- loop through and assign all the attributes ( item.key.attributes ) for the key element -#%]
+        [%#- assign key element name ( item.key.name ) IF a template ( item.key.template ) isn't defined -#%]
+        [%#- if a template ( item.key.template ) is defined, include it and pass it template parameters ( item.key.params ) -#%]
+[% UNLESS itemparams.no_keys %]
+        <td class="valuePairKey" [% IF lc == '0' %]width="[%- '15%' UNLESS item.key.width -%][%- item.key.width -%]"[% END %] [% FOREACH param = item.key.attributes %] [% param.key %]="[% param.value %]"[% END %]>[%- item.key.name IF !item.key.template -%][% INCLUDE $item.key.template itemparams = item.key.params IF item.key.template %]</td>
+[% END %]
+    [%- FOREACH value = item.values -%]
+
+        [%#- assigning additional class for formatting depending on the loop count (odd / even) -#%]
+        [%#- assigning width ( value.width ) to the first value element of each column ( with the lc var) -#%]
+        [%#- loop through and assign all the attributes ( value.attributes ) for the key element -#%]
+        [%#- a somewhat useful hack that enables javascript to focus on the first input element by checking to make sure that the items template = input_input and lc =" 0 -#%]
+        [%#- include template ( value.template ) and pass it template parameters ( value.params ) -#%]
+
+        <td class="valuePairValue [% IF loop.count % 2 == '1' %]odd[% ELSE %]even[% END %]" [% IF lc == '0' %]width="[%- value.width -%]"[% END %] [% FOREACH param = value.attributes %] [% param.key %]="[% param.value %]"[% END %]>[% IF value.template == 'dicole_base::input_input' && lc == '0' %][% value.params.attributes.id = 'focusElement' %][% END %][% INCLUDE $value.template itemparams = value.params %]</td>
+
+        [%- END -%]
+
+    </tr>
+[%- END %]
+</table>

@@ -1,0 +1,802 @@
+msgid "events_invite_mail_subject_template"
+msgstr "Sinut on kutsuttu tapahtumaan [% title %]"
+
+msgid "events_invite_mail_html_template"
+msgstr ""
+"<p>[% greeting_html %]</p>"
+"[% IF greeting_html %]<hr />[% END %]"
+"<p>[% sender_name %] on kutsunut sinut[% IF planner %] järjestäjäksi [% END %] tapahtumaan [% title or '?' %], [% location or '?' %], [% date_string || '?' %].</p>"
+"<p>[% IF planner %]Järjestäjänä voit muokata osallistujia ja tapahtuman tietoja. Pääset liikkeelle seuraavasta osoitteesta <a href=\"[% url | html %]\">[% url | html %]</a>[% ELSE %]Kutsu on RSVP. Varmista paikkasi osoitteesta: <a href=\"[% url | html %]\">[% url | html %]</a>[% END %]</p>"
+"<p>[% abstract_html %]</p>"
+"<p>[% description_html %]</p>"
+
+
+msgid "events_invite_mail_text_template"
+msgstr ""
+"[% greeting_text %]\n"
+"[% IF greeting_text %]--------\n[% END %]"
+"[% sender_name %] on kutsunut sinut[% IF planner %] järjestäjäksi [% END %] tapahtumaan [% title or '?' %], [% location or '?' %], [% date_string || '?' %].\n"
+"[% IF planner %]Järjestäjänä voit muokata osallistujia ja tapahtuman tietoja. Pääset liikkeelle seuraavasta osoitteesta: [% url %] [% ELSE %]Kutsu on RSVP. Varmista paikkasi osoitteesta: [% url %] [% END %]\n\n"
+"[% abstract_text %]\n\n"
+"[% description_text %]"
+
+
+msgid "events_invite_notification_to_user_mail_subject_template"
+msgstr "Sinut on kutsuttu tapahtumaan [% title %]"
+
+msgid "events_invite_notification_to_user_mail_html_template"
+msgstr ""
+"<p>[% greeting_html %]</p>"
+"[% IF greeting_html %]<hr />[% END %]"
+"<p>[% sender_name %] on kutsunut sinut[% IF planner %] järjestäjäksi [% END %] tapahtumaan [% title or '?' %], [% location or '?' %], [% date_string || '?' %].</p>"
+"<p>[% IF planner %]Järjestäjänä voit muokata osallistujia ja tapahtuman tietoja. Pääset liikkeelle seuraavasta osoitteesta: <a href=\"[% url | html %]\">[% url | html %]</a>[% ELSE %]Kutsu on RSVP. Varmista paikkasi osoitteesta: <a href=\"[% url | html %]\">[% url | html %]</a>[% END %]</p>"
+"<p>[% abstract_html %]</p>"
+"<p>[% description_html %]</p>"
+
+
+msgid "events_invite_notification_to_user_mail_text_template"
+msgstr ""
+"[% greeting_text %]\n"
+"[% IF greeting_text %]--------\n[% END %]"
+"[% sender_name %] on kutsunut sinut[% IF planner %] järjestäjäksi [% END %] tapahtumaan [% title or '?' %], [% location or '?' %], [% date_string || '?' %].\n"
+"[% IF planner %]Järjestäjänä voit muokata osallistujia ja tapahtuman tietoja. Pääset liikkeelle seuraavasta osoitteesta: [% url %] [% ELSE %]Kutsu on RSVP. Varmista paikkasi osoitteesta: [% url %] [% END %]\n\n"
+"[% abstract_text %]\n\n"
+"[% description_text %]"
+
+
+
+msgid "A collection of events"
+msgstr "Tapahtumien järjestys"
+
+msgid "Add event"
+msgstr "Lisää tapahtuma"
+
+msgid "Admin events"
+msgstr "Hallinnoi tapahtumia"
+
+msgid "Events"
+msgstr "Tapahtumat"
+
+msgid "Events rights"
+msgstr "Tapahtumien oikeudet"
+
+msgid "Events upcoming summary"
+msgstr "Tulevien tapahtumien yhteenveto"
+
+msgid "Listing of 5 upcoming events"
+msgstr "Listaus 5 tulevasta tapahtumasta"
+
+msgid "My events"
+msgstr "Omat tapahtumat"
+
+msgid "My events tagged with: %1"
+msgstr "Omat tapahtumat avainsanalla %1"
+
+msgid "No events found."
+msgstr "Yhtään tapahtumaa ei löytynyt."
+
+msgid "Past events"
+msgstr "Menneet tapahtumat"
+
+msgid "Past events tagged with: %1"
+msgstr "Menneet tapahtumat avainsanalla %1"
+
+msgid "Show more events"
+msgstr "Näytä lisää tapahtumia"
+
+msgid "Upcoming events"
+msgstr "Tulevat tapahtumat"
+
+msgid "Upcoming events tagged with: %1"
+msgstr "Tulevat tapahtumat avainsanalla %1"
+
+msgid "User can admin events"
+msgstr "Käyttäjä voi hallinnoida tapahtumia"
+
+msgid "User can view events"
+msgstr "Käyttäjä näkee tapahtumat"
+
+msgid "View events"
+msgstr "Tapahtumien näkeminen"
+
+msgid "%1 had already been invited to the event"
+msgstr "%1 on jo kutsuttu tapahtumaan"
+
+msgid "%1 was already a planner in the event"
+msgstr "%1 oli jo järjestäjänä tapahtumassa"
+
+msgid "Add events"
+msgstr "Lisää tapahtumia"
+
+msgid "Anyone can attend, so invite your contacts! Share this event with:"
+msgstr "Kuka tahansa voi osallistua, joten kutsu muita mukaan! Jaa tapahtuma osoitteella:"
+
+msgid "Are you joining us?"
+msgstr "Liitytkö seuraamme?"
+
+msgid "Attending"
+msgstr "Osallistun"
+
+msgid "Banner"
+msgstr "Banneri"
+
+msgid "Create event"
+msgstr "Luo tapahtuma"
+
+msgid "Custom icon"
+msgstr "Oma ikoni"
+
+msgid "Delete event"
+msgstr "Poista tapahtuma"
+
+msgid "Do you really want to delete this event?"
+msgstr "Haluatko varmasti poistaa tapahtuman?"
+
+msgid "Email:"
+msgstr "Sähköposti:"
+
+msgid "Email addresses"
+msgstr "Sähköpostiosoitteet"
+
+msgid "End"
+msgstr "Loppu"
+
+msgid "Event deleted"
+msgstr "Tapahtuma poistettu"
+
+msgid "Event info"
+msgstr "Tapahtuman tiedot"
+
+msgid "Event is full"
+msgstr "Tapahtuma on täynnä"
+
+msgid "Extended description"
+msgstr "Laajempi kuvaus"
+
+msgid "Extra controls"
+msgstr "Lisäkontrollit"
+
+msgid "Extra info"
+msgstr "Lisätiedot"
+
+msgid "First name:"
+msgstr "Etunimi:"
+
+msgid "Good to have you with us!"
+msgstr "Hienoa, että tulet mukaan!"
+
+msgid "Greeting"
+msgstr "Tervehdysviesti"
+
+msgid "In order to accept your invite, you must %1login or register%2."
+msgstr "Hyväksyäksesi kutsusi sinun tulee %1kirjautua sisään tai rekisteröityä%2."
+
+msgid "In order to participate, please %1login%2."
+msgstr "Osallistuaksesi sinun tulee %1kirjautua sisään%2."
+
+msgid "In order to participate, please %1login%2 or %3register%4"
+msgstr "Osallistuaksesi sinun tulee %1kirjautua sisään%2 tai %3rekisteröityä%4"
+
+msgid "Invalid phone number"
+msgstr "Virheellinen puhelinnumero"
+
+msgid "Invite other planners!"
+msgstr "Kutsu muita järjestäjiä!"
+
+msgid "Invite participants!"
+msgstr "Kutsu osallistujia!"
+
+msgid "It will not show on the event list. Use the invite tool to send invitations."
+msgstr "Se ei näy tahaptumalistauksissa. Käytä kutsutyökalua lähettääksesi kutsuja."
+
+msgid "Last name:"
+msgstr "Sukunimi:"
+
+msgid "Limited"
+msgstr "Rajoitettu"
+
+msgid "Live now!"
+msgstr "Menossa nyt!"
+
+msgid "Location"
+msgstr "Sijainti"
+
+msgid "Login!"
+msgstr "Kirjaudu sisään!"
+
+msgid "Login name:"
+msgstr "Tunnus:"
+
+msgid "Manage event"
+msgstr "Muokkaa tapahtumaa"
+
+msgid "Manage Event"
+msgstr "Muokkaa Tapahtumaa"
+
+msgid "Maybe"
+msgstr "Ehkä"
+
+msgid "Maybe attending"
+msgstr "Ehkä"
+
+msgid "More events"
+msgstr "Lisää tapahtumia"
+
+msgid "More media"
+msgstr "Lisää mediaa"
+
+msgid "More pages"
+msgstr "Lisää sivuja"
+
+msgid "More posts"
+msgstr "Lisää viestejä"
+
+msgid "New page"
+msgstr "Uusi sivu"
+
+msgid "No date specified"
+msgstr "Ei määriteltyä päivämäärää"
+
+msgid "[no name]"
+msgstr "[ei nimeä]"
+
+msgid "Not answered yet"
+msgstr "Ei vielä vastannut"
+
+msgid "Not attending"
+msgstr "En osallistu"
+
+msgid "Not Attending"
+msgstr "En osallistu"
+
+msgid "Off"
+msgstr "Pois"
+
+msgid "Ok, count me in"
+msgstr "Osallistu"
+
+msgid "On"
+msgstr "Päällä"
+
+msgid "Other tags"
+msgstr "Muut avainsanat"
+
+msgid "Other tags:"
+msgstr "Muut avainsanat:"
+
+msgid "Participants"
+msgstr "Osallistujat"
+
+msgid "Participants can invite others?"
+msgstr "Osallistujat voivat kutsua muita"
+
+msgid "Participant visibilities"
+msgstr "Osallistujien näkyvyydet"
+
+msgid "Password:"
+msgstr "Salasana:"
+
+msgid "Please enter your phone number (required):"
+msgstr "Ole hyvä ja anna puhelinnumerosi (pakollinen):"
+
+msgid "Private"
+msgstr "Piilotettu"
+
+msgid "Register!"
+msgstr "Rekiströidy!"
+
+msgid "Require participants to provide a phone number?"
+msgstr "Osallistujilta vaaditaan puhelinnumero"
+
+msgid "Save all changes"
+msgstr "Tallenna kaikki muutokset"
+
+msgid "Seats left:"
+msgstr "Paikkoja:"
+
+msgid "Sending invitation to %1 failed : %2"
+msgstr "Kutsun lähettäminen osoitteeseen %1 epäonnistui : %2"
+
+msgid "Sending invitation to user %1 failed"
+msgstr "Kutsun lähettäminen käyttäjälle %1 epäonnistui"
+
+msgid "Sent an invitation to user %1"
+msgstr "Kutsu lähetetty käyttäjälle %1"
+
+msgid "Short description"
+msgstr "Lyhyt kuvaus"
+
+msgid "Show full description"
+msgstr "Näytä koko kuvaus"
+
+msgid "Social media tag"
+msgstr "Sosiaalisen median tagi"
+
+msgid "Start"
+msgstr "Alku"
+
+msgid "Stream"
+msgstr "Videolähetys"
+
+msgid "This event is private"
+msgstr "Tämä tapahtuma on yksityinen"
+
+msgid "This event is public"
+msgstr "Tämä tapahtuma on näkyvissä"
+
+msgid "This is the tag people will use when posting about this event."
+msgstr "Tätä tagia ihmiset käyttävät kirjoittaessaan tapahtumasta."
+
+msgid "To show a map, please type the event location to the location field."
+msgstr "Asemoi kartta kirjoittamalla sijainti sille varattuun kenttään."
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Unable to translate your location to map coordinates, please be more specific."
+msgstr "Sijaintiasi ei kyetty muuttamaan kartaksi. Ole hyvä ja ole tarkempi."
+
+msgid "Unknown error"
+msgstr "Tuntematon virhe"
+
+msgid "User can add events"
+msgstr "Käyttäjä voi lisätä tapahtumia"
+
+msgid "Use this tag when posting about this event."
+msgstr "Käytä tätä tagia kirjoittaessasi tapahtumasta."
+
+msgid "What information do you need the participants to fill in?"
+msgstr "Mitä tietoja haluat kysyä osallistujilta?"
+
+msgid "Yes, delete"
+msgstr "Kyllä, poista"
+
+msgid "Your invitation has been processed"
+msgstr "Kutsusi on vastaanotettu"
+
+msgid "attending"
+msgstr "osallistuu"
+
+msgid "Back to event listing"
+msgstr "Takaisin tapahtumalistaan"
+
+msgid "Cancel and show event"
+msgstr "Keskeytä muokkaus"
+
+msgid "Hide full description"
+msgstr "Piilota koko kuvaus"
+
+msgid "maybe"
+msgstr "ehkä"
+
+msgid "not attending"
+msgstr "ei osallistu"
+
+msgid "State (accessibility)"
+msgstr "Julkisuustila"
+
+msgid "waiting"
+msgstr "odottaa vastausta"
+
+msgid "New media (action)"
+msgstr "Lisää mediaobjekti"
+
+msgid "Private (state)"
+msgstr "Piilossa"
+
+msgid "Public (state)"
+msgstr "Näkyvä"
+
+msgid "Accept your invite"
+msgstr "Hyväksy kutsusi"
+
+msgid "Attending (manage)"
+msgstr "Osallistuu"
+
+msgid "awating reply"
+msgstr "odottaa vastausta"
+
+msgid "Awaiting reply"
+msgstr "Odottaa vastausta"
+
+msgid "Event needs a title!"
+msgstr "Tapahtuma tarvitsee nimen!"
+
+msgid "Login or register"
+msgstr "Kirjaudu tai rekisteröidy"
+
+msgid "Manage"
+msgstr "Hallitse"
+
+msgid "Manage participants!"
+msgstr "Hallinnoi osallistujia"
+
+msgid "Maybe (manage)"
+msgstr "Ehkä"
+
+msgid "Not attending (manage)"
+msgstr "Ei osallistu"
+
+msgid "planner"
+msgstr "järjestäjä"
+
+msgid "Registration end"
+msgstr "Ilmoittautumisen loppu"
+
+msgid "Registration start"
+msgstr "Ilmoittautumisen alku"
+
+msgid "The event is full"
+msgstr "Tapahtuma on täynnä"
+
+msgid "This is this event\'s social media tag. Use this tag when posting about this event."
+msgstr "Tämä on tapahtuman sosiaalisen median tagi. Käytä sitä kun kirjoitat tapahtumasta verkkoon."
+
+msgid "Anyone can join."
+msgstr "Kuka tahansa voi liittyä."
+
+msgid "Filter by"
+msgstr "Hae"
+
+msgid "Only invited people can join."
+msgstr "Vain kutsutut ihmiset voivat liittyä."
+
+msgid "Send"
+msgstr "Lähetä"
+
+msgid "Separate addresses with commas."
+msgstr "Erottele osoitteet pilkulla."
+
+msgid "Show past events"
+msgstr "Näytä menneitä tapahtumia"
+
+msgid "The event is full."
+msgstr "Tapahtuma on täynnä."
+
+msgid "The registration has closed."
+msgstr "Ilmoittautuminen on loppunut."
+
+msgid "The registration has not started yet."
+msgstr "Ilmoittautuminen ei vielä ole alkanut."
+
+msgid "Waiting (manage)"
+msgstr "Odottaa"
+
+msgid "An invitation is needed to join. Use the Invite tool to send invitations."
+msgstr "Tapahtumaan tarvitsee kutsun. Käytä kutsutoimintoa lähetätäksesi kutsuja."
+
+msgid "An invitation is needed to join. You may request an invitation from the planners."
+msgstr "Tapahtumaan tarvitsee kutsun. Voit pyytää kutsuja järjestäjiltä."
+
+msgid "Anyone can join, so use the invite tool to invite your contacts!"
+msgstr "Kuka tahansa voi liittyä seuraan, joten lähetä kutsuja kontakteillesi kutsutoiminnolla!"
+
+msgid "No upcoming events found."
+msgstr "Ei tulevia tapahtumia."
+
+msgid "Social Media Tag"
+msgstr "Sosiaalisen Median Tagi"
+
+msgid "It will show on the Events list. Anyone can join and invite others."
+msgstr "Tapahtuma näkyy tapahtumalistauksessa. Kukatahansa voi liittyä tapahtumaan ja kutsua muita."
+
+msgid "It will not show on the Events list and users must be invited in order to join. Use the Invite tool to send invitations."
+msgstr "Se ei tule näkymään tapahtumalistauksessa ja käyttäjät tulee kutsua tapahtumaan erikseen. Käytä kutsumistyökalua lähettääksesi kutsuja."
+
+msgid "Event details"
+msgstr "Tapahtuman tiedot"
+
+msgid "Planner (manage)"
+msgstr "Järjestäjä"
+
+msgid "Emails sent!"
+msgstr "Sähköpostit lähetetty!"
+
+msgid "Export this list"
+msgstr "Lataa lista tiedostona"
+
+msgid "Give Us Feedback"
+msgstr "Vastaa kyselyyn"
+
+msgid "Mail these people"
+msgstr "Lähetä sähköpostia näille ihmisille"
+
+msgid "people match the criteria."
+msgstr "käyttäjää vastaa hakuehtoja."
+
+msgid "Copy event"
+msgstr "Kopioi tapahtuma"
+
+msgid "Event created."
+msgstr "Tapahtuma luotu."
+
+msgid "We\'ll scale the image to a width of 113 pixels."
+msgstr "Venytämme kuvan 133 pikselin levyiseksi."
+
+msgid "We recommend you use an image 580 pixels wide. (If it\'s wider than that, we\'ll scale it down.)"
+msgstr "Suosittelemme käyttämään 580 pikseliä leveätä kuvaa. (Jos kuva on sitä suurempi, kutistamme sitä pienemmäksi)"
+
+msgid "Attend"
+msgstr "Osallistu"
+
+msgid "Hi, I invite you to participate as a planner in %1, an event I am organizing."
+msgstr "Hei, kutsun sinut osallistumaan järjestäjänä %1 tapahtumaan, jota organisoin."
+
+msgid "Hi, I invite you to participate in %1, an event I am organizing."
+msgstr "Hei, kutsun sinut osallistumaan %1 tapahtumaan, jota organisoin."
+
+msgid "(Copy) (single)"
+msgstr "(Kopio)"
+
+msgid "Event copied"
+msgstr "Tapahtuma kopioitu"
+
+msgid "Event live stream"
+msgstr "Tapahtuman reaaliaikavirta"
+
+msgid "In order to participate, please %1login or register%2"
+msgstr "Osallistuaksesi sinun tulee %1kirjautua tai rekisteröityä%2"
+
+msgid "Invalid phone number. Please try attending again."
+msgstr "Virheellinen puhelinnumero. Yritä uudelleen."
+
+msgid "Invitation is needed to participate?"
+msgstr "Osallistuminen on mahdollista vain kutsulla?"
+
+msgid "No media."
+msgstr "Ei sisältöjä."
+
+msgid "No pages."
+msgstr "Ei sivuja."
+
+msgid "Only invited users can attend."
+msgstr "Osallistuminen on mahdollsita vain kutsutuille."
+
+msgid "Only invited users can attend, so use the invite tool to invite your contacts!"
+msgstr "Osallistuminen on mahdollsita vain kutsutuille, joten kutsu kontaktisi kutsutyökalulla!"
+
+msgid "Sorry but attending requires an invite."
+msgstr "Osallistuminen on mahdollista vain kutsulla."
+
+msgid "Sorry but the event is full"
+msgstr "Tapahtuma on täynnä"
+
+msgid "Welcome to participate as a planner to event %1."
+msgstr "Tervetuloa järjestäjäksi tapahtumaan %1."
+
+msgid "Whoops, I forgot my password"
+msgstr "Unohdin salasanani"
+
+msgid "Attending status"
+msgstr "Osallistumisen tila"
+
+msgid "Event name"
+msgstr "Tapahtuman nimi"
+
+msgid "Back to event page"
+msgstr "Takaisin tapahtuman sivulle"
+
+msgid "No people match the criteria."
+msgstr "Yhtään henkilöä ei vastaa hakuehtoja."
+
+msgid "One person matches the criteria."
+msgstr "Yksi käyttäjä vastaa hakuehtoja."
+
+msgid "Paste HTML embed code here."
+msgstr "Liimaa HTML embed koodi tähän."
+
+msgid "Registration will be open until %1"
+msgstr "Rekisteröinti on auki %1 asti"
+
+msgid "Registration will start on %1."
+msgstr "Rekisteröinti alkaa %1."
+
+msgid "No participants yet."
+msgstr "Osallistujia ei vielä ole."
+
+msgid "Questionnaire"
+msgstr "Kysely"
+
+msgid "It will not show on the Events list and users must be invited in order to join."
+msgstr "Se ei tule näkymään tapahtumalistauksessa ja käyttäjät tulee kutsua tapahtumaan erikseen."
+
+msgid "Welcome! Please decide if you are going to join the event."
+msgstr "Tervetuloa! Ole hyvä, ja valitse pääsetkö mukaan tapahtumaan."
+
+msgid "Attend info"
+msgstr "Lisätiedot"
+
+msgid "What is your phone number?"
+msgstr "Mikä on puhelinnumerosi?"
+
+msgid "What is your title in the organization?"
+msgstr "Mikä on nimikkeesi organisaatiossa?"
+
+msgid "What organization do you represent?"
+msgstr "Mitä organisaatiota edustat?"
+
+msgid "You need an invite to participate in this event. Invitations are sent through email and include a link for participation."
+msgstr "Tarvitset kutsun, jotta voit osallistua tähän tapahtumaan. Kutsut lähetetään sähköpostilla ja ne sisältävät ilmottautumisen mahdollistavan linkin."
+
+msgid "Do you want to participate?"
+msgstr "Haluatko osallistua?"
+
+msgid "Untitled Event"
+msgstr "Nimeämätön tapahtuma"
+
+msgid "Chat"
+msgstr "Keskustelu"
+
+msgid "Chatters"
+msgstr "Keskustelijat"
+
+msgid "Chat visibility"
+msgstr "Keskustelun näkyvyys"
+
+msgid "Comment events"
+msgstr "Kommentoi tapahtumia"
+
+msgid "Disable"
+msgstr "Pois"
+
+msgid "Enable"
+msgstr "Päällä"
+
+msgid "Freeform HTML"
+msgstr "Vapaa HTML"
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "Inline Media"
+msgstr "Media sivun sisällä"
+
+msgid "Send question"
+msgstr "Lähetä kysymys"
+
+msgid "User can comment events"
+msgstr "Käyttäjä voi kommentoida tapahtumaa"
+
+msgid "Write your question here"
+msgstr "Kirjoita kysymyksesi tähän"
+
+msgid "Send (action)"
+msgstr "Lähetä"
+
+msgid "This is the tag people will use when posting about this event. The maximum length of the social media tag is 15 characters."
+msgstr "Tätä tagia ihmiset käyttävät kirjoittaessaan tapahtumasta. Sosiaalisen median tagin maksimipituus on 15 merkkiä."
+
+msgid "Existing user, log in"
+msgstr "Käyttäjä, kirjaudu sisään"
+
+msgid "Invite users to event %1"
+msgstr "Kutsu käyttäjiä tapahtumaan %1"
+
+msgid "New user, register"
+msgstr "Uusi käyttäjä, rekisteröidy"
+
+msgid "Participant"
+msgstr "Osallistuja"
+
+msgid "Planner"
+msgstr "Järjestäjä"
+
+msgid "You have been invited to the event %1"
+msgstr "Sinut on kutsuttu tapahtumaan %1"
+
+msgid "This event is only for invited participants."
+msgstr "Tämä tapahtuma on vain kutsutuille osallistujille."
+
+msgid "This event is private."
+msgstr "Tämä on yksityinen tapahtuma."
+
+msgid "Confirm attendance"
+msgstr "Vahvista osallistuminen"
+
+msgid "Planners"
+msgstr "Järjestäjät"
+
+msgid "%1 days, %2 hours, %3 minutes and %4 seconds until the event starts."
+msgstr "%1 päivä(ä), %2 tunti(a), %3 minuutti(a) ja %4 sekunti(a) tapahtuman alkuun."
+
+msgid "%1 hours, %2 minutes and %3 seconds until the event starts."
+msgstr "%1 tunti(a), %2 minuutti(a) ja %3 sekunti(a) tapahtuman alkuun."
+
+msgid "%1 minutes and %2 seconds until the event starts."
+msgstr "%1 minuutti(a) ja %2 sekunti(a) tapahtuman alkuun."
+
+msgid "%1 seconds until the event starts."
+msgstr "%1 sekunti(a) tapahtuman alkuun."
+
+msgid "Counter"
+msgstr "Laskuri"
+
+msgid "The event has started."
+msgstr "Tapahtuma on alkanut."
+
+msgid "Remove custom icon"
+msgstr "Poista oma ikoni"
+
+msgid "Show all"
+msgstr "Näytä kaikki"
+
+msgid "Changes saved."
+msgstr "Muutokset tallennettu."
+
+msgid "Phone"
+msgstr "Puhelin"
+
+msgid "Separate addresses with commas (,) or semicolons (;)."
+msgstr "Erottele osoitteet pilkuilla (,) tai puolipisteillä (;)."
+
+msgid "Add a temporary login link at the end of the mail"
+msgstr "Lisää väliaikainen sisäänkirjautumislinkki sähköpostin perään"
+
+msgid "You can log in to the event page using this link (valid for one day)"
+msgstr "Voit kirjautua sisään tapahtuman sivulle tästä linkistä (voimassa yhden päivän)"
+
+msgid "Export to calendar (ics)"
+msgstr "Vie omaan kalenteriin (ics)"
+
+msgid "This column"
+msgstr "Tämä sarake"
+
+msgid "Title visible bith banner"
+msgstr "Otsikko näkyvissä bannerikuvan läsnäollessa"
+
+msgid "We recommend you use an image 580 or 900 pixels wide. (If it\'s wider than that, we\'ll scale it down.)"
+msgstr "Suosittelemme käyttämään 580 tai 900 pikseliä leveätä kuvaa. (Jos kuva on sitä suurempi, kutistamme sitä pienemmäksi)"
+
+msgid "Promotional buttons"
+msgstr "Promotointinapit"
+
+msgid "log in (within sentence)"
+msgstr "kirjaudu sisään"
+
+msgid "Please %1 or %2 to leave comments"
+msgstr "Ole hyvä ja %1 tai %2 jättääksesi kommentteja"
+
+msgid "Please %1 to leave comments"
+msgstr "Ole hyvä ja %1 jättääksesi kommentteja"
+
+msgid "register (within sentence)"
+msgstr "rekisteröidy"
+
+msgid "Add users to event without sending email"
+msgstr "Lisää käyttäjät tapahtumaan ilman sähköpostikutsua"
+
+msgid "User %1 added without sending email"
+msgstr "Käyttäjä %1 lisätty ilman sähköpostikutsua"
+
+msgid "Add users from the current area to event without sending email"
+msgstr "Lisää käyttäjät nykyiseltä alueelta tapahtumaan ilman sähköpostikutsua"
+
+msgid "events_organizer_confirmation_subject_template"
+msgstr "[% user_name %] osallistuu tapahtumaasi"
+
+msgid "events_organizer_confirmation_html_template"
+msgstr "<p>[% event_title %] -nimisellä tapahtumalla on uusi osanottaja: [% user_name %] ([% IF organization_title %][% organization_title %], [% END %][% organization %][% IF phone %], [% phone %][% END %], [% email %]).</p>\n<p>[%- IF in_html AND attend_info_html %]\nTässä on lisätiedot, jotka [% user_name %] antoi:</p>\n<p>[% attend_info_html %]</p>\n<p>[%- END %]\n[%- IF ! in_html AND attend_info_text %]\nTässä on lisätiedot, jotka [% user_name %] antoi:</p>\n<p>[% attend_info_text %]</p>\n<p>[%- END %]\nPääset tapahtuman sivulle allaolevan linkin kautta seuraavan 24 tunnin ajan. Tämän jälkeen järjestelmä vaatii erillisen kirjautumisen.\n[% IF in_html %]<br/><a href="[% url %]">Mene sivulle</a>[% ELSE %][% url %][% END %]</p>\n<p></p>\n<p>\n</p>"
+
+msgid "events_organizer_confirmation_text_template"
+msgstr "[% event_title %] -nimisellä tapahtumalla on uusi osanottaja: [% user_name %] ([% IF organization_title %][% organization_title %], [% END %][% organization %][% IF phone %], [% phone %][% END %], [% email %]).\n\n[%- IF in_html AND attend_info_html %]\nTässä on lisätiedot, jotka [% user_name %] antoi:\n\n[% attend_info_html %]\n\n[%- END %]\n[%- IF ! in_html AND attend_info_text %]\nTässä on lisätiedot, jotka [% user_name %] antoi:\n\n[% attend_info_text %]\n\n[%- END %]\nPääset tapahtuman sivulle allaolevan linkin kautta seuraavan 24 tunnin ajan. Tämän jälkeen järjestelmä vaatii erillisen kirjautumisen.\n[% IF in_html %]<br/><a href="[% url %]">Mene sivulle</a>[% ELSE %][% url %][% END %]\n\n\n\n\n"
+
+msgid "events_user_confirmation_subject_template"
+msgstr "Osallistumisesi on rekisteröity"
+
+msgid "events_user_confirmation_html_template"
+msgstr "<p>Tervehdys [% user_name %],</p>\n<p>Osallistumisesi tapahtumaan [% event_title %] on rekisteröity.</p>\n<p>Pääset tapahtuman sivulle allaolevan linkin kautta seuraavan 24 tunnin ajan. Tämän jälkeen järjestelmä vaatii erillisen kirjautumisen.\n[% IF in_html %]<br/><a href="[% url %]">Mene sivulle</a>[% ELSE %][% url %][% END %]</p>\n<p>\n</p>"
+
+msgid "events_user_confirmation_text_template"
+msgstr "Tervehdys [% user_name %],\n\nOsallistumisesi tapahtumaan [% event_title %] on rekisteröity.\n\nPääset tapahtuman sivulle allaolevan linkin kautta seuraavan 24 tunnin ajan. Tämän jälkeen järjestelmä vaatii erillisen kirjautumisen.\n[% IF in_html %]<br/><a href="[% url %]">Mene sivulle</a>[% ELSE %][% url %][% END %]\n\n\n"
+
+msgid "Attendance successfully registered."
+msgstr "Osallistuminen rekisteröity onnistuneesti."
+
+msgid "Change of attendance successfully registered."
+msgstr "Muutos osallistumiseen rekisteröity onnistuneesti."
+
+msgid "Events past summary"
+msgstr "Menneiden tapahtumien yhteenveto"
+
+msgid "Listing of 5 past events"
+msgstr "Listaus 5 menneestä tapahtumasta"

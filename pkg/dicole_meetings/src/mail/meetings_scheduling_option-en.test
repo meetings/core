@@ -1,0 +1,24 @@
+[%#- Sent for each open (and closed for reschedule) scheduling option when user replies with SCHEDULE. -%]
+
+[%- IF test_case == "option" %]
+[%-
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Q3 Sales review'
+scheduling_option = 'Tue 24.7.2011 from 13:00 to 13:30 UTC+3'
+meeting_url = 'https://meetin.gs/meetings/meeting/'
+time_zone = 'EET +14'
+
+%]
+[%- END -%]
+
+[%- IF test_case == "prev NO option" %]
+[%-
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Q3 Sales review'
+scheduling_option = 'Tue 24.7.2011 from 13:00 to 13:30 UTC-11'
+previous_answer = 'NO'
+meeting_url = 'http://www.meetin.gs'
+time_zone = 'EET +14'
+
+%]
+[%- END -%]

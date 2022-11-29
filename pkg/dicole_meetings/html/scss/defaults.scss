@@ -1,0 +1,78 @@
+// General colors
+$red:#ea6562;
+$green:#88CE45;
+$footer-color:#282828;
+$footer-text-color:#fafafa;
+$p-color:#4c4b4b;
+$p-color-hover:lighten($p-color, 10%);
+$p-color-light:lighten($p-color, 20%);
+$color-background:#c9c9c9;
+$ui-darker-color:#D6D5D5;
+$ui-dark-color:#e7e7e7;
+$ui-darkest-color:#636363;
+$ui-border-color:#DBDBDB;
+$ui-content-background-color:#f8f8f8;
+$ui-newsbar:#CDF1FB;
+
+// Badge colors
+$badge-green:$green;
+$badge-red:$red;
+$badge-blue:#86C7E0;
+$badge-yellow:#F1D13C;
+$badge-orange:#F3B84D;
+$badge-oranger:#EF8C37;
+$badge-gray:#ACACAC;
+
+// ---- Universal colors ----
+$color-red:$red;
+$color-red-error:$red;
+$color-orange:#f57b23;
+$color-green:$green;
+$color-gray:#999;
+$color-gray-light:#ccc;
+$color-gray-dark:#6c6c6c;
+$color-gray-darker:#4c4b4b;
+$color-gray-border:#dcd9d9;
+$color-pink:#db4cb6;
+$color-pink-hover:#a82e89;
+$color-error-text:#ea2a2a;
+$color-blue:#00a0cd;
+
+
+// Select color
+$color-select:#d6edf5;
+
+// Main color (y-repeating bg)
+$color-main:#199acf;
+$color-main-hover:darken($color-main, 10%);
+$color-main-light:lighten($color-main, 40%);
+
+// Button colors
+$normal-button-bg:#7bc8e1;
+$normal-button-begin:lighten($normal-button-bg, 5%);
+$normal-button-end:darken($normal-button-bg, 5%);
+
+$action-button-bg:#e370a9;
+$action-button-begin:lighten($action-button-bg, 5%);
+$action-button-end:darken($action-button-bg, 5%);
+
+$cancel-button-bg:#acacac;
+$cancel-button-begin:lighten($cancel-button-bg, 10%);
+$cancel-button-end:darken($cancel-button-bg,5%);
+
+
+
+// Layout configuration
+// 35 | 306 | 20 | 604 | 35
+$rounding:4px;
+$c-width:980px; // Content width
+$side-margin:49px; // Margins from left and rigt side of the main container
+$m-menu-width:252px; // Material menu width
+$m-menu-rmargin:42px; // Space between material menu and material
+$m-width:588px; // Material width
+$h-height:63px; // Header height
+$f-height:100px; // Footer height
+
+$theme:"main";
+
+

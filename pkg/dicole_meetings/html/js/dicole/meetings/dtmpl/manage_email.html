@@ -1,0 +1,55 @@
+<div id="js_manage_navi_container"></div>
+<div id="modal-manage-email" class="modal-popup-admin">
+    <h2 class="modal-header"><%= MTN.t('Edit Meeting Email Settings') %></h2>
+    <div class="error-container js_meetings_manage_email_error_container error_container_hidden"></div>
+    <p><%= MTN.t('Email notification settings for the current meeting:') %></p>
+    <form id="meetings_manage_email_form" class="meetings-form">
+        <fieldset>
+            <p>
+            <input id="start-reminder-input" type="hidden" name="start_reminder" value="<%== p.start_reminder ? 1 : 0 %>" />
+            <span id="start-reminder" class="js_form_slider_button slider-button <%== p.start_reminder ? 'on-position' : 'off-position' %>"> </span>
+            <%= MTN.t('Meeting start reminder') %>
+            </p>
+            <!--
+            <p>
+            <input id="conferencing-reminder-input" type="hidden" name="virtual_conferencing_reminder" value="<%== p.virtual_conferencing_reminder ? 1 : 0 %>" />
+            <span id="conferencing-reminder" class="js_form_slider_button slider-button <%== p.virtual_conferencing_reminder ? 'on-position' : 'off-position' %>"> </span>
+            Virtual conferencing reminder
+            </p>
+            -->
+            <p>
+            <input id="participant-digest-input" type="hidden" name="participant_digest" value="<%== p.participant_digest ? 1 : 0 %>" />
+            <span id="participant-digest" class="js_form_slider_button slider-button <%== p.participant_digest ? 'on-position' : 'off-position' %>"> </span>
+            <%= MTN.t('Participant digest') %>
+            </p>
+
+            <div id="js_email_subchoices" style="<%== p.participant_digest ? '' : 'display:none;' %>">
+                <p>
+                <input id="participant-digest-participant-input" type="hidden" name="participant_digest_new_participant" value="<%== p.participant_digest_new_participant ? 1 : 0 %>" />
+                <span id="participant-digest-participant" class="js_form_slider_button slider-button <%== p.participant_digest_new_participant ? 'on-position' : 'off-position' %>"> </span>
+                <%= MTN.t('New participant notification') %>
+                </p>
+
+                <p>
+                <input id="participant-digest-material-input" type="hidden" name="participant_digest_material" value="<%== p.participant_digest_material ? 1 : 0 %>" />
+                <span id="participant-digest-material" class="js_form_slider_button slider-button <%== p.participant_digest_material ? 'on-position' : 'off-position' %>"> </span>
+                <%= MTN.t('New material notification') %>
+                </p>
+
+                <p>
+                <input id="participant-digest-comments-input" type="hidden" name="participant_digest_comments" value="<%== p.participant_digest_comments ? 1 : 0 %>" />
+                <span id="participant-digest-comments" class="js_form_slider_button slider-button <%== p.participant_digest_comments ? 'on-position' : 'off-position' %>"> </span>
+                <%= MTN.t('New comment notification') %>
+                </p>
+            </div>
+
+            <div id="submit" class="form-row centered">
+                <a href="#" class="js_meetings_manage_email_submit" id="manage-email-submit">
+                    <span class="button blue"><%= MTN.t('Save') %></span>
+                    <span class="indicator"></span>
+                </a>
+            </div>
+        </fieldset>
+    </form>
+    <a href="#" class="js_hook_showcase_close close-cross alpha_png"></a>
+</div>

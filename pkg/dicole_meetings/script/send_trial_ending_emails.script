@@ -1,0 +1,11 @@
+use 5.010;
+use strict;
+use warnings;
+
+sub execute {
+    my ($self, $domain_id) = @_;
+
+    CTX->lookup_action('meetings_api')->e(send_trial_ending_emails => { domain_id => $domain_id });
+}
+
+1;

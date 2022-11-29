@@ -1,0 +1,470 @@
+# $Id: messages-en.po,v 1.6 2008-01-17 22:33:35 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:06:45+0000\n"
+"PO-Revision-Date: 2005-03-22 02:06:45+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add folder"
+msgstr "Add folder"
+
+msgid "Adding document failed: %1"
+msgstr "Adding document failed: %1"
+
+msgid "Adding folder failed: %1"
+msgstr "Adding folder failed: %1"
+
+msgid "Adding hyperlink failed: %1"
+msgstr "Adding hyperlink failed: %1"
+
+msgid "Add new document"
+msgstr "Add new document"
+
+msgid "Add new folder"
+msgstr "Add new folder"
+
+msgid "Add new hyperlink"
+msgstr "Add new hyperlink"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Changes saved."
+msgstr "Changes saved."
+
+msgid "Checked items"
+msgstr "Checked items"
+
+msgid "Choose license"
+msgstr "Choose license"
+
+msgid "Clipboard is empty."
+msgstr "Clipboard is empty."
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Contributor"
+msgstr "Contributor"
+
+msgid "Copy"
+msgstr "Copy"
+
+msgid "Coverage"
+msgstr "Coverage"
+
+msgid "Creation date"
+msgstr "Creation date"
+
+msgid "Creator"
+msgstr "Creator"
+
+msgid "Custom license"
+msgstr "Custom license"
+
+msgid "Cut"
+msgstr "Cut"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Delete group files"
+msgstr "Delete group files"
+
+msgid "Delete user files"
+msgstr "Delete user files"
+
+msgid "Deny reading files of a user"
+msgstr "Deny reading files of a user"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Document content"
+msgstr "Document content"
+
+msgid "Document name"
+msgstr "Document name"
+
+msgid "Documents"
+msgstr "Documents"
+
+msgid "Download as Tar/gz archive"
+msgstr "Download as Tar/gz archive"
+
+msgid "Download as Zip archive"
+msgstr "Download as Zip archive"
+
+msgid "Download"
+msgstr "Download"
+
+msgid "Download RDF/XML metadata"
+msgstr "Download RDF/XML metadata"
+
+msgid "Dublin Core metadata"
+msgstr "Dublin Core metadata"
+
+msgid "Edit content"
+msgstr "Edit content"
+
+msgid "Edit Dublin Core metadata"
+msgstr "Edit Dublin Core metadata"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Edit file"
+msgstr "Edit file"
+
+msgid "Edit metadata"
+msgstr "Edit metadata"
+
+msgid "file_name"
+msgstr "file_name"
+
+msgid "Files"
+msgstr "Files"
+
+msgid "File to upload"
+msgstr "File to upload"
+
+msgid "Folder name"
+msgstr "Folder name"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Group files allows a group to keep a shared document manager."
+msgstr "Group files allows a group to keep a shared document manager."
+
+msgid "Hyperlink location"
+msgstr "Hyperlink location"
+
+msgid "Hyperlink name"
+msgstr "Hyperlink name"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "License"
+msgstr "License"
+
+msgid "Location: %1"
+msgstr "Location: %1"
+
+msgid "Modified"
+msgstr "Modified"
+
+msgid "Modifying file failed: %1"
+msgstr "Modifying file failed: %1"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "New document"
+msgstr "New document"
+
+msgid "New hyperlink"
+msgstr "New hyperlink"
+
+msgid "No files or directories selected."
+msgstr "No files or directories selected."
+
+msgid "Number of files"
+msgstr "Number of files"
+
+msgid "Open"
+msgstr "Open"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Pasted the contents of clipboard."
+msgstr "Pasted the contents of clipboard."
+
+msgid "Paste"
+msgstr "Paste"
+
+msgid "Personal files allows a user to keep a personal file storage."
+msgstr "Personal files allows a user to keep a personal file storage."
+
+msgid "Properties"
+msgstr "Properties"
+
+msgid "Publisher"
+msgstr "Publisher"
+
+msgid "Read files of a group"
+msgstr "Read files of a group"
+
+msgid "Read files of a user"
+msgstr "Read files of a user"
+
+msgid "Read group files"
+msgstr "Read group files"
+
+msgid "Read user files"
+msgstr "Read user files"
+
+msgid "Relation"
+msgstr "Relation"
+
+msgid "Rename location"
+msgstr "Rename location"
+
+msgid "Rename"
+msgstr "Rename"
+
+msgid "Renaming location failed: %1"
+msgstr "Renaming location failed: %1"
+
+msgid "Resource identifier"
+msgstr "Resource identifier"
+
+msgid "Resource type"
+msgstr "Resource type"
+
+msgid "Return to home"
+msgstr "Return to home"
+
+msgid "Rights"
+msgstr "Rights"
+
+msgid "Root directory cannot be deleted."
+msgstr "Root directory cannot be deleted."
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Saving changes failed: %1"
+msgstr "Saving changes failed: %1"
+
+msgid "Security violation. No rights to delete location %1"
+msgstr "Security violation. No rights to delete location %1"
+
+msgid "Security violation. No rights to read location %1"
+msgstr "Security violation. No rights to read location %1"
+
+msgid "Security violation. No rights to write to location %1"
+msgstr "Security violation. No rights to write to location %1"
+
+msgid "Select action for:"
+msgstr "Select action for:"
+
+msgid "Selected files and directories copied to clipboard."
+msgstr "Selected files and directories copied to clipboard."
+
+msgid "Selected files and directories deleted."
+msgstr "Selected files and directories deleted."
+
+msgid "Selected files and directories moved to clipboard."
+msgstr "Selected files and directories moved to clipboard."
+
+msgid "Selected item"
+msgstr "Selected item"
+
+msgid "Select file"
+msgstr "Select file"
+
+msgid "Select license"
+msgstr "Select license"
+
+msgid "Select"
+msgstr "Select"
+
+msgid "Server"
+msgstr "Server"
+
+msgid "Share %1 already exists."
+msgstr "Share %1 already exists."
+
+msgid "Share path"
+msgstr "Share path"
+
+msgid "Show file view"
+msgstr "Show file view"
+
+msgid "Size"
+msgstr "Size"
+
+msgid "Source"
+msgstr "Source"
+
+msgid "Stream media files"
+msgstr "Stream media files"
+
+msgid "Subject and keywords"
+msgstr "Subject and keywords"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Tree of files and directories"
+msgstr "Tree of files and directories"
+
+msgid "Tree view"
+msgstr "Tree view"
+
+msgid "Uncompress"
+msgstr "Uncompress"
+
+msgid "Upload failed: %1"
+msgstr "Upload failed: %1"
+
+msgid "Upload file"
+msgstr "Upload file"
+
+msgid "Upload new file"
+msgstr "Upload new file"
+
+msgid "Upload"
+msgstr "Upload"
+
+msgid "Use group files"
+msgstr "Use group files"
+
+msgid "User can delete existing group files"
+msgstr "User can delete existing group files"
+
+msgid "User can delete files of a user"
+msgstr "User can delete files of a user"
+
+msgid "User can read files of a user"
+msgstr "User can read files of a user"
+
+msgid "User can read group files"
+msgstr "User can read group files"
+
+msgid "User can use group files tool"
+msgstr "User can use group files tool"
+
+msgid "User can write and create new files for a user"
+msgstr "User can write and create new files for a user"
+
+msgid "User can write and create new group files"
+msgstr "User can write and create new group files"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "View file"
+msgstr "View file"
+
+msgid "View"
+msgstr "View"
+
+msgid "Workgroup"
+msgstr "Workgroup"
+
+msgid "Write group files"
+msgstr "Write group files"
+
+msgid "Write user files"
+msgstr "Write user files"
+
+msgid "No files found."
+msgstr "No files found."
+
+msgid "Latest files"
+msgstr "Latest files"
+
+msgid "Uploaded by"
+msgstr "Uploaded by"
+
+msgid "Edit metadata after upload"
+msgstr "Edit metadata after upload"
+
+msgid "Edit metadata after save"
+msgstr "Edit metadata after save"
+
+msgid "Descend to previous folder"
+msgstr "Descend to previous folder"
+
+msgid "Add files for a group"
+msgstr "Add files for a group"
+
+msgid "Add files for a user"
+msgstr "Add files for a user"
+
+msgid "Add group files"
+msgstr "Add group files"
+
+msgid "Add user files"
+msgstr "Add user files"
+
+msgid "Deny adding files for a group"
+msgstr "Deny adding files for a group"
+
+msgid "Deny adding files for a user"
+msgstr "Deny adding files for a user"
+
+msgid "Deny adding, writing and deleting files of a group"
+msgstr "Deny adding, writing and deleting files of a group"
+
+msgid "Deny adding, writing and deleting files of a user"
+msgstr "Deny adding, writing and deleting files of a user"
+
+msgid "Deny reading, writing, adding and deleting files of a user"
+msgstr "Deny reading, writing, adding and deleting files of a user"
+
+msgid "Deny reading, writing, deleting and adding files of a group"
+msgstr "Deny reading, writing, deleting and adding files of a group"
+
+msgid "User can add files for a user"
+msgstr "User can add files for a user"
+
+msgid "User can add new group files"
+msgstr "User can add new group files"
+
+msgid "Read, write, add and delete files of a group"
+msgstr "Read, write, add and delete files of a group"
+
+msgid "Read, write, add and delete files of a user"
+msgstr "Read, write, add and delete files of a user"
+
+msgid "Files rights"
+msgstr "Files rights"
+
+msgid "Browse Dicole Files"
+msgstr "Browse Dicole Files"
+
+msgid "Image location:"
+msgstr "Image location:"
+
+msgid "Image selector"
+msgstr "Image selector"
+
+msgid "Image URL:"
+msgstr "Image URL:"
+
+msgid "In line"
+msgstr "In line"
+
+msgid "Left"
+msgstr "Left"
+
+msgid "Right"
+msgstr "Right"
+
+msgid "Link selector"
+msgstr "Link selector"
+
+msgid "Link URL:"
+msgstr "Link URL:"
+
+msgid "Image description:"
+msgstr "Image description:"
+
+msgid "Browse local files"
+msgstr "Browse local files"
+
+msgid "Latest files."
+msgstr "Latest files."

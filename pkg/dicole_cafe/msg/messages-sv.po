@@ -1,0 +1,36 @@
+
+msgid "%1 on Twitter"
+msgstr "%1 on Twitter"
+
+msgid "Active users"
+msgstr "Active users"
+
+msgid "Font size"
+msgstr "Font size"
+
+msgid "Hot in Blogs"
+msgstr "Hot in Blogs"
+
+msgid "Hot in Twitter"
+msgstr "Hot in Twitter"
+
+msgid "Hot in Wiki"
+msgstr "Hot in Wiki"
+
+msgid "Hot Media"
+msgstr "Hot Media"
+
+msgid "Show scrollbar buttons"
+msgstr "Show scrollbar buttons"
+
+msgid "Show scrollbars"
+msgstr "Show scrollbars"
+
+msgid "by"
+msgstr "by"
+
+msgid "Open original"
+msgstr "Open original"
+
+msgid "Show active users"
+msgstr "Show active users"

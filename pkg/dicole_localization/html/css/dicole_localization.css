@@ -1,0 +1,38 @@
+#localization-filter {
+    margin-bottom: 5px;
+}
+
+#localization-labels {
+    font-weight: bold;
+}
+
+
+.localization-key {
+    float: left;
+    width: 130px;
+}
+
+.localization-default {
+    margin-left: 10px;
+    width: 130px;
+    float: left;
+}
+
+.localization-custom {
+    margin-left: 10px;
+    width: 260px;
+    float: left;
+}
+
+.localization-input {
+    width: 200px;
+}
+
+.localization-row {
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.float-clear {
+    clear: both;
+}

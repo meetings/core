@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+
+chdir `d swd`;
+system git => 'stash';
+system git => checkout => 'staging';
+system git => stash => 'pop';
+

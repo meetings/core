@@ -1,0 +1,281 @@
+<div id="event-edit">
+	<div style="overflow: hidden">
+		[% IF event_id %]
+		<a id="events_top_submit_button" class="save-button yellow-button" style="float: right"><span><input class="save" type="submit" value="[% MSG('Save changes') | html %]" name="save" /></span></a>
+		[% ELSE %]
+		<a id="events_top_submit_button" class="create-button yellow-button yellow-button-disabled" style="float: right"><span><input class="save" type="submit" name="save" value="[% MSG('Create event') | html %]" /></span></a>
+		[% END %]
+		<h2>[% MSG('Title') | html %]</h2>
+  		<input id="title" class="title [% IF NOT event_id %]default[% END %]" name="title" value="[% title or MSG('Untitled Event') | html %]" />
+        <h3>[% MSG('Title visible bith banner') | html %]</h3>
+		<div>[% INCLUDE dicole_events::component_fancy_radios
+				name = 'show_title_name'
+				values = ['all', 'none'],
+    			value_names = {
+                    'all' => MSG('On'),
+                    'none' => MSG('Off')
+                }
+				selected = show_title_name
+		%]</div>
+	</div>
+	<div style="overflow: hidden">
+		[% IF banner_url %]<div id="banner" class="banner"><img src="[% banner_url | html %]" alt="[% title | html %]" /></div>[% END %]
+		<h3>[% MSG('Banner') | html %]</h3>
+		<input id="upload-banner" name="banner" type="file" />
+		<p style="padding: 10px 0;font-size:9pt;color:#666">[% MSG('We recommend you use an image 580 or 900 pixels wide. (If it\'s wider than that, we\'ll scale it down.)') | html %]</p>
+	</div>
+	<div id="remove-banner" style="overflow: hidden">
+		[% IF banner_url %]<a href="#" class="button"><span><input class="red-x" type="button" value="[% MSG('Remove') | html %]" /></span></a>[% END %]
+	</div>
+	<div class="right">
+        <h3>[% MSG('Promotional buttons') | html %]</h3>
+		<div>[% INCLUDE dicole_events::component_fancy_radios
+				name = 'show_promo_name'
+				values = ['all', 'none'],
+    			value_names = {
+                    'all' => MSG('On'),
+                    'none' => MSG('Off')
+                }
+				selected = show_promo_name
+		%]</div>
+        <div class="events_edit_info_container_freeform">
+		<h3>[% MSG('Freeform HTML') | html %]</h3>
+		<div>[% INCLUDE dicole_events::component_fancy_radios
+				name = 'show_freeform_name'
+				values = ['all', 'none'],
+    			value_names = {
+                    'all' => MSG('On'),
+                    'none' => MSG('Off')
+                }
+				selected = show_freeform_name
+		%]</div>
+		<div>
+			<input[% IF not freeform_title %] class="tip-field"[% END %] id="freeform-title" name="freeform_title" value="[% freeform_title or MSG('Title') | html %]" />
+			<textarea id="freeform-content" name="freeform_content"[% IF not freeform_content %]class="tip-field"[% END %]>[% freeform_content or MSG('Paste HTML here') %]</textarea>
+		</div>
+    </div>
+    <div class="events_edit_info_container_planners">
+   		<h3>[% MSG('Planners') | html %]</h3>
+		<div>[% INCLUDE dicole_events::component_fancy_radios
+				name = 'show_planners_name'
+				values = ['all', 'none'],
+    			value_names = {
+                    'all' => MSG('On'),
+                    'none' => MSG('Off')
+                }
+				selected = show_planners_name
+		%]</div>
+    </div>
+    <div class="events_edit_info_container_map">
+		<input id="show-map" type="hidden" name="show_map_name" value="[% show_map_name %]" /> 
+		<input id="latitude" name="latitude" type="hidden" value="[% latitude | html %]" />
+		<input id="longitude" name="longitude" type="hidden" value="[% longitude | html %]" />
+		<h3>[% MSG('Map') | html %]</h3>
+		<div style="margin-bottom:10px;overflow:hidden">
+			<a href="#" id="map-on" class="left-button[% IF show_map_name == 'all' %] left-button-selected[% END %]"><span>[% MSG('On') | html %]</span></a>
+			<a href="#" id="map-off" class="right-button[% IF show_map_name == 'none' %] right-button-selected[% END %]"><span>[% MSG('Off') | html %]</span></a>
+		</div>
+		<div id="map" class="map">
+			<a id="map-link" href="http://maps.google.com/?ll=[% latitude | html %],[% longitude | html %]&amp;z=12&amp;q=[% location_name | html %]">
+				<img id="map-image"  src="https://maps.googleapis.com/maps/api/staticmap?key=[% gmaps_api_key %]&amp;sensor=false&amp;center=[% latitude | html %],[% longitude | html %]&amp;zoom=12&amp;size=185x150&amp;markers=[% location_name | html %]" alt="[% location_name | html %]" />
+			</a> 
+		</div>
+		<div id="map-error" class="map" style="display: none">[% MSG('Unable to translate your location to map coordinates, please be more specific.') | html %]</div>
+		<div id="map-help"  class="map" style="display: none">[% MSG('To show a map, please type the event location to the location field.') | html %]</div>
+    </div>
+    <div class="events_edit_info_container_sos_med" style="margin-top:10px">
+		<h3>[% MSG('Social media tag') | html %]</h3>
+		<span style="font-size: 18px; color: #447B9A">#</span>
+		<input name="sos_med_tag" class="social-media-tag" type="input" value="[% sos_med_tag | html %]" size="15" maxlength="15" />
+		<p style="padding-left: 0;margin-top: .5em;font-size:9pt">&uarr; [% MSG('This is the tag people will use when posting about this event. The maximum length of the social media tag is 15 characters.') | html %]</p>
+    </div>
+    <div class="events_edit_info_container_tags">
+		<h3>[% MSG('Other tags') | html %]</h3>
+		<div id="tags" class="tags tag_control">
+			<input type="hidden" name="tags" id="tag_data_tags" value="[% tags_json | html %]" />
+			<input type="hidden" name="tags_old" id="tag_data_old_tags" value="[% tags_json_old || tags_json | html %]" />
+			<div class="tag_list_container js-disable-commas" id="tag_list_tags">[% FOREACH tag IN tags %]<a class="tag">[% tag | html %]</a>[% END %]</div>
+			<div class="tag_add_input_container" id="tag_add_input_container_tags">
+				<input class="tag_add_input_field" name="tags_add_tags_input_field" id="tag_add_input_field_tags" type="text" value="" />
+				<a class="button" style="float:left" href="#"><span><input class="tag_add_input_submit" name="tags_add_tags_input_submit" id="tag_add_input_submit_tags" type="button" value="[% MSG('Add tag') | html %]" style="padding:0;margin:0;color:#333 !important;font-weight:normal;background-image: none !important;font-size:10pt !important" /></span></a>
+			</div>
+		</div>
+    </div>
+		<hr style="margin:10px 0 13px" />
+		<div style="overflow: hidden">
+			<a id="public-button" class="left-button[% IF event_state_name == 'public' %] left-button-selected[% END %]" href="#"><span>[% MSG('Public (state)') | html %]</span></a>
+			<a id="private-button" class="right-button[% IF event_state_name == 'private' %] right-button-selected[% END %]" href="#"><span>[% MSG('Private (state)') | html %]</span></a>
+			<input id="event-state" type="hidden" name="event_state_name" value="[% event_state_name | html %]" />
+		</div>
+		<div style="overflow: hidden">
+			<div id="public-description" style="display: [% IF event_state_name == 'public' %]block[% ELSE %]none[% END %]">
+				<p style="padding-left: 0;margin-top: .5em;font-size:9pt"><strong>[% MSG('This event is public') | html %].</strong> [% MSG('It will show on the Events list. Anyone can join and invite others.') | html %]</p>
+				<input style="float:left" id="attend-invite" type="checkbox" name="require_invite" value="1" [% IF require_invite %]checked="checked" [% END %]/>
+				<label style="display:block;margin-left:25px" for="user-invite">[% MSG('Invitation is needed to participate?') | html %]</label>
+				<input style="float:left" id="public-user-invite" type="checkbox" name="public_users_can_invite" value="1" [% IF users_can_invite == 1 %]checked="checked" [% END %]/>
+				<label style="display:block;margin-left:25px" for="public-user-invite">[% MSG('Participants can invite others?') | html %]</label>
+			</div>
+			<div id="private-description" style="display: [% IF event_state_name == 'private' %]block[% ELSE %]none[% END %]">
+				<p style="padding-left: 0"><strong>[% MSG('This event is private') | html %].</strong> [% IF event_id %][% MSG('It will not show on the Events list and users must be invited in order to join.') | html %][% ELSE %][% MSG('It will not show on the Events list and users must be invited in order to join. Use the Invite tool to send invitations.') | html %][% END %]</p>
+				<input style="float:left" id="private-user-invite" type="checkbox" name="private_users_can_invite" value="1" [% IF users_can_invite == 1 %]checked="checked" [% END %]/>
+				<label style="display:block;margin-left:25px" for="private-user-invite">[% MSG('Participants can invite others?') | html %]</label>
+			</div>
+		</div>
+		<hr style="margin:10px 0 2px" />
+		[% IF delete_url %]
+		<div style="overflow: hidden"><a id="delete-event" class="yellow-button" href="#" style="margin-top: 10px"><span><span class="red-x">[% MSG('Delete event') | html %]</span></span></a></div>
+		<div id="delete-event-confirm" style="display: none; margin-top: 10px; overflow: hidden">
+			<p>[% MSG('Do you really want to delete this event?') | html %]</p>
+			<a class="button" href="[% delete_url | html %]"><span>[% MSG('Yes, delete') | html %]</span></a>
+		</div>
+		[% END %]
+		[% IF clone_url %]
+		<div style="overflow: hidden"><a class="yellow-button" href="[% clone_url | html %]"><span>[% MSG('Copy event') | html %]</span></a></div>
+		[% END %]
+	</div>
+	<div class="left">
+		<h2>[% MSG('Event details') | html %]</h2>
+		<h3 style="overflow: hidden">
+			<span class="oneline-label">[% MSG('Start') | html %]</span>
+			<input id="begin_date" name="begin_date" value="[% begin_date | html %]" size="10" maxlength="10" />
+			<input id="begin_time" name="begin_time" value="[% begin_time | html %]" size="5" maxlength="5" />	
+		</h3>
+		<h3 style="overflow: hidden">
+			<span class="oneline-label">[% MSG('End') | html %]</span>
+			<input id="end_date" name="end_date" value="[% end_date | html %]" size="10" maxlength="10" />
+			<input id="end_time" name="end_time" value="[% end_time | html %]" size="5" maxlength="5" />
+		</h3>
+		<h3 style="overflow: hidden">
+			<span class="oneline-label">[% MSG('Location') | html %]</span>
+			<input id="location-field" name="location_name" type="input" value="[% location_name | html %]" />
+		</h3>
+		<div style="overflow: hidden">
+			<h3>[% MSG('Custom icon') | html %]</h3>
+			<div id="logo"><img src="[% logo_url or '/images/events/default-logo.png' | html %]" alt="[% title | html %]" /></div>
+			<input id="upload-logo" name="logo" type="file" style="margin-top:10px" />
+			<p style="padding: 10px 0;font-size:9pt;color:#666">[% MSG('We\'ll scale the image to a width of 113 pixels.') | html %]</p>
+		</div>
+		<div id="remove-logo" style="overflow: hidden">
+			<a href="#" class="button"><span><input class="red-x" type="button" value="[% MSG('Remove custom icon') | html %]" /></span></a>
+		</div>
+    <div class="events_edit_info_container_imedia">
+		<h3>[% MSG('Inline Media') | html %]</h3>
+		<div>[% INCLUDE dicole_events::component_fancy_radios
+				name = 'show_imedia_name'
+				values = ['all', 'none'],
+    			value_names = {
+                    'all' => MSG('Enable'),
+                    'none' => MSG('Disable')
+                }
+				selected = show_imedia_name
+		%]</div>
+    </div>
+		<h3>[% MSG('Short description') | html %] (<span id="abstract-letters-left">200</span>)</h3>
+		<div><textarea id="abstract-edit" name="abstract" cols="40" rows="3">[% abstract | html %]</textarea></div>
+		<h3>[% MSG('Extended description') | html %]</h3>
+		<div><textarea class="mceEditor" name="description" cols="40" rows="3">[% description | html %]</textarea></div>
+    <div class="events_edit_info_container_feedback">
+		<h2>[% MSG('Questionnaire') | html %]</h2>
+		<div><textarea name="feedback" cols="40" rows="3"[% IF not feedback %] class="tip-field"[% END %]>[% feedback or MSG('Paste HTML embed code here.') | html %]</textarea></div>
+		<div style="margin-top:10px">[% INCLUDE dicole_events::component_fancy_radios
+				name = 'show_feedback_name'
+				values = ['none', 'user', 'all'],
+    			value_names = {
+                    'none' => MSG('Hidden'),
+                    'user' => MSG('Participants'),
+                    'all' => MSG('All')
+                }
+				selected = show_feedback_name
+		%]</div>
+    </div>
+    <div class="events_edit_info_container_stream">
+		<h2>[% MSG('Stream') | html %]</h2>
+		<div><textarea name="stream" cols="40" rows="3"[% IF not stream %] class="tip-field"[% END %]>[% stream or MSG('Paste HTML embed code here.') | html %]</textarea></div>
+		<div style="margin-top:10px">[% INCLUDE dicole_events::component_fancy_radios
+				name = 'show_stream_name'
+				values = ['none', 'user', 'all'],
+    			value_names = {
+                    'none' => MSG('Hidden'),
+                    'user' => MSG('Participants'),
+                    'all' => MSG('All')
+                }
+				selected = show_stream_name
+		%]</div>
+    </div>
+    <div class="events_edit_info_container_counter">
+		<h2>[% MSG('Counter') | html %]</h2>
+		<div>[% INCLUDE dicole_events::component_fancy_radios
+				name = 'show_counter_name'
+				values = ['none', 'user', 'all'],
+    			value_names = {
+                    'none' => MSG('Hidden'),
+                    'user' => MSG('Participants'),
+                    'all' => MSG('All')
+                }
+				selected = show_counter_name
+		%]</div>
+    </div>
+		<h2>[% MSG('Participants') | html %]</h2>
+		<div style="overflow: hidden">
+			<a href="#" id="unlimited-seats" class="left-button[% IF max_attenders == 0 %] left-button-selected[% END %]"><span>[% MSG('Unlimited') | html %]</span></a>
+			<a href="#" id="limited-seats" class="right-button[% IF max_attenders != 0 %] right-button-selected[% END %]"><span>[% MSG('Limited') | html %]</span></a>
+			<input id="seats" name="max_attenders" value="[% max_attenders | html %]" size="5" maxlength="5" style="height:22px;margin-left:5px;margin-top:1px[% IF max_attenders == 0 %];display:none[% END %]" />
+		</div>
+		<h3 style="overflow: hidden;margin-top:10px">
+			<span class="oneline-label" style="width:160px">[% MSG('Registration start') | html %]</span>
+			<input id="reg_begin_date" name="reg_begin_date" value="[% reg_begin_date | html %]" size="10" maxlength="10" />
+			<input id="reg_begin_time" name="reg_begin_time" value="[% reg_begin_time | html %]" size="5" maxlength="5" />	
+		</h3>
+		<h3 style="overflow: hidden">
+			<span class="oneline-label" style="width:160px">[% MSG('Registration end') | html %]</span>
+			<input id="reg_end_date" name="reg_end_date" value="[% reg_end_date | html %]" size="10" maxlength="10" />
+			<input id="reg_end_time" name="reg_end_time" value="[% reg_end_time | html %]" size="5" maxlength="5" />
+		</h3>
+		<h3>[% MSG('What information do you need the participants to fill in?') | html %]</h3>
+		<div><textarea name="attend_info" cols="40" rows="3">[% attend_info | html %]</textarea></div>
+		<div style="margin-top:5px">
+			<input id="require-phone" type="checkbox" name="require_phone" value="[% require_phone | html %]" [% IF require_phone == 1 %]checked="checked" [% END %]/>
+			<label for="require-phone">[% MSG('Require participants to provide a phone number?') | html %]</label>
+		</div>
+		<h2>[% MSG('Participant visibilities') | html %]</h2>
+		[% user_types = ['yes', 'maybe', 'no', 'waiting'] %]
+		[% user_fancy_types = {
+            'yes' => MSG('Attending'),
+            'maybe' => MSG('Maybe attending'),
+            'no' => MSG('Not attending'),
+            'waiting' => MSG('Awaiting reply')
+        } %]
+		[% user_type_names = {'yes' => 'show_yes_name', 'maybe' => 'show_maybe_name', 'no' => 'show_no_name', 'waiting' => 'show_waiting_name'} %]
+		[% user_type_name_values = {'yes' => show_yes_name, 'maybe' => show_maybe_name, 'no' => show_no_name, 'waiting' => show_waiting_name} %]
+		[% FOREACH user_type IN user_types %]
+    <div class="events_edit_info_participant_container_[% user_type %]">
+		<h3>[% user_fancy_types.$user_type %]</h3>
+		[% INCLUDE dicole_events::component_fancy_radios
+			name = user_type_names.$user_type
+			values = ['none', 'user', 'all'],
+			value_names = {
+                'none' => MSG('Hidden'),
+                'user' => MSG('Participants'),
+                'all' => MSG('All')
+            }
+			selected = user_type_name_values.$user_type
+		%]
+    </div>
+		[% END %]
+		<h2>[% MSG('Chat visibility') | html %]</h2>
+		<div>[% INCLUDE dicole_events::component_fancy_radios
+				name = 'show_chat_name'
+				values = ['all', 'none'],
+    			value_names = {
+                    'all' => MSG('Visible'),
+                    'none' => MSG('Hidden')
+                }
+				selected = show_chat_name
+		%]</div>
+		[% IF event_id %]
+		<a id="events_bottom_submit_button" class="save-button yellow-button" style="margin-top: 10px"><span><input class="save" type="submit" name="save" value="[% MSG('Save changes') | html %]" /></span></a>
+		[% ELSE %]
+		<a id="events_bottom_submit_button"  class="create-button yellow-button yellow-button-disabled" style="margin-top: 10px"><span><input class="save" type="submit" value="[% MSG('Create event') | html %]" name="save" /></span></a>
+		[% END %]
+	</div>
+</div>

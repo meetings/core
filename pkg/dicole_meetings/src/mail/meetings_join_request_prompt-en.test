@@ -1,0 +1,12 @@
+[%#- Sent to meeting creator when some user sends a JOIN request with an invalid password (or no pass) -%]
+
+[% IF test_case == 'ruinaus' %]
+[%
+
+server_host = 'http://dev.meetin.gs'
+user_name = 'Ismo Kurppa'
+meeting_title = 'Naamajaiset'
+accept_url = 'meatin.gs'
+
+%]
+[% END %]

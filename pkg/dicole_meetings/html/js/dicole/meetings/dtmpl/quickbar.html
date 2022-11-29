@@ -1,0 +1,13 @@
+<% var temp_user = dicole.get_global_variable('meetings_user_is_temporary');  %>
+<% if( ! temp_user ) { %>
+<% if ( ( p.meetings.length > 0  && ( ! dojo.hasClass( dojo.body() , 'action_meetings_task_meeting') || p.meetings.length > 1 ) ) || ( dicole.get_global_variable('meetings_user_created_meetings') == 1 ) ) { %>
+<div id="meetings-quickbar-wrap" class="alpha_png">
+    <select data-placeholder="<%= MTN.t('Choose a meeting...') %>" id="meetings-quickbar" class="chosen">
+        <option value=""></option>
+        <% dojo.forEach(p.meetings, function (meeting) { %>
+        <option value="<%== meeting.url %>" <% if(meeting.id  == dicole.get_global_variable("meetings_meeting_id")) { %>selected<% } %>><%== meeting.begin_date || '' %> - <%== meeting.title %></option>
+        <% }); %>
+    </select>
+</div>
+<% } %>
+<% } %>

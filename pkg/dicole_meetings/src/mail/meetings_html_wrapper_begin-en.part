@@ -1,0 +1,52 @@
+[% IF ! theme_color_name %]
+    [% theme_color_name = 'blue' %]
+[% END %]
+
+[% IF theme_color_name == 'kpn' %]
+[% theme_color_name = 'green' %]
+[% END %]
+
+[% IF theme_color_name == 's2m' %]
+[% theme_color_name = 'green' %]
+[% END %]
+
+[% text_colors = {
+  blue = '#199acf'
+  brown = '#6c5c4b'
+  darkblue = '#027bb3'
+  green = '#467c5a'
+  grey = '#767676'
+  pink_red = '#994c58'
+  purple = '#6c5784'
+  turquoise = '#06949d'
+} %]
+
+[% theme_color = text_colors.$theme_color_name %]
+
+[% IF ! action_text %]
+[% action_text = 'Mail action_text var not set' %]
+[% END %]
+
+[% IF in_html %]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meetin.gs</title>
+</head>
+<body style="width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;">
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100% !important; line-height: 100% !important; background-color: #efeeee; margin: 0; padding: 0;" bgcolor="#efeeee">
+    <tr>
+        <td valign="top" style="border-collapse: collapse;">
+            <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin-left:auto; margin-right:auto; width: 616px; background-color:#efeeee; margin-top:30px; height:9px; background-image:url('[% server_host %]/images/meetings/email/top_shadow.jpg'); background-repeat:no-repeat" bgcolor="#efeeee">
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+            
+		    <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin-left:auto; margin-right:auto; width: 616px; background-color:#ffffff;" bgcolor="#ffffff">
+			    <tr>
+                    <td style="border-collapse: collapse; background-image:url('[% server_host %]/images/meetings/email/l_border_repeat.gif'); background-repeat:repeat-y; width:8px;" width="8"></td>
+			        <td width="600" style="width:600px; border-collapse:collapse;padding-bottom:10px;">
+[% END %]

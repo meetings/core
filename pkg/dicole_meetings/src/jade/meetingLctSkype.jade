@@ -1,0 +1,15 @@
+div#lct-picker.m-modal
+    div.modal-header.back-button
+        h3!=MTN.t('Skype settings')
+        i.ico-leftarrow.back
+    div.modal-content.m-form
+        p!=MTN.t('Type in the Skype account that will be used to receive the calls from the participants.')
+        label!=MTN.t('Skype account name')
+            input#com-skype(type='text',value=(meeting.online_conferencing_data && meeting.online_conferencing_data.skype_account) ? meeting.online_conferencing_data.skype_account : ( user && user.skype ? user.skype : ''),placeholder!=MTN.t('Skype account name'))
+        br
+        p.note!=MTN.t('NOTE: If you are not connected with the participants in Skype, remember to allow incoming calls from anyone using Skype privacy settings.')
+    div.modal-footer
+        div.buttons.right
+            a.button.blue.save(href='#')!=MTN.t('Save')
+
+

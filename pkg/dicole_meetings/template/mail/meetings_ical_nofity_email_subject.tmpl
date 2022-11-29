@@ -1,0 +1,1 @@
+[% IF type == 'scheduling_completed' %]Time found for: [% END %][% IF type == 'tentative_reminder' %][% MTN.t("Reminder:") %] [% END %][% IF type == 'time_changed_by_self' %][% MTN.t("Updated:") %] [% END %][% IF type == 'time_changed' %][% MTN.t("Updated Invitation:") %] [% END %][% IF type == 'invitation' %][% MTN.t("Invitation:") %] [% END %][% meeting_title %]

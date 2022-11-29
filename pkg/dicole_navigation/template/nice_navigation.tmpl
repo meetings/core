@@ -1,0 +1,33 @@
+[%- FOREACH css = custom_css %][% IF css -%]
+<style type="text/css">
+[% css %]
+</style>
+[%- END %][% END -%]
+<div id="header">
+  <div id="topblock">
+    <div id="topblockright">
+      <span class="separator"><!-- --></span>
+[%- FOREACH wid = right_widgets %]
+      [% PROCESS dicole_base::include_widget widget = wid %]
+      <span class="separator"><!-- --></span>
+[%- END %]
+    </div>
+    <div id="topblockleft">
+      <span class="separator"><!-- --></span>
+[%- FOREACH wid = left_widgets %]
+      [% PROCESS dicole_base::include_widget widget = wid %]
+      <span class="separator"><!-- --></span>
+[%- END %]
+    </div>
+  </div>
+  <div id="topblockshadow"><!-- --></div>
+  <div id="areablock">
+    <h1>[% IF current_area.url %]<a href="[% current_area.url %]"><span>[% current_area.name %]</span></a>[% ELSE %]<span>[% current_area.name %]</span>[% END %]</h1>
+    <div id="tools">
+[%- FOREACH nav = navi_widgets %]
+      [% PROCESS dicole_base::include_widget widget = nav %]
+      <span class="separator"><!-- --></span>
+[%- END %]
+    </div>
+  </div>
+</div>

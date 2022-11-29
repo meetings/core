@@ -1,0 +1,50 @@
+<div id="modal-add-material-previous" class="m-modal">
+    <form id="meetings_add_material_previous_form" class="meetings-form">
+        <div class="modal-header">
+            <h3><%=  MTN.t('Copy material from another meeting')%></h3>
+        </div>
+        <div class="modal-content">
+            <!-- Left side -->
+            <div id="choose-meeting">
+                <h3><%= MTN.t('1. Choose a meeting') %></h3>
+                <input name="filter" id="js_filter_meetings" class="filter-field js_tip_field" value="<%= MTN.t('Search...')%>"/>
+                <div id="previous-meetings-container" class="js_previous_meetings">
+                    <% dojo.forEach( p.meetings, function( meeting ) { %>
+                    <a href="<%= meeting.material_url %>" class="prev-meeting js_previous_meeting">
+                        <span style="font-style:italic;"><%== meeting.time.day %>. <%== meeting.time.month %></span>
+                        <%== dicole.meetings_common.truncate_text(meeting.title, 22) %>
+                        <span class="counter" id="<%= meeting.meeting_id %>"></span>
+                    </a>
+                    <% } ); %>
+                </div>
+            </div>
+
+            <!-- Right side -->
+            <div id="choose-material">
+                <h3><%= MTN.t('2. Choose Materials') %></h3>
+                <div class="material-list" id="js_previous_meeting_materials">
+                    <p class="tip"><%= MTN.t('Choose a meeting on the left to see available materials!') %></p>
+                </div>
+            </div>
+
+            <input name="materials_list" type="hidden" id="js_selected_materials_list" value=""/>
+
+            <!-- Material counter -->
+            <p class="selected-materials-count">
+            <%= MTN.t('%(S$0%) materials selected', { S : { id : 'js_selected_materials_count' } }) %>
+            </p>
+        </div>
+
+        <div class="modal-footer">
+            <div class="buttons right">
+                <a href="#" class="button blue js_meetings_add_material_previous_submit" id="add-material-previous-submit">
+                    <%= MTN.t('Add material') %>
+                </a>
+                <a href="#" class="button gray js_hook_showcase_close">
+                    <%= MTN.t('Cancel') %>
+                </a>
+            </div>
+        </div>
+    </form>
+    <a class="js_hook_showcase_close close-modal" href="#"><i class="ico-cross"></i></a>
+</div>

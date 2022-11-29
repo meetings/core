@@ -1,0 +1,241 @@
+.btd-container {
+    position:relative;
+    padding:15px 30px 0 30px;
+    margin:0 auto 0px auto;
+    font-size: 14px;
+    font-family: arial, helvetica;
+}
+
+.btd-nav {
+    height:50px;
+    width:94%;
+    float:right;
+    display:inline;
+    text-align:center;
+    position:relative;
+    top:50px;
+    p.btd-week{
+        font:16px "museo-sans-n3","museo-sans";
+        font-weight:300;
+        line-height:50px;
+        color:$color-gray-darker;
+    }
+    a.btd-today{
+        display:none;
+    }
+}
+a.btd-prev{
+    position:absolute;
+    font-size:20px;
+    color:$p-color;
+    top:22px;
+    left:103px;
+}
+a.btd-next{
+    position:absolute;
+    font-size:18px;
+    color:$p-color;
+    top:21px;
+    right:59px;
+}
+
+.btd-container table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.btd-container table td {
+    margin: 0;
+    padding: 0;
+}
+
+.btd-header {
+    background: #fff;
+    width: 100%;
+}
+
+.btd-header .btd-time-column-header {
+    width: 10%;
+}
+
+.btd-header .btd-scrollbar-shim {
+    width: 16px;
+}
+
+.btd-header .btd-day-column-header {
+    font:13px "museo-sans-n3", "museo-sans", Helvetica, Arial;
+    font-weight:300;
+    color:$color-gray-dark;
+    text-align: center;
+    width:13%;
+}
+.btd-header td {
+    background-color:#fff;
+}
+
+.btd-grid-timeslot-header {
+    width: 11%;
+    background: #fff;
+}
+
+.btd-scrollable-grid {
+    overflow: auto;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    @include minheight(300px);
+    padding-bottom:30px;
+    ::selection{
+        background-color:transparent;
+    }
+}
+
+
+table.btd-time-slots {
+    width: 100%;
+    table-layout: fixed;
+    cursor: default;
+}
+
+.btd-day-column {
+    width: 13.5%;
+    border-left: 1px solid #ddd;
+    overflow: visible;
+    vertical-align: top;
+}
+
+.btd-day-column-inner {
+    border-top:1px solid #ccc;
+    width: 100%;
+    position:relative;
+}
+
+.btd-time-slot-wrapper {
+    position:relative;
+    height:0px;
+    top: 1px;
+}
+
+.btd-time-slots {
+    width: 100%;
+}
+
+
+.btd-time-header-cell {
+    font:12px "museo-sans-n3", "museo-sans", Helvetica, Arial;
+    font-weight:300;
+    padding: 5px;
+    height: 80px; /* reference height */
+}
+
+
+.btd-time-slot {
+    border-bottom: 1px dotted #ddd;
+    border-right:1px solid #ccc;
+}
+
+.btd-hour-header {
+    border-bottom:1px solid #fff;
+    color:$color-gray;
+    text-align: right;
+}
+
+.btd-hour-end {
+    border-bottom: 1px solid #ccc;
+    color: #555;
+}
+
+.btd-business-hours {
+    background-color: #E6EEF1;
+    border-bottom: 1px solid #E6EEF1;
+    color: #333;
+}
+
+.btd-business-hours .btd-am-pm {
+    font-size: 0.6em;
+}
+
+.btd-day-header-cell {
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.btd-time-slot-header .btd-header-cell {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.btd-header .btd-today  {
+    font-weight: bold;
+}
+
+.btd-time-slots .btd-today {
+    background-color: #ffffcc;
+}
+
+.btd-cal-event {
+    background:#cccccc;
+    position: absolute;
+    left:0px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    color:$color-gray-dark;
+    width: 100%;
+    display: none;
+}
+
+.btd-cal-event:hover .btd-title{
+    color:#fff;
+}
+
+
+.btd-cal-event div {
+    padding: 0 5px;
+
+}
+
+.btd-cal-event .btd-time {
+    color: #fff;
+    padding: 0;
+    font-weight: bold;
+}
+
+.btd-container .ui-draggable .btd-time {
+    cursor: move;
+}
+
+.btd-cal-event .btd-title {
+    font:13px "museo-sans-n3", "museo-sans", Helvetica, Arial;
+    font-weight:300;
+    color:$color-gray-dark;
+    line-height:inherit;
+    position: relative;
+}
+
+.btd-container .ui-resizable-s {
+    height: 10px;
+    bottom: -8px;
+}
+.btd-container .ui-draggable-dragging {
+    z-index: 1000;
+}
+
+.btd-added-event{
+    width:100%;
+    position:absolute;
+}
+
+.btd-event-hovering{
+    width:100%;
+    position:absolute;
+    left:0px;
+}
+
+.btd-slot-in-event{
+    width:100%;
+    position:absolute;
+    left:0px;
+}

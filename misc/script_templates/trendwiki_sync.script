@@ -1,0 +1,100 @@
+use RPC::XML::Client;
+
+sub execute {
+    my ( $self, $params ) = @_;
+    
+    my $p = eval $params;
+
+    my $url = $p->{url};
+    my $key = $p->{key};
+    my $domain_id = $p->{domain_id};
+    my $group_id = $p->{group_id};
+    my $seed_id = $p->{seed_id} || 0;
+    
+    die unless $url && $key && $domain_id && $group_id;
+
+    my $since = $p->{since} || 1;
+    unless ( defined( $since ) ) {
+        $since = time - ( 60 * 60 * 2 );
+    }
+    
+    my $cli = RPC::XML::Client->new( $url ); 
+    my $resp = $cli->simple_request( 'trendwiki.getPages',
+        $key,
+        $since, 0, 0
+    );
+
+    foreach my $data ( @$resp ) {
+        my $uid = $data->{uid};
+        my $user_email = $data->{author};
+        my $title = Dicole::Utils::Text->ensure_utf8( $data->{title} );
+        my $content = Dicole::Utils::HTML->ensure_utf8( $data->{summary}->{content} );
+        my $created_at = $data->{created_at};
+        my $deleted_at = $data->{deleted_at};
+        my $updated_at = $data->{updated_at};
+
+        $updated_at = $created_at if ! $updated_at || $updated_at < $created_at;
+        
+        # Just skip this user for now.. ;)
+        next if $user_email eq 'esko.kurvinen@elisa.fi';
+
+        my $tags = ( ref( $data->{tags} ) eq 'ARRAY' ) ?
+            [ map { Dicole::Utils::Text->ensure_utf8( $_->{tag} ) } @{ $data->{tags} } ] : [];
+
+        my $entry = CTX->lookup_action('blogs_api')->execute( get_existing_entry => {
+            uid => $uid,
+            domain_id => $domain_id,
+        } );
+
+        if ( $entry ) {
+            if ( $deleted_at ) {
+                print "Should but will not delete entry " . $entry->id . "\n";
+#                 CTX->lookup_action('blogs_api')->execute( delete_entry => {
+#                     entry => $entry,
+#                     domain_id => $domain_id,
+#                 } );
+            }
+            else {
+                CTX->lookup_action('blogs_api')->execute( update_entry => {
+                    entry => $entry,
+                    title => $title,
+                    content => $content,
+                } );
+            }
+        }
+        else {
+            next if $data->{deleted_at};
+            
+            my $users = $user_email ? CTX->lookup_object('user')->fetch_group( {
+                from => [ 'sys_user', 'dicole_domain_user' ],
+                where => 'sys_user.email = ?' .
+                    ' AND sys_user.user_id = dicole_domain_user.user_id' .
+                    ' AND dicole_domain_user.domain_id = ?',
+                value => [ $user_email, $domain_id ]
+            } ) || [] : [];
+            
+            my $user = shift @$users;
+            
+            if ( $user ) {
+                CTX->lookup_action('blogs_api')->execute( create_entry => {
+                    unique_id => $uid,
+                    user_id => $user->id,
+                    group_id => $group_id,
+                    seed_id => $seed_id,
+                    title => $title,
+                    content => $content,
+                    creation_date => $created_at,
+                    last_updated => $updated_at,
+                    tags => $tags,
+                    
+                    domain_id => $domain_id,
+                } );
+            }
+            else {
+                print "No user found for email: $user_email" . "\n" if $user_email;
+            }
+        }
+    }
+}
+
+1;

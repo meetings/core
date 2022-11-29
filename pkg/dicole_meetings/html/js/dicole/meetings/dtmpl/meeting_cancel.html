@@ -1,0 +1,22 @@
+<div id="modal-meeting-cancel" class="m-modal">
+    <div class="modal-header">
+        <h3><%= MTN.t('Cancel Meeting') %></h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t('A notification about the cancellation will be sent to all participants of this meeting.') %></p>
+        <p><%= MTN.t('You can add your reason and additional requests to the form below:') %></p>
+        <form action="#" id="meetings_meeting_cancel_form" class="meetings-form">
+            <textarea name="message" rows="6" cols="30" style="margin-bottom:15px"></textarea>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a class="button blue js_meetings_meeting_cancel_submit" href="#">
+                <span class="label"><%= MTN.t('Cancel Meeting') %></span>
+            </a>
+            <a href="#" class="button gray js_hook_showcase_close" id="meeting-cancel-open-button">
+                <%= MTN.t('Cancel') %>
+            </a>
+        </div>
+    </div>
+</div>

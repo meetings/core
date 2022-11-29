@@ -1,0 +1,43 @@
+#!/bin/sh
+
+if [ $# -lt 1 ]
+then
+	echo "Usage: $0 [package_name] [package_dir]"
+	exit 1
+fi
+
+PACKAGE=$1
+PACKAGE_DIR=$2
+
+if [ !$PACKAGE_DIR ]
+then
+	PACKAGE_DIR=.
+fi
+
+BOLD="\033[1m"
+NORMAL="\033[0m"
+
+cd $PACKAGE_DIR || exit 0
+
+echo -en $BOLD
+echo "Removing old package $PACKAGE from website..." 
+echo -en $NORMAL
+oi2_manage --package=$PACKAGE remove_package || exit 0
+rm -rf ${OPENINTERACT2}/pkg/${PACKAGE}-* || exit 0
+
+echo -en $BOLD
+echo "Installing package $PACKAGE to website $OPENINTERACT2..."
+echo -en $NORMAL
+oi2_manage check_package || exit 0
+oi2_manage export_package || exit 0
+oi2_manage --package_file *.zip install_package || exit 0
+rm -f *.zip
+
+echo -en $BOLD
+echo "Installing SQL for package $PACKAGE..."
+echo -en $NORMAL
+oi2_manage --package=$PACKAGE install_sql || exit 0
+
+echo -en $BOLD
+echo "Installation done"
+echo -en $NORMAL

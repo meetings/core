@@ -1,0 +1,134 @@
+msgid "comment_approval_email_subject_template"
+msgstr "Hyväksyttävä kommentti: [% sender_first_name %] kommentoi [% object_name %][% IF group_name %] alueella [% group_name %][% END %] ([% server_name %])"
+
+msgid "comment_approval_email_text_template"
+msgstr ""
+"[% sender_name %] kommentoi [% object_name %]! Tässä kommentin sisältö:"
+""
+"[% comment_content_text %]"
+""
+""
+"Hyväksy kommentti täältä:"
+""
+"[% object_url %]"
+
+msgid "comment_approval_email_html_template"
+msgstr ""
+"<p>[% sender_name | html %] <a href="[% comment_url | html %]">kommentoi</a> <a href="[% object_url | html %]">[% object_name | html %]</a>! Tässä kommentin sisältö:</p>"
+"[% comment_content_html %]"
+""
+"<p><b>Hyväksy kommentti <a href="[% comment_url | html %]">täältä</a>!</b></p>"
+
+msgid "Submit comment"
+msgstr "Lähetä kommentti"
+
+msgid "Comment content"
+msgstr "Kommentin sisältö"
+
+msgid "Write your comment:"
+msgstr "Kirjoita kommenttisi:"
+
+msgid "Confirm comment delete"
+msgstr "Poista kommentti"
+
+msgid "Cancel comment delete"
+msgstr "Peruuta"
+
+msgid "Latest comments"
+msgstr "Viimeisimmät kommentit"
+
+msgid "blog post \\"%1\\""
+msgstr "viesti \\"%1\\""
+
+msgid "Group latest comments summary"
+msgstr "Ryhmän kaikkien viimeisten kommenttien yhteenveto"
+
+msgid "media object \\"%1\\""
+msgstr "mediaobjekti \\"%1\\""
+
+msgid "No comments found."
+msgstr "Ei kommentteja."
+
+msgid "page \\"%1\\""
+msgstr "sivu \\"%1\\""
+
+msgid "your media object \\"%1\\""
+msgstr "sinun mediaobjektisi \\"%1\\""
+
+msgid "your post \\"%1\\""
+msgstr "sinun viestisi \\"%1\\""
+
+msgid "blog post \\"%1\\""
+msgstr "viestiä \\"%1\\""
+
+msgid "Hide more"
+msgstr "Näytä vähemmän"
+
+msgid "Show more"
+msgstr "Näytä enemmän"
+
+msgid "Group latest discussion topic summary"
+msgstr "Ryhmän viimeisten keskustelunaiheiden yhteenveto"
+
+msgid "Latest discussion topics"
+msgstr "Uusimmat keskustelut"
+
+msgid "Earlier discussions"
+msgstr "Aikaisemmat"
+
+msgid "More recent discussions"
+msgstr "Uudemmat"
+
+msgid "Comment to media %1"
+msgstr "Kommentti mediaan %1"
+
+msgid "Comment to page %1"
+msgstr "Kommentti sivuun %1"
+
+msgid "Group latest comments summary with faces"
+msgstr "Ryhmän viimeisimmät kommentit profiilikuvien kera"
+
+msgid "blog post \"%1\""
+msgstr "viestiä \"%1\""
+
+msgid "event \"%1\""
+msgstr "tapahtumaa \"%1\""
+
+msgid "media object \"%1\""
+msgstr "mediaobjektia \"%1\""
+
+msgid "page \"%1\""
+msgstr "sivua \"%1\""
+
+msgid "There are no discussions available."
+msgstr "Ei keskustelunaiheita."
+
+msgid "your media object \"%1\""
+msgstr "sinun mediaobjektiasi \"%1\""
+
+msgid "your post \"%1\""
+msgstr "sinun viestiäsi \"%1\""
+
+msgid "Be the first to comment!"
+msgstr "Kommentoi ensimmäisenä!"
+
+msgid "Delete comment"
+msgstr "Poista kommentti"
+
+msgid "Publish comment"
+msgstr "Julkaise kommentti"
+
+msgid "Publish comments "
+msgstr "Kommenttien julkaisu "
+
+msgid "User can publish comments in the group"
+msgstr "Käyttäjällä on oikeus julkaista kommentteja ryhmän sisällä"
+
+msgid "Your comment is waiting for approval and will be published shortly."
+msgstr "Kommenttisi odottaa hyväksyntää ja julkaistaan piakkoin."
+
+msgid "Commenting is closed."
+msgstr "Kommentointi on suljettu."
+
+msgid "Comment to event %1"
+msgstr "Kommentti tapahtumaan %1"

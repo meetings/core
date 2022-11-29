@@ -1,0 +1,10 @@
+\bCVS\b
+~$
+^oi2_manage\.log$
+^src$
+\.old$
+\.bak$
+\.backup$
+^tmp
+^_
+\.uncompressed\.js$

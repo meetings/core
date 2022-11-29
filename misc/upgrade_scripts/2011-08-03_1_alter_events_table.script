@@ -1,0 +1,11 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_event add show_title int unsigned not null after show_planners');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_event add show_extras int unsigned not null after show_planners');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_event add show_promo int unsigned not null after show_planners');
+}
+
+1;

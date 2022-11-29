@@ -1,0 +1,224 @@
+<style type="text/css">
+#company-data{
+    padding-top:14px;
+}
+#company-data .data{
+    line-height:22px;
+    text-align:left;
+    padding-bottom:14px;
+    font-size:14px;
+    font-family: "museo-sans-n3", "museo-sans", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #4C4B4B;
+}
+#company-data .data:last-child{
+    padding-bottom:0px;
+}
+#company-data .box .bold{
+    font-weight:bold;
+}
+#company-data .box{
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    background: #FFF;
+    background: rgba(255, 255, 255, 0.8);
+    color: #FFF;
+    border-bottom: 0;
+    opacity: 1;
+    z-index: 0;
+    min-height: 100px;
+    height: auto !important;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+    padding:28px;
+    margin-bottom:28px;
+    text-align:left;
+    width:700px;
+}
+#company-data .box .col{
+    vertical-align:top;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    padding-right:32px;
+    display:inline-block;
+    width:24%;
+}
+#company-data .box .col:last-child{
+    padding-right:0px;
+}
+#company-data .box .col .logo{
+    width:100%;
+}
+#company-data .box .col .website{
+    text-decoration: underline;
+    font-size:14px;
+    font-family: "museo-sans-n3", "museo-sans", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #4C4B4B;
+}
+.wraptocenter {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width:100%;
+    height:auto; /* This will be set with JS */
+}
+.wraptocenter * {
+    vertical-align: middle;
+}
+</style>
+<script>
+    setTimeout(function(){ if( $ ) { $('.wraptocenter').css({ height : $('.company').height() }) } } ,200);
+</script>
+<div id="company-data">
+    <div class="box">
+        <div class="company">
+            <div class="col">
+                <div class="wraptocenter">
+                    [% IF logo %]
+                    <img class="logo" src="[% logo | html %]" alt="[% company | html %]" />
+                    [% END %]
+                    [% IF website %]
+                    <br/><br/>
+                    <a class="website" href="[% website | html %]" target="_blank">[% MTN.t('Website') %]</a>
+                    [% END %]
+                    [% IF pitch_deck_url %]
+                    <br/><br/>
+                    <a class="website" href="[% pitch_deck_url | html %]" target="_blank">Pitch deck</a>
+                    [% END %]
+                </div>
+            </div>
+
+            <div class="col">
+                [% IF category %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Category') %]</span>:<br/> [% category | html %]
+                </div>
+                [% END %]
+                [% IF country %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Country') %]</span>:<br/> [% country | html %]
+                </div>
+                [% END %]
+                [% IF country_of_production %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Country of production') %]</span>:<br/> [% country_of_production | html %]
+                </div>
+                [% END %]
+                [% IF founded %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Founded') %]</span>:<br/> [% founded | html %]
+                </div>
+                [% END %]
+            </div>
+
+            <div class="col">
+                [% IF company_revenues %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Revenue (USD)') %]</span>:<br/> [% company_revenues | html %]
+                </div>
+                [% END %]
+                [% IF funding_raised %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Funding raised') %]</span>:<br/> [% funding_raised | html %]
+                </div>
+                [% END %]
+                [% IF funding_we_are_looking_for %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Funding we are looking for') %]</span>:<br/> [% funding_we_are_looking_for | html %]
+                </div>
+                [% END %]
+                [% IF primary_offering %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Primary Offering') %]</span>:<br/> [% ( primary_offering_other OR primary_offering ) | html %]
+                </div>
+                [% END %]
+                [% IF secondary_offering %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Secondary Offering') %]</span>:<br/> [% ( secondary_offering_other OR secondary_offering ) | html %]
+                </div>
+                [% END %]
+            </div>
+
+            <div class="col">
+                [% IF primary_platform %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Primary Platform') %]</span>:<br/> [% ( primary_platform_other OR primary_platform ) | html %]
+                </div>
+                [% END %]
+                [% IF secondary_platform %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Secondary Platform') %]</span>:<br/> [% ( secondary_platform_other OR secondary_platform ) | html %]
+                </div>
+                [% END %]
+                [% IF number_of_employees %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('# of employees') %]</span>:<br/> [% number_of_employees | html %]
+                </div>
+                [% END %]
+                [% IF mainly_looking_for %]
+                <div class="data">
+                    <span class="bold">[% MTN.t('Mainly looking for') %]</span>:<br/> [% mainly_looking_for | html %]
+                </div>
+                [% END %]
+                <div class="pitch-button"></div>
+            </div>
+
+        </div>
+    </div>
+    [% IF elevator_pitch || company_description || core_competences || team || product_description || business_model || references || competitors || certificates || areas_of_interest %]
+    <div class="company1 box">
+        [% IF elevator_pitch %]
+        <div class="data">
+            <span class="bold">[% MTN.t('Elevator pitch') %]</span>: [% elevator_pitch | html_para_break %]
+        </div>
+        [% END %]
+        [% IF company_description %]
+        <div class="data">
+            <span class="bold">[% MTN.t('Company description') %]</span>: [% company_description | html_para_break %]
+        </div>
+        [% END %]
+        [% IF core_competences %]
+        <div class="data">
+            <span class="bold">[% MTN.t('Core competences') %]</span>: [% core_competences | html_para_break %]
+        </div>
+        [% END %]
+        [% IF team %]
+        <div class="data">
+            <span class="bold">[% MTN.t('Team') %]</span>: [% team | html_para_break %]
+        </div>
+        [% END %]
+        [% IF product_description %]
+        <div class="data">
+            <span class="bold">[% MTN.t('Product description') %]</span>: [% product_description | html_para_break %]
+        </div>
+        [% END %]
+        [% IF business_model %]
+        <div class="data">
+            <span class="bold">[% MTN.t('Business model') %]</span>: [% business_model | html_para_break %]
+        </div>
+        [% END %]
+        [% IF references %]
+        <div class="data">
+            <span class="bold">[% MTN.t('References') %]</span>: [% references | html_para_break %]
+        </div>
+        [% END %]
+        [% IF competitors %]
+        <div class="data">
+            <span class="bold">[% MTN.t('Competitors') %]</span>: [% competitors | html_para_break %]
+        </div>
+        [% END %]
+        [% IF certificates %]
+        <div class="data">
+            <span class="bold">[% MTN.t('Certificates') %]</span>: [% certificates | html_para_break %]
+        </div>
+        [% END %]
+        [% IF areas_of_interest %]
+        <div class="data">
+            <span class="bold">[% MTN.t('Areas of interest') %]</span>: [% areas_of_interest | html_para_break %]
+        </div>
+        [% END %]
+    </div>
+    [% END %]
+</div>

@@ -1,0 +1,83 @@
+[%#- Sent after an incoming email to a meeting has been processed. Not sent for mails that respond with their own replies (or a have a combined reply like scheduling answers) -%]
+
+[%- IF test_case == 'anonyymi' %]
+[%-
+success = '1'
+user_is_participant = '0'
+meeting_title = 'Perjantaikännit'
+meeting_url = 'www.meetin.gs'
+anon_email = 'töttöröö@pippijuu.com'
+disable_url = 'www.meetin.gs'
+meeting_email = 'rndm@mtn.fi'
+size_limit = '25mb'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'anonyymi2' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+success = '0'
+user_is_participant = '1'
+meeting_title = 'Perjantaikännit'
+meeting_url = 'www.meetin.gs'
+anon_email = 'töttöröö@pippijuu.com'
+disable_url = 'www.meetin.gs'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'SUCCESS' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+success = '1'
+meeting_title = 'Perjantaikännit'
+meeting_url = 'www.meetin.gs'
+disable_url = 'www.meetin.gs'
+user_is_participant = '1'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'FAIL' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+success = '0'
+meeting_title = 'Perjantaikännit'
+meeting_url = 'www.meetin.gs'
+disable_url = 'www.meetin.gs'
+anon_email = 'töttöröö@pippijuu.com'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'HUGE FILE' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+filesize_exceeded = '1'
+meeting_title = 'Perjantaikännit'
+meeting_url = 'www.meetin.gs'
+size_limit = '25MB'
+disable_url = 'www.meetin.gs'
+anon_email = 'töttöröö@pippijuu.com'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'FAILED PARTICIPANT' %]
+[%-
+
+user_is_participant = '1'
+server_host = 'http://dev.meetin.gs'
+success = '0'
+meeting_title = 'Perjantaikännit'
+meeting_url = 'www.meetin.gs'
+disable_url = 'www.meetin.gs'
+anon_email = 'töttöröö@pippijuu.com'
+
+%]
+[% END %]

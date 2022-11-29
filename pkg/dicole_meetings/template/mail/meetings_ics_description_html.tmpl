@@ -1,0 +1,58 @@
+[% IF lahixcustxz_hack %]
+[% IF lahixcustxz_hack.birthdate %][% 'Syntymäpäivä' %]: [% lahixcustxz_hack.birthdate %]
+
+
+
+
+[% END %]
+[% IF lahixcustxz_hack.address %][% 'Osoite' %]: [% lahixcustxz_hack.address %]
+
+
+
+
+[% END %]
+
+[% IF lahixcustxz_hack.area %][% 'Postitoimipaikka' %]: [% lahixcustxz_hack.area %]
+
+
+
+
+[% END %]
+[% IF lahixcustxz_hack.notes_text %][% 'Viesti varaajalta' %]:
+
+
+
+
+[% lahixcustxz_hack.notes_text %]
+
+
+
+
+[% END %]
+[% IF lahixcustxz_hack.no_data_for_reschedule %][% 'Tämän tapaamisen aikaa on muutettu ja varauksen yhteydessä annettuja tietoja ei enää ole järjestelmässä. Ole hyvä ja tarkista tiedot alkuperäisestä kutsusta.' %]
+
+
+
+
+[% END %]
+[% END %]
+
+
+[% MTN.t("Check the meeting details, agenda and materials:") %]
+
+
+
+
+[% meeting_url %]
+[% IF ! lahixcustxz_hack %]
+
+
+
+
+[% MTN.t("Email your material and notes to:") %] [% meeting_email %]
+
+
+
+
+[% MTN.t("Be smart and organize your next meeting with Meetin.gs:") %] http://meetin.gs/organize
+[% END %]

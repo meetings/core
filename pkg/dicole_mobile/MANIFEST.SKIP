@@ -1,0 +1,8 @@
+\bCVS\b
+~$
+\.old$
+\.bak$
+\.backup$
+^tmp
+^_
+\.DS_Store$

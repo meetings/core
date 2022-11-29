@@ -1,0 +1,7 @@
+option(value="")
+each meeting in meetings
+    - var date_string = meeting.begin_epoch ? app.helpers.dateString(meeting.begin_epoch * 1000,app.models.user.get('time_zone_offset') ) : MTN.t('Time not set')
+    if( meeting.id === dicole.get_global_variable('meetings_meeting_id') )
+        option(value=meeting.desktop_url,selected='selected')=(meeting.begin_date || '') + ' - ' + meeting.title
+    else
+        option(value=meeting.desktop_url)= date_string + ' - ' + meeting.title

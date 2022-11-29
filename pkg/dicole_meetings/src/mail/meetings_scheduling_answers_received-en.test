@@ -1,0 +1,15 @@
+[%#- Sent when all participants have responded to scheduling options. -%]
+
+[%- IF test_case == 'set the time' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Disko'
+user_name = 'Terho Lehervo'
+meeting_email = 'disko@mtngas.sgs'
+meeting_url = 'www.meetin.gs'
+best_times = [ 'aika1','aika4','aika6']
+time_zone = 'EET +14'
+
+%]
+[%-  END -%]

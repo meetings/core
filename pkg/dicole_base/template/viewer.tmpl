@@ -1,0 +1,84 @@
+[%#- $Id: viewer.tmpl,v 1.8 2009-01-07 14:42:33 amv Exp $ -%]
+[%- DEFAULT
+    itemparams.type = ''
+    itemparams.href = ''
+    itemparams.width = ''
+    itemparams.height = ''
+-%]
+[%- params = itemparams %]
+[% IF params.type == 'image' %]
+<img src="[% params.href %]"[% IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %] />
+[% ELSIF params.type == 'flash' %]
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]>
+<param name="movie" value="[% params.href %]" />
+<param name="quality" value="high" />
+<embed src="[% params.href %]" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" type="application/x-shockwave-flash"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]></embed>
+</object>
+[% ELSIF params.type == 'sound' %]
+<embed src="[% params.href %]"[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %] volume="100" autostart="true"></embed>
+[% ELSIF params.type == 'qt' %]
+<embed src="[% params.href %]"[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %] volume="100" autostart="true" pluginspace="http://www.apple.com/quicktime/download/"></embed>
+[% ELSIF params.type == 'qtelse' %]
+<embed src="" qtsrc=[% params.href %] volume="100"[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %] autostart="true" pluginspace="http://www.apple.com/quicktime/download/"></embed>
+[% ELSIF params.type == 'real' %]
+<object id="RVOCX" classid="clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]>
+<param name="src" value="[% params.href %]" />
+<param name="controls" value="ImageWindow" />
+<param name="console" value="_master" />
+<param name="nojava" value="true" />
+<embed src="[% params.href %]" controls="ImageWindow" console="_master" nojava="true"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]></embed>
+</object>
+[% ELSIF params.type == 'shockwave' %]
+<object classid="clsid:166B1BCA-3F9C-11CF-8075-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/director/sw.cab#version=8,0,0,0"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]>
+<param name="src" value="[% params.href %]" />
+<embed src="[% params.href %]" pluginspage="http://www.macromedia.com/shockwave/download/"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]></embed>
+</object>
+[% ELSIF params.type == 'wmp' %]
+<object id="mediaPlayer" classid="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701" standby="Loading Microsoft Windows Media Player components..." type="application/x-oleobject"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]>
+<param name="fileName" value="[% params.href %]" />
+<param name="animationatStart" value="true" />
+<param name="transparentatStart" value="true" />
+<param name="autoStart" value="true" />
+<param name="showControls" value="true" />
+<embed src="[% params.href %]"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]></embed>
+</object>
+[% ELSIF params.type == 'pdf' %]
+<object classid="clsid:CA8A9780-280D-11CF-A24D-444553540000"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]>
+<param name="src" value="[% params.href %]" />
+<embed src="[% params.href %]"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]></embed>
+</object>
+[% ELSIF params.type == 'applet' %]
+<applet code="[% params.href %]"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]></applet>
+[% ELSE %]
+<script language="JavaScript">
+<!--
+function calcHeight()
+{
+document.getElementById("framez").style.visibility = "hidden";
+setTimeout('document.getElementById("framez").style.visibility = "visible"',1);
+        var the_height=document.getElementById('ifrm').contentWindow.document.body.scrollHeight;//find the height of the internal page
+        document.getElementById('ifrm').height=the_height;//change the height of the iframe
+}
+//-->
+</script>
+[% params.width = params.width || '100%' %]
+[% params.height = params.height || '800' %]
+[% IF params.height %]<div id="framez" onLoad="calcHeight()">[% END %]
+<iframe src="[% params.href %]" frameborder="0" scrolling="auto" name="ifrm" id="ifrm"[% IF params.height %] onLoad="calcHeight()"[% END %]
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]>
+<ilayer src="[% params.href %]"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]></ilayer>
+</iframe>
+[% IF params.height %]</div>[% END %]
+[% END %]

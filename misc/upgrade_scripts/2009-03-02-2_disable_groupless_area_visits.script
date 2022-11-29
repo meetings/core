@@ -1,0 +1,25 @@
+
+sub execute {
+    my ( $self ) = @_;
+    my $visits = CTX->lookup_object( 'area_visit' )->fetch_group() || [];
+    for my $visit ( @$visits ) {
+        next if ! $visit->target_group_id;
+        my $group = CTX->lookup_object( 'groups' )->fetch( $visit->target_group_id );
+        next if ! $group;
+        if ( $group->has_area == 2 ) {
+            if ( $visit->visiting_disabled != 1 ) {
+                $visit->visiting_disabled( 1 );
+                $visit->save;
+            }
+        }
+        else {
+            if ( $visit->visiting_disabled != 0 ) {
+                $visit->visiting_disabled( 0 );
+                $visit->save;
+            }
+        }
+    }
+}
+
+
+1;

@@ -1,0 +1,3 @@
+TODO: Try to fix the button color for office365 by adding an extra span inside a href with the color set to white and text decoration removed. Then retest everything!
+
+Also move padding to images.

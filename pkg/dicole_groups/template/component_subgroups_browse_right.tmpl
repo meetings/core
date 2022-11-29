@@ -1,0 +1,143 @@
+[%#
+
+keywords = [ 'Turku', 'Hiihto' ],
+
+links => [
+		{
+		name => 'Rock',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Skillz',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Parkour',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+],
+
+browse_list =>
+[
+	{
+	view_html => '
+	<div class="browse_item">
+		<div class="left">
+			<a href="#">
+				<img src="/images/default_profile_55.gif" alt="" />
+			</a>
+		</div>
+		<div class="item_content">
+			<p class="abstract">
+				<h2 class="title"><a href="#">James McEnroe</a></h2>
+				<div class="tags">
+					<a class="tag" href="#">Turku</a>
+					<a class="tag" href="#">Hiihto</a>
+					<a class="tag" href="#">Kaljut ihmiset on kauniita</a>
+					<a class="tag" href="#">Sotiminen</a>
+				</div>
+			</p>
+		</div>
+	</div>'
+	}
+	{
+	view_html => '
+	<div class="browse_item">
+	<div class="left">
+		<a href="#">
+			<img src="/images/default_profile_55.gif" alt="" />
+		</a>
+	</div>
+	<div class="item_content">
+		<p class="abstract">
+			<h2 class="title"><a href="#">Pekka Potkukelkka</a></h2>
+			<div class="tags">
+				<a class="tag" href="#">Turku</a>
+				<a class="tag" href="#">Hiihto</a>
+				<a class="tag" href="#">Ei se niin vakavaa ole</a>
+				<a class="tag" href="#">Pelleily</a>
+				<a class="tag" href="#">Dont worry be happy</a>
+			</div>
+		</p>
+	</div>
+	</div>'
+	}
+	{
+	view_html => '
+	<div class="browse_item">
+	<div class="left">
+		<a href="#">
+			<img src="/images/default_profile_55.gif" alt="" />
+		</a>
+	</div>
+	<div class="item_content">
+		<p class="abstract">
+			<h2 class="title"><a href="#">Pertti Moilanen</a></h2>
+			<div class="tags">
+				<a class="tag" href="#">Turku</a>
+				<a class="tag" href="#">Hiihto</a>
+				<a class="tag" href="#">Typeryys</a>
+				<a class="tag" href="#">Foo</a>
+				<a class="tag" href="#">Baz</a>
+				<a class="tag" href="#">Boz</a>
+			</div>
+		</p>
+	</div>
+	</div>'
+	}
+]
+%]
+
+[%- INCLUDE dicole_groups::component_subgroups_sections -%]
+
+<div id="subgroups_tag_browser" class="browse tag_browser_control">
+
+	[%- PROCESS dicole_groups::component_subgroups_browse_header browse_title = MSG('Areas') -%]
+
+	<div id="browse_filter_container" style="clear:both">
+
+		<div id="browse_selected_container">
+			<span id="browse_selected_tags">
+				<h2 class="title">[%- MSG('with keywords') -%]</h2>
+    			<span id="browse_selected_tags_container">
+				[%- PROCESS dicole_groups::component_subgroups_browse_right_taglist links = keywords -%]
+                </span>
+			</span>
+
+			<span id="filter_more_container">
+				<a class="tag_separator">+</a>
+				<a href="#" id="filter_more">[%- MSG('filter more') %] <span class="filter_more_hide">x</span><span class="filter_more_show">&darr;</span></a>
+			</span>
+		</div>
+
+		<div id="browse_suggestions">
+			[%- PROCESS dicole_groups::component_subgroups_browse_right_tagcloud links = suggestions -%]
+		</div>
+	</div>
+
+	<div id="browse_results_header" style="clear:both">
+		<h2>
+			<span id="browse_result_count">[% (result_count == 1 ) ? MSG("1 area") : MSG( "[_1] areas", result_count ) %]</span>
+		</h2>
+	</div>
+
+	<div id="browse_results">
+		[% INCLUDE dicole_groups::component_subgroups_browse_right_groups %]
+	</div>
+
+	<div id="browse_show_more">
+		<a href="#">&darr;[% MSG('Show more') | html %]</a>
+	</div>
+	<div id="browse_loading">
+		[% MSG('Loading...') | html %]
+	</div>
+
+	[%- IF groups.size == 0 -%]
+		<div id="browse_no_results">
+			<h2>[% MSG('No results') %]</h2>
+		</div>
+	[%- END -%]
+</div>

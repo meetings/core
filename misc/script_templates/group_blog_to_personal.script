@@ -1,0 +1,107 @@
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_id = $params ? $params : 0;
+
+
+    my $posts = CTX->lookup_object('weblog_posts')->fetch_group( {
+        where => 'groups_id != 0',
+     } );
+     
+     my %posts_by_group = ();
+     for my $post ( @$posts ) {
+        $posts_by_group{ $post->groups_id } ||= [];
+        push @{ $posts_by_group{ $post->groups_id } }, $post;
+     }
+     
+     for my $gid ( keys %posts_by_group ) {
+        if ( $domain_id ) {
+            my $ok = eval { CTX->lookup_action('dicole_domains')->execute( group_belongs_to_domain => {
+                group_id => $gid, domain_id => $domain_id,
+            } ) };
+            next unless $ok;
+        }
+    
+        for my $post ( @{ $posts_by_group{ $gid } } ) {
+        
+            my $found_posts = CTX->lookup_object('weblog_posts')->fetch_group( {
+                where => 'user_id = ? AND date = ? AND title = ?',
+                value => [ $post->writer, $post->date, $post->title ],
+            } );
+            
+            my $new_post;
+            
+            if ( ! scalar( @$found_posts ) ) {
+                $new_post = CTX->lookup_object('weblog_posts')->new;
+                
+                $new_post->{$_} = $post->{$_} for ( qw/
+                    writer
+                    date
+                    publish_date
+                    removal_date
+                    removal_date_enable
+                    title
+                    abstract
+                    content
+                / );
+                
+                $new_post->groups_id( 0 );
+                $new_post->user_id( $post->writer );
+                $new_post->edited_date( time - 1 );
+                $new_post->save;
+                
+                my $publish = CTX->lookup_object('blogs_published')->new;
+                $publish->group_id( $gid );
+                $publish->post_id( $new_post->id );
+                $publish->save;
+                
+                my $writer = $new_post->user_id;
+                my $pid = $post->id;
+                print "Post $pid transferred from group $gid to user $writer" . $/;
+            }
+            else {
+                $new_post = pop @$found_posts;
+            }
+            
+            my $comments = CTX->lookup_object('weblog_comments')->fetch_group( {
+                where => 'post_id = ?',
+                value => [ $post->id ],
+            } );
+            
+            for my $comment ( @$comments ) {
+            
+                my $found_comments = CTX->lookup_object('weblog_comments')->fetch_group( {
+                    where => 'user_id = ? AND date = ? AND post_id = ?',
+                    value => [ $comment->user_id, $comment->date, $new_post->id ],
+                } );
+                
+                next if scalar( @$found_comments );
+
+                my $new_comment = CTX->lookup_object('weblog_comments')->new;
+            
+                $new_comment->{$_} = $comment->{$_} for ( qw/
+                    user_id
+                    date
+                    title
+                    name
+                    subject
+                    email
+                    url
+                    content
+                / );
+                
+                $new_comment->post_id( $new_post->id );
+                $new_comment->save;
+                my $cid = $comment->id;
+                my $writer = $new_post->user_id;
+                print "Comment $cid transferred from group $gid to user $writer" . $/;
+            }
+        }
+    }
+    
+    # run update_blogs
+    CTX->lookup_action('update_blogs_entries')->execute;
+}
+
+1;

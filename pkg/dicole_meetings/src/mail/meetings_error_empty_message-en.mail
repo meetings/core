@@ -1,0 +1,19 @@
+[% MTN.t("Something went wrong") %]
+
+<<<html_wrapper>>>
+[% action_text = MTN.t('Problem with your email') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+<<<p>>>
+[% MTN.t("Meetin.gs did not know what to do with your email - it appeared to be empty.") %]
+<<</p>>>
+<<<p>>>
+[% MTN.t("Maybe you want to try again?") %]
+<<</p>>>
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

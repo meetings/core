@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+my $override = $0;
+$override =~ s/local_config/local_config_override/;
+if ( -f $override ) {
+    my $value = `perl $override $ARGV[0]`;
+    if ( $value ) {
+        print $value;
+        exit 0;
+    }
+}
+
+my $conf = {
+
+rollout_branch => 'master',
+meetings_domain => 131,
+website_dir => '/usr/local/dcp/',
+
+};
+
+print $conf->{ $ARGV[0] };
+

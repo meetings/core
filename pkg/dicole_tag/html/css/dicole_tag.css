@@ -1,0 +1,5 @@
+.tag_deleted { text-decoration: line-through; color: gray !important; }
+.tag_added { color: green !important; }
+.tag_selected { color: green !important; }
+.tag_add_link_container { display: none; }
+.tag_suggestion_list a { display: block; }

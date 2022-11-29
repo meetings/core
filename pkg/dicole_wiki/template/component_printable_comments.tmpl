@@ -1,0 +1,17 @@
+[% FOREACH comment IN comments %]
+<div class="printable_comment">
+	<div class="printable_comment_content">
+		<div class="meta">
+    		<a class="author_name" href="[% comment.user_link %]">[% comment.user_name | html %]</a>
+			<span class="separator">&bull;</span>
+			<span class="date">[% comment.date_ago | html %]</span>
+            [% IF comment.support_string %]
+			<span class="separator">&bull;</span>
+			<span class="supports">[% MSG("[_1] support(s) (by [_2])", comment.support_count, comment.support_string ) | html %]</span>
+            [% END %]
+		</div>
+		<p>[% comment.content %]</p>
+	</div>
+</div>
+<hr />
+[% END %]

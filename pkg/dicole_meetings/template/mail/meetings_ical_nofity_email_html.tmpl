@@ -1,0 +1,53 @@
+[% IF invitation_message %]
+[% from_text = from_user_name OR MTN.t('Inviter') %]
+[% MTN.t("%1\$s attached the following message:", [from_text]) %]
+
+
+
+
+[% invitation_message %]
+
+
+
+
+[% END %]
+[% IF meeting_url %]
+[% IF ! from_swipetomeet %]
+[% MTN.t("Check the meeting details, agenda and materials:") %]
+[% ELSE %]
+Check the meeting details:
+[% END%]
+
+
+
+
+[% meeting_url %]
+
+
+
+
+
+
+[% END %]
+[% IF ! from_swipetomeet %]
+[% IF disable_url %]
+[% MTN.t("This is an automated iCal message from Meetin.gs. If you do not wish to receive iCal messages from Meetin.gs in the future, please follow the link below:") %]
+
+
+[% disable_url %]
+[% END %]
+[% ELSE %]
+[% IF type == 'scheduling_completed' %]
+Scheduled with SwipeToMeet – Simplest way to schedule anything:
+
+
+
+
+http://www.swipetomeet.com
+[% ELSE %]
+This is an automated iCal message from SwipeToMeet. If you do not wish to receive iCal messages from SwipeToMeet in the future, please follow the link below:
+
+
+[% disable_url %]
+[% END%]
+[% END %]

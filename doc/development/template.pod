@@ -1,0 +1,54 @@
+=head1 NAME
+
+Template - Implementation plan for feature X
+
+=head1 TASK INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.2 $
+
+=item B<Severity>
+
+Trivial/Minor/Normal/Major/Critical...
+
+=item B<Priority>
+
+P1, 2, 3...
+
+=item B<Risk factor>
+
+1, 2, 3...
+
+=item B<Estimate>
+
+The estimated ammount of work is...
+
+=item B<Status>
+
+New/Assigned/Resolved.
+
+=back
+
+=head1 ABSTRACT
+
+This document explains...
+
+=head1 DETAILS
+
+Detailed explanation of the feature x...
+
+=head1 NOTES AND STATUS
+
+This section should be filled with information and status of the current
+implementation of the specifications.
+
+=head1 AUTHORS
+
+Who am I, E<lt>xyz@ionstream.fiE<gt>

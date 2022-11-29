@@ -1,0 +1,42 @@
+<p>Test emails will be sent to [% email | html %]!</p>
+<p></p>
+<p>Mails:</p>
+[% FOREACH mail IN mails %]
+<p>
+<a href="[% mail.edit_mail_url %]">[% mail.name %] ([% mail.lang %])</a> - <a href="[% mail.edit_test_url %]">[comment & tests]</a> [% IF mail.comment %] - [% mail.comment %][% END %] - Send tests: 
+[% FOREACH test IN mail.tests %]
+[% IF ! loop.first %], [% END %]
+<a href="[% test.send_test_url %]">[% test.name %]</a>
+[% END %]
+</p>
+[% END %]
+<p></p>
+<p>Parts:</p>
+[% FOREACH part IN parts %]
+<p>
+<a href="[% part.edit_part_url %]">[% part.name %] ([% part.lang %])</a>
+</p>
+[% END %]
+
+<p></p>
+<p></p>
+<form action="[% create_url %]">
+<input type="hidden" name="email" value="[% email %]" />
+<p>Create new file: <input type="text" name="name" /> <input type="submit" name="type" value="mail" /> <input type="submit" name="type" value="part" /> ( example: meetings_general_greeting )</p>
+</form>
+
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+
+<form action="[% delete_url %]">
+<input type="hidden" name="email" value="[% email %]" />
+<p>DELETE files: <input type="text" name="name" /> <input type="submit" name="type" value="mail" /> <input type="submit" name="type" value="part" /> THIS DELETES STUFF! ( example: meetings_general_greeting )</p>
+</form>
+
+<p></p>
+<p></p>
+

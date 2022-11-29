@@ -1,0 +1,23 @@
+<div id="modal-remove-confirm" class="m-modal">
+    <div class="modal-header">
+        <h3><%= MTN.t('Confirm remove') %></h3>
+    </div>
+
+    <div class="modal-content">
+        <p><%= MTN.t('Are you sure you want to remove %1$s?', { params : [ p.title ] }) %></p>
+        <form id="meetings_remove_meeting_form">
+            <input type="hidden" name="meeting_id" value="<%== p.id %>" />
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a href="#" class="button blue js_meetings_remove_meeting_submit" id="remove-meeting-submit">
+                <%= MTN.t('Remove') %>
+            </a>
+            <a href="#" class="button gray js_hook_showcase_close">
+                <%= MTN.t('Cancel') %>
+            </a>
+        </div>
+    </div>
+</div>

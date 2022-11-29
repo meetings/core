@@ -1,0 +1,38 @@
+[% IF matchmaker_company && matchmaker_name == matchmaker_email %][% to_be_met = matchmaker_company %][% ELSIF matchmaker_company %][% to_be_met = matchmaker_name _ ' from ' _ matchmaker_company %][% ELSE %][% to_be_met = matchmaker_name %][% END %][% MTN.t('Confirm your request for a meeting with %1$s', [to_be_met]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t("You're almost there!") %]
+
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<bubble>>>
+
+<<<p>>>
+[% IF matchmaker_company && matchmaker_name == matchmaker_email %][% to_be_met = matchmaker_company %][% ELSIF matchmaker_company %][% to_be_met = matchmaker_name _ ' from ' _ matchmaker_company %][% ELSE %][% to_be_met = matchmaker_name %][% END %]
+[% MTN.t('Your request to meet with %1$s is almost complete.',[to_be_met]) %]
+<<</p>>>
+
+<<<p>>>
+[% MTN.t('To confirm the meeting and to verify your email address, click on the button below.') %]
+<<</p>>>
+
+[% url = verify_url %]
+[% text = MTN.t("Confirm meeting request") %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+
+<<<hr>>>
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t('Meetin.gs - The smartest way to meet') %]<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

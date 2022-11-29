@@ -1,0 +1,3 @@
+[% MTN.t('Problems processing the meeting invitation') %]
+
+[% MTN.t('Unfortunately we could not process the meeting invitation sent to %1$s.',[sent_to_email]) %]

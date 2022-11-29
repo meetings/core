@@ -1,0 +1,27 @@
+[%#- Sent something like 15 minutes after the last email reply to a scheduling option, listing all email scheduling replies that were received -%]
+
+
+[%- IF test_case == 'confirmations' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+answered_scheduling_options = [{option => 'Tue 12.3.2011 from 11:00 to 14:00 UTC+2', answer => 'YES'}, {option => 'Wed 13.3.2011 from 13:00 to 15:00 UTC+2', answer => 'NO'}]
+open_scheduling_options = [{},{},{},{}]
+meeting_title = 'Marketing plan for Q2'
+meeting_url = 'http://meetin.gs/foobar'
+
+%]
+[%- END %]
+
+
+[%- IF test_case == 'all confirmations' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+answered_scheduling_options = [{option => 'Tue 12.3.2011 from 11:00 to 14:00 UTC+2', answer => 'YES'}]
+open_scheduling_options = []
+meeting_title = 'Marketing plan for Q2'
+meeting_url = 'http://meetin.gs/foobar'
+
+%]
+[%- END %]

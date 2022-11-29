@@ -1,0 +1,12 @@
+Changes
+conf/theme.ini
+html/css/demo/style.css
+html/images/theme/demo/dicole_logo.jpg
+html/images/theme/demo/logo.gif
+html/images/theme/demo/pattern.png
+html/images/theme/demo/pattern2.png
+html/images/theme/demo/tab.png
+html/images/theme/demo/tab_inactive.png
+MANIFEST			This list of files
+MANIFEST.SKIP
+package.ini

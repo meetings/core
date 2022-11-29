@@ -1,0 +1,66 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Term::ProgressBar::Simple;
+use Dicole::MogileFS;
+use File::Temp;
+use LWP::Simple qw(getstore);
+
+sub execute {
+	my ($self, $params) = @_;
+
+	my $live_mogile = Dicole::MogileFS->new(
+        domain => 'dicole.dcp.attachments',
+        class  => 'attachment',
+        servers => [ qw(localhost:7433) ]
+    );
+
+	my $dev_mogile = Dicole::MogileFS->new(
+        domain => 'dicole.dcp.attachments',
+        class  => 'attachment',
+        servers => [ qw(10.2.1.58:7001) ]
+    );
+
+	my $attachments = CTX->lookup_object('attachment');
+	my $attachments_list = $attachments->fetch_group({});
+
+    my $progress = Term::ProgressBar::Simple->new(scalar @$attachments_list);
+
+    my @failed;
+
+	for my $attachment (@$attachments_list) {
+        $progress++;
+
+        next if $dev_mogile->get_urls($attachment->id);
+
+        my @urls = $live_mogile->get_urls($attachment->id);
+
+        unless (@urls) {
+            push @failed, $attachment;
+            next;
+        }
+
+        my $url = $urls[0];
+
+        $url =~ s/10.2.1.12[34]:7500/localhost:7434/;
+        $url =~ s/dev1/dev2/;
+
+        $progress->message($url);
+
+        my $temp = File::Temp->new;
+
+        getstore $url => $temp->filename
+            or do { push @failed, $attachment; next };
+
+		$dev_mogile->store_fh($attachment->id => $temp)
+            or do { push @failed, $attachment; next };
+	}
+
+    warn "The following attachments failed: @{[map $_->id, @failed]}\n";
+    
+	1;
+}
+
+1;

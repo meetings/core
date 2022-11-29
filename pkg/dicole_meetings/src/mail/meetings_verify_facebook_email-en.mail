@@ -1,0 +1,32 @@
+[% MTN.t('Action required: Facebook connection authorization') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Authorize Facebook') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+[% IF new_user %]
+<<<p>>>
+% MTN.t('Welcome to Meetin.gs!') %]
+<<</p>>>
+<<<p>>>
+[% MTN.t('Your account is now up and running.') %]
+<<</p>>>
+[% END %]
+<<<p>>>
+[% MTN.t('Use the following link to authorize Meetin.gs to connect with your Facebook account.') %]
+<<</p>>>
+[% url = authorize_url %]
+[% text = MTN.t('Connect to Facebook') %]
+<<<blue_button>>>
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

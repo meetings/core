@@ -1,0 +1,30 @@
+<div id="modal-set-title" class="m-modal">
+    <div class="modal-header">
+        <h3><%= MTN.t('Set Title') %></h3>
+    </div>
+
+    <div class="modal-content">
+        <div class="error-container js_meetings_set_title_error_container error_container_hidden"></div>
+        <form id="meetings_set_title_form" name="new-meeting" class="meetings-form">
+            <fieldset>
+                <!-- Meeting title -->
+                <div id="title" class="form-row">
+                    <label class="small" for="title"><%= MTN.t('Title//context:meeting title') %></label>
+                    <input class="js_meetings_set_title_enter_submit js_focus" name="title" value="<%= p.title %>">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a href="#" class="button blue js_meetings_set_title_submit" id="set-title-submit">
+                <%= MTN.t('Save') %>
+            </a>
+            <a href="#" class="js_skip_helper skip-helper" style="display:none;">
+                <%= MTN.t('Skip') %>
+            </a>
+        </div>
+    </div>
+    <a href="#" class="js_hook_showcase_close close-cross alpha_png"></a>
+</div>

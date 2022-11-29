@@ -1,0 +1,20 @@
+Changes
+conf/action.ini
+conf/spops.ini
+conf/tool.ini
+html/js/dicole/invite.js
+html/js/dicole/invite/invite_accept_dialog.html
+html/js/dicole/invite/invite_dialog.html
+html/js/dicole/invite/invite_dialog_user.html
+MANIFEST			This list of files
+MANIFEST.SKIP
+msg/messages-en.po
+msg/messages-fi.po
+OpenInteract2/Action/DicoleInvite.pm
+OpenInteract2/Action/DicoleInviteAPI.pm
+OpenInteract2/Action/DicoleInviteCommon.pm
+OpenInteract2/Action/DicoleInviteJSON.pm
+OpenInteract2/App/DicoleInvite.pm
+OpenInteract2/SQLInstall/DicoleInvite.pm
+package.ini
+struct/dicole_invite.sql

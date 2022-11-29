@@ -1,0 +1,70 @@
+<div id="new-user-box-wrapper">
+    <form id="meetings_new_user_form" class="meetings-form label-width-100">
+
+        [% IF invited %]
+        <!-- Top part -->
+        <div class="new-user-top">
+            <img src="[% IF invited_by_image %][% invited_by_image | html %][% ELSE %]/images/meetings/new_profile.png[% END %]" alt="Inviter profile image" />
+            <p>[% MTN.t('%1$s has invited you to %2$s',[invited_by_name,meeting_title]) | html %]. <br/>[% MTN.t('Please confirm a few things to proceed:') %]</p>
+        </div>
+
+        <!-- Mid part -->
+        <div class="new-user-mid-double">
+            <div class="mid-left">
+                <p class="white-text caps">[% MTN.t('Is this the email you wish to receive meeting updates to?') %]<p>
+                <p class="email">[% user_email | html %]</p>
+                <p class="white-text">[% MTN.t('If not, %(L$change your email%).',{ L => { attributes => { class => 'new-user-transfer js_meetings_invite_transfer_open' }}}) %]</p>
+            </div>
+            <div class="mid-right">
+                <p class="white-text caps">[% MTN.t('Is this your current time?') %]</p>
+                <p id="meetings_new_user_time_preview" class="white-text-large new-user-time js_meetings_weekday_and_time_container"></p>
+                <p class="white-text">[% MTN.t('If not, change your time zone:') %]</p>
+                <div class="time-zone-dropdown js_meetings_new_user_timezone_dropdown_container">
+                </div>
+            </div>
+        </div>
+
+
+        [% ELSE %]
+
+        <!-- Top part -->
+        <div class="new-user-top">
+            <p>[% MTN.t('Before we proceed, we need to be sure that we show the time correctly for you.') %]</p>
+        </div>
+
+        <!-- Mid part -->
+        <div class="new-user-mid-single">
+            <p class="white-text caps">[% MTN.t('Is this your current time?') %]</p>
+            <p id="meetings_new_user_time_preview" class="white-text-large new-user-time js_meetings_weekday_and_time_container"></p>
+            <p class="white-text">[% MTN.t('If not, change your time zone:') %]</p>
+            <div class="time-zone-dropdown js_meetings_new_user_timezone_dropdown_container">
+            </div>
+        </div>
+
+        [% END %]
+
+        <div class="form-row centered" style="margin-top:15px;">
+            <a class="js_meetings_new_user_submit" href="#">
+                <span class="button pink">[% MTN.t('Continue') %]</span>
+            </a>
+        </div>
+        [% IF ask_for_tos %]
+        <div class="form-row centered" style="margin-top:10px;">
+            <p class="tos-text">
+            [% IF confirm_partner_right_to_log_in %]
+            [% MTN.t('* By proceeding you accept the %(L$Terms of Service%) and you allow %1$s to access your Meetin.gs data', { params => [confirm_partner_right_to_log_in], L => { attributes => { href => 'http://www.meetin.gs/terms-of-service/', id => 'tos-open', target => '_blank' } } }) %]
+            [% ELSE %]
+            [% MTN.t('* By proceeding you accept the %(L$Terms of Service%)', { L => { attributes => { href => 'http://www.meetin.gs/terms-of-service/', id => 'tos-open', target => '_blank' } } } ) %]
+            [% END %]
+            <a hreftarget=>
+            </p>
+        </div>
+        <input type="hidden" name="accept_tos" value="1" />
+        [% END %]
+        <input type="hidden" name="url_after_save" value="[% url_after_save %]" />
+        <br style="clear:both;" />
+    </form>
+</div>
+<div id="push"></div>
+</div><!-- End content wrapper -->
+<div id="bb-footer"></div>

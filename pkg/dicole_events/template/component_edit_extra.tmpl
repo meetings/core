@@ -1,0 +1,42 @@
+<div class="events_listing_navigation">
+	<div class="contentItemContainer blueLinks">
+		<div>
+			<div class="verticalContent">
+				[% IF event_id %]
+				<a class="linkBar" href="[% show_url | html %]">&larr; [% MSG('Cancel and show event') | html %]</a>
+				[% ELSE %]
+				<a class="linkBar" href="[% listing_url | html %]">&larr; [% MSG('Back to event listing') | html %]</a>
+				[% END %]
+			</div>
+		</div>
+	</div>
+</div>
+<div id="event-edit-extra">
+	[% show_types = ['extras', 'pages', 'posts', 'media', 'twitter'] %]
+	[% show_fancy_types = {
+        'extras' => MSG('This column'),
+        'pages' => MSG('Pages'),
+        'posts' => MSG('Posts'),
+        'media' => MSG('Media'),
+        'twitter' => MSG('Twitter')
+    } %]
+	[% show_type_names = {'extras' => 'show_extras_name', 'pages' => 'show_pages_name', 'posts' => 'show_posts_name', 'media' => 'show_media_name', 'twitter' => 'show_tweets_name'} %]
+	[% show_type_name_values = {'extras' => show_extras_name, 'pages' => show_pages_name, 'posts' => show_posts_name, 'media' => show_media_name, 'twitter' => show_tweets_name} %]
+	[% FOREACH show_type IN show_types %]
+	<div style="clear:both"></div>
+    <div class="events_edit_extra_container_[% show_type %]">
+	<h2>[% show_fancy_types.$show_type %]</h2>
+	[% INCLUDE dicole_events::component_fancy_radios
+		name = show_type_names.$show_type
+		values = ['none', 'planner', 'user', 'all'],
+		value_names = {
+            'none' => MSG('Hidden'),
+            'planner' => MSG('Planners'),
+            'user' => MSG('Participants'),
+            'all' => MSG('All')
+        }
+		selected = show_type_name_values.$show_type
+	%]
+    </div>
+	[% END %]
+</div>

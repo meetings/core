@@ -1,0 +1,92 @@
+div#meetme-cover
+    if( mode === 'edit' )
+        div.config-bar
+            div.config-bar-content
+                div.url-config
+                    p.your-url.m-form
+                        | URL: 
+                        ='https://' + window.location.hostname + '/meet/' + user.meetme_fragment
+                    if( matchmaker_collection.length && user && user.new_user_flow )
+                        a(href='#').button.pink.go-to-share Continue
+                    else if( matchmaker_collection.length )
+                        p.url-help-links
+                            a.blue-link(href='#').view-page!=MTN.t('view page')
+                            a.blue-link(href='#').go-to-share!=MTN.t('sharing')
+                    else if( user.new_user_flow )
+                        p.url-help-links
+                            a(href='#').blue-link.skip-continue!=MTN.t('skip')
+        div.config-bar.grey
+            div.config-bar-content
+                h2!=MTN.t('Configure your %(B$Meet Me%) page')
+    div.top
+        h1=user.name
+        - var ts = ( user.organization_title && user.organization ) ? user.organization_title + ', ' + user.organization : user.organization_title + user.organization;
+        p=ts
+        if( mode !== 'edit' && ! app.auth.user && ! user.is_pro )
+            div.claim-wrap
+                a.claim(href='#')!=MTN.t('Claim your free %(B$Meet Me%) page now') + ' &raquo;';
+    div.middle
+        div.border
+            div.wrapper.edit-profile
+                img.profile(src=user.image || '/images/meetings/new_profile.png')
+                if( mode === 'edit' )
+                    span.edit-profile!=MTN.t('Edit profile')
+        if( mode === 'edit' )
+            div.bubble.bg-change
+                span.text
+                    i.ico-material_image
+                    !=MTN.t('Change background')
+        div.bubble.mid
+            div.tip
+            - var desc = ( mode === 'single' ) ? matchmaker_collection[0].description : user.meetme_description;
+            if( ! desc && ! matchmaker_collection.length )
+                div.meetme-description!=MTN.t('Welcome to my meet me page. Unfortunately I have not made any of my calendars public yet!')
+            else if ( ! desc && matchmaker_collection.length )
+                div.meetme-description!=MTN.t('Welcome to my meet me page. Please choose what kind of a meeting you would like to schedule with me below:')
+            else
+                div.meetme-description!{(escape(desc).replace(/\n/g, '<br/>'))}
+            if( mode === 'edit' )
+                a.edit-desc(title!=MTN.t('Edit greeting text'),href='#')
+                    i.ico-edit
+                a.button.blue.save-desc(href='#', style='display:none;') Save
+            - var mms = locals.preview ? matchmaker_collection : _.filter( matchmaker_collection, function(o){ return o.last_active_epoch === 0 || o.last_active_epoch * 1000 > new Date().getTime() - 1000 * 3 * 31 * 24 * 60 * 60 })
+            if( mms.length )
+                div.matchmakers
+                    each mm, index in mms
+                        if(mode === 'edit' || mode === 'single' || ! mm.meetme_hidden)
+                            div.matchmaker(data-id=(mm.id || mm.cid),class=(matchmaker_collection.length === 1 ? 'alone' : ''), title!=( mode === 'edit' ? MTN.t('Drag to reorder') : ''))
+                                i(class='type-icon '+app.meetme_types[(mm.meeting_type || 0)].icon_class)
+                                div(class='text ' + mode)
+                                    span.name= mm.name || MTN.t('Meeting with ') + user.name
+                                    - var info = mm.meetme_hidden && mode === 'edit' ? MTN.t('Private') : ''
+                                    - if ( mm.event_data && mm.event_data.force_available_timespans ) {
+                                        - if ( info ) info += ' / ';
+                                        - info +=  app.helpers.daySpanStringFromTimespans(mm.event_data.force_available_timespans, user.time_zone_offset)
+                                    - }
+                                    if( info )
+                                        span.info=info
+                                if( mode === 'edit' )
+                                    span.button.blue.edit-scheduler(title!=MTN.t('Configure Meet Me page'),data-name=mm.vanity_url_path || 'default')
+                                        i.ico-settings
+                                    span.button.gray.remove-scheduler(title!=MTN.t('Remove Meet Me page'),data-id=mm.id)
+                                        i.ico-cross
+                                else
+                                    span.button.blue.open-scheduler(data-id=(mm.id || mm.cid))!=MTN.t('Schedule')
+
+        if( mode === 'edit' )
+            if( matchmaker_collection.length )
+                a.button.blue.new-scheduler
+                    i.ico-add
+                    !=MTN.t('Add new meeting scheduler')
+                    if( !(user.is_pro || _.filter(matchmaker_collection, function(o) { return o.matchmaking_event_id > 0 ? false : true; }).length < 1 ) )
+                        span.pro
+
+            else
+                a.button.pink.new-scheduler
+                    i.ico-add
+                    !=MTN.t('Start by adding your first meeting scheduler')
+
+    div.extra
+    div(style='clear:both;')
+
+

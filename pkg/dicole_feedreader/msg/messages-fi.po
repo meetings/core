@@ -1,0 +1,365 @@
+# translation of messages-fi.po to Finnish
+# $Id: messages-fi.po,v 1.24 2010-01-15 19:35:03 amv Exp $
+# Dicole <info@dicole.org>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: messages-fi\n"
+"Last-Translator: Dicole <info@dicole.org>\n"
+"POT-Creation-Date: 2005-05-07 11:48:39+0000\n"
+"PO-Revision-Date: 2005-05-07 15:10+0300\n"
+"Language-Team: Finnish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+msgid "Access denied."
+msgstr "Pääsy evätty."
+
+msgid "Add feed"
+msgstr "Lisää syöte"
+
+msgid "Attached image"
+msgstr "Liitekuva"
+
+msgid "Category"
+msgstr "Kategoria"
+
+msgid "Comments"
+msgstr "Kommentit"
+
+msgid "Confirmation"
+msgstr "Varmistus"
+
+msgid "Contributor"
+msgstr "Muu tekijä"
+
+msgid "Copyright"
+msgstr "Tekijänoikeus"
+
+msgid "Coverage"
+msgstr "Kattavuus"
+
+msgid "Creative Commons"
+msgstr "Creative Commons"
+
+msgid "Custom title"
+msgstr "Oma otsikko"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "Email this"
+msgstr "Lähetä sähköpostitse"
+
+msgid "Enclosure"
+msgstr "Liite"
+
+msgid "Error reading OPML file: %1"
+msgstr "Virhe luettaessa OPML tiedostoa: %1"
+
+msgid "Export feeds (OPML)"
+msgstr "Vie syötteet (OPML)"
+
+msgid "Feed details"
+msgstr "Syötteen tiedot"
+
+msgid "Feed reader"
+msgstr "Noutaja"
+
+msgid "Feed Reader"
+msgstr "Noutaja"
+
+msgid "Feed reader is a tool for reading Atom and RSS news feeds."
+msgstr "Noutaja on työkalu, jolla voidaan lukea RSS ja Atom muotoisia uutisvirtoja ts. syötteitä."
+
+msgid "Feeds"
+msgstr "Syötteet"
+
+msgid "Feed successfully removed."
+msgstr "Syöte on poistettu onnistuneesti."
+
+msgid "Feed URL"
+msgstr "Syötteen www-osoite"
+
+msgid "Feed XML"
+msgstr "Syötteen XML"
+
+msgid "Folder"
+msgstr "Kansio"
+
+msgid "Format"
+msgstr "Formaatti"
+
+msgid "From"
+msgstr "Syötteestä"
+
+msgid "Generator"
+msgstr "Generaattori"
+
+msgid "Identifier"
+msgstr "Identifiointitunnus"
+
+msgid "Imported %1 feed(s) from the OPML file."
+msgstr "Tuotu %1 syötteitä määritellystä OPML -tiedostosta."
+
+msgid "Import"
+msgstr "Tuo syötteitä"
+
+msgid "Import OPML file"
+msgstr "Tuo OPML -tiedosto"
+
+msgid "IM this"
+msgstr "Lähetä lyhytviestinä"
+
+msgid "Keywords separated with spaces"
+msgstr "Avainsanat eroteltuna välilyönneillä"
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "Lastest posts in folder %1"
+msgstr "Viimeiset viestit kansiossa %1"
+
+msgid "Last post"
+msgstr "Viimeinen viesti"
+
+msgid "Last updated"
+msgstr "Viimeksi päivitetty"
+
+msgid "Latest posts from all feeds based on category %1"
+msgstr "Viimeisimmät viestit kaikista syötteistä pohjautuen kategoriaan %1"
+
+msgid "Latest posts from all feeds"
+msgstr "Viimeisimmät viestit kaikista syötteistä"
+
+msgid "Maintain feed reader"
+msgstr "Noutajan hallinta"
+
+msgid "Manage feed reader"
+msgstr "Noutajan hallinta"
+
+msgid "Managing editor"
+msgstr "Päätoimittaja"
+
+msgid "No posts."
+msgstr "Ei viestejä."
+
+msgid "Notes"
+msgstr "Merkinnät"
+
+msgid "Number of readers"
+msgstr "Lukijoita"
+
+msgid "OPML file to upload"
+msgstr "Palvelimelle tuotava OPML -tiedosto"
+
+msgid "Provided URL is not a valid feed: %1"
+msgstr "Annettu www-osoite ei ole oikea syöte: %1"
+
+msgid "Public"
+msgstr "Julkinen"
+
+msgid "Publisher"
+msgstr "Julkaisija"
+
+msgid "Relation"
+msgstr "Suhde"
+
+msgid "Remove"
+msgstr "Poista"
+
+msgid "Rights"
+msgstr "Oikeudet"
+
+msgid "Source"
+msgstr "Lähde"
+
+msgid "Subject"
+msgstr "Aihe"
+
+msgid "Technorati this"
+msgstr "Technoratin tiedot"
+
+msgid "This feed will be removed from your list of feeds. Are you sure?"
+msgstr "Tämä syöte poistetaan syötteiden listasta. Oletko varma?"
+
+msgid "Title"
+msgstr "Nimike"
+
+msgid "Tree of feeds"
+msgstr "Syötteet"
+
+msgid "Type"
+msgstr "Laji"
+
+msgid "Unable to fetch user object with id %1."
+msgstr "Käyttäjän objektia numero %1 ei voitu hakea."
+
+msgid "Unable to parse Atom feed: %1"
+msgstr "Atom syötteen lukeminen epäonnistui: %1"
+
+msgid "Unable to parse RSS feed: %1"
+msgstr "RSS syötteen lukeminen epäonnistui: %1"
+
+msgid "Upload failed: %1"
+msgstr "Siirto palvelimelle epäonnistui: %1"
+
+msgid "Upload"
+msgstr "Siirrä"
+
+msgid "URL must begin with http:// or https://"
+msgstr "Verkko-osoitteen on oltava http:// tai https:// alkuinen"
+
+msgid "Webmaster"
+msgstr "Sivuston ylläpitäjä"
+
+msgid "Website"
+msgstr "Verkkosivu"
+
+msgid "%1 is not a valid number."
+msgstr "%1 ei ole sopiva numero."
+
+msgid "%1 - Readers: %2 - Updated: %3"
+msgstr "%1 - Lukijoita: %2 - Päivitetty: %3"
+
+msgid "Discovered feeds"
+msgstr "Löydetyt syötteet"
+
+msgid "Discover feeds"
+msgstr "Etsi syötteitä verkkosivulta"
+
+msgid "URL where to search for feeds"
+msgstr "Verkkosivun osoite, mistä syötteitä etsitään"
+
+msgid "Found %1 potential feeds. Click the feed title to add it."
+msgstr "Löytyi %1 mahdollista syötettä. Klikkaa haluamasi syötteen otsikkoa lisätäksesi sen."
+
+msgid "Version"
+msgstr "Versio"
+
+msgid "Back to add form"
+msgstr "Takaisin lisäyslomakkeeseen"
+
+msgid "Search"
+msgstr "Hae"
+
+msgid "New search"
+msgstr "Uusi haku"
+
+msgid "You may use these bookmarklets to subscribe to a website which has a feed available. To install the bookmarklet, add the bookmarklet link to your bookmarks. To use it, simply just click the bookmark when you are on a page you want to subscribe with."
+msgstr "Voit käyttää näitä erikoisominaisuuksilla varustettuja kirjanmerkkejä tilataksesi helposti haluamasi verkkosivun. Verkkosivusta tulee olla saatavilla asianmukainen syöte. Asenna kirjanmerkki siirtämällä linkki selaimesi kirjanmerkkeihin. Käyttääksesi kirjanmerkkiä, klikkaa sitä kun olet haluamallasi sivulla."
+
+msgid "Bookmarklets"
+msgstr "Kirjanmerkit"
+
+msgid "Subscribe with feed reader"
+msgstr "Tilaa noutajaan"
+
+msgid "Bookmarklet"
+msgstr "Kirjanmerkki"
+
+msgid "Available bookmarklets"
+msgstr "Saatavilla olevat kirjanmerkit"
+
+msgid "Modifications to feed were successfully saved."
+msgstr "Muutokset syötteeseen tallennettiin onnistuneesti."
+
+msgid "No feeds found on the given address."
+msgstr "Syötteitä ei löytynyt annetusta osoitteesta."
+
+msgid "Download playlist"
+msgstr "Lataa soittolista"
+
+msgid "Link"
+msgstr "Linkki"
+
+msgid "Show on summary page"
+msgstr "Näytä yhteenvetosivulla"
+
+msgid "Remove from summary page"
+msgstr "Poista yhteenvetosivulta"
+
+msgid "Group feedreader moderator"
+msgstr "Ryhmän noutajan ylläpitäminen"
+
+msgid "Group feedreader user"
+msgstr "Ryhmän noutajan lukeminen"
+
+msgid "Deny group feedreader use"
+msgstr "Estä ryhmän noutajan lukeminen"
+
+msgid "Deny group feedreader moderation"
+msgstr "Estä ryhmän noutajan ylläpitäminen"
+
+msgid "Feedreader rights"
+msgstr "Noutajan oikeudet"
+
+msgid "Add shared tool"
+msgstr "Lisää jaettu työkalu"
+
+msgid "Available blog feeds"
+msgstr "Saatavilla olevat työkalut"
+
+msgid "Tool"
+msgstr "Työkalu"
+
+msgid "Feed (%1) successfully added."
+msgstr "Syöte (%1) on lisätty."
+
+msgid "Refresh"
+msgstr "Päivitä"
+
+msgid "Error when updating feed (%1): %2"
+msgstr "Virhe päivitettäessä syötettä (%1): %2"
+
+msgid "Feed successfully updated."
+msgstr "Syöte on onnistuneesti päivitetty."
+
+msgid "You are adding a pre-defined feed. Please select a folder for the feed."
+msgstr "Olet lisäämässä ennalta määriteltyä syötettä. Ole hyvä, ja valitse syötteellesi kansio."
+
+msgid "Add shared weblog"
+msgstr "Lisää jaettu blogi"
+
+msgid "Deny user feedreader managing"
+msgstr "Estä noutajan hallinta"
+
+msgid "Read feed reader"
+msgstr "Noutajan lukeminen"
+
+msgid "Subscribe"
+msgstr "Tilaa"
+
+msgid "Blogs shared directly to this group"
+msgstr "Suoraan tälle ryhmälle jaetut blogit"
+
+msgid "Blogs shared directly to you"
+msgstr "Suoraan sinulle jaetut blogit"
+
+msgid "Publicly available blogs"
+msgstr "Julkisesti saatavilla olevat blogit"
+
+msgid "Subscribe comments"
+msgstr "Tilaa kommentit"
+
+msgid "Feed reader: independent extra summary boxes"
+msgstr "Noutajan itsenäiset yhteenvetolaatikot"
+
+msgid "Feed reader summary boxes to summary even if feed reader is not selected"
+msgstr "Näytä noutajan yhteenvetoon nostetut laatikot, vaikka noutaja ei olisi valittu"
+
+msgid "Latest news in groups feed reader."
+msgstr "Viimeisimmät vistit ryhmän noutajassa"
+
+msgid "Latest news in your feed reader."
+msgstr "Viimeisimmät viestit noutajassa"
+
+msgid "Latest posts"
+msgstr "Viimeisimmät viestit"
+
+msgid "Exclude from digest"
+msgstr "Älä sisällytä sähköpostikoosteeseen"

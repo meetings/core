@@ -1,0 +1,290 @@
+# $Id: messages-en.po,v 1.14 2010-06-15 03:53:30 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:11:38+0000\n"
+"PO-Revision-Date: 2005-03-22 02:11:38+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add user"
+msgstr "Add user"
+
+msgid "Changes were saved."
+msgstr "Changes were saved."
+
+msgid "Confirmation"
+msgstr "Confirmation"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Error during delete: %1"
+msgstr "Error during delete: %1"
+
+msgid "Expiration date"
+msgstr "Expiration date"
+
+msgid "Failed adding user: %1"
+msgstr "Failed adding user: %1"
+
+msgid "Failed modifying user: %1"
+msgstr "Failed modifying user: %1"
+
+msgid "First name"
+msgstr "First name"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "List of users"
+msgstr "List of users"
+
+msgid "List users"
+msgstr "List users"
+
+msgid "Login name"
+msgstr "Login name"
+
+msgid "Manage users"
+msgstr "Manage users"
+
+msgid "Modify user details"
+msgstr "Modify user details"
+
+msgid "New user details"
+msgstr "New user details"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Remove selected users"
+msgstr "Remove selected users"
+
+msgid "Remove users"
+msgstr "Remove users"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Selected users removed."
+msgstr "Selected users removed."
+
+msgid "Show list of users"
+msgstr "Show list of users"
+
+msgid "Show"
+msgstr "Show"
+
+msgid "Unlimited"
+msgstr "Unlimited"
+
+msgid "User can add, edit and remove other users"
+msgstr "User can add, edit and remove other users"
+
+msgid "User details"
+msgstr "User details"
+
+msgid "User has been saved."
+msgstr "User has been saved."
+
+msgid "User Manager"
+msgstr "User Manager"
+
+msgid "Verify password"
+msgstr "Verify password"
+
+msgid "Are you sure you want to remove the selected users?"
+msgstr "Are you sure you want to remove the selected users?"
+
+msgid "Registration"
+msgstr "Registration"
+
+msgid "Register new account"
+msgstr "Register new account"
+
+msgid "User registration is not allowed."
+msgstr "User registration is not allowed."
+
+msgid "Login name %1 already exists. Choose another login name."
+msgstr "Login name %1 already exists. Choose another login name."
+
+msgid "Registration done. We have sent you an email containing your login information."
+msgstr "Registration done. We have sent you an email containing your login information."
+
+msgid "Registration failed: %1"
+msgstr "Registration failed: %1"
+
+msgid "Registration information"
+msgstr "Registration information"
+
+msgid "Registration information from %1"
+msgstr "Registration information from %1"
+
+msgid "Error sending email: %1"
+msgstr "Error sending email: %1"
+
+msgid "User with email address %1 already exists. Choose a different email address."
+msgstr "User with email address %1 already exists. Choose a different email address."
+
+msgid "Reset of all user default personal rights was successful."
+msgstr "Reset of all user default personal rights was successful."
+
+msgid "Import users"
+msgstr "Import users"
+
+msgid "File to upload"
+msgstr "File to upload"
+
+msgid "Upload"
+msgstr "Upload"
+
+msgid "Import new users from an Excel sheet"
+msgstr "Import new users from an Excel sheet"
+
+msgid "%1 user(s) imported."
+msgstr "%1 user(s) imported."
+
+msgid "Upload a valid Excel file."
+msgstr "Upload a valid Excel file."
+
+msgid "The following rows failed: %1"
+msgstr "The following rows failed: %1"
+
+msgid "Failed importing users: %1"
+msgstr "Failed importing users: %1"
+
+msgid "Upload Excel sheet"
+msgstr "Upload Excel sheet"
+
+msgid "Users registered in the system"
+msgstr "Users registered in the system"
+
+msgid "Number of logins"
+msgstr "Number of logins"
+
+msgid "Last login"
+msgstr "Last login"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Groups user belongs to"
+msgstr "Groups user belongs to"
+
+msgid "Theme"
+msgstr "Theme"
+
+msgid "Default"
+msgstr "Default"
+
+msgid "URL of a custom starting page"
+msgstr "URL of a custom starting page"
+
+msgid "Login disabled"
+msgstr "Login disabled"
+
+msgid "Password for login will be changed. Are you sure you want to resend this account?"
+msgstr "Password for login will be changed. Are you sure you want to resend this account?"
+
+msgid "Resend account"
+msgstr "Resend account"
+
+msgid "Resend account through email"
+msgstr "Resend account through email"
+
+msgid "Account successfully resend through email."
+msgstr "Account successfully resend through email."
+
+msgid "Example excel sheet"
+msgstr "Example excel sheet"
+
+msgid "Initial groups"
+msgstr "Initial groups"
+
+msgid "New user registered at %1"
+msgstr "New user registered at %1"
+
+msgid "Your existing account with login name '%1' has been added to this domain. Please log in with your old password or retrieve a new one through the normal password retrieval process."
+msgstr "Your existing account with login name '%1' has been added to this domain. Please log in with your old password or retrieve a new one through the normal password retrieval process."
+
+msgid "Billing info"
+msgstr "Billing info"
+
+msgid "Import new users from a Wanha Satama tab separated file"
+msgstr "Import new users from a Wanha Satama tab separated file"
+
+msgid "Registering without javascript is disabled to reduce spam. Please turn javascript on to register."
+msgstr "Registering without javascript is disabled to reduce spam. Please turn javascript on to register."
+
+msgid "Upload a valid file."
+msgstr "Upload a valid file."
+
+msgid "Upload Wanha Satama user file"
+msgstr "Upload Wanha Satama user file"
+
+msgid "User registration is not allowed to this area."
+msgstr "User registration is not allowed to this area."
+
+msgid "Your registration has been identified as spam."
+msgstr "Your registration has been identified as spam."
+
+msgid "Create the user"
+msgstr "Create the user"
+
+msgid "Download user report"
+msgstr "Download user report"
+
+msgid "List of users - %1"
+msgstr "List of users - %1"
+
+msgid "Register a new user"
+msgstr "Register a new user"
+
+msgid "Role"
+msgstr "Role"
+
+msgid "Create your account"
+msgstr "Create your account"
+
+msgid "I accept the <a href=\\"%1\\">terms of service</a>"
+msgstr "I accept the <a href=\\"%1\\">terms of service</a>"
+
+msgid "Register a new account"
+msgstr "Register a new account"
+
+msgid "Optimal image size is 200x200px."
+msgstr "Optimal image size is 200x200px."
+
+msgid "If you have a Facebook account, you can use it to fill in your profile and handle your logins."
+msgstr "If you have a Facebook account, you can use it to fill in your profile and handle your logins."
+
+msgid "Select your preferred way of registering"
+msgstr "Select your preferred way of registering"
+
+msgid "Already a member? Click here to log in."
+msgstr "Already a member? Click here to log in."
+
+msgid "Location is required to register"
+msgstr "Location is required to register"
+
+msgid "Question to prevent SPAM registrations"
+msgstr "Question to prevent SPAM registrations"
+
+msgid "Unfortunately your answer to the required question was not correct. Please try again!"
+msgstr "Unfortunately your answer to the required question was not correct. Please try again!"

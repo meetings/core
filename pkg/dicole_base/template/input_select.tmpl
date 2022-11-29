@@ -1,0 +1,44 @@
+[%#- $Id: input_select.tmpl,v 1.8 2009-01-07 14:42:33 amv Exp $ -%]
+
+[%#-
+	The template accepts the following information in itemparams:
+	{
+		attributes =
+			{
+				all of the XHTML attributes that go with the element
+			}
+		options =
+			[
+				{
+					attributes	=>
+						{
+						
+						}
+					content 	=> ''
+				},
+				{
+				
+				}
+			]
+		required
+		error
+		selected	= the template assumes that no more than one option has the same value and assignes the selected="selected" attribute to that value in the loop
+		autosubmit
+		autourl
+	}
+-%]
+
+<select[% FOREACH param = itemparams.attributes %] [% param.key %]="[% param.value %]"[% END %]
+[%- IF itemparams.autosubmit %] onchange="void(this.form.submit())"[% END -%]
+[%- IF itemparams.autourl %] onchange="if(this.options[this.selectedIndex].value) location.href=this.options[this.selectedIndex].value"[% END -%]
+>[%- FOREACH option = itemparams.options -%]
+
+	<option[% IF itemparams.selected && itemparams.selected == option.attributes.value %] selected="selected"[% END %][% FOREACH attr = option.attributes %] [% attr.key %]="[% attr.value %]"[% END %]>[% option.content | html %]</option>
+
+[%- END -%]</select>
+
+[%-
+	IF itemparams.error || itemparams.required;
+		PROCESS dicole_base::input_req_error;
+	END
+-%]

@@ -1,0 +1,17 @@
+sub execute {
+my $es = CTX->lookup_object('events_event')->fetch_group({ where => 'domain_id = 131' });
+my $total = 0;
+my $count = 0;
+my $count_h = 0;
+for my $e ( @$es) {
+$count++;
+next unless $e->begin_date && $e->end_date;
+$n = $e->end_date - $e->begin_date;
+next unless $n;
+$count_h++;
+$total += $n;
+print( int($n/60/60*100)/100 . "h " . $e->title . "\n");
+}
+print( "TOTAL: ". int($total/60/60*100)/100 . "h in $count_h out of $count meetings$/" );
+}
+1;

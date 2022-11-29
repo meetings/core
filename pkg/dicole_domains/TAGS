@@ -1,0 +1,50 @@
+
+OpenInteract2/Action/DicoleDomainManager.pm,693
+sub add add27,625
+sub remove remove38,884
+sub edit_domain_users edit_domain_users50,1241
+sub edit_domain_groups edit_domain_groups126,3762
+sub _post_init_common_list _post_init_common_list201,6295
+sub _pre_init_common_show _pre_init_common_show209,6466
+sub _post_init_common_show _post_init_common_show216,6667
+sub _pre_gen_tool_show _pre_gen_tool_show222,6793
+sub _pre_init_common_edit _pre_init_common_edit292,9002
+sub _post_init_common_edit _post_init_common_edit298,9160
+sub _generate_themes _generate_themes305,9323
+sub _post_init _post_init323,9913
+sub _post_save _post_save328,9993
+sub _post_remove _post_remove341,10288
+sub _post_init _post_init364,11032
+
+OpenInteract2/Action/DicoleDomainUserManager.pm,22
+sub list list11,274
+
+OpenInteract2/Action/DicoleDomains.pm,796
+sub users_by_group users_by_group14,326
+sub users_by_user users_by_user29,831
+sub add_domain_group add_domain_group43,1187
+sub add_user_to_domain add_user_to_domain54,1509
+sub groups_by_user groups_by_user68,1829
+sub login_user_in_domain login_user_in_domain90,2421
+sub is_domain_user is_domain_user106,3100
+sub is_domain_admin is_domain_admin130,3867
+sub get_user_domains get_user_domains154,4654
+sub get_domain_theme get_domain_theme173,5115
+sub get_domain_logo_url get_domain_logo_url179,5240
+sub get_current_domain get_current_domain185,5425
+sub get_domain_object get_domain_object192,5576
+sub _get_domain_object _get_domain_object198,5685
+sub check_if_domain_invalid check_if_domain_invalid214,6089
+sub _user_ids_distinctively _user_ids_distinctively221,6256
+
+OpenInteract2/App/DicoleDomains.pm,144
+my $NAME NAME16,506
+sub new new18,536
+sub get_brick get_brick22,594
+sub get_brick_name get_brick_name27,694
+sub install install32,773
+
+OpenInteract2/SQLInstall/DicoleDomains.pm,122
+my %FILES FILES17,529
+sub get_structure_set get_structure_set23,755
+sub get_structure_file get_structure_file27,882

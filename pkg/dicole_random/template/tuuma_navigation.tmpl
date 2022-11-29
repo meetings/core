@@ -1,0 +1,64 @@
+
+
+<div class="dcp-header">
+    <div class="header global">
+    <div class="inner">
+        <img id="logo" alt="J-Impact logo" src="/images/tuuma/j-impact-logo.png">
+        <div class="dcp-controls top-nav">
+            <ul>
+                <li ><a title="Yritys" href="http://j-impact.fi/">Yritys</a></li>
+                <li class="active"><a title="Valmennus" href="http://valmennus.j-impact.fi/">Valmennus</a></li>
+                <li class=""><a title="Konsultointi" href="http://j-impact.fi/konsultointi/">Konsultointi</a></li>
+                <li class=""><a title="Tutkimus ja julkaisut" href="http://j-impact.fi/tutkimus-ja-julkaisut/">Tutkimus ja julkaisut</a></li>
+                <li class=""><a title="Tietoa meistä" href="http://j-impact.fi/tietoa-meista/">Tietoa meistä</a></li>
+            </ul>
+        </div>
+    </div><!-- inner -->
+    </div>
+</div>
+[% IF show_description %]
+<div class="clear" id="content">
+    <div class="inner">
+
+        <div class="aside">
+            <div id="page-label">
+                <p class="page-label">Valmennus</p>
+            </div><!-- page-label -->
+            <img class="promo" alt="" src="/images/tuuma/vsots.png">
+        </div>
+
+        <div id="main-content">
+            <div class="page-intro">
+<!--            <h1>Valmennus</h1>-->
+            <p>
+            Esimiestyö on taitolaji, joka vaatii sekä aikaa että osaamista. Järjestämme yhdessä johtavien asiantuntijoiden kanssa valmennusta johtajille ja koko henkilöstölle sekä avoimissa valmennustapahtumissa että organisaatiokohtaisesti.
+            </p>
+            <p>
+Yhdistämme valmennuksissamme asiasisällön tehokkaaseen oppimiseen.
+ <a href="http://j-impact.fi/media/documents/J-Impact_Koulutukset.pdf">Lataa koulutuskalenterimme t&auml;st&auml;</a>
+            </p>
+            </div>
+
+        </div><!-- main-content -->
+    </div><!-- inner -->
+</div>
+[% END %]
+<div class="dcp-controls login-etc">
+    [% IF ! show_description %]
+    <p class="page-label" style="position:absolute; top:0px; left:0px;">Valmennus</p>
+    [% END %]
+    <ul>
+        [% IF user %]
+        <li><a href="[% user.profile_url | html %]">[% user.name | html %]</a></li>
+
+        <li><a href="/groupsummary/summary/30815">Valmennusten Työalueet</a></li>
+
+        <li><a href="[% user.settings_url | html %]">Asetukset</a></li>
+
+        <li><a href="/xlogout">Kirjaudu Ulos</a></li>
+        [% ELSE %]
+        <li><a class="js_hook_show_login" href="#">Kirjaudu Sisään</a></li>
+        [% END %]
+    </ul>
+    </nav>
+</div>

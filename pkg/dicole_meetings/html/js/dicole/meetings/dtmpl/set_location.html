@@ -1,0 +1,69 @@
+<div id="modal-set-location" class="m-modal">
+    <% if ( ! p.attached_to_matchmaking_event ) { %>
+    <div class="modal-header">
+        <h3><%= MTN.t('Choose the Meeting Location') %></h3>
+    </div>
+    <div class="modal-content">
+    <div class="error-container js_meetings_set_location_error_container error_container_hidden"></div>
+        <% if ( p.geolocation_data ) { %>
+        <div id="set-location-container">
+        <% } else { %>
+        <div id="set-location-container" class="no-geo">
+        <% } %>
+        <div id="set-location-left">
+            <p class="js_helper_text helper-text">Helper text..</p>
+            <form id="meetings_set_location_form" class="meetings-form">
+                <fieldset>
+                    <!-- Meeting location -->
+                    <div id="location" class="form-row" style="padding:10px 0 10px 0;">
+                        <label class="small" for="location"><%= MTN.t('Location') %></label>
+                        <input id="js_meeting_location" class="js_meetings_set_location_enter_submit js_focus js_location_autocomplete" name="location" value="<%= p.location %>">
+
+                        <input type="hidden" id="js_meeting_clear_conferencing_option" class="" name="clear_conferencing_option" value="">
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+        <% if ( p.geolocation_data ) { %>
+        <div id="set-location-right" style="display:block !important;">
+            <p id="s2m_description">
+             <%= MTN.t('Do you need a physical meeting space near %1$s (%(L$change%))? Here are a few options: ', { params : [p.geolocation_data.city], L : { classes : 'js_change_location' }}) %>
+            </p>
+            <div id="location-search-wrapper" style="display:none;">
+                <form id="meetings_search_location_form" class="meetings-form">
+                    <input type="text" id="s2m_location_input" name="" class="" />
+                </form>
+            </div>
+            <form id="s2mform">
+                <input type="hidden" id="meetings_s2m_latitude" value="<%== p.geolocation_data.latitude %>" />
+                <input type="hidden" id="meetings_s2m_longitude" value="<%== p.geolocation_data.longitude %>" />
+            </form>
+
+            <div id="s2mresults" style="display:block">
+            </div>
+
+        </div>
+        <% } %>
+    </div>
+    </div>
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a href="#" class="button blue js_meetings_set_location_submit" id="set-location-submit">
+                <%= MTN.t('Save') %>
+            </a>
+            <a href="#" class="js_skip_helper skip-helper" style="display:none;">
+                <%= MTN.t('Skip') %>
+            </a>
+        </div>
+    </div>
+    <% } else { %>
+    <div class="modal-header">
+        <h3><%= MTN.t('Location locked') %></h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t('This is meeting is linked to a matchmaking event.') %></p>
+    </div>
+    <% } %>
+    <a href="#" class="js_hook_showcase_close close-modal"><i class="ico-cross"></i></a>
+</div>

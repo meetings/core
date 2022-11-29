@@ -1,0 +1,22 @@
+<div id="modal-add-material" class="m-modal">
+    <div class="modal-header">
+        <h3 class="modal-header"><%= MTN.t('Add Material') %></h3>
+    </div>
+
+    <div class="modal-content">
+
+        <span class="add-button upload"><i class="ico-material_upload"></i><span class="progress-text"><%= MTN.t('Upload a document') %></span>
+            <input id="fileupload" type="file" name="file" />
+            <div class="progress-bar"></div>
+        </span>
+
+        <a href="#" class="add-button js_meetings_add_material_wiki_open">
+            <i class="ico-material_editabledocument"></i><%= MTN.t('Create an editable document') %>
+        </a>
+
+        <a href="<%== dicole.get_global_variable('meetings_get_user_meetings_url') %>" class="add-button js_meetings_add_material_previous_open">
+            <i class="ico-add"></i><%= MTN.t('Copy material from another meeting') %>
+        </a>
+    </div>
+    <a class="js_hook_showcase_close close-modal js_end_guide_hook" href="#"><i class="ico-cross"></i></a>
+</div>

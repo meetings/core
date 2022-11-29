@@ -1,0 +1,23 @@
+Changes
+conf/action.ini
+conf/fields.ini
+conf/spops.ini
+conf/tabs.ini
+conf/tool.ini
+html/images/theme/default/content/toolicons/chat.gif
+html/images/theme/default/content/toolicons/integrator.gif
+html/images/theme/default/navigation/icons/16x16/chat_mini.gif
+html/images/theme/default/navigation/icons/16x16/email_mini.gif
+html/images/theme/default/navigation/icons/16x16/integrator_mini.gif
+MANIFEST			This list of files
+MANIFEST.SKIP
+msg/messages-en.po
+msg/messages-fi.po
+OpenInteract2/Action/DicoleIntegrator.pm
+OpenInteract2/Action/External.pm
+OpenInteract2/Action/ExternalPost.pm
+OpenInteract2/App/DicoleExternal.pm
+OpenInteract2/SQLInstall/External.pm
+package.ini
+struct/externalsource.sql
+template/autopost.tmpl

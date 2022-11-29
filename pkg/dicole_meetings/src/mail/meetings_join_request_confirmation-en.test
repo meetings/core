@@ -1,0 +1,11 @@
+[%#- Sent to user when user sends JOIN to meeting and does not provide a valid password. -%]
+
+[%- IF test_case == 'vahvistus' %]
+[%-
+
+meeting_title = 'Wappupiknik'
+server_host = 'http://dev.meetin.gs'
+meeting_email = '123456@mtn.gs'
+
+%]
+[%- END %]

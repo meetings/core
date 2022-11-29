@@ -1,0 +1,66 @@
+[% # $Id: message.tmpl,v 1.20 2009-01-07 14:42:33 amv Exp $ # %]
+[%#
+    itemparams = {
+        title => 'Me, myself and I',
+        content => [
+            {
+                template => 'dicole_base::null',
+                params => 'Welcome to my world.'
+            }
+        ],
+        icon => 'image.gif',
+        author => {
+            name => 'Teemu Arina'
+            href => '/profile/view/inf',
+        },
+        date => '10.2.2003',
+        meta => [
+            {
+                key => "",
+                value => { template => 'dicole_base::null', params => { content => 'text2' } },
+            },
+        ],
+        navigation => [
+            {
+                template => 'dicole_base::button',
+                params => { },
+            },
+        ],
+    }
+%]
+
+<table width="100%">
+[% message = itemparams %]
+<tr>
+    <td>
+        <table class="messageContainer">
+            <tr>
+                <td class="messageTopic" [% 'colspan="2"' IF message.meta && !message.navigation %]>
+            [% IF message.icon %]<img src="[% message.icon %]" alt="" />[% END %]
+                    <div class="messageTitle blueLinks">[% IF message.title_url %]<a href="[% message.title_url %]">[% END %][% message.title %][% IF message.title_url %]</a>[% END %]</div>[% IF message.author.name %][% IF message.author.href %]<a href="[% message.author.href %]">[% END %][% message.author.name %][% '</a>' IF message.author.href %][% END %][% IF message.date %] - [% message.date %][% END %]
+                </td>
+            [% IF message.navigation %]
+                <td class="buttons">
+                    [% FOREACH control = message.navigation %][% INCLUDE $control.template itemparams = control.params %][% END %]
+                </td>
+            [% END %]
+            </tr>
+            <tr>
+                <td class="messageContent" [% 'colspan="2"' IF !message.meta && message.navigation %]>
+<div style="width: 100%; overflow: auto;">
+        [% FOREACH contents = message.content %]
+            [%- INCLUDE $contents.template itemparams = contents.params -%][% UNLESS loop.last %]<br /><br />[% END %]
+        [% END %]
+</div>
+                </td>
+        [% IF message.meta %]<td class="meta">
+            [% FOREACH metaobject = message.meta %]
+                    [% IF metaobject.key %]<b>[% metaobject.key %]</b><br />[% END %]<span>[% INCLUDE $metaobject.value.template itemparams = metaobject.value.params %]</span>[% UNLESS loop.last %]<br /><br />[% END %]
+            [% END %]
+                </td>
+        [% END %]
+            </tr>
+        </table>
+</td>
+</tr>
+</table>

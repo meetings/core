@@ -1,0 +1,43 @@
+use strict;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my ( $domain_id ) = split /\s*\,\s*/, $params;
+
+    die "missing domain id in parameters" unless $domain_id;
+
+    my $self = CTX->lookup_action('meetings_api');
+
+    my $prefixes = [ qw( meetings beta cmeet swipetomeet beta_swipetomeet ) ];
+
+    for my $prefix ( @$prefixes ) {
+        $prefix = '' if $prefix eq 'meetings';
+        my $auth = $self->_determine_prefixed_urban_airship_auth( $prefix );
+        die "No such UA auth: $prefix" unless $auth;
+
+        _store_device_tokens( $self, $auth, $prefix, $domain_id );
+    }
+}
+
+sub _store_device_tokens {
+    my ( $self, $auth, $prefix, $domain_id ) = @_;
+    $prefix ||= 'live';
+    my $tokens = [];
+    my $next_url = 'https://go.urbanairship.com/api/channels/';
+    my $page = 1;
+    while ( $next_url ) {
+        print " ** Fetching $prefix page $page: $next_url\n";
+        my $tokens_json = `curl -s -u '$auth' '$next_url'`;
+
+        my $data = Dicole::Utils::JSON->decode( $tokens_json );
+        for my $channel ( @{ $data->{channels} } ) {
+            my $result = $self->_store_channel_from_urbanairship( $domain_id, $prefix, $channel );
+        }
+
+        $next_url = $data->{next_page} || '';
+        $page++;
+    }
+}
+
+1;

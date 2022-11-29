@@ -1,0 +1,8 @@
+$install_theme = [ {
+	import_type => 'object',
+	spops_class => 'OpenInteract2::DicoleTheme',
+	field_order => [ qw/ ident name description author screenshot css_all theme_images modifyable default_theme / ]
+	},
+	[ 'dicole_default_theme','Dicole blue','Default Dicole theme.','Dicole team','/images/theme/default/screenshot.gif','/css/default/main_layout.css /css/default/main_markup.css',
+        '/images/theme/default',1,1 ],
+];

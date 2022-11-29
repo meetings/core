@@ -1,0 +1,57 @@
+[% IF matchmaker_company && matchmaker_name == matchmaker_email %][% MTN.t('%1$s declined your request to meet.',[matchmaker_company]) %][% ELSIF matchmaker_company %][% MTN.t('%1$s from %2$s declined your request to meet.',[matchmaker_name, matchmaker_company]) %][% ELSE %][% MTN.t('%1$s declined your request to meet.',[matchmaker_name]) %][% END %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Sorry,')  %]
+[% action_text_type = 'large' %]
+
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<p>>>
+[% IF greeting_message_text && greeting_message_html %]
+[% IF matchmaker_company && matchmaker_name == matchmaker_email %][% MTN.t('%1$s declined your request to meet with the following message:',[matchmaker_company]) %][% ELSIF matchmaker_company %][% MTN.t('%1$s from %2$s declined your request to meet with the following message:',[matchmaker_name, matchmaker_company]) %][% ELSE %][% MTN.t('%1$s declined your request to meet with the following message:',[matchmaker_name]) %][% END %]
+[% ELSE %]
+[% IF matchmaker_company && matchmaker_name == matchmaker_email %][% MTN.t('%1$s declined your request to meet.',[matchmaker_company]) %][% ELSIF matchmaker_company %][% MTN.t('%1$s from %2$s declined your request to meet.',[matchmaker_name, matchmaker_company]) %][% ELSE %][% MTN.t('%1$s declined your request to meet.',[matchmaker_name]) %][% END %]
+[% END %]
+<<</p>>>
+<<<bubble>>>
+
+[% IF greeting_message_text && greeting_message_html %]
+<<<p>>>
+[% IF in_html %]
+[% greeting_message_html %]
+[% ELSE %]
+[% greeting_message_text %]
+[% END %]
+<<</p>>>
+<<<hr>>>
+[% END %]
+
+<<<p>>><<<bold>>>[% MTN.t('What was this about?') %]<<</bold>>><<</p>>>
+<<<p>>><<<bold>>>[% MTN.t('Title://context:meeting title') %]<<</bold>>> [%meeting_title%]
+<<<br>>>
+<<<bold>>>[% MTN.t('Where:') %]<<</bold>>> [%meeting_location%]
+<<<br>>>
+<<<bold>>>[% MTN.t('When:') %]<<</bold>>> [%meeting_time%]<<</p>>>
+[% IF matchmaking_event %]
+<<<hr>>>
+<<<p>>>
+[% IF meeting_slots >= 0 %]
+[% MTN.t('You now have %(B$%1$s slots available%) to request a meeting at %2$s.',[meeting_slots,matchmaking_event]) %]
+[% END %] [% MTN.t('Try to schedule another meeting.') %]
+<<</p>>>
+[% url = matchmaking_url %]
+[% text = MTN.t('Go to matchmaking') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+[% END %]
+<<<hr>>>
+[% tip = 1 %]
+<<<p>>>[% MTN.t('%1$s - The smartest way to meet', [ service_name ]) %]<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

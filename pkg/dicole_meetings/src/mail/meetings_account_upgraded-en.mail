@@ -1,0 +1,113 @@
+[% IF customize_for_cmeet %][% MTN.t("cMeet / Notification") %][% ELSIF provisioned_user %][% MTN.t("Welcome to %1\$s PRO", [ service_name ]) %][% ELSIF new_user %][% MTN.t("Welcome and thank you for upgrading to %1\$s PRO", [ service_name ]) %][% ELSE %][% MTN.t("Thank you for upgrading to %1\$s PRO", [ service_name ]) %][% END %]
+
+[% IF ! customize_for_cmeet %]
+
+<<<html_wrapper>>>
+
+[% IF provisioned_user %][% action_text = MTN.t("Your %1\$s PRO was activated", [ service_name ]) %][% ELSIF new_user %][% action_text = MTN.t("Thank you for signing up") %][% ELSE %][% action_text = MTN.t("Thank you for upgrading %1\$s", [ service_name ]) %][% END %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+[% support_link_options = { L => { href => partner_support_url || MTN.t('http://support.meetin.gs/') } } %]
+
+[% pwidth = '450' %]
+[% IF provisioned_user OR new_user %]
+<<<p>>><<<bold>>>[% MTN.t("Welcome to %1\$s. We are really happy to have you.", [ service_name ]) %]<<</bold>>><<</p>>>
+[% END %]
+
+[% IF provisioned_user %]
+<<<p>>>[% MTN.t("Your PRO account was activated by %1\$s and you can now start organizing meetings with the full suite. If you have any questions about the service, please don't hesitate to contact our %(L\$support%).", [ provisioner_user_name ], support_link_options ) %]<<</p>>>
+[% ELSE %]
+<<<p>>>[% MTN.t("Your account is upgraded to PRO and you can now start organizing meetings with the full suite. If you have any questions about the service, please don't hesitate to contact our %(L\$support%).", support_link_options ) %]<<</p>>>
+[% END %]
+
+[% IF provisioned_user OR new_user %]<<<p>>>[% MTN.t("Here's your login link to %1\$s. Keep in mind, that this link is personal. You can use it whenever you need to login. If you lose the link, you can always get a new one from our site", [ service_name ] ) %].<<</p>>>
+
+[% url = login_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=congratspro' %]
+[% text = MTN.t('Log in') %]
+<<<blue_button>>>
+[% ELSE %]
+[% url = login_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=congratspro' %]
+[% text = MTN.t('Log in') %]
+<<<blue_button>>>
+[% END %]
+<<<bubble>>>
+<<<p>>>
+<<<bold>>>[% MTN.t("Be sure to explore and benefit from all the PRO features:") %]<<</bold>>>
+<<</p>>>
+
+<<<list>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Unlimited schedulers on the Meet Me page') %]<<</bold>>>
+<<<br>>>[% MTN.t('Claim your Meet Me page and set up as many schedulers as you wish. Different kind of schedulers serve different kind of needs.') %]
+<<</item>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Expanded Live Communication Tools') %]<<</bold>>>
+<<<br>>>[% MTN.t('Use all the expanded Live Communication Tools such as Lync, Google Hangouts, or a custom tool of your own choice.') %]
+<<</item>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Visual customization and branding') %]<<</bold>>>
+<<<br>>>[% MTN.t("Remember to customize the look according to your brand. Add your logo, select your own background image, and set the highlight color.") %]
+<<</item>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Unlimited meeting participants') %]<<</bold>>>
+<<<br>>>[% MTN.t("You can now invite as many people to a single meeting as you wish.") %]
+<<</item>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Unlimited meeting materials') %]<<</bold>>>
+<<<br>>>[% MTN.t("You are now able to share all the materials without limitations.") %]
+<<</item>>>
+<<</list>>>
+[% squirrel = 'pro' %]
+<<<squrre>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<<app_buttons>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>
+
+[% ELSIF customize_for_cmeet %]
+
+[% support_link_options = { L => { href => 'http://www.basebusiness.be/cmeet' } } %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t("Welcome to cMeet") %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<p>>>[% MTN.t("Dear %1\$s,", [ user_name ] ) %]<<</p>>>
+
+<<<p>>>[% MTN.t('Your cMeet account was activated and you can start organizing meetings with the full suite.') %]<<</p>>>
+
+<<<p>>>[% MTN.t("With the link below, you can log in to cMeet. Keep in mind, that this link is personal. You can use it whenever you need to login." ) %]<<</p>>>
+
+[% url = login_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=congratspro' %]
+[% text = MTN.t('Log in') %]
+<<<blue_button>>>
+
+<<<p>>>[% MTN.t('By setting up your password through the cMeet application (Settings / Login methods / Set up a password) you can easily login with your e-mail address and the password you defined.') %]<<</p>>>
+
+<<<br>>>
+
+<<<app_buttons>>>
+
+<<<br>>>
+
+<<<p>>>[% MTN.t("You can consult our FAQ, installation guide, user manual and terms & conditions by clicking %(L\$here%).", support_link_options ) %] [% MTN.t("Please contact your business support agent or call 1940 or visit our website %(L\$BASEbusiness.be/cmeet%) may you have any questions.", support_link_options ) %]
+<<<p>>>
+
+<<<p>>>[% MTN.t('Enjoy our service!') %]<<</p>>>
+
+<<<br>>>
+
+<<<p>>>[% MTN.t('BASE business support team') %]<<</p>>>
+
+<<</html_wrapper>>>
+
+[% END %]

@@ -1,0 +1,57 @@
+
+my $conf = {
+    seed => 'thankyou201201',
+    prefix => 'ty3',
+    partner_id => 0,
+    creator_id => 0,
+    creation_date => time,
+    start_date => 0,
+    end_date => 0,
+    duration => 4,
+    duration_unit => 'M',
+    dollar_price => '0',
+    promotion_name => 'January 2012 survey thanks',
+    promotion_code => '',
+    notes => '{ "description" : "4 months of PRO and thanks for taking the survey!" }',
+};
+
+sub execute {
+    my ( $self, $domain_id ) = @_;
+
+    my $promo = CTX->lookup_object('meetings_promotion')->new( {
+        domain_id => $domain_id,
+        %$conf,
+    } );
+
+    $promo->save;
+
+    if ( ! $promo->promotion_code ) {
+        for my $string ( @{ codes() } ) {
+             CTX->lookup_object('meetings_promotion_code')->new( {
+                domain_id => $domain_id,
+                promotion_id => $promo->id,
+
+                creator_id => 0,
+                creation_date => time,
+
+                consumed_date => 0,
+                consumer_id => 0,
+
+                promotion_code => $string,
+                notes => '',
+            } )->save;
+        }
+    }
+}
+
+use Digest::MD5;
+
+sub codes {
+    my @codes = ();
+    for my $n (1..100){
+        push @codes, uc( ( $conf->{prefix} ? $conf->{prefix} . '-' : '' ) . substr( Digest::MD5::md5_hex( join ";", $conf->{seed}, $n ), 1, 11 ) );
+    }
+    return \@codes;
+};
+
+1;

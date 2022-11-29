@@ -1,0 +1,12 @@
+[%#- Sent one time to the new users who sign up -%]
+
+[%- IF test_case == 'test' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meeting_unsubscribe_url = 'http://meeting.gs/getmeoutta_of_this_meeting'
+login_url ='http://meetin.gs/login'
+meetme_config_url = 'http://meetin.gs/meetings/meetme_config'
+
+%]
+[%- END -%]

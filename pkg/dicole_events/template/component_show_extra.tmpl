@@ -1,0 +1,114 @@
+<div class="events_listing_navigation">
+	<div class="contentItemContainer blueLinks">
+		<div>
+			<div class="verticalContent">
+				[% IF browse_other_url %]<a class="linkBar" href="[% browse_other_url | html %]">&larr; [% MSG('Back to event listing') | html %]</a>[% END %]
+				[% IF browse_current_url %]<a class="linkBar" href="[% browse_current_url | html %]">&larr; [% MSG('Back to event page') | html %]</a>[% END %]
+				[% IF live_url %]<a class="linkBar" href="[% live_url %]">&rarr; [% MSG('Event live stream') | html %]</a>[% END %]
+			</div>
+		</div>
+	</div>
+</div>
+<div id="event-extra-info">
+	[% IF show_pages == 1 %]
+	<h2>[% MSG('Pages') | html %]</h2>
+	[% IF pages.size == 0 %]
+		<p class="show_extra_no_elements">[% MSG('No pages.') | html %]</p>
+	[% ELSE %]
+	<ul>
+	[% FOREACH page IN pages %]
+		<li><a href="[% page.url | html %]"><span>&rarr; [% page.title | html %]</span></a></li>
+	[% END %]
+	</ul>
+	[% END %]
+	[% IF more_pages_url %]<a href="[% more_pages_url | html %]" class="small-link">&darr; [% MSG('More pages') | html %]</a>[% END %]
+	[% IF new_page_url %]<a href="[% new_page_url %]" class="small-link">+ [% MSG('New page') | html %]</a>[% END %]
+	[% END %]
+	[% IF show_posts == 1 %]
+	<h2>[% MSG('Posts') | html %]</h2>
+	[% IF posts.size == 0 %]
+		<p class="show_extra_no_elements">[% MSG('No posts.') | html %]</p>
+	[% ELSE %]
+	[% FOREACH post IN posts %]
+	<div class="post">
+		<div class="user-bg alpha_png">
+			<a class="user" href="[% post.author_url | html %]" title="[% post.author_name | html %]">
+				<img src="[% post.author_image or '/images/theme/default/default-user-avatar-50px.png' | html %]" alt="[% post.author_name | html %]" />
+			</a>
+		</div>
+		<div class="data">
+			<div>
+				<a href="[% post.url | html %]">[% post.title %]</a>
+			</div>
+			<div>
+				<a href="[% post.author_url | html %]">[% post.author_name | html %]</a>
+				[% post.time_ago | html %]
+			</div>
+		</div>
+	</div>
+	[% END %]
+	[% END %]
+	[% IF more_posts_url %]<a href="[% more_posts_url | html %]" class="small-link">&darr; [% MSG('More posts') | html %]</a>[% END %]
+	[% IF new_post_url %]<a href="[% new_post_url | html %]" class="small-link">+ [% MSG('New post') | html %]</a>[% END %]
+	[% END %]
+	[% IF show_media == 1 %]
+	<h2>[% MSG('Media') | html %]</h2>
+	[% IF media.size == 0 %]
+		<p class="show_extra_no_elements">[% MSG('No media.') | html %]</p>
+	[% ELSE %]
+	[% IF show_imedia %]
+	<div id="inline-medias">
+	[% FOREACH media_item IN media %]
+	[% IF loop.count < 10 %]
+		<div class="inline-media" title="[% media_item.data_url | html %]">
+			<a class="inline-media-link" href="#" title="[% media_item.title | html %]">
+				<img src="[% media_item.thumbnail | html %]" alt="[% media_item.title | html %]" />
+				<br />
+				[% media_item.title | html %]
+			</a>
+			[% IF media_item.edit_url %]
+			<br />
+			<a class="button blue-button" href="[% media_item.edit_url %]"><span>[% MSG('Edit') %]</span></a>
+			[% END %]
+		</div>
+	[% END %]
+	[% END %]
+	</div>
+	[% IF more_media_url AND media.size > 9 %]<a href="[% more_media_url | html %]" class="small-link">&darr; [% MSG('More media') | html %]</a>[% END %]
+	[% ELSE %]
+	[% FOREACH media_item IN media %]
+	[% IF loop.count < 4 %]
+	<div class="media">
+		<div class="user-bg alpha_png">
+			<a class="user" href="[% media_item.author_url | html %]" title="[% media_item.author_name | html %]">
+				<img src="[% media_item.author_image or '/images/theme/default/default-user-avatar-50px.png' | html %]" alt="[% media_item.author_name | html %]" />
+			</a>
+		</div>
+		<div class="data">
+			<div>
+				<a href="[% media_item.url | html %]">[% media_item.title %]</a>
+			</div>
+			[% IF loop.first %]
+			<div>
+				<a href="[% media_item.url | html %]"><img src="[% media_item.thumbnail | html %]" alt="[% media_item.title | html %]" /></a>
+			</div>
+			[% END %]
+			<div>
+				[% IF media_item.presenter %][% media_item.presenter | html %][% ELSE %]<a href="[% media_item.author_url | html %]">[% media_item.author_name | html %]</a>[% END %]
+				[% media_item.time_ago | html %]
+			</div>
+		</div>
+	</div>
+	[% END %]
+	[% END %]
+	[% IF more_media_url AND media.size > 3 %]<a href="[% more_media_url | html %]" class="small-link">&darr; [% MSG('More media') | html %]</a>[% END %]
+	[% END %]
+	[% END %]
+	[% IF new_media_url %]<a id="new-media-button" href="[% new_media_url | html %]" class="small-link"><span>+ [% MSG('New media (action)') | html %]</span></a>[% END %]
+	[% END %]
+	[% IF show_tweets == 1 %]
+	<div style="clear:both"></div>
+	<h2>[% MSG('Twitter') | html %]</h2>
+	<div id="stupid-twitter-box-placeholder"></div>
+	[% END %]
+</div>

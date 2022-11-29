@@ -1,0 +1,64 @@
+<div id="meetings-login" class="m-modal">
+    <div class="modal-header">
+        <h3>[% MTN.t('Login to continue')%]</h3>
+    </div>
+    <div class="modal-content m-form">
+        <div class="js_meetings_login_error_message_container"></div>
+        <!-- Social login -->
+        <div id="social-logins">
+            <a id="login-facebook" href="#" class="button login fb-blue js_meetings_login_with_facebook">
+                <i class="ico-facebook"></i>
+                [% MTN.t('Login with Facebook') %]
+            </a>
+            <a id="login-google" style="position: relative; top: 18px" href="[% google_start_url %]" class="">
+                <img src="/images/meetings/btn_google_signin_dark_normal_web.png" />
+            </a>
+            <!-- <a id="login-linkedin" href="#" class=""></a> -->
+        </div>
+
+        <!-- Divider -->
+        <div class="line-or-line line-or-line-first">
+            <span></span>
+            <p>[% MTN.t('OR') %]</p>
+            <span></span>
+        </div>
+
+        <!-- Oldskool login -->
+        <div id="login-password">
+            <form action="/meetings/login/" accept-charset="utf-8" enctype="application/x-www-form-urlencoded" id="meetings_login_form" method="post" name="meetings_login_form">
+                <input class="meetings-login-input req js_tip_field" id="focusElement" name="login_login_name" size="35" type="text" value="[% MTN.t('Email') %]" style="margin-bottom:25px;"/>
+                <input class="meetings-login-input req js_meetings_login_enter_submit js_tip_field" id="login_password" name="login_password" size="35" type="password" value="Password" style="margin-bottom:15px;" />
+                <input id="login_remember" name="login_remember" size="35" type="hidden" value="1" />
+                <input type="hidden" name="url_after_login" value="[% url_after_login %]" />
+                <div class="error-container-rounded js_meetings_login_error_container error_container_hidden">
+                </div>
+            </form>
+            <a id="meetings_login_password_submit" class="js_meetings_login_submit" href="#">
+                <span class="button blue">[% MTN.t('Log in') %]</span>
+            </a>
+        </div>
+
+        <!-- Divider -->
+        <div class="line-or-line line-or-line-second">
+            <span></span>
+            <p>[% MTN.t('OR') %]</p>
+            <span></span>
+        </div>
+
+        <!-- Link login -->
+        <div id="login-link">
+            <div id="meetings_login_link_email_return"></div>
+            <h3>[% MTN.t('Send a login link to my email:') %]</h3>
+            <form action="" id="meetings_login_link_email_form">
+                <input type="hidden" name="url_after_login" value="[% url_after_login %]" />
+                <input class="meetings-login-input" style="width:250px" id="meetings_login_link_email_input" type="text" name="email" value="" />
+                <a id="meetings_login_link_email_submit" data-track="Login with email" href="#">
+                    <span class="button blue" style="width:80px; margin:0 0 0 15px;">[% MTN.t('Send') %]</span>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="push"></div>
+</div><!-- End content wrapper -->
+<div id="bb-footer"></div>

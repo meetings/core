@@ -1,0 +1,9 @@
+[% IF in_html %]
+<table cellspacing="0" cellpadding="0" style="width:530px; margin-left:35px; margin-top:0px; margin-right:35px; margin-bottom:0px;border-collapse:collapse;border-spacing:0;">
+<tr>
+<td height="13" style="height:13px;margin-bottom:0px;"><img src="[% server_host %]/images/meetings/email/gray_arrow_up.gif" width="23" height="13" style="margin-left:35px;display:block;border:0;"/></td>
+</tr>
+<tr>
+<td style="margin-top:0px;background-color:#f4f4f4;">
+[% inthebubble = 1 %]
+[% END %]

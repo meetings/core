@@ -1,0 +1,11 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_attachment add domain_id int unsigned not null after group_id');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_attachment add byte_size int unsigned not null after object_id');
+}
+
+1;
+

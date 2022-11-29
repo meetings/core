@@ -1,0 +1,10 @@
+NOT USED ANYMORE
+
+Parameters
+inviting_user_name
+register_url
+
+UTM Parameters
+source: notification
+medium: email
+campaign=recommended

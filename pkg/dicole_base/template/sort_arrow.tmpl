@@ -1,0 +1,15 @@
+[% # $Id: sort_arrow.tmpl,v 1.4 2009-01-07 14:42:33 amv Exp $ # %]
+
+[%#
+
+	The template accepts the following information in itemparams:
+	{
+		sort => 'DESC' | 'ASC' # sort order: direction of the arrow
+	}
+
+#%]
+[% IF itemparams.sort == 'DESC' %]
+<img src="[% images.navigation %]/sort_arrow_desc.gif" alt="" />
+[% ELSE %]
+<img src="[% images.navigation %]/sort_arrow_asc.gif" alt="" />
+[% END %]

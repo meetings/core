@@ -1,0 +1,9 @@
+div#meetme-confirm-delete.m-modal
+    div.modal-header
+        h3!=MTN.t('Remove scheduler')
+    div.modal-content
+        p!=MTN.t('Are you sure you want to remove %1$s. There is no undo.', { params : [ model.name ] } );
+    div.modal-footer 
+        div.buttons.right
+            a(href='#').confirm-delete.button.blue!=MTN.t('Remove')
+            a(href='#').button.gray.js_hook_showcase_close!=MTN.t('Cancel')

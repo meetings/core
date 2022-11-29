@@ -1,0 +1,104 @@
+[% IF bg_image OR bg_color %]
+body {
+    [% IF bg_image %]
+    background-image: [% IF bg_image == 'none' %]none[% ELSE %]url("[% bg_image %]")[% END %];
+    [% END%]
+    [% IF bg_color %]
+    background-color: [% bg_color %];
+    [% END%]
+}
+[% END %]
+
+[% IF logo_background_image.defined OR logo_width.defined OR logo_height.defined %]
+#navi_logo_link {
+	[% IF logo_background_image %]
+	background: transparent url("[% logo_background_image | html %]") no-repeat scroll [% logo_background_position OR '0 0' | html %];
+	[% END %]
+	[% IF logo_width %]width: [% logo_width | html %];[% END %]
+	[% IF logo_height %]height: [% logo_height | html %];[% END %]
+}
+[% END %]
+
+[% IF logo_text.defined %]
+#navi_logo_text {
+	display: none;
+}
+[% END %]
+
+[% IF logo_text_left.defined OR logo_text_top.defined OR logo_text_height.defined OR logo_text_color.defined OR logo_text_non_italic.defined OR logo_text_non_bold.defined %]
+#navi_logo_text {
+    [% IF logo_text_color.defined %]color: [% logo_text_color %];[% END %]
+    [% IF logo_text_size.defined %]font-size: [% logo_text_size %];[% END %]
+    [% IF logo_text_non_italic.defined %]font-style: normal;[% END %]
+    [% IF logo_text_non_bold.defined %]font-weight: normal;[% END %]
+    [% IF logo_text_height.defined %]height: [% logo_text_height %];[% END %]
+    [% IF logo_text_left.defined %]padding-left: [% logo_text_left %];[% END %]
+    [% IF logo_text_top.defined %]padding-top: [% logo_text_top %];[% END %]
+}
+[% END %]
+
+[% IF desktop_basic_3_column.defined %]
+table.desktopBoxContainer {
+  width: [% desktop_basic_3_column_total_width or '970' %]px;
+  overflow: hidden;
+}
+
+.desktop_3_column_td_1 {
+  width: [% desktop_basic_3_column_left_width or '190' %]px !important;
+}
+.desktop_3_column_div_1 {
+  width: auto !important;
+}
+.combined_list .element a.summary_list_title {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.desktop_3_column_td_2 {
+  width: [% desktop_basic_3_column_center_width or '420' %]px !important;
+  overflow: hidden;
+}
+
+.desktop_3_column_td_3, .desktop_3_column_div_3 {
+  width: [% desktop_basic_3_column_right_width or '200' %]px !important;
+}
+[% END %]
+
+[% IF hide_navi_actions %]
+#navi_actions {
+    display: none;
+}
+[% END %]
+
+[% IF hide_tool_icons %]
+#navi_header #navi_tools a {
+    background: none;
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+body #navi_header #navi_tools a.selected {
+    background: none;
+}
+[% END %]
+
+[% IF navi_tool_text_color %]
+#navi_tools a {
+    color: [% navi_tool_text_color %];
+}
+#navi_tools a:visited {
+    color: [% navi_tool_text_color %];
+}
+[% END %]
+
+[% IF hide_wiki_stuff %]
+.no_group_admin_extras .wiki_search_box, .no_group_admin_extras .wiki_navigation_box, .no_group_admin_extras .wiki_backlink_box, .no_group_admin_extras .wiki_actions_box, .no_group_admin_extras .wiki_show_tags_box, .no_group_admin_extras .wiki_show_info_box, .no_group_admin_extras .wiki_attachments_box, .no_group_admin_extras .wiki_tag_cloud_box, .no_group_admin_extras .wiki_change_box, .no_group_admin_extras .wiki_comments_container_box, .no_group_admin_extras .wiki_link_box {
+	display: none !important;
+}
+[% END %]
+
+[% IF hide_desktop_controls %]
+.no_group_admin_extras .desktopBoxControllers, .no_group_admin_extras .summary_control_container {
+display: none;
+}
+[% END %]

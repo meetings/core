@@ -1,0 +1,13 @@
+<div class="blogPost[% IF itemparams.class %] [% itemparams.class %][% END %]"[% IF itemparams.id %] id="[% itemparams.id %]"[% END %]>
+<div class="blogPostControls">[% FOREACH item=itemparams.control_widgets %][% PROCESS dicole_base::include_widget widget = item %][% END %]</div>
+[% IF itemparams.title %]<div class="blogPostTitle">[% PROCESS dicole_base::include_widget widget = itemparams.title %]</div>[% END %]
+<div class="blogPostAuthor">[% itemparams.date %] - [% PROCESS dicole_base::include_widget widget = itemparams.author %]</div>
+<div class="blogPostContent">[% itemparams.preview %] [% PROCESS dicole_base::include_widget widget = itemparams.read_more %] [% PROCESS dicole_base::include_widget widget = itemparams.source %]</div>
+<div class="blogPostBottom">
+[% IF itemparams.meta_widgets.0 %]<div class="blogPostDetails">[% FOREACH item=itemparams.meta_widgets %][% PROCESS dicole_base::include_widget widget = item %][% END %]</div>[% END %]
+[% IF itemparams.action_widgets.0 %]<div class="blogPostActions">[% FOREACH item=itemparams.action_widgets %][% PROCESS dicole_base::include_widget widget = item %][% END %]</div>[% END %]
+<div class="float_clearing"><!-- --></div>
+</div>
+</div>
+
+

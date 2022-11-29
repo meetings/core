@@ -1,0 +1,35 @@
+[%#- $Id: input_custom.tmpl,v 1.4 2009-01-07 14:42:33 amv Exp $ -%]
+
+
+[%#
+	The template accepts the following information in itemparams:
+
+	attributes =>
+		{
+			name => 'field name'
+			value => 'value'
+		}
+	content =>
+		[
+			{
+				template => 'TEMPLATE'
+				params =>
+					{
+						jaakko => 'jaakko'
+					}
+			},
+			{
+				...
+			}
+
+		]
+%]
+
+[%-
+	FOREACH template = itemparams.content;
+		INCLUDE $template.template itemparams = template.params;
+	END;
+	IF itemparams.attributes;
+		INCLUDE dicole_base::input_input itemparams.attributes = itemparams.attributes;
+	END
+-%]

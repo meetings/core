@@ -1,0 +1,21 @@
+NOTE THE THIS TEMPLATE IS SPECIAL! This title and the html output will be ignored. Only the text output will act as the default greeting.
+
+[%- IF ! open_scheduling_option_count && ! rsvp_required %]
+[% MTN.t('I am looking forward to meeting you. Feel free to share on the meeting page any comments, questions or documents you might have.') %]
+[%- ELSIF ! open_scheduling_option_count && rsvp_required %]
+[% MTN.t('Please let me know if you are coming.') %]
+---N---
+---N---
+[% MTN.t('I am looking forward to meet you. Feel free to share on the meeting page any comments, questions or documents you might have.') %]
+[%- ELSE %]
+[% MTN.t('Please answer to my scheduling suggestions so we can find a suitable time for our meeting.') %]
+---N---
+---N---
+[% MTN.t('I am looking forward to meet you. Feel free to share on the meeting page any comments, questions or documents you might have.') %]
+[%- END %]
+---N---
+---N---
+[% MTN.t('Best regards,') %]
+---N---
+---N---
+[% inviting_user_name %][% IF inviting_user_company %], [% inviting_user_company %][% END %]

@@ -1,0 +1,28 @@
+[% MTN.t('%1$s is looking for a suitable time to meet', [organizer_name]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Join in to find a suitable time') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t('%1$s is scheduling a meeting using SwipeToMeet.', [organizer_name]) %]<<</p>>>
+
+<<<p>>>[% MTN.t('See the details and provide your availability to take part. Go ahead, it is super easy and will take only a few minutes of your time:')%]<<</p>>>
+
+[% url = swipe_url %]
+[% text = MTN.t("See details and join scheduling") %]
+<<<blue_button>>>
+<<<br>>>
+
+
+<<</bubble>>>
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t('SwipeToMeet is a mobile scheduling application that helps you find a time that suits everyone. There is no need for you to register or install anything to take part in scheduling. Just press the button above and we will walk you through the scheduling.') %]<<</p>>>
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t('SwipeToMeet is powered by Meetin.gs.') %]<<</p>>>
+<<</html_wrapper>>>

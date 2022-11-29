@@ -1,0 +1,333 @@
+[%#- Sent 0-5 minutes after something happens in the meeting. Then nothing is sent for 60 minutes. 15 minutes before the meeting changes are all sent (and if Skype is selected OR agenda has been filled, even an "empty" digest is sent to notify that the meeting is starting). Updates during the meeting (until after email) are not sent.  Future of this email is discussed <a href="https://dicole.lighthouseapp.com/projects/91874/tickets/30-longer-and-variable-delays-with-digests">here</a> -%]
+
+[%- IF test_case == 'Before_meeting_changes' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meeting_date = 'Tuesday July 22nd'
+meeting_participants = 'Alfred Nobel, Albert Einstein, Marie Curie, Vladimir Vernadsky'
+meeting_title = 'Digest email test meeting'
+meeting_location = 'Original location'
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+changed_agenda_author = 'Vladimir Vernadsky'
+agenda_title = 'Agenda title'
+agenda_html = '<p style="line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif;">This is the orginal agenda <em>for</em> testing. And here is a link to <a href="http://google.com/" style="font-family:Arial,Verdana,sans-serif;text-decoration:underline;">http://google.com/</a> HTML formatting is possible <span style="text-decoration: line-through;">even with all this cool stuff</span> <span style="text-decoration: underline;">that are truly magnificent</span>!</p>
+<ul style="list-style: disc outside none; line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif; padding-left:16px;"><li>This is HTML formatted <strong>agenda</strong>4</li><li>C<span style="background-color: #99cc00;">olor</span>s are also available</li></ul>
+<h1 style="line-height:20px; font-size:16px; font-weight:bold; margin-top:5px; margin-left:17px; margin-right:17px; margin-bottom:5px; color:#4a4a4a; font-family:Arial,Verdana,sans-serif;">This is a <span style="color: #993366;">header from</span> HTML version</h1>
+<p style="line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif;"><b>This is a short paragraph from Seitsemän Veljestä. A book by famous finnish author Aleksis Kivi:</b> "Veljesten nimet vanhimmasta nuorimpaan ovat: Juhani, Tuomas, Aapo, Simeoni, Timo, Lauri ja Eero. Ovat heistä Tuomas ja Aapo kaksoispari ja samoin Timo ja Lauri. Juhanin, vanhimman veljen, ikä on kaksikymmentä ja viisi vuotta, mutta Eero, nuorin heistä, on tuskin nähnyt kahdeksantoista auringon kierrosta."</p>'
+agenda_text = 'This is a text version of the test agenda'
+changed_agenda_text = 'This is a changed agenda in text version. Greetings from Vladimir.'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'Meeting_in_past' %]
+[%-
+
+past_meeting = 1
+server_host = 'http://dev.meetin.gs'
+meeting_date = 'Tuesday July 22nd'
+meeting_participants = 'Alfred Nobel, Albert Einstein, Marie Curie, Vladimir Vernadsky'
+meeting_title = 'Digest email test meeting'
+meeting_location = 'Original location'
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+changed_agenda_author = 'Vladimir Vernadsky'
+changed_agenda_html = '<p style="line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif;">I want <em>to</em> link to <a href="http://google.com/" style="font-family:Arial,Verdana,sans-serif;text-decoration:underline;">http://google.com/</a> and see <span style="text-decoration: line-through;">the</span> <span style="text-decoration: underline;">color</span>!</p>
+<ul style="list-style: disc outside none; line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif; padding-left:16px;"><li>This is HTML formatted <strong>agenda</strong>4</li><li>C<span style="background-color: #99cc00;">olor</span>s are also available</li></ul>
+<h1 style="line-height:20px; font-size:16px; font-weight:bold; margin-top:5px; margin-left:17px; margin-right:17px; margin-bottom:5px; color:#4a4a4a; font-family:Arial,Verdana,sans-serif;">This is a <span style="color: #993366;">header from</span> HTML version</h1>
+<p style="line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif;"><b>This is a short paragraph from Seitsemän Veljestä. A book by famous finnish author Aleksis Kivi:</b> "Veljesten nimet vanhimmasta nuorimpaan ovat: Juhani, Tuomas, Aapo, Simeoni, Timo, Lauri ja Eero. Ovat heistä Tuomas ja Aapo kaksoispari ja samoin Timo ja Lauri. Juhanin, vanhimman veljen, ikä on kaksikymmentä ja viisi vuotta, mutta Eero, nuorin heistä, on tuskin nähnyt kahdeksantoista auringon kierrosta."</p>'
+changed_agenda_text = 'This is a changed agenda in text version. Greetings from Vladimir.'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'Agenda_changed_by_multiple_users' %]
+[%-
+
+meeting_date = 'Tuesday July 22nd'
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Scheduled Skype call'
+meeting_location = 'Online'
+changed_location = ''
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+changed_agenda_html = 'This is a changed agenda in html version modified by multiple participants. Greetings from all!'
+changed_agenda_text = 'This is a changed agenda in html version modified by multiple participants. Greetings from all!'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'all' %]
+[%-
+meeting_date = 'Tuesday July 22nd'
+meeting_participants = 'Alfred Nobel, Albert Einstein, Marie Curie, Vladimir Vernadsky'
+meeting_start = 1
+meeting_online_start = 1
+meeting_online_option = 'skype'
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Digest email test: Case all'
+changed_title = 'Changed to a new test meeting title'
+total_users = '5'
+changed_location = 'Changed and new location'
+added_users = ['Pythagoras', 'Nikola Tesla', 'Mario Molina']
+url = 'http://www.meetin.gs'
+
+new_notes = [
+{ comment => 'I think this comment', user_name => 'viivi', timestamp => 'eilen' },
+{ comment => 'Not comment I think', user_name => 'jussi', timestamp => 'toissapäivänä' },
+{ comment => 'You not think therefore you not.', user_name => 'viivi', timestamp => 'viime viikolla' },
+]
+
+new_materials = [
+{ title => 'Plans for a bomb', url => 'http://google.com', author_name => 'Albert Einstein', timestamp => '23:58'},
+{ title => 'Cure for cancer', author_name => 'Marie Curie', timestamp => '1891', new_comments => [
+{comment => 'I suppose that is a noble cause. Therefore I leave this comment.', url => 'http://google.com', user_name => 'Nikola Tesla', timestamp => '20:19'}
+]}
+]
+
+commented_materials = [
+{ title => 'Titlederp', url => 'http://google.com', new_comments => [
+{comment => 'I THINK I JUST FOUND OUT HOW TO COMMENT.', user_name => 'Vladimir', timestamp => '20:20'},
+{comment => 'Lol did i comment twice what yes :D?', user_name => 'Vladimir', timestamp => '20:21'}
+]},
+
+{ title => 'This material', url => 'http://google.com', new_comments => [
+{comment => 'mallet mauris metus spade feugiat cutlass cras dictum accumsan hand cannon rifle, horsewhip donec auctor gravida AK-47 in hatchet suspendisse hendrerit. Amet ballista skinning knife per torch auctor himenaeos, tempus chakram hand cannon cutlass.', user_name => 'Lorem ipsum speaker', timestamp => '15:04'},
+{comment => 'Faucibus integer trident two-handed sword elementum lorem maecenas coilgun praesent justo, sickle folding knife electrolaser torquent class vestibulum horsewhip turpis', user_name => 'Replicator di Tempio', timestamp => '16:06'}
+]},
+
+{ title => 'Another material', url => 'http://google.com', new_comments => [
+{comment => 'Testing testing', user_name => 'Tesla', timestamp => '18:20'},
+{comment => 'This is another comment. ', user_name => 'Albert', timestamp => '19:21'}
+]}
+
+]
+
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+
+
+%]
+[%- END %]
+[%- IF test_case == 'all variables test' %]
+[%-
+
+meeting_date = 'Tuesday July 22nd'
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Auxiliary CPU reverse engineering symposium'
+changed_title = 'Core-optimization meeting'
+changed_time = '16.5. ( GTM +2)'
+changed_location = 'Maybe spatial tomorrow'
+meeting_participants = 'Alfred Nobel, Albert Einstein, Marie Curie, Vladimir Vernadsky'
+url = 'http://www.meetin.gs'
+
+new_notes = [
+{ comment => 'I think this comment', user_name => 'viivi', timestamp => 'eilen' },
+{ comment => 'Not comment I think', user_name => 'jussi', timestamp => 'toissapäivänä' },
+{ comment => 'You not think therefore you not.', user_name => 'viivi', timestamp => 'viime viikolla' },
+]
+
+new_materials = [
+{ title => 'Kekkosen aikakirjat', url => 'http://google.com', author_name => 'Maukkosen Pena', timestamp => '23:58'},
+{ title => 'Keissi kaljaa', author_name => 'Sinebrychoff', timestamp => '1891', new_comments => [
+{comment => 'I would agree with your material. Therefore I leave this comment.', url => 'http://google.com', user_name => 'Cormentor', timestamp => '20:19'}
+]}
+]
+
+commented_materials = [
+{ title => 'Titlederp', url => 'http://google.com', new_comments => [
+{comment => 'I THINK I JUST FOUND OUT HOW TO COMMENT.', user_name => 'Cormentor', timestamp => '20:20'},
+{comment => 'Lol did i comment twice what yes :D?', user_name => 'Cormentor', timestamp => '20:21'}
+]},
+
+{ title => 'Virgiliuksen syvällinen teksti terävistä ja vaarallisista esineistä', url => 'http://google.com', new_comments => [
+{comment => 'Lorem ipsum assault rifle zweihander imperdiet machine gun rhoncus consectetur, non-returning boomerang cutlass odio stone scepter nibh habitant brandistock fauchard, taser ultricies lobortis neque flamethrower claymore. Morning star augue enim eleifend folding knife glaive five-bladed indian katar pretium praesent pickaxe AIM-120 AMRAAM, mallet mauris metus spade feugiat cutlass cras dictum accumsan hand cannon rifle, horsewhip donec auctor gravida AK-47 in hatchet suspendisse hendrerit. Amet ballista skinning knife per torch auctor himenaeos, tempus chakram hand cannon cutlass.', user_name => 'Comentator Iusti', timestamp => '15:04'},
+{comment => 'Faucibus integer trident two-handed sword elementum lorem maecenas coilgun praesent justo, sickle folding knife electrolaser torquent class vestibulum horsewhip turpis, hook laoreet troglodyte javelin electrolaser bill erat bone knife jitte. Tortor death star blaster spiked club convallis partisan senectus katana torquent est, composite bow habitasse M61 Vulcan vitae cursus chain magna morbi sling, luctus flamberge scourge pharetra bludgeon justo aenean venenatis.', user_name => 'Replicator di Tempio', timestamp => '16:06'}
+]},
+
+{ title => 'Perjantai yeahh', url => 'http://google.com', new_comments => [
+{comment => 'Hauska perjantai fäslsi animaatio', user_name => 'Herppinen', timestamp => '18:20'},
+{comment => 'flhäsh animaatio kirjoitetaan Flash(tm). ', user_name => 'Kieli Polisi', timestamp => '19:21'}
+]}
+
+]
+
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+
+ics_url = '1' 
+gcal_url = '1' 
+
+
+%]
+[%- END %]
+[%- IF test_case == 'koetesti' %]
+[%-
+
+meeting_date = 'Tuesday July 22nd'
+server_host = 'http://dev.meetin.gs'
+time_canceled = 1
+meeting_title = 'koetitle'
+changed_title = 'tämä otsikko on muutunut edellisestä'
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+new_notes = [
+{ comment => 'kommentti1', user_name => 'viivi', timestamp => 'eilen' },
+{ comment => 'kommentti2', user_name => 'jussi', timestamp => 'toissapäivänä' },
+{ comment => 'kommentti3', user_name => 'viivi', timestamp => 'viime viikolla' },
+]
+
+%]
+[%- END %]
+[%- IF test_case == 'skype' %]
+[%-
+
+meeting_date = 'Tuesday July 22nd'
+meeting_start = 1
+meeting_online_start = 1
+meeting_online_option = 'skype'
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Scheduled Skype call'
+meeting_location = 'Online'
+changed_location = ''
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'Teleconference' %]
+[%-
+
+meeting_date = 'Tuesday July 22nd'
+meeting_start = 1
+meeting_online_start = 1
+meeting_online_option = 'teleconf'
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Teleconference call title'
+meeting_location = 'On teleconference'
+changed_location = 'Telco and Meeting room 1'
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'Hangouts' %]
+[%-
+
+meeting_date = 'Tuesday July 22nd'
+meeting_start = 1
+meeting_online_start = 1
+meeting_online_option = 'hangout'
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Scheduled Skype call'
+meeting_location = 'Online'
+changed_location = ''
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'Lync' %]
+[%-
+
+meeting_date = 'Tuesday July 22nd'
+meeting_start = 1
+meeting_online_start = 1
+meeting_online_option = 'lync'
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Scheduled Skype call'
+meeting_location = 'Online'
+changed_location = ''
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+
+%]
+[%- END %]
+
+
+[%- IF test_case == 'custom' %]
+[%-
+
+meeting_date = 'Tuesday July 22nd'
+meeting_start = 1
+meeting_online_start = 1
+meeting_online_option = 'custom'
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Scheduled Skype call'
+meeting_location = 'Online'
+changed_location = ''
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+
+%]
+[%- END %]
+
+[%- IF test_case =='kokousalkaa' %]
+[%-
+
+meeting_date = 'Tuesday July 22nd'
+meeting_start = '1'
+server_host = 'http://dev.meetin.gs'
+scheduled_users = 1
+meeting_title = 'Pihatalkoot'
+number_of_scheduled_users = '6'
+total_users = '8'
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+agenda_title = 'Agenda title'
+agenda_html = '<p style="line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif;">I want <em>to</em> link to <a href="http://google.com/" style="font-family:Arial,Verdana,sans-serif;text-decoration:underline;">http://google.com/</a> and see <span style="text-decoration: line-through;">the</span> <span style="text-decoration: underline;">color</span>!</p>
+<ul style="list-style: disc outside none; line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif; padding-left:16px;"><li>This is HTML formatted <strong>agenda</strong>4</li><li>C<span style="background-color: #99cc00;">olor</span>s are also available</li></ul>
+<h1 style="line-height:20px; font-size:16px; font-weight:bold; margin-top:5px; margin-left:17px; margin-right:17px; margin-bottom:5px; color:#4a4a4a; font-family:Arial,Verdana,sans-serif;">This is a <span style="color: #993366;">header from</span> HTML</h1>
+<p style="line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif;"><b>This is a short paragraph from Seitsemän Veljestä. A book by famous finnish author Aleksis Kivi:</b> "Veljesten nimet vanhimmasta nuorimpaan ovat: Juhani, Tuomas, Aapo, Simeoni, Timo, Lauri ja Eero. Ovat heistä Tuomas ja Aapo kaksoispari ja samoin Timo ja Lauri. Juhanin, vanhimman veljen, ikä on kaksikymmentä ja viisi vuotta, mutta Eero, nuorin heistä, on tuskin nähnyt kahdeksantoista auringon kierrosta."</p>'
+agenda_text = 'This is a text version of the test agenda'
+meeting_image = 'https://dev.meetin.gs/meetings_raw/meeting_image/0/1916/3351/A3-E7HxVqT1wwHp_J3djymBj_Y8.png'
+meeting_participants = 'Hyypiö, Nyypiö'
+
+%]
+
+[% END %]
+
+[%- IF test_case =='Summary after meeting' %]
+[%-
+
+user_is_creator ='1'
+meeting_date = 'Tuesday July 22nd'
+meeting_end = '1'
+past_meeting = 1
+server_host = 'http://dev.meetin.gs'
+scheduled_users = 1
+meeting_title = 'Pihatalkoot'
+number_of_scheduled_users = '6'
+total_users = '8'
+meeting_url = 'http://meetin.gs/meetingurl'
+meeting_email = 'meeting@email.com'
+meeting_unsubscribe_url = 'get.me.out.of.this@meetin.gs'
+action_points_title = 'Action points'
+action_points_html = '<p style="line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif;">This is the orginal action points <em>for</em> testing. And here is a link to <a href="http://google.com/" style="font-family:Arial,Verdana,sans-serif;text-decoration:underline;">http://google.com/</a> HTML formatting is possible <span style="text-decoration: line-through;">even with all this cool stuff</span> <span style="text-decoration: underline;">that are truly magnificent</span>!</p>
+<ul style="list-style: disc outside none; line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif; padding-left:16px;"><li>This is HTML formatted <strong>agenda</strong>4</li><li>C<span style="background-color: #99cc00;">olor</span>s are also available</li></ul>
+<h1 style="line-height:20px; font-size:16px; font-weight:bold; margin-top:5px; margin-left:17px; margin-right:17px; margin-bottom:5px; color:#4a4a4a; font-family:Arial,Verdana,sans-serif;">This is a <span style="color: #993366;">header from</span> HTML version</h1>
+<p style="line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif;"><b>This is a short paragraph from Seitsemän Veljestä. A book by famous finnish author Aleksis Kivi:</b> "Veljesten nimet vanhimmasta nuorimpaan ovat: Juhani, Tuomas, Aapo, Simeoni, Timo, Lauri ja Eero. Ovat heistä Tuomas ja Aapo kaksoispari ja samoin Timo ja Lauri. Juhanin, vanhimman veljen, ikä on kaksikymmentä ja viisi vuotta, mutta Eero, nuorin heistä, on tuskin nähnyt kahdeksantoista auringon kierrosta."</p>'
+action_points_text = 'This is a test of the text version of the action points'
+meeting_image = 'https://dev.meetin.gs/meetings_raw/meeting_image/0/1916/3351/A3-E7HxVqT1wwHp_J3djymBj_Y8.png'
+meeting_participants = 'Alfred Nobel, Albert Einstein, Marie Curie, Vladimir Vernadsky'
+
+%]
+
+[% END %]

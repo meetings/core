@@ -1,0 +1,12 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_group_user add group_user_id int unsigned not null auto_increment key first');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_group_user add domain_id int unsigned not null after group_user_id');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_group_user add creation_date bigint unsigned not null after user_id');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_group_user add creator_id int unsigned not null after user_id');
+}
+
+1;

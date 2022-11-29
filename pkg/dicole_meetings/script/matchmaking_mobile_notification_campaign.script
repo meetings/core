@@ -1,0 +1,65 @@
+
+my $domain_id = 76;
+my $mm_event_id = 2;
+my $mobile_domain = 'mdev.meetin.gs';
+my $partner_id = 5;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $api = CTX->lookup_action('meetings_api');
+    my $partner = $partner_id ? $api->PARTNERS_BY_ID->{$partner_id} : undef;
+    my $domain_host = $api->_get_host_for_partner( $partner, 443 );
+    my $mm_event = $api->_ensure_object_of_type( meetings_matchmaking_event => $mm_event_id );
+
+    my $meetings = CTX->lookup_object('events_event')->fetch_group({
+        where => 'domain_id = ? AND attend_info like ?',
+        value => [ $domain_id, '%attached_to_matchmaking_event_id%' ],
+    });
+    
+    my $participants = {};
+    for my $meeting ( @$meetings ) {
+        next unless $api->_get_note( attached_to_matchmaking_event_id => $meeting ) == $mm_event_id;
+        next if $api->_meeting_is_draft( $meeting );
+        my $euos = $api->_fetch_meeting_participation_objects( $meeting );
+        $participants->{ $_->user_id } = 1 for @$euos;
+    }
+
+    $api->e( send_campaign_email => {
+        domain_id => $domain_id,
+        partner_id => $partner_id,
+        dry_run => 1,
+#        single_send_limit => 10,
+#        skip_sent_check => 1,
+#        limit_to_users => ['antti+iphone@dicole.com'],
+        template_key_base => 'meetings_matchmaking_mobile_notification',
+        exclude_user_checker => sub {
+            my ( $self, $user ) = @_;
+            return 1 unless $participants->{ $user->user_id };
+            return 0;
+        },
+        template_params_generator => sub {
+            my ( $self, $user ) = @_;
+
+            my $login_link = $domain_host . Dicole::URL->from_parts(
+                domain_id => $domain_id, target => 0,
+                action => 'meetings_global', task => 'mobile_redirect',
+                params => { redirect_type => 'web', redirect_host => 'https://' . $mobile_domain },
+            );
+
+            $login_link = $api->_generate_authorized_uri_for_user( $login_link, $user, $domain_id );
+
+            my $params = {
+                matchmaking_custom_name => $mm_event->custom_name,
+                matchmaking_event_name => $mm_event->organizer_name,
+                login_url => $login_link,
+                user_name => Dicole::Utils::User->name( $user ),
+            };
+
+            return $params;
+        },
+    } );
+}
+
+1;
+

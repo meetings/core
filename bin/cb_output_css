@@ -1,0 +1,230 @@
+#!/usr/bin/perl
+
+my $datas = [
+
+# {
+#     wrapper => '.menuborder',
+#     wrapper_parent => '.menuborder ',
+# 
+#     ty => 2,
+#     tlx => 2,
+#     by => 2,
+#     blx => 2,
+#     lb => 2,
+#     rb => 2,
+# 
+#     box => '/menuborder-box.png',
+#     borders => '/menuborder-borders.png',
+# 
+#     base_css => 'margin: 0px;',
+#     content_background => '#d6e3e5',
+# },
+# 
+# {
+#     wrapper => '.menutitle',
+#     wrapper_parent => '.menutitle ',
+# 
+#     ty => 1,
+#     tlx => 2,
+#     by => 1,
+#     blx => 2,
+#     lb => 1,
+#     rb => 1,
+# 
+#     box => '/images/nice_navigation/menutitle-box.png',
+# #    borders => '/menutitle-borders.png',
+#     borders_from_box => 1,
+# 
+#     base_css => 'margin: 0px;',
+# #    content_background => '#e7eeef url(/menutitle-borders.png) repeat-x 0 0',
+#     background_from_box => 1,
+#     content_padding => '0px',
+# },
+# 
+# {
+#     wrapper => '.menucontent',
+#     wrapper_parent => '.menucontent ',
+# 
+#     ty => 1,
+#     tlx => 2,
+#     by => 1,
+#     blx => 2,
+#     lb => 1,
+#     rb => 1,
+# 
+#     box => '/images/nice_navigation/menucontent-box.png',
+#     borders => '/images/nice_navigation/menucontent-borders.png',
+# 
+#     base_css => 'margin: 1px 0px;',
+#     content_background => '#fff',
+#     content_padding => '0px',
+# },
+# 
+# {
+#     wrapper => '.nice_tabs ',
+#     wrapper_parent => '.nice_tabs ',
+# 
+#     ty => 3,
+#     tlx => 3,
+#     by => 3,
+#     blx => 3,
+#     lb => 3,
+#     rb => 3,
+# 
+#     box => '/images/nice_navigation/nice_tabs-box.png',
+# #    borders => '/images/nice_navigation/nice_tabs-borders.png',
+#     borders_from_box => 1,
+# 
+#     base_css => 'margin: 0px 5px;',
+# #    content_background => 'url(/images/nice_navigation/nice_tabs-box.png) 3 3',
+#     background_from_box => 1,
+# },
+# 
+# {
+#     wrapper => '.nice_tabs .selected ',
+#     wrapper_parent => '.nice_tabs .selected ',
+# 
+#     ty => 3,
+#     tlx => 3,
+#     by => 3,
+#     blx => 3,
+#     lb => 3,
+#     rb => 3,
+# 
+#     box => '/images/nice_navigation/nice_tabs-selected-box.png',
+# #    borders => '/images/nice_navigation/nice_tabs-selected-borders.png',
+#     borders_from_box => 1,
+# 
+#     base_css => 'margin: 0px 5px;',
+# #    content_background => 'url(/images/nice_navigation/nice_tabs-selected-box.png) 3 3',
+#     background_from_box => 1,
+# },
+#
+# 
+# {
+#     wrapper => '.desktop_box',
+#     wrapper_parent => '.desktop_box ',
+# 
+#     ty => 5,
+#     tlx => 7,
+#     by => 5,
+#     blx => 7,
+#     lb => 2,
+#     rb => 2,
+# 
+#     box => '/images/summary_box.gif',
+#     borders => '/images/summary_box_borders.gif',
+# #    borders_from_box => 1,
+# 
+#     base_css => 'margin: 0px 5px;',
+#     content_background => '#fafbfb url(/images/summary_box_background.gif) repeat-x',
+# #    background_from_box => 1,
+# },
+
+{
+    wrapper => '.fancycontainer',
+    wrapper_parent => '.fancycontainer ',
+
+    ty => 14,
+    tlx => 10,
+    by => 14,
+    blx => 10,
+    lb => 10,
+    rb => 10,
+
+    box => '/images/theme/rte/nicebox.gif',
+    borders => '/images/theme/rte/nicebox-borders.gif',
+#    borders_from_box => 1,
+
+    base_css => 'margin: 0px 5px;',
+    content_background => '#ffffff',
+#    background_from_box => 1,
+},
+
+
+];
+
+for my $data ( @$datas ) {
+    $data->{wrapper_class} = $data->{wrapper} || '';
+    $data->{wrapper_class_parent} = $data->{wrapper_parent} || '';
+    $data->{content_background} ||= '#fff';
+    $data->{left_border_offset} = '0';
+    $data->{right_border_offset} = '0';
+    if ( $data->{borders_from_box} ) {
+        $data->{left_border_offset}  = '-' . $data->{ty} . 'px';
+        $data->{right_border_offset}  = '-' . $data->{ty} . 'px';
+        $data->{borders} = $data->{box};
+    }
+    if ( $data->{background_from_box} ) {
+        $data->{content_background} =
+            'url(' . $data->{box} . ') -'
+             . $data->{tlx}.'px -' . $data->{ty} . 'px';
+    }
+    $data->{content_padding} ||= '1px 1px';
+}
+
+my $template = <<TEMP;
+{{{wrapper_class}}}.cb {
+    {{{base_css}}}
+}
+{{{wrapper_class_parent}}}.bt {
+    height:{{{ty}}}px;
+    margin:0 0 0 {{{tlx}}}px;
+    background:url({{{box}}}) no-repeat 100% 0;
+}
+{{{wrapper_class_parent}}}.bt div {
+    position:relative;
+    left:-{{{tlx}}}px;
+    width:{{{tlx}}}px;
+    height:{{{ty}}}px;
+    background:url({{{box}}}) no-repeat 0 0;
+    font-size:0;
+    line-height:0;
+}
+{{{wrapper_class_parent}}}.bb {
+    height:{{{by}}}px;
+    margin:0 0 0 {{{blx}}}px;
+    background:url({{{box}}}) no-repeat 100% 100%;
+}
+{{{wrapper_class_parent}}}.bb div {
+    position:relative;
+    left:-{{{blx}}}px;
+    width:{{{blx}}}px;
+    height:{{{by}}}px;
+    background:url({{{box}}}) no-repeat 0 100%;
+    font-size:0;
+    line-height:0;
+}
+{{{wrapper_class_parent}}}.i1 {
+    padding:0 0 0 {{{lb}}}px;
+    background:url({{{borders}}}) repeat-y 0 {{{left_border_offset}}};
+}
+{{{wrapper_class_parent}}}.i2 {
+    padding:0 {{{rb}}}px 0 0;
+    background:url({{{borders}}}) repeat-y 100% {{{right_border_offset}}};
+}
+{{{wrapper_class_parent}}}.i3 {
+    display:block;
+    margin:0;
+    padding: {{{content_padding}}};
+    background: {{{content_background}}};
+}
+{{{wrapper_class_parent}}}.i3:after {
+    content:"."; 
+    display:block; 
+    height:0; 
+    clear:both; 
+    visibility:hidden;
+}
+{{{wrapper_class_parent}}}.i3 {display:inline-block;}
+{{{wrapper_class_parent}}}.i3 {display:block;}
+TEMP
+
+for my $data ( @$datas ) {
+    my $tmp = $template;
+    for my $key ( keys %$data ) {
+        my $value = $data->{$key};
+        $tmp =~ s/\{\{\{$key\}\}\}/$value/g;
+    }
+    print $/x3 . $tmp;
+}

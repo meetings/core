@@ -1,0 +1,26 @@
+[%#- Used as the description part of the ICS file describing the meeting -%]
+
+[%- IF test_case == 'test' %]
+[%-
+
+meeting_url = 'http://dev.meetin.gs/meetings/enter_meeting/NN/YYYYYY/'
+meeting_email = 'sad453@mtn.mailgun.org'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'lt' %]
+[%-
+
+meeting_url = 'http://dev.meetin.gs/meetings/enter_meeting/NN/YYYYYY/'
+meeting_email = 'sad453@mtn.mailgun.org'
+lahixcustxz_hack = {
+birthdate=>"181080",
+address=>"Lintulahdenaukio 4b A 12",
+area=>"00500",
+notes=>"Koiralla on tarve vakuutukselle\nEi muuta lisättävää\nMukava tyyppi"
+}
+
+%]
+[%- END %]
+

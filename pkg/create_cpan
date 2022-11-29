@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+my $oi = $ENV{OPENINTERACT2};
+
+if (!scalar(@ARGV)) {
+    print "Usage: $0 [package_name]\n";
+    exit;
+}
+
+foreach $cmd (@ARGV) {
+
+     if (-d $cmd) {
+
+         print "Running create_cpan on $cmd..\n";
+         system("oi2_manage create_cpan --package_dir=$cmd 2>&1");
+     }
+     else {     
+         print("could not find $cmd\n") if lc $cmd ne 'none';
+     }
+}

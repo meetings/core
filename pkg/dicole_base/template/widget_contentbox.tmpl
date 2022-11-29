@@ -1,0 +1,7 @@
+[%- box = itemparams -%]
+<div[% IF itemparams.id %] id="[% itemparams.id %]"[% END %] class="toolContentBox[% IF itemparams.class %] [% itemparams.class %][% END %]">
+    [% IF itemparams.name %]<span class="boxLegend">[% itemparams.name | html %]</span>[% END %]
+    <div class="contentItemContainer blueLinks">
+    [% PROCESS dicole_base::include_widget widget = itemparams.content %]
+    </div>
+</div>

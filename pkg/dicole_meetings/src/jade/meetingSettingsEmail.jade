@@ -1,0 +1,28 @@
+div.m-modal
+    div.modal-header.back-button
+        h3!=MTN.t('Email settings')
+        i.ico-leftarrow.back
+    div.modal-content.m-form
+        p!=MTN.t('Email notification settings for the current meeting:')
+        p.slider
+            span.js_form_slider_button.slider-button(data-setting='start_reminder',class=start_reminder ? 'on-position' : 'off-position')
+            !=MTN.t('Meeting start reminder')
+        p.slider
+            span.js_form_slider_button.slider-button(data-setting='participant_digest',class=participant_digest ? 'on-position' : 'off-position')
+            !=MTN.t('Participant digest')
+        div.js_email_subchoices(style=participant_digest ? "" : "display:none")
+            p.slider
+                span.js_form_slider_button.slider-button(data-setting='participant_digest_new_participant',class=participant_digest_new_participant ? 'on-position' : 'off-position')
+                !=MTN.t('New participant notification')
+            p.slider
+                span.js_form_slider_button.slider-button(data-setting='participant_digest_material',class=participant_digest_material ? 'on-position' : 'off-position')
+                !=MTN.t('New material notification')
+            p.slider
+                span.js_form_slider_button.slider-button(data-setting='participant_digest_comments',class=participant_digest_comments ? 'on-position' : 'off-position')
+                !=MTN.t('New comment notification')
+
+    div.modal-footer
+        div.buttons.right
+            a.button.blue.save!=MTN.t('Save')
+    a.close-modal(href='#')
+        i.ico-cross

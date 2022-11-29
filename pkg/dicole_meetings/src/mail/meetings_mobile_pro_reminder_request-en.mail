@@ -1,0 +1,50 @@
+[% MTN.t('Reminder: Go PRO and Save time with Meetin.gs') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Activate Meetin.gs PRO now') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t('Thank you for trying out Meetin.gs. This is the reminder, that you requested using our iOS application.') %]<<</p>>>
+
+<<<p>>><<<bold>>>[% MTN.t('Upgrade your Meetin.gs account now to get all the benefits:') %]<<</bold>>><<</p>>>
+
+<<<list>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Unlimited schedulers on the Meet Me page') %]<<</bold>>>
+<<<br>>>[% MTN.t('Claim your Meet Me page and set up as many schedulers as you wish. Different kind of schedulers serve different kind of needs.') %]
+<<</item>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Expanded Live Communication Tools') %]<<</bold>>>
+<<<br>>>[% MTN.t('Use all the expanded Live Communication Tools such as Lync, Google Hangouts, or a custom tool of your own choice.') %]
+<<</item>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Visual customization and branding') %]<<</bold>>>
+<<<br>>>[% MTN.t("You get to customize the look and feel of the service and notifications according to your brand. Add your logo, select your own background image, and set the highlight color.") %]
+<<</item>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Unlimited meeting participants') %]<<</bold>>>
+<<<br>>>[% MTN.t("You will be able to invite as many people to a single meeting as you wish.") %]
+<<</item>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Unlimited meeting materials') %]<<</bold>>>
+<<<br>>>[% MTN.t("You get to to share all the materials without limitations.") %]
+<<</item>>>
+<<</list>>>
+
+<<</list>>>
+[% url = upgrade_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=mobile_pro_reminder_request' %]
+[% showtext = 1 %]
+[% text = MTN.t('Upgrade to Meetin.gs PRO') %]
+<<<blue_button>>>
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

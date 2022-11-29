@@ -1,0 +1,25 @@
+<div id="modal-invite-participants-new" class="modal-popup">
+    <div id="meetings_invite_participants_new_error_container" class="form-validation-message"></div>
+
+    <h2><%= MTN.t('New Contact') %></h2>
+
+    <form id="meetings_invite_participants_new_form" class="meetings-form">
+        <div class="form-row">
+            <label class="small" for="name_field"><%= MTN.t('Name') %></label>
+            <input name="name" id="name_field" type="text" value="<%== p.name %>"/>
+        </div>
+        <div class="form-row">
+            <label class="small" for="email_field"><%= MTN.t('Email') %></label>
+            <input name="email" class="js_focus js_meetings_invite_participants_new_enter_submit" id="email_field" type="text" value="<%== p.email %>"/>
+        </div>
+    </form>
+
+    <div class="form-save-and-cancel-wrapper">
+        <a href="#" class="button blue js_meetings_invite_participants_new_submit" id="invite-participants-submit">
+            <%= MTN.t('Add') %>
+        </a>
+    </div>
+
+    <a href="#" class="js_hook_showcase_close close-cross alpha_png"></a>
+
+</div>

@@ -1,0 +1,4 @@
+<p>[% sender_name | html %] <a href="[% comment_url | html %]">kommentoi</a> <a href="[% object_url | html %]">[% object_name | html %]</a>! Tässä kommentin sisältö:</p>
+[% comment_content_html %]
+
+<p><b>Jatka keskustelua <a href="[% comment_action_url | html %]"> [% IF group_name %]alueella [% group_name | html %][% ELSE %]täällä[% END %]</a>!</b></p>

@@ -1,0 +1,16 @@
+sub execute {
+    my $self = CTX->lookup_action('meetings_api');
+    my $ms = CTX->lookup_object('events_event')->fetch_group({ where => "attend_info like '%owned_by_partner_id\":\"59%'"});
+    for my $meeting ( @$ms ) {
+        next unless $self->_get_note(created_from_matchmaker_id => $meeting );
+        my $locks = CTX->lookup_object('meetings_matchmaker_lock')->fetch_group( {
+            where => 'created_meeting_id = ?',
+            value => [ $meeting->id ],
+        });
+        my $lock = shift @$locks;
+        next unless $lock && $lock->creator_id;
+        print $meeting->title . " --> " . $lock->creator_id . "\n";
+        $self->_set_note_for_meeting( matchmaking_lock_creator_id => $lock->creator_id, $meeting );
+    }
+}
+1;

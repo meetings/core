@@ -1,0 +1,333 @@
+
+msgid "Add and remove contacts of a user"
+msgstr "Lisää ja poista käyttäjän kontakteja"
+
+msgid "Add contact"
+msgstr "Lisää kontakti"
+
+msgid "Address 1"
+msgstr "Osoite 1"
+
+msgid "Address 2"
+msgstr "Osoite 2"
+
+msgid "Blog: "
+msgstr "Blogi: "
+
+msgid "Blog URL"
+msgstr "Blogin osoite"
+
+msgid "Contact & personal"
+msgstr "Henkilökohtaiset ja yhteystiedot"
+
+msgid "Contact & personal information"
+msgstr "Henkilökohtaiset ja yhteystiedot"
+
+msgid "Contacts of %1"
+msgstr "Käyttäjän %1 kontaktit"
+
+msgid "Edit contact & personal information"
+msgstr "Muokkaa henkilökohtaisia ja yksityistietoja"
+
+msgid "Edit education information"
+msgstr "Muokkaa koulutustietoja"
+
+msgid "Edit employer information"
+msgstr "Muokkaa työnantajatietoja"
+
+msgid "Edit networking profile"
+msgstr "Muokkaa verkostoitumisprofiilia"
+
+msgid "Edit networking profile of a user"
+msgstr "Muokkaa käyttäjän verkostoitumisprofiilia"
+
+msgid "Educational information"
+msgstr "Koulutustiedot"
+
+msgid "Employer"
+msgstr "Työnantaja"
+
+msgid "Employer name"
+msgstr "Tyonantajan nimi"
+
+msgid "Explore network"
+msgstr "Selaa verkostoa"
+
+msgid "Facebook account"
+msgstr "Facebook osoite"
+
+msgid "Ideas"
+msgstr "Ideat"
+
+msgid "Invite new members"
+msgstr "Kutsu uusia jäseniä"
+
+msgid "Twitter account"
+msgstr "Twitter tunnus"
+
+msgid "Linkedin account"
+msgstr "Linkedin tunnus"
+
+msgid "Manage user contacts"
+msgstr "Käyttäjän kontaktien hallinta"
+
+msgid "My contacts"
+msgstr "Omat kontaktit"
+
+msgid "Navigation"
+msgstr "Navigointi"
+
+msgid "Networking"
+msgstr "Verkosto"
+
+msgid "Networking tool"
+msgstr "Verkostoitumistyökalu"
+
+msgid "Never"
+msgstr "Ei koskaan"
+
+msgid "Organizational title"
+msgstr "Nimike organisaatiossa"
+
+msgid "People you might know"
+msgstr "Ihmisiä, joita saatat tuntea"
+
+msgid "Personal motto"
+msgstr "Henkilökohtainen motto"
+
+msgid "Phone: "
+msgstr "Puhelin: "
+
+msgid "Professional description"
+msgstr "Ammatillinen kuvaus"
+
+msgid "Professional information"
+msgstr "Ammatilliset tiedot"
+
+msgid "profile"
+msgstr "ihminen"
+
+msgid "profiles"
+msgstr "ihmistä"
+
+msgid "Remove contact"
+msgstr "Poista kontakti"
+
+msgid "Sampling of contacts"
+msgstr "Otos kontakteista"
+
+msgid "Show all contacts"
+msgstr "Näytä kaikki kontaktit"
+
+msgid "Show all posts"
+msgstr "Näytä kaikki viestit"
+
+msgid "Skill profile"
+msgstr "Osaamisprofiili"
+
+msgid "Skype: "
+msgstr "Skype: "
+
+msgid "Skype account"
+msgstr "Skype tunnus"
+
+msgid "Statistics"
+msgstr "Käyttötietoja"
+
+msgid "Tags of interest"
+msgstr "Kiinnostuksen alaiset avainsanat"
+
+msgid "Upload portrait"
+msgstr "Lähetä kuva"
+
+msgid "View contacts of a user"
+msgstr "Näe käyttäjän kontaktit"
+
+msgid "View networking profiles"
+msgstr "Näe käyttäjien profiilit"
+
+msgid "View user contacts"
+msgstr "Näytä käyttäjän kontaktit"
+
+msgid "My profile"
+msgstr "Oma profiili"
+
+msgid "Add and remove personal contacts"
+msgstr "Lisää ja poista omia kontakteja"
+
+msgid "Edit personal networking profile"
+msgstr "Oman profiilin muokkaus"
+
+msgid "Edit personal networking profile of a user"
+msgstr "Käyttäjän profiilin muokkaus"
+
+msgid "Manage personal contacts"
+msgstr "Henkilökohtaisten kontaktien hallinta"
+
+msgid "Networking rights"
+msgstr "Verkostotyökalun oikeudet"
+
+msgid "View contacts"
+msgstr "Näytä kontaktit"
+
+msgid "View contacts of users"
+msgstr "Näytä käyttäjien kontaktit"
+
+msgid "View profiles"
+msgstr "Näytä profiilit"
+
+msgid "Add personal tags"
+msgstr "Lisää henkilökohtaisia avainsanoja"
+
+msgid "Edit personal tags"
+msgstr "Muokkaa henkilökohtaisia avainsanoja"
+
+msgid "Explore network"
+msgstr "Selaa verkostoa"
+
+msgid "No people found."
+msgstr "Henkilöä ei löytynyt."
+
+msgid "Personal tags"
+msgstr "Henkilökohtaiset avainsanat"
+
+msgid "Personal tags updated."
+msgstr "Henkilökohtaiset avainsanat päivitetty."
+
+msgid "Save changes"
+msgstr "Tallenna muutokset"
+
+msgid "Requested user was not found."
+msgstr "Haettua käyttäjää ei löytynyt."
+
+msgid "Add more members"
+msgstr "Lisää käyttäjiä"
+
+msgid "Admins"
+msgstr "Ylläpitäjät"
+
+msgid "Last active users"
+msgstr "Aktiiviset käyttäjät"
+
+msgid "Most active members"
+msgstr "Aktiivisimmat käyttäjät"
+
+msgid "New members"
+msgstr "Uudet käyttäjät"
+
+msgid "Requsted user was not found."
+msgstr "Haettua käyttäjää ei löytynyt."
+
+msgid "Show all users"
+msgstr "Näytä kaikki käyttäjät"
+
+msgid "Skills and interests"
+msgstr "Osaaminen ja kiinnostuksen kohteet"
+
+msgid "Last visitors"
+msgstr "Viimeksi paikalla"
+
+msgid "Show more keywords"
+msgstr "Näytä lisää avainsanoja"
+
+msgid "With keywords"
+msgstr "Avainsanoilla"
+
+msgid "%1 people"
+msgstr "%1 ihmistä"
+
+msgid "1 person"
+msgstr "1 henkilö"
+
+msgid "Edit profile information"
+msgstr "Muokkaa profiilin tietoja"
+
+msgid "Invite by adding e-mail addresses (separate with commas)"
+msgstr "Kutsu sähköpsotin perusteella (erottele pilkulla)"
+
+msgid "Invite new users"
+msgstr "Kutsu uusia käyttäjiä"
+
+msgid "Invite the users"
+msgstr "Kutsu käyttäjät"
+
+msgid "Level for invited users"
+msgstr "Uusie käyttäjien käyttäjätaso"
+
+msgid "Show profile information"
+msgstr "Näytä profiilin tiedot"
+
+msgid "LinkedIn-page"
+msgstr "LinkedIn-sivu"
+
+msgid "Manage users (action)"
+msgstr "Hallitse käyttäjiä"
+
+msgid "Show user listing"
+msgstr "Näytä käyttäjälistaus"
+
+msgid "Browse people"
+msgstr "Selaa ihmisiä"
+
+msgid "Degree"
+msgstr "Tutkinto"
+
+msgid "Education"
+msgstr "Koulutus"
+
+msgid "Error while converting image."
+msgstr "Virhe muokattaessa kuvaa."
+
+msgid "Image to upload"
+msgstr "Siirrettävä kuva"
+
+msgid "Image to upload in GIF or JPG format"
+msgstr "Palvelimelle siirrettävä kuva GIF tai JPG muodossa"
+
+msgid "Image uploaded."
+msgstr "Kuva siirretty."
+
+msgid "Other degree"
+msgstr "Muu tutkinto"
+
+msgid "School"
+msgstr "Koulu"
+
+msgid "Show profile"
+msgstr "Näytä profiili"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Target degree"
+msgstr "Tavoiteltu tutkinto"
+
+msgid "People (navigation)"
+msgstr "Ihmiset"
+
+msgid "About"
+msgstr "Muita tietoja"
+
+msgid "Bookmarked media"
+msgstr "Kirjanmerkeissä oleva media"
+
+msgid "Bookmarked pages"
+msgstr "Kirjanmerkeissä olevat sivut"
+
+msgid "Check to send privately"
+msgstr "Ruksaa lähettääksesi yksityisesti"
+
+msgid "Leave a message"
+msgstr "Jätä viesti"
+
+msgid "Send message"
+msgstr "Lähetä viesti"
+
+msgid "New search by name"
+msgstr "Hae nimellä uudelleen"
+
+msgid "People search"
+msgstr "Ihmisten haku"
+
+msgid "Search by name"
+msgstr "Hae nimellä"

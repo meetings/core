@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+use strict;
+
+my $file = shift @ARGV;
+
+open F, ">> $file" or die;
+
+while (my $string = <>) {
+    chomp $string;
+
+#    $string =~ s/"/\\"/gs;
+
+    print F "\n";
+    print F "msgid \"$string\"\n";
+    print F "msgstr \"$string\"\n";
+
+    print "Added to $file: $string\n";
+}
+
+close F;

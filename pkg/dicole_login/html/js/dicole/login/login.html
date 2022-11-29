@@ -1,0 +1,36 @@
+<div id="light" class="loginbox">
+	<div class="loginHeader"><%== dicole.msg('Login (header)') %></div>
+	<div id="login_return_message_container"></div>
+	<form name="loginForm" id="loginForm">
+		<table class="loginElements">
+			<tr>
+				<td class="loginTitle"><%== dicole.msg('Username') %></td>
+				<td class="loginField">
+					<input class="req" id="focusElement" name="login_login_name" size="35" type="text" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="loginTitle"><%== dicole.msg('Password') %></td>
+				<td class="loginField">
+					<input class="req" id="login_password" name="login_password" size="35" type="password" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="loginUsernameTitle"></td>
+				<td class="loginUsernameField">
+					<a class="loginLink" href="#" id="light_login_button" rel="lightbox"><%== dicole.msg('Login (submit)') %></a>
+					<div id="remember_me_container">
+						<div id="remember_me_checkbox_container"><input id="remember_me_checkbox" name="login_remember" size="35" type="checkbox" value="1" /></div><div id="remember_me_text_container"><span id="remember_me_text"><%== dicole.msg('Remember me on this machine') %></span></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<input type="hidden" name="url_after_login" value="<%== p.url_after_login %>" />
+	</form>
+	<% if(p.facebook_connect_app_id) { %>
+	<div id="fb-login">
+		<a id="facebook_login_button" class="big-button js_facebook_login" href="#"><span><%== dicole.msg("Login with Facebook") %></span></a>
+	</div>
+	<% } %>
+	<div class="loginLinks"><a  href="/lostaccount/"><%== dicole.msg('Retrieve lost username and password') %></a></div>
+</div>

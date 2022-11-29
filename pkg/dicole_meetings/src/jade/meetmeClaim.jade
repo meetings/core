@@ -1,0 +1,20 @@
+div#meetme-claim.m-modal
+    div.modal-header
+        if( locals.in_event_flow )
+            h3!='Claim your <b>Meet Me</b> page'
+        else
+            h3!=MTN.t('Do you want to claim a %(B$Meet Me%) page?')
+
+    div.modal-content
+        div.url-container
+        if( locals.in_event_flow )
+            p.explanation!=MTN.t("You are about to register for matchmaking. First select and claim your personal URL above. Next we'll take you to create and customize your own %(B$Meet Me%) page for the event. It enables people to use a handy scheduler to easily propose meetings with you. Later you will also be able to create additional schedulers for your personal use.")
+        else
+            p.explanation!=MTN.t('%(B$Meet Me%) page is your private or public meeting scheduler page through which other people can propose meetings with you.')
+    div.modal-footer
+        if( ! locals.in_event_flow )
+            div.buttons.left
+                p
+                    a.underline.skip(href='#')!=MTN.t('Skip')
+        div.buttons.right
+            a.button.blue.save(href='#')!=MTN.t('Save & continue')

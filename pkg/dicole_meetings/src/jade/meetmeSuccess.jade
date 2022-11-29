@@ -1,0 +1,43 @@
+#matchmaking-success.m-modal
+    if( lock && lock.quickmeet_key )
+        div.modal-header
+            h3!=MTN.t('Thank you!')
+        div.modal-content
+            p
+                img.portrait(src=meetme_user.image || '/images/meetings/new_profile.png')
+                !=MTN.t('%(B$%1$s%) is now preparing the online meeting page where you can further discuss details, create an agenda, and share materials before the actual meeting.', { params : [ lock.accepter_name ], escape_params : 1 } )
+            p.spaced!=MTN.t('When ready, we will send you an automated notification containing a link to the meeting page.')
+            p.spaced!=MTN.t('Title://context:meeting title') + ' ' + lock.title
+            p.spaced!=MTN.t('When:') + ' ' + lock.times_string
+    else if( lock && lock.request_sent )
+        div.modal-header
+            h3!=MTN.t("We've sent the meeting request")
+        div.modal-content
+            p!=MTN.t('Next %1$s will answer your request to meet. We will notify you once we have a response.', { params : [ lock.accepter_name ], escape_params : 1 } )
+            p.title!=MTN.t('Title://context:meeting title') + ' ' + lock.title
+            p.time= MTN.t('When:') + ' ' + lock.times_string
+            if( lock.location_string )
+                p.time= MTN.t('Where:') + ' ' + (lock.location_string)
+            p.location!=MTN.t('Who:') + ' ' + lock.accepter_name
+            p.cal-links
+                a(href=lock.tentative_calendar_url) MS Outlook 
+                =' | '
+                a(target='_blank',href=lock.tentative_gcal_url)!=MTN.t('Google calendar')
+                =' | '
+                a(href=lock.tentative_calendar_url)!=MTN.t('Other ICS')
+            if( lock.matchmaking_list_url )
+                p
+                    a.button.blue(href=lock.matchmaking_list_url)!=MTN.t('Back to matchmaking list')
+            if( current_user.meetme_fragment === '' )
+                p.bold!=MTN.t("Do you want to have a similar meeting page? It's easy and works with your calendar.")
+                p
+                    a.button.blue(href='/meetings/wizard')!=MTN.t('Claim your free Meet Me page now')
+    else
+        div.modal-header
+            h3!=MTN.t('Check your inbox to continue')
+        div.modal-content
+            p!=MTN.t('We have sent you an email to %(B$%1$s%) from %(B$info@meetin.gs%).', { params : [ meetme_user.user_email], B : { classes : 'email' } })
+            p!=MTN.t('Open the email and %(B$confirm your request to meet%) by following the link in the email. If you have not received the email, please check your spam folder.')
+            p!=MTN.t("You have %(B$24 hours%) to confirm, after which the reservation we're holding will be released to others.")
+
+div.matchmaking-link

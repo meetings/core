@@ -1,0 +1,383 @@
+# $Id: messages-en.po,v 1.5 2006/05/23 21:58:15 jpir Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:11:38+0000\n"
+"PO-Revision-Date: 2005-03-22 02:11:38+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Domain User Manager"
+msgstr "Domain User Manager"
+
+msgid "Add user"
+msgstr "Add user"
+
+msgid "Changes were saved."
+msgstr "Changes were saved."
+
+msgid "Confirmation"
+msgstr "Confirmation"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Error during delete: %1"
+msgstr "Error during delete: %1"
+
+msgid "Expiration date"
+msgstr "Expiration date"
+
+msgid "Failed adding user: %1"
+msgstr "Failed adding user: %1"
+
+msgid "Failed modifying user: %1"
+msgstr "Failed modifying user: %1"
+
+msgid "First name"
+msgstr "First name"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "List of users"
+msgstr "List of users"
+
+msgid "List of domain users"
+msgstr "List of domain users"
+
+msgid "List of users in the domain"
+msgstr "List of users in the domain"
+
+msgid "List users"
+msgstr "List users"
+
+msgid "Login name"
+msgstr "Login name"
+
+msgid "Manage users"
+msgstr "Manage users"
+
+msgid "Modify user details"
+msgstr "Modify user details"
+
+msgid "New user details"
+msgstr "New user details"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Remove selected users"
+msgstr "Remove selected users"
+
+msgid "Remove users"
+msgstr "Remove users"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Selected users removed."
+msgstr "Selected users removed."
+
+msgid "Show list of users"
+msgstr "Show list of users"
+
+msgid "Show"
+msgstr "Show"
+
+msgid "Unlimited"
+msgstr "Unlimited"
+
+msgid "User can add, edit and remove other users"
+msgstr "User can add, edit and remove other users"
+
+msgid "User details"
+msgstr "User details"
+
+msgid "User has been saved."
+msgstr "User has been saved."
+
+msgid "User Manager"
+msgstr "User Manager"
+
+msgid "Verify password"
+msgstr "Verify password"
+
+msgid "Are you sure you want to remove the selected users?"
+msgstr "Are you sure you want to remove the selected users?"
+
+msgid "Registration"
+msgstr "Registration"
+
+msgid "Register"
+msgstr "Register"
+
+msgid "Register new account"
+msgstr "Register new account"
+
+msgid "User registration is not allowed."
+msgstr "User registration is not allowed."
+
+msgid "Login name %1 already exists. Choose another login name."
+msgstr "Login name %1 already exists. Choose another login name."
+
+msgid "Registration done. We have sent you an email containing your login information."
+msgstr "Registration done. We have sent you an email containing your login information."
+
+msgid "Registration failed: %1"
+msgstr "Registration failed: %1"
+
+msgid "Registration information"
+msgstr "Registration information"
+
+msgid "Registration information from %1"
+msgstr "Registration information from %1"
+
+msgid "Error sending email: %1"
+msgstr "Error sending email: %1"
+
+msgid "User with email address %1 already exists. Choose a different email address."
+msgstr "User with email address %1 already exists. Choose a different email address."
+
+msgid "Reset of all user default personal rights was successful."
+msgstr "Reset of all user default personal rights was successful."
+
+msgid "Import users"
+msgstr "Import users"
+
+msgid "File to upload"
+msgstr "File to upload"
+
+msgid "Upload"
+msgstr "Upload"
+
+msgid "Import new users from an Excel sheet"
+msgstr "Import new users from an Excel sheet"
+
+msgid "%1 user(s) imported."
+msgstr "%1 user(s) imported."
+
+msgid "Upload a valid Excel file."
+msgstr "Upload a valid Excel file."
+
+msgid "The following rows failed: %1"
+msgstr "The following rows failed: %1"
+
+msgid "Failed importing users: %1"
+msgstr "Failed importing users: %1"
+
+msgid "Upload Excel sheet"
+msgstr "Upload Excel sheet"
+
+msgid "Users registered in the system"
+msgstr "Users registered in the system"
+
+msgid "Number of logins"
+msgstr "Number of logins"
+
+msgid "Last login"
+msgstr "Last login"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Groups user belongs to"
+msgstr "Groups user belongs to"
+
+msgid "Theme"
+msgstr "Theme"
+
+msgid "Default"
+msgstr "Default"
+
+msgid "URL of a custom starting page"
+msgstr "URL of a custom starting page"
+
+msgid "Login disabled"
+msgstr "Login disabled"
+
+msgid "You are not allowed to view this domain"
+msgstr "You are not allowed to view this domain"
+
+msgid "You are not allowed to edit this domain"
+msgstr "You are not allowed to edit this domain"
+
+msgid "You are not allowed to view this user"
+msgstr "You are not allowed to view this user"
+
+msgid "You are not allowed to edit this user"
+msgstr "You are not allowed to edit this user"
+
+msgid "Existing user %1 with email address %2 added to this domain, please inform the user in question"
+msgstr "Existing user %1 with email address %2 added to this domain, please inform the user in question"
+
+msgid "Access domain management"
+msgstr "Access domain management"
+
+msgid "Domain management"
+msgstr "Domain management"
+
+msgid "Domain manager"
+msgstr "Domain manager"
+
+msgid "No groups."
+msgstr "No groups."
+
+msgid "Account registration"
+msgstr "Account registration"
+
+msgid "Domain administrator email address"
+msgstr "Domain administrator email address"
+
+msgid "Restrict access to listed IP addresses"
+msgstr "Restrict access to listed IP addresses"
+
+msgid "IP addresses (one per line)"
+msgstr "IP addresses (one per line)"
+
+msgid "Hide community"
+msgstr "Hide community"
+
+msgid "Error during remove"
+msgstr "Error during remove"
+
+msgid "Failed to add user with email address %1 to domain."
+msgstr "Failed to add user with email address %1 to domain."
+
+msgid "Manage domain users"
+msgstr "Manage domain users"
+
+msgid "Management area"
+msgstr "Management area"
+
+msgid "User already in domain."
+msgstr "User already in domain."
+
+msgid "User can add, edit and remove other users in the domain"
+msgstr "User can add, edit and remove other users in the domain"
+
+msgid "Users registered in the domain"
+msgstr "Users registered in the domain"
+
+msgid "Alternative login URL"
+msgstr "Alternative login URL"
+
+msgid "CSV ids of initial groups"
+msgstr "CSV ids of initial groups"
+
+msgid "Custom footer HTML"
+msgstr "Custom footer HTML"
+
+msgid "Email content for invites"
+msgstr "Email content for invites"
+
+msgid "Hide my area"
+msgstr "Hide my area"
+
+msgid "Limit of invites per user"
+msgstr "Limit of invites per user"
+
+msgid "Subject of invite email"
+msgstr "Subject of invite email"
+
+msgid "Hours before invites replenish (0: never)"
+msgstr "Hours before invites replenish (0: never)"
+
+msgid "Alternative front page"
+msgstr "Alternative front page"
+
+msgid "Disable user"
+msgstr "Disable user"
+
+msgid "Domain notifcations sender email address"
+msgstr "Domain notifcations sender email address"
+
+msgid "Email content (html) for comment notifications"
+msgstr "Email content (html) for comment notifications"
+
+msgid "Email content (text) for comment notifications"
+msgstr "Email content (text) for comment notifications"
+
+msgid "Enable user"
+msgstr "Enable user"
+
+msgid "Hide general settings"
+msgstr "Hide general settings"
+
+msgid "Login users in after registering"
+msgstr "Login users in after registering"
+
+msgid "Subject of comment notification email"
+msgstr "Subject of comment notification email"
+
+msgid "Custom favicon url"
+msgstr "Custom favicon url"
+
+msgid "Disable email digests"
+msgstr "Disable email digests"
+
+msgid "Disable email notifications"
+msgstr "Disable email notifications"
+
+msgid "Domain admin"
+msgstr "Domain admin"
+
+msgid "Enable caching for certain tag lists"
+msgstr "Enable caching for certain tag lists"
+
+msgid "Google maps API key for domain"
+msgstr "Google maps API key for domain"
+
+msgid "Link to required terms of service"
+msgstr "Link to required terms of service"
+
+msgid "Facebook Connect app ID"
+msgstr "Facebook Connect app ID"
+
+msgid "Facebook Connect app secret"
+msgstr "Facebook Connect app secret"
+
+msgid "Facebook Connect enabled"
+msgstr "Facebook Connect enabled"
+
+msgid "Facebook Connect disabled"
+msgstr "Facebook Connect disabled"
+
+msgid "Link to general instructions for the service"
+msgstr "Link to general instructions for the service"
+
+msgid "Custom body start HTML"
+msgstr "Custom body start HTML"
+
+msgid "Action to run when a page is not found (404 error)"
+msgstr "Action to run when a page is not found (404 error)"
+
+msgid "Answer for registering question"
+msgstr "Answer for registering question"
+
+msgid "Custom head HTML"
+msgstr "Custom head HTML"
+
+msgid "Disable group mails if digest disabled"
+msgstr "Disable group mails if digest disabled"
+
+msgid "Location required in register dialog"
+msgstr "Location required in register dialog"
+
+msgid "Question to ask when registering"
+msgstr "Question to ask when registering"

@@ -1,0 +1,209 @@
+# $Id: messages-en.po,v 1.10 2010-04-08 19:22:13 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:10:29+0000\n"
+"PO-Revision-Date: 2005-03-22 02:10:29+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Online members"
+msgstr "Online members"
+
+msgid "Adds a summary of online group members."
+msgstr "Adds a summary of online group members."
+
+msgid "Online group members"
+msgstr "Online group members"
+
+msgid "No online members."
+msgstr "No online members."
+
+msgid "Unknown"
+msgstr "Unknown"
+
+msgid "Offline"
+msgstr "Offline"
+
+msgid "Online"
+msgstr "Online"
+
+msgid "Away"
+msgstr "Away"
+
+msgid "Not available"
+msgstr "Not available"
+
+msgid "Do Not Disturb"
+msgstr "Do Not Disturb"
+
+msgid "Invisible"
+msgstr "Invisible"
+
+msgid "Skype Me"
+msgstr "Skype Me"
+
+msgid "Skype menu for user"
+msgstr "Skype menu for user"
+
+msgid "Call user"
+msgstr "Call user"
+
+msgid "Add user to contact list"
+msgstr "Add user to contact list"
+
+msgid "Start a text chat with user"
+msgstr "Start a text chat with user"
+
+msgid "Show the Skype profile of user"
+msgstr "Show the Skype profile of user"
+
+msgid "Send a file to user"
+msgstr "Send a file to user"
+
+msgid "Online users"
+msgstr "Online users"
+
+msgid "%1 seconds ago"
+msgstr "%1 seconds ago"
+
+msgid "No online users."
+msgstr "No online users."
+
+msgid "%1 day(s)"
+msgstr "%1 day(s)"
+
+msgid "%1 day(s) ago"
+msgstr "%1 day(s) ago"
+
+msgid "%1 days ago"
+msgstr "%1 days ago"
+
+msgid "1 day ago"
+msgstr "1 day ago"
+
+msgid "%1 hour(s)"
+msgstr "%1 hour(s)"
+
+msgid "%1 hour(s) ago"
+msgstr "%1 hour(s) ago"
+
+msgid "%1 hours ago"
+msgstr "%1 hours ago"
+
+msgid "1 hour ago"
+msgstr "1 hour ago"
+
+msgid "%1 minute(s)"
+msgstr "%1 minute(s)"
+
+msgid "%1 minute(s) ago"
+msgstr "%1 minute(s) ago"
+
+msgid "%1 minutes ago"
+msgstr "%1 minutes ago"
+
+msgid "1 minute ago"
+msgstr "1 minute ago"
+
+msgid "%1 second(s)"
+msgstr "%1 second(s)"
+
+msgid "Gives raports of usage"
+msgstr "Gives raports of usage"
+
+msgid "Mail information"
+msgstr "Mail information"
+
+msgid "Mail members"
+msgstr "Mail members"
+
+msgid "Message sent to you succesfully."
+msgstr "Message sent to you succesfully."
+
+msgid "Messages were sent succesfully."
+msgstr "Messages were sent succesfully."
+
+msgid "Now"
+msgstr "Now"
+
+msgid "Raports"
+msgstr "Raports"
+
+msgid "Sender address"
+msgstr "Sender address"
+
+msgid "Sender name"
+msgstr "Sender name"
+
+msgid "Send mail"
+msgstr "Send mail"
+
+msgid "Send mail to group users"
+msgstr "Send mail to group users"
+
+msgid "Send test mail to self"
+msgstr "Send test mail to self"
+
+msgid "Some messages could not be sent: %1"
+msgstr "Some messages could not be sent: %1"
+
+msgid "User can send mail to group users"
+msgstr "User can send mail to group users"
+
+msgid "You must fill all fields."
+msgstr "You must fill all fields."
+
+msgid "Activity"
+msgstr "Activity"
+
+msgid "Blog posts"
+msgstr "Blog posts"
+
+msgid "Daily usage"
+msgstr "Daily usage"
+
+msgid "Domain reports"
+msgstr "Domain reports"
+
+msgid "Group reports"
+msgstr "Group reports"
+
+msgid "Report"
+msgstr "Report"
+
+msgid "User based usage"
+msgstr "User based usage"
+
+msgid "Weekly usage"
+msgstr "Weekly usage"
+
+msgid "Weekly Usage"
+msgstr "Weekly usage"
+
+msgid "Wiki edits"
+msgstr "Wiki edits"
+
+msgid "See domain reports"
+msgstr "See domain reports"
+
+msgid "See group reports"
+msgstr "See group reports"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "User can see domain reports"
+msgstr "User can see domain reports"
+
+msgid "User can see group reports"
+msgstr "User can see group reports"
+
+msgid "Show more users"
+msgstr "Show more users"

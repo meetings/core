@@ -1,0 +1,94 @@
+<div id="modal-invite-customize-message" class="m-modal">
+    <div class="modal-header">
+        <h3>
+            <% if( p.mode === 'matchmaking' ) { %>
+            <%= MTN.t('Confirm & accept meeting')%>
+            <% } else if( p.is_draft ) { %>
+            <%= MTN.t('Confirm meeting details')%>
+            <span class="tip"><%= MTN.t('(before sending the invites)')%></span>
+            <% } else { %>
+            <%= MTN.t('Confirm sending invites')%>
+            <% } %>
+        </h3>
+    </div>
+
+    <div class="modal-content m-form">
+
+        <!--Title-->
+        <div class="section">
+            <% if( p.is_draft ) { %>
+            <label for="customize-subject-area"><%= MTN.t('Meeting title') %></label>
+            <input type="text" id="confirm-title" name="greeting_subject" value="<%== p.title %>">
+            <% } else { %>
+            <h3 class="title"><%== p.title %></h3>
+            <% } %>
+        </div>
+
+        <!--Infos-->
+        <div class="section">
+            <p class="info"><i class="ico-calendar"></i><% if ( p.date_string && p.time_string ) { %><%== p.date_string + ', ' + p.time_string %><% } else { %><%= MTN.t('Time is not set') %><% } %></p>
+            <p class="info"><i class="ico-location"></i><% if ( p.location_string ) { %><%== p.location_string %><% } else { %><%= MTN.t('Location is not set') %><% } %></p>
+
+            <div id="receivers-container">
+                <!--list only user with draft_object_id-->
+
+                <% var invitees = p.invitees ? p.invitees : _.filter(p.participants, function(o) { return o.draft_object_id; }) %>
+
+                <% dojo.forEach(invitees, function(user, i) { %>
+                <span class="user">
+                    <img src="<%== user.image || '/images/theme/default/default-user-avatar-36px.png' %>" title="<%== user.name %>" alt="<%== user.name %>" />
+                    <% if( ! user.image ) { %><span><%= user.initials ? user.initials : '' %></span><% } %>
+                </span>
+                <% }); %>
+            </div>
+
+        </div>
+
+        <% if( p.is_draft ) { %> 
+        <!--Agenda TODO: does this work for events? -->
+        <label for="customize-content-area"><%= MTN.t('Agenda') %></label>
+        <textarea id="confirm-agenda" class="js_invite_agenda_editor" name="greeting_message"><%== app.models.meeting.get('suggested_agenda') %></textarea>
+        <% } %>
+    </div>
+    <div class="modal-footer">
+        
+        <% if( p.mode !== 'matchmaking' && p.end_epoch * 1000 > new Date().getTime() ) { // Dont show rsvp if matchmaking on, or meeting has no time or in past %>
+        <div class="buttons left">
+            <p>
+                <label for="require_rsvp">
+                    <input id="confirm-rsvp" class="js_customize_message_require_rsvp_switch" name="require_rsvp" type="checkbox" checked>
+                    <%= MTN.t('Require participants to RSVP') %>
+                    <span class="help">
+                        <i data-tooltip-width="200" data-tooltip-nodeid="rsvp-tooltip" class="ico-question js_tooltip"></i>
+                    </span>
+                </label>
+            </p>
+            <div id="rsvp-tooltip" style="display:none;">
+                <%= MTN.t('We will require participants to let you know whether they are coming or not. We will also remind them from time to time until they answer.') %>
+            </div>
+        </div>
+        <% } %>
+        <div class="buttons right">
+            <a href="#" class="button blue js_send_invites">
+                <% if( p.mode === 'matchmaking' ) { %>
+                <span class="label"><%= MTN.t('Confirm & accept meeting') %></span>
+                <% } else { %>
+                <span class="label"><%= MTN.t('Send') %></span>
+                <% } %>
+            </a>
+            <a class="button gray js_hook_showcase_close" href="#">
+                <%= MTN.t('Cancel') %>
+            </a>
+        </div>
+    </div>
+    <a href="#" class="close-modal js_hook_showcase_close"><i class="ico-cross"></i></a>
+</div>
+
+
+<% if(false) { %>
+
+<% if( p.begin_date && p.begin_date * 1000 > new Date().getTime() && ! p.created_from_matchmaker_id ) { %>
+<% if (p.meeting_time || p.meeting_location_string) { %>
+<% } } } %>
+
+

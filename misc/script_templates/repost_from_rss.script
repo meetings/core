@@ -1,0 +1,164 @@
+
+use Storable;
+use LWP::UserAgent;
+use Dicole::Feed;
+use Digest::SHA1;
+use IO::All;
+use Dicole::Utils::HTML;
+use Encode;
+use HTML::Entities;
+
+$Storable::canonical = 1;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my ( $uid, $gid, $rss_url ) = split /\s*,\s*/, $params, 3;
+
+    my $reason_to_update = 0;
+
+    my $ua = LWP::UserAgent->new;
+    my $response = $ua->get( $rss_url );
+    my $xmldata = $response->content();
+    
+    my $feed = Dicole::Feed->parse( Dicole::Utils::Text->internal_to_utf8( $xmldata ) );
+    
+    my $storage = {};
+    eval {
+        system 'touch storage.dump';
+        my $storage_data < io( 'storage.dump' );
+        $storage = $storage_data ? Storable::thaw( $storage_data ) : {};
+    };
+    print $@ . $/ if $@;
+    
+
+    for my $entry ( $feed->entries ) {
+        my $raw_digest = Digest::SHA1::sha1_hex( Storable::freeze( $entry ) );
+        
+        print "Processing: " . $raw_digest . $/;
+        next if $storage->{raw_digest}->{ $raw_digest };
+        $storage->{raw_digest}->{ $raw_digest } = 1;
+        print "Not found: " . $entry->id . $/;
+        
+        $reason_to_update = 1;
+        
+        # Category handling adapted from Plagger
+        my $category = $entry->category;
+        $category = [ $category ] if $category && (!ref($category) || ref($category) ne 'ARRAY');
+        $category ||= [];
+    
+        # XXX XML::Feed doesn't support extracting atom:category yet
+        if ($feed->format eq 'Atom' && $entry->{entry}->can('categories')) {
+            my @categories = $entry->{entry}->categories;
+            for my $cat (@categories) {
+                push @$category, $cat->label || $cat->term || ();
+            }
+        }
+        
+        my @cats = map { Dicole::Utils::HTML->ensure_utf8( $_ ) } @$category;
+        
+        my $entry_data = {
+            raw_digest => $raw_digest,
+            id => $entry->id,
+            
+            title => Dicole::Utils::HTML->ensure_utf8( $entry->title ),
+            content => $self->_prepare_content( $feed, $entry ),
+            date => $entry->issued ? $entry->issued->epoch : 0,
+            tags => \@cats,
+        };
+        
+        my $tcdigest = Digest::SHA1::sha1_hex( Storable::freeze( [ $entry_data->{title}, $entry_data->{content} ] ) );
+        $entry_data->{title_content_digest} = $tcdigest;
+        
+        if ( my $old_data = $storage->{id}->{ $entry_data->{id} } || $storage->{title_content_digest}->{ $tcdigest } ) {
+            print "Found by id or tcd: " . $entry->id . $/;
+            delete $storage->{$_}->{ $old_data->{$_} } for ( qw( id raw_digest title_content_digest ) );
+            $entry_data->{published_as_post} = $old_data->{published_as_post};
+            $entry_data->{date} = $old_data->{date} unless $entry_data->{date};
+        }
+        
+        my $post;
+        if ( my $post_id = $entry_data->{published_as_post} ) {
+            print "Fetching post: " . $post_id . $/;
+            $post = CTX->lookup_object('weblog_posts')->fetch( $post_id );
+        }
+        unless ( $post ) {
+            print "Finding: " . $entry->id . $/;
+            my $candidates = CTX->lookup_object('weblog_posts')->fetch_group( {
+                where => 'user_id = ? AND title = ? AND content = ?',
+                value => [ $uid, $entry_data->{title}, $entry_data->{content} ],
+            } ) || [];
+            
+            $post = pop @$candidates;
+        }
+        unless ( $post ) {
+            print "Posting: " . $entry->id . $/;
+            $post = CTX->lookup_object('weblog_posts')->new;
+            $post->groups_id( 0 );
+            $post->user_id( $uid );
+            $post->writer( $uid );
+            
+            $entry_data->{date} ||= time;
+        }
+        
+        $post->edited_date( time );
+        if ( my $d = $entry_data->{date} ) {
+            $post->date( $d );
+            $post->publish_date( $d );
+        }
+        $post->title( $entry_data->{title} );
+        $post->content( $entry_data->{content} );
+        $post->save;
+            
+        eval {
+            CTX->lookup_action('tagging')->execute( set_tags => {
+                object => $post,
+                user_id => $uid,
+                group_id => 0,
+                'values' => $entry_data->{tags},
+            } );
+        };
+        print $@ . $/ if $@;
+
+        # make sure the post is published
+        my $pubs = CTX->lookup_object('blogs_published')->fetch_group( {
+            where => 'group_id = ? AND post_id = ?',
+            value => [ $gid, $post->id ],
+        } );
+        
+        unless ( scalar( @$pubs ) ) {
+            my $publish = CTX->lookup_object('blogs_published')->new;
+            $publish->group_id( $gid );
+            $publish->post_id( $post->id );
+            $publish->save;
+        }
+        
+        $entry_data->{published_as_post} = $post->id;
+        $storage->{$_}->{ $entry_data->{$_} } = $entry_data for ( qw( id raw_digest title_content_digest ) );
+    }
+    
+    eval {
+        $storage_data = Storable::freeze( $storage );
+        $storage_data > io( 'storage.dump' );
+    };
+    print $@ . $/  if $@;
+    
+    if ( $reason_to_update ) {
+        CTX->lookup_action('update_blogs_entries')->execute( { group_id => $gid } );
+    }
+}
+
+sub _prepare_content {
+    my ( $self, $feed, $entry ) = @_;
+
+    my $body = Dicole::Utils::HTML->ensure_utf8( $entry->content->body );
+    
+    if ( my $link = $entry->link ) {
+        $link = Dicole::Utils::HTML->encode_entities( $link );
+        $body .= "<p>(<a href=\"$link\">$link</a>)</p>";
+    }
+
+    return $body;
+}
+
+1;

@@ -1,0 +1,34 @@
+[%#- $Id: input_sossec.tmpl,v 1.4 2009-01-07 14:42:33 amv Exp $ -%]
+
+[%#-
+	The template accepts the following information in itemparams:
+	{
+		attributes =
+			{
+				
+				all of the XHTML attributes that go with the element
+				value = <ddmmyy>-<check>
+			}
+		required
+		error
+
+	}
+-%]
+
+
+[%- itemparams.birth = itemparams.attributes.value | replace('\-\w*$', '') %]
+[%- itemparams.check = itemparams.attributes.value | replace('^\w*\-', '') %]
+
+[%- sossec = itemparams -%]
+[% birth = sossec.attributes.name %]
+[% check = sossec.attributes.name %]
+[% birth = birth _ '_birth' %]
+[% check = check _ '_check' %]
+[%- PROCESS dicole_base::input_input itemparams.attributes = { name => birth type => 'text' maxlength => 6 size => 6 value => sossec.birth } -%]
+[%- PROCESS dicole_base::null itemparams = { text => ' - ' } -%]
+[%- PROCESS dicole_base::input_input itemparams.attributes = { name => check type => 'text' maxlength => 4 size => 4 value => sossec.check } -%]
+[%-
+	IF itemparams.error || itemparams.required;
+		PROCESS dicole_base::input_req_error;
+	END
+-%]

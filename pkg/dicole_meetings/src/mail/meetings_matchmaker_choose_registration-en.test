@@ -1,0 +1,46 @@
+[%#- Sent if someone chooses a matchmaker time option while not being logged in and a new user email is provided -%]
+
+[%- IF test_case == 'company_and_name' %]
+[%-
+
+matchmaker_name = 'Jorma Perälä'
+matchmaker_company = 'Superstartup'
+verify_url = 'http://nyt.fi/tag/fok_it/page/12/'
+matchmaker_email = 'jorma@superstartup.co'
+
+%]
+[% END %]
+
+[%- IF test_case == 'no-company' %]
+[%-
+
+matchmaker_name = 'Jorma Perälä'
+matchmaker_company = ''
+verify_url = 'http://nyt.fi/tag/fok_it/page/12/'
+matchmaker_email = 'jorma@superstartup.co'
+
+%]
+[% END %]
+
+[%- IF test_case == 'no-name' %]
+[%-
+
+matchmaker_name = 'jorma@superstartup.com'
+matchmaker_company = 'Superstartup'
+verify_url = 'http://nyt.fi/tag/fok_it/page/12/'
+matchmaker_email = 'jorma@superstartup.com'
+
+%]
+[% END %]
+
+[%- IF test_case == 'no-company-no-name' %]
+[%-
+
+matchmaker_email = 'jorma@superstartup.co'
+matchmaker_name = 'jorma@superstartup.co'
+matchmaker_company = ''
+
+verify_url = 'http://nyt.fi/tag/fok_it/page/12/'
+
+%]
+[% END %]

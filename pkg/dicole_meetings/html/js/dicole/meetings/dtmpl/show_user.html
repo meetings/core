@@ -1,0 +1,164 @@
+<div id="modal-user-info" class="modal-popup">
+
+    <!-- User infos -->
+    <div id="info-container">
+
+        <!-- Picture -->
+        <div id="info-pic-box">
+            <img class="info-pic" src="<%= p.image ? p.image : '/images/theme/default/default-user-avatar-134px.png' %>" />
+            <% if ( p.vcard_url && p.email ) {%>
+            <a href="<%= p.vcard_url %>" id="vcard-download">
+                <%= MTN.t('Download vCard') %>
+            </a>
+            <% } %>
+        </div>
+
+        <!-- If basics not filled -->
+        <% if( ! p.email && ! p.name && p.is_self ) { %>
+        <span class="info">
+            <%= MTN.t('Looking a bit empty here. Fill out your profile so others know who you are.') %>
+        </span>
+
+        <% } else { %>
+
+        <!-- Name  -->
+        <span class="info info-name">
+            <%== p.name %>
+        </span>
+
+        <!-- Organization -->
+        <span class="info info-organization" style="margin-bottom:10px;">
+            <%= p.organization_title ? p.organization_title+',' : '' %> <%== p.organization %>
+        </span>
+
+        <!-- Email -->
+        <% if ( p.email ) { %>
+        <span class="info info-mail">
+            <i class="icon ico-mail"></i><a href="mailto:<%== p.email %>"><%== p.email %></a>
+        </span>
+        <% } %>
+
+        <!-- Skype -->
+        <% if ( p.skype ) { %>
+        <span class="info info-skype">
+            <i class="icon ico-skype"></i><a href="skype:<%== p.skype %>?call"><%== p.skype %></a>
+        </span>
+        <% } %>
+
+        <!-- Phone -->
+        <% if ( p.phone ) { %>
+        <span class="info info-phone">
+            <i class="icon ico-mobile"></i><a href="tel:<%== p.phone %>"><%== p.phone %></a>
+        </span>
+        <% } %>
+
+        <!-- LinkedIn -->
+        <% if ( p.linkedin ) { %>
+        <span class="info info-linkedin">
+            <i class="icon ico-linkedin"></i><a href="<%== p.linkedin %>">LinkedIn Profile</a>
+        </span>
+        <% } %>
+
+        <% } %>
+        <!-- edit -->
+        <span class="info info-edit">
+            <% if ( p.is_self && dicole.get_global_variable('meetings_get_my_profile_url') ) { %>
+            <a href="<%= dicole.get_global_variable('meetings_get_my_profile_url') %>" class="js_meetings_edit_my_profile_open">
+                <% if ( ! p.email ) { %>
+                <span class="button-small blue"><%= MTN.t('Fill profile') %></span>
+                <% } else { %>
+                <span class="button-small blue"><%= MTN.t('Edit') %></span>
+                <% } %>
+            </a>
+            <% } %>
+        </span>
+
+    </div>
+
+
+
+    <!-- RSVP & Email updates -->
+    <% if ( p.is_self && p.email && dicole.get_global_variable('meetings_meeting_id') ) { %>
+    <div class="divider"></div>
+    <div class="manage-section m-form">
+        <h3><%= MTN.t('Options') %></h3>
+        <!-- RSVP -->
+        <div class="rsvp-container"></div>
+
+        <!-- Change own email updates -->
+        <% if ( p.is_self && p.email && dicole.get_global_variable('meetings_send_emails_change_url') ) { %>
+        <p class="slider">
+        <span class="js_meetings_send_emails_change slider-button <%== p.send_emails ? 'on-position' : 'off-position' %>"> </span>
+        <%= MTN.t('Send updates through email for this meeting') %>
+        </p>
+        <% } %>
+    </div>
+    <% } %>
+
+    <!-- Kick self out -->
+    <% if ( ! p.is_creator && p.is_self && dicole.get_global_variable('meetings_remove_self_from_meeting_url') ) { %>
+    <div class="divider"></div>
+    <div class="manage-section" style="margin-top:20px;">
+        <p>
+        <a href="#" class="js_meetings_remove_self_from_meeting_open">
+            <span class="button-small blue"><%= MTN.t('Leave meeting') %></span>
+        </a>
+        </p>
+    </div>
+    <% } %>
+
+
+    <!-- Manage user -->
+    <% if ( p.managing_allowed && ! p.is_self  ) { %>
+
+    <!-- Hidden forms -->
+    <form id="meetings_resend_invite_form">
+        <input type="hidden" name="target_meeting_id" value="<%= p.meeting_id %>" />
+        <input type="hidden" name="user_id" value="<%= p.user_id %>" />
+        <input type="hidden" name="draft_object_id" value="<%= p.draft_object_id %>" />
+    </form>
+    <form id="meetings_remove_participant_form">
+        <input type="hidden" name="target_meeting_id" value="<%= p.meeting_id %>" />
+        <input type="hidden" name="user_id" value="<%= p.user_id %>" />
+        <input type="hidden" name="draft_object_id" value="<%= p.draft_object_id %>" />
+    </form>
+
+    <% if ( ! p.meeting_is_draft || p.meeting_is_pro ) { %>
+    <div class="divider"></div>
+    <div class="manage-section">
+        <h3><%= MTN.t('Manage') %></h3>
+
+
+        <!-- RSVP -->
+        <div class="rsvp-container"></div>
+
+        <!-- Managing switch -->
+        <% if ( p.meeting_is_pro ) { %>
+        <p class="slider">
+        <span class="js_meetings_change_manager_status_switch slider-button <%= ( p.is_manager == 1 ) ? 'on-position' : 'off-position' %>"></span>
+        <%= MTN.t('Participant can manage this meeting?') %>
+        </p>
+        <% } %>
+    </div>
+    <% } %>
+    <div class="divider"></div>
+    <div class="manage-section" style="margin-top:20px;">
+        <p>
+        <% if( ! p.draft_object_id ) { %>
+        <a href="#" class="js_meetings_resend_invite_submit" id="resend-invite-button">
+            <span class="button-small blue"><%= MTN.t('Resend invite') %></span>
+        </a>
+        <% } %>
+        <% if( ! p.is_creator ) { %>
+        <a href="#" class="js_meetings_remove_participant_submit" id="remove-participant-button">
+            <span class="button-small blue"><%= MTN.t('Remove participant') %></span>
+        </a>
+        <% } %>
+        </p>
+    </div>
+
+    <% } %>
+
+    <!-- Close button -->
+    <a class="js_hook_showcase_close close-cross alpha_png" href="#"></a>
+</div>

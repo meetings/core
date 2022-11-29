@@ -1,0 +1,33 @@
+[%#- $Id: confirmbox.tmpl,v 1.8 2008-02-21 04:34:23 amv Exp $ -%]
+
+[%#-
+	The template accepts the following information in itemparams:
+	{
+		title	=> title of the confirmation box
+		name	=> name is used for both identifying the confirmBoxContainer and the submit button name
+		msg 	=> message that is displayed in the confirmation box
+	}
+
+-%]
+<div class="confirmBoxContainer" id="confirm_[% itemparams.name %]">
+	<table>
+		<tr>
+			<td><div class="confirmBoxTitle">[% itemparams.title %]</div></td>
+		</tr>
+		<tr>
+			<td>
+				<div class="confirmBoxContent">
+					[% itemparams.msg %]
+					<div class="confirmBoxButtons">
+						[% IF itemparams.href %]
+					        <a href="[% itemparams.href %]" class="linkButton">[% MSG('Yes') %]</a>
+						[% ELSE %]
+						<input type="submit" name="[% itemparams.name %]" value="[% MSG('Yes') %]" class="submitButton" />
+						[% END %]
+						<input type="button" name="" value="[% MSG('No') %]" class="submitButton" onclick="hideConfirm();" />
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>

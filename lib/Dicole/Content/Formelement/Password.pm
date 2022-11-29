@@ -1,0 +1,146 @@
+package Dicole::Content::Formelement::Password;
+
+use 5.006;
+use strict;
+
+use base qw( Dicole::Content::Formelement );
+use OpenInteract2::Context   qw( CTX );
+use DateTime;
+
+our $VERSION = sprintf("%d.%02d", q$Revision: 1.5 $ =~ /(\d+)\.(\d+)/);
+
+
+my %TEMPLATE_PARAMS = map { $_ => 1 } 
+        qw( confirm confirm_text );
+
+sub TEMPLATE_PARAMS { 
+    my $self = shift;
+
+    return {
+        %{$self->SUPER::TEMPLATE_PARAMS},
+        %TEMPLATE_PARAMS
+    };
+}
+
+__PACKAGE__->mk_accessors( keys %TEMPLATE_PARAMS );
+
+
+sub _init {
+	my ($self, %args) = @_;
+	$args{template} ||= CTX->server_config->{dicole}{base} . '::input_password'; 
+
+	$self->SUPER::_init(%args);
+	
+	$self->confirm( $args{confirm} );
+	$self->confirm_text( $args{confirm_text} );
+}
+
+1;
+__END__
+
+=head1 NAME
+
+Dicole::Content::Formelement::Password - Password content object
+
+=head1 SYNOPSIS
+
+  Dicole::Content::Formelement::Password;
+  $p = Dicole::Content::Formelement::Password->new( confirm => 1 );
+  $p->name('new_password');
+  $p->confirm_text('Verify new password');
+
+  return $self->generate_content(
+ 	{ itemparams => $p->get_template_params },
+ 	{ name => $p->get_template }
+  );
+
+=head1 DESCRIPTION
+
+This is the Dicole password content class, which can output a basic password
+input field or two password fields, second for password verification purposes.
+Returns data in the format that the template I<dicole_base::input_password>
+accepts.
+
+=head1 INHERITS
+
+Inherits L<Dicole::Content::Formelement|Dicole::Content::Formelement>.
+
+=head1 METHODS
+
+=head2 new( [ confirm => BOOLEAN ], [ confirm_text => TEXT ] )
+Also takes some parameters that the constructor of Dicole::Content::Formelement
+accepts (most of these aren't however supported by the template).
+
+The confirm parameter is explained in documentation of B<confirm()> method.
+
+The confirm_text parameter is explained in documentation of B<confirm_text()>
+method.
+
+=head2 confirm( [BOOLEAN] )
+
+Sets if we should output another password field for verification purposes.
+If passed with a parameter, sets the I<confirm> bit. Returns the current value
+of "confirm".
+
+The additional field name gets additional C<_confirm> added into the name set
+with method B<set_name()>. For example, to verify contents of a verified password
+field named C<pass>, you would write:
+
+  if ( $R->apache->param('pass') eq $R->apache->param('pass_confirm') ) {
+  ...
+  }
+
+=head2 confirm_text( [STRING] )
+
+Optional text that is displayed next to the password verification field.
+
+=head1 SEE ALSO
+
+L<Dicole::Content|Dicole::Content>
+L<Dicole::Content::Formelement|Dicole::Content::Formelement>
+
+=head1 AUTHOR
+
+Teemu Arina, E<lt>teemu@dicole.fiE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+ Copyright (c) 2004 Ionstream Oy / Dicole
+ http://www.dicole.com
+
+Licence version: MPL 1.1/GPL 2.0/LGPL 2.1
+
+The contents of this file are subject to the Mozilla Public License Version
+1.1 (the "License"); you may not use this file except in compliance with
+the License. You may obtain a copy of the License at
+http://www.mozilla.org/MPL/
+
+Software distributed under the License is distributed on an "AS IS" basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the
+License.
+
+The Original Code is Dicole Code.
+
+The Initial Developer of the Original Code is Ionstream Oy (info@dicole.com).
+Portions created by the Initial Developer are Copyright (C) 2004
+the Initial Developer. All Rights Reserved.
+
+Contributor(s):
+
+Alternatively, the contents of this file may be used under the terms of
+either the GNU General Public License Version 2 or later (the "GPL"), or
+the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+in which case the provisions of the GPL or the LGPL are applicable instead
+of those above. If you wish to allow use of your version of this file only
+under the terms of either the GPL or the LGPL, and not to allow others to
+use your version of this file under the terms of the MPL, indicate your
+decision by deleting the provisions above and replace them with the notice
+and other provisions required by the GPL or the LGPL. If you do not delete
+the provisions above, a recipient may use your version of this file under
+the terms of any one of the MPL, the GPL or the LGPL.
+
+=cut
+
+1;
+

@@ -1,0 +1,7 @@
+
+sub execute {
+    my ( $self ) = @_;
+    Dicole::Utils::SQL->execute_sql('alter table dicole_presentations_prese add attachment_id text after embed');
+}
+
+1;

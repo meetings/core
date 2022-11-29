@@ -1,0 +1,63 @@
+<div id="group_show">
+	<div id="group_show_header">
+<!--
+s		<a id="group_show_edit_button" href="[% edit_url | html %]" class="big-button"><span>[% MSG("Edit") | html %]</span></a>
+-->
+		<h1>
+			<span id="group_show_name">[% group_name | html %]</span>[% IF group_location %], <span id="group_show_location">[% group_location | html %]</span>[% END %]
+		</h1>
+	</div>
+	<div id="group_show_content">
+		<div id="group_show_left">
+			<div id="group_show_photo_bg"><img id="group_show_photo" src="[% group_image or '/images/theme/default/default-subgroup-avatar-small.png' | html %]" alt="[% group_name | html %]" /></div>
+			[% IF join_url %]<a id="group_show_fan_button" href="[% join_url | html %]" class="big-button"><span>[% MSG('Join area') | html %]</span></a>[% END %]
+			[% IF enter_url %]<a id="group_show_enter_button" href="[% enter_url | html %]" class="big-button"><span>[% MSG('Enter area') | html %]</span></a>[% END %]
+		</div>
+		<div id="group_show_right">
+			<div id="group_show_tags">
+				<span class="miniLinkCloud miniTagCloud">
+				[% FOREACH tag IN tags %]
+					<a class="tag [% tag.class | html %]" href="[% tag.link | html %]">[% tag.name | html %]</a>
+				[% END %]
+				</span>
+			</div>
+			<div id="group_show_description">[% group_description | html %]</div>
+			<div id="group_show_webpage"><a href="[% group_webpage | html %]">[% group_webpage | html %]</a></div>
+			<div id="group_show_social_links">
+				[% IF group_facebook %]<a id="group_show_facebook" href="[% group_facebook | html %]" class="facebook_icon"></a>[% END %]
+				[% IF group_youtube %]<a id="group_show_youtube" href="[% group_youtube | html %]" class="youtube_icon"></a>[% END %]
+				[% IF group_myspace %]<a id="group_show_myspace" href="[% group_myspace | html %]" class="myspace_icon"></a>[% END %]
+				[% IF group_twitter %]<a id="group_show_twitter" href="[% group_twitter | html %]" class="twitter_icon"></a>[% END %]
+			</div>
+		</div>
+	</div>
+	<div id="group_show_members">
+		<h2 id="group_show_members_header">[% admins.size | html %] [% MSG('Admins') | html %]</h2>
+		<div id="group_show_members_container">
+		[% FOREACH member IN admins %]
+			<div class="group_show_member">
+				<div class="group_show_member_photo_bg">
+					<a class="group_show_member_photo" href="[% member.url | html %]" title="[% member.name | html %]">
+						<img src="[% member.image or '/images/theme/default/default-user-avatar-95px.png' | html %]" alt="[% member.name | html %]" />
+					</a>
+					<a class="group_show_member_name" href="[% member.url | html %]">[% member.name | html %]</a>
+				</div>
+			</div>
+		[% END %]
+		</div>
+	</div>
+	<div id="group_show_fans">
+		<h2 id="group_show_fans_header">[% members.size | html %] [% MSG('Members') | html %]</h2>
+		<div id="group_show_fans_container">
+		[% FOREACH fan IN members %]
+			<div class="group_show_fan">
+				<div class="group_show_fan_photo_bg">
+					<a class="group_show_fan_photo" href="[% fan.url | html %]" title="[% fan.name | html %]">
+						<img src="[% fan.image or '/images/theme/default/default-user-avatar-50px.png' | html %]" alt="[% fan.name | html %]" />
+					</a>
+				</div>
+			</div>
+		[% END %]
+		</div>
+	</div>
+</div>

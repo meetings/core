@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use IO::Handle;
+
+use Getopt::Long;
+
+my $dry = 0;
+my $verbose = 0;
+
+GetOptions(
+    dry => \$dry,
+    verbose => \$verbose
+);
+
+my %legacy_packages;
+
+@legacy_packages{ map "dicole_$_", qw(
+        chat_userplane
+        forums
+        files
+        group_pages
+        metadata
+        public_site
+    ) } = (1) x 6;
+
+my @packages = grep { -d and /dicole_/ and !/\.zip/ and !/\.gz/ } glob 'pkg/*';
+
+s#^pkg/dicole_## for @packages;
+
+if ($verbose) {
+    print "Considering " . join(", ", @packages) . "\n";
+}
+
+my @install = grep { not $legacy_packages{$_} } @packages;
+
+my @command = ('bin/devinst2' => @install);
+
+$" = " ";
+
+print "@command\n" if $verbose;
+
+system @command unless $dry;

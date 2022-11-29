@@ -1,0 +1,41 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Term::ProgressBar::Simple;
+use Dicole::MogileFS;
+
+sub execute {
+	my ($self, $params) = @_;
+
+	my $mogile = Dicole::MogileFS->new(
+        domain => 'dicole.dcp.attachments',
+        class  => 'attachment'
+    );
+
+	my $attachments = CTX->lookup_object('attachment');
+	my $attachments_list = $attachments->fetch_group({});
+
+	my $progress = Term::ProgressBar::Simple->new(scalar @$attachments_list);
+
+	for my $attachment (@$attachments_list) {
+		my $location = '/usr/local/dicole/files/attachments/' . $attachment->id;
+		
+		$progress++;
+
+        next if $dcpa->get_urls($attachment->id);
+
+		open my $fh, '<', $location or next;
+
+		$mogile->store_fh($attachment->id => $fh) or next;
+
+		my @urls = $mogile->get_urls($attachment->id) or next;
+
+        $progress->message($urls[0]);
+	}
+
+	1;
+}
+
+1;

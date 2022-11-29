@@ -1,0 +1,3 @@
+sub execute { CTX->lookup_action('statistics')->execute(update_domains => {} ); }
+
+1;

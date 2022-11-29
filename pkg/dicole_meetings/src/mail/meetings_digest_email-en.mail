@@ -1,0 +1,233 @@
+[% IF meeting_start %][% MTN.t("Meeting starts in 15 minutes:") %] [% ELSIF action_points_html %][% MTN.t('Action points:') %] [% ELSIF meeting_end %][% MTN.t("Summary:") %] [% ELSE %][% MTN.t("New updates:") %] [% END %] [% meeting_title %]
+
+<<<html_wrapper>>>
+
+[% IF meeting_start %]
+[% action_text = MTN.t("Time to get ready for:") %]
+<<<text_and_logo>>>
+
+[% ELSIF meeting_end %]
+[% action_text = MTN.t("Here's your summary for:") %]
+<<<text_and_logo>>>
+
+[% ELSE %]
+[% action_text = MTN.t("What's new with:") %]
+<<<text_and_logo>>>
+
+[% END %]
+
+<<<h1>>>[% meeting_title %]<<</h1>>>
+[% IF ! meeting_end && ! meeting_start %]<<<pl>>>[% IF past_meeting %][% MTN.t('Was held on %1$s',[meeting_date]) %][% ELSE %][% MTN.t('On %1$s//context:meeting date',[meeting_date]) %][% END %]<<</pl>>>[% END %]
+
+<<<bubble>>>
+
+[% IF meeting_online_start %]
+<<<p>>>
+[% IF meeting_online_option == 'skype' %]
+<<<bold>>>[% MTN.t("Skype is enabled for this meeting.") %]<<</bold>>>
+[% ELSIF meeting_online_option == 'teleconf' %]
+<<<bold>>>[% MTN.t("A teleconference number has been set for this meeting.") %]<<</bold>>>
+[% ELSIF meeting_online_option == 'hangout' %]
+<<<bold>>>[% MTN.t("Google Hangouts is enabled for this meeting.") %]<<</bold>>>
+[% ELSIF meeting_online_option == 'lync' %]
+<<<bold>>>[% MTN.t("Microsoft Lync is enabled for this meeting.") %]<<</bold>>>
+[% ELSIF meeting_online_option == 'custom' %]
+<<<bold>>>[% MTN.t("A custom live communication tool is used for this meeting.") %]<<</bold>>>
+[% END %]
+<<<br>>>[% MTN.t("Get ready and open the meeting page to easily join the online conference.") %]
+<<</p>>>
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=digest' %]
+[% showtext = 1 %]
+[% text = MTN.t("Open Meeting page") %]
+<<<blue_button>>>
+
+[% END %]
+
+[% IF agenda_html OR action_points_html %]
+<<<br>>>
+[% IF agenda_html %]
+<<<bubble_h1>>>[% agenda_title %]<<</h1>>>
+[% IF in_html %]
+[% agenda_html %]
+[% ELSE %]
+[% agenda_text %]
+[% END%]
+[% END %]
+
+[% IF action_points_html %]
+<<<bubble_h1>>>[% action_points_title %]<<</h1>>>
+[% IF in_html %]
+[% action_points_html %]
+[% ELSE %]
+[% action_points_text %]
+[% END %]
+[% END %]
+[% END %]
+
+[% IF changed_title %]
+<<<p>>>
+<<<bold>>>[% MTN.t("New title:") %] <<</bold>>>[% changed_title %]
+<<</p>>>
+[% END %]
+
+[% IF decided_time %]
+<<<p>>>
+<<<bold>>>[% MTN.t("Time has been set:") %] <<</bold>>>[% decided_time %]
+<<</p>>>
+[% END %]
+
+[% IF changed_time %]
+<<<p>>>
+<<<bold>>>[% MTN.t("New time:") %] <<</bold>>>[% changed_time %]
+<<</p>>>
+[% END %]
+
+[% IF changed_location %]
+<<<p>>>
+<<<bold>>>[% MTN.t("New location:") %] <<</bold>>>[% changed_location %]
+<<</p>>>
+[% END %]
+
+[% IF time_canceled %]
+<<<p>>>
+<<<bold>>>[% MTN.t("Time has been removed.") %]<<</bold>>>
+<<</p>>>
+[% END %]
+
+[% IF added_users.size > 0 %]
+<<<p>>>
+<<<bold>>>[% MTN.t("New participants:") %] <<</bold>>>
+[% FOREACH user_name IN added_users %]
+[% user_name %][% IF ! loop.last %], [% END %]
+[% END %]
+<<</p>>>
+[% END %]
+
+[% IF changed_agenda_html %]
+<<<p>>>
+[% IF changed_agenda_author %]
+
+<<<bold>>>[% MTN.t('%1$s updated the %(MATERIAL_LINK$agenda%):', [ changed_agenda_author ], { MATERIAL_LINK => { href => changed_agenda_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=digest', <<<inline_link_translation_params>>> } } ) %]<<</bold>>>
+
+[%- ELSE %]
+
+<<<bold>>>[% MTN.t('The %(MATERIAL_LINK$agenda%) has been updated. Here is the latest version:', { MATERIAL_LINK => { href => changed_agenda_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=digest', <<<inline_link_translation_params>>> } } ) %]<<</bold>>>
+
+[%- END %]
+
+[% IF in_html %]
+<<<p>>>
+[% changed_agenda_html %]
+<<</p>>>
+<<</p>>>
+[% ELSE %]
+[% changed_agenda_text %]
+[% END%]
+
+[%- END %]
+
+[% IF changed_action_points_html %]
+<<<p>>>
+[% IF changed_action_points_author %]
+<<<bold>>>[% MTN.t('%1$s updated the %(MATERIAL_LINK$action points%):', [ changed_action_points_author ], { MATERIAL_LINK => { href => changed_action_points_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=digest', <<<inline_link_translation_params>>> } } ) %]<<</bold>>>
+[%- ELSE %]
+<<<bold>>>[% MTN.t('The %(MATERIAL_LINK$action points%) have been updated. Here is the latest version: ', { MATERIAL_LINK => { href => changed_action_points_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=digest', <<<inline_link_translation_params>>> } } ) %]<<</bold>>>
+[%- END %]
+[% IF in_html %]
+[% changed_action_points_html %]
+[% ELSE %]
+[% changed_action_points_text %]
+[% END%]
+<<</p>>>
+[%- END %]
+
+[%- IF new_notes.size > 0 %]
+<<<p>>>
+<<<bold>>>[% MTN.t("New comments for scheduling discussion:") %]<<</bold>>>
+[%# ---- Comments from scheduling discussion %]
+[% FOREACH note IN new_notes %]
+[% IF in_html %]&#160;&#160;&#160;[%- ELSE %]  [% END %]<<<br>>>
+[% note.comment %] -- <<<italic>>>[% note.user_name %]<<</italic>>> [% note.timestamp %]<<<br>>>
+[% END # end of scheduling discussion comments foreach %]
+<<</p>>>
+[%- END %]
+
+[% IF new_materials.size > 0 %]
+
+<<<p>>>
+<<<bold>>>[% MTN.t("New shared materials:") %]<<</bold>>>
+<<</p>>>
+
+<<<list>>>
+[% FOREACH material IN new_materials %]
+<<<item>>>
+[% MTN.t( '%(MATERIAL_LINK$%1$s%) by %(I$%2$s%)', [ material.title, material.author_name ], { MATERIAL_LINK => { href => material.url _ '&utm_source=notifications&utm_medium=email&utm_campaign=digest', <<<inline_link_translation_params>>> }, I => { use_default_function => in_html ? 'I' : 'N' } } )%] [% material.timestamp %]
+
+[%# ---- Comments for each material %]
+[% FOREACH note IN material.new_comments %]
+[% IF in_html %]&#160;&#160;&#160;[%- ELSE %]  [% END %]<<<br>>>
+[% note.comment %] -- <<<italic>>>[% note.user_name %]<<</italic>>> [% note.timestamp %]<<<br>>>
+[% END # end of per material comments foreach %]
+
+<<</item>>>
+[% END # end of material list foreach %]
+<<</list>>>
+
+[% END # end of new materials list %]
+
+
+[% IF commented_materials.size > 0 %]
+[% FOREACH material IN commented_materials %]
+<<<p>>>
+<<<bold>>>[% MTN.t('New comments for %(MATERIAL_LINK$%1$s%)', [ material.title ], { MATERIAL_LINK => { href => material.url _ '&utm_source=notifications&utm_medium=email&utm_campaign=digest', <<<inline_link_translation_params>>> } } ) %] :<<</bold>>>
+[% FOREACH note IN material.new_comments %]
+<<<br>>>
+[% note.comment %]<<<br>>>
+-- <<<italic>>>[% note.user_name %]<<</italic>>> [% note.timestamp %]<<<br>>>
+[% END # end of single comment foreach %]
+<<</p>>>
+[% END # end of commented materials foreach %]
+[% END # end of commented materials %]
+
+[% IF ! meeting_online_start %]
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=digest' %]
+[% showtext = 1 %]
+[% text = MTN.t("Open Meeting page") %]
+<<<blue_button>>>
+[% END %]
+
+<<</bubble>>>
+
+
+[% IF meeting_end && ! disable_advertisements %]
+<<<summary_screenshot>>>
+[% END %]
+[% IF disable_advertisements %]
+[% ELSIF user_is_creator AND meeting_end %]
+<<<p>>>[% MTN.t("Now that the meeting is over, would you like to organize a follow-up?") %]<<</p>>>
+[% url = new_meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=digest' %]
+[% showtext = 1 %]
+[% text = MTN.t("Organize a follow-up meeting") %]
+<<<pink_button>>>
+
+[% ELSIF meeting_end %]
+<<<p>>>[% MTN.t("Want to run a meeting like this? Organize it now for free:") %]<<</p>>>
+[% url = new_meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=digest' %]
+[% showtext = 1 %]
+[% text = MTN.t("Organize a meeting") %]
+<<<pink_button>>>
+
+[% ELSE %]
+
+<<<app_buttons>>>
+
+[% END %]
+
+[% tip = 1 %]
+<<<p>>>
+<<<bold>>>[% MTN.t("Tip:") %]<<</bold>>> [% MTN.t("You can also add material by emailing attachments to ") %]
+[% text = meeting_email %]
+<<<mailto>>>. [% MTN.t("The documents will automatically appear on the meeting page.") %]<<</p>>>
+
+<<</html_wrapper>>>

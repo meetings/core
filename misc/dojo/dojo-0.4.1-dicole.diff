@@ -1,0 +1,43 @@
+Index: src/rpc/JsonService.js
+===================================================================
+--- src/rpc/JsonService.js	(revision 6977)
++++ src/rpc/JsonService.js	(working copy)
+@@ -78,6 +78,7 @@
+ 			mimetype: "text/json",
+ 			load: this.resultCallback(deferredRequestHandler),
+ 			error: this.errorCallback(deferredRequestHandler),
++            timeoutSeconds: 30,
+ 			preventCache:this.bustCache 
+ 		});
+ 	},
+Index: src/io/BrowserIO.js
+===================================================================
+--- src/io/BrowserIO.js	(revision 6977)
++++ src/io/BrowserIO.js	(working copy)
+@@ -643,9 +643,7 @@
+ 			try {
+ 				http.send(null);
+ 			}catch(e)	{
+-				if(typeof http.abort == "function"){
+-					http.abort();
+-				}
++                try { http.abort(); } catch (e) {}
+ 				doLoad(kwArgs, {status: 404}, url, query, useCache);
+ 			}
+ 		}
+@@ -665,6 +663,14 @@
+ 		return;
+ 	}
+ 	dojo.io.transports.addTransport("XMLHTTPTransport");
++
++    dojo.addOnUnload( function() {
++        for(var x=dojo.io.XMLHTTPTransport.inFlight.length-1; x>=0; x--){
++            try {
++                dojo.io.XMLHTTPTransport.inFlight[x].http.abort();
++            } catch (e) {};
++        }
++    } );
+ }
+ 
+ }
+\ No newline at end of file

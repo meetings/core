@@ -1,0 +1,5 @@
+[%- IF widget.raw.defined %]
+    [%- widget.raw %]
+[%- ELSIF widget.template %]
+    [%- INCLUDE $widget.template itemparams = widget.params %]
+[%- END -%]

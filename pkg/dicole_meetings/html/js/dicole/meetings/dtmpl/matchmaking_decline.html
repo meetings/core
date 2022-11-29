@@ -1,0 +1,22 @@
+<div id="modal-matchmaking-confirm" class="m-modal">
+    <div class="modal-header">
+        <h3><%= MTN.t('Decline Request') %></h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t('A notification about the declination will be sent to %1$s. This meeting page will be removed in the process.', { params : [p.requester_name] }) %></p>
+        <p><%= MTN.t('Leave a comment on why you had to decline the request to meet (optional):') %></p>
+        <form action="#" id="meetings_matchmaking_decline_form" class="meetings-form">
+            <textarea name="message" rows="10" cols="30" style="margin-bottom:15px"></textarea>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a class="button blue js_meetings_matchmaking_decline_submit" href="#">
+                <span class="label"><%= MTN.t('Decline') %></span>
+            </a>
+            <a href="#" class="button gray js_hook_showcase_close" id="scheduler-cancel-open-button">
+                <%= MTN.t('Cancel') %>
+            </a>
+        </div>
+    </div>
+</div>

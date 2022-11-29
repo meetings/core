@@ -1,0 +1,65 @@
+[%#- $Id: widget_dropdown.tmpl,v 1.7 2009-03-10 01:22:23 amv Exp $ # -%]
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        id => 'random',
+        text => 'Open Drowdown',
+        title => 'Title',
+	image => Dicole::Widget::Image,
+        selected => 0,
+        elements => [
+            {
+                text => 'Open',
+                link => '/action/task/1/open',
+                class => 'random',
+            },
+            {
+                type => 'delimiter',
+            },
+            {
+                type => 'title',
+                text => 'Subtitle :)',
+                class => 'randomtitle',
+            },
+            {
+                text => 'Close',
+                link => '/action/task/1/close',
+            },
+
+        ]
+    }
+-%]
+<iframe class="fileActionPopupShield" id="content_dropdown_[% itemparams.id %]_shield" frameborder="0" src="/js/blank.html"></iframe>
+<div class="fileActionPopup" id="content_dropdown_[% itemparams.id %]"><div class="cbb menuborder">
+[%- count = 0 %]
+[%- last_element = '' -%]
+[%- FOREACH element = itemparams.elements %]
+    [%- IF element.type == 'delimiter' -%]
+        [%- IF last_element == 'link' -%]</div>[% END %]
+        [%- last_element = 'delimiter' -%]
+    <hr />
+    [%- ELSIF element.type == 'title' AND element.class -%]
+        [%- IF last_element == 'link' -%]</div>[% END %]
+        [%- last_element = 'title' -%]
+    <div class="cbb menutitle">[% IF element.class %]<div class="menutitleicon [% element.class %]">[% END %]<div class="menutitletext">
+       [% element.text %]
+    </div>[% IF element.class %]</div>[% END %]</div>
+    [%- ELSIF element.link -%]
+        [% IF last_element != 'link' %]<div class="cbb menucontent">[% END %]
+        [%- last_element = 'link' -%]
+        <a href="[% element.link %]"[% IF count == itemparams.selected %] id="content_dropdown_selected_[% itemparams.id %]"[% END %][% IF element.class %] class="iconvisible [% element.class %]"[% END %]>[%- element.text -%]</a>
+        [%- count = count + 1 -%]
+    [%- END %]
+[%- END -%]
+[%- IF last_element == 'link' -%]</div>[% END %]
+</div></div>
+<a href="#" onclick="return showContentDropdown('[% itemparams.id %]', event);"[% IF itemparams.class %] class="[% itemparams.class %]"[% END %]>
+[%- IF itemparams.image -%]
+[% image = itemparams.image %]
+  <img src="[% image.src %]" alt="[% image.alt %]" title="[% image.title %]"
+id="[% image.id %]" border="0" />
+[%- ELSIF itemparams.text -%]
+<span>[% itemparams.text %]</span>
+[%- END %]
+[%- IF itemparams.arrow %]<span class="dropdown_arrow"><!-- --></span>[% END -%]
+</a>

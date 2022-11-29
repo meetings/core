@@ -1,0 +1,21 @@
+Changes
+conf/action.ini
+conf/spops.ini
+conf/tool.ini
+html/css/dicole_localization.css
+html/js/dicole/localization.js
+MANIFEST			This list of files
+MANIFEST.SKIP
+msg/messages-en.po
+msg/messages-fi.po
+msg/messages-sv.po
+OpenInteract2/Action/DicoleLocalization.pm
+OpenInteract2/Action/DicoleLocalizationAPI.pm
+OpenInteract2/Action/DicoleLocalizationCommon.pm
+OpenInteract2/Action/DicoleLocalizationJSON.pm
+OpenInteract2/App/DicoleLocalization.pm
+OpenInteract2/SQLInstall/DicoleLocalization.pm
+package.ini
+struct/dicole_custom_localization.sql
+template/customizable_strings.tmpl
+template/language_selection.tmpl

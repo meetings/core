@@ -1,0 +1,265 @@
+[%#
+	comments = [
+		{
+			"user_name" = "Pekka",
+			"user_link" = "#",
+			"user_image" = "",
+			"user_organization" = "Paska Firma Oy",
+			"user_is_planner" = 1,
+			"content" = "Paskast Firmast moro, mitäs tänne?",
+			"date" = "valovuos sit (vaik se onkin etäisyyden yksikkö)"
+		},
+		{
+			"user_name" = "Jormas",
+			"user_link" = "#",
+			"user_image" = "",
+			"user_organization" = "Paska Firma Oy",
+			"content" = "Paskast Firmast moro, mitäs tänne?",
+			"date" = "valovuos sit (vaik se onkin etäisyyden yksikkö)"
+		}
+	]
+%]
+[% IF accept_invite %]<div id="remove-links" style="display: none"></div>[% END %]
+<div id="event-info">
+	<div class="event-header" style="overflow: hidden">
+		[% IF manage_url %]<a class="manage-event yellow-button" href="[% manage_url | html %]"><span><span class="letter"></span>[% MSG('Manage event') | html %]</span></a>[% END %]
+		[% IF ! banner_url %]<h1>[% title | html %]</h1>[% END %]
+	</div>
+	[% IF banner_url %]<div class="banner"><img src="[% show_extras ? banner_url : banner_wide_url | html %]" alt="[% title | html %]" /></div>[% END %]
+	<div class="right">
+        [% IF show_promo %]
+        <div id="event-promo">
+<g:plusone size="tall" href="[% current_url %]"></g:plusone>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+[% IF facebook_connect_app_id %]<iframe src="http://www.facebook.com/plugins/like.php?app_id=[% facebook_connect_app_id %]&amp;href=[% encoded_current_url %]&amp;send=false&amp;layout=box_count&amp;width=60&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:60px; height:62px;" allowTransparency="true"></iframe>[% END %]
+        <div style="clear:both"></div>
+        </div>
+        [% END %]
+		[% IF show_freeform %]
+		[% IF freeform_title %]
+		<h3>[% freeform_title | html %]</h3>
+		[% END %]
+		[% IF freeform_content %]
+		<div>[% freeform_content %]</div>
+		[% END %]
+		[% END %]
+		[% IF show_planners %]
+		<h3>[% MSG("Planners") | html %]</h3>
+		[% FOREACH planner IN planners %]
+		<div class="planner-container">
+			<div class="user-bg">
+				<a href="[% planner.link | html %]" class="user" title="[% planner.name | html %]">
+					<img src="[% planner.image or '/images/theme/default/default-user-avatar-50px.png' | html %]" alt="[% planner.name | html %]" />
+				</a>
+			</div>
+			<div class="planner-info">
+				<a class="planner-link" href="[% planner.link | html %]">[% planner.name | html %]</a><br />
+				<span class="planner-organization">[% planner.organization | html %][% IF planner.organization_title %], [% planner.organization_title | html %][% END %]</span><br />
+				[% IF planner.phone %]<span class="planner-phone">[% planner.phone | html %]</span><br />[% END %]
+				<a href="mailto:[% planner.email | html %]">[% planner.email | html %]</a>
+			</div>
+		</div>
+		[% END %]
+		[% END %]
+		[% IF show_map and latitude != 0 and longitude != 0 %]
+		<div class="static-map-container">
+			<a href="http://maps.google.com/?ll=[% latitude | html %],[% longitude | html %]&amp;z=12&amp;q=[% location_name | html %]">
+				<img src="https://maps.googleapis.com/maps/api/staticmap?sensor=false&amp;center=[% latitude | html %],[% longitude | html %]&amp;zoom=12&amp;size=185x150&amp;markers=[% location_name | html %]" alt="[% location_name | html %]" />
+			</a>
+		</div>
+		[% END %]
+		<div class="social-media-tag">#[% sos_med_tag | html %]</div>
+		<p class="social-media-description-container">
+			<span class="social-media-description">&uarr; [% MSG('This is this event\'s social media tag. Use this tag when posting about this event.') | html %]</span>
+			[% IF tags.size %]
+			<br /><br />
+			<span class="tags-header">[% MSG('Other tags:') | html %]</span>
+			<div class="tags">[% FOREACH tag IN linked_tags %]<a class="tag" href="[% tag.url | html %]">[% tag.name | html %]</a>[% END %]</div>
+			[% END %]
+		</p>
+		<hr/>
+		[% IF event_state_name == 'public' %]
+		<h3 class="event-state">[% MSG('This event is public') | html %]</h3>
+		<p class="event-state-description">
+			[% IF registration_is_open %]
+			[% IF invite_url %]
+			[% IF require_invite %]
+			[% MSG('Only invited users can attend, so use the invite tool to invite your contacts!') | html %]
+			[% ELSE %]
+			[% MSG('Anyone can join, so use the invite tool to invite your contacts!') | html %]
+			[% END %]
+			[% ELSE %]
+			[% IF require_invite %]
+			[% MSG('Only invited users can attend.') | html %]
+			[% ELSE %]
+			[% MSG('Anyone can join.') | html %]
+			[% END %]
+			[% END %]
+			[% ELSIF registration_has_closed %]
+			[% MSG('The registration has closed.') | html %]
+			[% ELSIF registration_start_date AND NOT registration_has_started %]
+			[% MSG('Registration will start on [_1].', registration_start_date) | html %]
+			[% END %]
+		</p>
+		[% ELSIF event_state_name == 'private' %]
+		<h3 class="event-state">[% MSG('This event is private') | html %]</h3>
+		<p class="event-state-description">
+			[% IF registration_is_open %]
+			[% IF users_can_invite %]
+			[% MSG('An invitation is needed to join. Use the Invite tool to send invitations.') | html %]
+			[% ELSE %]
+			[% MSG('An invitation is needed to join. You may request an invitation from the planners.') | html %]
+			[% END %]
+			[% ELSIF registration_has_closed %]
+			[% MSG('The registration has closed.') | html %]
+			[% ELSIF not registration_has_started %]
+			[% MSG('Registration will start on [_1].', registration_start_date) | html %]
+			[% END %]
+		</p>
+		[% END %]
+        <p class="event-ics-export-link"><a href="[% ics_url %]">&raquo; [% MSG('Export to calendar (ics)') | html %]</a></p>
+		<div style="overflow: hidden; margin-top: 10px; clear: both">
+			[% IF show_yes or show_maybe or show_no or show_waiting %]<h2 id="participants">[% MSG('Participants') | html %]</h2>[% END %]
+			[% IF invite_url %]<a id="invite-button" href="#" class="button invite js_hook_open_invite"><span><span class="letter"></span>[% MSG('Invite') | html %]</span></a><div style="clear:both"></div>[% END %]
+			[% IF participants_url %]<a id="participant-button" href="#" class="participant button"><span><span class="letter"></span>[% MSG('Manage') | html %]</span></a>[% END %]
+		</div>
+		[% user_types = ['yes', 'maybe', 'no', 'waiting'] %]
+		[% user_fancy_types = {'yes' => MSG('attending'), 'maybe' => MSG('maybe'), 'no' => MSG('not attending'), 'waiting' => MSG('awating reply')} %]
+		[% user_type_enabled = {'yes' => show_yes, 'maybe' => show_maybe, 'no' => show_no, 'waiting' => show_waiting} %]
+		[% show_no_users = 1 %]
+		[% FOREACH user_type IN user_types %]
+		[% IF users.$user_type and user_type_enabled.$user_type == 1 %]
+		[% show_no_users = 0 %]
+		<div class="users-number-container">
+			<span class="users-number">[% users.$user_type.size %]</span>
+			[% user_fancy_types.$user_type | html %]
+		</div>
+		<div class="users [% user_type | html %]">	
+			[% FOREACH user IN users.$user_type %]
+			<div class="user-bg alpha_png">
+				<a class="user" href="[% user.link | html %]" title="[% user.name | html %]">
+					<img src="[% user.image or '/images/theme/default/default-user-avatar-50px.png' | html %]" alt="[% user.name | html %]" />
+				</a>
+			</div>
+			[% END %]
+		</div>
+		[% END %]
+		[% END %]
+		[% IF ( show_yes or show_maybe or show_no or show_waiting ) and show_no_users %]
+		<div>
+		<p>[% MSG('No participants yet.') %]</p>
+		</div>
+		[% END %]
+	</div>
+	<div class="left">
+    	<div class="event-header" style="overflow: hidden">
+		[% IF banner_url && show_title %]<h1>[% title | html %]</h1>[% END %]
+    	</div>
+		<div>
+			<span class="date">[% date | html %]</span>
+			[% IF location_name %]
+			<span class="separator">&nbsp;/&nbsp;</span>
+			<span class="location">[% location_name | html %]</span>
+			[% END %]
+		</div>
+		[% IF show_imedia %]<div id="imedia-placeholder"></div>[% END %]
+		<p id="abstract">[% abstract | html %]</p>
+		[% IF description.length > 0 %]
+		<div id="events-description-shown" style="display: none">
+		<div id="description">[% description %]</div>
+		<a id="hide-description" href="#" class="small-link">&uarr; [% MSG('Hide full description') | html %]</a>
+		</div>
+		<div id="events-description-hidden" style="display: block">
+		<a id="show-description" href="#" class="small-link">&darr; [% MSG('Show full description') | html %]</a>
+		</div>
+		[% END %]
+		[% IF show_feedback == 1 and feedback %]
+		<h2>[% MSG('Give Us Feedback') | html %]</h2>
+		<div>[% feedback %]</div>
+		[% END %]
+		[% IF show_stream == 1 and stream %]
+		<h2>[% MSG('Stream') | html %]</h2>
+		<div>[% stream %]</div>
+		[% END %]
+		[% IF show_counter %]
+    	<div id="event_counter_container">
+    	<h2>[% MSG("Counter") | html %]</h2>
+    	<div id="event_counter"></div>
+    	</div>
+    	[% END %]
+    <div class="events_show_info_container_rsvp">
+		[% IF registration_is_open AND ( accept_invite OR (user_can_attend AND attend_after_login_url) OR user_can_rsvp OR suggest_login OR require_invite ) %]
+		<h2>
+			[% IF max_attenders > 0 %]
+			<div class="seats">[% MSG('Seats left:') | html %] <strong>[% max_attenders - num_attenders | html %]</strong> / [% max_attenders | html %]</div>
+			[% END %]
+			[% IF has_seats_left %]
+			[% MSG('Are you joining us?') | html %]
+			[% IF registration_close_date %]<p>[% MSG('Registration will be open until [_1]', registration_close_date) | html %]</p>[% END %]
+			[% ELSE %]
+			[% MSG('The event is full.') | html %]
+			[% END %]
+		</h2>
+    [% IF accept_invite %]
+        <div style="overflow: hidden">
+            <a class="left-button js_invite_rsvp" href="[% accept_invite_yes_url %]"><span>[% MSG('Attending') | html %]</span></a>
+            <a class="middle-button js_invite_rsvp" href="[% accept_invite_maybe_url %]"><span>[% MSG('Maybe') | html %]</span></a>
+            <a class="right-button js_invite_rsvp" href="[% accept_invite_no_url %]"><span>[% MSG('Not Attending') | html %]</span></a>
+        </div>
+    [% ELSIF user_can_attend AND attend_after_login_url %]
+        <div style="overflow: hidden"><a id="accept-button" class="yellow-button" href="[% attend_after_login_url | html %]"><span>[% MSG('Attend') | html %]</span></a></div>
+    [% ELSIF user_can_rsvp %]
+        <div style="overflow: hidden">
+            <a id="rsvp-yes" class="left-button[% IF rsvp == 'yes' %] left-button-selected[% END %]" href="[% rsvp_url | html %]"><span>[% MSG('Attending') | html %]</span></a>
+            <a class="middle-button[% IF rsvp == 'maybe' %] middle-button-selected[% END %]" href="[% rsvp_url | html %]?rsvp=maybe"><span>[% MSG('Maybe') | html %]</span></a>
+            <a class="right-button[% IF rsvp == 'no' %] right-button-selected[% END %]" href="[% rsvp_url | html %]?rsvp=no"><span>[% MSG('Not Attending') | html %]</span></a>
+        </div>
+        [% IF open_attend_dialog %]<div id="open-attending-box-right-now" style="display: none"></div>[% END %]
+    [% ELSIF suggest_login %]
+        <div>[% IF register_url %][% MSG('In order to participate, please [_1]login or register[_2]', '<a href="#" id="suggest-invite-button">', '</a>') %][% ELSE %][% MSG('In order to participate, please [_1]login[_2].', '<a href="#" id="suggest-invite-button">', '</a>') %][% END %]</div>
+    [% ELSIF require_invite %]
+        <div style="overflow: hidden">
+            <p>[% MSG('You need an invite to participate in this event. Invitations are sent through email and include a link for participation.') | html %]</p>
+        </div>
+    [% END %]
+		[% END %]
+    	</div>
+		[% IF show_chat %]
+		<h2>[% MSG('Chat') | html %]</h2>
+		[% IF events_comment_add_url %]
+		<div id="comment_add">
+			<div class="user-bg alpha_png">
+				<a class="user" href="[% current_user.url | html %]" title="[% current_user.name | html %]">
+					<img src="[% current_user.image or '/images/theme/default/default-user-avatar-50px.png' | html %]" alt="[% current_user.name | html %]" />
+				</a>
+			</div>
+			<div style="overflow:hidden">
+				<textarea id="chat_input" class="chat_input tip-field" rows="1" cols="50" tabindex="1">[% MSG('Write your comment here') | html %]</textarea>
+				<a id="chat_send" href="#" class="button" tabindex="2"><span>[% MSG('Send (action)') | html %]</span></a>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+		[% ELSIF commenting_possible_after_register OR commenting_possible_after_login %]
+		<div id="comment_add_login_guide">
+            [% login_html = BLOCK %]
+                <a href="#" class="js_hook_show_login">[% MSG('log in (within sentence)') | html %]</a>
+            [% END %]
+            [% IF commenting_possible_after_register %]
+            [% register_html = BLOCK %]
+                 <a href="#" class="js_open_register_dialog">[% MSG('register (within sentence)') | html %]</a>
+            [% END %]
+            <p>[% MSG('Please [_1] or [_2] to leave comments', login_html, register_html ) %]</p>
+            [% ELSE %]
+            <p>[% MSG('Please [_1] to leave comments', login_html ) %]</p>
+            [% END %]
+        </div>
+        [% END %]
+		<div id="comments_container">
+		[% FOREACH comment IN comments %]
+		[% INCLUDE dicole_events::component_comment %]
+		[% END %]
+		</div>
+		[% END %]
+	</div>
+	<div style="clear: both"></div>
+</div>

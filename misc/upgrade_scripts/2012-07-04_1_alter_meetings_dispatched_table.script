@@ -1,0 +1,13 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_dispatched_email add text_stripped mediumtext after text_content');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_dispatched_email add html_stripped mediumtext after text_content');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_dispatched_email add calendar_content mediumtext after text_content');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_dispatched_email add notes text after comment_id_list');
+}
+
+1;
+

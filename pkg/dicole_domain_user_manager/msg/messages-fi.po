@@ -1,0 +1,389 @@
+# $Id: messages-fi.po,v 1.6 2006/05/23 21:58:15 jpir Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:11:45+0000\n"
+"PO-Revision-Date: 2005-03-22 02:11:45+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Domain User Manager"
+msgstr "Domainin käyttäjähallinta"
+
+msgid "Add user"
+msgstr "Lisää käyttäjä"
+
+msgid "Changes were saved."
+msgstr "Muutokset on tallennettu."
+
+msgid "Confirmation"
+msgstr "Varmennus"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "English"
+msgstr "Englanti"
+
+msgid "Email"
+msgstr "Sähköposti"
+
+msgid "Error during delete: %1"
+msgstr "Virhe poistettaessa: %1"
+
+msgid "Expiration date"
+msgstr "Voimassaolo päättyy"
+
+msgid "Failed adding user: %1"
+msgstr "Virhe käyttäjää luotaessa: %1"
+
+msgid "Failed modifying user: %1"
+msgstr "Virhe käyttäjää muokatessa: %1"
+
+msgid "Finnish"
+msgstr "Suomi"
+
+msgid "First name"
+msgstr "Etunimi"
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "Last name"
+msgstr "Sukunimi"
+
+msgid "List of users"
+msgstr "Käyttäjälista"
+
+msgid "List of domain users"
+msgstr "Domainin käyttäjälista"
+
+msgid "List of users in the domain"
+msgstr "Domainin käyttälista"
+
+msgid "List users"
+msgstr "Listaa käyttäjät"
+
+msgid "Login name"
+msgstr "Käyttäjänimi"
+
+msgid "Modify user details"
+msgstr "Muokkaa käyttäjän tietoja"
+
+msgid "New user details"
+msgstr "Uuden käyttäjän tiedot"
+
+msgid "Password"
+msgstr "Salasana"
+
+msgid "Remove selected users"
+msgstr "Poista valitut käyttäjät"
+
+msgid "Remove users"
+msgstr "Poista käyttäjiä"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Selected users removed."
+msgstr "Valitut käyttäjät poistettu."
+
+msgid "Show list of users"
+msgstr "Näytä käyttäjälista"
+
+msgid "Show"
+msgstr "Näytä"
+
+msgid "Unlimited"
+msgstr "Rajoittamaton"
+
+msgid "User details"
+msgstr "Käyttäjätiedot"
+
+msgid "User has been saved."
+msgstr "Käyttäjä tallennettu."
+
+msgid "User Manager"
+msgstr "Käyttäjähallinta"
+
+msgid "Verify password"
+msgstr "Varmista salasana"
+
+msgid "Manage users"
+msgstr "Käyttäjien hallintaoikeus"
+
+msgid "User can add, edit and remove other users"
+msgstr "Käyttäjä voi lisätä, muokata ja poistaa muita käyttäjiä"
+
+msgid "Are you sure you want to remove the selected users?"
+msgstr "Oletko varma, että haluat poistaa valitut käyttäjät?"
+
+msgid "Registration"
+msgstr "Rekisteröityminen"
+
+msgid "Register"
+msgstr "Rekisteröityminen"
+
+msgid "Register new account"
+msgstr "Rekisteröi uusi tunnus"
+
+msgid "User registration is not allowed."
+msgstr "Käyttäjän rekisteröinti ei ole mahdollista."
+
+msgid "Login name %1 already exists. Choose another login name."
+msgstr "Käyttäjätunnus nimeltä %1 on jo olemassa. Valitse toinen käyttäjätunnus."
+
+msgid "Registration done. We have sent you an email containing your login information."
+msgstr "Rekisteröinti suoritettu. Teille on lähetetty sähköpostia, joka sisältää kirjautumistiedot."
+
+msgid "Registration failed: %1"
+msgstr "Rekisteröinti epäonnistui: %1"
+
+msgid "Registration information"
+msgstr "Rekisteröintitiedot"
+
+msgid "Registration information from %1"
+msgstr "Rekisteröintitiedot palvelusta %1"
+
+msgid "Error sending email: %1"
+msgstr "Virhe lähetettäessä sähköpostia: %1"
+
+msgid "User with email address %1 already exists. Choose a different email address."
+msgstr "Käyttäjä jonka sähköpostiosoite on %1 on jo olemassa. Anna eri sähköpostiosoite."
+
+msgid "Reset of all user default personal rights was successful."
+msgstr "Kaikkien käyttäjien peruskäyttöoikeudet on palautettu oletusarvoihin."
+
+msgid "Import users"
+msgstr "Tuo käyttäjiä"
+
+msgid "File to upload"
+msgstr "Palvelimelle siirrettävä tiedosto"
+
+msgid "Upload"
+msgstr "Siirrä palvelimelle"
+
+msgid "Import new users from an Excel sheet"
+msgstr "Tuo uusia käyttäjiä Excel taulukosta"
+
+msgid "%1 user(s) imported."
+msgstr "%1 käyttäjä(ä) tuotu järjestelmään."
+
+msgid "Upload a valid Excel file."
+msgstr "Valitse toimiva Excel taulukko."
+
+msgid "The following rows failed: %1"
+msgstr "Seuraavien Excel taulukon rivien tuonti ei onnistunut: %1"
+
+msgid "Failed importing users: %1"
+msgstr "Käyttäjien tuonti epäonnistui: %1"
+
+msgid "Upload Excel sheet"
+msgstr "Siirrä Excel taulukko"
+
+msgid "Users registered in the system"
+msgstr "Järjestelmään rekisteröityneet käyttäjät"
+
+msgid "Number of logins"
+msgstr "Kirjautumisten määrä"
+
+msgid "Last login"
+msgstr "Viimeisin kirjautuminen"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Groups user belongs to"
+msgstr "Ryhmät joihin käyttäjä kuuluu"
+
+msgid "Theme"
+msgstr "Teema"
+
+msgid "Default"
+msgstr "Oletus"
+
+msgid "URL of a custom starting page"
+msgstr "Vaihtoehtoisen aloitussivun URL"
+
+msgid "Login disabled"
+msgstr "Kirjautuminen disabloitu"
+
+msgid "You are not allowed to view this domain"
+msgstr "Käyttöoikeutesi eivät riitä domainin hallinnointiin"
+
+msgid "You are not allowed to edit this domain"
+msgstr "Käyttöoikeutesi eivät riitä domainin hallinnointiin"
+
+msgid "You are not allowed to view this user"
+msgstr "Käyttöoikeutesi eivät riitä käyttäjän hallinnointiin"
+
+msgid "You are not allowed to edit this user"
+msgstr "Käyttöoikeutesi eivät riitä käyttäjän hallinnointiin"
+
+msgid "Existing user %1 with email address %2 added to this domain, please inform the user in question"
+msgstr "Olemassaoleva käyttäjä %1 sähköpostiosoitteella %2 lisättiin domainiin, ole hyvä ja ilmoita lisäyksestä käyttäjälle"
+
+msgid "Access domain management"
+msgstr "Pääsy domainhallintaan"
+
+msgid "Domain management"
+msgstr "Domainhallinta"
+
+msgid "Domain manager"
+msgstr "Domainin hallitsija"
+
+msgid "No groups."
+msgstr "Ei ryhmiä."
+
+msgid "Account registration"
+msgstr "Tunnuksen luonti"
+
+msgid "Domain administrator email address"
+msgstr "Domain-hallinnoijan sähköpostiosoite"
+
+msgid "Restrict access to listed IP addresses"
+msgstr "Rajoita pääsy vain listattuihin IP -osoitteisiin"
+
+msgid "IP addresses (one per line)"
+msgstr "IP -osoitteet (yksi per rivi)"
+
+msgid "Hide community"
+msgstr "Piilota yhteisö"
+
+msgid "Error during remove"
+msgstr "Virhe poiston yhteydessä"
+
+msgid "Failed to add user with email address %1 to domain."
+msgstr "Käyttäjän domainiin lisääminen ei onnistu osoitteella %1"
+
+msgid "Manage domain users"
+msgstr "Hallitse domainin käyttäjiä"
+
+msgid "Management area"
+msgstr "Hallinta-alue"
+
+msgid "User already in domain."
+msgstr "Käyttäjä on jo domainissa."
+
+msgid "User can add, edit and remove other users in the domain"
+msgstr "Käyttäjä voi lisätä, muokata ja poistaa käyttäjiä domainissa"
+
+msgid "Users registered in the domain"
+msgstr "Domainiin rekisteröidyt käyttäjät"
+
+msgid "Alternative login URL"
+msgstr "Vaihtoehtoinen login URL"
+
+msgid "CSV ids of initial groups"
+msgstr "CSV idt aloitusryhmistä"
+
+msgid "Custom footer HTML"
+msgstr "Footer HTML"
+
+msgid "Email content for invites"
+msgstr "Kutsuviestien sisältö"
+
+msgid "Hide my area"
+msgstr "Piilota oma alue"
+
+msgid "Limit of invites per user"
+msgstr "Kutsuviestien määrä"
+
+msgid "Subject of invite email"
+msgstr "Kutsuviestien otsikko"
+
+msgid "Hours before invites replenish (0: never)"
+msgstr "Kutsuviestin palautumisen raja tunneissa (0: ei koskaan)"
+
+msgid "Alternative front page"
+msgstr "Vaihtoehtoinen etusivu"
+
+msgid "Disable user"
+msgstr "Poista käyttäjä käytöstä"
+
+msgid "Domain notifcations sender email address"
+msgstr "Muistutusten lähettäjän sähköpostiosoite"
+
+msgid "Email content (html) for comment notifications"
+msgstr "Emailin sisältö (html) kommenttimuistutuksille"
+
+msgid "Email content (text) for comment notifications"
+msgstr "Emailin sisältö (text) kommenttimuistutuksille"
+
+msgid "Enable user"
+msgstr "Ota käyttäjä käyttöön"
+
+msgid "Hide general settings"
+msgstr "Piilota yleiset asetukset"
+
+msgid "Login users in after registering"
+msgstr "Kirjaa käyttäjä sisään heti rekisteröitymisen jälkeen"
+
+msgid "Subject of comment notification email"
+msgstr "Emailin otsikko kommenttimuistutuksille"
+
+msgid "Custom favicon url"
+msgstr "Vapaavalintainen favicon URL"
+
+msgid "Disable email digests"
+msgstr "Kytke sähköpostikoosteet pois päältä"
+
+msgid "Disable email notifications"
+msgstr "Kytke sähköpostimuistutukset pois päältä"
+
+msgid "Domain admin"
+msgstr "Domainin ylläpitäjä"
+
+msgid "Enable caching for certain tag lists"
+msgstr "Käytä välimuistia tietyissä avainsanalistossa"
+
+msgid "Google maps API key for domain"
+msgstr "Google maps API avain"
+
+msgid "Link to required terms of service"
+msgstr "Linkki vaadittuihin käyttöehtoihin"
+
+msgid "Facebook Connect app ID"
+msgstr "Facebook Connect app ID"
+
+msgid "Facebook Connect app secret"
+msgstr "Facebook Connect app secret"
+
+msgid "Facebook Connect disabled"
+msgstr "Facebook Connect kytketty pois päältä"
+
+msgid "Link to general instructions for the service"
+msgstr "Linkki järjestelmän yleisiin ohjeisiin"
+
+msgid "Facebook Connect enabled"
+msgstr "Facebook Connect kytketty päälle"
+
+msgid "Custom body start HTML"
+msgstr "Body start HTML"
+
+msgid "Action to run when a page is not found (404 error)"
+msgstr "Action to run when a page is not found (404 error)"
+
+msgid "Answer for registering question"
+msgstr "Answer for registering question"
+
+msgid "Custom head HTML"
+msgstr "Custom head HTML"
+
+msgid "Disable group mails if digest disabled"
+msgstr "Disable group mails if digest disabled"
+
+msgid "Location required in register dialog"
+msgstr "Location required in register dialog"
+
+msgid "Question to ask when registering"
+msgstr "Question to ask when registering"

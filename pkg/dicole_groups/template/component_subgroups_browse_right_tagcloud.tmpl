@@ -1,0 +1,22 @@
+[%#
+links = [
+	{
+		name => 'FirstTag',
+		class => 'tagPrimary real_weight_913',
+	},
+	{
+		name => 'SecondTag',
+		class => 'tagSecondary real_weight_50',
+	},
+	{
+		name => 'ThirdTag',
+		class => 'tagTertiary real_weight_0',
+	}
+]
+%]
+
+<span class="miniTagCloud">
+	[%- FOREACH tag IN links %]
+		<a class="tag [% tag.class %]" href="#">[% tag.name %]</a>
+	[%- END %]
+</span>

@@ -1,0 +1,124 @@
+[%#- Sent when a new user is invited to a meeting. Either through the GUI, email INVITE, email JOIN or calendar invite. Only GUI version contains a greeting. -%]
+
+[%- # Common parameters
+meeting_image = 'https://dev.meetin.gs/meetings_raw/meeting_image/0/1916/3351/A3-E7HxVqT1wwHp_J3djymBj_Y8.png' 
+server_host = 'http://dev.meetin.gs'
+-%]
+
+[%- IF test_case == 'ruinaustesti' %]
+[%-
+inviting_user_name = 'Erkki'
+agenda_title = 'Agenda'
+agenda_html = '<p style="line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif;">I want <em>to</em> link to <a href="http://google.com/" style="font-family:Arial,Verdana,sans-serif;text-decoration:underline;">http://google.com/</a> and see <span style="text-decoration: line-through;">the</span> <span style="text-decoration: underline;">color</span>!</p>
+<ul style="list-style: disc outside none; line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif; padding-left:16px;"><li>moi <strong>asdfsadf</strong>4</li><li>a<span style="background-color: #99cc00;">sd</span>f</li></ul>
+<h1 style="line-height:20px; font-size:16px; font-weight:bold; margin-top:5px; margin-left:17px; margin-right:17px; margin-bottom:5px; color:#4a4a4a; font-family:Arial,Verdana,sans-serif;">he<span style="color: #993366;">a</span>der!</h1>
+<p style="line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:17px; margin-right:17px; font-family:Arial,Verdana,sans-serif;">moi</p>'
+agenda_text = 'bla bla this is an agenda text version'
+
+meeting_title = 'Mörönmetsästys'
+meeting_url = 'http://meetin.gs/mörköjahti'
+meeting_email = 'morkojahti@mtngas.sgs'
+meeting_time = '30th February'
+meeting_location_string = 'Satumaa'
+meeting_participants = 'Aku Ankka, Hessu Hopo, Hikki Kiiri, Kake Randelin, Frederik feat. Karhukopla & Co.'
+meeting_unsubscribe_url = 'http://meeting.gs/getmeoutta_of_this_meeting'
+user_has_joined = '1'
+greeting_message = '1'
+ics_url = '1' 
+gcal_url = '1' 
+
+%]
+[% END %]
+
+[%- IF test_case == 'onlinemiitti' %]
+[%-
+meeting_title = 'Mörönmetsästys'
+meeting_url = 'http://meetin.gs/mörköjahti'
+meeting_email = 'morkojahti@mtngas.sgs'
+meeting_time = '30th February'
+meeting_participants = 'Aku Ankka, Hessu Hopo, Hikki Kiiri, Kake Randelin, Frederik feat. Karhukopla & Co.'
+meeting_unsubscribe_url = 'http://meeting.gs/getmeoutta_of_this_meeting'
+user_has_joined = '1'
+greeting_message_html = 'Looking forward to having a great meeting!'
+ics_url = '1' 
+gcal_url = '1' 
+
+%]
+[% END %]
+
+[%- IF test_case == 'test' %]
+[%-
+
+inviting_user_name = 'Mikki Hiiri'
+meeting_title = 'Mörönmetsästys'
+meeting_url = 'http://meetin.gs/mörköjahti'
+meeting_email = 'morkojahti@mtngas.sgs'
+meeting_time = '30th February'
+meeting_location_string = 'Satumaa'
+meeting_participants = 'Aku Ankka, Hessu Hopo, Hikki Kiiri, Kake Randelin, Frederik feat. Karhukopla & Co.'
+meeting_unsubscribe_url = 'http://meeting.gs/getmeoutta_of_this_meeting'
+greeting_message_html = 'Please read this email carefully, as it requires your immediate action.'
+time_zone = 'GMT +2'
+ics_url = '1' 
+gcal_url = '1' 
+
+greeting_message_text = 'Please read this email carefully, as it requires your immediate action.'
+
+inviting_user_first_name = 'Mikki'
+
+%]
+[%- END %]
+[%- IF test_case == 'scheduling options test' %]
+[%-
+
+open_scheduling_options = [{},{},{}]
+inviting_user_name = 'Mikki Hiiri'
+meeting_title = 'Mörönmetsästys'
+meeting_url = 'http://meetin.gs/mörköjahti'
+meeting_email = 'morkojahti@mtngas.sgs'
+meeting_location_string = 'Satumaa'
+meeting_participants = 'Aku Ankka, Hessu Hopo, Hikki Kiiri, Kake Randelin, Frederik feat. Karhukopla & Co.'
+meeting_unsubscribe_url = 'http://meeting.gs/getmeoutta_of_this_meeting'
+greeting_message_html = 'Please read this email carefully, as it requires your immediate action.'
+ics_url = '1' 
+gcal_url = '1' 
+
+# greeting_message_text on ehkä olemassa, ehkä uusi.
+
+greeting_message_text = 'Please read this email carefully, as it requires your immediate action.'
+
+inviting_user_first_name = 'Mikki'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'rsvp test' %]
+[%-
+inviting_user_name = 'Antti Tester'
+meeting_title = 'January board meeting'
+rsvp_required_by = 'Antti Tester'
+rsvp_required = 1; 
+greeting_message_text = ''
+greeting_message_html = ''
+meeting_url = 'http://meetin.gs/mörköjahti'
+meeting_rsvp_no_url = 'http://meetin.gs/morkojahti'
+meeting_rsvp_yes_url = 'http://meetin.gs/morkojahti'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'matchmaking accept' %]
+[%-
+matchmaker_meeting = 1
+inviting_user_name = 'Antti Tester'
+meeting_title = 'Tester & KPN'
+rsvp_required_by = 'Antti Tester'
+rsvp_required = 1; 
+greeting_message_text = ''
+greeting_message_html = ''
+meeting_url = 'http://meetin.gs/mörköjahti'
+meeting_rsvp_no_url = 'http://meetin.gs/morkojahti'
+meeting_rsvp_yes_url = 'http://meetin.gs/morkojahti'
+
+%]
+[%- END %]

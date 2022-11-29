@@ -1,0 +1,203 @@
+use WWW::Mailchimp;
+use Dicole::Utils::Data;
+
+my $params = {
+    apikey => 'x-us4',
+    datacenter => 'us4',
+};
+
+my $list_id = 'dc0809a55e';
+
+#my $dry_run = 1;
+#my $limit_to_user = 'antti@dicole.com';
+#my $last_update_limit = 0;
+
+my $dry_run = 0;
+my $limit_to_user = '';
+my $last_update_limit = 6*60*60;
+
+sub execute {
+    my ( $self, $domain_id ) = @_;
+
+    $domain_id ||= `/usr/local/bin/d lc meetings_domain`;
+
+    # This should produce a different timestamp each 2 weeks.
+    my $dt = DateTime->now;
+    $dt->set( hour => 0, minute => 0, second => 0, nanosecond => 0 );
+    $dt->subtract( days => 1 ) while $dt->day_of_week > 1;
+    $dt->subtract( days => 7 ) while $dt->week_number % 2 > 0;
+
+    my $even_week_start_epoch = $dt->epoch;
+
+    my $users_ids = CTX->lookup_action('domains_api')->e( users_by_domain => { domain_id => $domain_id } );
+    my $users = Dicole::Utils::User->ensure_object_list( $users_ids );
+    my $user_profiles = CTX->lookup_action('networking_api')->e( user_profile_object_map => {
+        domain_id => $domain_id, user_id_list => $users_ids,
+    });
+
+    my $meetings_api = CTX->lookup_action('meetings_api');
+    my $participations_by_user = $meetings_api->_fetch_participations_by_user_hash_for_domain( $domain_id );
+
+    my $processed_users = {};
+    for my $user ( @$users ) {
+        next unless $user->email;
+        next if $limit_to_user && $user->email ne $limit_to_user;
+
+        $user = $meetings_api->_fetch_user_for_email( $user->email, $domain_id );
+        next unless $user;
+        next if $processed_users->{ $user->id }++;
+        print "[DRY] Processing ". $user->email . "\n" if $dry_run;
+
+        next if $meetings_api->_get_note_for_user( 'meetings_mailchimp_update_failed', $user, $domain_id );
+
+        my $last_update = $meetings_api->_get_note_for_user( 'meetings_mailchimp_last_updated', $user, $domain_id );
+        next if $last_update && $last_update + $last_update_limit > time;
+        
+        if ( $meetings_api->_get_note_for_user( 'meetings_mailing_list_disabled', $user, $domain_id ) ) {
+            if ( ! $meetings_api->_get_note_for_user( 'meetings_mailchimp_unsubscribed', $user, $domain_id ) ) {
+                my $ok = WWW::Mailchimp->new( %$params )->listUnsubscribe(
+                    id => $list_id,
+                    email_address => $user->email,
+                    send_notify => 0,
+                ) unless $dry_run;
+
+                if ( $dry_run ) {
+                    print "[DRY] Removed from mailchimp succesfully: " . $user->email . "\n";
+                }
+                elsif ( $ok && ref( $ok ) eq 'JSON::XS::Boolean' ) {
+                    print "Removed from mailchimp succesfully: " . $user->email . "\n";
+                    $meetings_api->_set_note_for_user( 'meetings_mailchimp_unsubscribed', time, $user, $domain_id );
+                }
+                else {
+                    if ( $ok && ref( $ok ) eq 'HASH' && ( $ok->{code} == '232' || $ok->{code} == '215' ) ) {
+                        $meetings_api->_set_note_for_user( 'meetings_mailchimp_unsubscribed', time, $user, $domain_id );
+                        warn "Not removing from mailchimp again for " . $user->email . "\n";
+                    }
+                    else {
+                        warn Data::Dumper::Dumper( $ok );
+                    }
+                }
+                
+            }
+            next;
+        }
+
+        my $pro = $meetings_api->_user_is_real_pro( $user, $domain_id );
+        my $trial_pro = $meetings_api->_user_is_trial_pro( $user, $domain_id );
+
+        my $profile = $user_profiles->{ $user->id };
+        my $participations = $participations_by_user->{ $user->id } || [];
+
+        my $s2m_first_login = $meetings_api->_get_note_for_user( swipetomeet_ios_device_first_login => $user, $domain_id )
+          || $meetings_api->_get_note_for_user( swipetomeet_android_device_first_login => $user, $domain_id );
+
+        my $variable_user_data = {
+            FNAME => $user->first_name || '',
+            LNAME => $user->last_name || '',
+            COMPANY => $profile ? $profile->contact_organization || '' : '',
+            GOOGLE => $meetings_api->_user_has_connected_google( $user, $domain_id ) ? 'yes' : 'no',
+            FACEBOOK => $user->facebook_user_id ? 'yes' : 'no',
+            LINKEDIN => 'nno',
+            PRO => $pro ? 'yes' : 'no',
+            TRIALPRO => ( $trial_pro && ! $pro ) ? 'yes' : 'no',
+            TOS => $meetings_api->_user_has_accepted_tos( $user, $domain_id ) ? 'yes' : 'no',
+            NOFMEETS => scalar( @$participations ) || 0,
+            LASTLOGIN => $last_login_stamp,
+            S2M_APP => $s2m_first_login ? 'yes' : '',
+        };
+
+        my $as = CTX->lookup_object('logged_action')->fetch_group( {
+                sql => 'select dicole_logged_action.* from dicole_logged_action where user_id = ' . $user->id .
+                ' order by time desc limit 1',
+                } );
+
+        my $last_login_epoch = $as->[0] ? $as->[0]->time : 0;
+        my $last_login_stamp = 0;
+
+        if ( $last_login_epoch ) {
+            my $diff = time - $last_login_epoch;
+            for my $weeks ( 2, 4, 12 ) {
+                if ( $diff < 60*60*24*7*$weeks ) {
+                    $last_login_stamp = $weeks;
+                    last;
+                }
+            }
+            $last_login_stamp ||= 99;
+        }
+
+        $variable_user_data->{LASTLOGIN} = $last_login_stamp;
+
+        my $signature_data = {
+            %$variable_user_data,
+            even_week_start => $even_week_start_epoch,
+        };
+        my $signature = eval { Dicole::Utils::Data->signature( $signature_data ) };
+        if ( $@ ) {
+            print STDERR "Signature generation failed for user_id " . $user->id;
+            next;
+        }
+
+        my $old_signature = $meetings_api->_get_note_for_user( 'meetings_mailchimp_data_signature', $user, $domain_id );
+        next if $old_signature && $old_signature eq $signature;
+
+        my $referer_timestamp = 0;
+        my $referer_id = 0;
+        for my $po ( @$participations ) {
+            next if $referer_timestamp && $po->created_date > $referer_timestamp;
+            next unless $po->creator_id;
+            $referer_timestamp = $po->created_date;
+            $referer_id = $po->creator_id;
+        }
+
+        my $partner_id = $meetings_api->_get_note_for_user( 'created_by_partner', $user, $domain_id );
+        my $partner = $partner_id ? $meetings_api->PARTNERS_BY_ID->{ $partner_id } : undef;
+
+        my $merge_vars = [
+            AUTHTOKEN => Dicole::Utils::User->temporary_authorization_key( $user, 24*30 ),
+            REFNAME => '',
+            REFIMG => '',
+            PARTNER => $partner ? $partner->name : '',
+        ];
+
+        push @$merge_vars, ( $_ => $variable_user_data->{ $_ } ) for keys %$variable_user_data;
+
+#        print Data::Dumper::Dumper( [ $signature, $merge_vars ] );
+
+        my $ok = WWW::Mailchimp->new( %$params )->listSubscribe(
+            id => $list_id,
+            email_address => $user->email,
+            update_existing => 1,
+            double_optin => 0,
+            merge_vars => $merge_vars,
+        ) unless $dry_run;
+
+        if ( $dry_run ) {
+            print "[DRY] Updated mailchimp succesfully for " . $user->email . "\n";
+        }
+        elsif ( $ok && ref( $ok ) eq 'JSON::XS::Boolean' ) {
+            $meetings_api->_set_note_for_user( 'meetings_mailchimp_last_updated', time, $user, $domain_id, { skip_save => 1 } );
+            $meetings_api->_set_note_for_user( 'meetings_mailchimp_update_failed', undef, $user, $domain_id, { skip_save => 1 } );
+            $meetings_api->_set_note_for_user( 'meetings_mailchimp_data_signature', $signature, $user, $domain_id );
+            print "Updated mailchimp succesfully for " . $user->email . "\n";
+        }
+        else {
+            if ( $ok && ref( $ok ) eq 'HASH' ) {
+                if ( $ok->{code} == 502 || $ok->{code} == 202 || $ok->{code} == 220 ) {
+                    $meetings_api->_set_note_for_user( 'meetings_mailchimp_update_failed', 1, $user, $domain_id, { skip_save => 1 } );
+                    $meetings_api->_set_note_for_user( 'meetings_mailchimp_update_fail_error', $ok->{error}, $user, $domain_id, { skip_save => 1 } );
+                    $meetings_api->_set_note_for_user( 'meetings_mailchimp_data_signature', $signature, $user, $domain_id );
+                    warn "Not updating mailchimp again for " . $user->email . "\n";
+                }
+                else {
+                    warn "Unexpected error: " . Data::Dumper::Dumper( [$ok] );
+                }
+            }
+            else {
+                warn "Unexpected return: " . Data::Dumper::Dumper( [$ok] );
+            }
+        }            
+    }
+
+}
+
+1;

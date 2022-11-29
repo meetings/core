@@ -1,0 +1,3 @@
+[% IF in_html %]</td></tr></table>
+[% inthebubble = 0 %]
+[% END %]

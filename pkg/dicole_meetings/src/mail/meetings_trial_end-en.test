@@ -1,0 +1,38 @@
+[%#- Sent a week before and a day before trial end. Sent also when trial ends. -%]
+
+[%- IF test_case == 'koeviikko' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+week_before = '1'
+user_name = 'Super Muumi'
+expiration_date = '25.11.11'
+upgrade_url = 'www.meat.in.gs'
+features_url = 'www.meat.in.gs'
+
+%]
+[% END %]
+
+[%- IF test_case == 'koepäivä' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+day_before = '1'
+user_name = 'Super Muumi'
+upgrade_url = 'www.meat.in.gs'
+features_url = 'www.meat.in.gs'
+
+%]
+[% END %]
+
+[%- IF test_case == 'koeohi' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+trial_ended = '1'
+user_name = 'Super Muumi'
+upgrade_url = 'www.meat.in.gs'
+features_url = 'www.meat.in.gs'
+
+%]
+[% END %]

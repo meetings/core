@@ -1,0 +1,326 @@
+# $Id: messages-fi.po,v 1.6 2009-01-07 14:42:33 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:11:04+0000\n"
+"PO-Revision-Date: 2005-03-22 02:11:04+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Access admin area"
+msgstr "Pääsy ylläpitotoimintoihin"
+
+msgid "Add collection"
+msgstr "Lisää kokoelma"
+
+msgid "Add new security settings"
+msgstr "Lisää uusia käyttöoikeuksia"
+
+msgid "Add securities"
+msgstr "Lisää käyttöoikeuksia"
+
+msgid "Add settings"
+msgstr "Lisää asetus"
+
+msgid "Advanced security settings"
+msgstr "Tarkemmat käyttöoikeudet"
+
+msgid "Archetype description"
+msgstr "Perustyypin kuvaus"
+
+msgid "Archetype name"
+msgstr "Perustyypin nimi"
+
+msgid "Are you sure you want to remove the selected collections?"
+msgstr "Haluatko varmasti poistaa valitut kokoelmat?"
+
+msgid "Assign any security"
+msgstr "Aseta mikä tahansa käyttöoikeus"
+
+msgid "Collection details"
+msgstr "Kokoelman tiedot"
+
+msgid "Collection name"
+msgstr "Kokoelman nimi"
+
+msgid "Collection saved"
+msgstr "Kokoelma tallennettiin onnistuneesti"
+
+msgid "Confirmation"
+msgstr "Vahvistus"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "Error"
+msgstr "Virhe"
+
+msgid "First name"
+msgstr "Etunimi"
+
+msgid "General collection information"
+msgstr "Kokoelman yleistiedot"
+
+msgid "Global rights updated"
+msgstr "Yleiset käyttöoikeudet päivitettiin onnistuneesti"
+
+msgid "Global security settings"
+msgstr "Yleiset käyttöoikeudet"
+
+msgid "Group levels"
+msgstr "Ryhmän tasot"
+
+msgid "Group name"
+msgstr "Ryhmän nimi"
+
+msgid "Group security settings"
+msgstr "Ryhmän käyttöoikeudet"
+
+msgid "Groups name"
+msgstr "Ryhmien nimet"
+
+msgid "Groups' rights"
+msgstr "Ryhmien oikeudet"
+
+msgid "Last name"
+msgstr "Sukunimi"
+
+msgid "List collections"
+msgstr "Näytä kokoelmat"
+
+msgid "List of collections"
+msgstr "Kokoelmien listaus"
+
+msgid "List securities"
+msgstr "Näytä käyttöoikeudet"
+
+msgid "Login name"
+msgstr "Käyttäjätunnus"
+
+msgid "Module"
+msgstr "Moduuli"
+
+msgid "Receiver and target types"
+msgstr "Vastaanottaja- ja periyttäjätyypit"
+
+msgid "Receiver type"
+msgstr "Vastaanottajatyyppi"
+
+msgid "Remove"
+msgstr "Poista"
+
+msgid "Remove collections"
+msgstr "Poista kokoelmia"
+
+msgid "Remove groups' rights"
+msgstr "Poista ryhmien oikeuksia"
+
+msgid "Remove securities"
+msgstr "Poista käyttöoikeuksia"
+
+msgid "Remove selected collections"
+msgstr "Poista valitut kokoelmat"
+
+msgid "Remove users' rights"
+msgstr "Poista käyttäjien oikeuksia"
+
+msgid "Rights will be applied to all users. Proceed to the next step."
+msgstr "Oikeudet asetetaan kaikille käyttäjille. Siirry seuraavaan vaiheeseen."
+
+msgid "Rights will target the whole system. Proceed to the next step."
+msgstr "Oikeudet kohdistuvat koko järjestelmään. Siirry seuraavaan vaiheeseen."
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Securities added"
+msgstr "Käyttöoikeudet lisättiin onnistuneesti"
+
+msgid "Security Collections Manager"
+msgstr "Käyttöoikeuskokoelmien hallinta"
+
+msgid "Security collections"
+msgstr "Käyttöoikeuskokoelmat"
+
+msgid "Security level description"
+msgstr "Käyttöoikeustason kuvaus"
+
+msgid "Security level name"
+msgstr "Käyttöoikeustason nimi"
+
+msgid "Security settings added"
+msgstr "Käyttöoikeudet lisättiin onnistuneesti"
+
+msgid "Select collections"
+msgstr "Valitse kokoelmat"
+
+msgid "Select global rights"
+msgstr "Valitse yleiset oikeustasot"
+
+msgid "Select global securities"
+msgstr "Valitse yleiset käyttöoikeudet"
+
+msgid "Select groups"
+msgstr "Valitse ryhmät"
+
+msgid "Select groups which receive these rights"
+msgstr "Valitse oikeustasot vastaanottavat ryhmät"
+
+msgid "Select receivers"
+msgstr "Valitse vastaanottajat"
+
+msgid "Select targets"
+msgstr "Valitse periyttäjät"
+
+msgid "Select the collections"
+msgstr "Valitse kokoelmat"
+
+msgid "Select the groups which the rights will target"
+msgstr "Valitse ryhmät, jonka mukaan oikeustasot asetetaan"
+
+msgid "Select the users which the rights will target"
+msgstr "Valitse käyttäjät, jonka mukaan oikeustasot asetetaan"
+
+msgid "Select the users who receive these rights"
+msgstr "Valitse oikeustasoja vastaanottavat käyttäjät"
+
+msgid "Select users"
+msgstr "Valitse käyttäjät"
+
+msgid "Selected collections"
+msgstr "Valitse kokoelmat"
+
+msgid "Selected groups"
+msgstr "Valitut ryhmät"
+
+msgid "Selected levels"
+msgstr "Valitut tasot"
+
+msgid "Selected receivers"
+msgstr "Valitut vastaanottajat"
+
+msgid "Selected targets"
+msgstr "Valitut periyttäjät"
+
+msgid "Selected users"
+msgstr "Valitut käyttäjät"
+
+msgid "Show list"
+msgstr "Näytä lista"
+
+msgid "System administrator"
+msgstr "Järjestelmän ylläpitäjä"
+
+msgid "System moderator"
+msgstr "Järjestelmän moderaattori"
+
+msgid "System user defaults"
+msgstr "Järjestelmäkäyttäjän oletusarvot"
+
+msgid "Target type"
+msgstr "Periyttäjätyyppi"
+
+msgid "Type"
+msgstr "Tyyppi"
+
+msgid "User can assign any security in the global security managers"
+msgstr "Käyttäjä voi asettaa mitä tahansa yleisiä käyttöoikeuksia"
+
+msgid "User levels"
+msgstr "Käyttäjätasot"
+
+msgid "User name"
+msgstr "Käyttäjätunnus"
+
+msgid "User security settings"
+msgstr "Käyttäjien käyttöoikeudet"
+
+msgid "User sees the admin tab"
+msgstr "Käyttäjä näkee ylläpitotoimintojen välilehden"
+
+msgid "Users' rights"
+msgstr "Käyttäjän oikeudet"
+
+msgid "World levels"
+msgstr "Julkisuustasot"
+
+msgid "User"
+msgstr "Käyttäjä"
+
+msgid "Group"
+msgstr "Ryhmä"
+
+msgid "System"
+msgstr "Järjestelmä"
+
+msgid "Everybody"
+msgstr "Kaikki"
+
+msgid "Allow"
+msgstr "Hyväksy"
+
+msgid "Deny"
+msgstr "Hylkää"
+
+msgid "Receiving user"
+msgstr "Vastaanottava käyttäjä"
+
+msgid "Receiving group"
+msgstr "Vastaanottava ryhmä"
+
+msgid "Target user"
+msgstr "Kohdekäyttäjä"
+
+msgid "Target group"
+msgstr "Kohderyhmä"
+
+msgid "List settings"
+msgstr "Listaa asetukset"
+
+msgid "Local users"
+msgstr "Paikalliset käyttäjät"
+
+msgid "System roles"
+msgstr "Roolit järjestelmässä"
+
+msgid "Access personal area"
+msgstr "Pääsy henkilökohtaiselle alueelle"
+
+msgid "User sees the personal tab"
+msgstr "Käyttäjällä on mahdollisuus nähdä henkilökohtainen välilehti"
+
+msgid "Are you sure you want to remove the selected rights?"
+msgstr "Olet varma, että haluat poistaa valitut oikeudet"
+
+msgid "Remove rights"
+msgstr "Poista oikeudet"
+
+msgid "Remove settings"
+msgstr "Poista asetukset"
+
+msgid "Rights will be applied globally. Proceed to the next step."
+msgstr "Oikeudet annetaan kenelle tahansa. Jatka seuraavaan askeleeseen."
+
+msgid "Rights will be applied to all local users. Proceed to the next step."
+msgstr "Oikeudet annetaan paikallisille käyttäjille. Jatka seuraavaan askeleeseen."
+
+msgid "Select the rights you want to remove"
+msgstr "Valitse oikeudet, jotka haluat poistaa"
+
+
+
+
+msgid "Manage admin only settings"
+msgstr "Hallitse ylläpitäjille tarkoitettuja asetuksia"
+
+msgid "User can manage admin only settings"
+msgstr "Käyttäjä voi hallita vain ylläpitäjille tarkoitettuja asetuksia"

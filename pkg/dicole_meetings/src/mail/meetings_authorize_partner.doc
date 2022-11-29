@@ -1,0 +1,12 @@
+PARTNER; Sent when a meeting is created by a partner to user that already exists in Meetin.gs and is following the link provided by partner. (While not being logged in).
+
+Parameters:
+partner_name
+authorize_url
+login_url
+
+UTM parameters
+source: notification
+medium: email
+campaign: authorize_partner
+

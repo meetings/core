@@ -1,0 +1,27 @@
+[%#- $Id: input_input.tmpl,v 1.7 2009-01-07 14:42:33 amv Exp $ -%]
+
+[%#-
+	The template accepts the following information in itemparams:
+	{
+		attributes =
+			{
+				all of the XHTML attributes that go with the element
+			}
+		required
+		error
+
+	}
+
+A BLUE '«' will be printed after the corresponding input field if it is required.
+A RED '«' will be printed after the corresponding input field if it was left blank when submitting, or the information was not in the right format.
+
+The two conditions can exist with a single input field.
+In this case the BLUE « comes first.
+-%]
+
+<input [% 'class="req"' IF itemparams.required %][% 'class="err"' IF itemparams.error %][% FOREACH param = itemparams.attributes %] [% param.key %]="[% param.value | html %]"[% END %] />
+[%-
+	IF itemparams.error || itemparams.required;
+		PROCESS dicole_base::input_req_error;
+	END
+-%]

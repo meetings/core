@@ -1,0 +1,352 @@
+=head1 NAME
+
+Implementation plan for Material Bank
+
+=head1 TASK INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.5 $
+
+=item B<Severity>
+
+Major
+
+=item B<Priority>
+
+P2
+
+=item B<Risk factor>
+
+2
+
+=item B<Estimate>
+
+No estimate.
+
+=item B<Status>
+
+Waiting for file manager to finish.
+
+=back
+
+=head1 ABSTRACT
+
+This document explains how Dicole Material Bank (part of content
+management) tool should be implemented.
+
+=head1 DETAILS
+
+Material Bank is a storage where the teacher makes material available to
+students. This is different compared to the L<File Manager|file_manager>
+since we do not a wide variety of File Management features in the
+Material Bank. The Material Bank handles content as a collection of
+documents, defines relationships inside these collections and defines rules for
+displaying the content (like timing the availability of the content). These
+features are different compared to the principles used in a File Manager.
+
+=head2 Integration with the File Manager
+
+The integration between File Manager and Material Bank is a good idea. For
+example, the user could select a folder from the file area which contents' will
+become a new collection of material in the Material Bank.
+
+The material in the Material Bank will be represented in a tree view once the
+content is selected from the file area.
+
+It is important to note that the files are not copied into the Material Bank. The
+material in the Material Bank just consists of files gathered from the file
+area. In that sense the content and meta descriptions are the same for files in
+the Material Bank as in the file area. If the information changes on the file
+area, the changes will be visible in the Material Bank as well.
+
+=head2 Slide show and relationships
+
+It makes sense that the material can be browsed like a slide show. This even
+enables the learning environment to be used as a central presentation tool for
+displaying instructional material in face-to-face settings. The teacher doesn't
+have to explicitly copy some powerpoint presentation into the computer in the
+class room. If network access is available, one could login into Dicole and
+start a slide show from there without a fuzz. 
+
+Since the material is in a tree format and files in directories are not in a
+particular order, the user should be visually able to construct the order in
+which the presentation is displayed. When the material is imported it will be
+in alphabetic order. From that point on the user could modify the order freely.
+This could be achieved by I<up> and I<down> arrow buttons for the document in
+question.
+
+In the slide show view the system will follow the defined order while displaying
+the slides (different documents). 
+
+In addition to moving documents up and down the author should be able to define
+the following rules by selecting properties:
+
+=over 4
+
+=item *
+
+Automatic transition time to next slide. This enables the possibility to use it
+in I<kiosk> mode, meaning that the slides will advance automatically. Since you
+can define transition time for each slide separately it would in theory allow
+creating poor mans animations with still images. The automatic transition can be
+achieved with the tag:
+
+  <meta http-equiv="Refresh" content="%s;url=%u" />
+
+Where I<%s> is the transition time (e.g. 1) in seconds and I<%u> is the URL where
+to go next.
+
+=item *
+
+Transition effect. Unfortunately transition effects are not possible with
+browsers other than Internet Explorer. Anyway, here is the information how to
+implement page transition effects for Internet Explorer:
+
+  <meta http-equiv="Page-Enter" content="RevealTrans(Duration=%s,Transition=%t)" />
+  <meta http-equiv="Page-Exit" content="RevealTrans(Duration=%s,Transition=%t)" />
+
+Where I<%s> is the transition effect duration in seconds (e.g. 1.0) and I<%t> is
+the transition effect to use. Here are the different transition effects
+available:
+
+=over 8
+
+=item B<O>
+
+Box in
+
+=item B<1>
+
+Box out
+
+=item B<2>
+
+Circle in
+
+=item B<3>
+
+Circle out
+
+=item B<4>
+
+Wipe up
+
+=item B<5>
+
+Wipe down
+
+=item B<6>
+
+Wipe right
+
+=item B<7>
+
+Wipe left
+
+=item B<8>
+
+Vertical blinds
+
+=item B<9>
+
+Horizontal blinds
+
+=item B<10>
+
+Checkerboard across
+
+=item B<11>
+
+Checkerboard down
+
+=item B<12>
+
+Random dissolve
+
+=item B<13>
+
+Split vertical in
+
+=item B<14>
+
+Split vertical out
+
+=item B<15>
+
+Split horizontal in
+
+=item B<16>
+
+Split horizontal out
+
+=item B<17>
+
+Strips left down
+
+=item B<18>
+
+Strips left up
+
+=item B<19>
+
+Strips right down
+
+=item B<20>
+
+Strips right up
+
+=item B<21>
+
+Random bars horizontal
+
+=item B<22>
+
+Random bars vertical
+
+=item B<23>
+
+Random
+
+=back
+
+To extend this functionality even further a teacher could create exactly same
+effects for individual items as are available in Powerpoint with some help of
+CSS. Example: 
+
+  P.intro { filter: revealtrans(duration=4.0, transition=3) }
+
+A paragraph marked with style P.intro would have a transition effect attached
+to it. For better control over these things some JavaScript should be used and
+most likely that job is solely for the content creator itself and not for us to
+implement.
+
+There are other possibilities available. See
+L<MSDN|http://msdn.microsoft.com/workshop/author/filter/reference/reference.asp>
+for more information.
+
+=item *
+
+Setting visibility to hidden. For student this slide is not visible and it is
+skipped in slide show view. If the item is a folder the whole contents of the
+folder and associated sub folders do not show up. This is a good feature for
+various reasons. One is that sometimes you don't want to show all slides for
+schedule reasons. Another is that possibly you don't want to make that material
+available yet.
+
+=item *
+
+Timing visibility. This allows setting certain date and time when the item
+becomes visible or becomes hidden. Imagine you are having a lesson and would
+like to make material gradually available without the need to do it manually.
+This is the feature that enables such use.
+
+=item *
+
+Display meta descriptions. This would enable the display of meta descriptions
+along the document itself. As an extended feature the user could select exactly
+what meta descriptions to display. Associated with different meta description
+standards there would be various possibilities of usage. For example one could
+define a meta description standard for describing plants. Associated with the
+images of the plants it would result in possible pedagogical implications.
+
+=back
+
+These settings may be applied to individual slides (documents), folders and to
+the whole presentation. If some of these are defined for certain folders the
+settings are recursively applied to everything under that folder as a default.
+Same applies to setting properties for the whole presentation. By setting
+properties for an individual slide you could override the default which was
+obtained recursively.
+
+For the whole presentation there exists the following additional properties:
+
+=over 4
+
+=item *
+
+Loop. This defines if the presentation should loop back to the beginning once
+the end is reached. Combined with the automatic slide transition this would
+enable true I<kiosk> mode.
+
+=item *
+
+Force order. This would allow forcing the student to read the material in the
+specified order. Once the material is browsed through the student may browse it
+freely. I argue that this feature has no real value for learning because one
+could still learn things from reading more advanced material before
+familiarizing any of the beginner material of the same topic. There are
+people who disagree so this feature is here for flexibility reasons.
+
+=item *
+
+Disable automatic transition. This could allow disabling the automatic
+transition making it possible to turn it on later. That way you could define the
+transition times and disable them for later use.
+
+=back
+
+=head2 Displayer and its controls
+
+The slide show is the main displayer. It has the following basic controls:
+
+=over 4
+
+=item *
+
+To next slide
+
+=item *
+
+To previous slide
+
+=item *
+
+The the beginning
+
+=item *
+
+To the end
+
+=item *
+
+Full screen
+
+=item *
+
+Stop presentation (only available if automatic transition is turned on)
+
+=item *
+
+End presentation
+
+=back
+
+=head2 Usage levels
+
+The tool would allow two levels of usage. The most complicated one, the teacher
+mode, was described above. It allows adding new material to the Material Bank
+and modifying how it should be displayed to the students.
+
+The student mode doesn't have any editing capabilities. The student is only able
+to see material that is available at a certain period of time. The student mode
+allows displaying a part of the material at a time or displaying the whole
+material as a slide show. The actions the user performs while watching the
+material is logged in a database. That information could be later used to draw
+various statistics and information how long a certain material was under
+observation and if the student previewed any of the material at all. 
+
+=head1 NOTES AND STATUS
+
+This section should be filled with information and status of the current
+implementation of the specifications.
+
+=head1 AUTHORS
+
+Teemu Arina E<lt>teemu@ionstream.fiE<gt>

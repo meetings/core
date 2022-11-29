@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+my $conf = {
+    rollout_branch  => 'test',
+    meetings_domain => 1,
+    website_dir     => '/usr/local/dcp/'
+};
+
+print $conf->{ $ARGV[0] };

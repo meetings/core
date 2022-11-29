@@ -1,0 +1,67 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ($self, $p) = @_;
+
+#     my $dusers = CTX->lookup_object('dicole_domain_user')->fetch_group( { } ) || [];
+#     my %user_domains = ();
+#     for my $du ( @$dusers ) {
+#         $user_domains{ $du->user_id } ||= [];
+#         push @{ $user_domains{ $du->user_id } }, $du->domain_id;
+#     }
+# 
+#     for my $key ( sort {$a <=> $b} keys %user_domains ) {
+#         if ( scalar( @{ $user_domains{ $key } } ) == 1 ) {
+#             my $action_iter = CTX->lookup_object('logged_action')->fetch_iterator( {
+#                 where => 'user_id = ? AND domain_id = 0',
+#                 value => [ $key ],
+#             } );
+#             while ( $action_iter->has_next ) {
+#                 my $action = $action_iter->get_next;
+#                 $action->domain_id( $user_domains{ $key }->[0] );
+#                 $action->save;
+#             }
+#         }
+#         else {
+#             my $user = CTX->lookup_object('user')->fetch( $key );
+#             next if !$user;
+#             my $domains = CTX->lookup_object('dicole_domain')->fetch_group( {
+#                 where => Dicole::Utils::SQL->column_in( 'domain_id', $user_domains{ $key } ),
+#             } ) || [];
+#             print $user->first_name . ' ' . $user->last_name . ': ';
+#             print join ', ', map { $_->domain_name } @$domains;
+#             print $/; 
+#         }
+# 
+#     }
+
+    my $dgroups = CTX->lookup_object('dicole_domain_group')->fetch_group( { } ) || [];
+    my %group_domains = ();
+    for my $du ( @$dgroups) {
+        $group_domains{ $du->group_id } ||= [];
+        push @{ $group_domains{ $du->group_id } }, $du->domain_id;
+    }
+
+
+    for my $key ( sort {$a <=> $b} keys %group_domains ) {
+        if ( scalar( @{ $group_domains{ $key } } ) == 1 ) {
+            print "do: " . $key . $/;
+            my $action_iter = CTX->lookup_object('logged_action')->fetch_iterator( {
+                where => 'target_group_id = ? AND domain_id = 0',
+                value => [ $key ],
+            } );
+            while ( $action_iter->has_next ) {
+                my $action = $action_iter->get_next;
+                $action->domain_id( $group_domains{ $key }->[0] );
+                $action->save;
+            }
+        }
+        else {
+            print "fail: " . $key . $/;
+        }
+
+    }
+
+}
+
+1;

@@ -1,0 +1,24 @@
+<div class="comment">
+	<div class="comment-user-pic">
+		<a title="<%== p.comment.user_name %>" href="#" class="user">
+            <img alt="<%== p.comment.user_name %>" src="<%= p.comment.user_image ? p.comment.user_image : '/images/theme/default/default-user-avatar-50px.png' %>">
+		</a>
+	</div>
+	<div class="comment-text">
+		<%= p.comment.content %>
+	</div>
+	<div class="comment-controls">
+		<% if ( p.comment.right_to_delete && ! p.chat.disable_deleting ) { %>
+        <a href="#" class="js_comment_delete_link js_tooltip" data-tooltip-class="tooltip-small" data-tooltip-text="Remove comment"><span class="comment-remove-button"> </span></a>
+		<% } %>
+		<% if ( p.comment.right_to_edit && ! p.chat.disable_editing ) { %>
+        <a href="#" class="js_comment_edit_link js_tooltip" data-tooltip-class="tooltip-small" data-tooltip-text="Edit comment"><span class="comment-edit-button"> </span></a>
+		<% } %>
+	</div>
+	
+	<div class="comment-info">
+		<span class="user-name"><%== p.comment.user_name %></span> <span class="date">- <%== p.comment.datetimestamp %></span>
+	</div>
+</div>
+
+

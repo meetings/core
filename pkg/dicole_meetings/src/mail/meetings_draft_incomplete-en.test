@@ -1,0 +1,31 @@
+[%#- Sent when user has one or more draft waiting for completion.-%]
+
+[%#- Sent if someone chooses a matchmaker time option while not being logged in and an existing user email is provided -%]
+
+[%- IF test_case == 'testi' %]
+[%-
+
+
+user_email = 'kayttajamies@hotmail.com'
+user_name = 'Setä Mies'
+meeting_url = 'http://www.dicole.com/'
+meeting_title = 'keskeneräinen möötti'
+
+
+%]
+[% END %]
+
+[%#- Sent if someone chooses a matchmaker time option while not being logged in and an existing user email is provided -%]
+
+[%- IF test_case == 'untitled meeting' %]
+[%-
+
+
+user_email = 'kayttajamies@hotmail.com'
+user_name = 'Setä Mies'
+meeting_url = 'http://www.dicole.com/'
+meeting_title = ''
+
+
+%]
+[% END %]

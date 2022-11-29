@@ -1,0 +1,48 @@
+sub execute {
+    my ( $self ) = @_;
+
+    my $jsonp = CTX->lookup_action('meetings_jsonp');
+
+    my $domain_id = 131;
+    my $domain_users = CTX->lookup_action('domains_api')->e( users_by_domain => { domain_id => $domain_id } );
+    my $users = Dicole::Utils::User->ensure_object_list( $domain_users );
+    my $users_by_id = { map { $_->id => $_ } @$users };
+
+#    my $user_visit_dates = $jsonp->_user_visit_dates( $domain_id );
+#    my $user_participation_dates = $jsonp->_user_participation_dates( $domain_id );
+#    my $user_participation_objects = $jsonp->_user_participation_objects( $domain_id );
+    my $user_sent_invite_dates = $jsonp->_user_sent_invite_dates( $domain_id );
+    my $user_sent_invite_objects = $jsonp->_user_sent_invite_objects( $domain_id );
+#    my $user_created_meeting_dates = $jsonp->_user_created_meeting_dates( $domain_id );
+
+#    my $meeting_objects = $jsonp->_meeting_objects( $domain_id );
+#    my $meeting_objects_by_id = { map { $_->id => $_ } @$meeting_objects };
+
+    print( join( "\t",
+        'Email',
+        'Name',
+        'Organization',
+        'Title',
+        'Invites sent',
+        'To how many users',
+        'On how many days',
+    ) . $/ );
+
+    for my $user ( @$users ) {
+        next unless scalar( @{ $user_sent_invite_dates->{ $user->id } || [] } ) > 1;
+        my $objects = $user_sent_invite_objects->{ $user->id } || [];
+        my %invited_lookup = map { $_->user_id => 1 } @$objects;
+        my $info = $jsonp->_gather_user_info( $user, -1, $domain_id );
+        print( join( "\t",
+            $user->email,
+            Dicole::Utils::User->name( $user ),
+            $info->{organization},
+            $info->{organization_title},
+            scalar( @$objects ),
+            scalar( keys %invited_lookup ),
+            scalar( @{ $user_sent_invite_dates->{ $user->id } || [] } ),
+        ) . $/ );
+    }
+}
+
+1;

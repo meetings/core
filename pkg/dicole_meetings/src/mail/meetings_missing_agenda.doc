@@ -1,0 +1,10 @@
+PARTNER; Sent 24h before meeting ONLY to organizer and ONLY if agenda is empty.
+
+Email can be replied to; if no agenda set, the reply goes as the agenda, if agenda is already set the content will be added as a comment.
+
+NOTE: either of these actions will ultimately result in a digest email being sent to participants.
+
+- As the meeting is happening on the next day, the basic information is presented as text on the beginning of the email
+- Email to notify the organizer that the agenda is unfilled and to offer two different ways to fill in the agenda: Replying to the email and logging in to the meeting page.
+- Write the copy based on the question "Why are you meeting?" instead of just telling the organizer to fill in the agenda
+- include summary screenshot image to the end of email to provide context of the current status of the meeting (already shared materials and participants)

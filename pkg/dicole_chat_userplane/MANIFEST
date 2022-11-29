@@ -1,0 +1,21 @@
+Changes
+conf/action.ini
+conf/spops.ini
+conf/tool.ini
+img/watermark.gif
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleChatUserplane.pm
+OpenInteract2/App/DicoleChatUserplane.pm
+OpenInteract2/SQLInstall/DicoleChatUserplane.pm
+package.ini
+template/chat_flash.tmpl
+template/get_user_xml.tmpl
+template/get_domain_preferences_xml.tmpl
+struct/dicole_vc_chatlog.sql
+struct/dicole_vc_rooms.sql
+struct/dicole_vc_presence.sql
+struct/dicole_vc_connection.sql
+html/images/theme/default/navigation/icons/16x16/virtual_conference.gif
+msg/messages-en.po
+msg/messages-fi.po

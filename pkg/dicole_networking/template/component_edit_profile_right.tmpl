@@ -1,0 +1,104 @@
+[%#
+	user_first_name = "Markku"
+	user_last_name = "Käkkärä"
+	user_role = "Kitaristi"
+	user_organization = "Kuoleman Enkelit"
+	user_location = "Kerava"
+	user_image = "#"
+	tags_json = "[\"tag1\", \"tag2\", \"tag3\"]"
+	tags_old_json = "[]"
+	tags = ["tag1", "tag2", "tag3"]
+	user_email = "markku@kikkura.com"
+	user_phone = "0700123123"
+	user_facebook = "marrrrrrrkkkku"
+	user_skype = "amrkkakrkra"
+	user_twitter = "markkkkkkku"
+	user_linkedin = "linkedin"
+	user_webpage = "kakguitars.fi"
+%]
+<div id="user_edit">
+	<div id="user_edit_photo">
+		<div id="user_edit_photo_bg"><img id="user_edit_photo_image" src="[% user_image | html %]" /></div>
+		<div id="user_edit_photo_progress_bar"></div>
+		<div id="user_edit_photo_upload_button"></div>
+		<a id="user_edit_photo_cancel_button" href="#" class="flash_button"><span>[% MSG("Cancel upload") | html %]</span></a>
+		<input type="hidden" id="user_edit_photo_draft_id" name="user_photo_draft_id" />
+	</div>
+	<div>
+		<div class="input_field">
+			<label for="user_first_name">[% MSG("First name") | html %]</label>
+			<input id="user_first_name" type="text" name="user_first_name" value="[% user_first_name | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="user_last_name">[% MSG("Last name") | html %]</label>
+			<input id="user_last_name" type="text" name="user_last_name" value="[% user_last_name | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="user_organization">[% MSG("Organization") | html %]</label>
+			<input id="user_organization" type="text" name="user_organization" value="[% user_organization | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="user_role">[% MSG("Role") | html %]</label>
+			<input id="user_role" type="text" name="user_role" value="[% user_role | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="user_location">[% MSG("Location") | html %]</label>
+			<input id="user_location" type="text" name="user_location" value="[% user_location | html %]" />
+		</div>
+	</div>
+	<div style="clear:both"></div>
+	<h3>[% MSG("Tags") | html %]</h3>
+	<div id="tags" class="tags tag_control">
+		<input type="hidden" name="tags" id="tag_data_tags" value="[% tags_json | html %]" />
+		<input type="hidden" name="tags_old" id="tag_data_old_tags" value="[% tags_old_json | html %]" />
+		<div class="tag_list_container js-disable-commas" id="tag_list_tags">
+			[% FOREACH tag IN tags %]<a class="tag">[% tag | html %]</a>[% END %]
+		</div>
+		<div class="tag_add_input_container" id="tag_add_input_container_tags">
+			<input class="tag_add_input_field" name="tags_add_tags_input_field" id="tag_add_input_field_tags" type="text" value="" />
+			<a id="tag_add_input_submit_tags" class="button" href="#"><span>[% MSG("Add tag") | html %]</span></a>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+	<h3>[% MSG("About") | html %]</h3>
+	<div class="input_field">
+    	<textarea id="user_about_me" name="user_about_me" cols="50" rows="5">[% user_about_me | html %]</textarea>
+	</div>
+	<div style="clear:both"></div>
+	<h3>[% MSG("Links") | html %]</h3>
+	<div>
+		<div class="input_field">
+			<label for="user_email">[% MSG("E-Mail") | html %]</label>
+			<input id="user_email" type="text" name="user_email" value="[% user_email | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="user_phone">[% MSG("Phone") | html %]</label>
+			<input id="user_phone" type="text" name="user_phone" value="[% user_phone | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="user_skype">[% MSG("Skype") | html %]</label>
+			<input id="user_skype" type="text" name="user_skype" value="[% user_skype | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="user_facebook">[% MSG("Facebook-page") | html %]</label>
+			<span class="input_prefix">http://www.facebook.com/</span>
+			<input id="user_facebook" type="text" name="user_facebook" value="[% user_facebook | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="user_linkedin">[% MSG("LinkedIn-page") | html %]</label>
+			<span class="input_prefix">http://www.linkedin.com/</span>
+			<input id="user_linkedin" type="text" name="user_linkedin" value="[% user_linkedin | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="user_twitter">[% MSG("Twitter-page") | html %]</label>
+			<span class="input_prefix">http://www.twitter.com/</span>
+			<input id="user_twitter" type="text" name="user_twitter" value="[% user_twitter | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="user_webpage">[% MSG("Other webpage") | html %]</label>
+			<span class="input_prefix">http://</span>
+			<input id="user_webpage" type="text" name="user_webpage" value="[% user_webpage | html %]" />
+		</div>
+	</div>
+	<input type="submit" name="save" value="[% MSG('Save') | html %]" />
+</div>

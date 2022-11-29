@@ -1,0 +1,32 @@
+[% MTN.t('%1$s: Mobile site to access your meetings',[matchmaking_custom_name]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Hi %1$s,'[user_name]) %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<bubble>>>
+
+<<<p>>>
+[% MTN.t('During the %1$s event you will be able to view your scheduled meetings also from our mobile site. Access meeting details, materials, participants and more.',[matchmaking_event_name]) %]
+<<</p>>>
+
+<<<p>>>[% MTN.t('Simply open this email on your mobile device and tap the button below:') %]<<</p>>>
+[% url = login_url %]
+[% text = MTN.t('Open the list of meetings') %]
+<<<blue_button>>>
+
+<<<p>>>
+[% MTN.t('If you have any questions regarding the meetings at the venue such as the exact location, speak to the staff at the event registration & info and they will be happy to help you.') %]
+<<</p>>>
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

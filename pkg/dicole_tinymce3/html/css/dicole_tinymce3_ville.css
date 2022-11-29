@@ -1,0 +1,148 @@
+.swfupload {
+    width: 80px !important;
+    position: relative;
+    left: -40px;
+}
+
+.attachment_upload_link {
+    width: 80px !important;
+    position: relative;
+    left: 40px;
+}
+
+.attachment_upload_container {
+    width: 560px !important;
+    text-align: center !important;
+}
+
+.attachment_list_container {
+    width: 560px !important;
+    height: 150px;
+    overflow: auto;
+}
+
+.defaultSkin div.attachment_list_attachment {
+    float: left;
+    width: 180px;
+    height: 120px;
+    text-align: center;
+}
+
+.defaultSkin .attachment_list_attachment img {
+    margin: -10px auto 0 auto;
+}
+
+.defaultSkin .attachment_list_attachment span {
+    margin: -10px auto 0 auto;
+}
+
+.defaultSkin .attachment_list_attachment_filename {
+    text-align: center;
+}
+
+.defaultSkin a.attachment_list_attachment_delete {
+    width: 14px;
+    height: 14px;
+    background: transparent url(/images/tinymce3_icons-3.png) no-repeat scroll -784px -3px;
+    float: right;
+}
+
+.defaultSkin a.attachment_list_attachment_delete:hover {
+    background: transparent url(/images/tinymce3_icons-3.png) no-repeat scroll -797px -3px;
+}
+
+.defaultSkin a.attachment_list_attachment_delete_ie {
+    width: 14px;
+    height: 14px;
+    background: transparent url(/images/tinymce3_icons-3.gif) no-repeat scroll -784px -3px;
+    float: right;
+}
+
+.defaultSkin a.attachment_list_attachment_delete_ie:hover {
+    background: transparent url(/images/tinymce3_icons-3.gif) no-repeat scroll -797px -3px;
+}
+
+.defaultSkin a.attachment_list_attachment_confirm_delete {
+    width: 150px;
+    height: 95px;
+    display: none;
+    margin: -10px auto 0 auto;
+}
+
+.defaultSkin div.attachment_list_attachment_confirm_delete_bg {
+    width: 150px;
+    height: 95px;
+    background: transparent url(/js/confirmbg.png) repeat scroll 0 0;
+    text-align: center;
+}
+
+.defaultSkin span.attachment_list_attachment_confirm_delete_x {
+    font-weight: bold;
+    color: white;
+    font-size: 55px;
+}
+
+.defaultSkin span.attachment_list_attachment_confirm_delete_text {
+    font-weight: bold;
+    color: white;
+}
+
+.progress_bar_container {
+    width: 150px !important;
+    height: 10px;
+    background: black !important;
+    margin: 37px auto !important;
+}
+
+.progress_bar {
+    width: 1px;
+    height: 10px;
+    background: gray !important;
+}
+
+.defaultSkin a.dicole_tinymce3_submit_small_outer {
+    float: left;
+    display: block;
+    width: auto;
+    padding-left: 9px;
+    background: transparent url(/images/tinymce3_icons-3.png) no-repeat scroll -941px -417px;
+}
+
+.defaultSkin a.dicole_tinymce3_submit_small_outer:hover {
+    background-position: -941px -443px;
+}
+
+.defaultSkin span.dicole_tinymce3_submit_small_inner {
+    float: left;
+    display: block;
+    line-height: 20px;
+    height: 25px;
+    width: auto;
+    padding-right: 9px;
+    background: transparent url(/images/tinymce3_icons-3.png) no-repeat scroll right -341px;
+}
+
+.defaultSkin a.dicole_tinymce3_submit_small_outer:hover .dicole_tinymce3_submit_small_inner {
+    background-position: right -367px;
+}
+
+.defaultSkin div.external_link, .defaultSkin div.internal_link {
+    clear: left;
+}
+
+.defaultSkin input.dicole_save_input {
+    background-color: white;
+    margin: 5px;
+    padding: 3px;
+    border: 1px solid lightgray;
+    width: auto;
+}
+
+.defaultSkin input.dicole_image_input {
+    float: left;
+    background-color: white;
+    margin: 5px;
+    padding: 3px;
+    border: 1px solid lightgray;
+    width: auto;
+}

@@ -1,0 +1,59 @@
+use strict;
+use warnings;
+use IO::All;
+use File::Basename qw(basename);
+
+sub execute {
+    my ($self, $params) = @_;
+
+    my $base_dir = '/usr/local/dicole/html/';
+    my ($object, $field) = split /,/, $params;
+
+    die "Usage: oi2_manage dicole_script $0 --parameters=<object>,<field>\n"
+        unless $object and $field;
+
+    my $items = CTX->lookup_object($object)->fetch_group( { } );
+
+    print "Migrating " . scalar(@$items) . " files to attachments.\n";
+
+    for my $item (@$items) {
+        unless ($item->$field) {
+            #warn "No file found for item " . $item->id . ", skipping.\n";
+            next;
+        }
+
+        next if $item->$field =~ /^\d+$/;
+
+        my $url = $item->$field;
+        
+        if ($url =~ m#^/images/profiles#) {
+            $url = $base_dir . $url;
+        } else {
+            next;
+        }
+
+		my $filename = basename $item->$field;
+
+        my $a = CTX->lookup_action('attachment')->execute( store_from_bits => {
+            filename  => $filename,
+            bits      => io($url)->binmode->all,
+            object    => $item,
+            domain_id => $item->domain_id
+        } );
+
+        unless ($a) {
+            warn "Failed to create attachment for file " . $item->$field . "\n";
+            next;
+        }
+
+        $item->$field($a->id);
+
+        print "Migrated " . $item->id . " file to attachment " . $a->id . "\n";
+
+        $item->save;
+    }
+
+    1;
+}
+
+1;

@@ -1,0 +1,90 @@
+<form id="group_create" action="#" class="js_validate">
+	<a id="group_create_close" href="#" title="<%== dicole.msg('Close') %>"></a>
+	<h2><%== dicole.msg("Create a new group") %></h2>
+	<div id="group_create_photo">
+		<div id="group_create_photo_bg"><img id="group_create_photo_image" src="" /></div>
+		<div id="group_create_photo_progress_bar"></div>
+		<div id="group_create_photo_upload_button"></div>
+		<a id="group_create_photo_cancel_button" href="#" class="flash_button"><span><%== dicole.msg("Cancel upload") %></span></a>
+		<span id="group_create_photo_info_text"><%== dicole.msg("Optimal image size is 400x300px.") %></span>
+		<input type="hidden" id="group_create_photo_draft_id" name="group_photo_draft_id" />
+	</div>
+	<div>
+		<div class="input_field">
+			<label for="group_name" class="required"><%== dicole.msg("Group name") %> <span class="required_star">*</span></label>
+			<input id="group_name" type="text" name="group_name" class="js_validate_not_empty" />
+		</div>
+		<div class="input_field">
+			<label for="group_location"><%== dicole.msg("Group location") %></label>
+			<input id="group_location" type="text" name="group_location" />
+		</div>
+		<div class="input_field">
+			<label for="group_description"><%== dicole.msg("Group description") %></label>
+			<textarea id="group_description" name="group_description"></textarea>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+	<h3><%== dicole.msg("Tags") %></h3>
+	<div id="tags" class="tags tag_control">
+		<input type="hidden" name="tags" id="tag_data_tags" value="[]" />
+		<input type="hidden" name="tags_old" id="tag_data_old_tags" value="[]" />
+		<div class="tag_list_container js-disable-commas" id="tag_list_tags">
+			<% if(p.tags) dojo.forEach(p.tags, function(tag) { %>
+				<a class="tag"><%== tag %></a>
+			<% }); %>
+		</div>
+		<div class="tag_add_input_container" id="tag_add_input_container_tags">
+			<input class="tag_add_input_field" name="tags_add_tags_input_field" id="tag_add_input_field_tags" type="text" value="" />
+			<a id="tag_add_input_submit_tags" class="button" href="#"><span><%== dicole.msg("Add tag") %></span></a>
+		</div>
+	</div>
+	<h3><%== dicole.msg("Links") %></h3>
+	<div>
+		<div class="input_field">
+			<label for="group_facebook"><%== dicole.msg("Facebook-page") %></label>
+			<span class="input_prefix">http://www.facebook.com/</span>
+			<input id="group_facebook" type="text" name="group_facebook" />
+		</div>
+		<div class="input_field">
+			<label for="group_youtube"><%== dicole.msg("YouTube-page") %></label>
+			<span class="input_prefix">http://www.youtube.com/</span>
+			<input id="group_youtube" type="text" name="group_youtube" />
+		</div>
+		<div class="input_field">
+			<label for="group_myspace"><%== dicole.msg("MySpace-page") %></label>
+			<span class="input_prefix">http://www.myspace.com/</span>
+			<input id="group_myspace" type="text" name="group_myspace" />
+		</div>
+		<div class="input_field">
+			<label for="group_twitter"><%== dicole.msg("Twitter-page") %></label>
+			<span class="input_prefix">http://www.twitter.com/</span>
+			<input id="group_twitter" type="text" name="group_twitter" />
+		</div>
+		<div class="input_field">
+			<label for="group_webpage"><%== dicole.msg("Other webpage") %></label>
+			<span class="input_prefix">http://</span>
+			<input id="group_webpage" type="text" name="group_webpage" />
+		</div>
+<!--		<div class="input_field">
+			<label for="group_visibility"><%== dicole.msg("Group visibility") %></label>
+			<div id="fancy_radios_group_visibility" class="fancy_radios" style="overflow: hidden">
+				<a id="group_visibility,all" href="#" class="alpha_png left-button left-button-selected"><span class="alpha_png"><%== dicole.msg("Public") %></span></a>
+				<a id="group_visibility,none" href="#" class="alpha_png right-button"><span class="alpha_png"><%== dicole.msg("Hidden") %></span></a>
+				<input id="group_visibility" type="hidden" name="group_visibility" value="all" />
+			</div>
+        </div>-->
+		<!--<% if(p.tos_url) { %>
+		<div class="input_field">
+			<label for="accept_eula" id="accept_eula_label">
+				<input id="accept_eula" type="checkbox" name="accept_eula" class="js_validate_checked" />
+				<%= dicole.msg("I accept the <a href=\"[_1]\">terms of service</a>", p.tos_url) %>
+			</label>
+		</div>
+		<% } %>-->
+	</div>
+	<a href="#" class="big-button js_submit"><input id="group_create_button" type="submit" value="<%== dicole.msg("Register the group") %>" class="js_submit" /></a>
+	<span class="required_info">
+		<span class="required_star">*</span>
+		<%== dicole.msg("Please fill the fields marked with the star to complete the registration.") %>
+	</span>
+</form>

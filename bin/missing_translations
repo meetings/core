@@ -1,0 +1,2 @@
+#!/bin/bash
+find pkg/$1 -type f|grep -v CVS|grep -v .svn|grep -v 'package.ini'|xargs bin/extract_msg_strings|sed -e 's/.*= //'|sed -e 's/"/\\"/g'|sort|uniq|bin/check_if_translated $2

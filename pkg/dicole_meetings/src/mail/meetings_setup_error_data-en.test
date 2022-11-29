@@ -1,0 +1,8 @@
+[%- IF test_case == 'FAIL' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+sent_to_email = 'viivi@dicole.com'
+
+%]
+[%- END -%]

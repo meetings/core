@@ -1,0 +1,35 @@
+div#meeting-conferencing
+    if( online_conferencing_option === 'skype' )
+        if( skype_is_organizer )
+            a#join-skype-call-button.button.blue(href='skype:')!=MTN.t('Open Skype to receive calls')
+                span.double-arrow-right
+        else
+            a#join-skype-call-button.button.blue(href=skype_uri)!=MTN.t('Join Skype conference call')
+                span.double-arrow-right
+
+        p.explanation!=MTN.t('You need to have %(L$Skype 5.0%) or greater installed.', { L : { href : 'http://www.skype.com/' } } )
+            if( skype_is_organizer )
+                !=MTN.t('Make sure that under "Skype > Preferences > Privacy" you allow calls from anyone.')
+    if( online_conferencing_option === 'teleconf' )
+        a.button.blue(href=teleconf_uri)!=MTN.t('Join the teleconference')
+        p.explanation!=MTN.t('Is the button not working? Call manually') + ' ' + online_conferencing_data.teleconf_number + ' '
+            if( online_conferencing_data.teleconf_pin )
+                !=MTN.t('with pin %1$s', { params : [online_conferencing_data.teleconf_pin] })
+    if( online_conferencing_option === 'hangout' )
+        if( locals.hangout_uri )
+            a.button.blue(href=hangout_uri, target='_blank')!=MTN.t('Open the Hangout')
+            p.explanation!=MTN.t('This meeting has an active Google Hangout. Click the button above to join.')
+        else if( is_manager && hangout_organizer_uri )
+            a.button.blue(href=hangout_organizer_uri, target='_blank')!=MTN.t('Open the Hangout')
+            p.explanation!=MTN.t('Please open the Hangout to allow participants to join the online conference.')
+        else
+            p.explanation!=MTN.t('Please wait while the organizer prepares the hangout.')
+    if( online_conferencing_option === 'lync' )
+        a.button.blue(href=lync_uri, target='_blank')!=MTN.t('Open Lync')
+        p.explanation!=MTN.t('This meeting is using Microsoft Lync. Click the button above to open Lync.')
+
+    if( online_conferencing_option === 'custom' )
+        a.button.blue(href=app.helpers.ensureToolUrl(custom_uri), target='_blank')='Join ' + (online_conferencing_data.custom_name || 'conference');
+        p.explanation!=_.escape( online_conferencing_data.custom_description ) || MTN.t('This meeting is using a custom tool. Click the button above to join.')
+
+div.drop-shadow

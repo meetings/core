@@ -1,0 +1,34 @@
+use 5.10.0;
+
+sub execute {
+    my( $self, $domain_id) = @_;
+
+    my $receipts = CTX->lookup_object('meetings_paypal_transaction')->fetch_group;
+    say join "\t", qw(
+etunimi
+sukunimi
+sposti
+maa
+summa
+valuutta
+kulut
+pvm
+);
+
+    for my $r ( @$receipts ) {
+        my $notes = Dicole::Utils::JSON->decode( $r->notes );
+        print join "\t", map { $notes->{$_} } qw(
+first_name
+last_name
+payer_email
+country
+amount
+currency_code
+payment_fee
+);
+    say "\t" . DateTime->from_epoch( epoch => $r->{payment_date} )->ymd;
+    }
+
+}
+
+1;

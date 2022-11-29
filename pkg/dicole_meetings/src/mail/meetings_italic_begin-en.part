@@ -1,0 +1,3 @@
+[% IF in_html %]
+<span style="font-style:italic;">
+[% END %]

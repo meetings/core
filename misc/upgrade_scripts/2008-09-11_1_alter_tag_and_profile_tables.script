@@ -1,0 +1,12 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_tag add domain_id int unsigned not null default 0');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_tag_index add domain_id int unsigned not null default 0');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_networking_profile add domain_id int unsigned not null default 0');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_networking_contact add domain_id int unsigned not null default 0');
+}
+
+1;

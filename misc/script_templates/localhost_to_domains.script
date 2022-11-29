@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+
+use Dicole::Security qw( :target :receiver );
+
+sub execute {
+    my $domain = CTX->lookup_object('dicole_domain')->new( {
+        domain_name => 'localhost',
+    } );
+
+    $domain->save;
+
+    my $id = 1;
+
+    my $new_user_in_domain = CTX->lookup_object( 'dicole_domain_user' )->new;
+    $new_user_in_domain->{user_id} = $id;
+    $new_user_in_domain->{domain_id} = $domain->id;
+    $new_user_in_domain->save;
+    
+    my $new_domain_admin = CTX->lookup_object( 'dicole_domain_admin' )->new;
+    $new_domain_admin->{user_id} = $id;
+    $new_domain_admin->{domain_id} = $domain->id;
+    $new_domain_admin->save;
+}

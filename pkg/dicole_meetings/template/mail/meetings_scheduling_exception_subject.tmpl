@@ -1,0 +1,1 @@
+[% IF meeting_time != "" %][% MTN.t('The time for %1$s has been already set',[meeting_title]) %][% ELSIF scheduling_options.size > 0 %][% MTN.t('No new scheduling options for %1$s',[meeting_title]) %] [% ELSE %][% MTN.t('No scheduling options for %1$s',[meeting_title]) %][% END %]

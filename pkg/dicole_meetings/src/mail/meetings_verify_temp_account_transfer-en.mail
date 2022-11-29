@@ -1,0 +1,36 @@
+[% MTN.t('Verify your Meetin.gs account') %]
+
+<<<html_wrapper>>>
+[% IF meet_me_url %]
+[% action_text = MTN.t('Your Meet Me page is almost ready') %]
+<<<text_and_logo>>>
+<<<h1>>>[% MTN.t('Click continue to verify your email address') %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>
+[% MTN.t('Next you will be able to configure your Meet Me page and finish the sign up process.') %]<<</p>>>
+
+[% url = transfer_url %]
+[% showtext = 1 %]
+[% text = MTN.t('Continue') %]
+<<<blue_button>>>
+
+<<</bubble>>>
+[% ELSE %]
+[% action_text = MTN.t('Before we are all set...') %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>
+[% MTN.t('Click continue to configure your Meet Me page and finish your sign up process.') %]<<</p>>>
+
+[% url = transfer_url %]
+[% showtext = 1 %]
+[% text = MTN.t('Continue') %]
+<<<blue_button>>>
+
+<<</bubble>>>
+[% END %]
+<<</html_wrapper>>>

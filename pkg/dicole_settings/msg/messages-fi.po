@@ -1,0 +1,146 @@
+# $Id: messages-fi.po,v 1.7 2010-07-28 13:45:45 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:10:14+0000\n"
+"PO-Revision-Date: 2005-03-22 02:10:14+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Administrator is not allowed to change the password."
+msgstr "Pääkäyttäjä ei saa vaihtaa salasanaansa."
+
+msgid "Change password"
+msgstr "Vaihda salasana"
+
+msgid "Change your password"
+msgstr "Vaihda salasana"
+
+msgid "Enter passwords"
+msgstr "Anna salasana"
+
+msgid "New password"
+msgstr "Uusi salasana"
+
+msgid "New password saved."
+msgstr "Uusi salasana tallennettu."
+
+msgid "Old password is not correct."
+msgstr "Vanha salasana virheellinen."
+
+msgid "Old password"
+msgstr "Vanha salasana"
+
+msgid "Password"
+msgstr "Salasana"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Verify password"
+msgstr "Varmenna salasana"
+
+msgid "Account settings"
+msgstr "Käyttäjätilin asetukset"
+
+msgid "User account settings"
+msgstr "Käyttäjätilin asetukset"
+
+msgid "Account settings modification failed: %1"
+msgstr "Käyttäjätilin asetusten muokkaus epäonnistui: %1"
+
+msgid "Starting page after login"
+msgstr "Kirjautumisen jälkeinen aloitussivu"
+
+msgid "Personal summary"
+msgstr "Henkilökohtainen yhteenveto"
+
+msgid "Timezone"
+msgstr "Aikavyöhyke"
+
+msgid "Change general settings"
+msgstr "Muuta yleisiä asetuksia"
+
+msgid "Daily"
+msgstr "Päivittäin"
+
+msgid "Deny change general settings"
+msgstr "Estä yleisten asetusten muuttaminen"
+
+msgid "Deny password change"
+msgstr "Estä salasanan vaihtaminen"
+
+msgid "Deny setting reminders"
+msgstr "Estä muistutusten muuttaminen"
+
+msgid "Email reminders"
+msgstr "Sähköpostimuistutukset"
+
+msgid "Monthly"
+msgstr "Kuukausittain"
+
+msgid "Old password authentication failed"
+msgstr "Vanhan salasanan tarkistaminen epäonnistui"
+
+msgid "Password modification failed"
+msgstr "Salasanan vaihtaminen epäonnistui"
+
+msgid "Password modification failed: %1"
+msgstr "Salasanan vaihtaminen epäonnistui: %1"
+
+msgid "Passwords don't match"
+msgstr "Salasanat eivät täsmää"
+
+msgid "Personal feed reader"
+msgstr "Henkilökohtainen noutaja"
+
+msgid "Set reminders"
+msgstr "Muistutusten muokkaaminen"
+
+msgid "Subscribe to email reminders"
+msgstr "Valitse sähköpostimuistutukset"
+
+msgid "Weekly"
+msgstr "Viikoittain"
+
+msgid "No reminders"
+msgstr "Ei muistutuksia"
+
+msgid "Default when joining a group"
+msgstr "Oletus liityttäessä ryhmään"
+
+msgid "Digest for group %1 (%2)"
+msgstr "Tiivistelmä ryhmän %1 tapahtumista (%2)"
+
+msgid "Digest for personal feed reader (%1)"
+msgstr "Tiivistelmä henkilökohtaisen noutajan tapahtumista (%1)"
+
+msgid "Digest for %1 (%2)"
+msgstr "%1 tiivistelmä (%2)"
+
+msgid "Confirm new password"
+msgstr "Vahvista uusi salasana"
+
+msgid "Connect to Facebook"
+msgstr "Yhdistä Facebook -tunnuksen kanssa"
+
+msgid "Disconnect from Facebook"
+msgstr "Poista yhteys Facebook -tunnukseen"
+
+msgid "Facebook account connected."
+msgstr "Facebook tunnus yhdistetty."
+
+msgid "Facebook account disconnected."
+msgstr "Facebook tunnuksen yhteys poistettu."
+
+msgid "Login settings"
+msgstr "Sisäänkirjautumisasetukset"
+
+msgid "-- Select --"
+msgstr "-- Valitse --"

@@ -1,0 +1,41 @@
+[% MTN.t("You are now registered for the matchmaking event") %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Hi,',[user_name]) %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<bubble>>>
+
+<<<p>>>[% MTN.t("You have successfully registered for the %(B\$%1\$s%) event, with the following information",[event_name]) %]:<<</p>>>
+<<<p>>><<<bold>>>[% MTN.t("Organization:") %]<<</bold>>> [% matchmaker_company %]<<</p>>>
+<<<p>>><<<bold>>>[% MTN.t("Description:") %]<<</bold>>> [% matchmaker_description %]<<</p>>>
+<<<hr>>>
+<<<p>>>[% MTN.t("To edit your information, click on the link below") %]<<</p>>>
+
+[% url = edit_matchmaking_info_url _ '&utm_source=matchmaking&utm_medium=email&utm_campaign=reg_confirm' %]
+[% text = MTN.t('Edit information') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+
+
+[% tip = 1 %]
+[% meeting_email = organizer_email %][% text = organizer_email %]
+
+
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+
+<<</bubble>>>
+
+<<<p>>>
+[% MTN.t("%(B\$Tip:%) To ensure safe delivery of matchmaking invitations, add %(L\$%1\$s%) to your email client's address book or trusted addresses.",{ params => ['info@meetin.gs'], L => { href => 'mailto:info@meetin.gs' } }) %] 
+[% MTN.t("If you need any help or want to change your submission, contact us at %(B\$%(L\$%1\$s%)%)",{ params => [organizer_email], L => { href => organizer_email }}) %]
+<<</p>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

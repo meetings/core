@@ -1,0 +1,470 @@
+# $Id: messages-sv.po,v 1.1 2008-10-21 19:13:22 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:06:45+0000\n"
+"PO-Revision-Date: 2005-03-22 02:06:45+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add folder"
+msgstr "Tillägg mapp"
+
+msgid "Adding document failed: %1"
+msgstr "Tilläggning av dokument misslyckades: %1"
+
+msgid "Adding folder failed: %1"
+msgstr "Tillägning av mapp misslyckades: %1"
+
+msgid "Adding hyperlink failed: %1"
+msgstr "Tilläggning av hyperlänk misslyckades: %1"
+
+msgid "Add new document"
+msgstr "Tillägg nytt dokument"
+
+msgid "Add new folder"
+msgstr "Tillägg ny mapp"
+
+msgid "Add new hyperlink"
+msgstr "Tillägg ny hyperlänk"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Changes saved."
+msgstr "Ändringarna har sparats."
+
+msgid "Checked items"
+msgstr ""
+
+msgid "Choose license"
+msgstr "Välj licens"
+
+msgid "Clipboard is empty."
+msgstr "."
+
+msgid "Close"
+msgstr "Stäng"
+
+msgid "Contributor"
+msgstr ""
+
+msgid "Copy"
+msgstr "Kopiera"
+
+msgid "Coverage"
+msgstr ""
+
+msgid "Creation date"
+msgstr ""
+
+msgid "Creator"
+msgstr ""
+
+msgid "Custom license"
+msgstr "licens"
+
+msgid "Cut"
+msgstr "Klipp"
+
+msgid "Delete"
+msgstr "Radera"
+
+msgid "Delete group files"
+msgstr "Radera filer"
+
+msgid "Delete user files"
+msgstr "Radera filer"
+
+msgid "Deny reading files of a user"
+msgstr ""
+
+msgid "Description"
+msgstr "Beskrivning"
+
+msgid "Document content"
+msgstr "Dokumentets innehåll"
+
+msgid "Document name"
+msgstr "Dokumentets namn"
+
+msgid "Documents"
+msgstr "Dokument"
+
+msgid "Download as Tar/gz archive"
+msgstr "Ladda ner som Tar/gz arkiv"
+
+msgid "Download as Zip archive"
+msgstr "Ladda ner som Zip arkiv"
+
+msgid "Download"
+msgstr "Ladda ner"
+
+msgid "Download RDF/XML metadata"
+msgstr "Ladda ner RDF/XML metadata"
+
+msgid "Dublin Core metadata"
+msgstr "Dublin Core metadata"
+
+msgid "Edit content"
+msgstr "Redigera innehåll"
+
+msgid "Edit Dublin Core metadata"
+msgstr "Redigera Dublin Core metadata"
+
+msgid "Edit"
+msgstr "Redigera"
+
+msgid "Edit file"
+msgstr "Redigera fil"
+
+msgid "Edit metadata"
+msgstr "Redigera metadata"
+
+msgid "file_name"
+msgstr "fil_namn"
+
+msgid "Files"
+msgstr "Filer"
+
+msgid "File to upload"
+msgstr "File som laddas upp"
+
+msgid "Folder name"
+msgstr "Mappens namn"
+
+msgid "Format"
+msgstr "Formattera"
+
+msgid "Group files allows a group to keep a shared document manager."
+msgstr "."
+
+msgid "Hyperlink location"
+msgstr "Hyperlänkens"
+
+msgid "Hyperlink name"
+msgstr "Hyperlänkens namn"
+
+msgid "Language"
+msgstr "Språk"
+
+msgid "License"
+msgstr "Licens"
+
+msgid "Location: %1"
+msgstr ": %1"
+
+msgid "Modified"
+msgstr "Modified"
+
+msgid "Modifying file failed: %1"
+msgstr "Modifying file failed: %1"
+
+msgid "Name"
+msgstr "Namn"
+
+msgid "New document"
+msgstr "Nytt dokument"
+
+msgid "New hyperlink"
+msgstr "Ny hyperlänk"
+
+msgid "No files or directories selected."
+msgstr "Inga filer eller bibliotek valda."
+
+msgid "Number of files"
+msgstr "Antal filer"
+
+msgid "Open"
+msgstr "Öppna"
+
+msgid "Password"
+msgstr "Lösenord"
+
+msgid "Pasted the contents of clipboard."
+msgstr "."
+
+msgid "Paste"
+msgstr "Klistra"
+
+msgid "Personal files allows a user to keep a personal file storage."
+msgstr " ."
+
+msgid "Properties"
+msgstr "Egenskaper"
+
+msgid "Publisher"
+msgstr ""
+
+msgid "Read files of a group"
+msgstr ""
+
+msgid "Read files of a user"
+msgstr ""
+
+msgid "Read group files"
+msgstr ""
+
+msgid "Read user files"
+msgstr ""
+
+msgid "Relation"
+msgstr ""
+
+msgid "Rename location"
+msgstr ""
+
+msgid "Rename"
+msgstr ""
+
+msgid "Renaming location failed: %1"
+msgstr ": %1"
+
+msgid "Resource identifier"
+msgstr ""
+
+msgid "Resource type"
+msgstr ""
+
+msgid "Return to home"
+msgstr ""
+
+msgid "Rights"
+msgstr "Rättigheter"
+
+msgid "Root directory cannot be deleted."
+msgstr "."
+
+msgid "Save"
+msgstr "Spara"
+
+msgid "Saving changes failed: %1"
+msgstr "Sparandet av ändringarna misslyckades: %1"
+
+msgid "Security violation. No rights to delete location %1"
+msgstr " %1"
+
+msgid "Security violation. No rights to read location %1"
+msgstr " %1"
+
+msgid "Security violation. No rights to write to location %1"
+msgstr " %1"
+
+msgid "Select action for:"
+msgstr ":"
+
+msgid "Selected files and directories copied to clipboard."
+msgstr "."
+
+msgid "Selected files and directories deleted."
+msgstr "."
+
+msgid "Selected files and directories moved to clipboard."
+msgstr "."
+
+msgid "Selected item"
+msgstr ""
+
+msgid "Select file"
+msgstr "Välj fil"
+
+msgid "Select license"
+msgstr "Välj licens"
+
+msgid "Select"
+msgstr "Välj"
+
+msgid "Server"
+msgstr "Server"
+
+msgid "Share %1 already exists."
+msgstr " %1 ."
+
+msgid "Share path"
+msgstr ""
+
+msgid "Show file view"
+msgstr ""
+
+msgid "Size"
+msgstr "Storlek"
+
+msgid "Source"
+msgstr ""
+
+msgid "Stream media files"
+msgstr ""
+
+msgid "Subject and keywords"
+msgstr ""
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Tree of files and directories"
+msgstr ""
+
+msgid "Tree view"
+msgstr ""
+
+msgid "Uncompress"
+msgstr ""
+
+msgid "Upload failed: %1"
+msgstr "Uppladdning misslyckades: %1"
+
+msgid "Upload file"
+msgstr "Ladda upp fil"
+
+msgid "Upload new file"
+msgstr "Ladda upp ny fil"
+
+msgid "Upload"
+msgstr "Ladda upp"
+
+msgid "Use group files"
+msgstr "Använd gruppfiler"
+
+msgid "User can delete existing group files"
+msgstr "Användare kan radera existerande gruppfiler"
+
+msgid "User can delete files of a user"
+msgstr "Användare kan radera en användares filer"
+
+msgid "User can read files of a user"
+msgstr "Användare kan läsa en användares filer"
+
+msgid "User can read group files"
+msgstr "Användare kan läsa gruppfiler"
+
+msgid "User can use group files tool"
+msgstr "Användare kan använda gruppfil-verktyg"
+
+msgid "User can write and create new files for a user"
+msgstr "Användare kan skriva och skapa nya filer åt en användare"
+
+msgid "User can write and create new group files"
+msgstr "Användare kan skriva och skapa nya gruppfiler"
+
+msgid "Username"
+msgstr "Login-namn"
+
+msgid "View file"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "Workgroup"
+msgstr "Arbetsgrupp"
+
+msgid "Write group files"
+msgstr "Skriv gruppfiler"
+
+msgid "Write user files"
+msgstr "Skriv användarfiler"
+
+msgid "No files found."
+msgstr "Inga filer hittades."
+
+msgid "Latest files"
+msgstr "Senaste filer"
+
+msgid "Uploaded by"
+msgstr "Uppladdad av"
+
+msgid "Edit metadata after upload"
+msgstr "Redigera metadata efter uppladdning"
+
+msgid "Edit metadata after save"
+msgstr "Redigera metadata efter sparning"
+
+msgid "Descend to previous folder"
+msgstr "Förflytta dig till föregående mapp"
+
+msgid "Add files for a group"
+msgstr "Tillägg filer för en grupp"
+
+msgid "Add files for a user"
+msgstr "Tillägg filer för en användare"
+
+msgid "Add group files"
+msgstr "Tillägg gruppfiler"
+
+msgid "Add user files"
+msgstr "Tillägg användarfiler"
+
+msgid "Deny adding files for a group"
+msgstr "Neka tilläggning av filer för en grupp"
+
+msgid "Deny adding files for a user"
+msgstr "Neka tilläggning av filer för en användare"
+
+msgid "Deny adding, writing and deleting files of a group"
+msgstr "Neka tilläggning, skrivning och radering av en grupps filer"
+
+msgid "Deny adding, writing and deleting files of a user"
+msgstr "Neka tilläggning, skrivning och radering av en användares filer"
+
+msgid "Deny reading, writing, adding and deleting files of a user"
+msgstr "Neka läsning, skrivning, tilläggning och radering av en användares filer"
+
+msgid "Deny reading, writing, deleting and adding files of a group"
+msgstr "Neka läsning, skrivning, tilläggning och radering av en grupps filer"
+
+msgid "User can add files for a user"
+msgstr "Användare kan tillägga filer för en användare"
+
+msgid "User can add new group files"
+msgstr "Användare kan tillägga nya gruppfiler"
+
+msgid "Read, write, add and delete files of a group"
+msgstr "Läs, skriv, tillägg och radera en grupps filer"
+
+msgid "Read, write, add and delete files of a user"
+msgstr "Läs, skriv, tillägg och radera en användares filer"
+
+msgid "Files rights"
+msgstr "Fil-rättigheter"
+
+msgid "Browse Dicole Files"
+msgstr "Bläddra Dicole Filer"
+
+msgid "Image location:"
+msgstr "Bildens läge:"
+
+msgid "Image selector"
+msgstr ""
+
+msgid "Image URL:"
+msgstr "URL:"
+
+msgid "In line"
+msgstr ""
+
+msgid "Left"
+msgstr "Vänster"
+
+msgid "Right"
+msgstr "Höger"
+
+msgid "Link selector"
+msgstr ""
+
+msgid "Link URL:"
+msgstr " URL:"
+
+msgid "Image description:"
+msgstr "Beskrivning av bilden:"
+
+msgid "Browse local files"
+msgstr "Bläddra lokala filer"
+
+msgid "Latest files."
+msgstr "Senaste filer."

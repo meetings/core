@@ -1,0 +1,79 @@
+div#meeting-settings
+    // TODO: Req user subscriptions info
+    div.setting-head
+        h3.setting-title
+            i.icon.ico-settings
+            !=MTN.t('Your account settings')
+        p.setting-desc!=MTN.t('Manage your account and subscription.')
+    div.setting-content
+        div.setting-section
+            - if ( ! dicole.get_global_variable('meetings_user_is_visitor') ) {
+
+            h3.setting-sub-title!=MTN.t('Subscription')
+
+            // Not yet started trial
+            if( ! user.is_pro && ! user.is_trial_pro && ! user.is_free_trial_expired )
+                p!=MTN.t('You are using the limited version of Meetin.gs. Start your free 30-day trial to explore the full suite with all the benefits.')
+                a.button.blue.upgrade(href='#')!=MTN.t('Start the trial')
+
+            else if( user.subscription_type === 'trial' )
+                p!=MTN.t('Your free trial sponsored by Meetin.gs will end %(B$%1$s%).',[ moment(user.subscription_trial_expires_epoch*1000).fromNow()])
+                p!=MTN.t("Upgrade Meetin.gs now to secure a seamless transition after your trial ends. We will give you free credit for the time you have left on your trial. So your first billing cycle would start %1$s.", [ app.helpers.paymentDateString(user.subscription_trial_expires_epoch) ])
+                p
+                    a.button.blue.upgrade(href='#')!=MTN.t('Upgrade now')
+                p!=MTN.t('Learn more about %(L$paid subscriptions%).',{ L : { href : app.helpers.getPricingLink(), class : 'underline', target : '_blank' }})
+
+                p.note!=MTN.t("Are you running out of time or require additional information on our service? Don't worry, just %(L$contact%) our Head of Customer happiness Antti to request an extension or %(A$schedule%) a short call with him to learn more.",{ L : { href : 'mailto:antti@meetin.gs', class : 'underline' }, A : { href : 'http://meetin.gs/meet/amv', class : 'underline', target : '_blank' }})
+
+            else if( user.is_free_trial_expired && ! user.is_pro )
+                p!=MTN.t("Your free trial of Meetin.gs has expired. Upgrade to PRO to continue using the full suite with only:")
+                ul
+                    li!=MTN.t("$12 / month / organizer")
+                    li!=MTN.t("$129 / year / organizer (ten percent discount)")
+                p
+                    a.button.blue.upgrade(href='#')!=MTN.t('Upgrade now')
+                p.note!=MTN.t("Did you miss the trial or require additional information of the service? Don't worry, just %(L$contact%) our Head of Customer happiness Antti to request an extension or %(A$schedule%) a short call with him to learn more.",{ L : { href : 'mailto:antti@meetin.gs', class : 'underline' }, A : { href : 'http://meetin.gs/meet/amv', class : 'underline', target : '_blank' }})
+
+            else if( user.subscription_type === 'sponsored' && user.is_pro )
+                p!=MTN.t('You are using the free PRO account sponsored by Meetin.gs. Your PRO subscription will stay active for the time being. We sincerely hope you are enjoying it and would appreciate any %(L$feedback%).',{ L : { href : 'mailto:info@meetin.gs', class : 'underline' }})
+                p!=MTN.t('Do you like our service? Support our cause and further development by upgrading to the paid PRO with only:')
+                ul
+                    li!=MTN.t("$12 / month / organizer")
+                    li!=MTN.t("$129 / year / organizer (ten percent discount)")
+                a.button.blue.upgrade(href='#')!=MTN.t('Support us & upgrade')
+                p!=MTN.t('Learn more about %(L$paid subscriptions%).',{ L : { href : app.helpers.getPricingLink(), class : 'underline', target : '_blank' }})
+
+            else if( user.subscription_type === 'user' )
+                if( user.subscription_user_admin_url )
+                    p!=MTN.t('Thank you for your subscription. We really appreciate it.')
+                    p!=MTN.t('Use Paypal to manage your subscription:')
+                    p
+                        a.button.blue(href=user.subscription_user_admin_url)!=MTN.t('Manage your subscription')
+                else if( user.subscription_user_expires_epoch )
+                    p!=MTN.t('You have canceled your subscription. Your account will be downgraded once your last billing cycle ends %1$s.',[moment(user.subscription_user_expires_epoch*1000).fromNow()])
+                    p
+                        a.button.blue.upgrade(href='#')!=MTN.t('Re-subscribe')
+                else
+                    if( user.subscription_user_plan === 'yearly')
+                        p!=MTN.t('You are on the yearly Meetin.gs PRO plan.')
+                    else
+                        p!=MTN.t('You are on the monthly Meetin.gs PRO plan.')
+                    p!=MTN.t('Your next billing cycle starts %1$s.', [ moment(user.subscription_user_next_payment_epoch*1000).fromNow()])
+                    p!=MTN.t('Thank you for your subscription. We really appreciate it.')
+                    p
+                        a.button.gray.cancel-subscription(href='#')!=MTN.t('Cancel subscription')
+
+            else if( user.subscription_type === 'company' )
+                p!=MTN.t('Your %1$s PRO subscription is paid by %2$s.',[ service_name, user.subscription_company_name ])
+                if ( user.subscription_company_admin_name )
+                    p!=MTN.t('The administrator managing this company account is %1$s.',[user.subscription_company_admin_name])
+
+            - }
+        div.receipts-container
+        if( user.subscription_type !== 'company' )
+            div.setting-section
+                h3.setting-sub-title!=MTN.t('Remove account')
+                p!=MTN.t('Removing your account will delete all your personal information from the service, remove your Meet Me page, unsubscribe you from our mailing lists, and anonymise stored data like comments, meetings, and materials.')
+                p.note!=MTN.t('Note: Others will still be able to invite you as a new participant to a meeting using the same email address.')
+                p
+                    a.button.gray.remove-account(href='#')!=MTN.t('Remove account')

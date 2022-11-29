@@ -1,0 +1,7 @@
+sub execute {
+    my ( $self, $domain_id ) = @_;
+    
+    CTX->lookup_action("meetings_api")->e( check_pending_dropbox_syncs => { domain_id => $domain_id } );
+}
+
+1;

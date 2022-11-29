@@ -1,0 +1,57 @@
+
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $api = CTX->lookup_action('meetings_api');
+
+    my ( $refresh_token, $spreadsheet_key, $event_id, $size ) = split ";", $params;
+
+    if ( ! $event_id ) {
+        die "Expected --parameters=refresh_token;spreadsheet_key;event_id[;image_size]\n";
+    }
+
+    $result_hashes = [];
+
+    my $mmrs = CTX->lookup_object('meetings_matchmaker')->fetch_group({
+        where => 'matchmaking_event_id = ?',
+        value => [ $event_id ],
+    });
+
+    for my $mmr ( @$mmrs ) {
+        my $user = Dicole::Utils::User->ensure_object( $mmr->creator_id );
+        my $user_info = $api->_gather_user_info( $user, $size || -1, $mmr->domain_id );
+        my $current_fragment = $api->_fetch_user_matchmaker_fragment( $user );
+
+        my $domain_host = $mmr->partner_id ? $api->_get_host_for_partner( $mmr->partner_id, 443 ) : $self->_get_host_for_domain( $mmr->domain_id, 443 );
+
+        my $meetme_url = Dicole::URL->from_parts(
+            action => 'meetings', task => 'meet', target => 0,
+            domain_id => $mmr->domain_id, partner_id => $mmr->partner_id,
+            additional => [ $current_fragment, $mmr->vanity_url_path ],
+        );
+
+        push @$result_hashes, {
+            id => $mmr->id,
+            active => $mmr->disabled_date ? 'no' : 'yes',
+            validated => $mmr->validated_date ? 'yes' : 'no',
+            firstname => $user->first_name,
+            lastname => $user->last_name,
+            email => $user->email,
+            organization => $user_info->{organization},
+            title => $user_info->{organization_title},
+            phone => $user_info->{phone},
+            meetmeurl => $domain_host . $meetme_url,
+            imageurl => $user_info->{image} ? ( $domain_host . $user_info->{image} ) : '',
+        };
+    }
+
+    $api->e( sync_result_hashes_with_id_to_google_docs => {
+        refresh_token => $refresh_token,
+        spreadsheet_key => $spreadsheet_key,
+        result_hashes => $result_hashes,
+        time_zone => 'UTC',
+    } );
+}
+
+1;

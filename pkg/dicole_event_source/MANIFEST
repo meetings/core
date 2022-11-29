@@ -1,0 +1,24 @@
+Changes
+conf/action.ini
+conf/spops.ini
+html/js/dicole/event_source.js
+html/js/dicole/event_source/LivingObjectList.js
+html/js/dicole/event_source/ObjectCache.js
+html/js/dicole/event_source/ObjectListVisualizer.js
+html/js/dicole/event_source/ServerConnection.js
+html/js/dicole/event_source/ServerWorker.js
+html/js/dicole/tests/event_source.js
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleEventSource.pm
+OpenInteract2/Action/DicoleEventSourceAPI.pm
+OpenInteract2/Action/DicoleEventSourceCommon.pm
+OpenInteract2/Action/DicoleEventSourceJSON.pm
+OpenInteract2/Action/DicoleEventSourceJSONAPI.pm
+OpenInteract2/Action/DicoleEventSourcePassthrough.pm
+OpenInteract2/App/DicoleEventSource.pm
+OpenInteract2/SQLInstall/DicoleEventSource.pm
+package.ini
+struct/dicole_event_source_event.sql
+struct/dicole_event_source_gateway.sql
+struct/dicole_event_source_sync_subscription.sql

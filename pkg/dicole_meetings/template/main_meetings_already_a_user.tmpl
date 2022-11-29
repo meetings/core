@@ -1,0 +1,30 @@
+<div id="beta-signup-box-wrapper">
+	<div id="beta-signup-box" class="modal-popup" style="-moz-box-shadow:0px 0px 3px #333; -webkit-box-shadow:0px 0px 3px #333; box-shadow:0px 0px 3px #333;">
+		<h2 class="modal-header" style="text-align:left;">[% MTN.t('You are already a user in the service!') %]</h2>
+		<p>[% MTN.t('We have sent a secure link to %1$s which you can use to log in and start the meeting creation process.',[email]) %]</p>
+		<hr/>
+		<h3 style="text-align: center;">[% MTN.t('Spread the word, inform your friends!') %]</h3>
+		<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+        <div style="margin:5px 0 20px 0; text-align:center;">
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.meetin.gs%2F&amp;send=false&amp;layout=box_count&amp;width=60&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=60" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:60px; height:60px;" allowTransparency="true"></iframe>
+           <a href="http://twitter.com/share" class="twitter-share-button"
+              data-url="http://www.meetin.gs/"
+              data-via="meetin_gs"
+              data-text="Check out Meetin.gs - Great shared online space for meeting collaboration."
+              data-related="anywhere:The Javascript API"
+              data-count="vertical">Tweet</a>
+        </div>
+        <p style="font-size:12px; color:#999; text-align:center;">[% MTN.t('Also follow us on Facebook and Twitter to stay updated on how to run better meetings:') %]</p>
+        <div class="social_links">
+            <a href="http://twitter.com/meetin_gs">
+                <span class="small-icon twitter"></span>[% MTN.t('Follow us on Twitter') %]
+            </a>
+            <a href="https://www.facebook.com/pages/Meetings/182909251746386">
+                <span class="small-icon facebook"></span>[% MTN.t('Follow us on Facebook') %]
+            </a>
+        </div>
+	</div>
+</div>
+<div id="push"></div>
+</div><!-- End content wrapper -->
+<div id="bb-footer"></div>

@@ -1,0 +1,85 @@
+[% # $Id: list_vertical.tmpl,v 1.10 2009-01-07 14:42:33 amv Exp $ # %]
+
+[%#
+
+    The template accepts the following information in itemparams:
+    {
+        list =
+            [
+                {
+                    *key    =>
+                        {
+                            name            => the name of the key is printed on the page
+                            *template   => name of the template
+                            *params     =>
+                                    {
+                                        template parameters passed to the template in itemparams
+                                    }
+                            *width          => deprecated, use attributes.width instead
+                            *attributes     =>
+                                {
+                                    XHTML attributes for the TD-tag
+                                }
+                        }
+                    values  =>
+                        [
+                            {
+                                *attributes     =>
+                                    {
+                                        XHTML attributes for the TD-tag
+                                    }
+                                template    => name of the template
+                                params      =>
+                                    {
+                                        template parameters passed to the template in itemparams
+                                    }
+                            },
+                            {
+
+                            }
+                        ]
+                },
+                {
+                    ...
+                }
+            ]
+    }
+
+* optional
+
+#%]
+[%- list = itemparams.list %]
+[%- controlButtons = itemparams.controlButtons %]
+
+<table id="list" class="keyValueListing">
+[%- UNLESS itemparams.no_keys -%]
+    <tr>
+[%- FOREACH item = list %]
+    [%- IF loop.last; keys = loop.count; END; %]
+        <td class="listingKey" [% IF item.key.width %]width="[% item.key.width %]"[% END %] [% FOREACH param = item.key.attributes %] [% param.key %]="[% param.value %]"[% END %]>
+        [%- IF item.key.template -%]
+            [% INCLUDE $item.key.template itemparams = item.key.params %]
+        [%- ELSE -%]
+            [%- item.key.name -%]
+        [%- END -%]
+        </td>
+    [%- END %]
+    </tr>
+[%- END -%]
+    [%- FOREACH item = list.0.values %]
+        [%- IF loop.last; values = loop.count; END; %]
+    [%- END %]
+[%#- We create a row for the total amount of values in the first column %]
+    [%- FOREACH rows = [ 1 .. values ] %]
+    [%- lc_value = loop.count - 1 %]
+    [%- row_count = loop.count %]
+    <tr class="[% IF loop.count % 2 == '1' %]odd[% ELSE %]even[% END %][% IF itemparams.row_params.$row_count.class %] [% itemparams.row_params.$row_count.class %][% END %]">
+[%#- For each row, we  %]
+        [%- FOREACH cols = [ 1 .. keys ] %]
+            [%- lc_key = loop.count - 1 %]
+            [%- current = list.$lc_key.values.$lc_value %]
+        <td class="listingValue" [% FOREACH param = current.attributes %] [% param.key %]="[% param.value %]"[% END %]>[% INCLUDE $current.template itemparams = current.params IF current.template %]</td>
+        [%- END %]
+    </tr>
+[%- END %]
+</table>

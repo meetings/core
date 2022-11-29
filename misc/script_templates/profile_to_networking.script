@@ -1,0 +1,158 @@
+
+use FileHandle;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_id = $params ? $params : 0;
+
+    my $users = CTX->lookup_object('user')->fetch_group;
+    
+    my $networking = CTX->lookup_action('networking');
+    
+    for my $user ( @$users ) {
+    
+        my $uid = $user->id;
+        if ( $domain_id ) {
+            my $ok = eval { CTX->lookup_action('dicole_domains')->execute( user_belongs_to_domain => {
+                user_id => $uid, domain_id => $domain_id,
+            } ) };
+            next unless $ok;
+        }
+        
+        my $profile = $networking->_get_profile_object( $uid );
+        
+        my $old_profiles = CTX->lookup_object('profile')->fetch_group( {
+            where => 'user_id = ?',
+            value => [ $uid ],
+        } ) || [];
+        my $old_profile = pop @$old_profiles;
+        
+        next unless $old_profile;
+        
+        my %map_fields = (
+            contact_organization => 'organization',
+            contact_title => 'title',
+            
+            employer_name => 'organization',
+            employer_title => 'title',
+            contact_address_1 => 'home_postal_address',
+            
+            contact_email => 'mail',
+            contact_skype => 'skype',
+            
+            educ_school => 'school',
+            educ_degree => 'degree',
+            educ_other_degree => 'other_degree',
+            educ_target_degree => 'target_degree',
+            
+            educ_skill_profile => 'personal_education',
+        );
+        
+        for my $key ( keys %map_fields ) {
+            $profile->{ $key } ||= $old_profile->{ $map_fields{ $key } };
+        }
+        
+        $profile->{contact_address_2} ||= join ", ", (
+            $old_profile->{home_postal_code} || (),
+            $old_profile->{home_city} || (),
+            $old_profile->{home_state} || (),
+            $old_profile->{home_country} || (),
+        );
+        
+        $profile->{contact_phone} ||=
+            $old_profile->{mobile_number} ||
+            $old_profile->{telephone_number} ||
+            $old_profile->{home_number};
+        
+        $profile->{personal_blogs} ||=
+            $old_profile->{weblog_url} ||
+            $old_profile->{pro_website};
+            $old_profile->{personal_website};
+            
+        $profile->{personal_motto} ||=
+            $old_profile->{personal_line} ||
+            $old_profile->{personal_description};
+        
+        $profile->{prof_description} ||=
+            $old_profile->{pro_line} ||
+            $old_profile->{pro_description};
+       
+        $profile->{employer_address_1} ||= join ", ", (
+            $old_profile->{street_address} || (),
+            $old_profile->{postal_address} || (),
+        );
+        
+        $profile->{employer_address_2} ||= join ", ", (
+            $old_profile->{postal_code} || (),
+            $old_profile->{city} || (),
+            $old_profile->{state} || (),
+            $old_profile->{country} || (),
+        );
+        
+        $profile->{employer_phone} ||=
+            $old_profile->{telephone_number} ||
+            $old_profile->{mobile_number};
+       
+        $profile->save;
+        
+        print "Profile info migrated for user $uid" . $/;
+        
+        next if $profile->portrait;
+
+        my $old_pic = CTX->lookup_directory( 'dicole_profilepics' ) . '/' .
+            $uid . '_professional_original';
+        if ( ! -e $old_pic ) {
+            $old_pic = CTX->lookup_directory( 'dicole_profilepics' ) . '/' .
+                $uid . '_professional_o.jpg';
+        }
+        if ( ! -e $old_pic ) {
+            $old_pic = CTX->lookup_directory( 'dicole_profilepics' ) . '/' .
+                $uid . '_personal_original';
+        }
+        if ( ! -e $old_pic ) {
+            $old_pic = CTX->lookup_directory( 'dicole_profilepics' ) . '/' .
+                $uid . '_personal_o.jpg';
+        }
+        next if ! -e $old_pic;
+        
+        my $fh = new FileHandle; # Create local filehandle
+        open ($fh, $old_pic) ||  next;
+        
+        # And now the profile image magick :)
+        my $random = int( rand() * 900000 + 100000 );
+        $random = int( rand() * 900000 + 100000 ) while -e
+            $networking->_create_original_filename_path( $uid, $random );
+                
+        my $files = Dicole::Files::Filesystem->new;
+        $files->mkfile(
+            $networking->_create_original_filename( $uid, $random ),
+            $fh, 1,
+            CTX->lookup_directory( 'dicole_profilepics' )
+        );
+
+        # Write image in the users profile picture directory
+        # along with a thumbnail
+        my $success = $networking->_create_profile_images( $uid, $random );
+        if ( $success ) {
+            # Create web page URL
+            my $html = CTX->lookup_directory( 'html' );
+            my $path = CTX->lookup_directory( 'dicole_profilepics' );
+            $path =~ s/^$html//;
+
+            # Save URL in the profile
+            $profile->portrait(
+                $path . '/' . $networking->_create_image_filename( $uid, $random )
+            );
+            $profile->portrait_thumb(
+                $path . '/' . $networking->_create_image_filename( $uid, $random, 't' )
+            );
+            $profile->save;
+            
+            print "Converted image for user $uid" . $/;
+        }
+    }
+
+}
+
+1;

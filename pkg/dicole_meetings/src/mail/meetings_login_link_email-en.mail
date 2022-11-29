@@ -1,0 +1,45 @@
+[% IF pin %][% MTN.t('%1$s PIN: %2$s', [ service_name, pin ] ) %][% ELSE %][% MTN.t('Log in to %1$s', [ service_name ]) %][% END %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Hi %1$s', [user_name]) %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<bubble>>>
+
+[% IF pin %] 
+[% IF new_user %] <<<p>>>[% MTN.t("Welcome to %1\$s. We are really happy to have you. If you need any help getting started, please don't hesitate to contact us.", [ service_name ]) %]
+[% END %]
+
+<<<p>>>[% MTN.t('Your %1$s PIN is %(B$%2$s%)',[ service_name, pin]) %]<<</p>>>
+<<<p>>>[% MTN.t("To login, please enter the code to the corresponding field on your mobile device.") %]<<</p>>>
+<<<p>>>[% MTN.t("If the PIN has expired, simply request a new PIN from the app.") %]<<</p>>>
+[% ELSE %]
+<<<p>>>[% MTN.t("Here's your login link to %1\$s.", [ service_name ]) %]<<</p>>>
+[% url = login_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=login' %]
+[% text = MTN.t("Log in") %]
+<<<blue_button>>>
+<<<br>>>
+[% END %]
+[% IF account && password %]
+
+<<<p>>>[% MTN.t("Here are your credentials for logging in at a later time:") %]<<</p>>>
+
+<<<p>>>[% MTN.t('Account: %1$s',[ account ]) %]<<<br>>>[% MTN.t('Password: %1$s',[ password ]) %]<<</p>>>
+
+[% END %]
+
+
+<<</bubble>>>
+[% IF ! pin AND ! hide_app_promotion %]
+<<<app_buttons>>>
+[% END %]
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t('%1$s - The smartest way to meet', [ service_name ]) %]<<</p>>>
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+<<</html_wrapper>>>

@@ -1,0 +1,101 @@
+[%#
+	user_first_name = "Markku"
+	user_last_name = "Käkkärä"
+	user_role = "Kitaristi"
+	user_organization = "Kuoleman Enkelit"
+	user_location = "Kerava"
+	user_image = "#"
+	tags = [
+		{
+			"name" = "tag1",
+			"class" = "evo",
+			"url" = "#"
+		},
+		{
+			"name" = "tag2",
+			"class" = "evo",
+			"url" = "#"
+		},
+		{
+			"name" = "tag3",
+			"class" = "evo",
+			"url" = "#"
+		}
+	]
+	user_email = "markku@kikkura.com"
+	user_phone = "0700123123"
+	user_facebook = "#"
+	user_skype = "amrkkakrkra"
+	user_twitter = "#"
+	user_linkedin = "#"
+	user_webpage = "kakguitars.fi"
+%]
+<div id="user_show">
+	<div id="user_show_header">
+		[% IF user_edit_url %]
+		<a id="user_show_edit_button" href="[% user_edit_url | html %]" class="big-button"><span>[% MSG("Edit") | html %]</span></a>
+		[% END %]
+		<h1>[% user_first_name | html %] [% user_last_name | html %][% IF 0 and user_location %], [% user_location | html %][% END %]</h1>
+	</div>
+	<div id="user_show_content">
+		<div id="user_show_left">
+			<div id="user_show_photo_bg">
+				<img id="user_show_photo_image" src="[% user_image or '/images/rytmikorjaamo/default-user-avatar-200px.png' | html %]" alt="[% user_first_name | html %] [% user_last_name | html %]" />
+			</div>
+		</div>
+		[% IF user_is_logged_in %]
+		<div id="user_show_right">
+			<h2>
+				<span id="user_show_role">[% user_role | html %]</span>
+				[% IF user_organization %]
+				,
+				<span id="user_show_organization">[% user_organization | html %]</span>
+				[% END %]
+			</h2>
+			[% IF user_location %]
+			<h2>
+				<span id="user_show_location">[% user_location | html %]</span>
+			</h2>
+			[% END %]
+			[% IF user_email %]
+			<a id="user_show_email" href="mailto:[% user_email | html %]">[% user_email | html %]</a>
+			<br />
+			[% END %]
+			[% IF user_webpage %]
+			<a id="user_show_webpage" href="[% user_webpage | html %]">[% user_webpage | html %]</a>
+			<br />
+			[% END %]
+			[% IF user_phone %]
+			<span id="user_show_phone">[% user_phone | html %]</span>
+			[% END %]
+			<div id="user_show_social_media">
+				[% IF user_skype %]
+				<a id="user_show_skype_link" href="skype:[% user_skype | html %]?chat">
+					<img src="http://download.skype.com/share/skypebuttons/buttons/call_green_transparent_34x34.png" alt="My status" />
+					<span id="user_show_skype_name">[% user_skype | html %]</span>
+				</a>
+				[% END %]
+				[% IF user_twitter %]<a id="user_show_twitter" href="[% user_twitter | html %]" class="twitter_icon"></a>[% END %]
+				[% IF user_linkedin %]<a id="user_show_linkedin" href="[% user_linkedin | html %]" class="linkedin_icon"></a>[% END %]
+				[% IF user_facebook %]<a id="user_show_facebook" href="[% user_facebook | html %]" class="facebook_icon"></a>[% END %]
+			</div>
+		</div>
+		[% END %]
+	</div>
+	[% IF tags.size %]
+	<div id="user_show_tags">
+		<h1>[% MSG("Tags") | html %]</h1>
+		<span class="miniLinkCloud miniTagCloud">
+			[% FOREACH tag IN tags %]
+				<a class="tag [% tag.class | html %]" href="[% tag.url | html %]">[% tag.name | html %]</a>
+			[% END %]
+		</span>
+	</div>
+	[% END %]
+	[% IF user_about_me %]
+	<div id="user_about_me">
+		<h1>[% MSG("About") | html %]</h1>
+        <p>[% user_about_me %]</p>
+	</div>
+	[% END %]
+</div>

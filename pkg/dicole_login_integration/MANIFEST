@@ -1,0 +1,11 @@
+Changes
+conf/action.ini
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleLoginIntegration.pm
+OpenInteract2/App/DicoleLoginIntegration.pm
+package.ini
+template/logged_in_box.tmpl
+template/login_box.tmpl
+msg/messages-en.po
+msg/messages-fi.po

@@ -1,0 +1,11 @@
+[% IF test_case == 'Authorization' %]
+[%
+
+server_host = 'http://dev.meetin.gs'
+user_name = 'Jonathan Davis'
+partner_name ='cMeet'
+authorize_url = 'www.meetin.gs/authorize'
+login_url = 'www.meetin.gs/login'
+
+%]
+[% END %]

@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+
+my $pkg = $ARGV[0];
+
+die "run in src root!\n" if ! -d 'pkg';
+die "give a valid package name as first parameter\n" if ! $pkg || ! -d "pkg/$pkg";
+
+my @po_files = split $/, `ls pkg/$pkg/msg/*.po`;
+die "found no .po files!\n" if ! @po_files;
+
+for my $po ( @po_files ) {
+    my ( $lang ) = $po =~ /\-(.*?)\.po$/;
+    my $strings = `bin/missing_translations $pkg $lang`;
+    if (! $strings) {
+        print STDERR "found no missing translations for $lang.\n";
+        next;
+    }
+    open F, "|bin/append_missing_to_po $po";
+    print F $strings;
+    close F;
+}

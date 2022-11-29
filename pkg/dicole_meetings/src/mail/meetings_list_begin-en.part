@@ -1,0 +1,3 @@
+[% IF in_html %]
+<ul style="list-style: disc outside none; line-height:25px; font-size:15px; color:#4a4a4a; margin-top:15px; margin-bottom:15px; margin-left:[% IF inthebubble %]15[% ELSE %]50[% END %]px; margin-right:[% IF inthebubble %]15[% ELSE %]50[% END %]px; font-family:Arial,Verdana,sans-serif; padding-left:16px;">
+[% END %]

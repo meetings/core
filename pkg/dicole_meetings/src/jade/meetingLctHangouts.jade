@@ -1,0 +1,10 @@
+div#lct-picker.m-modal
+    div.modal-header.back-button
+        h3!=MTN.t('Hangouts settings')
+        i.ico-leftarrow.back
+    div.modal-content.m-form
+        p!=MTN.t('Hangouts will be enabled for this meeting.')
+        p.note!=MTN.t('NOTE: You and the participants will receive the Hangouts url before the meeting.')
+    div.modal-footer
+        div.buttons.right
+            a.button.blue.save(href='#')!=MTN.t('Save')

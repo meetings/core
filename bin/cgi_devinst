@@ -1,0 +1,15 @@
+#!/bin/sh
+
+SOURCE_DIR=$1
+OPENINTERACT2='/home/siveys/oi2'
+
+if [ !$SOURCE_DIR ]
+then
+        SOURCE_DIR=.
+fi
+
+cd $SOURCE_DIR
+
+find -name *.pm | grep OpenInteract2 | grep Action | xargs -n 1 cp --target-directory=${OPENINTERACT2}/tmplib/OpenInteract2/Action/
+
+rm /home/siveys/oi2/logs/oi2.log

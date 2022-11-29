@@ -1,0 +1,13 @@
+<div [%- IF itemparams.id %] id="[% itemparams.id %]"[% END %] class="tag_cloud_suggestions[%- IF itemparams.target_id %] tag_suggestions_[% itemparams.target_id %][% END %][% IF itemparams.class %] [% itemparams.class %][% END %]">
+[%- first = 1 %]
+<span class="miniLinkCloud miniTagCloud">
+[%- FOREACH item = itemparams.links %]
+    <a class="tag_suggestion [% item.class %]" href="#">[% item.name %]</a> 
+[%- END %]
+</span>
+</div>
+
+
+
+
+

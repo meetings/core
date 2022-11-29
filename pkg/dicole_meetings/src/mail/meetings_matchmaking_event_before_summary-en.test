@@ -1,0 +1,50 @@
+[%- IF test_case == 'one_meeting' %]
+[%-
+
+server_host = 'https://dev.meetin.gs'
+matchmaking_event = 'Slush'
+user_email = 'superman@hotmail.com'
+user_name = 'Dave Tester'
+meetings = [
+  { title = "Superstartup and Investors Ltd", time = "14.30 UCT + 2", participants = "Charles Chamberlain , Booker Quigley", location = "Meeting room 1, table 5", meeting_url = "www.ensimmainen.com", is_confirmed ="1" }
+]
+matchmaking_instructions_html = 'These are the general instructions for the meetings at the event in html format'
+matchmaking_instructions_text = 'These are the general instructions for the meetings at the event in text format'
+
+%]
+[% END %]
+
+[%- IF test_case == 'multiple_meetings_no_apps' %]
+[%-
+
+server_host = 'https://dev.meetin.gs'
+matchmaking_event = 'Slush'
+user_email = 'superman@hotmail.com'
+user_name = 'Dave Tester'
+meetings = [
+  { title = "Superstartup and Investors Ltd", time = "14.30 UCT + 2", participants = "Charles Chamberlain, Booker Quigley", location = "Meeting room 1, table 5", meeting_url = "www.ensimmainen.com" },
+  { title = "Superstartup and Acme Corp", time = "15.00 UCT + 2", participants = "Malcolm Thorpe, Deryck Palmer", location = "Meeting room 6, table 66", meeting_url = "www.toinen.com", is_confirmed ="1" },
+]
+matchmaking_instructions_html = 'These are the general instructions for the meetings at the event in html format'
+matchmaking_instructions_text = 'These are the general instructions for the meetings at the event in text format'
+hide_app_promotion = 1
+
+%]
+[% END %]
+
+[%- IF test_case == 'yes_unconfirmed' %]
+[%-
+
+server_host = 'https://dev.meetin.gs'
+matchmaking_event = 'Slush'
+user_email = 'superman@hotmail.com'
+user_name = 'Dave Tester'
+meetings = [
+  { title = "Superstartup and Inappropriate Investors Ltd", time = "14.30 UCT + 2", participants = "Charles Chamberlain, Booker Quigley", location = "Meeting room 1, table 5", meeting_url = "www.ensimmainen.com", is_confirmed ="1" },
+  { title = "Superstartup and Investores Irrelevantas", time = "15.00 UCT + 2", participants = "Malcolm Thorpe, Deryck Palmer", location = "Meeting room 6, table 66", meeting_url = "www.toinen.com", is_confirmed ="0" },
+]
+matchmaking_instructions_html = 'These are the general instructions for the meetings at the event in html format'
+matchmaking_instructions_text = 'These are the general instructions for the meetings at the event in text format'
+
+%]
+[% END %]

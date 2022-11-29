@@ -1,0 +1,60 @@
+#agent-absences.m-modal
+    .modal-header
+        h3 
+            i.ico-profile
+            !='Hallitse poissaoloja'||MTN.t('Manage absences')
+    .modal-content
+        - if ( categories.length > 0 ) {
+            .category-listing
+                each cat, index in categories
+                    - if ( cat == selected_category ) {
+                        a.category-button-selected.select-category(href="#",x-data-category=cat)=cat
+                    - } else {
+                        a.category-button.select-category(href="#",x-data-category=cat)=cat
+                    - }
+                    - if ( index < categories.length - 1 ) {
+                        =' - '
+                    - }
+        - }
+        .agent-listing
+            each agent in agents
+                .agent-container(id="agent-" + agent.id)
+                    .agent-name-container
+                        .agent-name(title=agent.user_email)=agent.user_name
+                        a.agent-button.plus(href="#",x-data-agent-id=agent.id) + Lisää poissaolo
+                        a.agent-button.minus(href="#",x-data-agent-id=agent.id,style='display:none') Piilota lisäys
+                    .agent-absence-adder(style='display:none')
+                        label.small(for="agent-first-day-" + agent.id)
+                            span!='Ensimmäinen päivä'
+                            span=' '
+                            span.hint!='(VVVV-KK-PP)'
+                        br
+                        input.first-day.js_dmy_datepicker_input(id="agent-first-day-" + agent.id,size=10)
+                        br
+                        label.small(for="agent-last-day-" + agent.id)
+                            span!='Viimeinen päivä'
+                            span=' '
+                            span.hint!='(VVVV-KK-PP)'
+                        br
+                        input.last-day.js_dmy_datepicker_input(id="agent-last-day-" + agent.id,size=10)
+                        br
+                        label.small(for="agent-reason-" + agent.id)!='Selite'
+                        br
+                        input.reason(id="agent-reason-" + agent.id,size=40)
+                        br
+                        button.add-absence-button(x-data-agent-id=agent.id)='Lisää'||MTN.t('Add')
+                    .agent-absence-list
+                        each absence in agent.absences
+                            .absence-container(id="absence-" + absence.id )
+                                .absence-title-container
+                                    a.remove-absence-button(href="#",x-data-absence-id=absence.id,x-data-agent-id=agent.id) [Poista]
+                                    - begin = moment.utc((parseInt(absence.begin_epoch) + (absence.begin_epoch < user.time_zone_dst_change_epoch ? user.time_zone_offset : user.time_zone_dst_offset)) * 1e3).format("DD.MM.YYYY");
+                                    - end = moment.utc((parseInt(absence.end_epoch) - (absence.end_epoch < user.time_zone_dst_change_epoch ? user.time_zone_offset : user.time_zone_dst_offset)) * 1e3).format("DD.MM.YYYY");
+                                    .absence-title=begin + ' - ' + end + ': ' +absence.reason
+                                .absence-overlap-list
+                                    each overlap in absence.overlapping_meetings
+                                        .absence-overlap-container
+                                            - begin = moment.utc((parseInt(overlap.begin_epoch) + (overlap.begin_epoch < user.time_zone_dst_change_epoch ? user.time_zone_offset : user.time_zone_dst_offset)) * 1e3).format("DD.MM.YYYY HH:mm");
+                                            .overlap-title
+                                                span.overlap-warning='!!! '
+                                                a(href=overlap.enter_url)=begin + ': ' + overlap.title

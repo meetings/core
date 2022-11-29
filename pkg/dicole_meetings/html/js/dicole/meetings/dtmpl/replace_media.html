@@ -1,0 +1,22 @@
+<div id="modal-replace-media" class="m-modal">
+    <div class="modal-header">
+        <h3 class="modal-header"><%= MTN.t('Replace Material') %></h3>
+    </div>
+    <div class="modal-content">
+        <form id="meetings_rename_page_form" class="meetings-form">
+            <fieldset>
+                <div id="replace-file-choose">
+                    <span class="upload button blue">
+                        <i class="ico-material_upload"></i>
+                        <span class="progress-text"><%= MTN.t('Choose a file from your computer') %></span>
+                        <input id="replace-upload" type="file" name="file" />
+                        <div class="progress-bar"></div>
+                    </span>
+                </div>
+                <div id="meetings_replace_material_progress_bar"></div>
+                <p><%= MTN.t('Replacing the material will retain all the associated comments.') %></p>
+            </fieldset>
+        </form>
+    </div>
+    <a href="#" class="js_hook_showcase_close close-modal"><i class="ico-cross"></i></a>
+</div>

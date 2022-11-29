@@ -1,0 +1,10 @@
+div#meetme-edit-description.m-modal
+    div.modal-header
+        h3!=MTN.t('Edit welcoming text')
+    div.modal-content.m-form
+        textarea#meetme-description=user.meetme_description || MTN.t('Hello! I have made my calendar available to you. Please click on the button below to start scheduling the meeting.')
+    div.modal-footer
+        div.buttons.right
+            a#save-description.button.blue!=MTN.t('Save')
+            a.button.gray.js_hook_showcase_close!=MTN.t('Cancel')
+

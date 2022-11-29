@@ -1,0 +1,8 @@
+#!/bin/bash
+bin/translations/x_update_target_pot_files
+
+for TARGET in "desktop_front"
+do
+    find src/locale/$TARGET* |xargs -n1 -I{} msgmerge --backup=none --update {} build/targets/$TARGET.pot
+done
+

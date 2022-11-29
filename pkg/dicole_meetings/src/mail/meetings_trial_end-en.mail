@@ -1,0 +1,76 @@
+[% IF week_before %][% MTN.t('Your Meetin.gs trial is about to expire') %][% ELSIF day_before %][% MTN.t('Meetin.gs pro trial will expire tomorrow') %][% ELSIF trial_ended %][% MTN.t('Meetin.gs pro trial expired') %][% END %]
+
+<<<html_wrapper>>>
+
+[% IF week_before %]
+[% action_text = MTN.t('Your PRO trial is expiring soon') %]
+[% ELSIF day_before %]
+[% action_text = MTN.t('Your PRO trial is expiring tomorrow') %]
+[% ELSIF trial_ended %]
+[% action_text = MTN.t('Meetin.gs PRO trial just expired') %]
+[% END %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+[% squirrel = 'pro' %]
+
+[% image_file = 'https://www.meetin.gs/files/2013/12/product_image_sans.png' %]
+[% alt_text = MTN.t('Meetin.gs is the smartest way to meet - online or face to face.') %]
+<<<image>>>
+
+<<<p>>>
+
+[% IF week_before %]
+[% MTN.t('%(B$After %1$s%) your account will be downgraded to the limited version.',[expiration_date]) %]
+[% ELSIF day_before %]
+[% MTN.t('%(B$Your trial with Meetin.gs PRO will expire tomorrow.%) Your account will be downgraded to the limited version.') %]
+[% ELSIF trial_ended %]
+[% MTN.t('%(B$Your trial with Meetin.gs PRO has expired%) and your account has been downgraded to the limited version.') %]
+[% END %]
+
+<<</p>>>
+
+<<<p>>>
+
+[% IF trial_ended %]
+Upgrade now and keep enjoying the benefits of the full suite.
+[% url = upgrade_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=trial_end' %]
+[% text = MTN.t('Upgrade now') %]
+<<<blue_button>>>
+[% ELSE %]
+[% MTN.t('Upgrade Meetin.gs now to secure a seamless transition after your trial ends. We will give you free credit for the time you have left on your trial.') %]
+[% url = upgrade_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=trial_end' %]
+[% text = MTN.t('Upgrade now') %]
+<<<blue_button>>>
+[% END %]
+<<</p>>>
+
+<<<p>>>
+<<<bold>>>[% MTN.t("What's included in Meetin.gs PRO?") %]<<</bold>>>
+<<</p>>>
+<<<list>>>
+<<<item>>>
+[% MTN.t('Unlimited meeting schedulers.') %]
+<<</item>>>
+<<<item>>>
+[% MTN.t('Expanded live communication tools.') %]
+<<</item>>>
+<<<item>>>
+[% MTN.t('Visual customization and branding.') %]
+<<</item>>>
+<<<item>>>
+[% MTN.t('Unlimited meeting participants.') %]
+<<</item>>>
+<<<item>>>
+[% MTN.t('Unlimited meeting materials.') %]
+<<</item>>>
+<<<item>>>
+[% MTN.t('...and more.') %]
+<<</item>>>
+<<</list>>>
+
+<<<p>>>
+[% MTN.t('For the full description of features take a look at our %(L$plans and pricing%)',{ L => { href => 'http://www.meetin.gs/pricing' } }) %]
+<<</p>>>
+
+<<</html_wrapper>>>

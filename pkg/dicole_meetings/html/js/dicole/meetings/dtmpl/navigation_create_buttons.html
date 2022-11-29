@@ -1,0 +1,12 @@
+<% var temp_user = dicole.get_global_variable('meetings_user_is_temporary') %>
+<% if( ! temp_user ) { %>
+<% if( p.new_user ) { %>
+<a id="header-create-big-button" class=" button blue js_meetings_new_meeting_open"<%= ( dicole.get_global_variable('meetings_dismiss_new_user_guide_url') ) ? ' style="opacity:0;"' : ''%> href="#" title="Create a New Meeting">
+    <%= MTN.t('ORGANIZE A MEETING') %>
+</a>
+<% } else { %>
+<a id="header-create-button" class="button blue js_meetings_new_meeting_open" href="#" title="<%= MTN.t('Create a New Meeting') %>">
+    <i class="ico-add"></i>
+</a>
+<% } %>
+<% }%>

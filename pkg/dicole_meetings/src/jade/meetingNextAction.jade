@@ -1,0 +1,30 @@
+div#next-action-wrap
+    - if( type === 'matchmaking' )
+        div.action
+            p.icon
+                i.ico-note
+                !=MTN.t('%1$s wants to meet you', { params : [ requester_name ] } )
+                - if( event_name )
+                    = ' at ' + event_name + '. '
+                - else
+                    = '. '
+                !=MTN.t('Accept or decline?')
+        div.buttons
+            a(href="#")#js_accept_matchmaking.button.green-button
+                i.ico-check
+                !=MTN.t('Accept')
+            a(href="#")#js_decline_matchmaking.button.gray
+                i.ico-cross
+                !=MTN.t('Decline')
+
+    - if( type === 'followup' )
+        div.action
+            p!=MTN.t('The meeting is over. Do you want to organize a follow-up meeting?')
+        div.buttons
+            a(href=params.create_followup_url)#js_create_followup.button.pink!=MTN.t('Schedule a follow-up')
+
+    - if( type === 'ready_button' )
+
+    - if( type === 'rsvp' )
+
+    - if( type === 'tutorial' )

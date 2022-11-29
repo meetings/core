@@ -1,0 +1,39 @@
+if( ( locals.event_data && event_data.force_available_timespans ) || locals.disable_available_timespans_edit )
+    - var tz = event_data.force_time_zone || time_zone;
+    - var tz_data = dicole.get_global_variable('meetings_time_zone_data').data[tz]
+    - var spans = event_data.force_available_timespans || available_timespans;
+    p.availability(style='height:' + (spans ? spans.length : 1) * 28 + 'px;')!=MTN.t('The time period has been set as:')
+    div.selects
+        if ( spans )
+            each timespan in spans
+                p=app.helpers.fullTimeSpanString(timespan.start, timespan.end, tz_data )
+        else
+            p!=MTN.t('Live starting today')
+else
+    - var tz_data = dicole.get_global_variable('meetings_time_zone_data').data[time_zone]
+    div.set-availability
+        div.left-side
+            p!=MTN.t('Scheduler availability')
+        div.right-side
+            label(for='availability-always')
+                if( locals.available_timespans && locals.available_timespans.length )
+                    input(type='radio',name='availability_mode',value='always',id='availability-always')
+                else
+                    input(type='radio',name='availability_mode',value='always',id='availability-always',checked='checked')
+                !=MTN.t('Live starting today')
+            label(for='availability-set')
+                if( locals.available_timespans && locals.available_timespans.length )
+                    input(type='radio',name='availability_mode',value='set-time',id='availability-set',checked='checked')
+                else
+                    input(type='radio',name='availability_mode',value='set-time',id='availability-set')
+                !=MTN.t('Preset time period')
+            div.availability-controls.m-form(style=locals.available_timespans && locals.available_timespans.length ? 'display:block;' : '')
+                - var start = moment().format('YYYY-MM-DD')
+                - var end = moment().add('months',1).format('YYYY-MM-DD')
+                - if ( locals.available_timespans && locals.available_timespans.length )
+                    - var start = moment.utc(( available_timespans[0].start - tz_data.offset_value ) * 1000 ).format('YYYY-MM-DD')
+                    - var end = moment.utc(( available_timespans[0].end - tz_data.offset_value ) * 1000 - 1000 ).format('YYYY-MM-DD')
+                label.inline!=MTN.t('Starting date and time')
+                    input#av_date_start(name='availability',type='text',value=start)
+                label.inline!=MTN.t('Ending date and time')
+                    input#av_date_end(name='availability',type='text',value=end)

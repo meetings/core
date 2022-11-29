@@ -1,0 +1,33 @@
+
+msgid "Customizable strings"
+msgstr "Customizable strings"
+
+msgid "Custom value"
+msgstr "Custom value"
+
+msgid "English"
+msgstr "English"
+
+msgid "Finnish"
+msgstr "Finnish"
+
+msgid "Key"
+msgstr "Key"
+
+msgid "Language selection"
+msgstr "Language selection"
+
+msgid "Localization manager"
+msgstr "Localization manager"
+
+msgid "Manage domain localizations"
+msgstr "Manage domain localizations"
+
+msgid "Manage group localizations"
+msgstr "Manage group localizations"
+
+msgid "User can manage domain localizations"
+msgstr "User can manage domain localizations"
+
+msgid "User can manage group localizations"
+msgstr "User can manage group localizations"

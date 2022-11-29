@@ -1,0 +1,22 @@
+[% MTN.t('%1$s wants to join %2$s', [user_name,meeting_title]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Request to join') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t("%1\$s wants to join your meeting. Click the link to accept and we'll send the invitation.",[user_name]) %]<<</p>>>
+[% url = accept_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=join_request_accept' %]
+[% text = 'Accept' %]
+<<<blue_button>>>
+
+<<<p>>>[% MTN.t("In case you don't want to accept the request, don't do anything.") %]<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

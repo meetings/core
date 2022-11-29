@@ -1,0 +1,12 @@
+<script type="text/javascript">dojo.require("dicole.discussion");</script>
+<div id="discussions">
+[% IF entries.size %]
+[% INCLUDE 'dicole_comments::discussions_entries' %]
+[% ELSE %]
+<p>[% MSG("There are no discussions available.") | html %]</p>
+[% END %]
+</div>
+<div id="discussions_navi">
+	<a id="discussion_next" href="#" class="disabled">&larr; [% MSG('More recent discussions') | html %]</a>
+	<a id="discussion_prev" href="#" [% IF end_of_pages %]class="disabled"[% END %]>[% MSG('Earlier discussions') | html %] &rarr;</a>
+</div>

@@ -1,0 +1,77 @@
+# $Id: messages-fi.po,v 1.12 2010-07-20 03:59:47 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:11:24+0000\n"
+"PO-Revision-Date: 2005-03-22 02:11:24+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Personal summary"
+msgstr "Henkilökohtainen yhteenveto"
+
+msgid "Group summary"
+msgstr "Ryhmän yhteenveto"
+
+msgid "Summary"
+msgstr "Yhteenveto"
+
+msgid "Add freeform summaries"
+msgstr "Lisää vapaamuotoinen laatikko"
+
+msgid "Deny group summary use"
+msgstr "Kiellä yhteenvedon käyttö"
+
+msgid "Freeform summaries"
+msgstr "Vapaamuotoiset laatikot"
+
+msgid "Group summary managing"
+msgstr "Ryhmän yhteenvedon hallinta"
+
+msgid "Manage freeform boxes"
+msgstr "Vapaamuotoisten laatikoiden hallinta"
+
+msgid "Manage Group summary"
+msgstr "Ryhmän yhteenvedon hallinta"
+
+msgid "Summary config"
+msgstr "Yhteenvedon asetukset"
+
+msgid "Freeform summary details"
+msgstr "Vapaamuotoisen laatikon tiedot"
+
+msgid "New freeform summary details"
+msgstr "Uuden vapaamuotoisen laatikon tiedot"
+
+msgid "Group summary box moving"
+msgstr "Ryhmän yhteenvedon laatikoiden siirto"
+
+msgid "Move boxes"
+msgstr "Laatikoiden siirto"
+
+msgid "Actions"
+msgstr "Toiminnot"
+
+msgid "Revert to default summary layout"
+msgstr "Palauta oletusarvoinen yhteenvedon järjestys"
+
+msgid "Set your summary layout as default layout"
+msgstr "Aseta oman yhteenvetosi järjestys oletukseksi"
+
+msgid "Summary page navigation item"
+msgstr "Yhteenvedon navigaatioelementin ikoni"
+
+msgid "Wether to show the summary page navigation item"
+msgstr "Näytetäänkö yhteenvedon navigaatioelementin ikoni"
+
+msgid "Store this as default summary layout"
+msgstr "Tallenna tämä yhteenvedon vakiosijoutteluksi"
+
+msgid "Dicole community platform (invite system name)"
+msgstr "Dicole community platform"

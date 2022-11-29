@@ -1,0 +1,233 @@
+<style type="text/css">
+#deski_header {
+	position: relative;
+	height: 320px;
+}
+
+#deski_logo {
+	position: absolute;
+	left: 20px;
+}
+
+#deski_toplinks {
+	position: absolute;
+	top: 28px;
+	left: 320px;
+}
+
+#deski_toplinks a {
+	color: #999999;
+	text-decoration: none;
+	font-family: arial;
+	font-size: 9pt;
+	font-weight: bold;
+}
+
+#deski_toplinks a:hover {
+	text-decoration: underline overline;
+}
+
+#deski_search {
+	position: absolute;
+	top: 20px;
+	left: 660px;
+}
+
+#deski_search_input {
+	background: #F2F2F2 none no-repeat scroll 0 0;
+	border: 1px solid #AAAAAA;
+	color: #444444;
+	font-family: arial,arial,helvetica,sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	padding: 0 4px;
+	margin-top: 10px;
+	margin-right: 50px;
+}
+
+#deski_text {
+	position: absolute;
+	top: 80px;
+}
+
+#deski_description { 
+	background: transparent url(http://deski.fi/images/logo_oikea_teskti.gif) repeat-x scroll 0 0;
+	height: 161px;
+	left: 720px;
+	position: absolute;
+	top: 80px;
+	width: 233px;
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+#deski_description p {
+	position: absolute;
+	top: 35px;
+	width: 190px;
+}
+
+#deski_description a {
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#deski_description a:hover {
+	text-decoration: underline overline;
+}
+
+#deski_menu {
+	position: absolute;
+	top: 241px;
+}
+
+#deski_paivandeski {
+	position: absolute;
+	top: 0;
+	left: 20px !important;
+}
+
+#deski_aiheittain {
+	position: absolute;
+	top: 0;
+	left: 182px !important;
+}
+
+#deski_radio {
+	position: absolute;
+	top: 0;
+	left: 336px !important;
+}
+
+#deski_video {
+	position: absolute;
+	top: 0;
+	left: 444px !important;
+}
+
+#deski_kutsut {
+	position: absolute;
+	top: 0;
+	left: 549px !important;
+}
+
+#deski_menufooter {
+	position: absolute;
+	top: 259px;
+}
+
+#deski_user {
+	position: absolute;
+	top: 250px;
+	left: 720px;
+	width: 225px;
+}
+
+#deski_logout {
+	background: transparent url(/images/annotation/close-button.png) no-repeat scroll 0 0;
+	width: 19px;
+	height: 19px;
+	display: block;
+	position: absolute;
+	left: 200px;
+	top: 0;
+}
+
+#deski_logout:hover {
+	background-position: -19px 0;
+}
+
+#deski_logout:active {
+	background-position: -38px 0;
+}
+
+#deski_login {
+	position: absolute;
+	top: 250px;
+	left: 720px;
+}
+
+#deski_user .user-bg {
+	background: transparent url(/images/events/user-icon-bg.png) no-repeat scroll 0 0;
+	width: 46px;
+	height: 46px;
+	float: left;
+	overflow: hidden;
+	margin: 3px;
+	padding: 2px 3px;
+}
+
+#deski_user .user {
+	display: block;
+	width: 36px;
+	height: 36px;
+	padding: 2px;
+	margin: 0;
+}
+
+#deski_user .user:hover {
+	background-color: orange;
+}
+
+#deski_paanavi_alaosa {
+    position: absolute;
+    top: 259px;
+    background: url(http://deski.fi/images/paanavi_alaosa.gif);
+    width: 690px;
+    height: 58px;
+}
+
+position: absolute; top: 259px; background: url(http://deski.fi/images/paanavi_alaosa.gif); width: 690px; height: 58px
+</style>
+<div id="deski_header">
+	<a id="deski_logo" href="http://deski.fi/index.php"><img src="http://deski.fi/images/yla_deski.gif" alt="Deski.fi" /></a>
+	<div id="deski_toplinks">
+		<a href="http://deski.fi/page.php?page_id=115">KÄYTTÖOHJEET</a>
+		<a href="http://deski.fi/page.php?page_id=107">DESKI YRITYKSENÄ</a>
+		<a href="http://deski.fi/page.php?page_id=114">YHTEYSTIEDOT</a>
+	</div>
+	<div id="deski_search">
+		<form action="http://deski.fi/page.php?page_id=20" method="post" name="form2">
+			<input id="deski_search_input" type="text" name="words" value="Hakusana" onfocus="javascript:document.form2.words.value='';">
+			<a href="javascript:document.form2.submit();"><img src="http://deski.fi/images/haku_nappi.gif" alt="Haku" /></a>
+		</form>
+	</div>
+	<img id="deski_text" src="http://deski.fi/images/logo.gif" alt="Deski.fi" />
+	<div id="deski_description"><p>Deski.fi on Viestintätoimisto Deskin ylläpitämä palvelu toimittajille. Ideasivuston materiaalit ovat vapaasti ja veloituksetta toimittajien käytössä. Viestintätoimisto Deskin kotisivut ovat osoitteessa <a href="http://www.tiedottaja.fi">www.tiedottaja.fi</a>.</p></div>
+	<div id="deski_menu">
+		<img src="http://deski.fi/images/paanavi_vasen.gif" alt="Deski.fi" />
+		<a id="deski_paivandeski" href="http://deski.fi/index.php">
+			<img src="http://deski.fi/images/paanavi_paivandeski.gif" title="Etusivu Toimittajien ideasivusto">
+		</a>
+		<a id="deski_aiheittain" href="http://deski.fi/page.php?page_id=1">
+			<img src="http://deski.fi/images/paanavi_aiheittain.gif" title="Päivän Deskin sisältö aiheittain">
+		</a>
+		<a id="deski_radio" href="http://deski.fi/page.php?page_id=6">
+			<img src="http://deski.fi/images/paanavi_radio.gif" title="Radiojuttuja ajankohtaisista aiheista">
+		</a>
+		<a id="deski_video" href="http://deski.fi/page.php?page_id=123">
+			<img src="http://deski.fi/images/paanavi_video.gif" title="Uutisvideoita verkkolehtien käyttöön">
+		</a>
+		<a id="deski_kutsut" href="http://deski.fi/page.php?page_id=2">
+			<img src="http://deski.fi/images/paanavi_kutsut.gif" title="Tapahtumia">
+		</a>
+	</div>
+    <div id="deski_paanavi_alaosa"><div class="deski_main_link_container"><a class="linkBar deski_main_link[% IF main_link_selected %] deski_main_link_selected selected[% END %]" href="/"> &larr; [% MSG('Upcoming events') %]</a></div></div>
+
+	[% IF user %]
+	<div id="deski_user">
+		<div class="user-bg alpha_png">
+			<a class="user" href="[% user.profile_url | html %]" title="[% user.name | html %]">
+				<img src="[% user.image or '/images/events/user-icon.png' | html %]" alt="[% user.name | html %]" />
+			</a>
+		</div>
+		<a id="deski_username" href="[% user.profile_url | html %]">[% user.name | html %]</a><br />
+		<a id="deski_settings" href="[% user.settings_url | html %]">[% MSG('Settings') | html %]</a><br />
+		<a id="deski_logout" href="/xlogout" title="[% MSG('Logout') | html %]"></a>
+	</div>
+	[% ELSE %]
+	<a id="deski_login" class="js_hook_show_login button blue-button" href="#"><span>[% MSG('Login') | html %]</span></a>
+	[% END %]
+</div>

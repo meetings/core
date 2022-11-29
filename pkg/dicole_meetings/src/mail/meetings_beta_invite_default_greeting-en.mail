@@ -1,0 +1,13 @@
+NOTE THIS TEMPLATE IS SPECIAL! This title will be ignored. The text only body will act as the default greeting.
+
+<<<p>>>
+[% MTN.t("Hi there,") %]
+<<</p>>>
+
+<<<p>>>
+[% MTN.t("I've found Meetin.gs useful for organizing meetings.") %]
+<<</p>>>
+
+<<<p>>><<<br>>>
+-- [% inviting_user_name %]
+<<</p>>>

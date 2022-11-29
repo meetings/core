@@ -1,0 +1,21 @@
+<p class="rsvp">
+<%= MTN.t('RSVP status') %>
+<% if( ! p.rsvp ) { %>
+<a href="#" class="js_set_rsvp_true">
+    <span class="button-small gray"><i class="ico-check"></i><%= MTN.t('Attending') %></span>
+</a>
+<a href="#" class="js_set_rsvp_false">
+    <span class="button-small gray"><i class="ico-cross"></i><%= MTN.t('Not attending') %></span>
+</a>
+<% } else { %>
+<% if( p.rsvp === 'no' ) { %>
+<a href="#" class="js_set_rsvp_true">
+    <span class="button-small gray"><i class="ico-cross"></i><%= MTN.t('Not attending') %></span>
+</a>
+<% } else { %>
+<a href="#" class="js_set_rsvp_false">
+    <span class="button-small gray"><i class="ico-check"></i><%= MTN.t('Attending') %></span>
+</a>
+<% } %>
+<% } %>
+</p>

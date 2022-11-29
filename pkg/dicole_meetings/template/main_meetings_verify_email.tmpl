@@ -1,0 +1,31 @@
+<div id="bb-content">
+    <div id="logout-wrap">
+        <div class="m-modal">
+            <div class="modal-header">
+                <h3>
+                   [% MTN.t(' Please check your email to continue') %]
+                </h3>
+            </div>
+            <div class="modal-content">
+                <p>
+                [% IF meet_me %]
+                [% MTN.t('We just sent you an email to %(B$%1$s%) from %(B$info@meetin.gs%). Click the link in the email to confirm your account.',[email]) %]
+                [% ELSIF join_accounts %]
+                [% MTN.t("We just sent you an email to %(B\$%1\$s%) from %(B\$info@meetin.gs%). You can send the invites after clicking the link in the email. We'll also add the meeting to your account.",[email]) %]
+                [% ELSE %]
+                [% MTN.t('We just sent you an email to %(B$%1$s%) from %(B$info@meetin.gs%). You can send the invites after clicking the link we just sent you.', [email]) %]
+                [% END %]
+                </p>
+                <p>
+                [% MTN.t('If you cannot find the email, please check your spam folder and add %(B$info@meetin.gs%) to your address book to ensure safe delivery of email from us in the future.') %]
+                </p>
+                <p>
+                [% MTN.t('For more information see how to %(L$whitelist us%).',{ L => { class => 'underline', attributes => { href => 'https://www.meetin.gs/whitelist/', target => '_blank' } }}) %]
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="push"></div>
+</div> <!-- End content wrapper -->
+<div id="bb-footer"></div>

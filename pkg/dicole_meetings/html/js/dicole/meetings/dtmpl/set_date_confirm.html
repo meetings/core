@@ -1,0 +1,27 @@
+<div id="modal-set-date-confirm" class="m-modal">
+    <div class="modal-header">
+        <h3><%= MTN.t('Confirm changes') %></h3>
+    </div>
+    <div class="modal-content">
+        <p>
+        <%= MTN.t("We'll notify everyone about the changed time.") %>
+        </p>
+        <form id="meetings_set_date_confirm_form" action="" class="m-form">
+            <label class="smaller" for="js_toggle_ask_participants">
+                <input id="js_toggle_ask_participants" type="checkbox" name="require_rsvp" value="1" checked="checked" />
+                <%= MTN.t("Ask participants to RSVP again?") %>
+            </label>
+        </form>
+        <p class="note"><%= MTN.t("Note that we'll clear the old answers if you ask for new RSVP.") %></p>
+    </div>
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a href="#" class="button blue js_meetings_set_date_confirm_submit">
+                <%= MTN.t('Save') %>
+            </a>
+            <a href="#" class="button gray js_hook_showcase_close" id="scheduler-cancel-open-button">
+                <%= MTN.t('Cancel') %>
+            </a>
+        </div>
+    </div>
+</div>

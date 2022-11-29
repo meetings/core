@@ -1,0 +1,36 @@
+$theme:kpn;
+
+// Background color ( behind everything)
+$color-background:#cbcbcb;
+
+// Select color
+$color-select:#dbefcc;
+
+$color-drag:#959393;
+
+// Background images
+$repeat-x-image: "/images/meetings/meetings_bg_repeat_x.png";
+$repeat-y-image: "/images/meetings/meetings_bg_repeat_y_grey.png";
+
+// Logos ( might also be overridden by user )
+$header-logo-pos:left top;
+$footer-logo_pos:left -542px;
+$header-logo-pos-pro:left -2704px;
+$footer-logo-pos-pro:left -984px;
+
+// Slider button & questionmark overrideables
+$help-icon-pos: left -269px;
+
+// Main color
+$color-main:#767676;
+$color-main-hover:darken($color-main, 10%);
+$color-main-light:lighten($color-main, 40%);
+
+// Button colors
+$normal-button-begin:#73d26c;
+$normal-button-end:#6cc865;
+$normal-button-bg:#bababa;
+
+$action-button-begin:#73d26c;
+$action-button-end:#6cc865;
+$action-button-bg:#bababa;

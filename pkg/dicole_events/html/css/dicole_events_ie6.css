@@ -1,0 +1,18 @@
+*{zoom:1}
+
+.button, .button span, .button input, a.left-button span, a.middle-button span, a.right-button span, a.left-button, a.middle-button, a.right-button {
+	background-image: url(/images/events/buttons.gif) !important;
+}
+
+.yellow-button, .yellow-button span {
+	background-image: url(/images/events/yellow-buttons.gif) !important;
+}
+
+.showcase .close, .button .letter, .button:hover .letter, .yellow-button .save, .yellow-button:hover .save, .yellow-button .letter, .yellow-button:hover .letter, .yellow-button .red-x, .yellow-button:hover .red-x, .button .red-x, .button:hover .red-x, .tag_list_container .tag {
+	background-image: url(/images/events/small-buttons.gif) !important;
+}
+
+#events_create_button_container .yellow-button {
+	position: relative !important;
+	top: -35px !important;
+}

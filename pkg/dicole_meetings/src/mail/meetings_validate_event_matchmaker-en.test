@@ -1,0 +1,10 @@
+[%- IF test_case == 'simple' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+user_name ='kääppä'
+login_url = 'http://www.meetin.gs/'
+
+
+%]
+[% END %]

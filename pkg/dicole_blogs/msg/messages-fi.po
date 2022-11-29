@@ -1,0 +1,594 @@
+
+msgid "%1 Comments"
+msgstr "%1 kommenttia"
+
+msgid "Best rated posts"
+msgstr "Arvostetuimmat viestit"
+
+msgid "Blog following tool"
+msgstr "Työkalu keskusteluiden seuraamiseen"
+
+msgid "Blogs"
+msgstr "Keskustelut"
+
+msgid "Blogs rights"
+msgstr "Keskustelut -osion oikeudet"
+
+msgid "Choose view"
+msgstr "Näkymä"
+
+msgid "Comment blogs"
+msgstr "Keskusteluiden kommentointi"
+
+msgid "Demote"
+msgstr "Alenna"
+
+msgid "Discuss"
+msgstr "Keskustele"
+
+msgid "Edit post"
+msgstr "Muokkaa viestiä"
+
+msgid "Entry removed"
+msgstr "Viesti poistettu"
+
+msgid "Entry updated"
+msgstr "Viesti päivitetty"
+
+msgid "Feature blogs"
+msgstr "Esittele"
+
+msgid "Featured post"
+msgstr "Esittelyssä"
+
+msgid "Featured posts"
+msgstr "Esitellyt viestit"
+
+msgid "Filter by tag"
+msgstr "Suodata avainsanalla"
+
+msgid "Posts by %1"
+msgstr "Käyttäjän %1 viestit"
+
+msgid "Posts by contacts"
+msgstr "Kontaktieni viestit"
+
+msgid "Manage others comments to blogs"
+msgstr "Hallitse muiden keskusteluihin kirjoittamia kommentteja"
+
+msgid "Most promoted posts"
+msgstr "Nostetuimmat viestit"
+
+msgid "My posts"
+msgstr "Omat viestini"
+
+msgid "New posts"
+msgstr "Uudet viestit"
+
+msgid "No, I changed my mind"
+msgstr "Ei, muutin mieleni"
+
+msgid "Popular tags"
+msgstr "Usein käytetyt avainsanat"
+
+msgid "Post"
+msgstr "Lähetä"
+
+msgid "Write a post"
+msgstr "Kirjoita viesti"
+
+msgid "Promote"
+msgstr "Nosta"
+
+msgid "Promote blogs"
+msgstr "Keskusteluiden nostaminen"
+
+msgid "Publish"
+msgstr "Julkaise"
+
+msgid "Rate blogs"
+msgstr "Keskusteluiden arvostelu"
+
+msgid "Read blogs"
+msgstr "Keskusteluiden lukeminen"
+
+msgid "Read more"
+msgstr "Lue lisää"
+
+msgid "Remove comments from blogs"
+msgstr "Kommenttien poistaminen keskusteluista"
+
+msgid "Search by tag"
+msgstr "Etsi avainsanan perusteella"
+
+msgid "Suggested tags"
+msgstr "Suositeltuja avainsanoja"
+
+msgid "Syndication feed (RSS 2.0)"
+msgstr "Syöte (RSS 2.0)"
+
+msgid "Tags"
+msgstr "Avainsanat"
+
+msgid "User can comment blogs"
+msgstr "Käyttäjä voi kommentoida keskusteluja"
+
+msgid "User can feature blogs"
+msgstr "Käyttäjä voi esitellä keskusteluja"
+
+msgid "User can promote and demote blogs"
+msgstr "Käyttäjä voi nostaa ja alentaa keskusteluja"
+
+msgid "User can rate blogs"
+msgstr "Käyttäjä voi arvioida keskusteluja"
+
+msgid "User can read the blogs"
+msgstr "Käyttäjä voi lukea keskusteluja"
+
+msgid "User can remove comments from blogs"
+msgstr "Käyttäjä voi poistaa kommentteja keskusteluista"
+
+msgid "Yes, I am sure that I want to delete the message permanently"
+msgstr "Kyllä, olen varma, että haluan poistaa tämän viestin lopullisesti"
+
+msgid "You are about to delete a message"
+msgstr "Olet juuri poistamassa viestiä"
+
+msgid "You must fill both title and content."
+msgstr "Sekä otsikko, että sisältö on täytettävä."
+
+msgid "You must have at least one tag."
+msgstr "Tarvitset ainakin yhden avainsanan."
+
+msgid "New post"
+msgstr "Uusi viesti"
+
+msgid "Add tag"
+msgstr "Lisää avainsana"
+
+msgid "tagged with: %1"
+msgstr "avainsanoin: %1"
+
+msgid "Blogs featured post summary"
+msgstr "Keskustelut: esittelyssä olevan viestin yhteenveto"
+
+msgid "Blogs new comments summary"
+msgstr "Keskustelut: uusien kommenttien yhteenveto"
+
+msgid "Blogs new posts summary"
+msgstr "Keskustelut: uusien viestin yhteenveto"
+
+msgid "Comment by %1"
+msgstr "Kommentti käyttäjältä %1"
+
+msgid "Comment to %1"
+msgstr "Kommentti viestiin %1"
+
+msgid "Latest blog comments"
+msgstr "Uusimmat kommentit keskusteluissa"
+
+msgid "Latest blog entries and comments."
+msgstr "Uusimmat viestit ja kommentit"
+
+msgid "Latest blog posts"
+msgstr "Uusimmat viestit"
+
+msgid "No blog comments found."
+msgstr "Ei kommentteja."
+
+msgid "No blog posts found."
+msgstr "Ei keskusteluviestejä."
+
+msgid "Unknown user"
+msgstr "Tuntematon käyttäjä"
+
+msgid "Show more posts"
+msgstr "Näytä lisää viestejä"
+
+msgid "The message you requested does not exist."
+msgstr "Pyytämääsi viestiä ei löytynyt."
+
+msgid "%1 post(s)"
+msgstr "%1 viesti(ä)"
+
+msgid "Active seeds"
+msgstr "Aktiiviset aiheet"
+
+msgid "Add popular tags"
+msgstr "Lisää suosittuja avainsanoja"
+
+msgid "Add seed to summary"
+msgstr "Lisää aihe yhteenvetoon"
+
+msgid "Add suggested tags"
+msgstr "Lisää suositeltuja avainsanoja"
+
+msgid "All seeds"
+msgstr "Kaikki aiheet"
+
+msgid "Be the first to add one!"
+msgstr "Lisää sinä ensimmäinen!"
+
+msgid "Browse all posts"
+msgstr "Selaa kaikkia viestejä"
+
+msgid "Browse my own posts"
+msgstr "Selaa omia viestejä"
+
+msgid "Browse posts by contacts"
+msgstr "Selaa kontaktien viestejä"
+
+msgid "Change seed"
+msgstr "Vaihda aihetta"
+
+msgid "Closed seeds"
+msgstr "Suljetut aiheet"
+
+msgid "Closing comment"
+msgstr "Sulkukommentti"
+
+msgid "Create a seed"
+msgstr "Luo uusi aihe"
+
+msgid "Create seeds"
+msgstr "Luo aiheita"
+
+msgid "Custom creator string"
+msgstr "Mukautettu organisoijan kuvaus"
+
+msgid "Edit seed"
+msgstr "Muokkaa aihetta"
+
+msgid "Edit seeds"
+msgstr "Muokkaa aiheita"
+
+msgid "Enable promoting"
+msgstr "Mahdollista nostaminen"
+
+msgid "Enable rating"
+msgstr "Mahdollista arvosteleminen"
+
+msgid "Most recent post on %1"
+msgstr "Viimeisin viesti %1"
+
+msgid "Move posts between seeds"
+msgstr "Siirrä viestejä aiheesta toiseen"
+
+msgid "Move post to seed \"%1\""
+msgstr "Siirrä viesti aiheeseen \"%1\""
+
+msgid "My own posts"
+msgstr "Omat viestini"
+
+msgid "No posts found."
+msgstr "Ei viestejä."
+
+msgid "No seeds found."
+msgstr "Ei aiheita."
+
+msgid "Organized by %1"
+msgstr "Organisoija: %1"
+
+msgid "Post seed assigned."
+msgstr "Viestin aihe asetettu."
+
+msgid "Post to seed \"%1\""
+msgstr "Kirjoita viesti aiheeseen \"%1\""
+
+msgid "Remove post from seed"
+msgstr "Poista viesti aiheesta"
+
+msgid "Remove seed"
+msgstr "Poista aihe"
+
+msgid "Remove seed from summary"
+msgstr "Poista aihe yhteenvedosta"
+
+msgid "Reopen seed"
+msgstr "Avaa aihe uudelleen"
+
+msgid "Seed"
+msgstr "Aihe"
+
+msgid "Seed added to summary."
+msgstr "Aihe lisätty yhteenvetoon."
+
+msgid "Seed closed."
+msgstr "Aihe suljettu."
+
+msgid "Seed created"
+msgstr "Aihe luotu"
+
+msgid "Seed guide"
+msgstr "Aiheiden ohje"
+
+msgid "Seed has been closed and no further contributions will be accepted."
+msgstr "Aihe on suljettu eikä enempää kontribuutioita enää hyväksytä."
+
+msgid "Seed information"
+msgstr "Aiheen tiedot"
+
+msgid "Seed promoted."
+msgstr "Aihe nostettu esiin."
+
+msgid "Seed promotion removed."
+msgstr "Aiheen esiinnosto poistettu."
+
+msgid "Seed removed."
+msgstr "Aihe poistettu."
+
+msgid "Seed removed from summary."
+msgstr "Aihe poistettu yhteenvedosta."
+
+msgid "Seed reopened."
+msgstr "Aihe avattu uudelleen."
+
+msgid "Seed updated"
+msgstr "Aihe päivitetty"
+
+msgid "Select new seed"
+msgstr "Valitse uusi aihe"
+
+msgid "Select seed to post to"
+msgstr "Valitse aihe, johon haluan kirjoittaa"
+
+msgid "Show seeds"
+msgstr "Näytä aiheet"
+
+msgid "Unpromote seed"
+msgstr "Poista aiheen esiinnosto"
+
+msgid "User can create seeds"
+msgstr "Käyttäjä voi luoda aiheita"
+
+msgid "User can edit other's seeds"
+msgstr "Käyttäjä voi muokata muiden aiheita"
+
+msgid "User change post seeds"
+msgstr "Käyttäjä voi vaihtaa viestien aiheita"
+
+msgid "Views"
+msgstr "Näkymät"
+
+msgid "Write a post without a seed"
+msgstr "Kirjoita viesti ilman aihetta"
+
+msgid "You are moving post titled \"%1\" into a new seed. Please select one of the options below:"
+msgstr "Olet siirtämässä viestiä nimeltä \"%1\" uuteen aiheeseen. Ole hyvä ja valitse aihe allaolevista vaihtoehdoista:"
+
+msgid "You can not edit a post in a closed seed."
+msgstr "Et voi muokata suljetussa aiheessa olevaa viestiä."
+
+msgid "You can not post to a closed seed."
+msgstr "Et voi kirjoittaa viestiä suljettuun aiheeseen."
+
+msgid "You must fill both title and description."
+msgstr "Sekä otsikko, että kuvaus on annettava."
+
+msgid "Seeds tagged with: %1"
+msgstr "Aiheet avainsanoin: %1"
+
+msgid "All seeds tagged with: %1"
+msgstr "Kaikki aiheet avainsanoin: %1"
+
+msgid "Closed seeds tagged with: %1"
+msgstr "Suljetut aiheet avainsanoin: %1"
+
+msgid "Featured posts tagged with: %1"
+msgstr "Esitellyt viestit avainsanoin: %1"
+
+msgid "Posts by %2 tagged with: %1"
+msgstr "Käyttäjän %2 viestit avainsanoin: %1"
+
+msgid "Posts by contacts tagged with: %1"
+msgstr "Kontaktien viestit avainsanoin: %1"
+
+msgid "Most promoted posts tagged with: %1"
+msgstr "Nostetuimmat viestit avainsanoin: %1"
+
+msgid "My own posts tagged with: %1"
+msgstr "Omat viestini avainsanoin: %1"
+
+msgid "New posts tagged with: %1"
+msgstr "Uudet viestit avainsanoin: %1"
+
+msgid "Close seed"
+msgstr "Sulje aihe"
+
+msgid "Create"
+msgstr "Luo"
+
+msgid "Promoted"
+msgstr "Esittelyssä"
+
+msgid "Promote seed"
+msgstr "Nosta aihe esiin"
+
+msgid "Add attachment"
+msgstr "Lisää liite"
+
+msgid "Attachments"
+msgstr "Liitteet"
+
+msgid "The file you requested does not exist."
+msgstr "Pyytämääsi tiedostoa ei löytynyt."
+
+msgid "No tags."
+msgstr "Ei avainsanoja."
+
+msgid "(Drag & drop links and images to the editor window)"
+msgstr "(Voit raahata linkkejä ja kuvia kirjoituslaatikkoon)"
+
+msgid "Save & continue editing"
+msgstr "Tallenna ja jatka muokkausta"
+
+msgid "Publish & continue editing"
+msgstr "Julkaise ja jatka muokkausta"
+
+msgid "Add missing tags"
+msgstr "Lisää puuttuvia avainsanoja"
+
+msgid "Add tags to post"
+msgstr "Lisää avainsanoja viestiin"
+
+msgid "Add tags to posts"
+msgstr "Lisää avainsanoja viesteihin"
+
+msgid "Click to add popular tags"
+msgstr "Lisää usein käytettyjä avainsanoja painamalla"
+
+msgid "Click to add suggested tags"
+msgstr "Lisää suositeltuja avainsanoja painamalla"
+
+msgid "Save tag changes"
+msgstr "Tallenna avainsanojen muutos"
+
+msgid "Tags of post \"%1\""
+msgstr "Viestin \"%1\" avainsanat"
+
+msgid "Tags updated."
+msgstr "Avainsanat päivitetty."
+
+msgid "The user whose files you requested does not exist."
+msgstr "Tiedoston omistajaa ei löytynyt."
+
+msgid "User add tags to posts"
+msgstr "Käyttäjä voi lisätä avainsanoja viesteihin"
+
+msgid "User can change post seeds"
+msgstr "Käyttäjä voi vaihtaa viestien aiheita"
+
+msgid "Add tags to post \"%1\""
+msgstr "Lisää avainsanoja viestiin \"%1\""
+
+msgid "Post information"
+msgstr "Viestin tiedot"
+
+msgid " tagged with: %1"
+msgstr " avainsanoin: %1"
+
+msgid "Write a message"
+msgstr "Kirjoita viesti"
+
+msgid " tagged with: "
+msgstr " avainsanalla: "
+
+msgid " Posts by contacts "
+msgstr " Kontaktieni viestit "
+
+msgid "Delete message"
+msgstr "Poista viesti"
+
+msgid " Featured posts "
+msgstr " Esittelyssä "
+
+msgid " Posts "
+msgstr " Viestit "
+
+msgid "Posts tagged with: %1"
+msgstr "Viestit avainsanoin: %1"
+
+msgid " Featured posts  "
+msgstr " Esitellyt viestit  "
+
+msgid "Best rated posts tagged with: %1"
+msgstr "Arvostetuimmat viestit avainsanoin: %1"
+
+msgid "My posts tagged with: %1"
+msgstr "Omat viestini avainsanoin: %1"
+
+msgid "Click to add tags popular elsewhere"
+msgstr "Lisää muualla usein käytettyjä avainsanoja painamalla"
+
+msgid "Click to add tags popular in this seed"
+msgstr "Lisää tässä aiheessa usein käytettyjä avainsanoja painamalla"
+
+msgid "Contribute to blogs"
+msgstr "Kontribuoi blogiosioon"
+
+msgid "Manage blogs"
+msgstr "Hallinnoi keskusteluja"
+
+msgid "Post to blogs"
+msgstr "Kirjoita keskusteluun"
+
+msgid "User can post to blogs"
+msgstr "Käyttäjä voi kirjoittaa keskusteluun"
+
+msgid "Seeds"
+msgstr "Aiheet"
+
+msgid "Feature post"
+msgstr "Nosta esiin"
+
+msgid "Unfeature post"
+msgstr "Poista esille nosto"
+
+msgid "Reseed"
+msgstr "Vaihda aihetta"
+
+msgid "Posts by tag"
+msgstr "Viestit avainsanalla"
+
+msgid "Reposter saved."
+msgstr "Uudelleenlähettäjä tallennettu."
+
+msgid "Topics by tag"
+msgstr "Aiheet avainsanalla"
+
+msgid "Exclude posts from mail digest"
+msgstr "Poista viestit sähköopstimuistutuksesta"
+
+msgid "Exclude posts from summary"
+msgstr "Poista viestit yhteenvetolaatikosta"
+
+msgid "Source:"
+msgstr "Lähde:"
+
+msgid "1 star out of 1"
+msgstr "1 star out of 1"
+
+msgid "1 star out of 2"
+msgstr "1 star out of 2"
+
+msgid "1 star out of 3"
+msgstr "1 star out of 3"
+
+msgid "1 star out of 4"
+msgstr "1 star out of 4"
+
+msgid "1 star out of 5"
+msgstr "1 star out of 5"
+
+msgid "Conversations"
+msgstr "Keskustelut"
+
+msgid "Latest conversation comments"
+msgstr "Uusimmat keskusteluiden kommentit"
+
+msgid "Latest conversations"
+msgstr "Uusimmat keskustelut"
+
+msgid "No conversation comments found."
+msgstr "Keskustelukommentteja ei löytynyt."
+
+msgid "No conversations found."
+msgstr "Keskusteluja ei löytynyt."
+
+msgid "Edit message"
+msgstr "Muokkaa viestiä"
+
+msgid "Posts"
+msgstr "Viestit"
+
+msgid "No comments"
+msgstr "Ei kommentteja"
+
+msgid "One comment"
+msgstr "Yksi kommentti"
+
+msgid "Related events"
+msgstr "Liitetyt tapahtumat"
+
+msgid "Move to an another topic"
+msgstr "Siirrä toiseen aiheeseen"

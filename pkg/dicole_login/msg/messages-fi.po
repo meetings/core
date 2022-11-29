@@ -1,0 +1,137 @@
+# $Id: messages-fi.po,v 1.10 2010-07-28 13:45:44 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:08:34+0000\n"
+"PO-Revision-Date: 2005-03-22 02:08:34+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Domain"
+msgstr "Toimialue"
+
+msgid "Login failure. Please check your username and password."
+msgstr "Kirjautuminen epäonnistui. Ole hyvä ja tarkasta käyttäjänimesi ja salasanasi."
+
+msgid "Login"
+msgstr "Kirjaudu"
+
+msgid "Password"
+msgstr "Salasana"
+
+msgid "Username"
+msgstr "Käyttäjänimi"
+
+msgid "Session was not found, this probably means the session timed out. Please login again to proceed."
+msgstr "Istuntoa ei löytynyt. Tämä todennäköisesti tarkoittaa, että istunto on vanhentunut. Ole hyvä ja kirjaudu uudelleen. Toistuvissa ongelmatapauksissa kannattaa kokeilla poistaa selaimen evästeet (cookiet) ennen kirjautumista. Apua saa osoitteesta antti@dicole.com."
+
+msgid "Thank you for using our system. Always remember to log out after you are done to ensure your own privacy."
+msgstr "Kiitos, että käytit järjestelmää. Muista aina kirjautua ulos käytön jälkeen varmistaaksesi oman turvallisuutesi."
+
+msgid "Invalid login, please try again."
+msgstr "Kirjautuminen epäonnistui, ole hyvä ja yritä uudelleen."
+
+msgid "Radius server is not responding, please try again."
+msgstr "Radius-palvelin ei vastaa, ole hyvä ja yritä uudelleen."
+
+msgid "Register"
+msgstr "Rekisteröinti"
+
+msgid "Retrieve lost account"
+msgstr "Palauta unohtunut käyttäjätili"
+
+msgid "Account email"
+msgstr "Tunnuksen sähköpostiosoite"
+
+msgid "Your registered email address"
+msgstr "Rekisteröimäsi sähköpostiosoite"
+
+msgid "Submit"
+msgstr "Lähetä"
+
+msgid "Retrieve lost username and password"
+msgstr "Palauta unohtunut tunnus ja salasana"
+
+msgid "User account information has been sent to email address: %1"
+msgstr "Käyttäjätilin tiedot on lähetetty osoitteeseen: %1"
+
+msgid "No user account registered with the provided email address: %1"
+msgstr "Käyttäjätilejä ei löytynyt annetulla sähköpostiosoitteella: %1"
+
+msgid "Please provide your registered email address."
+msgstr "Anna rekisteröimäsi tunnuksen sähköpostiosoite."
+
+msgid "User account information from %1"
+msgstr "Käyttäjätilin tiedot osoitteesta %1"
+
+msgid "Local"
+msgstr "Paikallinen"
+
+msgid "Error connecting to database, please contact system administrator."
+msgstr "Tietokantayhteys epäonnistui, ota yhteys järjestelmänvalvojaan."
+
+msgid "New user creation failed."
+msgstr "Uuden käyttäjän luominen epäonnistui."
+
+msgid "Confirm lost account"
+msgstr "Varmenna unohtunut tunnus"
+
+msgid "New password"
+msgstr "Uusi salasana"
+
+msgid "Confirm password"
+msgstr "Uusi salasana uudelleen"
+
+msgid "Recovery key"
+msgstr "Palautusavain"
+
+msgid "Failed to save recovery information."
+msgstr "Palautusinformaation tallennus epäonnistui."
+
+msgid "Failed to validate recovery key."
+msgstr "Palautusavaimen tarkistus epäonnistui."
+
+msgid "Failed to update account recovery information."
+msgstr "Palautusinformaation päivitys epäonnistui."
+
+msgid "Failed to change password."
+msgstr "Salasanan vaihto epäonnistui."
+
+msgid "Password changed."
+msgstr "Salasana vaihdettu."
+
+msgid "New password saved."
+msgstr "Uusi salasana on tallennettu."
+
+msgid "Passwords do not match"
+msgstr "Salasanat eivät täsmää"
+
+msgid "Save new password"
+msgstr "Tallenna uusi salasana"
+
+msgid "This user account is disabled. Please contact your system administrator."
+msgstr "Tämä käyttäjätili on pois käytöstä. Ota yhteys ylläpitoon."
+
+msgid "Email and name are required."
+msgstr "Sähköposti ja nimi ovat pakollisia."
+
+msgid "Email has already been taken. Try logging in with your previous account or use a different email."
+msgstr "Sähköpostiosoite on jo varattu. Kokeile kirjautua olemassaolevalla tunnuksellasi tai rekisteröidy jollakin muulla osoitteella."
+
+msgid "msg"
+msgstr "msg"
+
+msgid "Login failed, please check your username and password."
+msgstr "Kirjautuminen epäonnistui. Tarkista käyttäjätunnuksesi ja salasanasi."
+
+msgid "Login with Facebook"
+msgstr "Kirjaudu Facebookilla"
+
+msgid "Remember"
+msgstr "Muista"

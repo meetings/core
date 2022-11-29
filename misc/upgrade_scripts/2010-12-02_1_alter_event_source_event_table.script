@@ -1,0 +1,12 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_event_source_event add updated bigint not null after timestamp');
+    Dicole::Utils::SQL->execute_sql('update dicole_event_source_event set updated = timestamp');
+    Dicole::Utils::SQL->execute_sql('create index updated on dicole_event_source_event (updated)');
+}
+
+1;
+

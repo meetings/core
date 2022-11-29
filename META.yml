@@ -1,0 +1,312 @@
+--- #YAML:1.0
+name: Dicole
+version: 0.9.0
+license: gpl
+distribution_type: module
+requires:
+  Archive::Tar: 1.08
+  Archive::Zip: 1.1
+  AudioFile::Info: 1.06
+  AudioFile::Info::MP3::Info: 1.01
+  AudioFile::Info::Ogg::Vorbis::Header::PurePerl: 1.02
+  Class::Accessor: 0
+  Crypt::CBC: 0
+  Crypt::Rijndael: 0
+  DateTime: 0.21
+  DateTime::Locale: 0.09
+  File::MimeInfo: 0.1
+  File::NCopy: 0.32
+  File::Spec: 0.82
+  File::Temp: 0.12
+  Filesys::SmbClient: 1.5
+  Geography::Countries: 0
+  HTML::Parser: 3.25
+  HTML::Scrubber: 0.06
+  HTML::Scrubber::StripScripts: 0.01
+  IO::Zlib: 1.01
+  MP3::Info: 1.02
+  Module::Build: 0
+  Ogg::Vorbis::Header::PurePerl: 0.05
+  OpenInteract2::Manage: 1.38
+  RDF::Simple: 0.12
+  Spreadsheet::ParseExcel: 0.2603
+  Text::CSV_XS: 0.23
+  Text::WikiFormat: 0.72
+  URI: 1
+  Unicode::MapUTF8: 1.09
+  XML::Parser: 2.3
+  XML::RSS: 1.05
+  perl: 5.6.1
+recommends: {}
+build_requires: {}
+conflicts: {}
+provides:
+  Bundle::Dicole:
+    file: lib/Bundle/Dicole.pm
+    version: 1.00
+  Dicole::Action:
+    file: lib/Dicole/Action.pm
+    version: 1.53
+  Dicole::Action::Common::Settings:
+    file: lib/Dicole/Action/Common/Settings.pm
+    version: 1.01
+  Dicole::Action::Common::Summary:
+    file: lib/Dicole/Action/Common/Summary.pm
+    version: 1.01
+  Dicole::Box:
+    file: lib/Dicole/Box.pm
+    version: 1.03
+  Dicole::Calcfunc:
+    file: lib/Dicole/Calcfunc.pm
+    version: 1.02
+  Dicole::Container:
+    file: lib/Dicole/Container.pm
+    version: 1.07
+  Dicole::Content:
+    file: lib/Dicole/Content.pm
+    version: 1.04
+  Dicole::Content::Button:
+    file: lib/Dicole/Content/Button.pm
+    version: 1.04
+  Dicole::Content::CategorizedList:
+    file: lib/Dicole/Content/CategorizedList.pm
+    version: 1.03
+  Dicole::Content::Controlbuttons:
+    file: lib/Dicole/Content/Controlbuttons.pm
+    version: 1.05
+  Dicole::Content::Formelement:
+    file: lib/Dicole/Content/Formelement.pm
+    version: 1.04
+  Dicole::Content::Formelement::Chooser:
+    file: lib/Dicole/Content/Formelement/Chooser.pm
+    version: 1.09
+  Dicole::Content::Formelement::Date:
+    file: lib/Dicole/Content/Formelement/Date.pm
+    version: 1.08
+  Dicole::Content::Formelement::Dropdown:
+    file: lib/Dicole/Content/Formelement/Dropdown.pm
+    version: 1.03
+  Dicole::Content::Formelement::Password:
+    file: lib/Dicole/Content/Formelement/Password.pm
+    version: 1.04
+  Dicole::Content::Formelement::Textarea:
+    file: lib/Dicole/Content/Formelement/Textarea.pm
+    version: 1.04
+  Dicole::Content::Horizontal:
+    file: lib/Dicole/Content/Horizontal.pm
+    version: 1.03
+  Dicole::Content::Hyperlink:
+    file: lib/Dicole/Content/Hyperlink.pm
+    version: 1.06
+  Dicole::Content::Iframe:
+    file: lib/Dicole/Content/Iframe.pm
+    version: 1.02
+  Dicole::Content::Image:
+    file: lib/Dicole/Content/Image.pm
+    version: 1.05
+  Dicole::Content::List:
+    file: lib/Dicole/Content/List.pm
+    version: 1.03
+  Dicole::Content::Message:
+    file: lib/Dicole/Content/Message.pm
+    version: 1.06
+  Dicole::Content::Popupbox:
+    file: lib/Dicole/Content/Popupbox.pm
+    version: 1.03
+  Dicole::Content::Table:
+    file: lib/Dicole/Content/Table.pm
+    version: 1.03
+  Dicole::Content::Text:
+    file: lib/Dicole/Content/Text.pm
+    version: 1.05
+  Dicole::Content::Tree:
+    file: lib/Dicole/Content/Tree.pm
+    version: 1.03
+  Dicole::Controller::MainTemplate:
+    file: lib/Dicole/Controller/MainTemplate.pm
+  Dicole::Controller::Popup:
+    file: lib/Dicole/Controller/Popup.pm
+  Dicole::DateTime:
+    file: lib/Dicole/DateTime.pm
+    version: 1.05
+  Dicole::Excel:
+    file: lib/Dicole/Excel.pm
+    version: 1.05
+  Dicole::Feed:
+    file: lib/Dicole/Feed.pm
+    version: 1.14
+  Dicole::Files:
+    file: lib/Dicole/Files.pm
+    version: 1.09
+  Dicole::Files::Archive:
+    file: lib/Dicole/Files/Archive.pm
+    version: 1.05
+  Dicole::Files::Filesystem:
+    file: lib/Dicole/Files/Filesystem.pm
+    version: 1.04
+  Dicole::Files::MimeType:
+    file: lib/Dicole/Files/MimeType.pm
+    version: 1.03
+  Dicole::Files::Smb:
+    file: lib/Dicole/Files/Smb.pm
+    version: 1.08
+  Dicole::Generictool:
+    file: lib/Dicole/Generictool.pm
+    version: 1.34
+  Dicole::Generictool::Browse:
+    file: lib/Dicole/Generictool/Browse.pm
+    version: 1.05
+  Dicole::Generictool::Data:
+    file: lib/Dicole/Generictool/Data.pm
+    version: 1.16
+  Dicole::Generictool::FakeObject:
+    file: lib/Dicole/Generictool/FakeObject.pm
+    version: 1.03
+  Dicole::Generictool::Field:
+    file: lib/Dicole/Generictool/Field.pm
+    version: 1.23
+  Dicole::Generictool::Field::Construct:
+    file: lib/Dicole/Generictool/Field/Construct.pm
+    version: 1.49
+  Dicole::Generictool::Field::Validate:
+    file: lib/Dicole/Generictool/Field/Validate.pm
+    version: 1.08
+  Dicole::Generictool::Search:
+    file: lib/Dicole/Generictool/Search.pm
+    version: 1.05
+  Dicole::Generictool::SessionStore:
+    file: lib/Dicole/Generictool/SessionStore.pm
+    version: 1.03
+  Dicole::Generictool::Sort:
+    file: lib/Dicole/Generictool/Sort.pm
+    version: 1.06
+  Dicole::Generictool::Wizard:
+    file: lib/Dicole/Generictool/Wizard.pm
+    version: 1.11
+  Dicole::Generictool::Wizard::Datasaver:
+    file: lib/Dicole/Generictool/Wizard/Datasaver.pm
+    version: 1.03
+  Dicole::Generictool::Wizard::Page:
+    file: lib/Dicole/Generictool/Wizard/Page.pm
+    version: 1.05
+  Dicole::Generictool::Wizard::Page::AdvancedSelect:
+    file: |-
+      lib/Dicole/Generictool/Wizard/Page/AdvancedSelect.pm
+    version: 1.03
+  Dicole::Generictool::Wizard::Page::Info:
+    file: lib/Dicole/Generictool/Wizard/Page/Info.pm
+    version: 1.03
+  Dicole::Generictool::Wizard::Page::Select:
+    file: lib/Dicole/Generictool/Wizard/Page/Select.pm
+    version: 1.02
+  Dicole::Generictool::Wizard::Page::Switch:
+    file: lib/Dicole/Generictool/Wizard/Page/Switch.pm
+    version: 1.03
+  Dicole::Generictool::Wizard::Results:
+    file: lib/Dicole/Generictool/Wizard/Results.pm
+    version: 1.03
+  Dicole::MessageHandler:
+    file: lib/Dicole/MessageHandler.pm
+    version: 1.05
+  Dicole::Navigation:
+    file: lib/Dicole/Navigation.pm
+    version: 1.02
+  Dicole::Navigation::Dropdown:
+    file: lib/Dicole/Navigation/Dropdown.pm
+    version: 1.02
+  Dicole::Navigation::Path:
+    file: lib/Dicole/Navigation/Path.pm
+    version: 1.01
+  Dicole::Navigation::Tabs:
+    file: lib/Dicole/Navigation/Tabs.pm
+    version: 1.02
+  Dicole::Navigation::Tree:
+    file: lib/Dicole/Navigation/Tree.pm
+    version: 1.11
+  Dicole::Navigation::Tree::Element:
+    file: lib/Dicole/Navigation/Tree/Element.pm
+    version: 1.14
+  Dicole::Pathutils:
+    file: lib/Dicole/Pathutils.pm
+    version: 1.05
+  Dicole::Registerer:
+    file: lib/Dicole/Registerer.pm
+  Dicole::Request:
+    file: lib/Dicole/Request.pm
+    version: 1.09
+  Dicole::Request::Apache:
+    file: lib/Dicole/Request/Apache.pm
+    version: 1.02
+  Dicole::Response:
+    file: lib/Dicole/Response.pm
+    version: 1.01
+  Dicole::Response::Apache:
+    file: lib/Dicole/Response/Apache.pm
+    version: 1.07
+  Dicole::SPOPS::Informer:
+    file: lib/Dicole/SPOPS/Informer.pm
+  Dicole::Security:
+    file: lib/Dicole/Security.pm
+    version: 1.15
+  Dicole::Security::Checker:
+    file: lib/Dicole/Security/Checker.pm
+  Dicole::Security::Encryption:
+    file: lib/Dicole/Security/Encryption.pm
+    version: 1.02
+  Dicole::Security::Key:
+    file: lib/Dicole/Security/Key.pm
+  Dicole::SessionStore:
+    file: lib/Dicole/SessionStore.pm
+    version: 1.06
+  Dicole::Settings:
+    file: lib/Dicole/Settings.pm
+    version: 1.03
+  Dicole::Summary:
+    file: lib/Dicole/Summary.pm
+  Dicole::Templateinit:
+    file: lib/Dicole/Templateinit.pm
+    version: 1.04
+  Dicole::Tool:
+    file: lib/Dicole/Tool.pm
+    version: 1.52
+  Dicole::Tree::Creator:
+    file: lib/Dicole/Tree/Creator.pm
+    version: 1.03
+  Dicole::Tree::Creator::Hash:
+    file: lib/Dicole/Tree/Creator/Hash.pm
+    version: 1.03
+  Dicole::URL:
+    file: lib/Dicole/URL.pm
+  Dicole::Utility:
+    file: lib/Dicole/Utility.pm
+    version: 1.06
+  Dicole::Viewer:
+    file: lib/Dicole/Viewer.pm
+    version: 1.04
+  Dicole::WikiFormat:
+    file: lib/Dicole/WikiFormat.pm
+  OpenInteract2::Auth::RadiusUser:
+    file: lib/OpenInteract2/Auth/RadiusUser.pm
+    version: 1.07
+  OpenInteract2::Config::Ini:
+    file: lib/OpenInteract2/Config/Ini.pm
+    version: 1.01
+  OpenInteract2::Manage::Website::ConnectDatabase:
+    file: |-
+      lib/OpenInteract2/Manage/Website/ConnectDatabase.pm
+  OpenInteract2::Manage::Website::DicoleScript:
+    file: lib/OpenInteract2/Manage/Website/DicoleScript.pm
+  ? |-
+    OpenInteract2::Manage::Website::InstallDicolePackage
+:
+    file: |-
+      lib/OpenInteract2/Manage/Website/InstallDicolePackage.pm
+  OpenInteract2::Manage::Website::ReInstallPackage:
+    file: |-
+      lib/OpenInteract2/Manage/Website/ReInstallPackage.pm
+    version: 1.03
+  OpenInteract2::Manage::Website::RegisterTool:
+    file: lib/OpenInteract2/Manage/Website/RegisterTool.pm
+  OpenInteract2::Manage::Website::UnRegisterTool:
+    file: lib/OpenInteract2/Manage/Website/UnRegisterTool.pm
+generated_by: Module::Build version 0.21

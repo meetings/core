@@ -1,0 +1,10 @@
+README - Config for dicole_simple_theme Package
+(generated when package installed: Thu Mar 27 04:43:00 2008)
+
+Configuration files for this package (such as SPOPS,
+action, etc.) are in the directory:
+
+ /usr/local/dicole/crmjournal/conf/dicole_simple_theme
+
+DO NOT put any files in this directory for configuration,
+they will be silently ignored.

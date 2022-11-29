@@ -1,0 +1,61 @@
+.footer{
+text-align:center;
+}
+.domain_custom_footer_html{
+margin:0 auto;
+width: 980px;
+text-align:right;
+}
+span.tuuma_footer{
+background:#000000;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    width:617px;
+font-family:'GeoSlab';
+font-size:14px;
+color:#fff;
+float:right;/
+}
+/
+span.tuuma_footer a{
+font-family:'GeoSlab';
+font-size:14px;
+color:#fff;
+}
+.events_more_container{
+min-height:20px;
+}
+
+.events_more_container a span{
+color:#F86300;
+}
+
+.event .event-content .tags .tag, .tagPrimary, #event-info .tag, #event-edit .tag{
+color:#333333 !important;
+}
+
+.miniTagCloud a{
+    border-radius: 0 0 0 0;
+    color: #333333 !important;
+    font-family: arial;
+    font-size: 10px;
+    background-color: #DDDDDD;
+    margin: 0 1px 1px 0;
+    padding: 4px 8px !important;
+}
+div.tags a.tag{
+color: #333333 !important;
+}
+
+html body {
+background-image:none !important;
+}
+
+.page-bg			{ position: fixed; left: 0; top: 0px; width: 100%; height: 100%; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; z-index: -1; } 
+.page-bg		{ background-image: url(/images/tuuma/valmennus-taustakuva.jpg); }
+
+.page-top-white{
+background:#fff; height: 173px; position: absolute; top: 0px; left: 0px; width:100%;
+}
+ 

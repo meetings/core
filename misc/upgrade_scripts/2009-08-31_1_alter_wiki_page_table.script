@@ -1,0 +1,9 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_wiki_page add hide_comments int unsigned not null after moderator_lock');
+}
+
+1;

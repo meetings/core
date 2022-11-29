@@ -1,0 +1,83 @@
+
+my $dry_run = 1;
+my $domain_id = `/usr/local/bin/d lc meetings_domain`;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $api = CTX->lookup_action('meetings_api');
+    my $domain_host = $api->_get_host_for_domain( $domain_id, 443 );
+
+    $api->e( send_campaign_email => {
+        domain_id => $domain_id,
+        partner_id => $partner_id,
+        dry_run => $dry_run,
+#        single_send_limit => 10,
+#        skip_sent_check => 1,
+#        limit_to_users => ['antti+trialtest@dicole.com'],
+        template_key_base => 'meetings_xmas',
+        exclude_user_checker => sub {
+            my ( $self, $user ) = @_;
+            return 1 unless $api->_user_has_accepted_tos( $user, $domain_id );
+            return 1 if $api->_user_is_pro( $user, $domain_id );
+            return 1 unless $api->_count_user_created_meetings_in_domain( $user, $domain_id );
+
+            # Just to make sure we do not promote these people..
+            return 1 if $self->_get_note_for_user( 'meetings_mailing_list_disabled', $user, $domain_id );
+
+            my $trials = $api->_user_trials( $user, $domain_id );
+
+            my $xmas_found = 0;
+            for my $trial ( @$trials ) {
+                $xmas_found = 1 if lc( $trial->trial_type ) eq 'xmas2012';
+            }
+
+            if ( ! $xmas_found ) {
+                my $trial = CTX->lookup_object('meetings_trial')->new( {
+                    domain_id => $domain_id,
+                    user_id => $user->id,
+                    creator_id => 0,
+                    creation_date => 1355090400,
+                    start_date => 1355090400,
+                    duration_days => 37,
+                    trial_type => 'XMAS2012',
+                } );
+
+                $trial->save unless $dry_run;
+
+                $api->_calculate_user_is_pro( $user, $domain_id ) unless $dry_run;
+            }
+
+            return 0;
+        },
+        template_params_generator => sub {
+            my ( $self, $user ) = @_;
+
+            my $login_link = $domain_host . Dicole::URL->from_parts(
+                domain_id => $domain_id, target => 0,
+                action => 'meetings', task => 'create',
+            );
+
+            my $unsub_link = $domain_host . Dicole::URL->from_parts(
+                domain_id => $domain_id, target => 0,
+                action => 'meetings_global', task => 'unsubscribe_from_promo_list',
+                params => { reason => 'xmas2012' }
+            );
+
+            $login_link = $api->_generate_authorized_uri_for_user( $login_link, $user, $domain_id );
+            $unsub_link = $api->_generate_authorized_uri_for_user( $unsub_link, $user, $domain_id );
+
+            my $params = {
+                logo_image => $domain_host . '/images/meetings/email/logos/logo_xmas.png',
+                register_url => $login_link,
+                promo_unsubscribe_url => $unsub_link,
+                user_name => Dicole::Utils::User->name( $user ),
+            };
+
+            return $params;
+        },
+    } );
+}
+
+1;
+

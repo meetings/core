@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS dicole_forums_messages (
+ msg_id                 %%INCREMENT%%,
+ groups_id              int unsigned not null,
+ forum_id               int unsigned not null,
+ thread_id              int unsigned not null,
+ metadata_id            int unsigned default 0,
+ version_id             int unsigned not null,
+ user_id                int unsigned not null,
+ parent_id              int unsigned default 0,
+ readcount              int unsigned default 0,
+ rating                 int unsigned default 0,
+ num_of_ratings         int unsigned default 0,
+ date                   bigint unsigned not null,
+ title                  text,
+ updated                bigint unsigned default 0,
+ active                 tinyint unsigned default 0,
+ type                   int unsigned default 0,
+ unique                 ( msg_id ),
+ primary key            ( msg_id ),
+ key                    ( thread_id )
+)

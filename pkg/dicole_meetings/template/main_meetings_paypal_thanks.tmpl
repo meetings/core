@@ -1,0 +1,39 @@
+<div id="paypal-thanks-wrapper">
+    <div id="paypal-thanks">
+        <h2>Thanks</h2>
+
+        <p>[% IF free_trial %]Thank you for signing up for a free trial![% ELSE %]Thank you for your subscription![% END %]
+        [% UNLESS is_logged_in %]
+            We have sent you an email with a login link to Meetin.gs.
+        [% END %]
+        </p>
+
+        [% UNLESS free_trial %]
+        <p>Your transaction has been completed, and details of your purchase have been emailed to you. You may view your subscription information at <a href="http://www.paypal.com">www.paypal.com</a>.</p>
+        [% END %]
+
+        <h3>Spread the word, inform your friends</h3>
+        <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+        <div style="margin:5px 0 20px 0; text-align:center;">
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.meetin.gs%2F&amp;send=false&amp;layout=box_count&amp;width=60&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=60" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:60px; height:60px;" allowTransparency="true"></iframe>
+           <a href="http://twitter.com/share" class="twitter-share-button"
+              data-url="http://www.meetin.gs/"
+              data-via="meetin_gs"
+              data-text="Meetin.gs - More effective, measurable meetings online and face-to-face"
+              data-related="anywhere:The Javascript API"
+              data-count="vertical">Tweet</a>
+        </div>
+        
+        [% IF is_logged_in %]
+            <div class="form-save-and-cancel-wrapper">
+                <a href="https://meetin.gs/login">
+                    <span class="button pink" style="width:300px; margin-top:20px;">Continue using Meetin.gs</span>
+                </a>
+            </div>
+        [% END %]
+        
+    </div>
+</div>
+<div id="push"></div>
+</div><!-- End content wrapper -->
+<div id="bb-footer"></div>

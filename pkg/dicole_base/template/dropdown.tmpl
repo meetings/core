@@ -1,0 +1,59 @@
+[%#- $Id: dropdown.tmpl,v 1.7 2009-01-07 14:42:32 amv Exp $ # -%]
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        id => 'random',
+        text => 'Open Drowdown',
+        title => 'Title',
+	image => Dicole::Widget::Image,
+        selected => 0,
+        elements => [
+            {
+                text => 'Open',
+                link => '/action/task/1/open',
+                class => 'random',
+            },
+            {
+                type => 'delimiter',
+            },
+            {
+                type => 'title',
+                text => 'Subtitle :)',
+            },
+            {
+                text => 'Close',
+                link => '/action/task/1/close',
+            },
+
+        ]
+    }
+-%]
+<div class="fileActionPopup" id="content_dropdown_[% itemparams.id %]">
+[%- IF itemparams.title -%]<span>[% itemparams.title %]</span>[%- END -%]
+[%- count = 0 %]
+[%- FOREACH element = itemparams.elements %]
+    [%- IF element.type == 'delimiter' -%]
+    <hr />
+    [%- ELSIF element.type == 'title' -%]
+    <span[% IF element.class %] class="[% element.class %]"[% END %]>[% element.text %]</span>
+    [%- ELSIF element.link -%]
+    <a href="[% element.link %]"[% IF count == itemparams.selected %] id="content_dropdown_selected_[% itemparams.id %]"[% END %][% IF element.class %] class="[% element.class %]"[% END %]>
+    [%- IF element.icon -%]
+    [%- icon = element.icon -%]
+        <img src="[% icon.src %]" alt="[% icon.alt %]" title="[% icon.title %]" border="0" />
+    [%- END -%]
+    [%- element.text -%]
+    </a>
+    [%- count = count + 1 -%]
+    [%- END %]
+[%- END -%]
+</div>
+<a href="#" onclick="return showContentDropdown('[% itemparams.id %]', event);"[% IF itemparams.class %]class="[% itemparams.class %]"[% END %]>
+[%- IF itemparams.image -%]
+[% image = itemparams.image %]
+  <img src="[% image.src %]" alt="[% image.alt %]" title="[% image.title %]"
+id="[% image.id %]" border="0" />
+[%- ELSIF itemparams.text -%]
+[% itemparams.text %]
+[%- END %]
+</a>

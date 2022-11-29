@@ -1,0 +1,51 @@
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_id = $params ? $params : 0;
+    
+    my $groups = CTX->lookup_object('groups')->fetch_group;
+    
+    my $blogs_summary_tools = CTX->lookup_object('tool')->fetch_group( {
+        where => 'toolid like ?',
+        value => [ "group_blogs_%" ],
+    } );
+
+    my $wiki_summary_tools = CTX->lookup_object('tool')->fetch_group( {
+        where => 'toolid like ?',
+        value => [ "group_wiki_%" ],
+    } );
+
+
+    for my $group ( @$groups ) {
+        my $gid = $group->id;
+        if ( $domain_id ) {
+            my $ok = eval { CTX->lookup_action('dicole_domains')->execute( group_belongs_to_domain => {
+                group_id => $gid, domain_id => $domain_id,
+            } ) };
+            next unless $ok;
+        }
+        
+        my $tools = $group->tool;
+        for my $tool ( @$tools ) {
+            if ( $tool->toolid eq 'group_blogs' ) {
+                _add_tool( $group, $_ ) for @$blogs_summary_tools;
+            }
+            elsif ( $tool->toolid eq 'group_wiki' ) {
+                _add_tool( $group, $_ ) for @$wiki_summary_tools;
+            }
+        }
+    }
+}
+
+sub _add_tool {
+    my ( $group, $tool ) = @_;
+    
+    eval { $group->tool_remove( $tool->id ); };
+    eval { $group->tool_add( $tool->id ); };
+    my $toolid = $tool->toolid;
+    my $gid = $group->id;
+    print "Added $toolid to group $gid" . $/;
+}
+
+1;

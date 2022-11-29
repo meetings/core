@@ -1,0 +1,28 @@
+div#lct-picker.m-modal
+    div.modal-header.back-button
+        h3!=MTN.t('Lync settings')
+        i.ico-leftarrow.back
+    div.modal-content.m-form
+        p!=MTN.t('Select one the options below to activate Lync for this meeting.')
+        div.m-form
+            label.radio.use-lync-uri
+                input(type='radio',name='lync_mode',value='uri')
+                !=MTN.t('Paste your Lync invitation')
+            textarea#com-lync-pastearea
+                !=(meeting.online_conferencing_data && meeting.online_conferencing_data.lync_copypaste) ? meeting.online_conferencing_data.lync_copypaste : ''
+            br
+            p.note!=MTN.t('How to get the invitation?') 
+                br
+                !=MTN.t('Office 365 user: Create a new meeting in the  %(L$Web scheduler%).', { L : { href : 'https://sched.lync.com', class : 'underline', target : '_blank' } } )
+                br
+                !=MTN.t('Desktop user: Press "New Lync Meeting" in your Outlook Calendar.')
+        div.m-form(style="margin-top:28px;")
+            label.radio.use-lync-sip
+                input(type='radio',name='lync_mode',value='sip')
+                !=MTN.t('Use Lync address (SIP)')
+            div.form-row
+                input#com-lync-sip(type='text',value=(meeting.online_conferencing_data && meeting.online_conferencing_data.lync_sip) ? meeting.online_conferencing_data.lync_sip : '',placeholder!=MTN.t('Your Lync address'))
+    div.modal-footer
+        div.buttons.right
+            a.button.blue.save(href='#')!=MTN.t('Save')
+

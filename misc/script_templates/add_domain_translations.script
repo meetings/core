@@ -1,0 +1,63 @@
+# dev
+# remember to write translations in utf8
+
+my $domain_name = 'nomadskolan.dicole.net';
+my $lang = 'sv';
+my $group = 0;
+
+my $translations = {
+    'Online members' => 'Nomader i trakten',
+    'Latest blog comments' => 'Senaste kommentarer vid lägerelden',
+    'Latest blog posts' => 'Senaste inlägg vid lägerelden',
+    'Updates in wiki' => 'Nytt i karavanen',
+    'Actions' => 'Funktion',
+    'Write a post' => 'Skriv ett inlägg',
+    'Change topic' => 'Byt ämne',
+    'Views' => 'Vyer',
+    'New posts' => 'Nya inlägg',
+    'Posts by contacts' => 'Inlägg av kontakter',
+    'My own posts' => 'Egna inlägg',
+    'Topic' => 'Ämne',
+    'Topics' => 'Ämnen',
+    'Posts' => 'Inlägg',
+    'Filter by tag' => 'Filtera enligt stämpel',
+    'Navigation' => 'Navigering',
+    'Active topics' => 'Öppna ämnen',
+    'Closed topics' => 'Avslutade ämnen',
+    'All topics' => 'Alla ämnen',
+    'Posts by tag' => 'Inlägg enligt stämpel',
+    'Browse all posts' => 'Se alla inlägg',
+    'Browse posts by contacts' => 'Se kontakters inlägg',
+    'Browse my own posts' => 'Se egna inlägg',
+};
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain = CTX->lookup_action('dicole_domains')->e( get_domain_object => { domain_name => $domain_name } );
+    my $namespace = $domain->localization_namespace;
+    my $domain_id = $domain->id; 
+
+    unless ( $namespace ) {
+        ( $namespace ) = split /\./, $domain->domain_name;
+        $domain->localization_namespace( $namespace );
+        $domain->save;
+    }
+
+    my $object = CTX->lookup_object('custom_localization');
+
+    for my $key ( keys %$translations ) {
+        next unless $key;
+        my $t = $object->new( {
+            creation_date => time(),
+            namespace_key => $namespace,
+            namespace_area => $group_id || 0,
+            namespace_lang => $lang || '',
+            localization_key => $key,
+            localization_value => $translations->{ $key },
+        } );
+        $t->save;
+    }
+}
+
+1;

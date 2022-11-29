@@ -1,0 +1,10 @@
+[%- IF test_case == 'joulu' %]
+[%-
+
+logo_image = 'http://dev.meetin.gs/images/meetings/email/logos/logo_xmas.png'
+server_host = 'http://dev.meetin.gs'
+user_name ='Mr. Best User'
+login_url = 'http://www.meetin.gs/'
+promo_unsubscribe_url = 'fuck yall'
+%]
+[% END %]

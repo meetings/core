@@ -1,0 +1,82 @@
+
+use Dicole::Utils::HTML;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_id = $params ? $params : 0;
+    
+    # for each entry in the blogs, fetch the post, fetch it's comments and attach comments to the entry. use date to check already existing comments
+    my $entries = CTX->lookup_object('blogs_entry')->fetch_group;
+    my %entries_by_group = ();
+    
+    for my $entry ( @$entries ) {
+        $entries_by_group{ $entry->group_id } ||= [];
+        push @{ $entries_by_group{ $entry->group_id } }, $entry;
+    }
+    
+    for my $gid ( keys %entries_by_group ) {
+    
+        if ( $domain_id ) {
+            my $ok = eval { CTX->lookup_action('dicole_domains')->execute( group_belongs_to_domain => {
+                group_id => $gid, domain_id => $domain_id,
+            } ) };
+            next unless $ok;
+        }
+    
+        for my $entry ( @{ $entries_by_group{ $gid } } ) {
+            my $post = CTX->lookup_object('weblog_posts')->fetch( $entry->post_id );
+            next unless $post;
+            my $comments = CTX->lookup_object('weblog_comments')->fetch_group( {
+                where => 'post_id = ?',
+                value => [ $post->id ],
+            } );
+            
+            for my $comment ( @$comments ) {
+                my $content = Dicole::Utils::HTML->text_to_html( $comment->content );
+                if ( $comment->title ) {
+                    my $title = '<h1>' . Dicole::Utils::HTML->text_to_html( $comment->title ) . '</h1>';
+                    $content = $title . $content;
+                }
+                
+                my $found_comments = CTX->lookup_action( 'commenting' )->execute( get_comments => {
+                    object => $entry,
+                    user_id => 0,
+                    group_id => $entry->group_id,
+                } );
+                
+                my $found = 0;
+                for my $found_comment ( @$found_comments ) {
+                    if ( $found_comment->date == $comment->date
+                        && $found_comment->user_id == $comment->user_id
+                        && $found_comment->content eq $content ) {
+                        
+                        $found = 1;
+                        last;
+                    }
+                }
+                next if $found;
+                
+                CTX->lookup_action( 'commenting' )->execute( add_comment_and_return_thread => {
+                    object => $entry,
+                    user_id => 0,
+                    group_id => $entry->group_id,
+                    
+                    requesting_user_id => $comment->user_id,
+                    date => $comment->date,
+                    content => $content,
+                    anon_name => $comment->name,
+                    anon_email => $comment->email,
+                    anon_url => $comment->url,
+                } );
+                
+                my $entry_id = $entry->id;
+                my $user_id = $comment->user_id;
+                print "Added comment from user $user_id for entry $entry_id in group $gid" . $/;
+            }
+        }
+    }
+
+}
+
+1;

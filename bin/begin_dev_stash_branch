@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+
+chdir `d swd`;
+die "must be in staging" unless `git branch | grep \\*` eq "* staging\n";
+die "\ncould not create branch. if it already exists, you can use:\n\nbin/continue_dev_stash_branch $ARGV[0]\n\n" if system git => branch => $ARGV[0];
+system git => checkout => $ARGV[0];
+

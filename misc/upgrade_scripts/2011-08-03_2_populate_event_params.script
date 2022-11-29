@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+sub execute {
+    my ($self, $params) = @_;
+
+    my $events = CTX->lookup_object('events_event')->fetch_group;
+    for my $event ( @$events ) {
+        $event->show_title(1);
+        $event->show_extras(1);
+        $event->show_promo(4);
+        $event->save;
+    }
+}
+
+1;

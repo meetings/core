@@ -1,0 +1,12 @@
+[%#- Sent to matchmaker participant when  -%]
+
+[%- IF test_case == 'testi' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meetme_config_url = 'http://dev.meetin.gs/meetings/meetme_config/'
+event_meetme_config_url = 'http://dev.meetin.gs/meetings/meetme_config/pioneers/for_event/4'
+matchmaking_event = 'Pioneers Fest matchmaking'
+
+%]
+[% END %]

@@ -1,0 +1,23 @@
+sub execute {
+    my ( $self, $domain_id ) = @_;
+    my $api = CTX->lookup_action('meetings_paypal_api');
+    my $promos = $api->PROMOS;
+    for my $key ( keys %$promos ) {
+         my $p = $promos->{ $key };
+         my $promotion = CTX->lookup_object('meetings_promotion')->new({
+             domain_id => $domain_id,
+             partner_id => 0,
+             creator_id => 0,
+             creation_date => 0,
+             start_date => 0,
+             end_date => 0,
+             duration => $p->{duration},
+             duration_unit => $p->{period},
+             dollar_price => $p->{price},
+             promotion_name => $key,
+             promotion_code => $key,
+         })->save;
+    }
+}
+
+1;

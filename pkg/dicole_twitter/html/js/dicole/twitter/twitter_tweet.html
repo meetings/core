@@ -1,0 +1,14 @@
+<div class="twitter_tweet twitter_tweet_<%== p.id %>">
+	<div class="twitter_tweet_user">
+		<a class="twitter_tweet_user_link" href="http://www.twitter.com/<%== p.from_user %>" title="<%== p.from_user %>">
+			<img class="twitter_tweet_user_image" src="<%== p.profile_image_url %>" alt="<%== p.from_user %>" />
+		</a>
+	</div>
+	<div class="twitter_tweet_content">
+		<a class="twitter_tweet_content_user_link" href="http://www.twitter.com/<%== p.from_user %>"><%== p.from_user %></a>
+		<span class="twitter_tweet_content_text"><%== p.text %></span>
+		<br />
+		<a href="http://www.twitter.com/<%== p.from_user %>/status/<%== p.id %>" class="twitter_tweet_content_time"></a>
+		<a href="http://twitter.com/?status=@<%== p.from_user %> &amp;in_reply_to_status_id=<%== p.id %>&amp;in_reply_to=<%== p.from_user %>" class="twitter_tweet_content_reply"><%== dicole.msg("reply") %></a>
+	</div>
+</div>

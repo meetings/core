@@ -1,0 +1,87 @@
+[% IF not boxes %]
+[% boxes = [
+	{
+		left_width = '400px',
+		left = [
+			{
+				content = 'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',
+				height = '200px'
+			},
+			{
+				content = 'group_online_summary'
+			}
+		],
+		right = [
+			{
+				content = 'wiki_summary_page::2905',
+			},
+			{
+				left_width = '50%',
+				left = [
+					{
+						content = 'presentations_new_summary',
+						height = '200px'
+					}
+				],
+				right = [
+					{
+						content = 'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd'
+					}
+				]
+			},
+			{
+				left = [
+					{
+						content = "wamma"
+					}
+				],
+				right_width = '50px',
+				right = [
+					{
+						content = "perkele",
+						height = '50px'
+					}
+				]
+			}
+		]
+	},
+	{
+		content = 'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd'
+	}
+] %]
+<style type="text/css">
+.content {
+	overflow: hidden;
+}
+</style>
+[% END %]
+[% FOREACH box IN boxes %]
+	[% IF box.left AND box.right %]
+		<div style="overflow:hidden">
+		[% IF box.left_width %]
+			<div style="float:left;overflow:hidden;width:[% box.left_width | html %]" class="summary_left_box_container">
+				[% boxes = box.left %]
+				[% INCLUDE dicole_summary::summary_layout %]
+			</div>
+			<div style="overflow:hidden;width:expression(this.parentNode.offsetWidth - this.parentNode.firstChild.offsetWidth - 3)" class="summary_right_box_container">
+				[% boxes = box.right %]
+				[% INCLUDE dicole_summary::summary_layout %]
+			</div>
+		[% ELSE %]
+			<div style="float:right;overflow:hidden;width:[% box.right_width | html %]" class="summary_right_box_container">
+				[% boxes = box.right %]
+				[% INCLUDE dicole_summary::summary_layout %]
+			</div>
+			<div style="overflow:hidden;width:expression(this.parentNode.offsetWidth - this.parentNode.firstChild.offsetWidth - 3)" class="summary_left_box_container">
+				[% boxes = box.left %]
+				[% INCLUDE dicole_summary::summary_layout %]
+			</div>
+		[% END %]
+		</div>
+	[% ELSE %]
+		<div style="overflow:hidden[% IF box.height %];height:[% box.height | html %][% END %]" class="summary_full_box_container">
+		[% box.content %]
+		</div>
+	[% END %]
+	<div style="clear:both"></div>
+[% END %]

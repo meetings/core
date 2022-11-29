@@ -1,0 +1,330 @@
+=head1 NAME
+
+Introduction to Dicole Architecture
+
+=head1 INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.9 $
+
+=item B<Status>
+
+New
+
+=back
+
+=head1 ABSTRACT
+
+This manual will introduce you to the wonderful world of Dicole technology and
+architecture.
+
+=head1 What is Dicole?
+
+Dicole is many things. It is a collection of Free Software/Open Source learning
+solutions like Dicole, Dicole MimerDesk and Dicole LMS. It is a process for
+online learning. Last but not least it is also the name of the core technology
+which documentation you are currently reading.
+
+The Dicole platform offers an application framework, which eases the creation of
+Dicole applications. You may call it a web application toolkit as well, because
+it offers many useful shortcuts for application developers to build full
+featured dynamic web based applications.
+
+In general, Dicole platform is a bundle of the following technologies:
+
+B<Perl>
+
+Dicole is written in Perl. The usual use scenario is using it together with
+Apache web server through the powerful mod_perl Apache module. It integrates
+Perl into Apache, allowing it to directly access the web server resources and
+accelerated 100x speedups compared to normal CGI applications. Perl is a
+very powerful scripting language but in a mod_perl environment the scripts are
+always in half-compiled form which reduces the script startup speed near zero
+compared to typical CGI.
+
+Dicole uses the object oriented features of Perl which makes the source code
+readable and reusable for other use scenarios.
+
+More information: L<http://www.perl.com>, L<http://perl.apache.org>
+
+B<SPOPS>
+
+Database and data access abstraction with security. SPOPS adds object based
+security, which gives you additional security. It also allows you to handle 
+data as objects, abstracting the database details away. This enables you to use
+MySQL, PostgreSQL, Oracle, MS SQL Server, LDAP or Sybase database servers
+without changing your applications.
+
+More information: L<http://spops.sourceforge.net>
+
+B<OpenInteract>
+
+Application server sitting on top of your web server, providing authentication,
+package management, MVC (Separation of Model, View and Controller), security,
+mapping of requests to objects, caching, error handling, logging, operating
+system independence, data access and database independence. As a central
+component it basically ties together the web server, database and Dicole.
+
+More information: L<http://openinteract.sourceforge.net>
+
+B<TemplateToolkit>
+
+The Template Toolkit is a fast, powerful and extensible template processing
+system. It enables you to separate your code from the presentation and 
+allows creation of intelligent templates that have their own logic.
+
+More information: L<http://www.template-toolkit.org>
+
+B<Dicole API>
+
+Dicole API (Application Programming Interface) is simply the Dicole libraries
+that enable creation of high-level Dicole applications with minimum effort. The
+Dicole API minimizes the usage of above underlying technologies, resulting in
+powerful and robust code with less lines of code.
+
+The highlights of the Dicole API are introduced in later sections of this
+document.
+
+More information: L<http://www.dicole.fi/docs/index.html>
+
+=head2 Advantages of the concept
+
+A combination of Perl, Apache, SPOPS, OpenInteract, TemplateToolkit and Dicole
+API provides out-of-the-box:
+
+=over 4
+
+=item *
+
+mod_perl support (Noticable speed increase because of integration with apache)
+
+=item *
+
+support for PostgreSQL, MySQL, Oracle, Sybase ASE, Sybase ASA, and Microsoft SQL Server as a database
+
+=item *
+
+database independant database table installation
+
+=item *
+
+a packaging system that makes it simple for developers to distribute code and
+all other information necessary for an application 
+
+=item *
+
+straightforward installation and upgrading process
+
+=item *
+
+authentication through database or LDAP
+
+=item *
+
+Unix/MacOSX/Windows server support
+
+=item *
+
+robust security framework (not just authentication... also individual objects
+and components)
+
+=item *
+
+cookie based sessions
+
+=item *
+
+clean and short URL locations because of URL mapping
+
+=item *
+
+robust templating system
+
+=item *
+
+interface as widgets (no messing around with XHTML templates)
+
+=item *
+
+browser interface implemented as XHTML/CSS with theming support
+
+=item *
+
+convenient error handling and logging
+
+=item *
+
+multi-language support
+
+=item *
+
+totally object oriented design
+
+=item *
+
+page and component caching for speed
+
+=item *
+
+MVC (model-view-controller) architecture. Separation of data, business logic and
+presentation
+
+=back
+
+=head1 What are the features of Dicole API?
+
+Dicole API has many powerful features. It allows creation of applications that
+have the following features:
+
+=head2 Interface widgets
+
+Creation of interfaces with interface widgets. The normal output is pure XHTML
+but it is possible to create output in other formats suitable for various uses
+as well. Building tools with these interface widgets makes your tool
+automatically a consistent usability experience - every tool looks the same and
+behaves the same way.
+
+=head2 Navigation of tools
+
+Separation of tools into user tools, group tools and
+administration tools. Navigation is fully customizable by the administrator.
+Provides tab navigation, tree navigation, drop down navigation and more.
+
+=head2 CSS based theming
+
+A powerful CSS based theme system. Allows customization of layout with minimum
+effort. The theme system allows a system wide theme and overriding the system
+wide theme with user or group specific themes, making it possible to personalize
+Dicole.
+
+The basic theme that comes with Dicole has been tested and unified for different
+browsers and platforms, making it perfect for creating new themes.
+
+=head2 Interface as components
+
+Building an interface for your application is like building the interface out of
+simple blocks, called Dicole Content Objects. Each tool is separated into the
+following parts:
+
+B<Tab navigation>
+
+This allows separating your application features into separate logical tasks
+(edit, add, view...) accessible through a simple tab navigation in top of your
+application.
+
+B<Tool path>
+
+A tool path that identifies the logical location in the tool, for example
+I<Dicole / File Manager / Tree View >.
+
+B<Boxed user interaction>
+
+Each task (add, edit, view...) may contain all kinds of forms and functionality.
+The functionality may be separated into interface boxes that each have their own
+title. This is a familiar approach from the GUI world. Every modern operating
+system has a similar interface, so why not use the familiar approach in web as
+well?
+
+A task may for example contain a box that has a tree navigation of files and
+another box that displays details of each tree element.
+
+B<Context sensitive help>
+
+Easily allows attaching documentation for every task in your application. The
+part of documentation that is important for each feature is directly accessible
+from the task itself.
+
+B<Application logo, name and return messages>
+
+In top of each application interface there is a central place for the
+application logo, name and return messages. Return messages are for example
+success, error and alert messages. The messages are always displayed in the same
+part of the interface with same way of displaying, resulting in consistent
+usability between applications.
+
+=head2 Generic tool features
+
+Dicole API provides a simple way to create generic tool features that are
+commonly present in many web applications. Examples of such features are
+functionalities for application data like add, edit, delete and list in addition
+to data validation and display. More detailed features are sorting lists,
+searching objects, splitting long lists of objects into multiple pages with
+browsing navigation and wizards for adding complex information that require
+multiple steps.
+
+For example entering a password is often made up of two input fields where the
+purpose of the second field is to make sure that the passwords are the same. The
+application programmer is not required to write such features by their own each
+time. Dicole provides the features for you in a modular fashion.
+
+=head2 Generic data manipulation
+
+The generic application features for data object manipulation also include a
+transparent way to access data objects, modify and add them according to user
+input and removing them.
+
+=head2 Application fields with a field editor
+
+Often applications include fields that each of them have a human readable
+description, a machine readable identification (for example which column in the
+database) and smart functionality (dropdown, normal field, password field etc).
+
+Dicole allows you to first specify fields used in your application and the
+generic application features make sure that the fields behave the way they
+should. For example, a normal textarea is displayed differently on pages like
+object modification, listing or displaying. Dicole makes sure the display is
+always what it should be. Also, this makes your application very consistent: the
+same field has always the same name and functionality all around your
+application.
+
+=head2 Abstracted file and directory access
+
+Dicole allows you to map virtual file and directory paths into real files and
+directories in a secure fashion. This allows you for example to manipulate data
+located in SMB/CIFS and simple file system with the same interface. All required
+file operations are there for example recursive copying, recursive moving,
+renaming, zipping files, uncompressing files and deleting files and folders.
+
+=head2 Powerful application security
+
+The application security model in Dicole allows creation of access rights and
+bundling access rights to groups of access rights. These access rights may then
+be attached to certain users, groups and even world (anyone). Security rights
+may be created for the access to the tool itself, for the specific tools
+features and for the data objects manipulated with your tool. The access rights
+may be easily managed with the bundled security manager.
+
+=head1 How to get Started?
+
+Alright. You might have now gathered a grasp about what we are doing here. Many
+find the Dicole platform really powerful and fast for development of almost any
+web based application, so why not to give it a test drive.
+
+To get started you should first read the documentation of mod_perl, SPOPS,
+OpenInteract and TemplateToolkit. Full understanding of those technologies is
+not required for writing Dicole applications since the Dicole API is powerful
+enough to allow you the luxury of ignorance. Anyway, it is suggested that you
+read some of the documentation of the underlying technologies.
+
+To install Dicole, read the INSTALL file included in the Dicole source tree. It
+is suggested that you use the documentation of OpenInteract to get a fully
+functional OpenInteract environment first up before you wander in the world of
+Dicole.
+
+It is then suggested that you open the source code of one of the available
+Dicole applications like the User Manager or File Manager and see how things are
+implemented. Browse through the Dicole API documentation to learn more. This
+should give you enough ground to start writing your own Dicole applications.
+
+Happy hacking.
+
+=head1 AUTHORS
+
+Teemu Arina E<lt>teemu@ionstream.fiE<gt>

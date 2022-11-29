@@ -1,0 +1,48 @@
+#!/usr/bin/perl
+
+my $oi = $ENV{OPENINTERACT2};
+
+if ( !-d 'pkg' || !$oi) {
+    die "You must be in dicole source root to use this script and your\n".
+        "OPENINTERACT2 environment variable must be set!\n";
+}
+
+if (!scalar(@ARGV)) {
+    print "Usage: $0 [package_name]* [none]\n";
+    exit;
+}
+
+foreach $cmd (@ARGV) {
+
+        next unless $cmd;
+        
+        chdir 'pkg';
+
+        if (-d $cmd) {
+
+            chdir $cmd;
+
+#            print "Running bin/update_manifest on $cmd..\n";
+#            system('../../bin/update_manifest &> /dev/null');
+            
+            print "Running reinstall_package on $cmd..\n";
+            system("oi2_manage check_package 2>&1");
+            system("oi2_manage export_package 2>&1");
+            system("oi2_manage remove_package --package=$cmd");
+            system("rm -rf $oi/pkg/$cmd-0.01");
+            system("rm -rf $oi/conf/$cmd/");
+            system("oi2_manage install_package --package_file=$cmd-0.01.zip");
+            system("oi2_manage register_tool --package=$cmd");
+            system("rm -f *.log");
+            system("rm -f *.zip");
+    	    chdir('..');
+        }
+        else {
+        
+            print("could not find $cmd\n") if lc $cmd ne 'none';
+        }
+        
+        chdir '..';
+
+}
+

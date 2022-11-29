@@ -1,0 +1,27 @@
+[%#- Sent when new scheduling options have been added -%]
+
+[%- IF test_case == 'many new scheduling' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Beer tasting symposium'
+meeting_url = 'http://meetin.gs/friday'
+
+meeting_unsubscribe_url = 'fuckoffmeetings.com'
+
+open_scheduling_options = [{},{},{}]
+
+%]
+[%- END %]
+
+[%- IF test_case == 'one new scheduling' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Beer tasting symposium'
+meeting_url = 'http://meetin.gs/friday'
+
+open_scheduling_options = [{}]
+
+%]
+[%- END %]

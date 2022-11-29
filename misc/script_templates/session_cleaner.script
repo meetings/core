@@ -1,0 +1,40 @@
+sub remove_files_from_path_older_than
+{
+	my($self, $path, $days) = @_;
+	print "Removing all files from '". $path ."' older than " . $days . " day(s).\n";
+
+	my $count = 0;
+	opendir(DIR, $path) or die "Cannot open path.\n";
+	while($file = readdir(DIR))
+	{
+		next if $file eq '.' || $file eq '..';
+		if((stat($path . "/" . $file))[9] <= (time - $days * 86400))
+		{
+			if ( system(('rm', $path . "/" . $file)) ) {
+				print STDERR "Failed to remove " . $file .' : ' . $! . "\n";
+			}
+			else {
+				$count++;
+				print "Removed '" . $path . "/" . $file . "'.\n";
+			}
+			sleep( 3 ) if $count % 1000 == 1;
+		}
+
+	}
+	closedir(DIR);
+}
+
+sub execute 
+{
+	my($self, $params) = @_;
+
+	my $website_dir = $self->param( 'website_dir' );
+	my $session_dir = CTX->server_config->{session_info}->{params}->{Directory};
+	my $session_lock_dir = CTX->server_config->{session_info}->{params}->{LockDirectory};
+
+	$self->remove_files_from_path_older_than($website_dir . '/' . $session_dir, 7);
+	$self->remove_files_from_path_older_than($website_dir . '/' . $session_lock_dir, 7);
+}
+
+1;
+

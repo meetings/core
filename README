@@ -1,0 +1,16 @@
+
+README
+--------------
+
+Core is an OpenInteract2 based application platform for creating highly
+dynamic websites with transparent input/output handling, navigation,
+group system, generic application features and more.
+
+For installation instructions, please read INSTALL file.
+
+The license of the Dicole software is described in file LICENSE.
+
+For more information, please visit http://www.dicole.org
+
+---------------
+$Id: README,v 1.4 2009-01-07 14:42:31 amv Exp $

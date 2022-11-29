@@ -1,0 +1,24 @@
+[%#- Sent each day if user has not replied to all scheduling options. Sending time of day is the same as the invite time or the last answer/proposal change time. -%]
+
+[%- IF test_case == 'many times' %]
+[%-
+
+open_scheduling_options = [{},{},{}]
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Save the Manatees annual expo'
+meeting_url ='http://url-to-the-meeting-page/'
+
+%]
+[%- END -%]
+
+[% IF test_case == 'one time' %]
+[%
+
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Jyväskylän suurajot'
+open_scheduling_options = [{}]
+
+
+%]
+[% END %]

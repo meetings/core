@@ -1,0 +1,15 @@
+
+sub execute {
+    my ( $self ) = @_;
+    my $entries = CTX->lookup_object( 'blogs_entry' )->fetch_group() || [];
+
+    my $uid_object = CTX->lookup_object( 'blogs_entry_uid' );
+    for my $e ( @$entries ) {
+        my $o = $uid_object->new;
+        $o->entry_id( $e->id );
+        $o->uid( 'dicole-dicole.net-blogs-entry-' . $e->id );
+        $o->save;
+    }
+}
+
+1;

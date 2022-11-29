@@ -1,0 +1,15 @@
+Changes
+conf/action.ini
+conf/spops.ini
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/SiteTemplate.pm
+OpenInteract2/SQLInstall/DicoleOi2Compatibility.pm
+OpenInteract2/Theme.pm
+OpenInteract2/User.pm
+package.ini
+struct/sys_group.sql
+struct/sys_user.sql
+struct/sys_user_language.sql
+struct/theme.sql
+struct/theme_prop.sql

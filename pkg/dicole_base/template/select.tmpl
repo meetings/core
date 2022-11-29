@@ -1,0 +1,21 @@
+[%#- $Id: select.tmpl,v 1.2 2009-01-07 14:42:33 amv Exp $ -%]
+
+[%- DEFAULT
+	itemparams.name = 'DEFAULT SELECT'
+	itemparams.size = '1'
+	itemparams.onchange = ''
+	itemparams.options =
+		[
+			{
+				visible_value	=> 'DEFAULT VISIBLE_VALUE'
+				value 			=> ''
+				selected		=> ''
+			}
+		]
+
+-%]
+<select name="[% itemparams.name %]" onchange="[% itemparams.onChange %]">
+[%- FOREACH option = itemparams.options %]
+<option[% IF option.selected %] selected[% END %][% IF option.value %]value="[% option.value %]"[% END %]>[% option.visible_value %]</option>
+[%- END -%]
+</select>

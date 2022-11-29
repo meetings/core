@@ -1,0 +1,1056 @@
+use strict;
+use Time::HiRes;
+use Digest::SHA;
+use List::Util;
+
+my %tables = (
+    user => "sys_user",
+);
+
+my %types = (
+    'user-meetings_participated' => 'int unsigned',
+    'user-meetings_created' => 'int unsigned',
+    'user-real_meetings_created' => 'int unsigned',
+    'user-invites_sent' => 'int unsigned',
+    'user-invites_sent_distinct_user' => 'int unsigned',
+    'user-invites_sent_distinct_event' => 'int unsigned',
+    'user-friend_invites_sent' => 'int unsigned',
+    'events_event-participant_count' => 'int unsigned',
+    'events_event-draft_participant_count' => 'int unsigned',
+    'events_event-material_count' => 'int unsigned',
+    'events_event-material_comment_count' => 'int unsigned',
+    'events_event-discussion_count' => 'int unsigned',
+    'events_event-material_count' => 'int unsigned',
+    'user-first_swipetomeet_scheduling_created_epoch' => 'int unsigned',
+    'user-first_swipetomeet_scheduling_participated_epoch' => 'int unsigned',
+    'user-swipetomeet_scheduling_created_count' => 'int unsigned',
+    'user-swipetomeet_scheduling_participated_count' => 'int unsigned',
+    'user-first_swipetomeet_contact_epoch' => 'int unsigned',
+);
+
+my %batch = (
+    'events_event-is_real' => 2,
+    'user-first_swipetomeet_scheduling_created_epoch' => 2,
+    'user-first_swipetomeet_scheduling_participated_epoch' => 2,
+    'user-swipetomeet_scheduling_created_count' => 2,
+    'user-swipetomeet_scheduling_participated_count' => 2,
+    'user-first_swipetomeet_contact_epoch' => 3,
+    'user-real_meetings_created' => 3,
+    'user-created_meeting' => 3,
+    'user-created_real_meeting' => 3,
+    'user-first_create_epoch' => 3,
+    'user-first_create_month' => 3,
+    'user-first_create_week' => 3,
+    'user-first_real_create_epoch' => 3,
+    'user-first_real_create_month' => 3,
+    'user-first_real_create_week' => 3,
+    'user-first_invited_to_real_meeting_epoch' => 3,
+    'user-first_invited_to_real_meeting_month' => 3,
+    'user-first_invited_to_real_meeting_week' => 3,
+);
+
+my $domain_id;
+my $cache = {};
+my $api = CTX->lookup_action('meetings_api');
+my %extras = ();
+
+$extras{meetings_scheduling} = {
+    status => sub {
+        my $s = shift;
+
+        my $failed_epoch = $api->_get_note( failed_epoch => $s ) || 0;
+        my $started_epoch = $api->_get_note( started_epoch => $s ) || 0;
+
+        return $started_epoch == 0 ? 'created' :
+               $s->completed_date > 0 ? 'completed' :
+               $failed_epoch > 0 ? 'failed' :
+               $s->cancelled_date > 0 ? 'cancelled' :
+               'started';
+    },
+    first_available_timespan_begin => sub {
+        my $s = shift;
+
+        my $ats = $api->_get_note( available_timespans => $s ) || [];
+        return eval { $ats->[0]->{start} } || 0;
+    },
+    first_available_timespan_end => sub {
+        my $s = shift;
+
+        my $ats = $api->_get_note( available_timespans => $s ) || [];
+        return eval { $ats->[0]->{end} } || 0;
+    },
+};
+
+$extras{meetings_user_contact_log} = {
+    data_user_id => sub {
+        my $log = shift;
+        my $data = $api->_get_note( data => $log );
+        return $data ? $data->{user_id} || 0 : 0;
+    }
+};
+
+$extras{events_event} = {
+    has_swipetomeet => sub {
+        my $m = shift;
+        my $schedulings = _schedulings_by_meeting_id( $m->id );
+        return 1 if @$schedulings;
+        return 0;
+    },
+    first_swipetomeet_scheduling_epoch => sub {
+        my $m = shift;
+        my $schedulings = _schedulings_by_meeting_id( $m->id );
+        my @dates = map { $_->created_date || () } @$schedulings;
+        return List::Util::min( @dates ) || 0;
+    },
+    create_week => sub {
+        my $o = shift;
+        return _epoch_to_week( $o->created_date );
+    },
+    create_month => sub {
+        my $o = shift;
+        return _epoch_to_month( $o->created_date );
+    },
+    partner_name => sub {
+        return eval { $api->_get_partner_for_meeting( shift @_ )->{name} } || '';
+    },
+    is_draft => sub {
+        my $m = shift;
+        my $participants = _participants_by_meeting_id( $m->id );
+        return $api->_meeting_is_draft( $m, $participants, 'no_update' ) ? 1 : 0;
+    },
+    is_created_while_registering => sub {
+        my $m = shift;
+        return 0 unless $m->creator_id;
+        my $cu = eval { Dicole::Utils::User->ensure_object( $m->creator_id ) };
+        return 0 unless $cu;
+
+        my $user_created = $cu->note_creation_time;
+        return 1 if ( $m->created_date - $user_created ) ** 2 < 5 ** 2;
+        return 0;
+    },
+    is_real => sub {
+        my $m = shift;
+        return 0 if $m->extra_is_draft;
+        return 0 if $m->extra_is_created_while_registering && $m->extra_participant_count < 3;
+        return 1;
+    },
+    is_abandoned => sub {
+        my $m = shift;
+        return 0 unless $m->creator_id;
+        my $cu = eval { Dicole::Utils::User->ensure_object( $m->creator_id ) };
+        return 0 unless $cu;
+        return $cu->email ? 0 : 1;
+    },
+    participant_count => sub {
+        my $m = shift;
+        my $participants = _participants_by_meeting_id( $m->id );
+        return scalar( @{ $participants || [] } );
+    },
+    draft_participant_count => sub {
+        my $m = shift;
+        return scalar( @{ $api->_fetch_meeting_draft_participation_objects( $m ) || [] } );
+    },
+    material_count => sub {
+        my $m = shift;
+        next unless $m->group_id;
+        $cache->{material_data}->{ $m->id } ||= $api->_gather_material_data_params( $m );
+        my $p = $cache->{material_data}->{ $m->id };
+        my $count = 0;
+        for my $d ( @{ $p->{materials} } ) {
+            next if $d->{fetch_type} eq 'chat';
+            $count++;
+        }
+        return $count;
+    },
+    material_names => sub {
+        my $m = shift;
+        next unless $m->group_id;
+        $cache->{material_data}->{ $m->id } ||= $api->_gather_material_data_params( $m );
+        my $p = $cache->{material_data}->{ $m->id };
+        my @names = ();
+        for my $d ( @{ $p->{materials} } ) {
+            next if $d->{fetch_type} eq 'chat';
+            push @names, $d->{title} || $d->{readable_title};
+        }
+        return join( ",", @names );
+    },
+    material_comment_count => sub {
+        my $m = shift;
+        next unless $m->group_id;
+        $cache->{material_data}->{ $m->id } ||= $api->_gather_material_data_params( $m );
+        my $p = $cache->{material_data}->{ $m->id };
+        my $count = 0;
+        for my $d ( @{ $p->{materials} } ) {
+            next if $d->{fetch_type} eq 'chat';
+            $count += $d->{comment_count};
+        }
+        return $count;
+    },
+    discussion_count => sub {
+        my $m = shift;
+        next unless $m->group_id;
+        $cache->{material_data}->{ $m->id } ||= $api->_gather_material_data_params( $m );
+        my $p = $cache->{material_data}->{ $m->id };
+        my $count = 0;
+        for my $d ( @{ $p->{materials} } ) {
+            next unless $d->{fetch_type} eq 'chat';
+            $count += $d->{comment_count};
+        }
+        return $count;
+    },
+    total_comment_count => sub {
+        my $m = shift;
+        next unless $m->group_id;
+        $cache->{material_data}->{ $m->id } ||= $api->_gather_material_data_params( $m );
+        my $p = $cache->{material_data}->{ $m->id };
+        my $count = 0;
+        for my $d ( @{ $p->{materials} } ) {
+            $count += $d->{comment_count};
+        }
+        return $count;
+    },
+    has_filled_agenda => sub {
+        my $m = shift;
+        next unless $m->group_id;
+        $cache->{material_data}->{ $m->id } ||= $api->_gather_material_data_params( $m );
+        for my $m ( @{ $cache->{material_data}->{ $m->id }->{materials} } ) {
+            next unless $m->{page_id} && $m->{title} =~ /agenda/i;
+            next unless $m->{edited_epoch} > $m->{created_epoch} + 5;
+            return 1;
+        }
+        return 0;
+    },
+    has_filled_action_points => sub {
+        my $m = shift;
+        next unless $m->group_id;
+
+        $cache->{material_data}->{ $m->id } ||= $api->_gather_material_data_params( $m );
+        for my $m ( @{ $cache->{material_data}->{ $m->id }->{materials} } ) {
+            next unless $m->{page_id} && $m->{title} =~ /action\s*points|notes$/i;
+            next unless $m->{edited_epoch} > $m->{created_epoch} + 5;
+            return 1;
+        }
+        return 0;
+    },
+};
+
+$extras{user} = {
+    first_swipetomeet_scheduling_created_epoch => sub {
+        my $user = shift;
+        my $meetings = _meetings_created_by_user_id( $user->id );
+        my @dates = map { $_->extra_first_swipetomeet_scheduling_epoch || () } @$meetings;
+        return List::Util::min( @dates ) || 0;
+    },
+    first_swipetomeet_scheduling_participated_epoch => sub {
+        my $user = shift;
+        my $meetings = _meetings_participated_by_user_id( $user->id );
+        my @dates = map { $_->extra_first_swipetomeet_scheduling_epoch || () } @$meetings;
+        return List::Util::min( @dates ) || 0;
+    },
+    swipetomeet_scheduling_created_count => sub {
+        my $user = shift;
+        my $meetings = _meetings_created_by_user_id( $user->id );
+        my @dates = map { $_->extra_first_swipetomeet_scheduling_epoch || () } @$meetings;
+        return scalar( @dates ) || 0;
+    },
+    swipetomeet_scheduling_participated_count => sub {
+        my $user = shift;
+        my $meetings = _meetings_participated_by_user_id( $user->id );
+        my @dates = map { $_->extra_first_swipetomeet_scheduling_epoch || () } @$meetings;
+        return scalar( @dates ) || 0;
+    },
+    first_swipetomeet_contact_epoch => sub {
+        my $user = shift;
+        my @dates = (
+            $user->extra_first_swipetomeet_scheduling_participated_epoch || (),
+            $user->extra_first_swipetomeet_device_login_epoch || (),
+        );
+        return List::Util::min( @dates ) || 0;
+    },
+    first_swipetomeet_device_login_epoch => sub {
+        my $user = shift;
+        my @dates = (
+            $user->note_swipetomeet_android_device_first_login || (),
+            $user->note_swipetomeet_ios_device_first_login || (),
+        );
+        return List::Util::min( @dates ) || 0;
+    },
+    first_meetings_device_login_epoch => sub {
+        my $user = shift;
+        my @dates = (
+            $user->note_android_device_first_login || (),
+            $user->note_ios_device_first_login || (),
+        );
+        return List::Util::min( @dates ) || 0;
+    },
+    email_domain => sub {
+        my $user = shift;
+        return "" unless $user->email;
+        my ( $domain ) = $user->email =~ /\@(.*)/;
+        return $domain || '';
+    },
+    profile_organization => sub {
+        my $user = shift;
+        my $profile = _profile_by_user_id( $user->id );
+        return $profile->contact_organization || '';
+    },
+    profile_title => sub {
+        my $user = shift;
+        my $profile = _profile_by_user_id( $user->id );
+        return $profile->contact_title || '';
+    },
+    profile_phone => sub {
+        my $user = shift;
+        my $profile = _profile_by_user_id( $user->id );
+        return $profile->contact_phone || '';
+    },
+    profile_skype => sub {
+        my $user = shift;
+        my $profile = _profile_by_user_id( $user->id );
+        return $profile->contact_skype || '';
+    },
+    profile_linkedin => sub {
+        my $user = shift;
+        my $profile = _profile_by_user_id( $user->id );
+        return $profile->personal_linkedin || '';
+    },
+    profile_image_is_set => sub {
+        my $user = shift;
+        my $profile = _profile_by_user_id( $user->id );
+        return $profile->portrait ? 'yes' : 'no';
+    },
+    meet_me_path => sub {
+        my $user = shift;
+        return $api->_fetch_user_matchmaker_fragment( $user );
+    },
+    create_epoch => sub {
+        my $user = shift;
+        my $epoch = $user->note_creation_time;
+        return $epoch if $epoch;
+        my $as = CTX->lookup_object('logged_action')->fetch_group( {
+            sql => 'select dicole_logged_action.* from dicole_logged_action where user_id = ' . $user->id .
+            ' order by time asc limit 1',
+        } );
+        return $as->[0] ? $as->[0]->time : 0;
+    },
+    create_month => sub {
+        my $user = shift;
+        return _epoch_to_month( $extras{user}{create_epoch}( $user) );
+    },
+    create_week => sub {
+        my $user = shift;
+        return _epoch_to_week( $extras{user}{create_epoch}( $user) );
+    },
+    create_day => sub {
+        my $user = shift;
+        return _epoch_to_day( $extras{user}{create_epoch}( $user) );
+    },
+    first_invited_to_meeting_epoch => sub {
+        my $user = shift;
+        my $invites = _invites_received_by_user_id( $user->id );
+        return $invites->[0] ? $invites->[0]->created_date : 0;
+    },
+    first_invited_to_meeting_month => sub {
+        my $user = shift;
+        return _epoch_to_month( $extras{user}{first_invited_to_meeting_epoch}( $user) );
+    },
+    first_invited_to_meeting_week => sub {
+        my $user = shift;
+        return _epoch_to_week( $extras{user}{first_invited_to_meeting_epoch}( $user) );
+    },
+    first_invited_to_real_meeting_epoch => sub {
+        my $user = shift;
+        my $invites = _invites_received_by_user_id( $user->id );
+        for my $invite ( @$invites ) {
+            my $meeting = _meeting_by_meeting_id( $invite->event_id );
+            next unless $meeting;
+            next unless $meeting->extra_is_real;
+            return $invite->created_date;
+        }
+        return 0;
+    },
+    first_invited_to_real_meeting_month => sub {
+        my $user = shift;
+        return _epoch_to_month( $extras{user}{first_invited_to_real_meeting_epoch}( $user) );
+    },
+    first_invited_to_real_meeting_week => sub {
+        my $user = shift;
+        return _epoch_to_week( $extras{user}{first_invited_to_real_meeting_epoch}( $user) );
+    },
+    first_inviter_id => sub {
+        my $user = shift;
+        my $invites = _invites_received_by_user_id( $user->id );
+        return $invites->[0] ? $invites->[0]->creator_id : 0;
+    },
+    first_inviter_name => sub {
+        my $user = shift;
+        my $creator_id = eval { $extras{user}{first_inviter_id}( $user ) };
+        return eval { $creator_id ? Dicole::Utils::User->name( $creator_id ) : '' } || '';
+    },
+    created_as_participant => sub {
+        my $user = shift;
+        my $ce = $extras{user}{create_epoch}( $user );
+        my $as = CTX->lookup_object('events_user')->fetch_group( {
+                sql => 'select dicole_events_user.* from dicole_events_user where domain_id = ' . $domain_id . ' AND user_id = ' . $user->id .
+                ' order by created_date asc limit 1',
+                } );
+        my $es = $as->[0];
+        if ( $es ) {
+             if ( $es->created_date - $ce < 5*5 ) {
+                return 0 if $es->is_planner && ! $es->creator_id;
+                return 0 if $es->creator_id && $es->creator_id == $user->id;
+                return 1;
+            }
+        }
+        # NOTE: this does not hold true for some old users whose event object might have been removed
+        return 0;
+    },
+    first_invite_sent_epoch => sub {
+        my $user = shift;
+        my $invites = _invites_sent_by_user_id( $user->id );
+        return $invites->[0] ? $invites->[0]->created_date : 0;
+    },
+    first_invite_sent_month => sub {
+        my $user = shift;
+        return _epoch_to_month( $extras{user}{first_invite_sent_epoch}( $user) );
+    },
+    first_invite_sent_week => sub {
+        my $user = shift;
+        return _epoch_to_week( $extras{user}{first_invite_sent_epoch}( $user) );
+    },
+    invites_sent => sub {
+        my ( $user ) = @_;
+        my $invites = _invites_sent_by_user_id( $user->id );
+        return scalar( @$invites ) || 0;
+    },
+    invites_sent_distinct_user => sub {
+        my ( $user ) = @_;
+        my $invites = _invites_sent_by_user_id( $user->id );
+
+        my $by_id = {};
+        for my $i ( @$invites ) {
+            $by_id->{ $i->user_id }++;
+        }
+        return scalar( keys %$by_id );
+    },
+    invites_sent_distinct_event => sub {
+        my ( $user ) = @_;
+        my $invites = _invites_sent_by_user_id( $user->id );
+
+        my $by_id = {};
+        for my $i ( @$invites ) {
+            $by_id->{ $i->event_id }++;
+        }
+        return scalar( keys %$by_id );
+    },
+    friend_invites_sent => sub {
+        my ( $user ) = @_;
+        my $list = $user->note_meetings_users_invited;
+        my $data = eval { Dicole::Utils::JSON->decode( $list || '[]' ) };
+        return ( ref $data eq 'ARRAY' ) ? scalar( @$data ) : 0;
+    },
+    meetings_participated => sub {
+        my ( $user ) = @_;
+        my $objects = _participants_by_user_id( $user->id ) || [];
+        return scalar( @$objects ) || 0;
+    },
+    meetings_created => sub {
+        my ( $user ) = @_;
+        my $meetings = $cache->{"meetings_created_by_" . $user->id } ||= _meetings_created_by_user_id( $user->id );
+
+        return scalar( @$meetings );
+    },
+    first_create_epoch => sub {
+        my ( $user ) = @_;
+        my $meetings = $cache->{"meetings_created_by_" . $user->id } ||= _meetings_created_by_user_id( $user->id );
+
+        return 0 if ! @$meetings;
+        return $meetings->[0]->created_date;
+    },
+    first_create_month => sub {
+        my ( $user ) = @_;
+        return _epoch_to_month( $extras{user}{first_create_epoch}( $user ) );
+    },
+    first_create_week => sub {
+        my ( $user ) = @_;
+        return _epoch_to_week( $extras{user}{first_create_epoch}( $user ) );
+    },
+    real_meetings_created => sub {
+        my ( $user ) = @_;
+        my $meetings = $cache->{"meetings_created_by_" . $user->id } ||= _meetings_created_by_user_id( $user->id );
+
+        my $count = 0;
+        for my $meeting ( @$meetings ) {
+            next unless $meeting->extra_is_real;
+            $count++;
+        }
+
+        return $count;
+    },
+    first_real_create_epoch => sub {
+        my ( $user ) = @_;
+        my $meetings = $cache->{"meetings_created_by_" . $user->id } ||= _meetings_created_by_user_id( $user->id );
+
+        for my $meeting ( @$meetings ) {
+            next unless $meeting->extra_is_real;
+            return $meeting->created_date;
+        }
+        return 0;
+    },
+    first_real_create_month => sub {
+        my ( $user ) = @_;
+        return _epoch_to_month( $extras{user}{first_real_create_epoch}( $user ) );
+    },
+    first_real_create_week => sub {
+        my ( $user ) = @_;
+        return _epoch_to_week( $extras{user}{first_real_create_epoch}( $user ) );
+    },
+    creating_partner_name => sub {
+        my ( $user ) = @_;
+        my $partner_id = $user->note_created_by_partner;
+        return $partner_id ? $api->PARTNERS_BY_ID->{ $partner_id }->{name} || '' : '';
+    },
+    is_temporary_user => sub {
+        my ( $user ) = @_;
+        return $user->email ? 0 : 1;
+    },
+    is_abandoned_temporary_user => sub {
+        my ( $user ) = @_;
+        return 0 if $user->email;
+        return $extras{user}{meetings_created}( $user ) ? 1 : 0;
+    },
+    meeting_suggestion_count => sub {
+        my ( $user ) = @_;
+        return CTX->lookup_object('meetings_meeting_suggestion')->fetch_count({
+            where => 'user_id = ?',
+            value => [ $user->id ]
+        });
+    },
+    upcoming_meeting_suggestion_count => sub {
+        my ( $user ) = @_;
+        return CTX->lookup_object('meetings_meeting_suggestion')->fetch_count({
+            where => 'user_id = ? and begin_date > ?',
+            value => [ $user->id, time ]
+        });
+    },
+    latest_activity_epoch => sub {
+        my ( $user ) = @_;
+        my $as = CTX->lookup_object('meetings_user_activity')->fetch_group( {
+                sql => 'select dicole_meetings_user_activity.* from dicole_meetings_user_activity where unmanned = 0 AND user_id = ' . $user->id .
+                ' order by floored_date desc limit 1',
+                } );
+        return $as->[0] ? $as->[0]->floored_date : 0;
+    },
+    subscription_type => sub {
+        my ( $user ) = @_;
+        if ( $api->_user_is_real_pro( $user, $domain_id ) ) {
+            if ( $api->_get_note_for_user( 'meetings_beta_pro', $user, $domain_id ) ) {
+                return 'sponsored';
+            }
+            elsif ( my $company_subscription = $api->_get_user_current_company_subscription($user, $domain_id) ) {
+                return 'company';
+            }
+            elsif ( my $subscription = $api->_get_user_current_subscription($user, $domain_id) ) {
+                return 'user';
+            }
+            else {
+                return 'weird';
+            }
+        }
+        elsif ( $api->_user_is_trial_pro( $user, $domain_id ) && ! $api->_user_free_trial_has_expired( $user, $domain_id ) ) {
+            return 'trial';
+        }
+        return '';
+    },
+    free_trial_has_expired => sub {
+        my ( $user ) = @_;
+        return $api->_user_free_trial_has_expired( $user, $domain_id ) ? $api->_get_note_for_user( 'meetings_free_trial_expires', $user, $domain_id ) || 1 : 0;
+    },
+    free_trial_expires => sub {
+        my ( $user ) = @_;
+        return $api->_get_note_for_user( 'meetings_free_trial_expires', $user, $domain_id ) || 0;
+    },
+};
+
+
+sub _epoch_to_week {
+    my ( $epoch ) = @_;
+    return '' unless $epoch;
+    my $dt = Dicole::Utils::Date->epoch_to_datetime( $epoch, 'America/Chicago' );
+    my $m = $dt->week_number;
+    $m = $m < 10 ? "0$m" : $m;
+    return $m . "-" . $dt->week_year;
+}
+
+sub _epoch_to_month {
+    my ( $epoch ) = @_;
+    return '' unless $epoch;
+    my $dt = Dicole::Utils::Date->epoch_to_datetime( $epoch, 'America/Chicago' );
+    my $m = $dt->month;
+    $m = $m < 10 ? "0$m" : $m;
+    return $dt->year .'-'. $m;
+}
+
+sub _epoch_to_day {
+    my ( $epoch ) = @_;
+    return '' unless $epoch;
+    my $dt = Dicole::Utils::Date->epoch_to_datetime( $epoch, 'America/Chicago' );
+    my $m = $dt->month;
+    $m = $m < 10 ? "0$m" : $m;
+    my $d = $dt->day;
+    $d = $d < 10 ? "0$d" : $d;
+    return $dt->year .'-'. $m . '-' . $d;
+}
+
+
+my %user_monthly_batch = (
+    'invites_to_new_users_sent_in' => 3,
+    'invites_to_users_with_no_real_create_sent_in' => 3,
+    'was_old_real_creator' => 3,
+    'created_real_meeting' => 3,
+);
+
+my %user_monthly = (
+    active => sub {
+        my ( $user, $start, $end ) = @_;
+        return CTX->lookup_object('logged_action')->fetch_count( {
+            where => "user_id = " .$user->id. " AND time > $start AND time <= $end"
+            } ) || 0;
+    },
+    was_old_user => sub {
+        my ( $user, $start, $end ) = @_;
+        return $extras{user}{create_epoch}( $user ) < $start ? 1 : 0;
+    },
+    was_old_real_creator => sub {
+        my ( $user, $start, $end ) = @_;
+        return $extras{user}{first_real_create_epoch}( $user ) < $start ? 1 : 0;
+    },
+    created_meeting => sub {
+        my ( $user, $start, $end ) = @_;
+
+        my $meetings = $cache->{"meetings_created_by_" . $user->id } ||= _meetings_created_by_user_id( $user->id );
+
+        my $count = 0;
+        for my $meeting ( @$meetings ) {
+            next if $meeting->created_date < $start;
+            next if $meeting->created_date > $end;
+            $count++;
+        }
+
+        return $count;
+    },
+    created_real_meeting => sub {
+        my ( $user, $start, $end ) = @_;
+
+        my $meetings = $cache->{"meetings_created_by_" . $user->id } ||= _meetings_created_by_user_id( $user->id );
+
+        my $count = 0;
+        for my $meeting ( @$meetings ) {
+            next unless $meeting->extra_is_real;
+            next if $meeting->created_date < $start;
+            next if $meeting->created_date > $end;
+            $count++;
+        }
+
+        return $count;
+    },
+    invites_sent_in => sub {
+        my ( $user, $start, $end ) = @_;
+
+        my $invites = _invites_sent_by_user_id( $user->id );
+        my $count = 0;
+        for my $i ( @$invites ) {
+            next unless $i->created_date > $start;
+            next unless $i->created_date <= $end;
+            $count++;
+        }
+
+        return $count;
+    },
+    invites_to_new_users_sent_in => sub {
+        my ( $user, $start, $end ) = @_;
+
+        my $invites = _invites_sent_by_user_id( $user->id );
+        my $count = 0;
+        for my $i ( @$invites ) {
+            next unless $i->created_date > $start;
+            next unless $i->created_date <= $end;
+            my $target_user = _user_by_user_id( $i->user_id );
+            next unless $target_user;
+            next if $target_user->extra_create_epoch + 5 < $i->created_date;
+            $count++;
+        }
+
+        return $count;
+    },
+    invites_to_users_with_no_real_create_sent_in => sub {
+        my ( $user, $start, $end ) = @_;
+
+        my $invites = _invites_sent_by_user_id( $user->id );
+        my $count = 0;
+        for my $i ( @$invites ) {
+            next unless $i->created_date > $start;
+            next unless $i->created_date <= $end;
+            my $target_user = _user_by_user_id( $i->user_id );
+            next unless $target_user;
+            my $first_real_create = $extras{user}{first_real_create_epoch}( $target_user );
+            next unless $first_real_create && $first_real_create < $i->created_date;
+            $count++;
+        }
+
+        return $count;
+    },
+    friend_invites_sent_in => sub {
+        my ( $user, $start, $end ) = @_;
+        my $list = $user->note_meetings_users_invited;
+        my $data = eval { Dicole::Utils::JSON->decode( $list || '[]' ) };
+        return 0 unless ( ref $data eq 'ARRAY' ) && scalar( @$data ) > 0;
+        return CTX->lookup_object('user')->fetch_count({
+                where => Dicole::Utils::SQL->column_in( user_id => $data ) .
+                " AND note_creation_time > $start AND note_creation_time <= $end",
+                }) || 0;
+    },
+);
+
+for my $n ( 1..15 ) {
+last;
+    my $dt = Dicole::Utils::Date->epoch_to_datetime( time );
+    $dt->set( day => 1, hour => 0, minute => 0, second => 0 );
+    $dt->subtract( months => $n );
+    my $start = $dt->epoch;
+    $dt->add( months => 1 );
+    my $end = $dt->epoch;
+    $dt->subtract( months => 1 );
+    my $month = $dt->year."_".($dt->month > 9 ? $dt->month : '0'.$dt->month );
+    for my $key ( keys %user_monthly ) {
+        my $column = "${key}_$month";
+        $batch{ "user-$column" } = $user_monthly_batch{ $key };
+        $extras{user}->{ $column } = sub { return $user_monthly{ $key }->( shift @_, $start, $end ) };
+        $types{ "user-$column" } = "int unsigned";
+        if ( my $batch = $user_monthly_batch{"user-$key"} ) {
+            $batch{ "user-$column" } = $batch;
+        }
+    }
+}
+
+for my $n ( 1..15 ) {
+last;
+    my $dt = Dicole::Utils::Date->epoch_to_datetime( time );
+    $dt->set( hour => 0, minute => 0, second => 0 );
+    $dt->subtract( days => 1 ) while ( $dt->day_of_week != 1 );
+    $dt->subtract( weeks => $n );
+    my $start = $dt->epoch;
+    $dt->add( weeks => 1 );
+    my $end = $dt->epoch;
+    $dt->subtract( weeks => 1 );
+    my $week = _epoch_to_week( $dt->epoch );
+    $week =~ s/\-/_/g;
+    for my $key ( keys %user_monthly ) {
+        my $column = "${key}_$week";
+        $extras{user}->{ $column } = sub { return $user_monthly{ $key }->( shift @_, $start, $end ) };
+        $types{ "user-$column" } = "int unsigned";
+        if ( my $batch = $user_monthly_batch{"user-$key"} ) {
+            $batch{ "user-$column" } = $batch;
+        }
+    }
+}
+
+for my $type ( qw( month week epoch day ) ) {
+last;
+    for my $n ( 1..5 ) {
+        my $column = $type . '_real_meetings_hit_' . $n;
+
+        $batch{ "user-$column" } = 3;
+        $extras{user}->{ $column } = sub {
+            my ( $user ) = @_;
+            my $meetings = $cache->{"meetings_created_by_" . $user->id } ||= _meetings_created_by_user_id( $user->id );
+
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->extra_is_real;
+                $count++;
+                next if $count < $n;
+                return _epoch_to_month( $meeting->created_date ) if ( $type eq 'month' );
+                return _epoch_to_week( $meeting->created_date ) if ( $type eq 'week' );
+                return _epoch_to_day( $meeting->created_date ) if ( $type eq 'day' );
+                return $meeting->created_date;
+            }
+
+            return '';
+        };
+    }
+}
+
+
+# partner distinction
+# active users
+# how many meetings ready
+# *** meeting lifecycle situation
+# user partner
+# user activity by month (?)
+
+sub _meetings_created_by_user_id {
+    my ( $user_id ) = @_;
+
+    if ( ! $cache->{meetings_by_uid} ) {
+        my $meetings = _all_meetings();
+        $cache->{meetings_by_uid} = {};
+        for my $m ( @$meetings ) {
+            $cache->{meetings_by_uid}->{ $m->creator_id } ||= [];
+            push @{ $cache->{meetings_by_uid}->{ $m->creator_id } }, $m;
+        }
+    }
+
+    return $cache->{meetings_by_uid}->{ $user_id } || [];
+}
+
+sub _meetings_participated_by_user_id {
+    my ( $user_id ) = @_;
+
+    if ( ! $cache->{meetings_participated_by_uid} ) {
+        my $participants = _all_participations();
+        my $meetings = _all_meetings();
+
+        $cache->{meetings_participated_by_uid} = {};
+
+        my $m_by_key = { map { $_->id => $_ } @$meetings };
+        for my $p ( @$participants ) {
+            my $m = $m_by_key->{ $p->event_id };
+            next unless $m;
+            $cache->{meetings_participated_by_uid}->{ $p->user_id } ||= [];
+            push @{ $cache->{meetings_participated_by_uid}->{ $p->user_id } }, $m;
+        }
+    }
+
+    return $cache->{meetings_participated_by_uid}->{ $user_id } || [];
+}
+
+sub _all_meetings {
+    print "Preparing meetings caches...\n" unless $cache->{meetings};
+    return $cache->{meetings} ||= CTX->lookup_object('events_event')->fetch_group({
+    order => 'created_date asc'
+    });
+}
+
+sub _all_participations {
+    print "Preparing participations caches...\n" unless $cache->{participants};
+    return $cache->{participants} ||= CTX->lookup_object('events_user')->fetch_group({
+        order => 'created_date asc'
+    });
+}
+
+sub _profile_by_user_id {
+    my ( $user_id ) = @_;
+    print "Preparing profile caches...\n" unless $cache->{profile_objects};
+
+    $cache->{profile_objects} ||= CTX->lookup_object('networking_profile')->fetch_group( {
+        where => 'domain_id = ?',
+        value => [ $domain_id ],
+    } );
+
+    $cache->{cached_profiles_by_uid} ||= { map { $_->user_id => $_ } @{ $cache->{profile_objects} } };
+
+    $cache->{profile_by_uid} ||= {};
+    return $cache->{profile_by_uid}->{ $user_id } ||= $cache->{cached_profiles_by_uid}->{ $user_id } || CTX->lookup_action('networking_api')->e( user_profile_object => {
+        user_id => $user_id,
+        domain_id => $domain_id,
+    } );
+}
+
+sub _invites_sent_by_user_id {
+    my ( $user_id ) = @_;
+
+    if ( ! $cache->{invites_by_uid} ) {
+        my $invites = _all_participations();
+        $cache->{invites_by_uid} = {};
+        for my $i ( @$invites ) {
+            next if $i->creator_id == $i->user_id;
+            $cache->{invites_by_uid}->{ $i->creator_id } ||= [];
+            push @{ $cache->{invites_by_uid}->{ $i->creator_id } }, $i;
+        }
+    }
+
+    return $cache->{invites_by_uid}->{ $user_id } || [];
+}
+
+sub _invites_received_by_user_id {
+    my ( $user_id ) = @_;
+
+    if ( ! $cache->{invites_received_by_uid} ) {
+        my $invites = _all_participations();
+        $cache->{invites_received_by_uid} = {};
+        for my $i ( @$invites ) {
+            next if $i->creator_id == $i->user_id;
+            $cache->{invites_received_by_uid}->{ $i->user_id } ||= [];
+            push @{ $cache->{invites_received_by_uid}->{ $i->user_id } }, $i;
+        }
+    }
+
+    return $cache->{invites_received_by_uid}->{ $user_id } || [];
+}
+
+sub _user_by_user_id {
+    my ( $user_id ) = @_;
+
+    $cache->{ 'objects_user' } ||= CTX->lookup_object( 'user' )->fetch_group;
+    if ( ! $cache->{users_by_uid} ) {
+        for my $user ( @{ $cache->{ 'objects_user' } } ) {
+            $cache->{users_by_uid}->{ $user->id } = $user;
+        }
+    }
+    return $cache->{users_by_uid}->{ $user_id };
+}
+
+sub _meeting_by_meeting_id {
+    my ( $meeting_id ) = @_;
+
+    if ( ! $cache->{meetings_by_meeting_id} ) {
+        my $meetings = _all_meetings();
+
+        for my $meeting ( @$meetings ) {
+            $cache->{meetings_by_meeting_id}->{ $meeting->id } = $meeting;
+        }
+    }
+    return $cache->{meetings_by_meeting_id}->{ $meeting_id };
+}
+
+sub _participants_by_meeting_id {
+    my ( $meeting_id ) = @_;
+    _populate_participant_caches() unless $cache->{participants_by_meeting_id};
+
+    return $cache->{participants_by_meeting_id}->{ $meeting_id } || [];
+}
+
+sub _schedulings_by_meeting_id {
+    my ( $meeting_id ) = @_;
+    _populate_schedulings_caches() unless $cache->{schedulings_by_meeting_id};
+
+    return $cache->{schedulings_by_meeting_id}->{ $meeting_id } || [];
+}
+
+sub _participants_by_user_id {
+    my ( $user_id ) = @_;
+    _populate_participant_caches() unless $cache->{participants_by_user_id};
+
+    return $cache->{participants_by_user_id}->{ $user_id } || [];
+}
+
+sub _populate_participant_caches {
+    print "Preparing participant caches...\n";
+    my $participants = _all_participations();
+    $cache->{participants_by_meeting_id} = {};
+    $cache->{participants_by_user_id} = {};
+    for my $participant ( @$participants ) {
+        $cache->{participants_by_meeting_id}->{ $participant->event_id } ||= [];
+        push @{ $cache->{participants_by_meeting_id}->{ $participant->event_id } }, $participant;
+        $cache->{participants_by_user_id}->{ $participant->user_id } ||= [];
+        push @{ $cache->{participants_by_user_id}->{ $participant->user_id } }, $participant;
+    }
+}
+
+sub _populate_schedulings_caches {
+    print "Preparing schedulings caches...\n";
+    my $schedulings = $cache->{schedulings} ||= CTX->lookup_object('meetings_scheduling')->fetch_group({});
+    $cache->{schedulings_by_meeting_id} = {};
+    for my $scheduling ( @$schedulings ) {
+        $cache->{schedulings_by_meeting_id}->{ $scheduling->meeting_id } ||= [];
+        push @{ $cache->{schedulings_by_meeting_id}->{ $scheduling->meeting_id } }, $scheduling;
+    }
+}
+
+my $clear = {
+    events_event => sub {
+        my ( $m ) = @_;
+        delete $cache->{material_data}->{ $m->id };
+        untie $m;
+    }
+};
+
+my $skip = {
+    events_event => sub {
+        my ( $m, $shard ) = @_;
+        if ( defined( $shard ) ) {
+            my $h = $cache->{shard}->{ $m->id } ||= Digest::SHA::sha1_hex( $m->id );
+            return 1 unless index( lc($h), lc($shard) ) == 0;
+        }
+#        return 1 if $m->begin_date < time - 3*24*60*60;
+#        return 1 if $m->begin_date > time + 3*24*60*60;
+        return 0;
+    }
+};
+
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my ( $passed_domain_id, $mode, $o_key, $v_key, $hash_shard, $batch, $force ) = split /\s*\,\s*/, $params;
+    $batch ||= 1;
+    $domain_id = $passed_domain_id;
+
+    for my $object_name ( keys %extras ) {
+        next if $o_key && $object_name ne $o_key;
+
+        if ( $mode && $mode eq 'fill' ) {
+            print "Preparing object caches for $object_name...\n";
+            my $objects = $cache->{ 'objects_' . $object_name } ||= CTX->lookup_object( $object_name )->fetch_group;
+            if ( $object_name eq 'events_event' ) {
+                print "Preparing material caches...\n";
+                for my $object ( @$objects ) {
+                    next if $skip->{ $object_name }( $object, $hash_shard );
+                    next;
+
+                    my $kst = Time::HiRes::time;
+                    $cache->{material_data}->{ $object->id } ||= $api->_gather_material_data_params( $object );
+                    print "filled meeting ".$object->id." in " . ( Time::HiRes::time - $kst ) . "\n";
+                }
+            }
+            for my $object ( @$objects ) {
+
+                if ( $skip->{ $object_name } ) {
+                    next if $skip->{ $object_name }( $object, $hash_shard );
+                }
+
+                my $st = Time::HiRes::time;
+                print "starting to fill $object_name " . $object->id . "..\n";
+                my $save = 0;
+                for my $key ( keys %{ $extras{ $object_name } } ) {
+                    next unless ! $v_key || $key eq $v_key || $key =~ /^${v_key}_\d+_\d+$/;
+                    next unless $batch == ( $batch{ $object_name.'-'.$key } || 1 );
+                    next if ! $force && defined $object->get( "extra_$key" );
+
+                    my $kst = Time::HiRes::time;
+                    $object->set( "extra_$key", $extras{$object_name}{$key}( $object ) );
+                    print "filled $key in " . ( Time::HiRes::time - $kst ) . "\n";
+
+                    $save = 1;
+                }
+
+                my $kst = Time::HiRes::time;
+                $object->save if $save;
+                print "object saved in " . ( Time::HiRes::time - $kst ) . "\n";
+
+                if ( $clear->{ $object_name } ) {
+                    $clear->{ $object_name }( $object );
+                }
+                print "filled $object_name " . $object->id . " in " . ( Time::HiRes::time - $st ) . "\n\n";
+            }
+
+        }
+        else {
+            my $object_table = $tables{ $object_name } || "dicole_$object_name";
+            for my $key ( sort { $a cmp $b } keys %{ $extras{ $object_name } } ) {
+                next unless ! $v_key || $key eq $v_key || $key =~ /^${v_key}_\d+_\d+$/;
+                my $type = $types{ $object_name.'-'.$key } || 'text';
+#                print "DOING: alter table $object_table add column extra_$key $type\n";
+                eval {
+                    Dicole::Utils::SQL->execute_sql(
+                            "alter table $object_table add column extra_$key $type"
+                            );
+                };
+                print $@ . "\n\n" if $@
+            }
+        }
+    }
+}
+
+1;

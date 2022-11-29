@@ -1,0 +1,27 @@
+<div id="modal-facebook-email" class="modal-popup">
+    <h2 class="modal-header"><%= MTN.t('Connect Your Account') %></h2>
+    <div id="meetings_facebook_email_return"></div>
+    <form id="meetings_facebook_email_form" class="meetings-form">
+        <fieldset>
+            <input type="hidden" name="facebook_user_id" value="<%= p.facebook_user_id %>" />
+            <input type="hidden" name="url_after_action" value="<%== p.url_after_action %>" />
+
+            <p><%= MTN.t('Your Facebook account is not connected to any existing Meetin.gs account. If you are already an user, please provide us with the email address that you are using with your Meetin.gs account. We will send you an email to confirm that you would like to use your Facebook to log in to Meetin.gs in the future.') %></p>
+
+            <div class="form-row">
+                <label for="email" class="small" style="width:100px;"><%= MTN.t('Email') %></label>
+                <input type="text" name="email" />
+            </div>
+        </fieldset>
+    </form>
+
+    <!-- Save & cancel -->
+    <div class="form-save-and-cancel-wrapper">
+        <a href="#" class="button pink js_meetings_facebook_email_submit" id="facebook_email_submit">
+            <%= MTN.t('Send') %>
+        </a>
+        <a href="#" class="button gray js_hook_showcase_close">
+            <%= MTN.t('Cancel') %>
+        </a>
+    </div>
+</div>

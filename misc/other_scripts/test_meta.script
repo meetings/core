@@ -1,0 +1,21 @@
+use Dicole::Meta;
+
+sub execute {
+    my ( $self ) = @_;
+
+    my $infos = Dicole::Meta->spops_special_info;
+    for my $key ( sort {$a cmp $b } keys %$infos ) {
+#        next if $key =~ /^(wiki_content|logged_action)$/;
+#        next if $key =~ /^(wiki_content)$/;
+        next unless $key eq 'wiki_content';
+        print "... processing $key:\n";
+        my $objects = Dicole::Meta->get_objects_associated_with_group( $key, 9 );
+#        print join ',', ( map {$_->id} @$objects );
+        print scalar( @$objects);
+        print $/;
+    }
+
+#    d $Dicole::Meta::associations;
+}
+
+1;

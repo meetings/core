@@ -1,0 +1,111 @@
+.no_group_admin_extras .subgroups_create_area {
+  display:none;
+}
+
+.content #navi_header #navi_login {
+  height: 38px;
+}
+.content #navi_header #navi_login a {
+  font-family: Verdana,Arial,Sans-Serif;
+  color: #333;
+  font-size: 12px;
+}
+.content #navi_header #navi_login a:hover {
+  color: #000 !important;
+}
+.content #navi_header #navi_login a#navi_register_link {
+  padding-top: 10px;
+}
+#navi_header #navi_logout_link, #navi_header #navi_login_link {
+  background: none;
+}
+
+#navi_header #navi_tools a {
+  color: #333;
+}
+#navi_header #navi_tools a.selected {
+  color: #000;
+}
+
+
+
+#navi_logo_banner {
+    margin-top: 40px;
+}
+#navi_logo_text {
+    visibility: visible;
+}
+#navi_header {
+background:transparent url('http://work-dev.dicole.net/images/novetos/novetos_navi_bg.jpg') no-repeat scroll 0px 35px !important;
+}
+#navi_logo_link {
+margin-top: 10px;
+}
+
+#navi_tools a {
+background:transparent url('http://novenet.novetos.fi/images/novetos/novetos_navi_buttons.png') no-repeat scroll 0 0 !important;
+color:black;
+padding-top:69px;
+width:96px;
+margin: 2px;
+}
+#navi_tools a:visited
+{
+color:black;
+}
+#navi_tools a:hover, #navi_tools a:active {
+color:black;
+background:transparent url('http://novenet.novetos.fi/images/novetos/novetos_navi_buttons.png') no-repeat scroll 0 -97px !important;
+}
+#navi_tools a.summary { background-position: 0 0 !important; }
+#navi_tools a.summary.selected { background-position: 0 -97px !important; }
+#navi_tools a.summary:hover { background-position: 0 -97px !important; }
+#navi_tools a.summary.selected:hover { background-position: 0 -194px !important; }
+
+#navi_tools a.blogs { background-position: -96px 0 !important; }
+#navi_tools a.blogs.selected { background-position: -96px -97px !important; }
+#navi_tools a.blogs:hover { background-position: -96px -97px !important; }
+#navi_tools a.blogs.selected:hover { background-position: -96px -194px !important; }
+
+#navi_tools a.group_admin { background-position: -288px 0 !important; }
+#navi_tools a.group_admin.selected { background-position: -288px -97px !important; }
+#navi_tools a.group_admin:hover { background-position: -288px -97px !important; }
+#navi_tools a.group_admin.selected:hover { background-position: -288px -194px !important; }
+
+#navi_tools a.wikis { background-position: -192px 0 !important; }
+#navi_tools a.wikis.selected { background-position: -192px -97px !important; }
+#navi_tools a.wikis:hover { background-position: -192px -97px !important; }
+#navi_tools a.wikis.selected:hover { background-position: -192px -194px !important; }
+
+#navi_tools a.networking { background-position: -384px 0 !important; }
+#navi_tools a.networking.selected { background-position: -384px -97px !important; }
+#navi_tools a.networking:hover { background-position: -384px -97px !important; }
+#navi_tools a.networking.selected:hover { background-position: -384px -194px !important; }
+
+#navi_tools a.events { background-position: -480px 0 !important; }
+#navi_tools a.events.selected { background-position: -480px -97px !important; }
+#navi_tools a.events:hover { background-position: -480px -97px !important; }
+#navi_tools a.events.selected:hover { background-position: -480px -194px !important; }
+
+#navi_tools a.subgroups { background-position: -288px 0 !important; }
+#navi_tools a.subgroups.selected { background-position: -288px -97px !important; }
+#navi_tools a.subgroups:hover { background-position: -288px -97px !important; }
+#navi_tools a.subgroups.selected:hover { background-position: -288px -194px !important; }
+
+#navi_tools a.other { background-position: -767px 0 !important; }
+#navi_tools a.other.selected { background-position: -767px -97px !important; }
+#navi_tools a.other:hover { background-position: -767px -97px !important; }
+#navi_tools a.other.selected:hover { background-position: -767px -194px !important; }
+
+#navi_tools a.media { background-position: -863px 0 !important; }
+#navi_tools a.media.selected { background-position: -863px -97px !important; }
+#navi_tools a.media:hover { background-position: -863px -97px !important; }
+#navi_tools a.media.selected:hover { background-position: -863px -194px !important; }
+
+#navi_tools .fileActionPopup a {
+background:transparent url(/images/theme/dicole_simple/main-navi/26x26/regular/generic.png) no-repeat scroll left center !important;
+}
+
+#navi_tools .fileActionPopup a:hover {
+background:transparent url(/images/theme/dicole_simple/main-navi/26x26/regular/generic.png) no-repeat scroll left center !important;
+}

@@ -1,0 +1,23 @@
+[% MTN.t('Scheduling is nearly complete: Your input required. ') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Your scheduling is nearly complete:') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t('Everyone else has provided their availability for your scheduling. We still need your availability to confirm the time.')%]<<</p>>>
+
+[% url = swipe_url %]
+[% text = MTN.t("Provide your input") %]
+<<<blue_button>>>
+<<<br>>>
+
+
+<<</bubble>>>
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t('SwipeToMeet is powered by Meetin.gs.') %]<<</p>>>
+<<</html_wrapper>>>

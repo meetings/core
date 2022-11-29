@@ -1,0 +1,10 @@
+conf/action.ini
+conf/spops.ini
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleBookmarks.pm
+OpenInteract2/App/DicoleBookmarks.pm
+OpenInteract2/SQLInstall/DicoleBookmarks.pm
+package.ini
+struct/dicole_bookmark.sql
+template/bookmarkers_sidebar.tmpl

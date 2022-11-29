@@ -1,0 +1,82 @@
+sub execute {
+    my ( $self ) = @_;
+    
+    my $scribd_api_key = CTX->server_config->{dicole}->{scribd_api_key};
+    die unless $scribd_api_key;
+
+    my $presentations = CTX->lookup_object('presentations_prese')->fetch_group;
+
+	for my $presentation (@$presentations) {
+		next unless $presentation->attachment_id;
+		next if $presentation->scribd_id;
+		next if $presentation->scribd_fail > 3;
+
+		my $a = CTX->lookup_object('attachment')->fetch( $presentation->attachment_id );
+	
+		if ( $a->filename =~ /\.(pdf|txt|ps|rtf|epub|odt|odp|ods|odg|odf|sxw|sxc|sxi|sxd|doc|ppt|pps|xls|docx|pptx|ppsx|xlsx|tif|tiff)$/i ) {
+			my $file_extension = $1;
+
+            my $domain_id = Dicole::Utils::Domain->domain_id_for_group_id( $presentation->group_id );
+		
+			my $file_url = Dicole::URL->from_parts(
+				action => 'presentations', task => 'attachment_original', target => $a->group_id,
+				additional => [ $a->id, $a->filename ],
+				params => { dic => Dicole::Utils::User->permanent_authorization_key($presentation->creator_id) },
+                domain_id => $domain_id,
+			);
+			
+			$file_url = Dicole::URL->get_domain_url( $domain_id ) . $file_url;
+
+            print "updating " . $presentation_id . ' with ' . $file_url . "\n"; 
+			my $scribd_xml = Dicole::Utils::HTTP->post(
+				'http://api.scribd.com/api',
+				{ 
+					method => 'docs.uploadFromUrl', 
+					api_key => $scribd_api_key,
+					url => $file_url,
+					doc_type => $file_extension,
+					access => 'private'
+				}
+			);
+			
+			my $xml_parser = new XML::Simple;
+			my $scribd = $xml_parser->XMLin($scribd_xml);
+			
+			if($scribd->{stat} eq 'ok') {
+				print "Upload succeeded!" . "\n";
+				
+				my $scribd_settings_xml = Dicole::Utils::HTTP->post(
+            		'http://api.scribd.com/api',
+					{ 
+						method => 'docs.getSettings', 
+						doc_id => $scribd->{doc_id},
+						api_key => $scribd_api_key
+					}
+				);
+				
+				my $scribd_settings = $xml_parser->XMLin($scribd_settings_xml);
+				my $thumbnail_url = $scribd_settings->{thumbnail_url};
+				$thumbnail_url =~ s/^\s+|\s+$//g;
+				
+				$presentation->image($thumbnail_url);
+				$presentation->scribd_id($scribd->{doc_id});
+				$presentation->scribd_key($scribd->{access_key});
+				if($file_extension =~ /ppt|pps|pptx|ppsx|odp|sxi/) {
+            		$presentation->scribd_type('slideshow');
+            	}
+            	else {
+            		$presentation->scribd_type('document');
+            	}
+				$presentation->save;
+			}
+			else {
+				print "Upload failed!" . "\n";
+				print Data::Dumper::Dumper($scribd);
+				$presentation->scribd_fail($presentation->scribd_fail + 1);
+			}
+            sleep 2;
+		}
+	}
+}
+
+1;

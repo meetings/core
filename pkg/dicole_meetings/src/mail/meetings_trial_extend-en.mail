@@ -1,0 +1,27 @@
+[% MTN.t('We have extended your Meetin.gs Pro trial') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Your trial was about to expire but:') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+[% squirrel = 'pro' %]
+
+[% image_file = 'https://www.meetin.gs/files/2013/12/product_image_sans.png' %]
+[% alt_text = MTN.t('Meetin.gs is the smartest way to meet - online or face to face.') %]
+<<<image>>>
+
+<<<p>>>[% MTN.t("We noticed that you have not really had the chance to get up to speed with Meetin.gs. That's why we decided to extend your Meetin.gs PRO trial with another 30 days.") %]<<</p>>>
+
+<<<p>>>[% MTN.t('Get started by organizing a meeting:') %]
+
+[% url = new_meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=trial_extended' %]
+[% text = MTN.t('Organize a meeting now') %]
+<<<blue_button>>>
+
+<<<p>>>
+[% MTN.t("If there's anything we can help you with, please give us a shout by replying to this email.") %]
+<<</p>>>
+
+<<</html_wrapper>>>

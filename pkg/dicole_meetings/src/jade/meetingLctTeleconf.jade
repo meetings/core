@@ -1,0 +1,15 @@
+div#lct-picker.m-modal
+    div.modal-header.back-button
+        h3!=MTN.t('Teleconference settings')
+        i.ico-leftarrow.back
+    div.modal-content.m-form
+        p!=MTN.t('Enter the teleconference number given by your chosen operator.')
+        label!=MTN.t('Phone number')
+            input#com-number(type='text',value=(meeting.online_conferencing_data && meeting.online_conferencing_data.teleconf_number) ? meeting.online_conferencing_data.teleconf_number : '',placeholder='e.g. +358 12 345 678')
+        label!=MTN.t('Pin (optional)')
+            input#com-pin(type='text',value=(meeting.online_conferencing_data && meeting.online_conferencing_data.teleconf_pin) ? meeting.online_conferencing_data.teleconf_pin : '',placeholder='e.g. 1234')
+        br
+        p.note!=MTN.t('NOTE: If you know your pin code you can preset it here to allow participants to join without having to type the pin when making the call.')
+    div.modal-footer
+        div.buttons.right
+            a.button.blue.save(href='#')!=MTN.t('Save')

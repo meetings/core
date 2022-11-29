@@ -1,0 +1,224 @@
+=head1 NAME
+
+Implementation plan for Learning Diary
+
+=head1 TASK INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.7 $
+
+=item B<Severity>
+
+Major
+
+=item B<Priority>
+
+P1
+
+=item B<Risk factor>
+
+2
+
+=item B<Estimate>
+
+No estimate.
+
+=item B<Status>
+
+Waiting for implementation.
+
+=back
+
+=head1 ABSTRACT
+
+This document explains how Dicole Learning Diary tool should be implemented.
+
+=head1 DETAILS
+
+The Learning Diary is an instrument for evaluating personal learning. It helps
+a student to express her experiences, support reflective thinking, improves
+self-evaluation (meta-cognition skills) and help recognizing strengths and
+weaknesses in personal learning.
+
+Learning Diary is not an occasional tool. It is a daily diary that supports ones
+continuous evaluation of learning. It is a place where to write down ideas, what
+one has learned and experienced during the day or week. It is also a tool that
+motivates to learn further and if necessary, go back to things that were left
+unanswered.
+
+It is one of the tools that helps us I<learn to learn>.
+
+=head2 What is so special about web-based Learning Diary?
+
+It is true that it is possible to keep your own Learning Diary on a piece of
+paper or within a normal diary book. Learning Diary in web has added value only
+when it may be shared and when it becomes easier to write.
+
+Learning Diary is also a tool which itself has a learning curve. The teachers
+ability to scaffold student's learning process of the Learning Diary is easier
+in the web-context. 
+
+A well written Learning Diary allows displaying portions of the diary to others
+or move portions to other areas in the system with ease, like into a
+I<Learning Portfolio>, which is actually a selected showcase of student's
+learning time-line.
+
+=head2 Implementation
+
+Online Learning Diary should be implemented to at least result in above
+functionality. It has the following distinct functional elements:
+
+=over 4
+
+=item B<Add new Learning Diary entry>
+
+The basic functionality of Learning Diary is adding new diary entries. When
+adding a new entry the user should first be able to select the category in which
+the new entry will be written. The category might be one of the courses where
+the student is enrolled in or a custom category. To achieve this functionality
+the system should be able to populate a dropdown with the names of the groups
+(courses).
+
+The system should also allow adding new custom Learning Diary categories.
+Functionality for removing categories might not be necessary, since it could
+break the links to diary entries in such categories. Maybe the existing custom
+categories could be generated based on distinct category names in the database
+of all custom diaries. This way the custom category X gets removed when the last
+diary entry in that category ceases to exist (is removed).
+
+As such, selecting the category could look something like this:
+
+  [ Select group... ] or [ Select category... ] or add new [_____]
+
+Notice that we separate group selection and alternative custom category
+selection. There is also a free-form text field if the user wants to add a new
+custom category.
+
+Then the user writes a topic for the Learning Diary entry (text field) and
+contents for the Learning Diary entry (text area).
+
+The user may also link into attachments in the filearea (if such a tool exists)
+or upload the attachments directly to be attached to the diary entry.
+
+The data is saved in the database with date when the entry was written. The date
+is not available for editing. The content is saved in blocks. The content is
+splitted into blocks based on paragraph boundaries (one empty line between
+blocks of text). This is because the content may be answered in blocks and later
+the Learning Diary might introduce meta-data support for the block entries.
+
+If the course teacher or group administrator wants, she may provide custom
+scaffolding for the student who is writing a Learning Diary entry. There are two
+types of scaffolding as explained below:
+
+=over 4
+
+=item B<Strong scaffolding>
+
+The teacher represents questions the student should explicitly answer, for
+example:
+
+  What do you know of the subject?
+  [textarea]
+  What should I learn of the subject?
+  [textarea]
+  ...
+
+Each text area the student fills aims to answer the question. This type of
+scaffolding is strong because it requires the student to explicitly answer the
+questions the teacher has posed. 
+
+=item B<Light scaffolding>
+
+The teacher provides scaffolding questions for the student while the student is
+writing the free-form diary entry. The questions activate thinking in the
+student and provides a base for possible influences that guide towards more
+quality diary entries. For example:
+
+  [textarea]  What do you know of the subject?
+              What should I learn of the subject?
+
+As you can see, the questions are not required to be answered but carefully
+crafted to help the student to write more quality diary entries.
+
+=back
+
+The scaffolds the teacher has written may be different depending of the time
+line of the course. In the beginning, in the middle, in the beginning of certain
+subjects and in the end of the course the questions may vary.
+
+It is of course possible to write entries with the same scaffolds all the time
+but soon the same scaffolds become quite familiar for the student. Sooner or
+later the student doesn't read the scaffolds. The scaffolds become obsolete and
+are not required anymore. This is when the teacher should ideally provide new 
+scaffolds that support greater objectives for the student writing the diary
+entries.
+
+The system should allow the teacher to pre-define a set of scaffolds for the
+course that each activate on a certain date. The teacher should also be able to
+select whether or not to use strong or light scaffolding depending of the
+experience the students have had in writing Learning Diaries.
+
+=item B<Editing Learning Diary entries>
+
+Providing support for editing Learning Diary entries is not suggested, because
+a diary entry happened already and represent the student's thinking like it was
+on a certain point of time. Editing should be only possible during a 24 hour
+period starting of the creation date of the diary entry. After that the diary
+entry is permanent and saved in the database.
+
+=item B<Removing Learning Diary entries>
+
+The same logic applies to removing diary entries as we have in editing diary
+entries above.
+
+=item B<Viewing Learning Diary entries>
+
+Viewing Learning Diary entries is the same as listing them. The user should be
+able to list Learning Diary entries according to certain rules like sorting them
+chronologically according to custom category or course name. The view should
+allow limiting the page to display a certain ammount of entries and splitting
+the rest into multiple pages for more intuitive usability and faster page loads.
+
+=item B<Archiving Learning Diaries>
+
+When the student has finished a certain course or a similar learning session
+that has a start and an end, it should be possible to archive these past
+diaries. This is simply done by moving a past diary to an archive section in the
+Learning Diary tool.
+
+=item B<Sharing Learning Diary Among Other Users>
+
+The user should be able allow other users to view her diaries. The user may also
+allow members of a certain group or a custom list of users to view the entries
+of specified diaries. This option allows Learning Diary to be used as a I<BLOG>,
+which is nowadays pretty common practice in the web.
+
+=item B<Exporting parts of Learning Diaries>
+
+The user should be able to export parts of her Learning Diary as single files
+out of the system. This should help the user to easily incorporate some diary
+entries to separate reports and such. 
+
+These files should be in some standard format like XML or just simple ASCII
+text, what ever is considered as sufficient.
+
+The user may also export parts of the Learning Diary into supported tools like
+filearea (in the same format as used above) or I<Learning Portfolio>.
+
+=back
+
+=head1 NOTES AND STATUS
+
+This section should be filled with information and status of the current
+implementation of the specifications.
+
+=head1 AUTHORS
+
+Teemu Arina E<lt>teemu@ionstream.fiE<gt>

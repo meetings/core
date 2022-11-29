@@ -1,0 +1,11 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_date_proposal add removed_date bigint unsigned not null after created_date');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_date_proposal add disabled_date bigint unsigned not null after created_date');
+}
+
+1;
+

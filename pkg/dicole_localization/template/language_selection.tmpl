@@ -1,0 +1,5 @@
+[% FOREACH lang IN languages %]
+<div>
+    <a href="[% lang.url | html %]" class="linkBar[% IF lang.id == language %] selected[% END %]">[% lang.name | html %]</a>
+</div>
+[% END %]

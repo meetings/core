@@ -1,0 +1,1887 @@
+/*[% # $Id: main_layout.css,v 1.47 2010-04-09 02:48:19 amv Exp $ # %]*/
+
+/*STRUCTURE OF THE DICOLE main_layout Cascading Style Sheet */
+
+/* --------------------------------------------------------
+LAYOUT LAYOUT LAYOUT LAYOUT
+-------------------------------------------------------- */
+
+/*
+    html, body, a, a img, h1, h2, h3, h4, h5, h6, p, div, ul, li
+    form
+    table, div
+    iframe
+    input, select, textarea
+    .content
+
+NAVIGATION TOP ELEMENTS
+    .navPriContent_1
+    .navPriContent_2
+
+NAVIGATION MIDDLE ELEMENTS
+    div.navMid
+
+ NAVIGATION MIDDLE ELEMENTS
+    .navSecContainer
+    .navSecContent_1
+    .navSecContent_2
+    .navSecTitle
+    .navSecTitle img
+    .dropDownMenu ul
+    .dropDownMenu li.parent
+    .dropDownMenu li.parent a.parentLink
+    .dropDownMenu li.parent a.parentLink:hover
+    .navMid .dropDownMenu li.parent a.parentLink:hover
+    .navMid .dropDownMenu li.parent a.active
+    .dropDownMenu li.parent a.active
+    .dropDownMenu li.parent a.parentLink img
+    .dropDownMenu ul ul
+    .dropDownMenu ul ul li
+    .dropDownMenu ul ul a img
+    .dropDownMenu ul ul a
+    .dropDownMenu ul ul a span
+    .tool
+
+TOOL INFO ELEMENTS
+    .toolInfoContainer
+    .toolInfoLeft
+    .toolInfoLeftContent
+    .toolInfoRight
+    .toolInfoRightContent
+    .toolInfoRight img
+    .toolContainer
+    .toolContentContainer
+
+TOOL TABS ELEMENTS
+    .toolTabs
+    .tabsBottom
+
+TOOL PATH ELEMENTS
+    .toolPath
+
+TOOL CONTENT ELEMENTS
+    .toolContent
+    .copyright
+    div.toolContentContainerBox
+    table.toolContentAlign
+    table.toolContentAlign td.twoColumn
+    table.toolContentAlign td.oneColumn
+    div.toolContentBox
+    div.toolContentBox span.boxLegend
+    div.contentItemContainer
+    div.toolNavigationContainer
+    .toolNavigationItem
+
+Key = Value listing
+    table.valuePairList
+    table.valuePairList td.valuePairKey
+    table.valuePairList td.valuePairValue
+    table.valuePairListVertHor
+
+Key     Key     Key -Listing
+    table.keyValueListing
+    table.keyValueListing td.listingKey
+    table.keyValueListing td.listingValue
+    .key
+    .value
+
+div.contentItemContainer
+
+WIDGETS
+
+    .linkButton, .linkButton:active, .linkButton:visited, .linkButton:link
+    .submitButton, .submitButton:active, .submitButton:visited, .submitButton:link
+
+    div.confirmBoxContainer
+    div.confirmBoxTitle
+    div.confirmBoxContent
+    div.confirmBoxButtons
+
+    span.fieldRequiredMarker
+    span.fieldErrorMarker
+
+    .searchHelpLogout
+
+    div.tree span
+    div.tree div
+    div.tree img
+
+    div.tabs
+    div.tabs ul
+    div.tabs li
+    div.tabs li a
+    div.tabs a
+    div.tabs .selected
+    div.tabs .selected a
+    div.tabs .selectedPic
+    div.tabs .selectedPic a
+    div.tabs .selectedPic a:hover
+    div.tabs .unselectedPic
+    div.tabs .unselectedPic a
+    div.tabs .unselectedPic a:hover
+
+DESKTOP BOXES
+    table.desktopBoxContainer
+    td.desktopBoxSubContainer
+    table.desktopBoxContainer td
+    table.desktopBoxContainer td.twoColumn
+    table.desktopBoxContainer td.oneColumn
+    div.desktopBoxTitle
+    div.desktopBoxTitleAlone
+    div.desktopBoxControllers
+    div.desktopBoxContent
+
+USER DEFINED STYLING
+
+    alignLeft
+    alignRight
+    alignCenter
+    alignJustify
+
+*/
+
+/*                                                              BASIC XHTML DOCUMENT ELEMENTS */
+
+home, body, a, a img, h1, h2, h3, h4, h5, h6, p, div, ul, li, ol {
+    border: 0;
+    margin:0;
+    padding:0;
+}
+
+
+form {
+    display:inline;
+    margin:0px;
+    padding:0px;
+}
+
+table {
+    border-spacing: 0; /* Konqueror bug fix */
+    border-collapse: collapse;
+}
+
+td, img {
+    vertical-align: top;
+}
+
+input, select, textarea {
+    margin: -1px 3px 0 3px;
+    padding: 0 2px 0 2px;
+    vertical-align: middle;
+}
+
+ul {
+    list-style: disc inside;
+}
+
+div.content {
+    /*min-width: 750px; removed for the time being for better interoperability with lower resolutions */
+}
+
+
+
+
+
+
+
+
+
+/*                                                              ENVIRONMENT NAVIGATION ELEMENTS */
+
+/*                                  Primary navigation */
+
+div.navPriContent_1 {
+    float: left;
+    white-space: nowrap;
+    width: auto;
+    max-width: 49%;
+}
+
+div.navPriContent_2 {
+    float: right;
+    white-space: nowrap;
+    width: auto;
+    max-width: 49%;
+    font-size: 10px;
+    /*text-align: right; not quite working right =) */
+}
+
+/*                                  Secondary navigation */
+
+div.navMid {
+    clear: both;
+    float: left;
+    margin-top: -1px;
+    padding: 0px 0 0px 0px;
+    width: 100%;
+}
+
+/*                                  Tertiary navigation */
+
+div.navSecContainer {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+div.navSecContent_1 {
+    float: left;
+    width: auto;
+    max-width: 49%;
+    white-space: nowrap;
+}
+
+div.navSecContent_2 {
+    width: auto;
+    max-width: 49%;
+    white-space: nowrap;
+    text-align: center;
+}
+div.navSecTitle {
+    padding: 1px 0 2px 0;
+}
+
+div.navSecTitle img {
+    margin: 0 3px;
+}
+
+
+
+
+
+
+
+
+
+/*                                                              ENVIRONMENT NAVIGATION WIDGETS */
+
+
+/*                                  Dropdown menus */
+
+div.dropDownMenu ul {
+    /*float: left; makes things a lot better */
+}
+
+div.dropDownMenu li.parent {
+    float: left;
+    display: block;
+    height: 100%;
+}
+
+div.dropDownMenu li.parent a.parentLink {
+    position: relative;
+    z-index:101;
+    display: block;
+    padding: 1px 2px 2px 5px;
+    margin-top: 1px;
+    vertical-align: middle;
+    height: 100%;
+    width: 1%;
+    white-space: nowrap;
+}
+
+div.dropDownMenu li.parent a.parentLink:hover {
+    padding: 1px 2px 2px 5px;
+}
+
+div.dropDownMenu li.parent a.parentLink img {
+    vertical-align: middle;
+}
+
+div.dropDownMenu li.parent a.active {
+    padding: 1px 2px 2px 5px;
+}
+
+div.dropDownMenu ul ul {
+    clear: both;
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    z-index: 102;
+    top: auto;
+    left: auto;
+}
+
+div.dropDownMenu ul ul li {
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+/* body:last-child hack applies style only for Mozilla and Safari */
+/* Fixes problem with empty space under menu item */
+body:last-child div.dropDownMenu ul ul li {
+	padding-bottom: 0px;
+}
+
+div.dropDownMenu ul ul a {
+    padding: 2px 8px;
+    vertical-align: middle;
+    white-space: nowrap;
+    display: block;
+    padding-bottom: 3px;
+}
+
+/* body:last-child hack applies style only for Mozilla and Safari */
+/* Fixes problem with empty space under menu highlighted item */
+body:last-child div.dropDownMenu ul ul a {
+    padding: 3px 8px;
+}
+
+/* Hides from IE5-mac \*/
+* html .dropDownMenu ul ul a {
+    clear: both;
+    float: left;
+}
+/* End hide from IE5-mac */
+
+
+div.dropDownMenu ul ul a img {
+    margin: -3px -8px;
+    padding: 3px 8px;
+    max-height: 16px;
+    width: 16px;
+}
+
+div.dropDownMenu ul ul a span {
+    margin: 0 4px 0 15px;
+}
+
+
+
+
+
+
+
+
+/*                                                              TOOL ELEMENTS */
+
+.tool {
+    clear: both;
+    padding: 5px 15px;
+}
+
+/*                                      Tool info elements */
+
+.toolInfoContainer {
+    clear: both;
+}
+
+div.toolInfoLeft {
+    width: auto;
+    max-width: 69%;
+    float: left;
+}
+
+div.toolInfoLeftContent {
+    display: inline;
+}
+
+
+div.toolInfoRight {
+    width: auto;
+    max-width: 29%;
+    position: absolute;
+    right: 15px;
+    z-index: 150;
+}
+
+div.toolInfoRightClose {
+    position : absolute;
+    right: 10px;
+    z-index: 170;
+    padding: 0.1em 0em;
+    white-space: nowrap;
+}
+
+div.toolInfoRightClose .close {
+    padding: 0em 0.5em;
+}
+
+.toolInfoRightContent {
+    position: relative;
+    padding: 10px 5px 6px 5px;
+    margin: 10px 0 0 0;
+}
+
+div.toolInfoRightContent .title {
+    white-space: nowrap;
+    padding: 0.1em 1em;
+    position : relative;
+    top: -18px;
+    left: 0em;
+    z-index: 160;
+}
+
+div.toolInfoRightContent .content {
+    position: relative;
+    margin-top: -10px;
+    padding: 0.1em 0.5em;
+    display: block;
+}
+.toolInfoRight img {
+    float: left;
+}
+
+
+
+
+
+
+
+
+/*                                                              TOOL CONTAINER ELEMENTS */
+
+.toolContainer {
+    float: left;
+    width: 100%;
+}
+
+.toolContentContainer {
+    float: left;
+    width: 100%;
+}
+
+/*                                      Primary navigation */
+
+.toolTabs {
+    margin-top: 0px;
+    float: left;
+    width: 100%;
+}
+
+.tabsBottom {
+    clear: both; /* avoid floating distortion */
+    padding: 2px 0 2px 10px;
+    margin-top: -1px;
+}
+
+/*                                      Tool Path */
+
+.toolPath {
+    clear: both; /* avoid floating distortion */
+    padding: 2px 0 2px 10px;
+    height: 15px;
+    position: relative;
+    z-index: 90;
+}
+
+.toolPathText {
+    width: 100%;
+}
+
+.helpLink {
+    float: right;
+    padding-right: 5px;
+}
+
+/*                                                              TOOL CONTENT ELEMENTS */
+.toolContent {
+    clear: both;
+    width: auto;
+    padding: 0px;
+    margin-top: -1px;
+}
+
+table.toolContentAlign {
+    clear: both;
+    width: 98%;
+    margin: 1%;
+}
+table.toolContentAlign td {
+    /*padding: 0px 10px 10px 10px; removed because of problems with HTMLArea, stupid hack fix in toolContentAlign */
+}
+
+/* Hide from everything else other than IE all platforms. Fixes box location */
+* html div.toolContentBox {
+    margin-left: 15px;
+}
+
+div.toolContentBox {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 0 10px 10px 10px;
+    width: auto;
+    vertical-align: baseline; /* otherwise the boxLegend loses it's bottom border in IE */
+}
+div.toolContentBox .boxLegend {
+    white-space: nowrap;
+    padding: 0.1em 1em;
+    display: block;
+    position: relative;
+    width: auto;
+    top: -8px;
+    left: auto;
+    z-index: 50;
+}
+div.contentItemContainer {
+    padding: 2px 0;
+    display: block;
+}
+div.toolNavigationContainer {
+    /*margin-top: -1em; removed because of a behavioral problem with IE */
+    margin-bottom: 0em;
+    width: 100%;
+    display: table;
+}
+
+.toolNavigationItem {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    display: block;
+    float: left;
+}
+
+/*                                                              WIDGETS */
+
+/* a hack to make HTML area toolbar not break up */
+.htmlarea .toolbar table {
+    width: 0%;
+}
+
+
+/*                                  STYLED BUTTONS */
+
+a.linkButton, a.linkButton:active, a.linkButton:visited, a.linkButton:link {
+    position: relative;
+    white-space: nowrap;
+    padding: 2px 3px 1px 3px;
+    margin: 8px 8px 8px 0;
+    z-index: 90;
+}
+
+input.submitButton, input.submitButton:active, input.submitButton:visited, input.submitButton:link {
+    position: relative;
+    white-space: nowrap;
+    padding: 0px 1px 1px 1px;
+    margin: -4px 8px -4px 0;
+    z-index: 90;
+}
+
+a.linkBar, a.linkBar:active,
+a.linkBar:visited, a.linkBar:link {
+    display: block;
+    padding: 5px;
+    margin: 2px;
+}
+
+.hiddenBlock {
+    display: none;
+}
+
+
+
+/*                                  CONFIRM BOX */
+
+div.confirmBoxContainer     {
+    position: absolute;
+    width: 300px;
+    visibility: hidden;
+    z-index: 200;
+}
+
+div.confirmBoxTitle {
+    border: 1px solid black;
+    padding: 0.2em 1em 0.2em 1em;
+    white-space: nowrap;
+}
+
+div.confirmBoxContent {
+    border: 1px solid silver;
+    border-top: 1px solid black;
+    padding: 1em 2em 1em 2em;
+    margin-top: -4px;
+    margin-bottom: 2em;
+    vertical-align: top;
+}
+
+div.confirmBoxButtons {
+    margin-top: 15px;
+}
+div.confirmBoxButtons a, div.confirmBoxButtons a:hover, div.confirmBoxButtons a:visited, div.confirmBoxButtons a:link, div.confirmBoxButtons a:active {
+    margin-top: 15px;
+    display: inline;
+}
+
+
+
+
+
+
+
+
+/*                                  TREE ELEMENTS */
+
+div.tree div span {
+    margin-left: 5px;
+}
+
+div.tree div {
+    display: block;
+    white-space: nowrap;
+    border-collapse: collapse;
+    border-spacing: 0px; /* Konqueror bug fix */
+    padding: 0px;
+    margin: 0px;
+}
+
+div.tree span {
+    white-space: nowrap;
+}
+
+
+div.tree img {
+    vertical-align: middle;
+}
+
+
+
+
+/*                                  TAB ELEMENTS */
+
+div.tabs {
+    float:left;
+    width:auto;
+    font-size:93%;
+    line-height:normal;
+}
+
+div.tabs ul {
+    margin:0;
+    padding:5px 10px 0;
+    list-style:none;
+
+}
+
+div.tabs li {
+    float:left;
+    margin-right: 0px;
+    padding:0 0 0 8px;
+}
+
+/* body:last-child hack applies style only for Mozilla and Safari */
+body:last-child div.tabs li {
+    position: relative;
+    top: 1px;
+}
+
+div.tabs li a {
+    float:left;
+    display:block;
+    padding: 3px 6px 2px 6px;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;;
+}
+/* Commented Backslash Hack
+hides rule from IE5-Mac \*/
+* html div.tabs a {float:none;}
+/* End IE5-Mac hack */
+
+div.tabs .selected {
+    border-bottom: 0px;
+    position: relative;
+    z-index: 91;
+}
+div.tabs .selected a {
+    padding-bottom: 3px;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;;
+}
+
+div.tabs .selectedPic {
+    position: relative;
+    z-index: 91;
+    border: 0;
+}
+
+div.tabs .selectedPic a {
+padding-right: 15px;
+    padding-bottom: 0px;
+    border: 0;
+    border-bottom: 1px solid rgb(162,195,218);
+}
+
+div.tabs .selectedPic a:hover {
+    padding-bottom: 0px;
+}
+
+div.tabs .unselectedPic {
+    border-bottom: 0px;
+    position: relative;
+    z-index: 91;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+div.tabs .unselectedPic a {
+padding-right: 15px;
+    padding-bottom:0px;
+    border: 0;
+
+}
+
+div.tabs .unselectedPic a:hover {
+    padding-bottom:0px;
+}
+
+
+
+/*                                  DESKTOP BOXES */
+
+table.desktopBoxContainer {
+    margin-top: 10px;
+    width: 100%;
+}
+
+td.desktopBoxSubContainer {
+    padding: 0 7px 0 0;
+
+}
+
+td.desktopBoxSubContainer table {
+    margin-bottom: 0px;
+    width: 100%;
+}
+/* Hides from IE5-mac \*/
+* html .desktopBoxControllers, * html .desktopBoxTitle {position: relative;}
+/* End hide from IE5-mac */
+
+.desktopBoxTitle {
+    margin: 0;
+    margin-bottom: 0px;
+    padding: 2px 2px 2px 5px;
+    white-space: normal;
+    overflow: hidden;
+}
+.desktopBoxControllers {
+    margin-bottom: 0px;
+    padding: 2px 3px 2px 2px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.desktopBoxControllers a {
+    margin: 2px 3px 0 3px;
+    padding: 1px;
+}
+
+.desktopBoxControllers a:hover {
+    margin: 2px 3px 0 3px;
+    padding: 1px;
+}
+
+.desktopBoxContent {
+    margin: 0 0 1em 0;
+    padding: 3px 6px;
+    overflow: hidden;
+}
+
+
+/*                              MESSAGE ELEMENTS */
+
+.messageContainer {
+    width: 100%;
+    padding: 2px;
+    margin: 5px;
+}
+
+.messageContainer .buttons {
+    text-align: right;
+}
+
+.messageContainer .buttons img {
+    margin-right: 3px;
+}
+
+.messageContainer .content {
+    padding: 10px;
+}
+
+.messageContainer .meta {
+    padding: 10px;
+    width: 130px;
+}
+
+/*                                                              LIST ELEMENTS */
+
+/*                                      Categorized list */
+
+.categorizedList div {
+    width: 99%;
+    text-align: center;
+}
+.categorizedList td {
+    padding: 2px;
+}
+
+.categorizedList .topic {
+    white-space: nowrap;
+}
+.categorizedList  span {
+    padding: 0;
+}
+
+.categorizedList a {
+    display: block;
+}
+
+
+.combined_list .separator {
+    width: 99%;
+    text-align: center;
+}
+
+.combined_list .topic {
+    white-space: nowrap;
+}
+
+.combined_list td {
+    padding: 2px;
+}
+
+/*                                      Key = Value list */
+
+table.valuePairList {
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    width: 100%;
+}
+table.valuePairList td.valuePairKey {
+    padding: 2px 12px 2px 6px;
+}
+table.valuePairList td.valuePairValue {
+    padding: 2px 12px 2px 6px;
+}
+
+table.valuePairListVertHor {
+    border-collapse: separate;
+    border-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+/*                                      Key     Key     Key
+                                        Value       Value       Value
+                                        list                            */
+
+
+table.keyValueListing {
+    width: 100%;
+    margin-bottom: 15px;
+}
+table.keyValueListing td.listingKey {
+    vertical-align: top;
+    padding: 2px;
+}
+table.keyValueListing td.listingValue {
+    vertical-align: top;
+    padding: 2px 12px 2px 6px;
+/*    text-align: left;*/
+}
+
+table.keyValueListing td.listingValue span {
+/*  white-space: nowrap; fixes freak problem with fieldrequired/error marker when the first element in the column is shorter than the successors */
+}
+
+
+.key {
+    white-space: nowrap;
+    padding: 2px;
+    display: block;
+}
+
+.value {
+    white-space: nowrap;
+    padding: 2px;
+    padding-left: 6px;
+    padding-bottom: 4px;
+    display: block;
+}
+
+
+
+/*                                                              FILES ELEMENTS */
+
+.fileActionPopupBox {
+    visibility: hidden;
+    position: absolute;
+    padding: 2px 2px 2px 2px;
+    display: block;
+}
+
+.fileActionPopupBox a {
+    display: block;
+    padding: 3px 5px;
+}
+
+/*                                                              FORUMS ELEMENTS */
+
+.textQuoted {
+    padding: 5px;
+    display: block;
+}
+
+.textQuotedList {
+    padding: 5px;
+    display: block;
+}
+
+
+.textAbstract {
+    padding: 5px;
+    display: block;
+}
+
+
+/*                                          LOGIN BOX */
+
+.loginBoxWelcome {
+    display: block;
+    margin-top: 10px;
+}
+
+.loginBoxFooter {
+    display: block;
+    margin-top: 10px;
+}
+
+.loginBox {
+    width: 95%;
+    display: table;
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.loginBox .toolNavigationItem {
+    float: none;
+}
+
+.loginBox .toolContentBox {
+    width: 450px;
+    position: relative;
+    margin: 10px auto;
+}
+
+.loginBox .valuePairKey {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+
+.loginBox div.toolContentBox .boxLegend {
+    display: inline;
+}
+
+.loginBox div.toolInfoRight {
+    width: 100%;
+    max-width: 100%;
+}
+
+.loginBox div.toolInfoRight {
+    float: none;
+    width: 500px;
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 500px;
+}
+
+.loginBox .toolInfoRightContent {
+padding-right: 20px;
+    margin: 10px 20px 2px 20px;
+}
+
+.loginBox .contentItemContainer {
+    margin: 5px;
+    text-align: center;
+}
+
+.loginBox .valuePairValue {
+    white-space: nowrap;
+}
+
+.loginBox .toolNavigationContainer {
+    text-align: center;
+}
+
+
+
+
+/*                                          USER DEFIN */
+
+.alignRight {
+    text-align: right;
+}
+
+.alignLeft {
+    text-align: left;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+.alignJustify {
+    text-align: justify;
+}
+
+
+
+/*                                          MISC STUFF */
+
+.copyright {
+    clear: both;
+    padding-top: 3px;
+}
+
+span.fieldRequiredMarker {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+span.fieldErrorMarker {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.searchHelpLogout {
+    float: right;
+    padding: 6px 15px 2px 0px;
+}
+
+.desktopNoWrap {
+        white-space: nowrap;
+        font-size: 10px;
+}
+
+.desktopHyperlinkText {
+        font-size: 10px;
+}
+
+/* TOOL CONTAINER CONTENT */
+
+.contentItemContainer p {
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+
+.contentItemContainer h1 {
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+.contentItemContainer h2 {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.contentItemContainer h3 {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.contentItemContainer h4, .contentItemContainer h5, .contentItemContainer h6 {
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.contentItemContainer ul {
+    list-style-position: outside;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.contentItemContainer ul ul {
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+.contentItemContainer ul ul ul {
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+.contentItemContainer ul ul ul ul {
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+.contentItemContainer ol ol ol ol {
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+.contentItemContainer ol ol ol {
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+.contentItemContainer ol ol {
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+.contentItemContainer ol {
+        list-style-position: outside;
+    margin-top: 10px;
+    margin-left: 55px;
+    margin-bottom: 0px;
+}
+
+.contentItemContainer code {
+    margin-left: 40px;
+    margin-right: 10px;
+    padding: 5px;
+    display: block;
+}
+
+.contentItemContainer ol ul {
+    margin-left: 0px;
+}
+
+.contentItemContainer ul ol {
+    margin-left: 0px;
+}
+
+/* WIKI */
+
+.wikiPage .lastModifiedWiki {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* IFRAME FIX, remove scrollbar */
+
+#ifrm {
+    float: left;
+}
+
+/* FEEDS */
+
+.toolFeeds {
+    float: right;
+    margin: 5px;
+}
+
+.toolFeeds img {
+    margin: 5px;
+}
+
+/* ATTACHMENTS */
+
+span.attachmentItem {
+    white-space: nowrap;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+span.attachmentItem img {
+    vertical-align: middle;
+    padding-right: 3px;
+}
+
+/* Files Action Popup */
+
+.fileActionPopup a, .fileActionPopup a:active, .fileActionPopup a:link, .fileActionPopup a:visited { display: block; padding: 3px 5px; color: black; }
+
+.fileActionPopup a:hover { padding: 3px 5px; background-color: rgb(206,224,236);}
+
+.fileActionPopup span {
+    font-weight: bold;
+    display: block;
+    background-color: rgb(162,195,218);
+    padding: 3px 5px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.contentItemContainer.blueLinks .fileActionPopup a {
+    color: black;
+}
+
+.fileActionPopupShield {
+    visibility: hidden;
+    display: block;
+    position: absolute;
+    z-index: 99998;
+}
+
+.fileActionPopup {
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: white;
+    border: 1px solid black;
+    -moz-border-radius: 2px;
+    width: 320px;
+    padding: 0px 0px;
+    z-index: 99999;
+    display: block;
+}
+
+/* Fixes for file popup in span */
+
+div.tree div span span div span {
+    margin-left: 0px;
+}
+
+div.tree div span span div:hover {
+    background-color: white;
+
+}
+
+
+
+
+/* Feeds */
+
+.feedImage {
+    float: none;
+    position: absolute;
+    top: 53px;
+    z-index: 9999;
+    right: 5px;
+}
+
+.feedDescription {
+    font-style: italic;
+    color: gray;
+}
+
+/* Mouse cell highlight */
+
+.reserved {
+display: block;
+vertical-align: middle;
+}
+
+.listingValue .reserved {
+display: block;
+}
+
+/* FCKEditor */
+
+#content___Frame {
+	width: 100%;
+	height: 500px;
+}
+
+/* Controls */
+
+.controlImages {
+    white-space: nowrap;
+}
+
+.controlImages img {
+    padding-right: 3px;
+}
+
+.controlImage {
+    padding-right: 3px;
+}
+
+/* Help */
+
+.helpBox {
+	position: absolute;
+	right: 10px;
+	z-index: 99999;
+    background-color: black; /*shadow color*/
+        -moz-border-radius-bottomleft: 4px;
+        -moz-border-radius-bottomright: 4px;
+	visibility: hidden;
+	filter: alpha(opacity=92) progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color='black', Positive='false');
+}
+
+.helpTopic {
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+	padding: 3px;
+	padding-left: 5px;
+	border-bottom: 1px solid black;
+	background-color: rgb(162,195,218);
+}
+
+.helpClose {
+	float: none;
+	border-left: 1px solid white;
+	border-top: 1px solid white;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	width: 8px;
+	display: block;
+	height: 8px;
+	background-color: rgb(206,224,236);
+	position: absolute;
+	right: 10px;
+	top: 8px;
+}
+
+.helpContainer {
+    padding: 10px 10px;
+}
+
+/* Hidden from IE/Win */
+div[class~=helpBoxInner] {
+	position: relative;
+	right: 4px;
+	bottom: 4px;
+}
+
+.helpBoxInner {
+	position: relative;
+        -moz-border-radius-bottomleft: 4px;
+        -moz-border-radius-bottomright: 4px;
+    background-color: #ffffff; /*background color of content*/
+    border: 1px solid #000000; /*border color*/
+}
+
+.helpContainer iframe {
+	border: 0px;
+}
+
+/* AJAX based info box */
+
+div.kvPopupBox {
+	width: 300px;
+	font-size: 12px;
+	padding: 10px;
+}
+
+.mceEditor {
+    width: 100%;
+}
+
+.browsePageItem {
+	padding-left: 4px;
+	padding-right: 4px;
+	margin: 2px;
+}
+
+#toc_header {
+    color: #666;
+}
+
+.sh_switch_block {
+    margin: 10px;
+    margin-top: 0px;
+    padding: 10px;
+    padding-top: 10px;
+    border: 1px dashed black;
+    background: #f0f0f0;
+}
+
+.sh_switch_open, .sh_switch_close {
+    font-size: 12px;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.toc_entry {
+    padding: 3px;
+}
+.toc_level_1 {
+    margin-left: 0px;
+}
+.toc_level_2 {
+    margin-left: 20px;
+}
+.toc_level_3 {
+    margin-left: 40px;
+}
+.toc_level_4 {
+    margin-left: 60px;
+}
+.toc_level_5 {
+    margin-left: 80px;
+}
+.toc_level_6 {
+    margin-left: 100px;
+}
+.toc_level_x {
+    margin-left: 120px;
+}
+
+/* WIKI icons */
+
+a.linkBar.pages_alphabetically {
+background: url("/images/theme/default/wiki/sort.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+a.linkBar.latest_pages {
+background: url("/images/theme/default/wiki/pages.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+a.linkBar.version_changes {
+background: url("/images/theme/default/wiki/versions.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+a.linkBar.change_history {
+background: url("/images/theme/default/wiki/history.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+a.linkBar.printable_page {
+background: url("/images/theme/default/wiki/printer.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+a.linkBar.printable_commented_page {
+background: url("/images/theme/default/wiki/printer.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+a.linkBar.unlock_page {
+background: url("/images/theme/default/wiki/unlock.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+a.linkBar.lock_page {
+background: url("/images/theme/default/wiki/lock.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+a.linkBar.add_page_to_summary {
+background: url("/images/theme/default/wiki/add_summary.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+a.linkBar.remove_page_from_summary {
+background: url("/images/theme/default/wiki/remove_summary.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+a.linkBar.remove_page {
+background: url("/images/theme/default/wiki/delete.gif") no-repeat;
+padding-left: 25px;
+padding-top: 3px;
+}
+
+.attachment_image_preview {
+    max-width: 250px;
+}
+
+/* Printable page styling added by Teemu on 10.6.2009 */
+
+.action_wiki_popup.action_wiki_popup_task_printable_page div.toolContentBox, .action_wiki_popup.action_wiki_popup_task_printable_commented_page div.toolContentBox  {
+padding: 0px;
+border: 0px;
+margin: 0px;
+}
+
+.action_wiki_popup.action_wiki_popup_task_printable_page div.toolContentBox span.boxLegend, .action_wiki_popup.action_wiki_popup_task_printable_commented_page div.toolContentBox span.boxLegend {
+border: 0px;
+background: white;
+color: black !important;
+font-size: 22px;
+text-transform: none;
+text-align: left;
+display: block;
+}
+
+body.action_wiki_popup.action_wiki_popup_task_printable_page, body.action_wiki_popup.action_wiki_popup_task_printable_commented_page {
+background-color: white !important;
+background-image: none !important;
+}
+
+.action_wiki_popup.action_wiki_popup_task_printable_page .content, .action_wiki_popup.action_wiki_popup_task_printable_commented_page .content {
+width: 95%;
+padding: 0px;
+border: 0px;
+background: white;
+}
+
+.action_wiki_popup.action_wiki_popup_task_printable_page .footer, .action_wiki_popup.action_wiki_popup_task_printable_commented_page .footer {
+display: none;
+}
+
+.action_wiki_popup.action_wiki_popup_task_printable_page .contentItemContainer h1, .action_wiki_popup.action_wiki_popup_task_printable_page .contentItemContainer h2, .action_wiki_popup.action_wiki_popup_task_printable_page .contentItemContainer h3,
+.action_wiki_popup.action_wiki_popup_task_printable_commented_page .contentItemContainer h1, .action_wiki_popup.action_wiki_popup_task_printable_commented_page .contentItemContainer h2, .action_wiki_popup.action_wiki_popup_task_printable_commented_page .contentItemContainer h3 {
+color: black !important;
+}
+
+#remember_me_container {
+  float: right;
+  width: 120px;
+}
+
+#remember_me_checkbox_container {
+  display: block;
+  margin-top: 5px;
+  float: left;
+  width: 30px;
+  text-align: center;
+}
+
+#remember_me_text_container {
+  display: block;
+  float: left;
+  width: 90px;
+  font-size: 10px;
+}
+
+.loginLink {
+  display: block;
+  float: left;
+  clear: none;
+}
+
+/* slider styles, copied from dijit.css and tundra.css */
+.dijitSliderMoveable {
+	z-index:99;
+	position:absolute !important;
+	display:block;
+	vertical-align:middle;
+}
+
+.dijitSliderMoveableH {
+	right:0;
+}
+
+.dijit_a11y div.dijitSliderImageHandle,
+.dijitSliderImageHandle {
+	margin:0;
+	padding:0;
+	position:absolute !important;
+	border:8px solid gray;
+	width:0;
+	height:0;
+}
+.dijit_a11y .dijitSliderFocused .dijitSliderImageHandle {
+	border:4px solid #000;
+	height:8px;
+	width:8px;
+}
+
+.dijitSliderImageHandleV {
+	top:-8px;
+	left:-6px;
+}
+
+.dijitSliderImageHandleH {
+	left:-8px;
+	top:-5px;
+	vertical-align:top;
+}
+
+.dijitSliderBar {
+	border-style:solid;
+	border-color:black;
+}
+
+.dijitSliderBarContainerV {
+	position:relative;
+	height:100%;
+	z-index:1;
+}
+
+.dijitSliderBarContainerH {
+	position:relative;
+	z-index:1;
+}
+
+.dijitSliderBarH {
+	height:4px;
+	border-width:1px 0;
+}
+
+.dijitSliderBarV {
+	width:4px;
+	border-width:0 1px;
+}
+
+.dijitSliderProgressBar {
+	background-color:red;
+	z-index:1;
+}
+
+.dijitSliderProgressBarV {
+	position:static !important;
+	height:0%;
+	vertical-align:top;
+	text-align:left;
+}
+
+.dijitSliderProgressBarH {
+	position:absolute !important;
+	width:0%;
+	vertical-align:middle;
+	overflow:visible;
+}
+
+.dijitSliderRemainingBar {
+	overflow:hidden;
+	background-color:transparent;
+	z-index:1;
+}
+
+.dijitSliderRemainingBarV {
+	height:100%;
+	text-align:left;
+}
+
+.dijitSliderRemainingBarH {
+	width:100% !important;
+}
+
+/* the slider bumper is the space consumed by the slider handle when it hangs over an edge */
+.dijitSliderBumper {
+	overflow:hidden;
+	z-index:1;
+}
+
+.dijitSliderBumperV {
+	width:4px;
+	height:8px;
+	border-width:0 1px;
+}
+
+.dijitSliderBumperH {
+	width:8px;
+	height:4px;
+	border-width:1px 0;
+}
+
+.dijitSliderBottomBumper,
+.dijitSliderLeftBumper {
+	background-color:red;
+}
+
+.dijitSliderTopBumper,
+.dijitSliderRightBumper {
+	background-color:transparent;
+}
+
+.dijitSliderDecorationH {
+	text-align:center;
+}
+
+.dijitSlider .dijitSliderButton {
+	font-family:monospace;
+	margin:0;
+	padding:0;
+	display:block;
+}
+
+.dijit_a11y .dijitSliderButtonInner {
+	visibility:visible !important;
+}
+
+.dijitSliderButtonContainer {
+	text-align:center;
+	height:0;
+}
+
+.dijitSlider .dijitButtonNode {
+	padding:0;
+	display:block;
+}
+
+.dijitRuleContainer {
+	position:relative;
+	overflow:visible;
+}
+
+.dijitRuleContainerV {
+	height:100%;
+	line-height:0;
+	float:left;
+	text-align:left;
+}
+
+.dj_opera .dijitRuleContainerV {
+	line-height:2%;
+}
+
+.dj_ie .dijitRuleContainerV {
+	line-height:normal;
+}
+
+.dj_gecko .dijitRuleContainerV {
+	margin:0 0 1px 0; /* mozilla bug workaround for float:left,height:100% block elements */
+}
+
+.dijitRuleMark {
+	position:absolute;
+	border:1px solid black;
+	line-height:0;
+	height:100%;
+}
+
+.dijitRuleMarkH {
+	width:0;
+	border-top-width:0 !important;
+	border-bottom-width:0 !important;
+	border-left-width:0 !important;
+}
+
+.dijitRuleLabelContainer {
+	position:absolute;
+}
+
+.dijitRuleLabelContainerH {
+	text-align:center;
+	display:inline-block;
+}
+
+.dijitRuleLabelH {
+	position:relative;
+	left:-50%;
+}
+
+.dijitRuleMarkV {
+	height:0;
+	border-right-width:0 !important;
+	border-bottom-width:0 !important;
+	border-left-width:0 !important;
+	width:100%;
+	left:0;
+}
+
+.dj_ie .dijitRuleLabelContainerV {
+	margin-top:-.55em;
+}
+
+
+.dijitSliderProgressBarH {
+	border-color: #aab0bb;
+	background: #c0c2c5 url("/images/theme/default/slider/sliderFull.png") repeat-x top left;
+}
+.dijitSliderProgressBarV {
+	border-color: #aab0bb;
+	background: #c0c2c5 url("/images/theme/default/slider/sliderFullVertical.png") repeat-y bottom left;
+}
+.dijitSliderFocused .dijitSliderProgressBarH,
+.dijitSliderFocused .dijitSliderLeftBumper {
+	background-image:url("/images/theme/default/slider/sliderFullFocus.png");
+}
+.dijitSliderFocused .dijitSliderProgressBarV,
+.dijitSliderFocused .dijitSliderBottomBumper {
+	background-image:url("/images/theme/default/slider/sliderFullVerticalFocus.png");
+}
+.dijitSliderRemainingBarV {
+	border-color: #b4b4b4;
+	background: #dcdcdc url("/images/theme/default/slider/sliderEmptyVertical.png") repeat-y bottom left;
+}
+.dijitSliderRemainingBarH {
+	border-color: #b4b4b4;
+	background: #dcdcdc url("/images/theme/default/slider/sliderEmpty.png") repeat-x top left;
+}
+.dijitSliderBar {
+	border-style: solid;
+	outline:1px;
+}
+.dijitSliderFocused .dijitSliderBar {
+	border-color:#888;	
+}
+.dijit_a11y .dijitSliderProgressBar {
+	background-color:#888 !important;
+}
+.dijitSliderImageHandleH {
+	border:0px;
+	width:16px;
+	height:16px;
+	background:url("/images/theme/default/slider/preciseSliderThumb.png") no-repeat center top;
+	cursor:pointer;
+}
+.dijitSliderFocused .dijitSliderImageHandleH {
+	background-image:url("/images/theme/default/slider/preciseSliderThumbFocus.png");
+	#background-image:url("/images/theme/default/slider/preciseSliderThumbFocus.gif");
+}
+.dj_ie6 .tundra .dijitSliderImageHandleH {
+	background-image:url("/images/theme/default/slider/preciseSliderThumb.gif");
+}
+.dijitSliderLeftBumper {
+	border-left-width: 1px;
+	border-color: #aab0bb;
+	background: #c0c2c5 url("/images/theme/default/slider/sliderFull.png") repeat-x top left;
+}
+.dijitSliderRightBumper {
+	background: #dcdcdc url("/images/theme/default/slider/sliderEmpty.png") repeat-x top left;
+	border-color: #b4b4b4;
+	border-right-width: 1px;
+}
+.dijitSliderImageHandleV {
+	border:0px;
+	width:16px;
+	height:16px;
+	background:url("/images/theme/default/slider/sliderThumb.png") no-repeat center center;
+	cursor:pointer;
+}
+.dijitSliderFocused .dijitSliderImageHandleV {
+	background-image:url("/images/theme/default/slider/sliderThumbFocus.png");
+}
+.dj_ie6 .tundra .dijitSliderFocused .dijitSliderImageHandleV {
+	background-image:url("/images/theme/default/slider/sliderThumbFocus.gif");
+}
+.dijitSliderBottomBumper {
+	border-bottom-width: 1px;
+	border-color: #aab0bb;
+	background: #c0c2c5 url("/images/theme/default/slider/sliderFullVertical.png") repeat-y bottom left;
+}
+.dijitSliderTopBumper {
+	background: #dcdcdc url("/images/theme/default/slider/sliderEmptyVertical.png") repeat-y top left;
+	border-color: #b4b4b4;
+	border-top-width: 1px;
+}
+.dijitSliderDecrementIconH,
+.dijitSliderDecrementIconV,
+.dijitSliderIncrementIconH,
+.dijitSliderIncrementIconV {
+	cursor: pointer;
+	background-image: url('/images/theme/default/slider/spriteArrows.png');
+	background-repeat: no-repeat;
+	margin: 5px;
+	height: 7px;
+	width: 7px;
+	font-size: 1px;
+}
+.dj_ie6 .tundra .dijitSliderDecrementIconH,
+.dj_ie6 .tundra .dijitSliderDecrementIconV,
+.dj_ie6 .tundra .dijitSliderIncrementIconH,
+.dj_ie6 .tundra .dijitSliderIncrementIconV {
+	background-image: url('/images/theme/default/slider/spriteArrows.gif');
+}
+.dijitSliderDecrementIconH {
+	background-position: -7px 0px;
+}
+.dijitSliderIncrementIconH {
+	background-position: -14px 0px;
+}
+.dijitSliderDecrementIconV {
+	background-position: 0px 0px;
+}
+.dijitSliderIncrementIconV {
+	background-position: -21px 0px;
+}
+.dijitSliderButtonInner {
+	visibility:hidden;
+}
+.dijitSliderDisabled {
+	opacity:0.6 !important;
+}
+.dj_ie .tundra .dijitSliderDisabled,
+.dj_ie .tundra .dijitSliderDisabled .dijitRuleContainer,
+.dj_ie .tundra .dijitSliderDisabled .dijitSliderRemainingBar,
+.dj_ie .tundra .dijitSliderDisabled .dijitSliderProgressBar {
+	filter: gray() alpha(opacity=40);
+}
+.dijitSliderDisabled * {
+	cursor: not-allowed !important;
+}

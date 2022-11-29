@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+
+my @user_ids = (
+    1
+);
+
+use Dicole::Security qw( :target :receiver );
+
+sub execute {
+    die "user ids needed" unless scalar( @user_ids );
+
+    for my $uid ( @user_ids ) {
+
+        # Share profile to world
+        CTX->lookup_object( 'dicole_security' )->new( {
+            target_type => TARGET_USER,
+            target_user_id => $uid,
+            receiver_type => RECEIVER_GLOBAL,
+            collection_id => Dicole::Security->collection_id_by_idstring(
+                'user_profile_viewing'
+            )
+        } )->save;
+    }
+}

@@ -1,0 +1,17 @@
+Changes
+conf/action.ini
+conf/fields.ini
+conf/spops.ini
+conf/tabs.ini
+conf/tool.ini
+doc/dicole_domain_user_manager.pod
+html/images/theme/default/content/toolicons/d_users.gif
+html/images/theme/default/navigation/icons/16x16/d_users_mini.gif
+MANIFEST      This list of files
+MANIFEST.SKIP
+msg/messages-en.po
+msg/messages-fi.po
+OpenInteract2/Action/DicoleDomainUserManager.pm
+OpenInteract2/App/DicoleDomainUserManager.pm
+package.ini
+template/new_user_mail.tmpl

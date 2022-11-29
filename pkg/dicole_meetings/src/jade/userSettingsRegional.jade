@@ -1,0 +1,48 @@
+div.setting-head
+    h3.setting-title
+        i.icon.ico-language
+        !=MTN.t('Regional settings')
+    p.setting-desc!=MTN.t('Choose the language and time zone in which you want to use the service.')
+div.setting-content.m-form
+    div.setting-section
+        h3.setting-sub-title!=MTN.t('Select language')
+        p!=MTN.t('Choose the language you want to use the service with.')
+        p.note!=MTN.t('Note: Your invitations to new meeting participants will be sent using the selected language by default.')
+        p
+            label.inline(for='language')!=MTN.t('Language:')
+                select#language(name='language')
+                    if(user.language === 'en')
+                        option(value='en',selected='selected') English
+                    else
+                        option(value='en') English
+                    if(user.language === 'fi')
+                        option(value='fi',selected='selected') Suomi
+                    else
+                        option(value='fi') Suomi
+                    if(user.language === 'sv')
+                        option(value='sv',selected='selected') Svenska
+                    else
+                        option(value='sv') Svenska
+                    if(user.language === 'nl')
+                        option(value='nl',selected='selected') Nederlands
+                    else
+                        option(value='nl') Nederlands
+                    if(user.language === 'fr')
+                        option(value='fr',selected='selected') Français
+                    else
+                        option(value='fr') Français
+    div.setting-section
+        h3.setting-sub-title!=MTN.t('Select time zone')
+        p!=MTN.t("After changing your time zone, we will automatically display all your meeting times according to your new setting.")
+        label(for='timezone')!=MTN.t('Time zone:')
+            select#timezone(name='timezone',class='chosen timezone-select')
+                each tz in dicole.get_global_variable('meetings_time_zone_data')['choices']
+                    if(user.time_zone == tz)
+                        option(value=tz,selected='selected')=dicole.get_global_variable('meetings_time_zone_data')['data'][tz].readable_name
+                    else
+                        option(value=tz)=dicole.get_global_variable('meetings_time_zone_data')['data'][tz].readable_name
+        p!=MTN.t('Current time in the selected time zone: ')
+            span#js_timezone_preview=moment().utc().add('seconds', user.time_zone_offset).format('HH:mm dddd')
+div.setting-footer
+    a.button.blue.save-regional
+        span.label!=MTN.t('Save')

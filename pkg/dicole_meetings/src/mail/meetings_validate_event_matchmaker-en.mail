@@ -1,0 +1,24 @@
+[% MTN.t('Confirm registration for matchmaking') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Hi %1$s,'[user_name ]) %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<bubble>>>
+
+<<<p>>>[% MTN.t('To complete your registration for matchmaking,  follow the link below.') %]<<</p>>>
+[% url = login_url _ '&utm_source=matchmaking&utm_medium=email&utm_campaign=validate_event_matchmaker' %]
+[% text = MTN.t('Complete registration') %]
+<<<blue_button>>>
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

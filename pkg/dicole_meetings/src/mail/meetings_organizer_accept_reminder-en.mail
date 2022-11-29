@@ -1,0 +1,43 @@
+[% meeting_title %]: [% MTN.t("%1\$s's RSVP missing",[invited_user_name ]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Missing RSVP for') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>
+
+[% inviter_text = invited_user_name %]
+[% IF not_inviter %]
+[% inviter_text = inviter_text _ ' (invited by' _ inviting_user _ ')' %]
+[% END %]
+[% MTN.t("It's been three days but %1\$s has not told if they are coming to your meeting.",[inviter_text]) %]
+
+[% IF invited_user_name == invited_user_address %]
+[% MTN.t('Are you sure this is the correct email address?') %]
+[% ELSE %]
+[% MTN.t('The invite was sent to %(B$%1$s%) - are you sure this is the correct email address?',[invited_user_address]) %]
+[% END %]
+[% MTN.t('If not, you can resend the invite on the meeting page') %].
+
+<<</p>>>
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=org_accept_reminder' %]
+[% text = MTN.t('View meeting') %]
+<<<blue_button>>>
+
+<<<p>>>[% MTN.t('Occasionally the emails also get stuck in spam filters and contacting personally is the best way to reach someone.') %]<<</p>>>
+
+<<</bubble>>><<<br>>>
+
+<<<hr>>>
+
+[% tip = 1 %]
+<<<p>>>
+[% MTN.t('%(B$Tip:%) You can also manage the answers yourself through the icons in the participant list.') %]
+<<</p>>>
+
+<<</html_wrapper>>>

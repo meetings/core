@@ -1,0 +1,16 @@
+[%#- Sent each day if user has been requested an RSVP but none is provided yet. Sending time of day is the same as the invite time or the last answer/proposal change time. -%]
+
+[%- IF test_case == 'test' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Save the Manatees annual expo'
+rsvp_required = 1
+rsvp_required_by = 'Pertti Peräänkuuluttaja'
+meeting_rsvp_yes_url ='http://url-to-the-meeting-page/'
+meeting_rsvp_no_url ='http://url-to-the-meeting-page/'
+meeting_url ='http://url-to-the-meeting-page/'
+meeting_unsubscribe_url = 'http://meeting.gs/getmeoutta_of_this_meeting'
+
+%]
+[%- END -%]

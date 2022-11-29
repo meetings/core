@@ -1,0 +1,591 @@
+
+msgid "Browse pages"
+msgstr "Selaa sivuja"
+
+msgid "Changed by %1"
+msgstr "%1 on muuttanut tätä osiota"
+
+msgid "Create page"
+msgstr "Luo sivu"
+
+msgid "Creating page '%1'"
+msgstr "Luodaan sivua '%1'"
+
+msgid "Wiki"
+msgstr "Wiki"
+
+msgid "Wiki system for collaborative document writing."
+msgstr "Wiki yhteisölliseen kirjoittamiseen."
+
+msgid "Group does not have a starting page!"
+msgstr "Ryhmällä ei ole aloitussivua!"
+
+msgid "Latest pages"
+msgstr "Uusimmat sivut"
+
+msgid "Links on this page"
+msgstr "Linkit tällä sivulla"
+
+msgid "Links to this page"
+msgstr "Linkit tälle sivulle"
+
+msgid "Locked by %1"
+msgstr "%1 on lukinnut tämän osion"
+
+msgid "New page creation"
+msgstr "Uuden sivun luonti"
+
+msgid "None"
+msgstr "Ei mikään"
+
+msgid "Orphaned pages"
+msgstr "Eksyneet sivut"
+
+msgid "Or select page from list:"
+msgstr "Tai valitse sivu listasta:"
+
+msgid "Page already exists!"
+msgstr "Sivu on jo olemassa!"
+
+msgid "Page created!"
+msgstr "Sivu luotu!"
+
+msgid "Pages"
+msgstr "Sivut"
+
+msgid "Pages alphabetically"
+msgstr "Sivut aakkosjärjestyksessä"
+
+msgid "Page selector"
+msgstr "Sivun valitsija"
+
+msgid "Pages linked to starting page"
+msgstr "Aloitussivun kautta löytyvät sivut"
+
+msgid "Select page to use as base:"
+msgstr "Valitse pohjana käytettävä sivu:"
+
+msgid "Sidebar page"
+msgstr "Sivupalkin sivu"
+
+msgid "Structure of wiki"
+msgstr "Wikin rakenne"
+
+msgid "Type page name:"
+msgstr "Kirjoita sivun nimi:"
+
+msgid "Type the name of the page:"
+msgstr "Kirjoita sivun nimi:"
+
+msgid "Wiki page %1"
+msgstr "Wiki sivu %1"
+
+msgid "Starting page"
+msgstr "Aloitussivu"
+
+msgid "Reserving lock.."
+msgstr "Varataan lukkoa.."
+
+msgid "Starting page not yet created."
+msgstr "Aloitussivua ei ole vielä luotu."
+
+msgid "Back"
+msgstr "Takaisin"
+
+msgid "Lock wiki pages"
+msgstr "Lukitse wiki sivu"
+
+msgid "Page you requested does not exist"
+msgstr "Pyytämääsi sivua ei ole olemassa"
+
+msgid "User can read wiki in this group"
+msgstr "Käyttäjä voi lukea ryhmän wikiä"
+
+msgid "Description:"
+msgstr "Kuvaus:"
+
+msgid "History for page %1"
+msgstr "Sivun %1 historia"
+
+msgid "Minor edit"
+msgstr "Vähäinen muutos"
+
+msgid "Time"
+msgstr "Aika"
+
+msgid "Minor"
+msgstr "Vähäinen"
+
+msgid "Creation"
+msgstr "Luonti"
+
+msgid "Change history"
+msgstr "Muutoshistoria"
+
+msgid "Page"
+msgstr "Sivu"
+
+msgid "Edit chapter"
+msgstr "Muokkaa kappaletta"
+
+msgid "Edit text"
+msgstr "Muokkaa"
+
+msgid "Are you sure you want to cancel editing and lose all the changes you have made?"
+msgstr "Oletko varma, että haluat keskeyttää muokkaamisen ja menettää kaikki tekemäsi muutokset?"
+
+msgid "Cancel editing"
+msgstr "Keskeytä muokkaaminen"
+
+msgid "Continue editing"
+msgstr "Jatka muokkaamista"
+
+msgid "Could not parse file:"
+msgstr "Tiedoston lukeminen epäonnistui:"
+
+msgid "Created pages:"
+msgstr "Seuraavat sivut luotiin onnistuneesti:"
+
+msgid "Import pages"
+msgstr "Tuo sivuja tiedostosta"
+
+msgid "Some pages already existed:"
+msgstr "Joitakin sivuja oli jo olemassa:"
+
+msgid "You should type a short description of the changes you have made in the text area below. This way other people can get a quick overview of recent changes. If you have made only small changes of which others require no notification (like fixed a typing error) you can just check the \"Minor edit\" checkbox."
+msgstr "Jotta muut käyttäjät saisivat nopeasti kuvan siitä mitä muokkauksia olet sivuun tehnyt, tulisi sinun kuvata tekemäsi muokkaukset lyhyesti alla olevaan tekstialueeseen. Mikäli olet tehnyt vain pieniä muutoksia, joista muut eivät tarvitse ilmoitusta (kuten korjannut kirjoitusvirheen) voit sen sijaan valita kohdan \"Vähäinen muutos\"."
+
+msgid "No changes found."
+msgstr "Muutoksia ei ole saatavilla."
+
+msgid "Changes for page %1"
+msgstr "Muutokset sivulla %1"
+
+msgid "Page actions"
+msgstr "Sivun toiminnot"
+
+msgid "Show changes"
+msgstr "Näytä muutokset"
+
+msgid "Locked by you"
+msgstr "Olet lukinnut tämän osion"
+
+msgid "Printable page"
+msgstr "Tulostettava sivu"
+
+msgid "Resume interrupted editing"
+msgstr "Jatka keskeytynyttä muokkausta"
+
+msgid "No header (top of the page)"
+msgstr "Ei otsikkoa (sivun alku)"
+
+msgid "Select page header:"
+msgstr "Valitse otsikko sivulta:"
+
+msgid "Contents"
+msgstr "Sisällysluettelo"
+
+msgid "Edit beginning"
+msgstr "Muokkaa alkua"
+
+msgid "Edit whole page"
+msgstr "Muokkaa koko sivua"
+
+msgid "hide"
+msgstr "piilota"
+
+msgid "show"
+msgstr "näytä"
+
+msgid "No page name specified!"
+msgstr "Sivun nimeä ei ole määritelty!"
+
+msgid "Previous changes"
+msgstr "Edelliset muutokset"
+
+msgid "Are you sure that you want to delete the page '%1' and it's version history?"
+msgstr "Oletko varma, että haluat poistaa sivun '%1' ja sen koko versiohistorian?"
+
+msgid "Confirm removing page '%1'"
+msgstr "Vahvista sivun '%1' poistaminen"
+
+msgid "Page '%1' succesfully deleted"
+msgstr "Sivu '%1' poistettiin onnistuneesti"
+
+msgid "Please note that the following pages are currently linking to this page:"
+msgstr "Huomioi, että seuraavat sivut osoittavat tähän sivuun:"
+
+msgid "Yes, I am sure"
+msgstr "Kyllä, olen varma"
+
+msgid "close"
+msgstr "sulje"
+
+msgid "Loading content.."
+msgstr "Ladataan sisältöä.."
+
+msgid "preview"
+msgstr "esikatselu"
+
+msgid "Missing linked pages"
+msgstr "Puuttuvat sivut"
+
+msgid "Search results"
+msgstr "Haun tulokset"
+
+msgid "Search wiki"
+msgstr "Hae"
+
+msgid "Wiki reader"
+msgstr "Wikin lukija"
+
+msgid "Could not save changes because page is locked."
+msgstr "Sivu on lukittu, joten muutoksia ei voitu tallentaa."
+
+msgid "Latest changes in Wiki."
+msgstr "Wikin viimeisimmät muutokset"
+
+msgid "Page is being edited so it could not be locked."
+msgstr "Sivua muokataan parhaillaan, joten sitä ei voitu lukita."
+
+msgid "Page locked."
+msgstr "Sivu lukittu."
+
+msgid "Page unlocked."
+msgstr "Sivun lukitus poistettu."
+
+msgid "Add page to summary"
+msgstr "Lisää sivu yhteenvetoon"
+
+msgid "Bring pages to summary"
+msgstr "Tuo sivuja yhteenvetoon"
+
+msgid "Page added to summary."
+msgstr "Sivu lisätty yhteenvetoon."
+
+msgid "Page removed from summary."
+msgstr "Sivu poistettu yhteenvedosta."
+
+msgid "Remove page from summary"
+msgstr "Poista sivu yhteenvedosta"
+
+msgid "User can manage summary wiki pages"
+msgstr "Käyttäjä voi hallita yhteenvedossa näkyviä wikin sivuja"
+
+msgid "This page needs content! You can add text, pictures and other interesting stuff by clicking %1 on the right."
+msgstr "Tämä tyhjä sivu kaipaa sisältöä! Voit lisätä tekstiä, kuvia tai muuta mielenkiintoista klikkaamalla %1 oikealta."
+
+msgid "You have not saved or cancelled the edit and the part you were editing is still locked. If you continue others can not edit the part until your lock expires."
+msgstr "Et ole tallentanut tai peruuttanut muokkaustasi ja muokkaamasi osa on edelleen lukittu. Mikäli jatkat pois sivulta muut eivät voi muokata osaa ennen kuin lukko erääntyy."
+
+msgid "Version changes"
+msgstr "Versioiden muutokset"
+
+msgid "Updates in wiki"
+msgstr "Päivitykset wikissä"
+
+msgid "No pages matched your search"
+msgstr "Yksikään sivu ei vastannut hakuasi"
+
+msgid "Wiki latest changes summary"
+msgstr "Wikin viimeisimpien muutosten yhteenveto"
+
+msgid "Could not revert since the page is locked."
+msgstr "Versiota ei voitu palauttaa, sillä sivu on lukittu"
+
+msgid "Revert failed because the page is currenty being edited."
+msgstr "Sivua ei voitu palauttaa, sillä joku muokkaa sivua parhaillaan."
+
+msgid "Revert succesful"
+msgstr "Sivun palautus onnistui"
+
+msgid "Revert to this version"
+msgstr "Palauta sivu tähän versioon"
+
+msgid "( version %1 )"
+msgstr "( versio %1 )"
+
+msgid "Revert"
+msgstr "Palautus"
+
+msgid "Next version"
+msgstr "Seuraava versio"
+
+msgid "Page change history"
+msgstr "Sivun muutoshistoria"
+
+msgid "Previous version"
+msgstr "Edellinen versio"
+
+msgid "No attachments."
+msgstr "Ei liitetiedostoja."
+
+msgid "No tags yet."
+msgstr "Ei vielä avainsanoja."
+
+msgid "Page info"
+msgstr "Sivun tietoja"
+
+msgid "Pages by tag %1"
+msgstr "Sivut avainsanalla %1"
+
+msgid "Page tags"
+msgstr "Sivun avainsanat"
+
+msgid "Info for page %1"
+msgstr "Sivun %1 tiedot"
+
+msgid "Add Attachment"
+msgstr "Lisää liite"
+
+msgid "Attachments updated"
+msgstr "Liitteet päivitetty"
+
+msgid "Descrption: "
+msgstr "Kuvaus: "
+
+msgid "Information about this page"
+msgstr "Sivun tietoja"
+
+msgid "Minor edit: "
+msgstr "Pieni muutos: "
+
+msgid "Pages by tag"
+msgstr "Sivut avainsanalla"
+
+msgid "Settings of wikipage:"
+msgstr "Wikisivun asetukset:"
+
+msgid "Contributors"
+msgstr "Tekijät"
+
+msgid "Edit info for page %1"
+msgstr "Muokkaa sivun tietoja %1"
+
+msgid "(empty description will automatically result in a minor edit)"
+msgstr "(tyhjä kuvaus merkitään automaattisesti vähäiseksi)"
+
+msgid "Disable comments"
+msgstr "Piilota kommentit"
+
+msgid "Disable page comments"
+msgstr "Sivukohtainen kommenttien piilotus"
+
+msgid "Enable comments"
+msgstr "Palauta kommentit"
+
+msgid "Page comments disabled."
+msgstr "Sivun kommentit piilotettu."
+
+msgid "Page comments enabled."
+msgstr "Sivun kommentit palautettu."
+
+msgid "Remove any page attachments"
+msgstr "Kaikkien sivun liitteiden poistaminen"
+
+msgid "Remove comments"
+msgstr "Kommenttien poistaminen"
+
+msgid "User can enable and disable individual page comments"
+msgstr "Käyttäjä voi piilottaa ja palauttaa yksittäisten sivujen kommentoinnin"
+
+msgid "User can remove any wiki page attachments in this group"
+msgstr "Käyttäjä voi poistaa minkä tahansa sivun liitetiedostoja riippumatta lähettäjästä"
+
+msgid "User can remove comments to any wiki page"
+msgstr "Käyttäjä voi poistaa sivun kommentteja kirjoittajasta riippumatta"
+
+msgid "User can write comments to any wiki page"
+msgstr "Käyttäjä voi kommentoida wikisivuja"
+
+msgid "Wiki commenting"
+msgstr "Wikin kommentointi"
+
+msgid "Write comments"
+msgstr "Kommenttien kirjoitus"
+
+msgid "Choose"
+msgstr "Valitse"
+
+msgid "Loading..."
+msgstr "Ladataan..."
+
+msgid "Show comments"
+msgstr "Näytä kommentit"
+
+msgid "Support"
+msgstr "Kannata"
+
+msgid "support(s)"
+msgstr "kannatus(ta)"
+
+msgid "Unsupport"
+msgstr "Poista kannatus"
+
+msgid "Write your comment here"
+msgstr "Kirjoita kommenttisi tähän"
+
+msgid "You can only comment uncommented sections within a paragraph."
+msgstr "Voit kommentoida vain kommentoimattomia osia yhden kappaleen sisältä."
+
+msgid "Remove annotations"
+msgstr "Poista annotointeja"
+
+msgid "User can remove annotations on any wiki page"
+msgstr "Käyttäjä voi poistaa annotointeja wikisivuilta"
+
+msgid "User can write annotations to any wiki page"
+msgstr "Käyttäjä voi kirjoittaa annotointeja wikisivuille"
+
+msgid "Wiki annotating"
+msgstr "Wikin annotoiminen"
+
+msgid "Write annotations"
+msgstr "Kirjoita annotointeja"
+
+msgid "Comment (action)"
+msgstr "Lisää kommentti"
+
+msgid "%1 support(s) (by %2)"
+msgstr "%1 kannatus(ta) (%2)"
+
+msgid "Comments to marked sections"
+msgstr "Kommentit merkittyihin osiin"
+
+msgid "Comments to the whole page"
+msgstr "Kommentit koko sivuun"
+
+msgid "Disable annotations"
+msgstr "Piilota annotointi"
+
+msgid "Enable annotations"
+msgstr "Mahdollista annotointi"
+
+msgid "Page annotations disabled."
+msgstr "Sivun annotointi piilotettu."
+
+msgid "Page annotations enabled."
+msgstr "Sivun annotointi mahdollistettu."
+
+msgid "Printable page with comments"
+msgstr "Tulostettava sivu kommenteilla"
+
+msgid "support"
+msgstr "kannatus"
+
+msgid "supports"
+msgstr "kannatusta"
+
+msgid "Are you sure you want to remove this comment?"
+msgstr "Oletko varma, että haluat poistaa kommentin?"
+
+msgid "Browse page versions"
+msgstr "Selaa sivun versioita"
+
+msgid "User can see older versions of pages"
+msgstr "Käyttäjä näkee sivujen aikaisemmat versiot"
+
+msgid "Yes, remove the comment"
+msgstr "Kyllä, poista kommentti"
+
+msgid "New page name:"
+msgstr "Sivun uusi nimi:"
+
+msgid "Renaming page '%1'"
+msgstr "Uudelleennimetään sivua '%1'"
+
+msgid "Rename page"
+msgstr "Vaihda sivun nimeä"
+
+msgid "%1 (wiki front page title)"
+msgstr "%1"
+
+msgid "Wiki starting page in summary"
+msgstr "Wikin aloitussivu yhteenvedossa"
+
+msgid "The wiki starting page is currently empty. You can add content to the starting page by entering the wiki tool from the top navigation."
+msgstr "Wikin aloitussivu on tällä hetkellä tyhjä. Voit lisätä sille sisältöä siirtymällä wiki-työkaluun ylänavigaatiosta."
+
+msgid "Configure wiki"
+msgstr "Wikin asetusten määritys"
+
+msgid "Create wiki pages"
+msgstr "Luo wikisivuja"
+
+msgid "Creator"
+msgstr "Luoja"
+
+msgid "Deny wiki moderation"
+msgstr "Poista wikisivujen muokkaus käytöstä"
+
+msgid "Deny wiki use"
+msgstr "Poista wikin käyttöoikeus"
+
+msgid "Edit wiki pages"
+msgstr "Muokkaa wikisivuja"
+
+msgid "Last modified"
+msgstr "Viimeksi muokattu"
+
+msgid "Limit feed access by IP addresses (each on a separate line)"
+msgstr "Rajoita syötteen käyttö IP osoitteiden mukaan (yksi per rivi)"
+
+msgid "Lock page"
+msgstr "Lukitse sivu"
+
+msgid "No pages found."
+msgstr "Sivuja ei löytynyt."
+
+msgid "Read wiki"
+msgstr "Lue wikiä"
+
+msgid "Remove page"
+msgstr "Poista sivu"
+
+msgid "Remove wiki pages"
+msgstr "Poista wikisivuja"
+
+msgid "Rename"
+msgstr "Uudelleennimeä"
+
+msgid "Requested version does not exists!"
+msgstr "Pyydettyä versiota ei ole olemassa!"
+
+msgid "Show current page"
+msgstr "Näytä nykyinen sivu"
+
+msgid "Unlock page"
+msgstr "Poista sivun lukitus"
+
+msgid "User can configure wiki tool in this group"
+msgstr "Käyttäjä voi muokata wiki-työkalua tässä ryhmässä"
+
+msgid "User can create wiki pages in this group"
+msgstr "Käyttäjä voi luoda wikisivuja tässä ryhmässä"
+
+msgid "User can edit wiki pages in this group"
+msgstr "Käyttäjä voi muokata wikisivuja tässä ryhmässä"
+
+msgid "User can lock and unlock wiki pages in this group"
+msgstr "Käyttäjä voi lukita ja vapauttaa wikisivuja tässä ryhmässä"
+
+msgid "User can remove wiki pages in this group"
+msgstr "Käyttäjä voi poistaa wikisivuja tässä ryhmässä"
+
+msgid "Wiki moderator"
+msgstr "Wikin ylläpitäjä"
+
+msgid "Wiki rights"
+msgstr "Wikin oikeudet"
+
+msgid "Wiki user"
+msgstr "Wikin käyttäjä"
+
+msgid "Wiki summaries separately"
+msgstr "Wikin yhteenvetosivut itsekseen"
+
+msgid "Wiki summary pages separately without icon."
+msgstr "Wikin yhteenvetosivut itsekseen ilman ikonia."
+
+msgid "Show annotations by default"
+msgstr "Sivujen annotointi oletusarvoisesti päällä"

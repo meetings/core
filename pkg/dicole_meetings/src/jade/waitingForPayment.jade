@@ -1,0 +1,11 @@
+div#sell-subscription.m-modal
+    div.modal-header
+        h3!=MTN.t('Waiting for transaction')
+    div.modal-content
+        p!=MTN.t('A new window will now open where you can complete the transaction and activate Meetin.gs PRO subscription.')
+        p!=MTN.t('If the window does not open in a short while, please click the link below:')
+        p
+            a.paypal-link(href=upgrade_url,target='_blank')!=MTN.t('Pay now')
+    div.modal-footer 
+        div.buttons.right
+            a(href='#').button.gray.cancel-payment!=MTN.t('Cancel payment')

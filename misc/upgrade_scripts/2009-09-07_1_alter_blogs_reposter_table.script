@@ -1,0 +1,9 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_blogs_reposter add show_source tinyint unsigned not null after append_title');
+}
+
+1;

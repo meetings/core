@@ -1,0 +1,44 @@
+#!/bin/bash
+
+if [$(grep 'alias cdm' /root/.bashrc) eq ""]
+then
+    echo ""
+    echo " ** Installing common aliases"
+    echo ""
+    echo 'alias cds="`d gs`"' >> /root/.bashrc
+    echo 'alias cdi="`d gi`"' >> /root/.bashrc
+    echo 'alias cdm="`d gs`/pkg/dicole_meetings"' >> /root/.bashrc
+    echo 'alias mmeets="node `d gs`/pkg/dicole_meetings/script/templatizer.js && sass --style compressed `d gs`/pkg/dicole_meetings/html/scss/meetings.scss `d gs`/pkg/dicole_meetings/html/css/meetings/main.css && d s meetings"' >> /root/.bashrc
+else
+    echo ""
+    echo " ** Not installing common aliases because they seem to already exist"
+    echo ""
+fi
+
+echo ""
+echo " ** Installing dojo bundle generation prerequisites"
+echo ""
+
+apt-get install -y default-jre-headless
+`d gs`
+cd pkg/dicole_dojo
+script/fetch_dojo_source.sh
+cd ../..
+
+echo ""
+echo " ** Installing Node template processing and SASS prerequisites"
+echo ""
+
+# todo
+
+echo ""
+echo " ** Installing tools to manage translations"
+echo ""
+
+apt-get install -y gettext python-pip
+pip install transifex-client
+
+echo ""
+echo " ** Root development environment installed"
+echo ""
+

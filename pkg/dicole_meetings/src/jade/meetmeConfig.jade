@@ -1,0 +1,328 @@
+div#meetme-config.meetme-setup
+    div.buttons
+        if(Modernizr.localstorage)
+            a.button.blue.preview!=MTN.t('Preview')
+        a.button.pink.save!=MTN.t('Save')
+        if( ! locals.in_event_flow )
+            a.button.gray.cancel!=MTN.t('Cancel')
+
+    // ------ Basic config -----
+    div(style= locals.in_event_flow ? 'height:0px;overflow:hidden;' : '')
+        h2.divider.fat!=MTN.t('Edit meeting scheduler')
+        div.section.basic-config
+            div.info.m-form
+                input.matchmaker-name(disabled=matchmaker.disable_title_edit ? true : false, type="text", placeholder!=MTN.t('Meeting scheduler name'), value=matchmaker.name || MTN.t('Meeting with %1$s', { params : [ user.name ]}) ))
+            div.type.m-form
+                div.type-change
+                    i(class=app.meetme_types[(matchmaker.meeting_type || 0)].icon_class)
+                    input.meeting-type(type='hidden',value=(matchmaker.meeting_type || 0))
+                    span.text!=MTN.t('Change')
+                label
+                    input.meetme-hidden(type='checkbox',checked=( matchmaker.meetme_hidden ? 'checked' : undefined) )
+                    !=MTN.t('Hide from the public cover page')
+                label
+                    input.toggle-direct-url(type='checkbox',checked=( matchmaker.direct_link_enabled ? 'checked' : undefined) )
+                    !=MTN.t('Enable direct link & custom background')
+                label
+                    input#require-verified-user(type='checkbox',checked=( matchmaker.require_verified_user ? 'checked' : undefined) )
+                    !=MTN.t('Ask for email authentication from requesters')
+
+    // ------ Direct link ------
+    - var class_name = ( matchmaker.event_data && matchmaker.event_data.show_youtube_url ) ? 'open2 direct-link-container' : 'open direct-link-container';
+    - var dl_name = locals.in_event_flow
+    div(class=(matchmaker.direct_link_enabled ? class_name : 'direct-link-container'))
+        if( locals.in_event_flow )
+            h2.divider.fat!='Review & press save to complete the registration'
+        else
+            h2.divider!=MTN.t('Direct link')
+        div.section.direct-link
+            if( ! locals.in_event_flow )
+                div.url-container
+                    p URL:
+                        ='https://' + window.location.hostname + '/meet/' + user.meetme_fragment + '/'
+                        span.vanity-url=matchmaker.vanity_url_path
+                        a#copy-url(href='#')!=MTN.t('copy to clipboard')
+
+            div.left
+                p!=MTN.t('Your greeting on the %(B$Meet Me%) page:')
+                div.bubble
+                    textarea#matchmaker-description=matchmaker.description
+                if( matchmaker.event_data && matchmaker.event_data.show_youtube_url )
+                    div.m-form
+                        label!='Video link:'
+                            br
+                            input#video(type='text',value=matchmaker.youtube_url)
+                    p.note.video!='Share your video about company, team, product or services.'
+            if( ! matchmaker.event_data.force_background_image_url )
+                div.right
+                    if ( matchmaker.background_theme === 'c' || matchmaker.background_theme === 'u' )
+                        - var bg_url = matchmaker.background_preview_url || matchmaker.background_image_url;
+                        img.mm-bg-img(src=bg_url)
+                    else
+                        img.mm-bg-img(src=app.meetme_themes[matchmaker.background_theme].image)
+                    div
+                        span.button.blue.bg-change!=MTN.t('Change background')
+
+    // ------ Settings ------
+    h2.divider!=MTN.t('Settings')
+    div.settings
+        div.menu
+            a.menu-item.location.selected(data-target="location")
+                div.wrap
+                    div.centered
+                        i.ico-location
+                        !=MTN.t('Location')
+            a.menu-item.communication(data-target="communication")
+                div.wrap
+                    div.centered
+                        i.ico-teleconf
+                        !=MTN.t('Communication')
+            a.menu-item.calendars(data-target="calendars")
+                div.wrap
+                    div.centered
+                        i.ico-calendar
+                        !=MTN.t('Calendars')
+            a.menu-item.date(data-target="mtn-date-picker")
+                div.wrap
+                    div.centered
+                        i.ico-calendars
+                        !=MTN.t('Date picker')
+            a.menu-item.time(data-target="time")
+                div.wrap
+                    div.centered
+                        i.ico-time
+                        !=MTN.t('Time')
+            a.menu-item.materials(data-target="materials")
+                div.wrap
+                    div.centered
+                        i.ico-material_editabledocument
+                        !=MTN.t('Preset materials')
+                        if( ! ( user.is_pro ||  matchmaker.matchmaking_event_id ) )
+                            span.pro
+
+        div.settings-pages
+            div.page.location(style="display:block;")
+                p.m-form
+                    if( matchmaker.locations_description )
+                        = matchmaker.locations_description
+                    else if( matchmaker.event_data.force_location || matchmaker.disable_location_edit )
+                        !=MTN.t('Meeting location:')
+                        = ' ' + ( matchmaker.event_data.force_location || matchmaker.location )
+                        p.note
+                            i.ico-lock
+                            !=matchmaker.event_data.force_location ? MTN.t('The meeting location is fixed for this event.') : MTN.t('The meeting location can not be changed.')
+                        input#matchmaker-location(type='hidden',value=matchmaker.event_data.force_location || matchmaker.location)
+                    else
+                        !=MTN.t('Default meeting location')
+                        input#matchmaker-location(type='text',value=matchmaker.location)
+            div.page.communication
+                if( matchmaker.disable_tool_edit )
+                    p.note
+                        i.ico-lock
+                        !=MTN.t('The meeting live communication tool can not be changed.')
+                else
+                    div.com-texts
+                        p!=MTN.t('Choose the live communication tool for the scheduler.')
+                        p!=MTN.t('15 minutes before the meeting participants will receive a notification containing instructions and a link to join the meeting remotely.')
+                    div.lctools
+                        a.tool.skype(data-tool-name='skype')
+                            i.ico-skype
+                            !=MTN.t('Skype call')
+                        a.tool.teleconf(data-tool-name='teleconf')
+                            i.ico-teleconf
+                            !=MTN.t('Teleconference')
+                        a.tool.hangout(data-tool-name='hangout')
+                            i.ico-hangout
+                            !=MTN.t('Google Hangouts')
+                            if( ! user.is_pro )
+                                span.pro
+                        a.tool.lync(data-tool-name='lync')
+                            i.ico-lync
+                            !=MTN.t('Microsoft Lync')
+                            if( ! user.is_pro )
+                                span.pro
+                        a.tool.custom(data-tool-name='custom')
+                            i.ico-custom
+                            !=MTN.t('Custom Tool')
+                            if( ! user.is_pro )
+                                span.pro
+                        a.tool.disable
+                            i.ico-cross
+                            !=MTN.t('Disable')
+                    div.configs
+                        div.custom.m-form
+                            P!=MTN.t('Enter a link with instructions for joining the meeting with your custom tool.')
+                            label!=MTN.t('Web address (URL)')
+                                input#com-custom-uri(type='text',value=(matchmaker.online_conferencing_data && matchmaker.online_conferencing_data.custom_uri) ? matchmaker.online_conferencing_data.custom_uri : '',placeholder!=MTN.t('Copy the URL here'))
+                            label!=MTN.t('Name of the tool')
+                                input#com-custom-name(type='text',value=(matchmaker.online_conferencing_data && matchmaker.online_conferencing_data.custom_name) ? matchmaker.online_conferencing_data.custom_name : '',placeholder='')
+                            label!=MTN.t('Tool instructions for participants')
+                            textarea#com-custom-description=(matchmaker.online_conferencing_data && matchmaker.online_conferencing_data.custom_description) ? matchmaker.online_conferencing_data.custom_description : '';
+                        div.hangout.m-form
+                            p!=MTN.t('Hangouts will be enabled for this meeting.')
+                            p.note!=MTN.t('NOTE: You and the participants will receive the Hangouts url before the meeting.')
+                        div.skype.m-form
+                            p!=MTN.t('Type in the Skype account that will be used to receive the calls from the participants.')
+                            label!=MTN.t('Skype account name')
+                                input#com-skype(type='text',value=(matchmaker.online_conferencing_data && matchmaker.online_conferencing_data.skype_account) ? matchmaker.online_conferencing_data.skype_account : user.skype ? user.skype : '',placeholder!=MTN.t('Skype account name'))
+                            p.note!=MTN.t('NOTE: If you are not connected with the participants in Skype, remember to allow incoming calls from anyone using Skype privacy settings.')
+                        div.teleconf.m-form
+                            p!=MTN.t('Enter the teleconference number given by your chosen operator.')
+                            label!=MTN.t('Phone number')
+                                input#com-number(type='text',value=(matchmaker.online_conferencing_data && matchmaker.online_conferencing_data.teleconf_number) ? matchmaker.online_conferencing_data.teleconf_number : '' ,placeholder='e.g. +358 12 345 678')
+                            label!=MTN.t('Pin (optional)')
+                                input#com-pin(type='text',value=(matchmaker.online_conferencing_data && matchmaker.online_conferencing_data.teleconf_pin) ? matchmaker.online_conferencing_data.teleconf_pin : '',placeholder='e.g. 1234')
+                            p.note!=MTN.t('NOTE: If you know your pin code you can preset it here to allow participants to join without having to type the pin when making the call.')
+                        div.lync.m-form
+                            label!=MTN.t('Lync address (SIP)')
+                                input#com-lync(type='text',value=(matchmaker.online_conferencing_data && matchmaker.online_conferencing_data.lync_sip) ? matchmaker.online_conferencing_data.lync_sip : '',placeholder!=MTN.t('Your Lync address'))
+
+
+            div.page.materials
+                p.page-section!=MTN.t('Preset agenda and upload materials for all the meetings that are booked using this scheduler. You will be able to fine-tune each individual meeting before sharing the meeting page with participants.')
+
+
+                div#preset-features-wrap(style=user.is_pro || matchmaker.matchmaking_event_id ? '' : 'display:none;')
+                    //-div.page-section
+                        //-p.m-form
+                            //-label!=MTN.t('Preset meeting title')
+                            //-input#preset-title(type='text',value=matchmaker.preset_title || '')
+                    div.page-section
+                        p.m-form
+                            label!=MTN.t('Preset meeting agenda')
+                            textarea#meetme-agenda.meetme-agenda
+                                =matchmaker.preset_agenda || ( matchmaker.event_data && matchmaker.event_data.default_agenda ? matchmaker.event_data.default_agenda : ''  )
+
+                    if( ! locals.in_event_flow )
+                        div.page-section#preset-materials
+
+                div#preset-features-pitch(style=user.is_pro || matchmaker.matchmaking_event_id ? 'display:none;' : '')
+                    p!=MTN.t('Preset meeting materials are a PRO feature of Meetin.gs.')
+                    if( user.is_free_trial_expired )
+                        p!=MTN.t('Get your Meetin.gs PRO now to start enjoying all the features included in the full suite.')
+                        p
+                            a.button.blue.show-preset-features!=MTN.t('Upgrade now')
+                    else
+                        p!=MTN.t('Start your free 30-day PRO trial to explore all the features included in the full suite.')
+                        p
+                            a.button.blue.show-preset-features!=MTN.t('Start your free trial')
+
+            div.page.calendars
+                div.calendar-options
+                if( ! user.google_connected )
+                    p.info!=MTN.t('Connect your Google Calendar so we can take your calendar into account:')
+                        a(href='#').connect-google
+                if(Modernizr.localstorage)
+                    a.button.blue.preview-calendar!=MTN.t('Preview availability')
+
+            div.page.mtn-date-picker
+                div.timezone
+                    if( matchmaker.event_data.force_time_zone || matchmaker.disable_time_zone_edit )
+                        !=MTN.t('Time zone:')
+                        // TODO:use event timezone if event stilll in future, othewise use current
+                        - var tz = dicole.get_global_variable('meetings_time_zone_data').data[matchmaker.event_data.force_time_zone || matchmaker.time_zone];
+                        if( matchmaker.available_timespans && matchmaker.available_timespans.length && matchmaker.available_timespans[0].start > tz.dst_change_epoch )
+                            = tz.changed_readable_name
+                        else
+                            = tz.readable_name
+                    else
+                        !=MTN.t('Set time zone for the times shown')
+                        select#timezone-select.chosen
+                            - var tz_data =  dicole.get_global_variable('meetings_time_zone_data')
+                            - var current_tz = matchmaker.time_zone || user.time_zone;
+                            each tz, i in tz_data.choices
+                                if( tz === current_tz )
+                                    option(value=tz,selected='selected')=tz_data.data[tz].readable_name
+                                else
+                                    option(value=tz)=tz_data.data[tz].readable_name
+                div.time-spans
+                div.pick-slots
+                    if( locals.in_event_flow )
+                        p!=MTN.t('Highlight the times you want to make available for others to schedule a meeting with you at %1$s:', { params : [ matchmaker.event_data.name ]})
+                    else
+                        p!=MTN.t('People can schedule a meeting with me only between the time slots highlighted below on a weekly basis:')
+                    div.calendar-container
+                        div#btd-cal
+                        if( user.google_connected )
+                            p!=MTN.t('Note: Your Google Calendar will be taken into account to further block out unavailable time slots.')
+
+            div.page.time
+
+                div.demonstrator
+                    div.bg
+                        div.empty-tiles
+                            div.line
+                        div.empty-tiles(style="border-top:none;")
+                            div.line
+                        div.empty-tiles(style="border-top:none;")
+                            div.line
+                        div.empty-tiles(style="border-top:none;")
+                            div.line
+                        div.empty-tiles(style="border-top:none;")
+                            div.line
+                        div.empty-tiles(style="border-top:none;")
+                            div.line
+                        div.empty-tiles(style="border-top:none;")
+                            div.line
+                        div.empty-tiles(style="border-top:none;")
+                            div.line
+                        div.empty-tiles(style="border-top:none;")
+                            div.line
+                        div.empty-tiles(style="border-top:none;")
+                            div.line
+                        div.empty-tiles(style="border-top:none;")
+                            div.line
+                    div.other-meeting.first!=MTN.t('Previous meeting')
+                    div.reserve-pattern(style='height:'+(matchmaker.buffer * (10 / 15))+'px;')
+                    div.meeting#demonstrator_m1(style='height:'+(matchmaker.duration * (10 / 15))+'px;')= matchmaker.duration < 25 ? '' : MTN.t('Meeting') + ' - ' + humanizeDuration( matchmaker.duration * 60 * 1000, dicole.get_global_variable('meetings_lang') )
+                    div.reserve-pattern(style='height:'+((matchmaker.buffer * (10 / 15))+'px;')
+                    div.other-meeting!=MTN.t('Next meeting')
+                div.length
+                    if( matchmaker.event_data.force_duration || matchmaker.disable_duration_edit )
+                        !=MTN.t('Meeting length')+' '
+                        =app.views.current.humanizedTimeFromMinutes(matchmaker.duration)
+                        p.note
+                            i.ico-lock
+                            !=matchmaker.event_data.force_duration ? MTN.t('The meeting length is fixed for this event.') : MTN.t('The meeting length can not be changed.')
+                    else
+                        !=MTN.t('Meeting length')+' '
+                        div.slide-and-indicator
+                            div.indicator.meeting
+                            div#timeslider.noUiSlider
+                        div.value
+                            span.meeting-len=app.views.current.humanizedTimeFromMinutes(matchmaker.duration)
+
+                div.buffer
+                    if( matchmaker.event_data && ( matchmaker.event_data.force_buffer || matchmaker.event_data.force_buffer === 0 ) )
+                        if( matchmaker.event_data.force_buffer !== 0 )
+                            !=MTN.t('Time between meetings')+' '
+                            span.time-container
+                                span.pause-len=app.views.current.humanizedTimeFromMinutes(matchmaker.buffer)
+                    else
+                        !=MTN.t('Reserve time between meetings')+' '
+                        div.slide-and-indicator
+                            div.indicator.pause
+                            div#pauseslider.noUiSlider.gray
+                        div.value
+                            span.pause-len=app.views.current.humanizedTimeFromMinutes(matchmaker.buffer)
+
+                div.planahead
+                    !=MTN.t('Advance notice')
+                    div.slide-and-indicator
+                        div.indicator
+                        div#planaheadslider.noUiSlider.gray
+                    div.value
+                        - var planahead = matchmaker.planning_buffer ? matchmaker.planning_buffer * 1000 : 30 * 60 * 1000;
+                        span.planahead-len=humanizeDuration(planahead, dicole.get_global_variable('meetings_lang') )
+                        - var format_string = moment.lang() === 'en' ? 'dddd D.M h:mm A' : 'dddd D.M HH:mm';
+                    p#planahead_tip.note!=MTN.t('E.g. if booked now, the first available meeting slot would be on %1$s.',[moment().set('minutes',0).add('minutes', Math.ceil( ( matchmaker.planning_buffer / 60 + moment().get('minutes') ) / 30 ) * 30 ).format(format_string) ])
+
+    // ------ Remember! ------
+    if( locals.in_event_flow )
+        div.buttons
+            if(Modernizr.localstorage)
+                a.button.blue.preview!=MTN.t('Preview')
+            a.button.pink.save!=MTN.t('Save')
+            if( ! locals.in_event_flow )
+                a.button.gray.cancel!=MTN.t('Cancel')
+        h2.divider.fat!='Press save to complete the registration'

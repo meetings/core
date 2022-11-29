@@ -1,0 +1,24 @@
+[% # $Id: container_custom.tmpl,v 1.3 2009-01-07 14:42:32 amv Exp $ # -%]
+
+[%- DEFAULT
+	images.default				= '/images'
+    images.theme                = theme_images
+	images.navigation		= images.theme _ '/navigation'
+	images.toolicons			= images.theme _ '/content/toolicons'
+-%]
+
+[%- IF page.wrap_form -%]
+[%- page.form_params.id = page.form_params.name -%]
+<form [% FOREACH form_param = page.form_params %][% IF form_param.key %][% form_param.key %]="[% form_param.value %]" [% END %][% END %]>
+[%- END -%]
+
+[%-
+  FOREACH field = hiddenFields;
+    field.type = 'hidden';
+    PROCESS dicole_base::input_input itemparams = field;
+  END;
+-%]
+
+[%- PROCESS $page.custom_content.template itemparams =  page.custom_content.params -%]
+
+[%- IF page.wrap_form -%]</form>[%- END -%]

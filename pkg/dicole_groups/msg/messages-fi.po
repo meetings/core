@@ -1,0 +1,875 @@
+# $Id: messages-fi.po,v 1.29 2010-07-20 05:51:04 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Sakari Lehtonen <sakari@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:08:12+0000\n"
+"PO-Revision-Date: 2005-03-22 02:08:12+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add a group"
+msgstr "Lisää ryhmä"
+
+msgid "Add custom member security rights"
+msgstr "Lisää jäsenten mukautettuja käyttöoikeuksia"
+
+msgid "Add custom settings"
+msgstr "Lisää mukautettuja käyttöoikeuksia"
+
+msgid "Add groups"
+msgstr "Lisää ryhmiä"
+
+msgid "Administration"
+msgstr "Hallinto"
+
+msgid "Applying not yet implemented!"
+msgstr "Ryhmään hakemista ei ole vielä toteutettu!"
+
+msgid "Apply to group"
+msgstr "Hae ryhmän jäseneksi"
+
+msgid "Browse groups"
+msgstr "Selaa ryhmiä"
+
+msgid "Change group info"
+msgstr "Muuta ryhmän tietoja"
+
+msgid "Change group's tools"
+msgstr "Muuta ryhmän työkaluvalintoja"
+
+msgid "Change group's users"
+msgstr "Muuta ryhmän jäsenlistaa"
+
+msgid "Change member security rights"
+msgstr "Muuta jäsenten käyttöoikeuksia"
+
+msgid "Changes were saved."
+msgstr "Muutokset tallennettu."
+
+msgid "Class"
+msgstr "Luokka"
+
+msgid "Collection name"
+msgstr "Kokoelman nimi"
+
+msgid "Could not detect join policy: Can't join!"
+msgstr "Ryhmään liittyminen epäonnistui. Järjestelmä ei pystynyt selvittämään liittymiskäytäntöä."
+
+msgid "Course"
+msgstr "Kurssi"
+
+msgid "Create a subgroup"
+msgstr "Luo alaryhmä"
+
+msgid "Custom member rights"
+msgstr "Mukautetut käyttöoikeudet"
+
+msgid "Custom member security settings"
+msgstr "Mukautetut käyttöoikeudet"
+
+msgid "Default member rights"
+msgstr "Oletuskäyttöoikeudet"
+
+msgid "Default member security settings"
+msgstr "Jäsenten oletuskäyttöoikeudet"
+
+msgid "Default members right settings"
+msgstr "Jäsenten oletuskäyttöoikeudet"
+
+msgid "Default rights updated"
+msgstr "Oletuskäyttöoikeudet on päivitetty"
+
+msgid "Deny group moderation"
+msgstr "Estä ryhmien moderointi"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Edit group information"
+msgstr "Muokkaa ryhmän tietoja"
+
+msgid "Edit group"
+msgstr "Muokkaa ryhmää"
+
+msgid "Edit groups"
+msgstr "Muokkaa ryhmiä"
+
+msgid "Edit group tools"
+msgstr "Muokkaa ryhmän työkaluja"
+
+msgid "Edit group users"
+msgstr "Valitse ryhmän jäsenet"
+
+msgid "Email"
+msgstr "Sähköposti"
+
+msgid "Failed modifying user: %1"
+msgstr "Käyttäjän: %1 muokkaus epäonnistui"
+
+msgid "First name"
+msgstr "Etunimi"
+
+msgid "Free join"
+msgstr "Kaikille avoin"
+
+msgid "General group information"
+msgstr "Ryhmän yleistiedot"
+
+msgid "Group admin"
+msgstr "Ryhmän ylläpitäjä"
+
+msgid "Group data saved"
+msgstr "Ryhmän tiedot tallennettu"
+
+msgid "Group information"
+msgstr "Ryhmän tiedot"
+
+msgid "Group info"
+msgstr "Ryhmän tiedot"
+
+msgid "Group listing"
+msgstr "Käyttäjäryhmät"
+
+msgid "Group moderator"
+msgstr "Ryhmän moderaattori"
+
+msgid "Groups tools"
+msgstr "Ryhmien työkalut"
+
+msgid "Groups users"
+msgstr "Ryhmien jäsenet"
+
+msgid "Group tools"
+msgstr "Ryhmän työkalut"
+
+msgid "Group type"
+msgstr "Ryhmän tyyppi"
+
+msgid "Group user defaults"
+msgstr "Ryhmän jäsenten oletusoikeudet"
+
+msgid "Group users"
+msgstr "Ryhmän jäsenet"
+
+msgid "Hidden"
+msgstr "Piilotettu"
+
+msgid "Join group"
+msgstr "Liity ryhmään"
+
+msgid "Join policy"
+msgstr "Liittymiskäytäntö"
+
+msgid "Join succesful!"
+msgstr "Liittyminen onnistui!"
+
+msgid "Last name"
+msgstr "Sukunimi"
+
+msgid "List custom member security rights"
+msgstr "Näytä mukautetut käyttöoikeudet"
+
+msgid "List all groups"
+msgstr "Näytä kaikki ryhmät"
+
+msgid "Login name"
+msgstr "Käyttäjätunnus"
+
+msgid "Modify group details"
+msgstr "Muokkaa ryhmän tietoja"
+
+msgid "Must apply"
+msgstr "Tulee hakea"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "No active group found!"
+msgstr "Aktiivisia ryhmiä ei ole saatavilla!"
+
+msgid "Closed"
+msgstr "Suljettu"
+
+msgid "-- None --"
+msgstr "-- Ei mitään --"
+
+msgid "No"
+msgstr "Ei"
+
+msgid "No such group ( id '%1' ) found!"
+msgstr "Ryhmää ( identifikaatio: '%1' ) ei löytynyt!"
+
+msgid "No tools available since group has no area. Porceed to the next step please!"
+msgstr "Työkaluja ei ole saatavilla, sillä ryhmällä ei ole työskentelyaluetta. Ole hyvä ja etene seuraavaan vaiheeseen!"
+
+msgid "Organization"
+msgstr "Organisaatio"
+
+msgid "Other groups"
+msgstr "Muut ryhmät"
+
+msgid "Groups"
+msgstr "Ryhmät"
+
+msgid "Parent group"
+msgstr "Ylätason ryhmä"
+
+msgid "Part group"
+msgstr "Eroa ryhmästä"
+
+msgid "Part succesful!"
+msgstr "Eroaminen onnistui!"
+
+msgid "Project"
+msgstr "Projekti"
+
+msgid "Remove custom member security rights"
+msgstr "Poista mukautettuja jäsenten käyttöoikeuksia"
+
+msgid "Remove custom settings"
+msgstr "Poista mukautetut asetukset"
+
+msgid "Remove members right settings"
+msgstr "Poista jäsenen käyttöoikeusasetukset"
+
+msgid "Remove"
+msgstr "Poista"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Section"
+msgstr "Osio"
+
+msgid "Securities added"
+msgstr "Käyttöoikeudet on lisätty"
+
+msgid "Select collections"
+msgstr "Valitse kokoelmat"
+
+msgid "Select default member rights"
+msgstr "Valitse jäsenten oletuskäyttöoikeudet"
+
+msgid "Select default member securities"
+msgstr "Valitse jäsenten oletuskäyttöoikeudet"
+
+msgid "Select default member security rights"
+msgstr "Valitse jäsenten oletuskäyttöoikeudet"
+
+msgid "Select default rights"
+msgstr "Valitse oletuskäyttöoikeudet"
+
+msgid "Selected collections"
+msgstr "Valitut kokoelmat"
+
+msgid "Selected tools"
+msgstr "Valitut työkalut"
+
+msgid "Selected users"
+msgstr "Valitut käyttäjät"
+
+msgid "Select group tools"
+msgstr "Valitse ryhmän työkalut"
+
+msgid "Select group users"
+msgstr "Valitse ryhmän jäsenet"
+
+msgid "Select users"
+msgstr "Valitse käyttäjät"
+
+msgid "Show custom settings"
+msgstr "Näytä mukautetut asetukset"
+
+msgid "Show group listing"
+msgstr "Näytä ryhmät"
+
+msgid "Tool name"
+msgstr "Työkalun nimi"
+
+msgid "User can add and remove group members"
+msgstr "Käyttäjä voi lisätä ja poistaa ryhmän jäseniä"
+
+msgid "User can add and remove group tools"
+msgstr "Käyttäjä voi lisätä ja poistaa ryhmän työkaluja"
+
+msgid "User can add groups to the system"
+msgstr "Käyttäjä voi lisätä ryhmiä järjestelmään"
+
+msgid "User can change group information"
+msgstr "Käyttäjä voi muuttaa ryhmän tietoja"
+
+msgid "User can change groups members' default security rights"
+msgstr "Käyttäjä voi muuttaa ryhmän jäsenten oletuskäyttöoikeuksia"
+
+msgid "User can edit all groups in the system"
+msgstr "Käyttäjä voi muokata järjestelmän kaikkia ryhmiä"
+
+msgid "User can give custom security rights to individual group members"
+msgstr "Käyttäjä voi antaa mukautettuja käyttöoikeuksia ryhmän jäsenille"
+
+msgid "User can list custom security rights to individual group members"
+msgstr "Käyttäjä voi nähdä jäsenten mukautetut käyttöoikeudet"
+
+msgid "User can list groups and show their information"
+msgstr "Käyttäjä voi listata ryhmiä ja nähdä ryhmien perustiedot"
+
+msgid "User can remove custom security rights from individual group members"
+msgstr "Käyttäjä voi poistaa jäsenten mukautettuja käyttöoikeuksia"
+
+msgid "Usergroup"
+msgstr "Käyttäjäryhmä"
+
+msgid "User groups tree"
+msgstr "Käyttäjäryhmät"
+
+msgid "User login name"
+msgstr "Käyttäjätunnus"
+
+msgid "User sees the settings dropdown in this group"
+msgstr "Käyttäjä voi nähdä asetukset -valikon sisällön"
+
+msgid "View settings dropdown"
+msgstr "Asetukset -valikon katselu"
+
+msgid "Visibility"
+msgstr "Näkyvyys"
+
+msgid "Visible"
+msgstr "Näkyvissä"
+
+msgid "Work area"
+msgstr "Työskentelyalue"
+
+msgid "Workgroup"
+msgstr "Työryhmä"
+
+msgid "Yes"
+msgstr "Kyllä"
+
+msgid "You already are a group member!"
+msgstr "Olet jo ryhmän jäsen!"
+
+msgid "You are not a group member!"
+msgstr "Et kuulu ryhmään!"
+
+msgid "You can't join this group!"
+msgstr "Et voi liittyä tähän ryhmään!"
+
+msgid "Recent groups"
+msgstr "Viimeisimmät ryhmät"
+
+msgid "Common group"
+msgstr "Yleinen ryhmä"
+
+msgid "Portrait"
+msgstr "Muotokuva"
+
+msgid "People who belong to this group"
+msgstr "Ryhmään kuuluvat henkilöt"
+
+msgid "List members"
+msgstr "Listaa ryhmän jäsenet"
+
+msgid "List of members"
+msgstr "Lista ryhmän jäsenistä"
+
+msgid "Group members"
+msgstr "Ryhmän jäsenet"
+
+msgid "Can not see group members"
+msgstr "Ei voi nähdä ryhmän jäseniä"
+
+msgid "See group members"
+msgstr "Voi nähdä ryhmän jäsenet"
+
+msgid "Controls"
+msgstr "Toiminnot"
+
+msgid "Weblog"
+msgstr "Blogi"
+
+msgid "Group roles"
+msgstr "Roolit ryhmässä"
+
+msgid "Group member visibility"
+msgstr "Ryhmän jäsenten näkeminen"
+
+msgid "Add root level groups"
+msgstr "Lisää pohjatason ryhmiä"
+
+msgid "Can not create subgroups"
+msgstr "Ei oikeutta luoda alaryhmiä"
+
+msgid "Can not see group info"
+msgstr "Ei oikeutta nähdä ryhmän tietoja"
+
+msgid "Change member rights"
+msgstr "Oikeus muuttaa jäsenten oikeuksia"
+
+msgid "Create subgroups"
+msgstr "Oikeus luoda alaryhmiä"
+
+msgid "Default group user"
+msgstr "Ryhmän käyttäjän oletusoikeudet"
+
+msgid "Edit info"
+msgstr "Muokkaa tietoja"
+
+msgid "Edit member rights"
+msgstr "Muokkaa jäsenten oikeuksia"
+
+msgid "Edit users"
+msgstr "Muokkaa jäsenistöä"
+
+msgid "General group rights"
+msgstr "Yleiset ryhmän oikeudet"
+
+msgid "Go to work area"
+msgstr "Siirry ryhmän työalueelle"
+
+msgid "Group administration"
+msgstr "Ryhmän hallinta"
+
+msgid "Groups info"
+msgstr "Ryhmän tiedot"
+
+msgid "Member rights"
+msgstr "Jäsenten oikeudet"
+
+msgid "Removing a group is not supported yet"
+msgstr "Ryhmän poistamista ei vielä tueta"
+
+msgid "See group info"
+msgstr "Oikeus nähdä ryhmän tiedot"
+
+msgid "Show group info"
+msgstr "Näytä ryhmän tiedot"
+
+msgid "User can add groups under this group"
+msgstr "Käyttäjä voi lisätä ryhmälle alaryhmiä"
+
+msgid "User can add root level groups"
+msgstr "Käyttäjä voi lisätä pohjatason ryhmiä"
+
+msgid "User can list public groups and show their information"
+msgstr "Käyttäjä voi selata julkisia ryhmiä"
+
+msgid "User can remove the group"
+msgstr "Käyttäjä voi poistaa ryhmän"
+
+msgid "User can see a list of group members"
+msgstr "Käyttäjä näkee listan ryhmän jäsenistä"
+
+msgid "User can see the groups info"
+msgstr "Käyttäjä näkee ryhmän tiedot"
+
+msgid "View group info"
+msgstr "Oikeus nähdä ryhmän tiedot"
+
+msgid "View group members"
+msgstr "Oikeus nähdä ryhmän jäsenet"
+
+msgid "You are not allowed to remove the group!"
+msgstr "Sinulla ei ole oikeutta poistaa ryhmää!"
+
+msgid "Remove group"
+msgstr "Poista ryhmä"
+
+msgid "Are you sure you want to part this group?"
+msgstr "Oletko varma, että haluat erota tästä ryhmästä?"
+
+msgid "You can not remove the group as long as it has subgroups!"
+msgstr "Et voi poistaa ryhmää niin kauan kuin sillä on alaryhmiä!"
+
+msgid "Group removed."
+msgstr "Ryhmä poistettu."
+
+msgid "Group created! Please choose tools for the workarea."
+msgstr "Ryhmä luotu! Ole hyvä ja valitse työskentelyalueen työkalut."
+
+msgid "Group created!"
+msgstr "Ryhmä luotu!"
+
+msgid "Other"
+msgstr "Muut"
+
+msgid "Are you sure you want to remove this group?"
+msgstr "Oletko varma, että haluat poistaa tämän ryhmän?"
+
+msgid "Community"
+msgstr "Yhteisö"
+
+msgid "Community area"
+msgstr "Yhteisöalue"
+
+msgid "People"
+msgstr "Ihmiset"
+
+msgid "Area joined"
+msgstr "Alueelle liittyminen onnistui"
+
+msgid "Read only group access"
+msgstr "Ryhmän lukuoikeus"
+
+msgid "Allows users to see group info as a group tool"
+msgstr "Antaa käyttäjien nähdä ryhmän tiedot työkaluna"
+
+msgid "Group info tool"
+msgstr "Ryhmän tiedot -työkalu"
+
+msgid "Can create root level groups"
+msgstr "Voi luoda pohjatason ryhmiä"
+
+msgid "band"
+msgstr "bändi"
+
+msgid "bands"
+msgstr "bändiä"
+
+msgid "Click to upload a photo"
+msgstr "Klikkaa lähettääksesi kuva"
+
+msgid "Create a new group"
+msgstr "Luo uusi ryhmä"
+
+msgid "Facebook-page"
+msgstr "Facebook-sivu"
+
+msgid "filter more"
+msgstr "Suodata lisää"
+
+msgid "Filter with keywords"
+msgstr "Suodata avainsanoilla"
+
+msgid "General info"
+msgstr "Yleiset tiedot"
+
+msgid "Group browser summary box"
+msgstr "Ryhmien selaus yhteenvedossa"
+
+msgid "Group description"
+msgstr "Ryhmän kuvaus"
+
+msgid "Group location"
+msgstr "Ryhmän sijainti"
+
+msgid "Group updated"
+msgstr "Ryhmä päivitetty"
+
+msgid "Group visibility"
+msgstr "Ryhmän näkyvyys"
+
+msgid "I accept the EULA"
+msgstr "Hyväksy EULA"
+
+msgid "Links"
+msgstr "Linkit"
+
+msgid "Localizations"
+msgstr "Kielikäännökset"
+
+msgid "Look"
+msgstr "Ulkonäkö"
+
+msgid "members"
+msgstr "jäsentä"
+
+msgid "MySpace-page"
+msgstr "MySpace-sivu"
+
+msgid "No results"
+msgstr "Ei hakutuloksia"
+
+msgid "Other webpage"
+msgstr "Muu verkkosivu"
+
+msgid "Register the group"
+msgstr "Rekisteröi ryhmä"
+
+msgid "Reports"
+msgstr "Raportit"
+
+msgid "See group admin extras"
+msgstr "Oikeus nähdä admin-komponentit"
+
+msgid "See gruop admin extras"
+msgstr "See gruop admin extras"
+
+msgid "Twitter-page"
+msgstr "Twitter-sivu"
+
+msgid "with keywords"
+msgstr "avainsanoilla"
+
+msgid "1 group"
+msgstr "1 ryhmä"
+
+msgid "%1 groups"
+msgstr "%1 ryhmää"
+
+msgid "Admin"
+msgstr "Ylläpitäjä"
+
+msgid "Apply for fan"
+msgstr "Hae faniksi"
+
+msgid "Areas"
+msgstr "Alueet"
+
+msgid "Are you sure you want to remove the user?"
+msgstr "Oletko varma, että haluat poistaa käyttäjän tältä alueelta?"
+
+msgid "BAND"
+msgstr "BÄNDI"
+
+msgid "Cancel upload"
+msgstr "Keskeytä lähetys"
+
+msgid "Confirm"
+msgstr "Varmista"
+
+msgid "Download as list"
+msgstr "Lataa listana"
+
+msgid "E-Mail"
+msgstr "E-Mail"
+
+msgid "Fans"
+msgstr "Fanit"
+
+msgid "Filter"
+msgstr "Rajaa"
+
+msgid "Filter bands"
+msgstr "Rajaa bändejä"
+
+msgid "Group info summary box"
+msgstr "Ryhmän tietojen yhteenvetolaatikko"
+
+msgid "Groups (summary title)"
+msgstr "Ryhmät"
+
+msgid "Group subgroup browsing tool"
+msgstr "Ryhmän alaryhmien selaustyökalu"
+
+msgid "Group (summary title)"
+msgstr "Ryhmä"
+
+msgid "Group summary tools"
+msgstr "Ryhmän yhteenvedon työkalut"
+
+msgid "Group tags"
+msgstr "Ryhmän avainsanat"
+
+msgid "Level"
+msgstr "Käyttäjätaso"
+
+msgid "member(s)"
+msgstr "jäsen(tä)"
+
+msgid "Members"
+msgstr "Jäsenet"
+
+msgid "Moderator"
+msgstr "Moderaattori"
+
+msgid "Modify the header"
+msgstr "Muokkaa otsikkoa"
+
+msgid "More groups"
+msgstr "Lisää ryhmiä"
+
+msgid "Most active bands"
+msgstr "Aktiivisimmat bändit"
+
+msgid "Newest groups"
+msgstr "Uusimmat ryhmät"
+
+msgid "New group administration"
+msgstr "Uusi ryhmän ylläpito"
+
+msgid "Please fill the fields marked with the star to complete the registration."
+msgstr "Ole hyvä ja täytä tähdellä merkityt kentät edetäksesi."
+
+msgid "Samples"
+msgstr "Näytteitä"
+
+msgid "Send e-mail"
+msgstr "Lähetä sähköposti"
+
+msgid "Show all bands"
+msgstr "Näytä kaikki bändit"
+
+msgid "Spotlight"
+msgstr "Valokeila"
+
+msgid "Upload a photo"
+msgstr "Lähetä kuva"
+
+msgid "%1 members"
+msgstr "%1 jäsentä"
+
+msgid "1 area"
+msgstr "1 alue"
+
+msgid "%1 areas"
+msgstr "%1 aluetta"
+
+msgid "Additional settings"
+msgstr "Lisäasetukset"
+
+msgid "Area description"
+msgstr "Alueen kuvaus"
+
+msgid "Area info"
+msgstr "Alueen tiedot"
+
+msgid "Area location"
+msgstr "Alueen sijainti"
+
+msgid "Area name"
+msgstr "Alueen nimi"
+
+msgid "Area summary tools"
+msgstr "Alueen yhteenvedon työkalut"
+
+msgid "Area tags"
+msgstr "Alueen avainsanat"
+
+msgid "Area visibility"
+msgstr "Alueen näkyvyys"
+
+msgid "Basic member rights"
+msgstr "Peruskäyttäjän oikeudet"
+
+msgid "Create area"
+msgstr "Luo alue"
+
+msgid "Filter areas"
+msgstr "Rajaa alueita"
+
+msgid "Forced user adding"
+msgstr "Käyttäjien lisääminen väkisin"
+
+msgid "More areas"
+msgstr "Lisää alueita"
+
+msgid "Most active areas"
+msgstr "Aktiivisimmat alueet"
+
+msgid "Show all areas"
+msgstr "Näytä kaikki alueet"
+
+msgid "Show more fans"
+msgstr "Näytä enemmän faneja"
+
+msgid "User rights exceptions"
+msgstr "Poikkeukset käyttäjien oikeuksissa"
+
+msgid "I accept the <a href=\\\"%1\\\">terms of service</a>"
+msgstr "Hyväksyn <a href=\\\"%1\\\">käyttöehdot</a>"
+
+msgid "Add and remove users"
+msgstr "Lisää ja poista käyttäjiä"
+
+msgid "Filter user list by name:"
+msgstr "Rajaa listaa nimen perusteella:"
+
+msgid "Filter user list by user level"
+msgstr "Rajaa listaa käyttäjätason perusteella"
+
+msgid "Start typing the name..."
+msgstr "Aloita kirjoittamaan nimeä..."
+
+msgid "User managing"
+msgstr "Jäsenten hallinta"
+
+msgid "users match the current filters."
+msgstr "käyttäjää asetettuilla rajaehdoilla."
+
+msgid "You have been invited to %1"
+msgstr "Sinut on kutsuttu alueelle %1"
+
+msgid "No areas found."
+msgstr "Ei alueita."
+
+msgid "Enter area"
+msgstr "Siirry alueelle"
+
+msgid "Optimal image size is 400x300px."
+msgstr "Optimaalinen kuvan koko on 400x300px."
+
+msgid "YouTube-page"
+msgstr "YouTube-sivu"
+
+msgid "Admin only settings"
+msgstr "Ylläpitäjien asetukset"
+
+msgid "Area settings"
+msgstr "Alueen asetukset"
+
+msgid "Area workspace disabled"
+msgstr "Alueen työskentelyelue poissa käytöstä"
+
+msgid "Front page (wiki automatic first page name)"
+msgstr "Etusivu"
+
+msgid "Group custom banner"
+msgstr "Ryhmän oman banderolli"
+
+msgid "Send test email to self"
+msgstr "Lähetä testiviesti itselle"
+
+msgid "Subgroup creation disabled"
+msgstr "Alaryhmien luoti poissa käytöstä"
+
+msgid "Subgroup parent"
+msgstr "Alaryhmän pohjaryhmä"
+
+msgid "Subgroup type"
+msgstr "Alaryhmän tyyppi"
+
+msgid "Test mail sent to self."
+msgstr "Testiviesti lähetetty itselle."
+
+msgid "Custom user rights"
+msgstr "Räätälöidyt käyttöoikeudet"
+
+msgid "Default rights"
+msgstr "Oletusoikeudet"
+
+msgid "User reports"
+msgstr "Käyttäjäraportit"
+
+msgid "Close"
+msgstr "Sulje"
+
+msgid "Can see page elements that are meant only for admins"
+msgstr "Oikeus nähdä vain ylläpitäjille tarkoitetut elementit"
+
+msgid "You can not send the mail without a subject."
+msgstr "Et voi lähettää sähköpostia ilman aihetta."
+
+msgid "Export all users"
+msgstr "Vie käyttäjät tiedostoon"
+
+msgid "User level"
+msgstr "Käyttäjätaso"
+
+msgid "Access the system through the following link:"
+msgstr "Kirjaudu oheisen linkin kautta järjestelmään:"
+
+msgid "Add users with these email domains: (separate with , )"
+msgstr "Add users with these email domains: (separate with , )"
+
+msgid "Count"
+msgstr "Count"
+
+msgid "Resource reports"
+msgstr "Resource reports"

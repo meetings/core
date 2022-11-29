@@ -1,0 +1,43 @@
+<div id="modal-fill-skype" class="m-modal">
+
+    <% if( p.type == 'skype' ) { %>
+    <div class="modal-header">
+        <h3><%= MTN.t('Meeting Skype Account') %></h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t('Which Skype account will participants call?') %></p>
+        <div id="meetings_fill_skype_return"></div>
+        <form id="meetings_fill_skype_form" class="m-form">
+            <label for="skype"><%= MTN.t('Account') %>
+                <input class="js_meetings_fill_skype_enter_submit" type="text" name="skype" value="<%== p.skype_account %>" />
+            </label>
+        </form>
+    </div>
+    <% } else if( p.type == 'teleconf' ) { %>
+    <div class="modal-header">
+        <h3>Meeting Teleconferencing</h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t('What teleconferencing number will participants call?') %></p>
+        <form id="meetings_fill_skype_form" class="m-form">
+            <label for="skype"><%= MTN.t('Number') %>
+                <input type="text" name="teleconf_number" value="<%= p.teleconf_number %>" />
+            </label>
+            <label for="skype"><%= MTN.t('Pin (optional)') %>
+                <input type="text" name="teleconf_pin" value="<%= p.teleconf_pin %>" />
+            </label>
+        </form>
+    </div>
+    <% } %>
+
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a href="#" class="button pink js_meetings_fill_skype_submit" id="fill-skype-submit">
+                <%= MTN.t('Save') %>
+            </a>
+            <a href="#" class="button gray js_hook_showcase_close">
+                <%= MTN.t('Cancel') %>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<chart>
+
+        	<axis_value font='arial' bold='true' size='10' color='000022' alpha='50' prefix='' suffix='' decimals='0' separator='' show_min='false' />
+                <axis_category skip='[% row %]' orientation='diagonal_down' size='10' />
+
+                <axis_ticks value_ticks="true" category_ticks="false" major_thickness="2" minor_thickness="1" minor_count="1" major_color="222222" minor_color="222222" position="centered"/>
+
+	<chart_border color='000000' top_thickness='0' bottom_thickness='1' left_thickness='0' right_thickness='0' />
+
+	<chart_data>
+		<row>
+			
+			<null/>
+			[% FOREACH t IN information %]
+				<string>[% t.name %]</string>
+			[% END %]
+		</row>
+
+	[% FOREACH block = blocks %]
+		<row>
+			[% IF block.name == '' %]
+			<null/>
+			[% ELSE %]
+			<string>[% block.name %]</string>
+			[% END %]
+
+			[% FOREACH t IN information %]
+				<number>[% key = block.key; t.$key %]</number>
+			[% END %]
+		</row>
+	[% END %]
+        </chart_data>
+         <chart_type>stacked column</chart_type>
+        <chart_grid_h alpha='20' color='000000' thickness='1' type='solid' />
+
+	<series_color>
+		<color>8e2277</color>
+		<color>059a00</color>
+		<color>0e88c9</color>
+		<color>ff9700</color>
+	</series_color>
+
+
+        <chart_value hide_zero='true' color='000000' alpha='80' size='12' position='cursor' prefix='' suffix='' decimals='0' separator='' as_percentage='true' />
+<chart_rect positive_color='FFFFFF' positive_alpha='15' />
+
+        <chart_value_text>
+		<row>
+			
+			<null/>
+			[% FOREACH t IN information %]
+				<string>[% t.name %]</string>
+			[% END %]
+		</row>
+
+	        [% FOREACH block = blocks %]
+		<row>
+			
+			<null/>
+			[% FOREACH t IN information %]
+				<string>[% t.name %]</string>
+			[% END %]
+		</row>
+	        [% END %]
+        </chart_value_text>
+
+</chart>
+

@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:2.1
+[% IF lname && fname %]N: [% lname %];[% fname %] [% END %]
+[% IF lname && fname %]FN: [% fname %] [% lname %] [% END %]
+[% IF organization %]ORG: [% organization %] [% END %]
+[% IF title %]ROLE: [% title %] [% END %]
+[% IF tel_work %]TEL;WORK;: [% tel_work %] [% END %]
+[% IF tel_home %]TEL;HOME;: [% tel_home %] [% END %]
+[% IF blog %]X-EVOLUTION-BLOG-URL: [% blog %] [% END %]
+[% IF email %]EMAIL;INTERNET:[% email %] [% END %]
+[% IF home_address_1 %]ADR;HOME:;;[% home_address_1 %];[% home_address_2 %] [% END %]
+[% IF employer_address_1 %]ADR;WORK:;;[% employer_address_1 %];[% employer_address_2 %] [% END %]
+END:VCARD
+

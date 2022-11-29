@@ -1,0 +1,44 @@
+<div id="modal-gcal" class="m-modal">
+    <!-- Google not connected -->
+    <% if ( dicole.get_global_variable('meetings_google_connected') === 0 ) { %>
+    <div class="modal-header">
+        <h3><%= MTN.t('Connect calendar') %></h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t("It seems that your calendar has not been connected yet.") %></p>
+        <% var urls = dicole.get_global_variable('meetings_connect_urls') %>
+        <a href="<%== urls['mc_google'] %>" class="button login google-blue">
+            <i class="ico-google"></i>
+            <%= MTN.t('Connect Google') %>
+        </a>
+    </div>
+    <% } else { %>
+    <!-- Gcal connected -->
+    <div class="modal-header">
+        <h3><%= MTN.t('Select a meeting') %></h3>
+    </div>
+    <div class="modal-content">
+        <form class="meetings-form">
+            <input type="text" class="filter" id="filter_gcal" value="" />
+        </form>
+        <div class="table-wrapper">
+            <table id="gcal_meetings">
+                <tr>
+                    <td style="text-align:center;"><img src="/images/meetings/ajax_loader.gif"/></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a href="#" class="button blue js_submit_gcal">
+                <%= MTN.t('Choose meeting') %>
+            </a>
+        </div>
+    </div>
+    <% } %>
+    <!-- Close button -->
+    <a class="js_hook_showcase_close close-cross alpha_png" href="#"></a>
+</div>
+

@@ -1,0 +1,42 @@
+#!/usr/bin/perl
+
+unless ( -d 'pkg' || $ENV{OPENINTERACT2} ) {
+    die 'You must be in dicole source root to use this script and your'.
+        'OPENINTERACT2 environment variable must be set!\n';
+}
+
+my @a = ();
+my %pushed = ();
+
+for ( @ARGV ) {
+    my $dir = $_;
+    $dir = 'dicole_' . $dir unless -d "pkg/$dir";
+    if ( -d "pkg/$dir" ) {
+        push @a, $dir unless $pushed{ $dir };
+        $pushed{ $dir }++;
+    }
+    else {
+        print "Not found: " . $dir . $/;
+    }
+}
+
+unless ( scalar( @a ) ) {
+    print "Usage: $0 package_name package_name ...\n";
+    exit;
+}
+
+for my $pkg ( @a ) {
+    system "rsync", "-a", "pkg/$pkg/html/", $ENV{OPENINTERACT2} . '/html/' if -d "pkg/$pkg/html/";
+    system "chown", "-R", "root.www-data", $ENV{OPENINTERACT2} . '/html/';
+    system "rsync", "-a", "pkg/$pkg/conf/", $ENV{OPENINTERACT2} . '/conf/' . $pkg . '/' if -d "pkg/$pkg/conf/";
+    system "chown", "-R", "root.www-data", $ENV{OPENINTERACT2} .  '/conf/' . $pkg . '/';
+
+    # find the dir of the latest package version
+    my $cmd = 'ls ' . $ENV{OPENINTERACT2} .'/pkg/ | grep "'.$pkg.'"';
+    my $files = `$cmd`;
+    my @versions = map { my ($v) = $_ =~ /\-(\d+\.\d+)$/; $_ = $v || (); } split( "\n", $files );
+    @versions = sort { $a <=> $b } @versions;
+    my $last = pop @versions;
+    system "rsync", "-a", "pkg/$pkg/template/", $ENV{OPENINTERACT2} . '/pkg/' . $pkg . '-' . $last .'/template/' if -d "pkg/$pkg/template/";
+    system "chown", "-R", "root.www-data", $ENV{OPENINTERACT2} . '/pkg/' . $pkg . '-' . $last .'/template/' if -d 'pkg/' . $pkg . '-' . $last .'/template/';
+}

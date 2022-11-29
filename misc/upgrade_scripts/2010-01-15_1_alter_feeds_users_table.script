@@ -1,0 +1,9 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_feeds_users add exclude_from_digest text after notes');
+}
+
+1;

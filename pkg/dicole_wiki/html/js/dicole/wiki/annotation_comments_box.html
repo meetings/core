@@ -1,0 +1,16 @@
+<div id="<%== p.id %>" class="annotation_comments">
+	<div class="annotation_comments_arrow alpha_png"></div>
+	<div class="annotation_comments_bg alpha_png">
+		<div class="annotation_comments_content">
+			<a class="annotation_close" href="<%== p.cancel_url %>"></a>
+			<div class="annotation_comments_container">
+				<% if(p.comments) dicole.process_template("annotation_comments", {"comments": p.comments}) %>
+			</div>
+			<div id="annotation_comment_input_area">
+				<textarea class="annotation_comment_textarea" cols="68" rows="1"><%== dicole.msg("Write your comment here") %></textarea>
+				<a class="annotation_comment_button alpha_png" href="#"><span class="alpha_png"><%== dicole.msg("Comment (action)") %></span></a>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+	</div>
+</div>

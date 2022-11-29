@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="[% lang.code %]">
+<head>
+	<title>[% page_title %]</title>
+
+[%#- Default META definitions %]
+        <meta http-equiv="Content-Type" content="text/html; charset=[% lang.charset %]" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="Content-Language" content="[% lang.code %]" />
+        <meta http-equiv="MSThemeCompatible" content="no" />
+[%#- Default LINK definitions %]
+[%- FOREACH theme = theme_css -%]
+        [%- FOREACH css = theme -%]
+        <link href="[% css.path %]" media="[% css.media %]" rel="stylesheet" type="text/css" />
+        [%- END -%]
+[%- END -%]
+[%- IF feed -%]
+        <link rel="alternate" type="application/rss+xml" title="[% feed.title %]" href="[% feed.href %]" />
+[%- END -%]
+        <link rel="shortcut icon" type="image/x-icon" href="[% favicon %]" />
+        <script defer="defer" src="[% javascript %]" type="text/javascript"></script>
+</head>
+<body>
+<div class="content"><!-- content -->
+<div id="header">
+[%- PROCESS 'dicole_public_site::header' %]
+</div>
+<div id="top">
+[%- PROCESS 'dicole_public_site::top' %]
+</div>
+<div id="left">
+[%- PROCESS 'dicole_public_site::left' %]
+</div>
+<div id="center">
+[%- PROCESS 'dicole_public_site::center' %]
+</div>
+<div id="right">
+[%- PROCESS 'dicole_public_site::right' %]
+</div>
+<div id="bottom">
+[%- PROCESS 'dicole_public_site::bottom' %]
+</div>
+<div id="footer">
+[%- PROCESS 'dicole_public_site::footer' %]
+</div>
+</div>
+</body>
+</html>

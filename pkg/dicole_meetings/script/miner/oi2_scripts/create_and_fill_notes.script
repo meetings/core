@@ -1,0 +1,96 @@
+my @denote = (
+    [ qw( events_event attend_info dicole_events_event ) ],
+    [ qw( events_user attend_info dicole_events_user ) ],
+    [ qw( user notes sys_user yes ) ],
+);
+
+for my $common ( qw(
+        partner
+        trial
+        subscription
+        draft_participant
+        paypal_transaction
+        promotion
+        promotion_code
+        user_service_account
+        user_contact_log
+        dispatched_email
+        company_subscription
+        company_subscription_user
+        matchmaker
+        matchmaking_event
+        scheduling
+        scheduling_answer
+        scheduling_option
+        scheduling_log_entry
+    ) ) {
+    push @denote, [ "meetings_$common", "notes", "dicole_meetings_$common" ];
+}
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my ( $domain_id, $mode ) = split /\s*\,\s*/, $params;
+
+    for my $object_info ( @denote ) {
+        my ( $object_name, $object_notes_field, $object_table, $use_domain ) = @$object_info;
+        next unless $object_name;
+
+        if ( $mode && $mode eq 'fill' ) {
+            eval {
+                _fill_object_note_keys( $object_name, $object_notes_field, $use_domain ? $domain_id : 0 );
+            };
+            print $@ . "\n\n" if $@;
+        }
+        else {
+            my $keys = _gather_object_note_keys( $object_name, $object_notes_field, $use_domain ? $domain_id : 0 );
+            for my $key ( @$keys ) {
+                eval {
+                    Dicole::Utils::SQL->execute_sql(
+                            "alter table $object_table add column note_$key text"
+                            );
+                };
+                print $@ . "\n\n" if $@;
+            }
+        }
+    }
+}
+
+sub _gather_object_note_keys {
+    my ( $object_name, $note_field, $domain_id ) = @_;
+
+    my $objects = CTX->lookup_object($object_name)->fetch_group;
+    my $keys = {};
+    for my $o ( @$objects ) {
+        my $notes = eval { Dicole::Utils::JSON->decode( $o->get( $note_field ) || '{}' ) } || {};
+        $notes = $notes->{ $domain_id } if $domain_id;
+        next unless ref( $notes ) eq 'HASH';
+        for my $key ( keys %$notes ) {
+            next if $key =~ /answered_proposal/;
+            next if $key =~ /temp_google_request/;
+            $keys->{$key} = 1;
+        }
+    }
+
+    return [ sort { $a cmp $b  } keys %$keys ];
+};
+
+sub _fill_object_note_keys {
+    my ( $object_name, $note_field, $domain_id ) = @_;
+
+    my $objects = CTX->lookup_object($object_name)->fetch_group;
+    my $keys = {};
+    for my $o ( @$objects ) {
+        my $notes = eval { Dicole::Utils::JSON->decode( $o->get( $note_field ) || '{}' ) } || {};
+        $notes = $notes->{ $domain_id } if $domain_id;
+        next unless ref( $notes ) eq 'HASH';
+        for my $key ( keys %$notes ) {
+            $o->set( "note_$key", ref( $notes->{ $key } ) ? Dicole::Utils::JSON->encode( $notes->{ $key } ) : $notes->{ $key } );
+        }
+        $o->save;
+    }
+};
+
+1;
+
+

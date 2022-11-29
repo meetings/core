@@ -1,0 +1,39 @@
+                 <form accept-charset="utf-8" enctype="application/x-www-form-urlencoded" id="Form" method="post" name="Form" >
+<div class="toolPath blueLinks"><!-- toolPath --></div>
+
+<!-- ===== Tool content ===== -->
+
+<div class="toolContent i_am_a_happy_popup">
+    <table class="toolContentAlign">
+        <tr>        
+            <td width="">                <div class="toolContentBox">
+                    <span class="boxLegend">[% msg.link_selector | html %]</span>
+
+                    <div class="contentItemContainer blueLinks">[% msg.link_url | html %]
+                    </div>
+                    <div class="contentItemContainer blueLinks"><table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td style="width: 100%">
+<div width="100%" style=" overflow: auto;"><div style="margin: 2px">
+<input type="text" id="link_url_input" name="link_url" size="50" />
+</div>
+</div>
+</td>
+</tr></table>
+
+                    </div>
+                    <div class="contentItemContainer blueLinks"><div  class="horizontalContent">
+<span class="horizontalContentItem">
+    <a href="" class="linkButton tinymce3_execute_link_popup" onclick="return false;">[% msg.select | html %]</a>
+
+</span>
+<span class="horizontalContentItem">
+    <a href="" class="linkButton tinymce3_cancel_popup" onclick="return false;">[% msg.cancel | html %]</a>
+
+</span>
+</div>
+
+                    </div>
+                </div>            </td>        </tr>
+    </table>
+</div>
+</form>

@@ -1,0 +1,33 @@
+[% MTN.t(' Confirm %1$s authorization', [ partner_name ] ) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t("Hello!") %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>
+[% MTN.t('Do you wish to authorize %1$s to directly log you in to Meetin.gs?', [partner_name]) %]
+<<</p>>>
+
+[% url = authorize_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=authorize_partner' %]
+[% showtext = 1 %]
+[% text = MTN.t('Authorize and log in') %]
+[% showarrow = 1 %]
+<<<blue_button>>>
+
+<<<p>>>
+[% MTN.t('Authorization allows %1$s to log you in according to their privacy policy.', [partner_name]) %]
+<<</p>>>
+
+<<<p>>>
+[% MTN.t('You can also skip this authorization and %(L$log in directly%)', { L => { href => login_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=authorize_partner', <<<link_translation_params>>> } }) %][% IF in_html %].[% END %]
+<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

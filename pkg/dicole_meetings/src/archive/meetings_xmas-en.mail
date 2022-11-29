@@ -1,0 +1,38 @@
+You have been upgraded to Meetin.gs PRO
+
+<<<html_wrapper>>>
+
+[% action_text = "OH JOY YOU'VE BEEN UPGRADED!" %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<p>>>As thanks for the year, we have <<<bold>>>UPGRADED YOUR ACCOUNT TO MEETIN.GS PRO
+<<</bold>>> until 15th of January.<<</p>>>
+<<<right_image>>>
+<<<p>>><<<bold>>>WHAT'S INCLUDED?<<</bold>>><<<p>>>
+<<<list>>>
+<<<item>>>
+Change logo, background and colors
+<<</item>>>
+<<<item>>>
+No file or participant limits
+<<</item>>>
+<<<item>>>
+Support for Dropbox sync
+<<</item>>>
+<<<item>>>
+...and more.
+<<</item>>>
+<<</list>>>
+<<</right_image>>>
+
+<<<p>>>Tip: Great for organizing both business meetings and personal get-togethers!<<</p>>>
+
+[% url = register_url %]
+[% text = 'Create a PRO meeting' %]
+<<<blue_button>>>
+
+<<<mobile_plug>>>
+
+
+<<</html_wrapper>>>

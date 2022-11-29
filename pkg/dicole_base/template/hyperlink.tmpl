@@ -1,0 +1,15 @@
+[% # $Id: hyperlink.tmpl,v 1.7 2009-01-07 14:42:33 amv Exp $ # -%]
+
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        attributes =
+            {
+                all of the XHTML attributes that go with the element
+            }
+        content = string that is printed
+    }
+-%]
+
+<a [% FOREACH attr = itemparams.attributes %][% IF attr.value %] [% attr.key %]="[% attr.value %]"[% ELSE %] [% attr.key %]="[% attr.key %]"[% END %][% END %]>[% itemparams.content | html %]</a>
+[%- IF itemparams.text %]<span class="desktopHyperlinkText">[% itemparams.text %]</span>[% END %]

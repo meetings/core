@@ -1,0 +1,37 @@
+
+<p>
+From: <input size="10" name="set_from_string" value="[% from_string | html %]" /> To: <input size="10" name="set_to_string" value="[% to_string | html %]" />
+</p>
+<p>
+Comma separated IPs to filter out: <input size="30" name="filter_ip_list_string" value="[% filter_ip_list_string | html %]" />
+</p>
+<p>
+<input type="submit" name="set" value="Set" />
+</p>
+<p>
+Filter: 
+[% FOREACH f IN filter_links %]
+[% IF f.selected %]<u>[% END %]<a href="[% f.link | html %]">[% f.name | html %]</a>[% IF f.selected %]</u>[% END %][% IF ! loop.last %], [% END %]
+[% END %]
+</p>
+
+<table style="margin-left: 30px">
+<tr>
+    <td style="padding: 5px">[% MSG('Count') | html %]</td>
+    <td style="padding: 5px">[% MSG('Creator') | html %]</td>
+    <td style="padding: 5px">[% MSG('Title') | html %]</td>
+[% IF show_type %]
+    <td style="padding: 5px">[% MSG('Type') | html %]</td>
+[% END %]
+</tr>
+[% FOREACH item IN results %]
+<tr>
+    <td style="padding: 5px">[% item.count %]</td>
+    <td style="padding: 5px">[% SHORTEN( item.creator, 21, '...' ) | html %]</td>
+    <td style="padding: 5px"><a href="[% item.link | html %]">[% SHORTEN( item.name, 36, '...' ) | html %]</a></td>
+[% IF show_type %]
+    <td style="padding: 5px">[% item.type | html %]</td>
+[% END %]
+</tr>
+[% END %]
+</table>

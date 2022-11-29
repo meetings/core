@@ -1,0 +1,33 @@
+<div id="js_manage_navi_container"></div>
+<div id="modal-manage-participant-rights" class="modal-popup-admin">
+    <h2 class="modal-header"><%= MTN.t('Edit Participant Rights') %></h2>
+    <div class="error-container js_meetings_manage_participant_rights_error_container error_container_hidden"></div>
+    <p><%= MTN.t('Participants of this meeting are allowed to:') %></p>
+    <form id="meetings_manage_participant_rights_form" class="meetings-form">
+        <fieldset>
+            <!-- Meeting privacy settings -->
+            <p>
+            <input type="hidden" name="invite" id="meetings-invite-slider-input" value="<%== p.invite ? 1 : 0 %>" />
+            <span id="meetings-invite-slider" class="js_form_slider_button slider-button <%== p.invite ? 'on-position' : 'off-position' %>"> </span>
+            <%= MTN.t('Invite new participants') %>
+            </p>
+            <p>
+            <input type="hidden" name="add_material" id="meetings-add-material-slider-input" value="<%== p.add_material ? 1 : 0 %>" />
+            <span id="meetings-add-material-slider" class="js_form_slider_button slider-button <%== p.add_material ? 'on-position' : 'off-position' %>"> </span>
+            <%= MTN.t('Add material') %>
+            </p>
+            <p>
+            <input type="hidden" name="edit_material" id="meetings-edit-material-slider-input" value="<%== p.edit_material ? 1 : 0 %>" />
+            <span id="meetings-edit-material-slider" class="js_form_slider_button slider-button <%== p.edit_material ? 'on-position' : 'off-position' %>"> </span>
+            <%= MTN.t('Edit material') %>
+            </p>
+            <div id="submit" class="form-row centered">
+                <a href="#" class="js_meetings_manage_participant_rights_submit" id="participant-rights-submit">
+                    <span class="button blue"><%= MTN.t('Save') %></span>
+                    <span class="indicator"></span>
+                </a>
+            </div>
+        </fieldset>
+    </form>
+    <a href="#" class="js_hook_showcase_close close-cross alpha_png"></a>
+</div>

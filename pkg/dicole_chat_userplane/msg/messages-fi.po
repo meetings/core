@@ -1,0 +1,19 @@
+# $Id: messages-fi.po,v 1.2 2006/03/07 00:22:25 jpir Exp $
+
+msgid ""
+msgstr ""
+
+msgid "Virtual conference"
+msgstr "Virtuaalikonferenssi"
+
+msgid "Online users"
+msgstr "Aktiiviset käyttäjät"
+
+msgid "No online users"
+msgstr "Ei aktiivisia käyttäjiä"
+
+msgid "The virtual conferencing tool is an optional service with a monthly cost. Please contact Dicole Oy if you want to enable the service."
+msgstr "Virtuaalikokouksen järjestäminen on maksullinen palvelu. Ota yhteyttä Dicole Oy:n, jos haluat ottaa työkalun käyttöön."
+
+msgid "In virtual conference"
+msgstr "Virtuaalikokouksessa"

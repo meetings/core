@@ -1,0 +1,47 @@
+[% IF rsvp_required %][% MTN.t('Attention: Your RSVP required for %1$s',[meeting_title]) %][% ELSIF time_was_changed %][% MTN.t('Attention: Time has been updated for %1$s',[meeting_title]) %][% ELSIF proposal_was_chosen %][% MTN.t('Attention: Time has been set for %1$s',[meeting_title]) %][% ELSIF time_is_set %][% MTN.t('Attention: Time has been set for %1$s',[meeting_title]) %][% ELSIF time_was_cleared %][% MTN.t('Attention: Time has been removed from %1$s',[meeting_title]) %][% END %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Important changes to') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>
+[% IF time_is_set %][% MTN.t('The meeting time has been set.') %]
+[% ELSIF time_was_changed %][% MTN.t('The meeting has new time - update your calendar.') %]
+[% ELSIF proposal_was_chosen %][% MTN.t('The meeting time has been set - update your calendar.') %]
+[% ELSIF time_was_cleared %][% MTN.t('The meeting time has been removed.') %]
+[% END %]
+<<</p>>>
+
+[% IF time_was_cleared %][% calendar_links_disabled = 1 %][% END %]
+
+[% IF meeting_url %]
+[% meeting_url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=time_changed' %]
+[% END %]
+
+[% basic_info_button_right = 1 %]
+<<<basic_info>>>
+
+[% IF rsvp_required %]
+<<<hr>>>
+
+[% END %]
+
+[% IF meeting_rsvp_no_url %]
+[% meeting_rsvp_no_url = meeting_rsvp_no_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=time_changed' %]
+[% END %]
+[% IF meeting_rsvp_yes_url %]
+[% meeting_rsvp_yes_url = meeting_rsvp_yes_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=time_changed' %]
+[% END %]
+<<<rsvp>>>
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

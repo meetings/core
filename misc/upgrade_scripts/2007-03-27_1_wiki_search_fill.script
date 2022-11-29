@@ -1,0 +1,6 @@
+sub execute {
+    my $pages = CTX->lookup_object('wiki_page')->fetch_group() || [];
+    OpenInteract2::Action::DicoleWiki->_update_search_table( $_ ) for @$pages;
+}
+
+1;

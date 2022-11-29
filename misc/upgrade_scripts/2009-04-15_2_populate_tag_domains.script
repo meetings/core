@@ -1,0 +1,18 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    my $attaches = CTX->lookup_object('tag_attached')->fetch_group;
+    my $tags = CTX->lookup_object('tag')->fetch_group;
+    my %tag_to_domain = map { $_->id => $_->domain_id } @$tags;
+
+    for my $a ( @$attaches ) {
+        my $d = $tag_to_domain{ $a->tag_id };
+        next if $a->domain_id == $d;
+        $a->domain_id( $d );
+        $a->save;
+    }
+}
+
+1;

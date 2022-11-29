@@ -1,0 +1,10 @@
+<div class="sidebar_bookmarkers_list" align="center">
+[% FOREACH user IN users %]
+        <div id="user_[% user.id | html %]" class="user-avatar">
+                <a href="[% user.url | html %]" title="[% user.name | html %]">
+                        <img src="[% user.image or '/images/theme/default/default-user-avatar-40px.png' | html %]" alt="[% user.name | html %]" />
+                </a>
+        </div>
+[% END %]
+</div>
+

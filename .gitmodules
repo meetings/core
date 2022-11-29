@@ -1,0 +1,6 @@
+[submodule "vendor/SPOPS"]
+	path = vendor/SPOPS
+	url = git@github.com:dicole/SPOPS
+[submodule "vendor/OpenInteract"]
+	path = vendor/OpenInteract
+	url = git@github.com:dicole/OpenInteract

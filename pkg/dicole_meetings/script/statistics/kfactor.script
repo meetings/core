@@ -1,0 +1,89 @@
+sub execute {
+    my ( $self ) = @_;
+
+    my $jsonp = CTX->lookup_action('meetings_jsonp');
+    my $cohorts = _generate_cohorts( undef, 18 );
+    my $all_time = {
+        name => 'All time',
+    };
+
+    my $domain_id = 131;
+    my $domain_users = CTX->lookup_action('domains_api')->e( users_by_domain => { domain_id => $domain_id } );
+    my $users = Dicole::Utils::User->ensure_object_list( $domain_users );
+    my $users_by_id = { map { $_->id => $_ } @$users };
+
+    my $user_visit_dates = $jsonp->_user_visit_dates( $domain_id );
+#    my $user_participation_dates = $jsonp->_user_participation_dates( $domain_id );
+    my $user_participation_objects = $jsonp->_user_participation_objects( $domain_id );
+#    my $user_sent_invite_dates = $jsonp->_user_sent_invite_dates( $domain_id );
+    my $user_sent_invite_objects = $jsonp->_user_sent_invite_objects( $domain_id );
+#    my $user_created_meeting_dates = $jsonp->_user_created_meeting_dates( $domain_id );
+
+    my $meeting_objects = $jsonp->_meeting_objects( $domain_id );
+    my $meeting_objects_by_id = { map { $_->id => $_ } @$meeting_objects };
+    
+    for my $user ( @$users ) {
+        next if $jsonp->_user_email_objects_by_email( $domain_id )->{ $user->email };
+
+        my $created_date = $jsonp->_get_note_for_user( creation_time => $user, $domain_id );
+
+        my $user_cohort;
+        for my $cohort ( @$cohorts ) {
+            if ( $created_date >= $cohort->{start} ) {
+                $user_cohort = $cohort;
+                last;
+            }
+        }
+
+        $user_cohort->{total}++ if $user_cohort;
+        $all_time->{total}++;
+
+        if ( $user_visit_dates->{ $user->id } ) {
+            $user_cohort->{active}++ if $user_cohort;
+            $all_time->{active}++;
+        }
+
+        for my $invite ( @{ $user_sent_invite_objects->{ $user->id } } ) {
+            next unless $invite->id == $user_participation_objects->{ $invite->user_id }->[0]->id;
+            my $invited_user = $users_by_id->{ $invite->user_id };
+            my $diff = $jsonp->_get_note_for_user( creation_time => $invited_user, $domain_id ) - $invite->created_date;
+            next if $diff * $diff > 4;
+
+            $user_cohort->{contacts}++ if $user_cohort;
+            $all_time->{contacts}++;
+
+            next unless $user_visit_dates->{ $invite->user_id };
+
+            $user_cohort->{activations}++ if $user_cohort;
+            $all_time->{activations}++;
+        }
+    }
+
+    for my $cohort ( $all_time, @$cohorts ) {
+        next unless $cohort->{total};
+        my $rnaught = int( 10000* $cohort->{activations} / $cohort->{active} ) / 10000;
+        print $cohort->{name} . ': R naught = ' . $rnaught . ' (' . $cohort->{total} .' total, '.$cohort->{active}.' active, '.$cohort->{contacts}.' contacts, '.$cohort->{activations}.' activations)';
+        print $/;
+    }
+}
+
+sub _generate_cohorts {
+    my ( $self, $months ) = @_;
+    $months ||= CTX->request ? CTX->request->param('months') || 6 : 6;
+
+    my $dt = DateTime->now;
+    $dt->set( second => 0, minute => 0, hour => 0, day => 1 );
+
+    my $cohorts = [];
+    for (1..$months) {
+        push @$cohorts, {
+            start => $dt->epoch,
+            name => $dt->month_abbr . ' ' . $dt->year,
+            slots => {},
+        };
+        $dt->subtract( months => 1 );
+    }
+
+    return $cohorts;
+}
+1;

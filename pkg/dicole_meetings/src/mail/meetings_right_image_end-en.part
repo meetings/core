@@ -1,0 +1,10 @@
+[% IF in_html %]
+</td>
+<td width="276" style="width:276px; margin-bottom:0px; text-align:left; vertical-align:top;" valign="top">
+<img align="right" src="[% server_host %]/images/meetings/email/gift_squrre.png" style="display:block;border:0;margin-top:0px;"/>
+</td>
+</tr>
+</table>
+[% inthebubble = 0 %]
+[% ELSE %]
+[% END %]

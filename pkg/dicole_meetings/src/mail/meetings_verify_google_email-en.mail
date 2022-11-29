@@ -1,0 +1,23 @@
+[% MTN.t('Action required: Google connection authorization') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Authorize Google') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>[% IF new_user %][% MTN.t('Welcome to Meetin.gs!') %][% END %]<<</p>>>
+<<<p>>>[% IF new_user %][% MTN.t('Your account is now up and running.') %] [% END %][% MTN.t('Use the following link to authorize Meetin.gs to connect with your Google account.') %]<<</p>>>
+[% url = authorize_url %]
+[% text = MTN.t('Connect to Google') %]
+<<<blue_button>>>
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

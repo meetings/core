@@ -1,0 +1,279 @@
+=head1 NAME
+
+Roadmap and vision statement for year 2004
+
+=head1 TASK INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.10 $
+
+=item B<Status>
+
+New
+
+=back
+
+=head1 ABSTRACT
+
+This document explains the Dicole vision and roadmap for year 2004. The primary
+goal of this document is to describe qualities we find important to be included
+in a learning environment. The tools we build will be priorized and reflected
+based on these statements.
+
+=head1 DETAILS
+
+=head2 Goals
+
+Dicole Learning Environment (later we will use the abbreviation I<Dicole>) is
+a web-based learning environment built around the following principles: 
+
+B<Pedagogical goals>
+
+=over 4
+
+=item *
+
+I<Dialogic> - Able to support and facilitate learning and working in groups
+
+=item *
+
+I<Value added> - Does not replace the face-to-face communication but enriches it
+with modern technology and extends it with things that are not possible
+face-to-face
+
+=item *
+
+I<Independent> - Does not force certain pedagogy but instead allows the teacher to
+design what kind of pedagogy to use
+
+=item *
+
+I<Scaffolding> - Through usability and scaffolding means, reduce the load on the
+cognitive process, helping the students to focus on what is important 
+
+=item *
+
+I<Customizable> - Support commonly used scenarios separately or integrated:
+self-regulated learning, teaching subjects by familiarizing one with certain
+instructional material or supporting construction of new knowledge through
+collaborative learning process
+
+=back
+
+B<Usability goals>
+
+=over 4
+
+=item *
+
+From beginner simplicity to expert complexity without sacrificing any of the
+above goals: possibility to introduce new features as understanding of the
+environment increases 
+
+=item *
+
+Easy customization of layout, interface and functionality to support different
+interest groups 
+
+=back
+
+B<Technological goals>
+
+=over 4 
+
+=item * 
+
+Cross-platform compatibility through the support of common platforms (Unix,
+GNU/Linux, Mac, Windows) and browsers (Internet Explorer, Mozilla/Firefox,
+Netscape, Safari, Konqueror, Opera)
+
+=item *
+
+Extended integration possibilities through the support of a wide variety of
+relational databases (MySQL, Microsoft SQL Server, Sybase, Oracle, PostgreSQL)
+and centralized management of user information (LDAP) 
+
+=item *
+
+Interoperability through the support of standards of meta data (L<Dublin
+Core|http://www.dublincore.org>, IEEE LOM, L<IMS|http://www.imsglobal.org>)
+and content exchange (L<RDF|http://www.w3.org/RDF/>,
+L<RSS|http://www.w3.org/TR/rdf-syntax-grammar/>)
+
+=item *
+
+Easy customization, integration and rapid development achieved through means of
+L<FLOSS|http://www.infonomics.nl/FLOSS/report/> (Free/Libre and Open Source Software)  
+
+=back
+
+One of the main goals of the project is not to reinvent what other learning
+environments are already able to do, but extend those possibilities by
+introducing new possibilities and features which are lacking at the moment in
+the currently available environments.  
+
+This doesn't necessarily mean re-inventing the wheel in the first place but to
+create something new through contradiction of existing knowledge. The
+collaborative Open Source software development model aims to bring together the
+end users and developers, resulting in a pool of a wide variety of expertise. 
+
+=head2 Why Free/Open Source Software?
+
+Dicole is Free Software and Open Source because it is released under the MPL/GPL/LGPL
+triple license. For more information of MPL/GPL/LGPL triple licensing strategy,
+see (L<Mozilla Relicensing FAQ|http://www.mozilla.org/MPL/relicensing-faq.html>).
+The license combination protects the software's and its user's freedom to use, modify and
+distribute Dicole.
+
+Being Free Software is an important requirement for a next generation computer
+supported learning environment. By free we do not mean price but freedom. While
+there are all kinds of freedoms like freedom of speech and freedom of religion,
+Free Software represents the freedom of technology. 
+
+Imagine a class room where the school administration or the teachers are not
+able to influence how the teaching is carried out in detail in the class room.
+Even some of the tools and methods they would use are prohibited and almost
+impossible or too expensive to adopt. This is the spirit of proprietary
+web-based learning environments, which are strictly controlled through the
+intellectual property rights and licensing by their respective owners. 
+
+These companies judge and value the features and possibilities they build and
+make available by market share and number of possible paying customers. The
+attitude - "we know what is better for you ... and for us" - results in a major
+problem: while the software is built to include a wide range of features useful
+to a number of paying customers, the special interest groups and the important
+details like security, scalability and usability get less attention. 
+
+Many educational institutions have fallen for attractive proprietary learning
+platforms. First a company offers one for free and once the staff is educated
+and hooked with the new technology, the charges hit in. Moving to a new platform
+or staying with the current one get both very expensive. This is a scenario that
+could not easily happen with Free Software because the user is not dependent of
+the vendor and the vendor's motives. In other words, you can modify and maintain
+it yourself or select your service provider. 
+
+Web-based education and related tools are too important to be owned by a single
+entity. For that reason a rational business model for free educational tools
+should not build upon exclusive monopoly over the existence of such a
+technology. There are other options like offering content, training, support and
+services. 
+
+Since learning, education and local physical learning environments their self
+are not strictly controlled and owned by certain companies or entities, so must
+not technological tools and environments of education. 
+
+=head2 Scalability as a guiding principle
+
+With scalability we don't mean scalable technology, although that is an
+important goal. More like we mean the scalability of usability. With usability
+we mean pedagogical usability or to be more specific, independence. This means
+that the teacher could plan ahead the flow of the course and what pedagogical
+methods to use. This level of customization is hard to achieve since no one has
+made it before from that point of view. It has to be invented. The key is in how
+the technology of the learning environment could support the process of choosing
+the teaching and learning methods to use.
+
+Every teacher has emphasis on different things. One prefers a more
+content oriented method, other a more collaborative learning oriented method.
+Limiting this freedom makes the environment less suitable for many. The decision
+of what method to use leads to what tools to use. The freedom to select the
+tools to use is not technically hard to achieve.
+
+If we attack this idea more accurately, we notice that the individual tools
+should stretch to support the methods the teacher is willing to use. For example, the
+discussion forums should be more process-oriented instead of being loose if the
+teacher chooses to adapt the principles of problem based learning. A teacher who
+has a lot of emphasis on self-regulation and improving metacognition skills should be
+able to use scaffolding features and enable students to write their own learning
+diary.
+
+If we want this level of freedom we notice that it is not achieved by filling
+our tools with loads of features that support almost everything. The result will
+be a big mess which would be impossible to use. Better approach is to implement
+features that are important for different styles of teaching and creating tools
+that allow customizing the available features. This is the level
+of flexibility that allows designing the pedagogy to use with the help of
+various tools.
+
+The barrier for creating customization tools of this magnitude is the learning
+curve required to understand and exploit the possibilities of such tools. In
+that sense it is a good idea to create so called pedagogy wizards. The teacher
+creates a course and launches such a wizard which will ask different kind of
+opinions. Based on these opinions the system would automatically customize the
+tools, hiding unnecessary features. Later when the teacher becomes more familiar
+of the process, a tool for creating fine-grained solutions could be made
+available.
+
+=head2 Central tools
+
+Advancement is essential for evolution, so we are not here to re-invent the
+wheel. Instead we have chosen a couple of tools which should be done right from
+the beginning and preferably make them contain something new through critical
+evaluation, continuous mixing of existing knowledge and filling in gaps. 
+
+Based on a simple field evaluation and personal experience we tried to separate
+tools that teachers consider important. The wishes were different depending of
+pedagogical principles and level of understanding of the web-based learning. We
+combined content oriented and collaborative learning oriented wishes and argue
+that the following tools are important:
+
+=over 4
+
+=item *
+
+content management features for managing instructional material
+
+=item *
+
+tools for testing the understanding of the instructional material
+
+=item *
+
+discussion forums or some other central place for group communication
+
+=item *
+
+learning diary for evaluating personal learning
+
+=back
+
+We consider tools like calendar, webmail and school administration level tools
+less essential when we are looking for tools that have practical pedagogical
+value. Many are willing to see such tools in a learning environment, yet they
+do already exist. It would make more sense to integrate them since there is no
+point in creating such tools from scratch.
+
+What comes to course or group dynamics inside the learning environment is a
+totally different thing. Those features just have to exist and are of course
+considered as important tools. However we are not going to focus on those things
+because yet again we argue that they have no real pedagogical use.
+
+The important thing to know about course and group dynamics we emphasize is that
+our starting point to a learning environment is the individual itself and not a
+certain course. Based on that principle the user enters the learning
+environment always as an individual. She enters her personal space where all her
+personal stuff belongs. From there on she joins groups and courses. In that
+sense she never enters the environment to take a course. She enters as part
+of a community.
+
+There sure are other strong pedagogical tools like various communication tools
+and  tools for creating conceptual maps but we consider that those tools have
+been developed on a level where they are already useful for web-based
+learning. Our objective is to identify what existing parts still have problems
+and pay attention to them.
+
+=head1 NOTES AND STATUS
+
+This section should be filled with information and status of the current
+implementation of the specifications.
+
+=head1 AUTHORS
+
+Teemu Arina E<lt>teemu@ionstream.fiE<gt>

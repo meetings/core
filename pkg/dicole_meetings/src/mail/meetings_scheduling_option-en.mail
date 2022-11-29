@@ -1,0 +1,40 @@
+[% IF previous_answer != "" %][% MTN.t('%1$s rescheduling: is %2$s ok for you?',[meeting_title, scheduling_option]) %][% ELSE %][% MTN.t('%1$s scheduling: is %2$s ok for you?',[meeting_title, scheduling_option]) %][% END%]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Scheduling option for') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>
+[% MTN.t('Suggested time:') %] <<<br>>>
+<<<bold>>>[% scheduling_option %]<<</bold>>><<</p>>>
+<<<p>>>[% IF previous_answer != "" -%][% ELSE %] [% MTN.t('To answer, simply reply YES or NO to this email.') %][% END %]<<</p>>>
+
+[% IF previous_answer != "" -%] 
+<<<p>>>
+[% MTN.t('Your previous answer:') %] [% previous_answer %].
+<<</p>>>
+<<<p>>>
+[% MTN.t("To change your answer, reply to this message with either YES or NO depending on your availability. If you don't want to change it, don't do anything.") %]
+<<</p>>>
+[% END %]
+
+<<<p>>>
+[% MTN.t('Or  manage your answers on the meeting page.')%]
+<<</p>>>
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=scheduling_options' %]
+[% showtext = 1 %]
+[% text = MTN.t('View meeting') %]
+<<<blue_button>>>
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

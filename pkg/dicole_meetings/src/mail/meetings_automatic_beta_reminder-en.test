@@ -1,0 +1,12 @@
+[%#- NOT USED ANYMORE -%]
+
+[%- IF test_case == 'betamuistutus' %]
+[%- 
+
+server_host = 'http://dev.meetin.gs'
+inviting_user_name = 'Kalle'
+user_name = 'Viivi'
+register_url = 'http://meetin.gs/registeraccounturl'
+
+%]
+[%- END %]

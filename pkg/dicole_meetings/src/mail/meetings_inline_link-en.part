@@ -1,0 +1,5 @@
+[% IF in_html %]
+<a style="color:[% theme_color %]; font-family:Arial,Verdana,sans-serif;text-decoration:underline;" href="[% url %]">[% text %]</a>
+[% ELSE %]
+[% text %]
+[% END %]

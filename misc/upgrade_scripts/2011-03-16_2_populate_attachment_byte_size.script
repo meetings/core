@@ -1,0 +1,45 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use LWP::Simple 'getstore';
+use File::Temp;
+use Dicole::MogileFS;
+use Term::ProgressBar::Simple;
+
+my $mogile = Dicole::MogileFS->new(
+    domain => 'dicole.dcp.attachments',
+    class  => 'attachment'
+);
+
+sub execute {
+    my ($self, $params) = @_;
+
+    my $attachments_ds = CTX->lookup_object('attachment');
+
+    my @attachments = @{$attachments_ds->fetch_group({})};
+
+    my $progress = Term::ProgressBar::Simple->new (scalar @attachments);
+
+    for my $attachment (@attachments) {
+        $progress++;
+
+        my @urls = $mogile->get_urls($attachment->id)
+            or next;
+
+        my $temp_file = File::Temp->new;
+
+        $progress->message($attachment->filename);
+
+        getstore $urls[0] => $temp_file->filename
+            or next;
+
+        my $size = -s $temp_file;
+
+        $attachment->byte_size($size);
+        $attachment->save;
+    }
+}
+
+1;

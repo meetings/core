@@ -1,0 +1,84 @@
+[%# $Id: widget_categorylisting.tmpl,v 1.3 2009-01-07 14:42:33 amv Exp $ -%]
+[%#
+    The template accepts the following information in itemparams:
+    {
+        widths => [
+            '40%',
+            '60%'
+        ],
+        
+        categories => [
+            {
+                raw => 'My Key',
+                template => undef,
+                params => undef,
+                class => '',
+                rows => [
+                    [
+                        {
+                            raw => '<span class="oddText">HelLo</span>',
+                            template => undef,
+                            params => undef,
+                            class => 'oddTextTD',
+                        },
+                        {
+                            raw => undef,
+                            template => 'text',
+                            params => {
+                                text => 'Other Hello',
+                            },
+                            class => undef,
+                        }
+                    ],
+                    ...
+                ]
+            },
+            ...
+        ],
+        
+    }
+
+TODO: Make own classes for this instead of using listing classes and bold class!!
+
+-%]
+
+[%- list = itemparams -%]
+<table id="list" class="keyValueListing">
+
+[%- catcount = 0 -%]
+
+[%- FOREACH cat = list.categories -%]
+
+    <tr>
+        <td class="bold listingcell[% IF cat.class %] [% cat.class %][% END %]" colspan="[% cat.rows.0.size %]">
+
+        [% PROCESS dicole_base::include_widget widget = cat %]
+    
+        </td>
+    </tr>
+    
+    [%- rowcount = 0 -%]
+    
+    [%- FOREACH row = cat.rows -%]
+        <tr class="[% IF rowcount % 2 == 1 %]odd[% ELSE %]even[% END %]">
+    
+        [%- cellcount = 0 -%]
+        [%- FOREACH cell = row -%]
+            <td class="listingValue[% IF cell.class %] [% cell.class %][% END %]"[% IF catcount == 0 && rowcount == 0 && list.widths %] width="[% list.widths.$cellcount %]"[% END %]>
+            
+            [% PROCESS dicole_base::include_widget widget = cell %]
+    
+            </td>
+            [%- cellcount = cellcount + 1 %]
+        [%- END %]
+    
+        </tr>
+        
+        [%- rowcount = rowcount + 1 %]
+
+    [%- END %]
+
+    [%- catcount = catcount + 1 %]
+
+[%- END %]
+</table>

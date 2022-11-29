@@ -1,0 +1,48 @@
+<form method="POST" id="wrapper">
+
+<input type="hidden" name="base" value="[% base | html %]" />
+<input type="hidden" name="type" value="[% type | html %]" />
+<input type="hidden" name="lang" value="[% lang | html %]" />
+<input type="hidden" name="email" value="[% email | html %]" />
+
+<table style="width: 100%">
+
+<tr style="height: 25px">
+  <td colspan="2">
+    <a href="[% back_url | html %]">&lt;- Back</a> - Editing [% base | html %] ([% lang | html %]) [% type | html %]: <input type="submit" name="save" onclick="d=document.getElementById('ddd').value;t=document.getElementById('ttt').value; return true;" value="Save" />
+  </td>
+</tr>
+
+<tr>
+  <td width="auto" style="padding: 5px; vertical-align: top">
+    <div style="float:left; width: 100%">
+      <textarea id="ttt" style="padding: 0px; border: solid black 1px; width: 100%; height: 500px;" name="content">[% content | html %]</textarea>
+    </div>
+  </td>
+  <td width="640px" style="padding: 5px; vertical-align: top">
+    <div style="float:left; width: 100%">
+      <div style="padding: 0px; border: solid black 1px; width: 100%; height: 400px; overflow:auto" id="preview-container" data-content-id="ttt" data-url="[% preview_url %]" data-base="[% base | html %]" data-type="[% type | html %]" data-lang="[% lang | html %]"></div>
+      <textarea id="ddd" style="padding: 0px; border: solid black 1px; width: 100%; height: 98px;" name="design">[% design | html %]</textarea>
+    </div>
+  </td>
+</tr>
+
+</table>
+
+</form>
+
+<script>
+t = document.getElementById('ttt').value;
+d = document.getElementById('ddd').value;
+window.onbeforeunload = function(e) {
+if ( t != document.getElementById('ttt').value || d != document.getElementById('ddd').value ) {
+    return "ootko ihan varma et haluut sulkea vaikka tekstii on muutettu?";
+}
+}
+setInterval( function() {
+var h = window.innerHeight - 30 - 10;
+document.getElementById('ttt').style.height = h + 'px';
+var pch = document.getElementById('ddd').style.display == 'none' ? h : h-100;
+document.getElementById('preview-container').style.height = pch + 'px'
+}, 100 );
+</script>

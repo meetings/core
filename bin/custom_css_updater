@@ -1,0 +1,64 @@
+#!/usr/bin/perl
+
+use HTML::Entities;
+use LWP::UserAgent;
+
+my ( $a, $d, $g, $p ) = @ARGV;
+
+my $ohje = "$0 login [domain] [username]; (once)\n$0 pull [domain] [group_id] [file];\n$0 push [domain] [group_id] [file];\n";
+
+die $ohje if @ARGV < 3;
+
+my $ua = LWP::UserAgent->new;
+$ua->cookie_jar({ file => ".dcp_cookie", autosave => 1, ignore_discard => 1});
+
+my $path = $g ? '/workgroupsadmin/look/' . $g : '/dusermanager/look/0';
+
+if ( $a =~ 'login' ) {
+    print "type password:";
+    my $pass = <STDIN>;
+    chomp $pass;
+    my $content = $ua->post('http://' . $d . '/login/', { login_login_name => $g, login_password => $pass })->content;
+    die "login failed!\n" . $ohje unless detect_login( $content );
+}
+elsif ( $a =~ 'push') {
+    my $css = '';
+    open F, "<", $p or die "cound not read file $p";
+    $css .= $_ while $_ = <F>;
+    my $content = $ua->post('http://' . $d . $path, { save => 'Save', custom_css => $css })->content;
+    die "login plz!\n" . $ohje unless detect_login( $content );
+    die "update seemed to fail :( do you have the rights?" unless data_matches( $css, parse_content( $content ) );
+}
+elsif ( $a =~ 'pull' ) {
+    my $content = $ua->get('http://' . $d . $path )->content;
+    die "login plz!\n" . $ohje unless detect_login( $content );
+    $content = parse_content( $content);
+    open F, ">", $p or die "could not write file $p";
+    print F $content;
+    close F;
+}
+else {
+    die $ohje;
+}
+print "great success!\n";
+
+sub parse_content {
+    my ( $content ) = @_;
+    my ( undef, $beef ) = split '<textarea class="" cols="80" id="custom_css" name="custom_css" rows="30">', $content;
+    my ( $beef ) = split '</textarea></span>', $beef;
+    $beef = decode_entities( $beef );
+    return $beef;
+}
+
+sub detect_login {
+    my ( $content ) = @_;
+    return $content =~ /login_password/ ? 0 : 1;
+}
+
+sub data_matches {
+    my ( $local, $remote ) = @_;
+    $local =~ s/\s*//sg;
+    $remote =~ s/\s*//sg;
+
+    return $local eq $remote ? 1 : 0;
+}

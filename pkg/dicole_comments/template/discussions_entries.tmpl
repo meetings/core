@@ -1,0 +1,76 @@
+[%#
+	entries = [
+		{
+			author => 'Pekka',
+			author_link => '#',
+			author_image => '#',
+			title => 'Title',
+			link => '#',
+			date => 'tunti sitten',
+			number_of_comments => '1',
+			commenters => [
+				{
+					author => 'Paavo',
+					image => '#'
+				},
+				{
+					author => 'Matti',
+					image => '#'
+				},
+				{
+					author => 'Teppo',
+					image => '#'
+				}
+			]
+		},
+		{
+			author => 'Pekka',
+			author_link => '#',
+			author_image => '#',
+			title => 'Title',
+			link => '#',
+			date => 'tunti sitten',
+			number_of_comments => '1',
+			commenters => [
+				{
+					author => 'Paavo',
+					image => '#'
+				},
+				{
+					author => 'Matti',
+					image => '#'
+				},
+				{
+					author => 'Teppo',
+					image => '#'
+				}
+			]
+		}
+	]
+%]<div class="discussion">
+	<div class="discussion_data" title="[% script_data_json | html %]"></div>
+	[% FOREACH entry IN entries %]
+	<div class="discussion_entry">
+		<div class="left">
+			<div class="user-avatar">
+				<a href="[% entry.author_link | html %]" class="[% entry.type | html %]">
+					[% IF entry.type != 'wiki' %]
+					<img src="[% entry.author_image or '/images/theme/default/discussion_big_face.png' %]" alt="[% entry.author | html %]" />
+					[% END %]
+				</a>
+			</div>
+		</div>
+		<div class="right">
+			<div class="commenters">
+				[% FOREACH commenter IN entry.commenters %]
+				<img src="[% commenter.image or '/images/theme/default/discussion_small_face.png' %]" alt="[% commenter.author | html %]" />
+				[% END %]
+			</div>
+			<div class="date">[% entry.date | html %]</div>
+		</div>
+		<div class="center">
+			<a href="[% entry.link | html %]">[% entry.title | html %]</a>
+		</div>
+	</div>
+	[% END %]
+</div>

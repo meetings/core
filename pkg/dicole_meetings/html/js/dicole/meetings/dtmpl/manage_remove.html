@@ -1,0 +1,18 @@
+<div id="js_manage_navi_container"></div>
+<div id="modal-manage-remove" class="modal-popup-admin">
+    <h2 class="modal-header"><%= MTN.t('Remove Meeting') %></h2>
+    <div class="error-container js_meetings_manage_basic_error_container error_container_hidden"></div>
+    <p><%= MTN.t('Note: By removing this meeting, you and your participants will no longer be able to access this meeting and content related to it.') %></p>
+    <form id="meetings_manage_remove_form" class="meetings-form">
+        <fieldset>
+            <!-- Meeting submit -->
+            <div id="submit" class="form-row centered">
+                <a class="js_meetings_remove_meeting_open" href="<%== p.remove_url %>" id="manage-remove-meeting">
+                    <span class="button pink"><%= MTN.t('Remove') %></span>
+                    <span class="indicator"></span>
+                </a>
+            </div>
+        </fieldset>
+    </form>	
+    <a href="#" class="js_hook_showcase_close close-cross alpha_png"></a>
+</div>

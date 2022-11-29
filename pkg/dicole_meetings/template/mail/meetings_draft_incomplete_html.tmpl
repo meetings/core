@@ -1,0 +1,522 @@
+[% IF ! theme_color_name %]
+    [% theme_color_name = 'blue' %]
+[% END %]
+
+[% IF theme_color_name == 'kpn' %]
+[% theme_color_name = 'green' %]
+[% END %]
+
+[% IF theme_color_name == 's2m' %]
+[% theme_color_name = 'green' %]
+[% END %]
+
+[% text_colors = {
+  blue = '#199acf'
+  brown = '#6c5c4b'
+  darkblue = '#027bb3'
+  green = '#467c5a'
+  grey = '#767676'
+  pink_red = '#994c58'
+  purple = '#6c5784'
+  turquoise = '#06949d'
+} %]
+
+[% theme_color = text_colors.$theme_color_name %]
+
+[% IF ! action_text %]
+[% action_text = 'Mail action_text var not set' %]
+[% END %]
+
+[% IF in_html %]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meetin.gs</title>
+</head>
+<body style="width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;">
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100% !important; line-height: 100% !important; background-color: #efeeee; margin: 0; padding: 0;" bgcolor="#efeeee">
+    <tr>
+        <td valign="top" style="border-collapse: collapse;">
+            <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin-left:auto; margin-right:auto; width: 616px; background-color:#efeeee; margin-top:30px; height:9px; background-image:url('[% server_host %]/images/meetings/email/top_shadow.jpg'); background-repeat:no-repeat" bgcolor="#efeeee">
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+            
+		    <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin-left:auto; margin-right:auto; width: 616px; background-color:#ffffff;" bgcolor="#ffffff">
+			    <tr>
+                    <td style="border-collapse: collapse; background-image:url('[% server_host %]/images/meetings/email/l_border_repeat.gif'); background-repeat:repeat-y; width:8px;" width="8"></td>
+			        <td width="600" style="width:600px; border-collapse:collapse;padding-bottom:10px;">
+[% END %]
+
+[% action_text = MTN.t('Hello,',[user_name]) %]
+
+[% IF in_html %]
+
+[% IF header_color_name == 'dark' %]
+[% header_bg_style = 'background-image:url(' _ server_host _ '/images/meetings/email/header_repeat_dark.png); background-repeat:repeat-x; background-color:#494949;' %]
+[% ELSE %]
+[% header_bg_style = '' %]
+[% END %]
+
+
+[% IF ! logo_image %]
+
+[% IF ! header_color_name %]
+[% logo_image = server_host _ '/images/meetings/email/meetings_logo.png' %]
+[% ELSE %]
+
+[% IF header_color_name == 'dark' %]
+[% inverted = '_i' %]
+[% ELSE  %]
+[% inverted = '' %]
+[% END %]
+
+[% logo_image = server_host _ '/images/meetings/email/logos/' _ theme_color_name _ inverted _ '.png' %]
+[% END %]
+
+[% END %]
+
+
+[% IF ! logo_image %]
+
+[% IF ! header_color_name %]
+[% logo_image = server_host _ '/images/meetings/email/meetings_logo.png' %]
+[% ELSE %]
+
+[% IF header_color_name == 'dark' %]
+[% inverted = '_i' %]
+[% ELSE  %]
+[% inverted = '' %]
+[% END %]
+
+[% logo_image = server_host _ '/images/meetings/email/logos/' _ theme_color_name _ inverted _ '.png' %]
+[% END %]
+
+[% END %]
+
+[% IF ! action_text %]
+[% action_text = 'Mail action_text var not set' %]
+[% END %]
+
+[% IF ! action_text_type %]
+[% action_text_type = 'small' %]
+[% END %]
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" align="center" style="margin-left:auto; margin-right:auto; width: 600px; margin-top: 15px; [% header_bg_style %]">
+<tr>
+<td style="border-collapse: collapse; vertical-align:top;" valign="top">
+[% IF action_text_type == 'small' %]
+<p style="margin-top:8xp; margin-bottom:6px; margin-left:50px; margin-right:0px; line-height:25px; font-size:15px; [% IF header_color_name == 'dark' %]color:#fff;[% ELSE %]color:#4a4a4a;[% END %] font-family:Arial,Verdana,sans-serif;">
+[% action_text %]
+</p>
+[% ELSE %]
+<h1 style="line-height:30px; font-size:18px; font-weight:bold; margin-top:8px; margin-left:50px; margin-right:0px; margin-bottom:6px; [% IF header_color_name == 'dark' %]color:#fff;[% ELSE %]color:#4a4a4a;[% END %] font-family:Arial,Verdana,sans-serif;">
+[% action_text %]
+</h1>
+[% END %]
+</td>
+<td style="border-collapse: collapse; vertical-align:top; width:240px;" valign="top">
+<h1 style="margin-top:10px; margin-bottom:5px; margin-left:40px; color: black !important; font-size:16px; font-family:Arial,Verdana,sans-serif;">
+<img src="[% logo_image %]" alt="[% IF logo_alt %][% logo_alt %][% ELSE %]Meetin.gs[%END%]" />
+</h1>
+</td>
+</tr>
+</table>
+[% ELSE %]
+[% action_text %]
+
+
+
+
+[% END %]
+
+[% squirrel = 'thief' %]
+[% IF in_html %]
+<table cellspacing="0" cellpadding="0" style="width:530px; margin-left:35px; margin-top:0px; margin-right:35px; margin-bottom:0px;border-collapse:collapse;border-spacing:0;">
+<tr>
+<td height="13" style="height:13px;margin-bottom:0px;"><img src="[% server_host %]/images/meetings/email/gray_arrow_up.gif" width="23" height="13" style="margin-left:35px;display:block;border:0;"/></td>
+</tr>
+<tr>
+<td style="margin-top:0px;background-color:#f4f4f4;">
+[% inthebubble = 1 %]
+[% END %]
+
+
+[% IF in_html %]<p style="line-height:25px; font-size:[% IF tip %]12[% ELSE %]15[% END %]px; color:[% IF tip %]#a4a3a3[% ELSE %]#4a4a4a[% END %]; margin-top:15px; margin-bottom:15px; margin-left:[% IF inthebubble %]15[% ELSE %]50[% END %]px; margin-right:[% IF inthebubble %]15[% ELSE %]50[% END %]px; font-family:Arial,Verdana,sans-serif;[% IF pwidth %]width:[% pwidth %]px;[% END %]">[% ELSE %][% END %][% tip = 0 %]
+[% IF meeting_title %]
+[% MTN.t('Your meeting %(B$%1$s%) is still a %(B$draft%).',[meeting_title]) %]
+[% ELSE %]
+[% MTN.t('Your %(B$untitled meeting%) is still a %(B$draft%).') %]
+[% END %]
+[% IF in_html %]
+</p>
+[% ELSE %]
+
+
+
+
+[% END %]
+
+[% calendar_links_disabled = 1 %]
+[% in_basic_info = 1 %] 
+
+[% IF in_html %]
+<table style="margin-top:15px;margin-bottom:15px;margin-left:15px;margin-right:15px;line-height:25px; font-size:15px; color:#4a4a4a;font-family:arial;">
+<tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+<td>
+[% ELSE %]
+
+
+[% END %]
+
+[% IF ! disable_time %]
+[% IF in_html %]<b>[% END %][% MTN.t('When') %][% IF in_html %]</b>[% END %]: [% IF meeting_time %][% meeting_time %][% ELSE %][% MTN.t('Not known yet') %][% END %][% IF in_html %]
+<br />
+[% ELSE %]
+
+
+[% END %]
+[% END %]
+
+[% IF in_html %]<b>[% END %][% MTN.t('Where') %][% IF in_html %]</b>[% END %]: [% IF meeting_location_string %][% meeting_location_string %][% ELSE %][% MTN.t('Not set') %][% END %][% IF in_html %]
+<br />
+[% ELSE %]
+
+
+[% END %]
+
+[% IF lahixcustxz_hack %]
+[% IF lahixcustxz_hack.birthdate %][% IF in_html %]<b>[% END %][% 'Syntymäpäivä' %][% IF in_html %]</b>[% END %]: [% lahixcustxz_hack.birthdate %][% IF in_html %]
+<br />
+[% ELSE %]
+
+
+[% END %][% END %]
+[% IF lahixcustxz_hack.address %][% IF in_html %]<b>[% END %][% 'Osoite' %][% IF in_html %]</b>[% END %]: [% lahixcustxz_hack.address %][% IF in_html %]
+<br />
+[% ELSE %]
+
+
+[% END %][% END %]
+[% IF lahixcustxz_hack.area %][% IF in_html %]<b>[% END %][% 'Postitoimipaikka' %][% IF in_html %]</b>[% END %]: [% lahixcustxz_hack.area %][% IF in_html %]
+<br />
+[% ELSE %]
+
+
+[% END %][% END %]
+[% IF lahixcustxz_hack.notes %][% IF in_html %]<b>[% END %][% 'Viesti varaajalta' %][% IF in_html %]</b>[% END %]: [% lahixcustxz_hack.notes %][% IF in_html %]
+<br />
+[% ELSE %]
+
+
+[% END %][% END %]
+[% END %]
+
+[% IF in_text && meeting_participants %]
+[% IF in_html %]<b>[% END %][% MTN.t('Who') %][% IF in_html %]</b>[% END %]: [% meeting_participants %]
+[% IF in_html %]
+<br />
+[% ELSE %]
+
+
+[% END %]
+[% END %]
+
+[% IF in_html %]
+
+[% url = meeting_url %]
+[% showtext = 1 %]
+[% text = MTN.t('Open meeting page') %]
+[% IF in_html %]
+[% IF in_basic_info %]
+[% margins = 'margin-left:0px; margin-right:0px; margin-top:10px; margin-bottom:10px;'%]
+[% ELSIF inthebubble %]
+[% margins = 'margin-left:15px; margin-right:15px; margin-top:10px; margin-bottom:10px;'%]
+[% ELSE %]
+[% margins = 'margin-left:50px; margin-right:50px; margin-top:10px; margin-bottom:10px;'%]
+[% END %]
+<table border="0" cellspacing="0" cellpadding="5" style="[% margins %]">
+<tr>
+<td height="55" style="background-image:url('[% server_host %]/images/meetings/email/[% theme_color_name %]_button_gradient.png'); background-repeat:repeat-x; vertical-align:middle; border-radius: 6px; padding:0px; -webkit-border-radius: 6px; font-size: 15px; font-family: Arial, Helvetica, sans-serif; color: #ffffff; -khtml-border-radius: 6px; margin: 0; text-align: center; -moz-border-radius: 6px; background-color:[% theme_color %];" bgcolor="[% theme_color %]">
+<a href="[% url | html %]" style="display:block;padding-top:15px; padding-bottom:15px; padding-left:15px; padding-right:15px; font-weight:bold; text-transform:upper-case; font-family:Arial, Helvetica, sans-serif; color: #ffffff; text-decoration:none; margin:0;">
+[% text | html %]
+[% IF ! noarrow %]
+<img style="display:inline-block;border:none; margin-bottom:-3px; margin-left:10px; margin-right:0px;  margin-top:0px;" src="[% server_host %]/images/meetings/email/button_arrow.png"/>
+[% END %]
+</a>
+</td>
+</tr>
+</table>
+[% ELSE %][% IF showtext %][% text | html %]: 
+[% END %][% url | html %]
+
+
+
+
+[% END %]
+</td>
+</tr>
+
+
+[% IF ics_url && gcal_url && ! calendar_links_disabled %]
+[% IF in_html %]
+<tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+<td colspan="2" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;font-size:15px; color:#4a4a4a; font-family:Arial,Verdana,sans-serif;">
+[% IF in_html %]<b>[% END %][% MTN.t('Add to calendar') %]: [% IF in_html %]</b>[% END %]
+<a href="[% ics_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+MS Outlook
+</a> | 
+<a href="[% gcal_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+[% MTN.t('Google calendar') %]
+</a> | 
+<a href="[% ics_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+[% MTN.t('Other ICS') %]
+</a>
+</td>
+</tr>
+[% ELSE %]
+[% MTN.t('Calendar links:') %]
+
+[% ics_url %]
+
+[% gcal_url %]
+
+[% END %]
+[% END %]
+
+[% IF allow_meeting_cancel %]
+[% IF in_html %]
+<tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+<td colspan="2" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;font-size:15px; color:#4a4a4a; font-family:Arial,Verdana,sans-serif;">
+<a href="[% meeting_cancel_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+[% MTN.t('Cancel meeting?') %]
+</a>
+</td>
+</tr>
+[% ELSE %]
+[% MTN.t('Cancel meeting:') %]
+
+[% meeting_cancel_url %]
+
+[% END %]
+[% END %]
+
+</table>
+[% ELSE %]
+
+
+[% END %]
+
+[% IF ! in_html && basic_info_button_right %]
+[% url = meeting_url %]
+[% showtext = 1 %]
+[% text = MTN.t('Open meeting page') %]
+[% buttonright = 1 %]
+[% IF in_html %]
+[% IF in_basic_info %]
+[% margins = 'margin-left:0px; margin-right:0px; margin-top:10px; margin-bottom:10px;'%]
+[% ELSIF inthebubble %]
+[% margins = 'margin-left:15px; margin-right:15px; margin-top:10px; margin-bottom:10px;'%]
+[% ELSE %]
+[% margins = 'margin-left:50px; margin-right:50px; margin-top:10px; margin-bottom:10px;'%]
+[% END %]
+<table border="0" cellspacing="0" cellpadding="5" style="[% margins %]">
+<tr>
+<td height="55" style="background-image:url('[% server_host %]/images/meetings/email/[% theme_color_name %]_button_gradient.png'); background-repeat:repeat-x; vertical-align:middle; border-radius: 6px; padding:0px; -webkit-border-radius: 6px; font-size: 15px; font-family: Arial, Helvetica, sans-serif; color: #ffffff; -khtml-border-radius: 6px; margin: 0; text-align: center; -moz-border-radius: 6px; background-color:[% theme_color %];" bgcolor="[% theme_color %]">
+<a href="[% url | html %]" style="display:block;padding-top:15px; padding-bottom:15px; padding-left:15px; padding-right:15px; font-weight:bold; text-transform:upper-case; font-family:Arial, Helvetica, sans-serif; color: #ffffff; text-decoration:none; margin:0;">
+[% text | html %]
+[% IF ! noarrow %]
+<img style="display:inline-block;border:none; margin-bottom:-3px; margin-left:10px; margin-right:0px;  margin-top:0px;" src="[% server_host %]/images/meetings/email/button_arrow.png"/>
+[% END %]
+</a>
+</td>
+</tr>
+</table>
+[% ELSE %][% IF showtext %][% text | html %]: 
+[% END %][% url | html %]
+
+
+
+
+[% END %]
+[% END %]
+[% in_basic_info = 0 %] 
+
+
+[% IF in_html %]
+</p>
+[% ELSE %]
+
+
+
+
+[% END %]
+
+[% IF in_html %]<p style="line-height:25px; font-size:[% IF tip %]12[% ELSE %]15[% END %]px; color:[% IF tip %]#a4a3a3[% ELSE %]#4a4a4a[% END %]; margin-top:15px; margin-bottom:15px; margin-left:[% IF inthebubble %]15[% ELSE %]50[% END %]px; margin-right:[% IF inthebubble %]15[% ELSE %]50[% END %]px; font-family:Arial,Verdana,sans-serif;[% IF pwidth %]width:[% pwidth %]px;[% END %]">[% ELSE %][% END %][% tip = 0 %][% MTN.t('%(B$The participants do not yet have access%) to the meeting page and materials.') %][% IF in_html %]
+</p>
+[% ELSE %]
+
+
+
+
+[% END %]
+
+[% IF in_html %]<p style="line-height:25px; font-size:[% IF tip %]12[% ELSE %]15[% END %]px; color:[% IF tip %]#a4a3a3[% ELSE %]#4a4a4a[% END %]; margin-top:15px; margin-bottom:15px; margin-left:[% IF inthebubble %]15[% ELSE %]50[% END %]px; margin-right:[% IF inthebubble %]15[% ELSE %]50[% END %]px; font-family:Arial,Verdana,sans-serif;[% IF pwidth %]width:[% pwidth %]px;[% END %]">[% ELSE %][% END %][% tip = 0 %][% MTN.t('Go to the meeting page, check that everything is OK and then click "Ready" on the top right corner, so that the invitations get sent out to the participants.') %][% IF in_html %]
+</p>
+[% ELSE %]
+
+
+
+
+[% END %]
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=draft_incomplete' %]
+[% text = MTN.t('Open meeting page') %]
+[% buttonright = 0 %]
+[% IF in_html %]
+[% IF in_basic_info %]
+[% margins = 'margin-left:0px; margin-right:0px; margin-top:10px; margin-bottom:10px;'%]
+[% ELSIF inthebubble %]
+[% margins = 'margin-left:15px; margin-right:15px; margin-top:10px; margin-bottom:10px;'%]
+[% ELSE %]
+[% margins = 'margin-left:50px; margin-right:50px; margin-top:10px; margin-bottom:10px;'%]
+[% END %]
+<table border="0" cellspacing="0" cellpadding="5" style="[% margins %]">
+<tr>
+<td height="55" style="background-image:url('[% server_host %]/images/meetings/email/[% theme_color_name %]_button_gradient.png'); background-repeat:repeat-x; vertical-align:middle; border-radius: 6px; padding:0px; -webkit-border-radius: 6px; font-size: 15px; font-family: Arial, Helvetica, sans-serif; color: #ffffff; -khtml-border-radius: 6px; margin: 0; text-align: center; -moz-border-radius: 6px; background-color:[% theme_color %];" bgcolor="[% theme_color %]">
+<a href="[% url | html %]" style="display:block;padding-top:15px; padding-bottom:15px; padding-left:15px; padding-right:15px; font-weight:bold; text-transform:upper-case; font-family:Arial, Helvetica, sans-serif; color: #ffffff; text-decoration:none; margin:0;">
+[% text | html %]
+[% IF ! noarrow %]
+<img style="display:inline-block;border:none; margin-bottom:-3px; margin-left:10px; margin-right:0px;  margin-top:0px;" src="[% server_host %]/images/meetings/email/button_arrow.png"/>
+[% END %]
+</a>
+</td>
+</tr>
+</table>
+[% ELSE %][% IF showtext %][% text | html %]: 
+[% END %][% url | html %]
+
+
+
+
+[% END %]
+
+
+[% squirrel = 'thief' %]
+[% IF in_html %]
+<table cellspacing="0" cellpadding="0" style="width:[% IF inthebubble %]460[% ELSE %]530[% END %]px; margin-left:35px; margin-top:0px; margin-right:35px; margin-bottom:15px;border-collapse:collapse;border-spacing:0;">
+<tr>
+<td height="50" style="height:50px;margin-bottom:0px; text-align:right;">
+<img align="right" src="[% IF squirrel == 'thief' %][% server_host %]/images/meetings/email/thief_squirrel.png[% END %][% IF squirrel == 'pro' %][% server_host %]/images/meetings/email/pro_squirrel.png[% END %]" height="50" style="display:block;border:0;margin-top:0px;"/>
+</td>
+</tr>
+</table>
+[% inthebubble = 1 %]
+[% END %]
+
+[% IF in_html %]</td></tr></table>
+[% inthebubble = 0 %]
+[% END %]
+
+[% IF ! hide_app_promotion %]
+
+[% IF customize_for_cmeet %]
+[% iphone_url = 'http://mtn.gs/cmeetiphone' %]
+[% android_url = 'http://mtn.gs/cmeetandroid' %]
+[% ELSE %]
+[% iphone_url = 'http://bit.ly/swipetomeet-ios' %]
+[% android_url = 'http://bit.ly/swipetomeet-android' %]
+[% END %]
+
+[% IF in_html %]
+<table style="margin-top:20px;margin-bottom:10px;margin-left:35px;margin-right:35px;line-height:25px; font-size:15px; color:#4a4a4a;font-family:arial;width:530px;">
+    <tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+        <td valign="top" width="10%" colspan="1" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px; vertical-align:top; width:10%; padding-top:5px;">
+            <img src="[% server_host %]/images/meetings/email/phone.png" alt="" />
+        </td>
+        <td valign="top" width="90%" colspan="1" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px; vertical-align:top; width:90%;">
+            <h4 style="margin-top:0px;margin-bottom:10px; padding-top:0px; padding-bottom:0px;">[% MTN.t('Meetings on the move') %]</h4>
+            <p style="margin-top:10px;margin-bottom:0px; padding-top:0px; padding-bottom:0px;">[% IF customize_for_cmeet %][% MTN.t('In order to stay always connected we recommend to download the free mobile app and receive meeting details and updates straight to your mobile phone:') %][% ELSE %][% MTN.t('Download SwipeToMeet app by Meetin.gs to receive meeting details and updates straight to your mobile device:') %][% END %]</p>
+        </td>
+    </tr>
+</table>
+<table style="margin-top:10px;margin-bottom:15px;margin-left:35px;margin-right:35px;line-height:25px; font-size:15px; color:#4a4a4a;font-family:arial;width:530px;">
+    <tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+        <td colspan="1" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px; vertical-align:top;width:40%;">
+            <a href="[% iphone_url %]" target="_blank">
+                <img src="[% server_host %]/images/meetings/email/app_store.png" alt="App Store"/>
+            </a>
+        </td>
+        <td colspan="1" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px; vertical-align:top;">
+            <a href="[% android_url %]" target="_blank">
+                <img src="[% server_host %]/images/meetings/email/google_play.png" alt="Google Play"/>
+            </a>
+        </td>
+    </tr>
+</table>
+[% ELSE %]
+[% MTN.t('Meetings on the move for iPhone and android:') %][% IF in_html %]
+<br />
+[% ELSE %]
+
+
+[% END %]
+iPhone [% iphone_url %][% IF in_html %]
+<br />
+[% ELSE %]
+
+
+[% END %]
+Android [% android_url %]
+[% END %]
+
+[% END %]
+
+
+
+[% IF in_html %]
+                    </td>
+                    <td style="border-collapse: collapse; background-image:url('[% server_host %]/images/meetings/email/r_border_repeat.gif'); background-repeat:repeat-y; width:8px;" width="8"></td>
+                </tr>
+            </table>
+            <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin-left:auto; margin-right:auto; margin-bottom:20px; width: 616px; background-image:url('[% server_host %]/images/meetings/email/bottom_shadow.jpg'); background-repeat:repeat-x;">
+            <tr>
+                <td style="border-collapse: collapse;">
+                    <p style="margin-top:10px; margin-left:10px; margin-right:10px; margin-bottom:0px; color:#4a4a4a; font-size:10px; text-align:center; font-family:Arial,Verdana,sans-serif;">
+                        [% MTN.t('This is an automated message from') %] <a href="http://www.meetin.gs/" style="color:#4a4a4a; text-decoration:underline;">Meetin.gs</a>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-collapse: collapse;">
+                    <p style="margin-top:10px; margin-left:10px; margin-right:10px; margin-bottom:10px; color:#4a4a4a; font-size:10px; text-align:center; font-family:Arial,Verdana,sans-serif;">
+                        <a href="http://support.meetin.gs/" style="color:#4a4a4a; text-decoration:underline;">[% MTN.t('Support') %]</a> | 
+                        <a href="http://meetin.gs/meetings/privacy_policy" style="color:#4a4a4a; text-decoration:underline;">[% MTN.t('Privacy Policy') %]</a> 
+                        [% IF meeting_unsubscribe_url %] | <a href="[% meeting_unsubscribe_url %]" style="color:#4a4a4a; text-decoration:underline;">[% MTN.t('Unsubscribe from this meeting') %]</a>[% END %] | <a href="http://www.meetin.gs/whitelist/" style="color:#4a4a4a">[% MTN.t('Whitelist Us') %]</a>
+ [% IF promo_unsubscribe_url %] | <a href="[% promo_unsubscribe_url %]" style="color:#4a4a4a; text-decoration:underline;">[% MTN.t("Don't send me promotional mail") %]</a>[% END %]
+                    </p>
+                </td>
+            </tr>
+            </table>
+        </td>
+	</tr>
+</table>
+</body>
+</html>
+[% ELSE %]
+[% MTN.t('This is an automated message from Meetin.gs.') %]
+
+
+
+
+[% MTN.t('Support:') %] http://support.meetin.gs/
+
+
+[% MTN.t('Privacy Policy:') %] http://meetin.gs/meetings/privacy_policy/
+[% END %]
+

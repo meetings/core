@@ -1,0 +1,12 @@
+div#meetme-type-selector.m-modal
+    div.modal-header
+        h3!=MTN.t('Select icon')
+    div.modal-content
+        - for (var i = 0; i < app.meetme_types.length; ++i) {
+            if( matchmaker.meeting_type == i || ( ! matchmaker.meeting_type && i === 0 ) )
+                i(data-tooltip-text='e.g. ' + app.meetme_types[i].name,class='type-icon selected js_tooltip '+ app.meetme_types[i].icon_class,data-type-id=i)
+            else
+                i(data-tooltip-text='e.g. ' + app.meetme_types[i].name,class='type-icon js_tooltip '+ app.meetme_types[i].icon_class,data-type-id=i)
+        - }
+    a.close-modal.js_hook_showcase_close(href='#')
+        i.ico-cross

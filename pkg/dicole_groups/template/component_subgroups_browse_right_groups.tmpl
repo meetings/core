@@ -1,0 +1,20 @@
+[% FOREACH group IN groups %]
+<div class="browse_item">
+	<div class="left">
+		<div class="subgroup_browse_image_bg">
+			<a href="[% group.url %]">
+				<img class="subgroup_browse_image" src="[% group.image %]" />
+			</a>
+		</div>
+	</div>
+	<div class="item_content">
+		<h2 class="title"><a href="[% group.url %]">[% group.name | html %]</a></h2>
+		<span>[% IF group.location %][% group.location | html %], [% END %][% MSG('[_1] members', group.member_count ) | html %]</span>
+		<div class="tags">
+			[% FOREACH tag IN group.tags %]
+			<a class="tag" href="[% tag.link %]">[% tag.name | html %]</a>
+			[% END %]
+		</div>
+	</div>
+</div>
+[% END %]

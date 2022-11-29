@@ -1,0 +1,296 @@
+# $Id: messages-fi.po,v 1.14 2010-06-15 03:53:30 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:11:45+0000\n"
+"PO-Revision-Date: 2005-03-22 02:11:45+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add user"
+msgstr "Lisää käyttäjä"
+
+msgid "Changes were saved."
+msgstr "Muutokset on tallennettu."
+
+msgid "Confirmation"
+msgstr "Varmennus"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "English"
+msgstr "Englanti"
+
+msgid "Email"
+msgstr "Sähköposti"
+
+msgid "Error during delete: %1"
+msgstr "Virhe poistettaessa: %1"
+
+msgid "Expiration date"
+msgstr "Voimassaolo päättyy"
+
+msgid "Failed adding user: %1"
+msgstr "Virhe käyttäjää luotaessa: %1"
+
+msgid "Failed modifying user: %1"
+msgstr "Virhe käyttäjää muokatessa: %1"
+
+msgid "Finnish"
+msgstr "Suomi"
+
+msgid "First name"
+msgstr "Etunimi"
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "Last name"
+msgstr "Sukunimi"
+
+msgid "List of users"
+msgstr "Käyttäjälista"
+
+msgid "List users"
+msgstr "Listaa käyttäjät"
+
+msgid "Login name"
+msgstr "Käyttäjänimi"
+
+msgid "Modify user details"
+msgstr "Muokkaa käyttäjän tietoja"
+
+msgid "New user details"
+msgstr "Uuden käyttäjän tiedot"
+
+msgid "Password"
+msgstr "Salasana"
+
+msgid "Remove selected users"
+msgstr "Poista valitut käyttäjät"
+
+msgid "Remove users"
+msgstr "Poista käyttäjät"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Selected users removed."
+msgstr "Valitut käyttäjät poistettu."
+
+msgid "Show list of users"
+msgstr "Näytä käyttäjälista"
+
+msgid "Show"
+msgstr "Näytä"
+
+msgid "Unlimited"
+msgstr "Rajoittamaton"
+
+msgid "User details"
+msgstr "Käyttäjätiedot"
+
+msgid "User has been saved."
+msgstr "Käyttäjä tallennettu."
+
+msgid "User Manager"
+msgstr "Käyttäjähallinta"
+
+msgid "Verify password"
+msgstr "Varmista salasana"
+
+msgid "Manage users"
+msgstr "Käyttäjien hallintaoikeus"
+
+msgid "User can add, edit and remove other users"
+msgstr "Käyttäjä voi lisätä, muokata ja poistaa muita käyttäjiä"
+
+msgid "Are you sure you want to remove the selected users?"
+msgstr "Oletko varma, että haluat poistaa valitut käyttäjät?"
+
+msgid "Register"
+msgstr "Rekisteröityminen"
+
+msgid "Register new account"
+msgstr "Rekisteröi uusi tunnus"
+
+msgid "User registration is not allowed."
+msgstr "Käyttäjän rekisteröinti ei ole mahdollista."
+
+msgid "Login name %1 already exists. Choose another login name."
+msgstr "Käyttäjätunnus nimeltä %1 on jo olemassa. Valitse toinen käyttäjätunnus."
+
+msgid "Registration done. We have sent you an email containing your login information."
+msgstr "Rekisteröinti suoritettu. Teille on lähetetty sähköpostia, joka sisältää kirjautumistiedot."
+
+msgid "Registration failed: %1"
+msgstr "Rekisteröinti epäonnistui: %1"
+
+msgid "Registration information"
+msgstr "Rekisteröintitiedot"
+
+msgid "Registration information from %1"
+msgstr "Rekisteröintitiedot palvelusta %1"
+
+msgid "Error sending email: %1"
+msgstr "Virhe lähetettäessä sähköpostia: %1"
+
+msgid "User with email address %1 already exists. Choose a different email address."
+msgstr "Käyttäjä jonka sähköpostiosoite on %1 on jo olemassa. Anna eri sähköpostiosoite."
+
+msgid "Reset of all user default personal rights was successful."
+msgstr "Kaikkien käyttäjien peruskäyttöoikeudet on palautettu oletusarvoihin."
+
+msgid "Import users"
+msgstr "Tuo Käyttäjiä"
+
+msgid "File to upload"
+msgstr "Palvelimelle siirrettävä tiedosto"
+
+msgid "Upload"
+msgstr "Siirrä palvelimelle"
+
+msgid "Import new users from an Excel sheet"
+msgstr "Tuo uusia käyttäjiä Excel taulukosta"
+
+msgid "%1 user(s) imported."
+msgstr "%1 käyttäjä(ä) tuotu järjestelmään."
+
+msgid "Upload a valid Excel file."
+msgstr "Valitse toimiva Excel taulukko."
+
+msgid "The following rows failed: %1"
+msgstr "Seuraavien Excel taulukon rivien tuonti ei onnistunut: %1"
+
+msgid "Failed importing users: %1"
+msgstr "Käyttäjien tuonti epäonnistui: %1"
+
+msgid "Upload Excel sheet"
+msgstr "Siirrä Excel taulukko"
+
+msgid "Users registered in the system"
+msgstr "Järjestelmään rekisteröityneet käyttäjät"
+
+msgid "Number of logins"
+msgstr "Kirjautumisten määrä"
+
+msgid "Last login"
+msgstr "Viimeisin kirjautuminen"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Groups user belongs to"
+msgstr "Ryhmät joihin käyttäjä kuuluu"
+
+msgid "Theme"
+msgstr "Teema"
+
+msgid "Default"
+msgstr "Oletus"
+
+msgid "URL of a custom starting page"
+msgstr "Vaihtoehtoisen aloitussivun URL"
+
+msgid "Login disabled"
+msgstr "Kirjautuminen disabloitu"
+
+msgid "Password for login will be changed. Are you sure you want to resend this account?"
+msgstr "Kirjautumiseen tarvittava salasana vaihdetaan. Oletko varma, että haluat lähettää tunnuksen uudelleen?"
+
+msgid "Resend account"
+msgstr "Lähetä tunnus uudelleen"
+
+msgid "Resend account through email"
+msgstr "Lähetä tunnus uudelleen sähköpostitse"
+
+msgid "Account successfully resend through email."
+msgstr "Tunnus on onnistuneesti lähetetty uudelleen sähköpostitse."
+
+msgid "Example excel sheet"
+msgstr "Esimerkki Excel"
+
+msgid "Initial groups"
+msgstr "Alustavat ryhmät"
+
+msgid "New user registered at %1"
+msgstr "Uusi käyttäjä rekisteröity järjestelmään osoitteessa %1"
+
+msgid "Your existing account with login name '%1' has been added to this domain. Please log in with your old password or retrieve a new one through the normal password retrieval process."
+msgstr "Olemassaoleva käyttäjätunnuksesi ( %1 ) on rekisteröity tähän järjestelmään. Kirjaudu sisään vanhalla salasanallasi tai hae uusi salasana normaalin salasananpalautusprosessin kautta."
+
+msgid "Billing info"
+msgstr "Laskutustiedot"
+
+msgid "Import new users from a Wanha Satama tab separated file"
+msgstr "Tuo käyttät wanhan sataman tab-erotteisesta tiedostosta"
+
+msgid "Registering without javascript is disabled to reduce spam. Please turn javascript on to register."
+msgstr "Rekisteröinti ilman JavaScript -tukea on estetty roskapostin vähentämiseksi. Ole hyvä ja kytke JavaScript päälle ennen rekisteröitymistä."
+
+msgid "Upload a valid file."
+msgstr "Lähetä käypä tiedosto."
+
+msgid "Upload Wanha Satama user file"
+msgstr "Lähetä Wanha Satama käyttäjätiedosto"
+
+msgid "User registration is not allowed to this area."
+msgstr "Alueelle rekisteröityminen ei ole sallittua."
+
+msgid "Your registration has been identified as spam."
+msgstr "Rekisteröintisi on tulkittu roskapostiksi."
+
+msgid "Create the user"
+msgstr "Luo käyttäjä"
+
+msgid "Download user report"
+msgstr "Lataa käyttäjäraportti"
+
+msgid "List of users - %1"
+msgstr "Lista käyttäjistä - %1"
+
+msgid "Register a new user"
+msgstr "Rekisteröi uusi käyttäjä"
+
+msgid "Role"
+msgstr "Rooli"
+
+msgid "Create your account"
+msgstr "Luo tunnuksesi"
+
+msgid "I accept the <a href=\\"%1\\">terms of service</a>"
+msgstr "Hyväksy <a href=\\"%1\\">käyttöehdot/a>"
+
+msgid "Register a new account"
+msgstr "Rekisteröi uusi tunnus"
+
+msgid "Optimal image size is 200x200px."
+msgstr "Optimaalinen kuvan koko on 200x200px."
+
+msgid "If you have a Facebook account, you can use it to fill in your profile and handle your logins."
+msgstr "Jos sinulla on Facebook -tunnus, voit käyttää sitä profiilisi esitäyttämiseen ja sisäänkirjautumisiesi hallintaan."
+
+msgid "Select your preferred way of registering"
+msgstr "Valitse haluamasi rekisteröintitapa"
+
+msgid "Already a member? Click here to log in."
+msgstr "Oletko jo jäsen? Kirjaudu sisään klikkaamalla tästä."
+
+msgid "Location is required to register"
+msgstr "Location is required to register"
+
+msgid "Question to prevent SPAM registrations"
+msgstr "Question to prevent SPAM registrations"
+
+msgid "Unfortunately your answer to the required question was not correct. Please try again!"
+msgstr "Unfortunately your answer to the required question was not correct. Please try again!"

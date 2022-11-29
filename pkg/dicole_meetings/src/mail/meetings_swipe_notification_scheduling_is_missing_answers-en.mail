@@ -1,0 +1,26 @@
+[% MTN.t('Scheduling of %1$s seems to be stagnant', [meeting_title]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Scheduling of %1$s seems to be stagnant', [meeting_title]) %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t('Some participants have not reacted to your scheduling invite for %1$s during the past 24 hours.', [meeting_title])%]<<</p>>>
+
+<<<p>>>[% MTN.t('It might be that they have missed the invites or forgot to answer. Open the scheduling details to see who have not reacted and consider your options.')%]<<</p>>>
+
+[% url = swipe_url %]
+[% text = MTN.t("See the details") %]
+<<<blue_button>>>
+<<<br>>>
+
+
+<<</bubble>>>
+
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t('SwipeToMeet is powered by Meetin.gs.') %]<<</p>>>
+<<</html_wrapper>>>

@@ -1,0 +1,14 @@
+Changes
+conf/action.ini
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleDocumentation.pm
+OpenInteract2/App/DicoleDocumentation.pm
+package.ini
+template/base_main.tmpl
+template/default_add_edit.tmpl
+template/default_archive.tmpl
+template/default_list.tmpl
+template/default_remove.tmpl
+template/default_search.tmpl
+template/default_show.tmpl

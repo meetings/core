@@ -1,0 +1,26 @@
+<div id="localization-filter">[% MSG('Search') %]: <input id="js-localization-filter-input" type="text" /></div>
+<a id="js-localization-update-url" href="[% update_url | html %]" style="display: none"></a>
+
+<div id="localization-list">
+
+<div id="localization-labels" class="js-localization-labels localization-row" style="display: none">
+<div class="localization-key">[% MSG('Key') %]</div>
+<div class="localization-default">[% MSG('Default') %]</div>
+<div class="localization-custom">[% MSG('Custom value') %]</div>
+<div class="float-clear"></div>
+</div>
+
+<div id="js-search-containers">
+</div>
+
+[% FOREACH t IN list %]
+
+<div class="js-localization-row localization-row" style="display: none">
+<div class="js-localization-key localization-key">[% t.key | html %]</div>
+<div class="js-localization-default localization-default">[% t.default | html %]</div>
+<div class="js-localization-custom localization-custom"><input type="text" class="js-localization-input" value="[% t.custom | html %]" /> <a class="js-localization-save" title="[% t.key | html %]" >[% MSG('Save') %]</a></div>
+<div class="float-clear"></div>
+</div>
+
+[% END %]
+</div>

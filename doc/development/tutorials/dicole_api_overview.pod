@@ -1,0 +1,325 @@
+=head1 NAME
+
+Overview of the Dicole API functionality
+
+=head1 INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.4 $
+
+=item B<Status>
+
+New
+
+=back
+
+=head1 ABSTRACT
+
+This tutorial takes a slight overview over the available functionality in the
+Dicole API. The purpose is to tell what is possible instead of teaching
+everything in detail.
+
+=head1 The Tool class
+
+I<Dicole::Tool> class is the basis of all tools. Basically it joins together all
+central functionality of the Dicole API.
+
+It takes in the action (handler) configuration specified in each packages
+I<conf/action.perl> file. The configuration is made available to the Tool class
+by passing the second input parameter of each task (handler method) to Tool
+class as attribute I<action_params>.
+
+The central component of a Tool object is the container. It is basically an
+object that contains all the interface widgets and components of the tool. Once
+the Tool object is constructed the logic of your application as you programmed
+it takes care of filling the container with required interface widgets.
+
+In the end of each request the Tool class method
+I<get_template_handler_structure()> returns a data structure valid for passing to
+the template engine, in this case TemplateToolkit. The central template which
+receives the complete data structure for processing is
+I<dicole_base::container_content>.
+
+When a new Tool object is created the following things happen:
+
+=over 4
+
+=item *
+
+The Tool class parses the action configuration and sets the following things
+based on the action configuration as follows:
+
+=over 8
+
+=item tool_name
+
+The tool name.
+
+=item help
+
+A hash of tasks with associated help pages. This enables the use of context
+sensitive help for each task.
+
+=item tabs
+
+An array of hashes that specify the tab names and associated tasks
+(handler methods). The tab navigation for the tool is constructed based on this
+information.
+
+The selected tab is identified by checking the current task against
+the specified tabs. If Tool attribute I<tab_override> was specified, the
+provided task is selected instead of the current task. You may specify a default
+tab by adding an empty task with associated tab. This tab will be selected if a
+tab for the task in question was not found.
+
+=back
+
+=item *
+
+Reads in the name of the tool as it is in the navigation tree and forms
+an initial I<Dicole::Navigation::Path> object, accessible through Tool class
+method I<Path()>. 
+
+=item *
+
+An initial I<Dicole::Container> object is also created for the Tool object,
+accessible through the class method I<Container()>. Container is explained in the
+next chapter.
+
+=back
+
+Here is a picture which demonstrates the different parts of a generated tool:
+
+=begin html
+
+<br /><img src="/usr/local/doc/dicole/images/dicole-tool-shot.jpg" /><br />
+
+=end
+
+=head1 The Container class
+
+The I<Dicole::Container> class is simply a container containing a set of
+I<Dicole::Box> boxes. You may think of the container as a grid of columns and
+rows or as a matrix, where each cell is actually a box. Each box in the matrix is
+identifiable through coordinates like I<x=1> and I<y=2>. A box has a label which
+is the human readable alternative to coordinates for identifying the box and its
+contents.
+
+Basically you as the programmer of the application logic create a container and
+start adding boxes into it. Each box in turn contains I<Dicole::Content>
+objects, explained in detail in the next chapter. These content objects are
+transformed to the target visual representation platform, in this case
+XHTML/CSS.
+
+This powerful concept allows you to build applications out of building blocks
+without the need to write any templates for your application. Since the
+interface is built out of simple interface widget objects, the target visual
+platform may be changed at any time. In the future Dicole might include a
+toolkit that allows representation in WAP pages or even native desktop
+applications through XML transformation without ever touching the underlying
+handler logic.
+
+Your basic tools of construction are the Tool, Container, Box and Content classes.
+
+=head1 The Content classes
+
+The I<Dicole::Content> classes are the actual interface widgets. The set of
+Content classes provide for example easy construction of the following widgets:
+
+=over 4
+
+=item Button
+
+Submit, image, simple and link type of buttons.
+
+=item Control buttons
+
+Each tool might have task specific interfaces like saving or canceling the
+current operation. These control buttons may come in many forms, including
+dropdowns and checkboxes. This class simply creates a row of provided action
+controls.
+
+=item Date
+
+A date and time selection input form.
+
+=item Dropdown
+
+A dropdown for selecting an item out of many items. May also contain
+navigational behaviours like automatic submitting of the page or relocation of
+the browser URI.
+
+=item Password
+
+A password functionality for entering passwords. May also contain a verifying
+second password field.
+
+=item Textarea
+
+A multi-line text input form.
+
+=item Textfield
+
+A single-line text input form.
+
+=item Checkbox
+
+A checkbox for selecting a single item.
+
+=item Radio button
+
+A collection of radio buttons for selecting one item of many.
+
+=item List
+
+A list for selecting one or multiple items out of a list.
+
+=item Hyperlink
+
+For creating a hyperlink to another document.
+
+=item List
+
+A multipurpose list (table) widget for creating various alignment and
+representation of widgets.
+
+=item Horizontal
+
+A widget for creating a horizontal row of elements.
+
+=item Popup box
+
+For creating a mouse-over box.
+
+=item Text
+
+A widget for creating simple text, verified or not.
+
+=item Tree
+
+For creating a tree representation of anything.
+
+=back
+
+It is also possible to create your own widgets by creating the template in the
+I<template/> directory in your application package and inheriting the
+I<Dicole::Content> class. Each I<Dicole::Content> class has to answer to methods
+I<get_template()> and I<get_template_params()> to specify what template is
+associated with each object and what parameters to provide to the template based
+on the Content object attributes.
+
+There is also one special content widget, called the I<Dicole::Viewer> class. It
+enables transforming URI locations of media files to contain required browser
+plugin code for inline display of the media. 
+
+=head1 Navigation classes
+
+Usually I<Dicole::Tool> takes care of constructing the navigation but it is
+possible to create your own navigation by using the included
+I<Dicole::Navigation> objects like Dropdown, Path, Tabs and Tree.
+
+The most useful navigation class that usually comes at handy for application
+developers are the tree navigation classes I<Dicole::Navigation::Tree> and
+I<Dicole::Navigation::Tree::Element>.
+
+Example of output of I<Dicole::Navigation:Tree>:
+
+=begin html
+
+<br /><img src="/usr/local/doc/dicole/images/dicole-tree-shot.jpg" /><br />
+
+=end
+
+These classes enable creation of tree representations of objects with collapsing
+folders, descending to previous folders, icons and other useful features. These
+classes may also be used as a general purpose tree class for representation of
+objects as a tree and never displaying the objects through a visual interface,
+although the visual interface is functionality which is mostly used.
+
+Example of descending to previous folder:
+
+=begin html
+
+<br /><img src="/usr/local/doc/dicole/images/dicole-descent-shot.jpg" /><br />
+
+=end
+
+=head1 Generictool classes
+
+The most powerful feature of Dicole API is the so called generic application
+features through I<Dicole::Generictool> classes. These classes enable creation
+of generic application features like adding, editing, displaying, listing,
+selecting and removing data objects (usually SPOPS).
+
+Instead of writing these basic application features over and over again, you may
+use these powerful built-in alternatives and never do the tedious work of
+writing basic features again.
+
+A list view for example allows you to include browsing of the list as in
+splitting the list to multiple pages and providing a way to navigate through it.
+It may also contain sorting the list by columns and limiting the resulting list
+by search queries. All these features come built-in and are quite powerful and
+customizable.
+
+In addition to the basic generic application features we provide some complex
+ones like creation of wizards (multi-page configuration tools) and advanced
+object selections that combine the power of basic listing and selection views. 
+
+The wizard allows you to specify a set of pages, combining the power of various
+basic Generictool features and input validation. It has a central storage for
+the temporary data. This temporary data is removed from the temporary storage
+and saved elsewhere by the programmer once the wizard is completed.
+
+The advanced selection feature has two lists, another being the list from which
+to select data objects and the another one is the list of selected objects. Both
+lists include basic list features like searching, sorting and browsing.
+
+=head1 File management classes
+
+The I<Dicole::Files> classes together with I<Dicole::Pathutils> provide an
+abstracted interface for file management. From simple features like creation of
+a directory and uploading of a file to more complex ones like archiving files
+into file archives and recursive copying of files from a SMB/CIFS share.
+
+The basic idea behind the classes is that a file usually resides in a virtual
+directory, accessed through an URI path like:
+
+  http://www.server.com/files/tree/users/mike/secret.txt
+
+This path doesn't truly exist on the file server. It is in a virtual directory,
+mapped against a real directory which may locate anywhere like the filesystem or
+a SMB/CIFS share through the plugin architecture of the I<Dicole::Files>
+interface.
+
+The set of classes also provide security checks and authentication. Using this
+layer to manage files adds a secure way to handle important information.
+
+=head1 Utility classes
+
+There are also a set of utility classes like I<Dicole::Utility> and
+I<Dicole::Templateinit> that provide various functions useful to Dicole
+programmers.
+
+=head1 Conclusion
+
+This tutorial guided you through the various parts of the Dicole API, providing
+you the necessary information for understanding what it is able to do and what
+not.
+
+Programming Dicole applications are also heavily dependant of SPOPS for managing
+data as objects, TemplateToolkit for constructing the browser interface and
+OpenInteract for managing your packages, mapping URIs to handlers and providing
+other generic web application server features. To fully understand 
+the range of possibilities you should also read the documentation of these
+technologies.
+
+=head1 AUTHORS
+
+Teemu Arina E<lt>teemu@ionstream.fiE<gt>

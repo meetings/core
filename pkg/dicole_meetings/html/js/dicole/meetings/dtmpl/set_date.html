@@ -1,0 +1,113 @@
+<div id="modal-set-date" class="m-modal">
+    <% if ( ! p.attached_to_matchmaking_event ) { %>
+    <div class="modal-header">
+        <h3><%= MTN.t('Date and time settings') %></h3>
+    </div>
+    <div class="modal-content">
+        <p class="js_helper_text helper-text">Helper text..</p>
+        <div class="error-container js_meetings_set_date_error_container error_container_hidden"></div>
+        <form id="meetings_set_date_form" name="new-meeting" class="meetings-form">
+            <% if( p.proposal_count > 0 ) { %>
+            <p><%= MTN.t('Meeting is being scheduled.') %></p>
+
+            <div class="form-save-and-cancel-wrapper">
+                <a href="#" style="margin:0 0 5px 0" data-post-url="<%= dicole.get_global_variable('meetings_scheduler_cancel_url') %>" class="button gray js_meetings_scheduler_cancel_open" id="scheduler-cancel-open-button">
+                    <%= MTN.t('Cancel scheduling') %>
+                </a>
+            </div>
+
+            <div class="line-or-line">
+                <span></span>
+                <p><%= MTN.t('OR') %></p>
+                <span></span>
+            </div>
+
+            <div class="form-save-and-cancel-wrapper">
+                <a href="#" style="margin:0 0 5px 0" class="button blue js_meetings_being_scheduled_show_status" id="show-status-button">
+                    <%== ( p.participant_count > 0 ) ? MTN.t('Show current status') : MTN.t('Manage scheduling options') %>
+                </a>
+            </div>
+
+            <% } else { %>
+
+            <!-- Meeting date -->
+            <!-- templatizer.datePicker(p) -->
+            <div id="date" class="form-row">
+                <label class="small" for="begin_date"><i class="ico-calendar"></i><%= MTN.t('Date') %></label>
+                <input id="meetings_manage_basic_begin_date_input" class="js_dmy_datepicker_input" name="begin_date" value="<%= p.begin_date ? p.begin_date : p.initial_date_value %>" size="12">
+            </div>
+
+            <!-- Meeting duration -->
+            <div id="duration" class="form-row">
+
+                <div class="time">
+                    <label class="small" for="duration"><i class="ico-time"></i><%= MTN.t('Time') %></label>
+                    <select name="begin_time_hours" id="begin_time_hours" >
+                        <option value="<%== '0' %>" <% if( 0 == p.begin_time_hours ) { %>selected<% } %>><%== '12am' %></option>
+                        <% var i=1; for (;i<=11;i++) { %>
+                        <option value="<%== i %>" <% if( i == p.begin_time_hours ) { %>selected<% } %>><%== i + ( i > 9 ? '' : ' ') + 'am' %></option>
+                        <% } %>
+                        <option value="<%== '12' %>" <% if( 12 == p.begin_time_hours ) { %>selected<% } %>><%== '12pm' %></option>
+                        <% var i=1; for (;i<=11;i++) { %>
+                        <option value="<%== i + 12 %>" <% if( (i + 12) == p.begin_time_hours ) { %>selected<% } %>><%== i + ( i > 9 ? '' : ' ') + 'pm' %></option>
+                        <% } %>
+                    </select>
+                    <select name="begin_time_minutes" id="begin_time_minutes">
+                        <% if(p.begin_time_minutes == 0 && p.begin_time_minutes == 0){ p.begin_time_minutes = 1; }%>
+                        <% var i=0; for (i=0;i<60;i=i+5) { %>
+                        <option value="<%== (i.toString().length < 2) ? '0'+i : i %>" <% if( i == p.begin_time_minutes ) { %>selected<% } %>><%== (i.toString().length < 2) ? '0'+i : i %></option>
+                        <% } %>
+                    </select>
+                </div>
+
+                <div class="duration">
+                    <label class="small" for="duration"><%= MTN.t('Duration') %></label>
+                    <select name="duration_hours" id="duration_hours">
+                        <!-- Set default duration if nothing set -->
+                        <% if(p.duration_hours == 0 && p.duration_minutes == 0){ p.duration_hours = 1; }%>
+                        <% var i=0; for (i=0;i<=23;i++) { %>
+                        <option value="<%== i %>" <%== ( i == p.duration_hours ) ? 'selected' : '' %>><%== i %></option>
+                        <% } %>
+                    </select>
+                    <span class="info-text">h</span>
+                    <select name="duration_minutes" id="duration_minutes">
+                        <option value="0" <%== p.duration_minutes == 0 ? 'selected' : '' %>>0</option>
+                        <option value="15" <%== p.duration_minutes == 15 ? 'selected' : '' %>>15</option>
+                        <option value="30" <%== p.duration_minutes == 30 ? 'selected' : '' %>>30</option>
+                        <option value="45" <%== p.duration_minutes == 45 ? 'selected' : '' %>>45</option>
+                    </select>
+                    <span class="info-text">min</span>
+                </div>
+            </div>
+
+            <input type="hidden" id="js_require_rsvp_asked_input" name="require_rsvp_asked" value="" />
+            <input type="hidden" id="js_require_rsvp_input" name="require_rsvp" value="" />
+            <div style="clear:both;"></div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a href="#" class="button blue js_meetings_set_date_submit" id="set-date-submit">
+                <%= MTN.t('Save') %>
+            </a>
+        </div>
+    </div>
+
+    <!--<div class="form-save-and-cancel-wrapper">-->
+    <!--<a href="#" class="button blue js_meetings_scheduler_picker_open">-->
+    <!--<%== MTN.t('Suggest dates') %>-->
+    <!--</a>-->
+    <!--</div>-->
+    <% } %>
+
+    <% } else { %>
+    <div class="modal-header">
+        <h3><%= MTN.t('Date locked') %></h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t('This is meeting is linked to a matchmaking event.') %></p>
+    </div>
+    <% } %>
+    <a href="#" class="js_hook_showcase_close close-modal"><i class="ico-cross"></i></a>
+</div>

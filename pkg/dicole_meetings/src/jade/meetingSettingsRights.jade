@@ -1,0 +1,21 @@
+div.m-modal
+    div.modal-header.back-button
+        h3!=MTN.t('Edit participant rights')
+        i.ico-leftarrow.back
+    div.modal-content.m-form
+        p!=MTN.t('Participants of this meeting are allowed to:')
+        p.slider
+            span.js_form_slider_button.slider-button(data-setting='invite',class=invite ? 'on-position' : 'off-position')
+            !=MTN.t('Invite new participants')
+        p.slider
+            span.js_form_slider_button.slider-button(data-setting='add_material',class=add_material ? 'on-position' : 'off-position')
+            !=MTN.t('Add material')
+        p.slider
+            span.js_form_slider_button.slider-button(data-setting='edit_material',class=edit_material ? 'on-position' : 'off-position')
+            !=MTN.t('Edit material')
+
+    div.modal-footer
+        div.buttons.right
+            a.button.blue.save!=MTN.t('Save')
+    a.close-modal(href='#')
+        i.ico-cross

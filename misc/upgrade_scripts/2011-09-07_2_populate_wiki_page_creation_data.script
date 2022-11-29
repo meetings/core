@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+sub execute {
+    my ($self, $params) = @_;
+
+    my $pages = CTX->lookup_object('wiki_page')->fetch_group;
+    for my $page ( @$pages ) {
+        my $version = CTX->lookup_action('wiki_api')->e( fetch_version_for_page => { page => $page, version_number => 0 } );
+        next unless $version;
+        $page->created_date( $version->creation_time );
+        $page->creator_id( $version->creator_id );
+        $page->save;
+    }
+}
+
+1;

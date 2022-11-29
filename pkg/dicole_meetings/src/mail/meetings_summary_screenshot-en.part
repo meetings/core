@@ -1,0 +1,3 @@
+[% IF in_html %]
+<p style="margin-left:50px; margin-right:50x; margin-top:10px; margin-bottom:10px;"><a href="[% meeting_url %]"><img src="[% meeting_image | html %]" alt="[% MTN.t('Click to enter meeting') %]" style="outline:none; border:none;"/></a></p>
+[% END %]

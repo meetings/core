@@ -1,0 +1,16 @@
+div#meeting-settings
+    div.m-modal
+        div.modal-header.back-button
+            h3!=MTN.t('Remove your account')
+            i.ico-leftarrow.back
+        div.modal-content
+            p!=MTN.t('Here you can remove your account permanently.')
+        div.modal-footer
+            div.buttons.right
+                div.step-one
+                    a.button.blue.delete-start Remove account
+                div.step-two(style='display:none;')
+                    a.button.pink.delete-do Really remove
+                    a.button.gray.delete-cancel Cancel
+        a.close-modal(href='#')
+            i.ico-cross

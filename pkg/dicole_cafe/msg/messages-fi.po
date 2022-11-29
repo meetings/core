@@ -1,0 +1,36 @@
+
+msgid "%1 on Twitter"
+msgstr "%1 Twitterissä"
+
+msgid "Active users"
+msgstr "Aktiiviset käyttäjät"
+
+msgid "Font size"
+msgstr "Kirjasimen koko"
+
+msgid "Hot in Blogs"
+msgstr "Nyt Blogeissa"
+
+msgid "Hot in Twitter"
+msgstr "Nyt Twitterissä"
+
+msgid "Hot in Wiki"
+msgstr "Nyt Wikissä"
+
+msgid "Hot Media"
+msgstr "Nyt Medioissa"
+
+msgid "Show scrollbar buttons"
+msgstr "Näytä vieritysnappulat"
+
+msgid "Show scrollbars"
+msgstr "Näytä vierityspalkit"
+
+msgid "by"
+msgstr "by"
+
+msgid "Open original"
+msgstr "Avaa alkuperäinen"
+
+msgid "Show active users"
+msgstr "Näytä aktiiviset käyttäjät"

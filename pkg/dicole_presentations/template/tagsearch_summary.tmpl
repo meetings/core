@@ -1,0 +1,15 @@
+<div class="presentations_tagsearch_box_content">
+    <a id="presentations_tagsearch_input_autofill_url" href="[% complete_url %]" style="display:none"></a>
+    <input id="presentations_tagsearch_input" class="f_dicole_autofill" />
+    <a class="js_presentations_tagsearch_input_go" href="#">[% MSG('Go') %]</a>
+
+    <script>
+        dicole_autofiller_add_event("presentations_tagsearch_input", 'on_select', function( id, tag, val ) {
+            document.location = '[% go_url_base | html %]?tags=' + encodeURIComponent( tag.name );
+        } );
+        dicole_autofiller_add_event("presentations_tagsearch_input", 'on_go', function( id, val ) {
+            document.location = '[% go_url_base | html %]?tags=' + encodeURIComponent( val );
+        } );
+     </script>
+</div>
+

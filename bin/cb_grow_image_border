@@ -1,0 +1,55 @@
+#!/usr/bin/perl
+
+use strict;
+use GD;
+
+my ( $input_file, $lb, $rb, $wrapper ) = @ARGV;
+
+my $input = GD::Image->newFromPng( $input_file );
+
+my ($w,$h) = $input->getBounds();
+
+my $w2 = int($w/2);
+my $h2 = int($h/2);
+
+my $extra = 2048 - 2* $w2;
+
+my $nw = 2*$w2 + $extra;
+my $nh = 2*$h2;
+
+my $box = GD::Image->new( $nw, $nh );
+my $borders = GD::Image->new( $lb + $rb, 1 );
+
+# copy middle of the right side source as a banner to right
+for my $y ( 0..(2*$h2-1) ) {
+    $output->copy( $input, 0, $y, 0, $h2, $w2, 1 );
+}
+
+# copy right sides of the source after banner
+# with uneven height, the middle is left out
+$output->copy( $input, $w2, 0, 0, 0, $w2, $h2 ); #upper
+$output->copy( $input, $w2, $h2, 0, $h-$h2, $w2, $h2 ); #lower
+
+# copy centers as a 2000px banner in the middle
+# with uneven height, the middle is left out
+for my $x ( (2*$w2)..(2*$w2 + $extra - 1) ) {
+    $output->copy( $input, $x, 0, $w2, 0, 1, $h2 ); #upper
+    $output->copy( $input, $x, $h2, $w2, $h-$h2, 1, $h2 ); #lower
+}
+
+# copy left sides of the source after banner
+# with uneven width, the middle is left out
+# with uneven height, the middle is left out
+$output->copy( $input, 2*$w2+$extra, 0, $w-$w2, 0, $w2, $h2 ); #upper
+$output->copy( $input, 2*$w2+$extra, $h2, $w-$w2, $h-$h2, $w2, $h2 ); #lower
+
+# copy middle of the left side source as a banner to left
+for my $y ( 0..(2*$h2-1) ) {
+    $output->copy( $input, 3*$w2+$extra, $y, $w-$w2, $h2, $w2, 1 );
+}
+
+$output->transparent( $output->getPixel( $w2, 0) );
+
+open FILE, "> $ARGV[1]";
+print FILE $output->png;
+close FILE;

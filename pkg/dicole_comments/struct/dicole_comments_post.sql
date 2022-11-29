@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS dicole_comments_post (
+  post_id           %%INCREMENT%%,
+  thread_id         int unsigned not null,
+  user_id           int unsigned not null,
+  parent_post_id    int unsigned not null,
+  date              bigint unsigned not null,
+  published	        bigint unsigned not null,
+  published_by      int unsigned not null,
+  edited            bigint unsigned not null,
+  edited_by         int unsigned not null,
+  removed           bigint unsigned not null,
+  removed_by        int unsigned not null,
+  is_private        tinyint,
+  content           text,
+  anon_name         tinytext,
+  anon_email        tinytext,
+  anon_url          tinytext,
+  unique            ( post_id ),
+  primary key       ( post_id ),
+  key               ( thread_id )
+)

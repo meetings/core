@@ -1,0 +1,56 @@
+my $easy = [ qw (
+    events_event
+    events_user
+    logged_action
+    sent_email
+) ];
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my ( $domain_id, $mode ) = split /\s*\,\s*/, $params;
+    die unless $domain_id;
+
+    _remove_users( $domain_id );
+
+    for my $object_name ( @$easy ) {
+         _remove( "dicole_$object_name", "domain_id != $domain_id" );
+    }
+
+    _remove( "dicole_logged_action", "user_id = 0" );
+}
+
+
+
+sub _remove {
+    my ( $table, $where ) = @_;
+
+    print "removing $table where $where..\n";
+
+    Dicole::Utils::SQL->execute_sql(
+        "alter table $table disable keys"
+    );
+    Dicole::Utils::SQL->execute_sql(
+        "delete from $table where $where"
+    );
+    Dicole::Utils::SQL->execute_sql(
+        "optimize table $table"
+    );
+    Dicole::Utils::SQL->execute_sql(
+        "alter table $table enable keys"
+    );
+}
+
+sub _remove_users {
+    my ( $domain_id ) = @_;
+
+    print "removing unnecessary users..\n";
+
+    my $users = CTX->lookup_object('user')->fetch_group;
+    for my $user ( @$users ) {
+        my $notes = Dicole::Utils::User->notes_data( $user )->{ $domain_id } || {};
+        $user->remove unless keys %$notes;
+    }
+}
+
+1;

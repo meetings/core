@@ -1,0 +1,1 @@
+[% IF meeting_start %][% MTN.t("Meeting starts in 15 minutes:") %] [% ELSIF action_points_html %][% MTN.t('Action points:') %] [% ELSIF meeting_end %][% MTN.t("Summary:") %] [% ELSE %][% MTN.t("New updates:") %] [% END %] [% meeting_title %]

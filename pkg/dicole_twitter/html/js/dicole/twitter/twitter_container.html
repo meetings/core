@@ -1,0 +1,25 @@
+<div id="<%== p.id %>" class="twitter_container">
+	<div class="twitter_content">
+		<div class="twitter_header">
+			<div class="twitter_logo"></div>
+			<div class="twitter_spinner"></div>
+			<div class="twitter_title">
+				<span><%== p.title %></span>
+			</div>
+			<div class="twitter_error">
+				<span><%== dicole.msg("We are sorry, but Twitter is broken momentarily.") %></span>
+			</div>
+		</div>
+		<div class="twitter_tweets"></div>
+		<div class="twitter_empty">
+			<span><%== dicole.msg("There are no tweets at the moment. Why don't you be the first?") %></span>
+			<br />
+			<img src="/images/twitter/first_tweet.png" alt="<%== dicole.msg("There are no tweets at the moment. Why don't you be the first?") %>" />
+		</div>
+		<div class="twitter_footer">
+			<a class="twitter_link" href="http://search.twitter.com/search?q=<%== p.query %>">
+				<span><%== dicole.msg("Join the conversation") %></span>
+			</a>
+		</div>
+	</div>
+</div>

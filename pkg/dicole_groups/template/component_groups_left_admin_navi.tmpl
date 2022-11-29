@@ -1,0 +1,3 @@
+[% FOREACH section IN tasks %]
+<a href="[% section.url %]" class="[% section.class %][% IF section.task == selected_task %][% section.class %]_selected selected[% END %]">&rarr; [% section.name | html %]</a>
+[% END %]

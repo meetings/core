@@ -1,0 +1,87 @@
+[%
+	group_tools = [
+		{
+			"id" = "summary",
+			"name" = "Summary",
+			"visibility" = "all"
+		}
+	]
+	
+	group_summary_tools = [
+		{
+			"id" = "news",
+			"name" = "News",
+			"visibility" = "none",
+			"samples" = 10
+		}
+	]
+	
+	visibilities = [
+		{
+			"id" = "all"
+			"name" = MSG("All")
+		},
+		{
+			"id" = "none",
+			"name" = MSG("None")
+		}
+	]
+%]
+<div id="group_tools">
+	<table id="group_tools_table">
+		<thead>
+			<tr>
+				<th></th>
+				<th>[% MSG("Modify the header") | html %]</th>
+				<th>[% MSG("Visibility") | html %]</th>
+			</tr>
+		</thead>
+		<tbody>
+			[% FOREACH tool IN group_tools %]
+			<tr>
+				<td>[% tool.name | html %]</td>
+				<td><input name="[% tool.id | html %]_tool_name" value="[% tool.name | html %]" /></td>
+				<td><select name="[% tool.id | html %]_tool_visibility">
+					[% FOREACH visibility IN visibilities %]
+					<option value="[% visibility.id | html %]"[% IF tool.visibility == visibility.id %]selected="selected"[% END %]>[% visibility.name | html %]</option>
+					[% END %]
+				</select></td>
+			</tr>
+			[% END %]
+		</tbody>
+	</table>
+	<h3>[% MSG("Area summary tools") | html %]</h3>
+	<table id="group_summary_tools_table">
+		<thead>
+			<tr>
+				<th></th>
+				<th>[% MSG("Modify the header") | html %]</th>
+				<th>[% MSG("Visibility") | html %]</th>
+				<th>[% MSG("Samples") | html %]</th>
+			</tr>
+		</thead>
+		<tbody>
+			[% FOREACH tool IN group_summary_tools %]
+			<tr>
+				<td>[% tool.name | html %]</td>
+				<td><input name="[% tool.id | html %]_summary_tool_name" value="[% tool.name | html %]" /></td>
+				<td>
+					<select name="[% tool.id | html %]_summary_tool_visibility">
+						[% FOREACH visibility IN visibilities %]
+						<option value="[% visibility.id | html %]"[% IF tool.visibility == visibility.id %] selected="selected"[% END %]>[% visibility.name | html %]</option>
+						[% END %]
+					</select>
+				</td>
+				<td>
+					<select name="[% tool.id | html %]_summary_tool_samples">
+						[% FOREACH samples IN [1 .. 20] %]
+						<option value="[% samples | html %]"[% IF samples == tool.samples %] selected="selected"[% END %]>[% samples | html %]</option>
+						[% END %]
+					</select>
+				</td>
+			</tr>
+			[% END %]
+		</tbody>
+	</table>
+	<input type="submit" value="[% MSG("Save") | html %]" />
+</div>

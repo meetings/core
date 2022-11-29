@@ -1,0 +1,591 @@
+# $Id: messages-en.po,v 1.30 2007-08-28 22:17:17 inf Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:11:58+0000\n"
+"PO-Revision-Date: 2005-03-22 02:11:58+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Abstract"
+msgstr "Abstract"
+
+msgid "Add weblog entries"
+msgstr "Add weblog entries"
+
+msgid "Write entry"
+msgstr "Write entry"
+
+msgid "Add topic"
+msgstr "Add topic"
+
+msgid "All topics"
+msgstr "All topics"
+
+msgid "All shared topics"
+msgstr "All shared topics"
+
+msgid "Author"
+msgstr "Author"
+
+msgid "Browse by topic"
+msgstr "Browse by topic"
+
+msgid "Configure weblog"
+msgstr "Configure weblog"
+
+msgid "Content"
+msgstr "Content"
+
+msgid "Delete weblog entries"
+msgstr "Delete weblog entries"
+
+msgid "Deny reading weblog"
+msgstr "Deny reading weblog"
+
+msgid "Deny maintaining weblog"
+msgstr "Deny maintaining weblog"
+
+msgid "Edit weblog entries"
+msgstr "Edit weblog entries"
+
+msgid "Edit entry"
+msgstr "Edit entry"
+
+msgid "Group weblog"
+msgstr "Group weblog"
+
+msgid "Error removing entry with name %1."
+msgstr "Error removing entry with name %1."
+
+msgid "Failed adding entry: %1"
+msgstr "Failed adding entry: %1"
+
+msgid "Failed adding topic: %1"
+msgstr "Failed adding topic: %1"
+
+msgid "Failed to edit entry: %1"
+msgstr "Failed to edit entry: %1"
+
+msgid "Weblog alows the group to inform about latest activity and comment on the outside world."
+msgstr "Weblog alows the group to inform about latest activity and comment on the outside world."
+
+msgid "Read weblog"
+msgstr "Read weblog"
+
+msgid "Maintain weblog"
+msgstr "Maintain weblog"
+
+msgid "Latest weblog entries"
+msgstr "Latest weblog entries"
+
+msgid "List of entries"
+msgstr "List of entries"
+
+msgid "New entry details"
+msgstr "New entry details"
+
+msgid "No entries."
+msgstr "No entries."
+
+msgid "No topics found."
+msgstr "No topics found."
+
+msgid "Permalink and comments (%1)"
+msgstr "Permalink and comments (%1)"
+
+msgid "Entry details"
+msgstr "Entry details"
+
+msgid "Entry saved"
+msgstr "Entry saved"
+
+msgid "Blog entry with id %1 does not exist or it was deleted."
+msgstr "Blog entry with id %1 does not exist or it was deleted."
+
+msgid "Entry with name %1 successfully removed."
+msgstr "Entry with name %1 successfully removed."
+
+msgid "Publish time"
+msgstr "Publish time"
+
+msgid "Recent"
+msgstr "Recent"
+
+msgid "Recent entries"
+msgstr "Recent entries"
+
+msgid "Recent blog entries"
+msgstr "Recent blog entries"
+
+msgid "Recent entries to topic %1"
+msgstr "Recent entries to topic %1"
+
+msgid "Remove entry"
+msgstr "Remove entry"
+
+msgid "Remove selected"
+msgstr "Remove selected"
+
+msgid "Remove topics"
+msgstr "Remove topics"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Show recent entries"
+msgstr "Show recent entries"
+
+msgid "Syndication feed (RSS 1.0)"
+msgstr "Syndication feed (RSS 1.0)"
+
+msgid "This entry will be removed. Are you sure you want to remove this entry?"
+msgstr "This entry will be removed. Are you sure you want to remove this entry?"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Topic"
+msgstr "Topic"
+
+msgid "Topic added"
+msgstr "Topic added"
+
+msgid "Topics"
+msgstr "Topics"
+
+msgid "User can add weblog entries"
+msgstr "User can add weblog entries"
+
+msgid "User can configure the weblog"
+msgstr "User can configure the weblog"
+
+msgid "User can delete weblog entries"
+msgstr "User can delete weblog entries"
+
+msgid "User can edit weblog entries"
+msgstr "User can edit weblog entries"
+
+msgid "User can read the weblog"
+msgstr "User can read the weblog"
+
+msgid "Access denied to read entry with id %1."
+msgstr "Access denied to read entry with id %1."
+
+msgid "Comments"
+msgstr "Comments"
+
+msgid "Post your comment"
+msgstr "Post your comment"
+
+msgid "No comments."
+msgstr "No comments."
+
+msgid "Comment has been added."
+msgstr "Comment has been added."
+
+msgid "Failed adding comment: %1"
+msgstr "Failed adding comment: %1"
+
+msgid "Comment weblog entries"
+msgstr "Comment weblog entries"
+
+msgid "User can comment weblog entries"
+msgstr "User can comment weblog entries"
+
+msgid "Delete weblog entry comments"
+msgstr "Delete weblog entry comments"
+
+msgid "User can delete weblog comments"
+msgstr "User can delete weblog comments"
+
+msgid "Are you sure you want to remove the selected comment?"
+msgstr "Are you sure you want to remove the selected comment?"
+
+msgid "Confirmation"
+msgstr "Confirmation"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Error removing comment %1."
+msgstr "Error removing comment %1."
+
+msgid "Comment removed."
+msgstr "Comment removed."
+
+msgid "Select at least one topic."
+msgstr "Select at least one topic."
+
+msgid "Selected topics removed."
+msgstr "Selected topics removed."
+
+msgid "Weblog"
+msgstr "Weblog"
+
+msgid "Weblog allows one to inform about latest activity and comment on the outside world."
+msgstr "Weblog allows one to inform about latest activity and comment on the outside world."
+
+msgid "Read weblog of a user"
+msgstr "Read weblog of a user"
+
+msgid "User can read weblog of a user"
+msgstr "User can read weblog of a user"
+
+msgid "Add entries to a weblog of a user"
+msgstr "Add entries to a weblog of a user"
+
+msgid "User can add weblog entries for a user"
+msgstr "User can add weblog entries for a user"
+
+msgid "Edit entries in a weblog of a user"
+msgstr "Edit entries in a weblog of a user"
+
+msgid "User can edit weblog entries of a user"
+msgstr "User can edit weblog entries of a user"
+
+msgid "Configure weblog of a user"
+msgstr "Configure weblog of a user"
+
+msgid "User can configure weblog tool of a user"
+msgstr "User can configure weblog tool of a user"
+
+msgid "Remove entries in a weblog of a user"
+msgstr "Remove entries in a weblog of a user"
+
+msgid "User can delete weblog entries of a user"
+msgstr "User can delete weblog entries of a user"
+
+msgid "Comment weblog of a user"
+msgstr "Comment weblog of a user"
+
+msgid "User can comment weblog entries of a user"
+msgstr "User can comment weblog entries of a user"
+
+msgid "Delete comments in a weblog of a user"
+msgstr "Delete comments in a weblog of a user"
+
+msgid "User can delete weblog comments of a user"
+msgstr "User can delete weblog comments of a user"
+
+msgid "Maintain weblog of a user"
+msgstr "Maintain weblog of a user"
+
+msgid "Deny maintaining weblog of a user"
+msgstr "Deny maintaining weblog of user"
+
+msgid "Deny reading weblog of a user"
+msgstr "Deny reading weblog of a user"
+
+msgid "Show entry"
+msgstr "Show entry"
+
+msgid "Limit outsider access by IP addresses (each on a separate line)"
+msgstr "Limit outsider access by IP addresses (each on a separate line)"
+
+msgid "Feed is publicly accessible"
+msgstr "Feed is publicly accessible"
+
+msgid "Number of items in feed"
+msgstr "Number of items in feed"
+
+msgid "All"
+msgstr "All"
+
+msgid "Show only entry abstracts in feeds"
+msgstr "Show only entry abstracts in feeds"
+
+msgid "Settings saved."
+msgstr "Settings saved."
+
+msgid "Failed to edit settings: %1"
+msgstr "Failed to edit settings: %1"
+
+msgid "Edit settings"
+msgstr "Edit settings"
+
+msgid "Bookmarklets"
+msgstr "Bookmarklets"
+
+msgid "You may use these bookmarklets to blog a certain website with a single click. To install the bookmarklet, add the bookmarklet link to your bookmarks. To use it, simply just click the bookmark when you are on a page you want to post. If you want to quote something, just highlight the text you want to quote before clicking the bookmarklet."
+msgstr "You may use these bookmarklets to blog a certain website with a single click. To install the bookmarklet, add the bookmarklet link to your bookmarks. To use it, simply just click the bookmark when you are on a page you want to post. If you want to quote something, just highlight the text you want to quote before clicking the bookmarklet."
+
+msgid "Post to weblog"
+msgstr "Post to weblog"
+
+msgid "Back to add form"
+msgstr "Back to add form"
+
+msgid "Available bookmarklets"
+msgstr "Available bookmarklets"
+
+msgid "Entry successfully saved. You may now close the window."
+msgstr "Entry successfully saved. You may now close the window."
+
+msgid "Select users to share topic %s with"
+msgstr "Select users to share topic %s with"
+
+msgid "Select groups to share topic %s with"
+msgstr "Select groups to share topic %s with"
+
+msgid "Share topic %s"
+msgstr "Share topic %s"
+
+msgid "Share weblog"
+msgstr "Share weblog"
+
+msgid "Select topic to share"
+msgstr "Select topic to share"
+
+msgid "Share to local users"
+msgstr "Share to local users"
+
+msgid "Share to outsiders"
+msgstr "Share to outsiders"
+
+msgid "Feed settings"
+msgstr "Feed settings"
+
+msgid "Share"
+msgstr "Share"
+
+msgid "Share to users"
+msgstr "Share to users"
+
+msgid "Share to groups"
+msgstr "Share to groups"
+
+msgid "Select users to share all topics with"
+msgstr "Select users to share all topics with"
+
+msgid "Select groups to share all topics with"
+msgstr "Select groups to share all topics with"
+
+msgid "Weblog of user %s"
+msgstr "Weblog of user %s"
+
+msgid "Other accessible weblog feeds"
+msgstr "Other accessible weblog feeds"
+
+msgid "Other weblogs"
+msgstr "Other weblogs"
+
+msgid "Weblog rights"
+msgstr "Weblog rights"
+
+msgid "Allow reading one topic from a weblog of a group"
+msgstr "Allow reading one topic from a weblog of a group"
+
+msgid "Allow reading one topic from a weblog of a user"
+msgstr "Allow reading one topic from a weblog of a user"
+
+msgid "Entry is not in topic!"
+msgstr "Entry is not in topic!"
+
+msgid "Read group weblog topic"
+msgstr "Read group weblog topic"
+
+msgid "Read weblog topic"
+msgstr "Read weblog topic"
+
+msgid "User can read a topic from a weblog of a group"
+msgstr "User can read a topic from a weblog of a group"
+
+msgid "User can read a topic from a weblog of a user"
+msgstr "User can read a topic from a weblog of a user"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Publish date"
+msgstr "Publish date"
+
+msgid "Removal date"
+msgstr "Removal date"
+
+msgid "Use removal date"
+msgstr "Use removal date"
+
+msgid "User weblog writer"
+msgstr "User weblog writer"
+
+msgid "Weblog writer"
+msgstr "Weblog writer"
+
+msgid "Deny weblog writing"
+msgstr "Deny weblog writing"
+
+msgid "Deny user weblog writing"
+msgstr "Deny user weblog writing"
+
+msgid "Comment group weblog topic"
+msgstr "Comment group weblog topic"
+
+msgid "User can comment entries in a topic from a weblog of a group"
+msgstr "User can comment entries in a topic from a weblog of a group"
+
+msgid "Comment weblog topic"
+msgstr "Comment weblog topic"
+
+msgid "User can comment entries in a topic from a weblog of a user"
+msgstr "User can comment entries in a topic from a weblog of a user"
+
+msgid "Delete weblog post comments"
+msgstr "Delete weblog post comments"
+
+msgid "Entry not found"
+msgstr "Entry not found"
+
+msgid "No topics defined. You have to define topics before you can post."
+msgstr "No topics defined. You have to define topics before you can post."
+
+msgid "Reply in personal weblog"
+msgstr "Reply in personal weblog"
+
+msgid "Reply to a %1post%2:"
+msgstr "Reply to a %1post%2:"
+
+msgid "Reply to a %1post%2 by %3:"
+msgstr "Reply to a %1post%2 by %3:"
+
+msgid "Reply to a %1post%2 by %3 titled %4:"
+msgstr "Reply to a %1post%2 by %3 titled %4:"
+
+msgid "Reply to a %1post%2 titled %3:"
+msgstr "Reply to a %1post%2 titled %3:"
+
+msgid "Are you sure you want to remove the post from replies?"
+msgstr "Are you sure you want to remove the post from replies?"
+
+msgid "Could not find replied post!"
+msgstr "Could not find replied post!"
+
+msgid "Error removing reply %1."
+msgstr "Error removing reply %1."
+
+msgid "No rights to inform replied post owner of reply."
+msgstr "No rights to inform replied post owner of reply."
+
+msgid "Replies in other weblogs"
+msgstr "Replies in other weblogs"
+
+msgid "Reply removed."
+msgstr "Reply removed."
+
+msgid "Read more.."
+msgstr "Read more.."
+
+msgid "This post is a reply to following posts"
+msgstr "This post is a reply to following posts"
+
+msgid "Sharing"
+msgstr "Sharing"
+
+msgid "Select group to share all topics with"
+msgstr "Select group to share all topics with"
+
+msgid "Select group to share topic %1 with"
+msgstr "Select group to share topic %1 with"
+
+msgid "Select user to share all topics with"
+msgstr "Select user to share all topics with"
+
+msgid "Select user to share topic %1 with"
+msgstr "Select user to share topic %1 with"
+
+msgid "Logged in users"
+msgstr "Logged in users"
+
+msgid "New group"
+msgstr "New group"
+
+msgid "New user"
+msgstr "New user"
+
+msgid "Whole internet"
+msgstr "Whole internet"
+
+msgid "Custom weblog name"
+msgstr "Custom weblog name"
+
+msgid "General settings"
+msgstr "General settings"
+
+msgid "Attach"
+msgstr "Attach"
+
+msgid "Attach personal posts as reply"
+msgstr "Attach personal posts as reply"
+
+msgid "Replies attached."
+msgstr "Replies attached."
+
+msgid "Select entries to attach as reply"
+msgstr "Select entries to attach as reply"
+
+msgid "Comment on '%1'"
+msgstr "Comment on '%1'"
+
+msgid "Comments from weblog of group %1"
+msgstr "Comments from weblog of group %1"
+
+msgid "Comments from weblog of user %1"
+msgstr "Comments from weblog of user %1"
+
+msgid "Subscribe comments with feed reader"
+msgstr "Subscribe comments with feed reader"
+
+msgid "Syndication feed (RSS 1.0) for comments"
+msgstr "Syndication feed (RSS 1.0) for comments"
+
+msgid "Weblog comments"
+msgstr "Weblog comments"
+
+msgid "Anonymous"
+msgstr "Anonymous"
+
+msgid "Deny sharing weblog"
+msgstr "Deny sharing weblog"
+
+msgid "User can give rights to use the weblog"
+msgstr "User can give rights to use the weblog"
+
+
+msgid "Commenting without javascript is disabled to reduce spam. Please turn javascript on to comment."
+msgstr "Commenting without javascript is disabled to reduce spam. Please turn javascript on to comment."
+
+msgid "Your comment has been identified as spam."
+msgstr "Your comment has been identified as spam."
+
+msgid "Latest posts in weblog."
+msgstr "Latest posts in weblog."
+
+msgid "Remove sharing of topic %1 for %2"
+msgstr "Remove sharing of topic %1 for %2"
+
+msgid "Share topic %1 to some group"
+msgstr "Share topic %1 to some group"
+
+msgid "Share topic %1 to some user"
+msgstr "Share topic %1 to some user"
+
+msgid "Share topic %1 for %2"
+msgstr "Share topic %1 for %2"
+
+msgid "Share group weblog"
+msgstr "Share group weblog"
+
+msgid "User can give rights to use the group weblog"
+msgstr "User can give rights to use the group weblog"
+
+msgid "You have not saved the text you have written. If you continue you will lose the text you have written."
+msgstr "You have not saved the text you have written. If you continue you will lose the text you have written."

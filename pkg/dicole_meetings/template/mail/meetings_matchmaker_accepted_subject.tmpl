@@ -1,0 +1,1 @@
+[% IF matchmaker_company && matchmaker_name != matchmaker_email %][% MTN.t('%1$s from %2$s accepted your request to meet',[ matchmaker_name, matchmaker_company ]) %][% ELSE %][% requestor = matchmaker_company == '' ? matchmaker_name : matchmaker_company %][% MTN.t('%1$s accepted your request to meet',[requestor]) %][% END %]

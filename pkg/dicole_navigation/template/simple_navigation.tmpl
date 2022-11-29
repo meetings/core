@@ -1,0 +1,35 @@
+<div id="navi_header">
+    <div id="navi_login">
+    [%- FOREACH nav = login_widgets %]
+        [% PROCESS dicole_base::include_widget widget = nav %]
+    [%- END %]
+    </div>
+    <div id="navi_tools">
+    [%- FOREACH nav = navi_widgets %]
+        [% PROCESS dicole_base::include_widget widget = nav %]
+        <span class="separator"><!-- --></span>
+    [%- END %]
+    </div>
+    [% IF current_area.banner %]
+    <a id="navi_logo_banner" title="[% current_area.name | html %]" href="[% current_area.url %]">
+    	<img src="[% current_area.banner | html %]" alt="[% current_area.name | html %]" />
+    </a>
+    [% ELSIF current_area.url %]<a id="navi_logo_link" href="[% current_area.url %]"><span id="navi_logo_text">[% current_area.name %]</span></a>[% ELSE %]<span id="navi_logo_text navi_logo_text_no_link">[% current_area.name %]</span>[% END %]
+    [%- IF action_widgets %]
+    <div id="navi_actions">
+    [%- first = 1 %]
+    [%- FOREACH wid = action_widgets %]
+        [%- IF first %]
+            [%- first = 0 %]
+        [%- ELSE %]
+        <span class="separator"><!-- --></span>
+        [% END %]
+        [% PROCESS dicole_base::include_widget widget = wid %]
+    [%- END %]
+    </div>
+    [%- END %]
+    <div class="float_clearing"><!-- --></div>
+    [% IF join_group_url %]
+    <div id="navi_group_join_notification"><span id="navi_group_join_text">[% MSG('You are not yet a member of area "[_1]". By joining the area your profile will be visible in the people -section and you can participate more!', area_name ) %]</span><a id="navi_group_join_button" class="big-button" href="[% join_group_url %]"><span>[% MSG("Join this group!") | html %]</span></a></div>
+    [% END %]
+</div>

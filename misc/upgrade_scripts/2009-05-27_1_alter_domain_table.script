@@ -1,0 +1,9 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_domain add localization_namespace TEXT after default_timezone');
+}
+
+1;

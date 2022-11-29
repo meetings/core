@@ -1,0 +1,41 @@
+NOTE THE THIS TEMPLATE IS SPECIAL! This title and the html output will be ignored. Only the text output will act as the default greeting.
+
+[% IF lahixcustxz_hack %]
+[% IF lahixcustxz_hack.birthdate %][% 'Syntymäpäivä' %]: [% lahixcustxz_hack.birthdate %]
+---N---
+---N---
+[% END %]
+[% IF lahixcustxz_hack.address %][% 'Osoite' %]: [% lahixcustxz_hack.address %]
+---N---
+---N---
+[% END %]
+
+[% IF lahixcustxz_hack.area %][% 'Postitoimipaikka' %]: [% lahixcustxz_hack.area %]
+---N---
+---N---
+[% END %]
+[% IF lahixcustxz_hack.notes_text %][% 'Viesti varaajalta' %]:
+---N---
+---N---
+[% lahixcustxz_hack.notes_text %]
+---N---
+---N---
+[% END %]
+[% IF lahixcustxz_hack.no_data_for_reschedule %][% 'Tämän tapaamisen aikaa on muutettu ja varauksen yhteydessä annettuja tietoja ei enää ole järjestelmässä. Ole hyvä ja tarkista tiedot alkuperäisestä kutsusta.' %]
+---N---
+---N---
+[% END %]
+[% END %]
+---N---
+[% MTN.t("Check the meeting details, agenda and materials:") %]
+---N---
+---N---
+[% meeting_url %]
+[% IF ! lahixcustxz_hack %]
+---N---
+---N---
+[% MTN.t("Email your material and notes to:") %] [% meeting_email %]
+---N---
+---N---
+[% MTN.t("Be smart and organize your next meeting with Meetin.gs:") %] http://meetin.gs/organize
+[% END %]

@@ -1,0 +1,9 @@
+[%- IF test_case == 'reminder requested' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+user_name ='Jonathan Davis'
+login_url = 'http://www.meetin.gs/'
+
+%]
+[% END %]

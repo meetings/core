@@ -1,0 +1,536 @@
+# $Id: messages-fi.po,v 1.6 2009-01-07 14:42:33 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-30 03:13:15+0000\n"
+"PO-Revision-Date: 2005-03-30 03:13:15+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add type"
+msgstr "Lisää tyyppi"
+
+msgid "Add type set"
+msgstr "Lisää tyyppikokoelma"
+
+msgid "Are you sure you want to remove the selected type sets?"
+msgstr "Oletko varma, että haluat poistaa valitut tyyppikokoelmat?"
+
+msgid "Are you sure you want to remove the selected types?"
+msgstr "Oletko varma, että haluat poistaa valitut tyypit?"
+
+msgid "Changes were saved."
+msgstr "Muutokset tallennettiin."
+
+msgid "Comment"
+msgstr "Kommentti"
+
+msgid "Confirmation"
+msgstr "Vahvistus"
+
+msgid "Copyright"
+msgstr "Tekijänoikeus"
+
+msgid "Definition"
+msgstr "Määritelmä"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "Edit type"
+msgstr "Muokkaa tyyppiä"
+
+msgid "Edit type details"
+msgstr "Muokkaa tyypin ominaisuuksia"
+
+msgid "Edit type set"
+msgstr "Muokkaa tyyppikokoelmaa"
+
+msgid "Edit type set details"
+msgstr "Muokkaa tyyppikokoelman ominaisuuksia"
+
+msgid "Error during delete: %1"
+msgstr "Poisto epäonnistui: %1"
+
+msgid "Failed adding type set: %1"
+msgstr "Tyyppikokoelman lisäys epäonnistui: %1"
+
+msgid "Failed adding type: %1"
+msgstr "Tyypin lisäys epäonnistui: %1"
+
+msgid "Failed editing type set: %1"
+msgstr "Tyyppikokoelman muokkaus epäonnistui: %1"
+
+msgid "Failed editing type: %1"
+msgstr "Tyypin muokkaus epäonnistui: %1"
+
+msgid "Icon"
+msgstr "Ikoni"
+
+msgid "List of custom type sets"
+msgstr "Mukautettujen tyyppikokoelmien listaus"
+
+msgid "List of global metadata sets"
+msgstr "Yleisten metatietokokoelmien listaus"
+
+msgid "List of global type sets"
+msgstr "Yleisten tyyppikokoelmien listaus"
+
+msgid "List of metadata fields"
+msgstr "Metatietokenttien listaus"
+
+msgid "List of types"
+msgstr "Tyyppien listaus"
+
+msgid "Machine-readable specification"
+msgstr "Konekielinen määritelmä"
+
+msgid "Metadata editor"
+msgstr "Metatietoeditori"
+
+msgid "Metadata sets"
+msgstr "Metatietokokoelmat"
+
+msgid "Metadata with id %1 does not exist."
+msgstr "Metatietoa id-tunnisteella %1 ei ole saatavilla."
+
+msgid "New type details"
+msgstr "Uuden tyypin ominaisuudet"
+
+msgid "New type set details"
+msgstr "Uuden tyyppikokoelman ominaisuudet"
+
+msgid "Remove selected type sets"
+msgstr "Poista valitut tyyppikokoelmat"
+
+msgid "Remove selected types"
+msgstr "Poista valitut tyypit"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Save and add new"
+msgstr "Tallenna ja lisää uusi"
+
+msgid "Selected type sets removed."
+msgstr "Valitut tyyppikokoelmat poistettu."
+
+msgid "Selected types removed."
+msgstr "Valitut tyypit poistettu."
+
+msgid "Short name"
+msgstr "Lyhyt nimi"
+
+msgid "Show metadata fields"
+msgstr "Näytä metatietokentät"
+
+msgid "Show metadata sets"
+msgstr "Näytä metatietokokoelmat"
+
+msgid "Show type"
+msgstr "Näytä tyyppi"
+
+msgid "Show type details"
+msgstr "Näytä tyypin ominaisuudet"
+
+msgid "Show type set"
+msgstr "Näytä tyyppikokoelma"
+
+msgid "Show type set details"
+msgstr "Näytä tyyppikokoelman ominaisuudet"
+
+msgid "Show type sets"
+msgstr "Näytä tyyppikokoelmat"
+
+msgid "Show types"
+msgstr "Näytä tyypit"
+
+msgid "Show typesets"
+msgstr "Näytä tyyppikokoelmat"
+
+msgid "Status of the definition"
+msgstr "Määritelmän tila"
+
+msgid "Type details"
+msgstr "Tyypin ominaisuudet"
+
+msgid "Type has been saved."
+msgstr "Tyyppi tallennettiin onnistuneesti."
+
+msgid "Type set details"
+msgstr "Tyyppikokoelman ominaisuudet"
+
+msgid "Type set has been saved."
+msgstr "Tyyppikokoelma tallennettiin onnistuneesti."
+
+msgid "Type sets"
+msgstr "Tyyppikokoelmat"
+
+msgid "Typeset with id %1 does not exist."
+msgstr "Tyyppikokoelmaa id-tunnisteella %1 ei ole saatavilla."
+
+msgid "Use metadata editor"
+msgstr "Metatietoeditorin käyttöoikeus"
+
+msgid "User can use the metadata editor tool in this group"
+msgstr "Käyttäjä voi käyttää metadataeditoria tässä ryhmässä"
+
+msgid "Website"
+msgstr "Websivusto"
+
+msgid "Recommended"
+msgstr "Käyttö suositeltavaa"
+
+msgid "(c) Ionstream Oy / Dicole. All rights reserved."
+msgstr "Tekijänoikeus Ionstream Oy / Dicole. Kaikki oikeudet pidetään."
+
+msgid "Dicole general types"
+msgstr "Dicole yleistyypit"
+
+msgid "typeset.gentypes.desc"
+msgstr "Tämä on Dicole:n vakio viestityyppikokoelma, joka on suunniteltu satunnaisiin  keskusteluihin, joita ei tarkemmin ohjata millään tietyllä tavalla."
+
+msgid "Dicole PBL types"
+msgstr "Dicole ongelmälähtöisen oppimisen viestityypit"
+
+msgid "typeset.pbltypes.desc"
+msgstr "Ongelmalähtöinen oppiminen (englanniksi Problem Based Learning, PBL) on opetusmenetelmä,  joka kannustaa opiskelijoita määrittelemään ongelmia ja rakentamaan syventävää tiatoa liittyen ongelmien  ymmärtämiseen ja ratkaisemiseen.<br /><br />  Menetelmän peruslähtökohtana on auttaa opiskelijoita oppimaan tehokkaasti ryhmässä. Opiskelijat aloittavat aina  keskustelun ongelmalla, johon nämä lähtevät yhteistoiminnallisesti rakentamaan ratkaisuja ja syventäviä osaongelmia.<br /><br />  Ongelmalähtöisen oppimisen avulla opiskelijat kannustetaan kriittiseen ja analyyttiseen lähestymistapaan tietoon  näiden etsiessä informaatiota erilaisista lähteistä. Tavoitteena on sytyttää opiskelijoiden kiinnostus ja  uteliaisuus käsiteltävänä olevaan aiheeseen ja edistää tiedonhakuun ja yhteistyöhön liittyviä kykyjä.<br /><br />  Alustavan ongelman kanssa työskentely usein tuo esiim uusia ongelmia, joiden ratkaiseminen on oleellista itse  pääongelman ratkaisemisessa. Syventävät ongelmat syntyvät opiskelijoiden tarpeesta ymmärtää pääongelmaa. Nämä  syventävät ongelmat ovat useimmiten tärkeimmässä osassa kokonaisuuden hahmottamisen kannalta. Osaongelmat voidaan  ratkaista samalla menetelmällä osana koko ongelmanratkaisuprosessia.<br /><br />  Kun asetat opiskelijoille ongelmia ratkaistavaksi, käytä monipuolisempaa ja monialaisempaa lähestymistapaa  opetettavaan aiheeseen. Faktatietoa hakevat kysymykset eivät aina johda ymmärryksen syventymiseen tai käsitteelliseen  muutokseen. Uusi informaatio yleensä löytyy tilanteista, joissa joutuu ratkaisemaan ongelmia keskeneräisten tai  ristiriitaisten teorioiden saralla."
+
+msgid "DCMI Type Vocabulary"
+msgstr "DCMI -standardi tallenteiden luonteesta"
+
+msgid "DCMI Recommendation"
+msgstr "DCMI -yhteisön suosittelema"
+
+msgid "Copyright 2004-06-14 Dublin Core Metadata Initiative. All Rights Reserved. http://www.dublincore.org/copyright/"
+msgstr "Tekijänoikeus 2005-06-14 Dublin Core Metadata Initiative. Kaikki oikeudet pidetään. http://www.dublincore.org/copyright/"
+
+msgid "typeset.dmitypes.desc"
+msgstr "DCMI -standardi tallenteiden luonteesta ja lajeista antaa yleisluontoiset määritteet  erilaisten resurssien kuvaamiseen."
+
+msgid "Collection"
+msgstr "Kokoelma"
+
+msgid "Image"
+msgstr "Kuva"
+
+msgid "Text"
+msgstr "Teksti"
+
+msgid "Dataset"
+msgstr "Tiedosto"
+
+msgid "Event"
+msgstr "Tapahtuma"
+
+msgid "Interactive Resource"
+msgstr "Interaktiivinen tallenne"
+
+msgid "Moving Image"
+msgstr "Liikkuva kuva"
+
+msgid "Physical Object"
+msgstr "Fyysinen esine"
+
+msgid "Service"
+msgstr "Palvelu"
+
+msgid "Sound"
+msgstr "Äänitallenne"
+
+msgid "Software"
+msgstr "Tietokoneohjelma"
+
+msgid "Still Image"
+msgstr "Piirros tai valokuva"
+
+msgid "Announcement"
+msgstr "Tiedote"
+
+msgid "Hyperlink"
+msgstr "Verkkolinkki"
+
+msgid "Normal"
+msgstr "Normaali"
+
+msgid "Idea"
+msgstr "Idea"
+
+msgid "Plan"
+msgstr "Suunnitelma"
+
+msgid "Question"
+msgstr "Kysymys"
+
+msgid "Solution"
+msgstr "Ratkaisu"
+
+msgid "Urgent"
+msgstr "Tärkeä"
+
+msgid "Clarification"
+msgstr "Selvennys"
+
+msgid "Deepening problem"
+msgstr "Syventävä ongelma"
+
+msgid "Expert source"
+msgstr "Asiantuntijalähde"
+
+msgid "Initial problem"
+msgstr "Alustava ongelma"
+
+msgid "My experiment"
+msgstr "Oma kokeilu"
+
+msgid "My theory"
+msgstr "Oma teoria"
+
+msgid "Organize and evaluate"
+msgstr "Organisointi ja arviointi"
+
+msgid "Summary"
+msgstr "Yhteenveto"
+
+msgid "Verified information"
+msgstr "Varmennettu tieto"
+
+msgid "types.gentypes.announcement"
+msgstr "Sinulla on uutta informaatiota, josta haluaisit tiedottaa muille."
+
+msgid "types.gentypes.hyperlink"
+msgstr "Sinulle on linkki hyödylliseen verkkoresurssiin."
+
+msgid "types.gentypes.idea"
+msgstr "Sinulla on idea, jonka haluaisit jakaa muiden kanssa."
+
+msgid "types.gentypes.normal"
+msgstr "Normaali viesti. Käytä tätä viestityyppiä, jos mikään muu viestityyppi ei sovellu tilanteeseen."
+
+msgid "types.gentypes.plan"
+msgstr "Sinulla on suunnitelma."
+
+msgid "types.gentypes.question"
+msgstr "Sinulla on kysymys, jonka haluaisit esittää."
+
+msgid "types.gentypes.solution"
+msgstr "Olet löytänyt ratkaisun ongelmaan."
+
+msgid "types.gentypes.urgent"
+msgstr "sinulla on jotain kiireellistä tai tärkeätä asiaa."
+
+msgid "types.gentypes.clarification"
+msgstr "Sinulla on kysymys esitetystä sisällöstä tai aiheesta ja tarvitset siihen liittyvää  tarkennusta. Voit myös selventää tämän viestityypin avulla jotakin asiaa muille."
+
+msgid "types.pbltypes.deepening"
+msgstr "Uusi syventävä ongelma on löytynyt pääongelmaa ratkaistaessa. Uusi ongelma tulee ratkaista osana alustavaa ongelmaa. Kuvaile ongelmasi lähtökohta, syyt ja mahdolliset seuraukset. Esitä tavoitteet ongelman ratkaisemiseksi."
+
+msgid "types.pbltypes.expert"
+msgstr "Olet haastatellut käsiteltävän aihealueen tunnustettua asiantuntijaa, jonka tieto  ja osaaminen voisi auttaa ongelman ratkaisemisessa. Asiantuntija voi olla myös jokin toinen taho, jolla  on esitettävänä uutta tietoa liittyen ongelmanratkaisuun. Kerro, mitä asiantuntija on sanonut tai kirjoittanut.  Muista mainita lähteesi ja lähteen ajankohta."
+
+msgid "types.pbltypes.initial"
+msgstr "Ongelmalähtöisessä oppimisessa on tarkoitus aloittaa keskustelu alustavasta ongelmasta.  Kerro kiinnostuksesi ongelmaa kohtaan, kuvaile ongelman lähtökohta ja rajaa ongelma selkesti. Aseta tavoitteet  ongelman ratkaisemiseksi. Kuvaile ongelma todellisissa tilanteissa, mikäli mahdollista."
+
+msgid "types.pbltypes.experiment"
+msgstr "Olet oppinut jotakin omien kokeilujesi kautta tai haluat jakaa tietoa muiden suorittamista  kokeiluista. Olet mahdollisesti kokeillut jotakin teoriaa käytännössä tai sattumalta törmännyt uuteen tietoon,  josta voisi olla hyötyä ongelman ratkaisussa. Kuvaile kokeesi, siihen liittyvät tapahtumat ja tulokset."
+
+msgid "types.pbltypes.theory"
+msgstr "Sinulla on oma työskentelyteoria, selitys tai hypoteesi ongelmaan liittyen. Sinulla on mahdollisesti  uutta teoreettista tietoa, joka on tulos kokeiluista, kerätystä informaatiosta tai muuten varmennetusta  tiedosta. Muista, että teoriasi ei ole tarkoitus olla fakta. Väärät vastaukset kuten keskeneräinen teoria,  väärät oletukset, ristiriitaiset ideat yms. ovat itse asiassa hyvä vastauksia ja osa hyvää jaettua  ongelmanratkaisuprosessia."
+
+msgid "types.pbltypes.organize"
+msgstr "On tärkeää organisoida ja arvioida ongelmanratkaisuprosessia itsessään. Tämän viestityypin  avulla voit arvioida mihin keskustelu on menossa, mitä menetelmiä ryhmäsi on käyttänyt tai tulisi käyttää ja  mihin suuntaaan ryhmäsi pitäisi seuraavaksi keskittyä. Voit myös kuvailla, mistä tarkempaa tietoa ja ymmärrystä  voisi löytyä."
+
+msgid "types.pbltypes.summary"
+msgstr "Yhteenvedon avulla yhdistät keskeiset ajatukset ja ryhmäsi kokoaman informaation  liittyen johonkin ongelmaan tai osaongelmaan. Yritä liittää hajanainen informaatio selkeäksi, loogiseksi  ja luontevaksi tekstiksi yhteenvetoa kirjoittaessasi. Yhteenvetosi voi pyrkiä ratkaisemaan alustavan ongelman,  koota yhteenvedon ongelmanratkaisuprosessista tai kuvailla uuden ongelman, jonka ratkaisu on oleellista  erillisessä keskustelussa."
+
+msgid "types.pbltypes.information"
+msgstr "Olet koonnut uutta tietoa varmennetusta lähteestä, esimerkiksi kirjallisuutta,  lehtiartikkeleita tai tutkimustuloksia yms. Muista sisällyttää tietolähteesi tarkka lähde ja arvio lähteen  luotettavuudesta perusteluineen."
+
+msgid "types.dcmitypes.collection"
+msgstr "A collection is an aggregation of items. The term collection means that the resource  is described as a group; its parts may be separately described and navigated."
+
+msgid "types.dcmitypes.dataset"
+msgstr "A dataset is information encoded in a defined structure (for example, lists, tables, and  databases), intended to be useful for direct machine processing."
+
+msgid "types.dcmitypes.event"
+msgstr "An event is a non-persistent, time-based occurrence. Metadata for an event provides  descriptive information that is the basis for discovery of the purpose, location, duration, responsible agents,  and links to related events and resources. The resource of type event may not be retrievable if the described  instantiation has expired or is yet to occur. Examples - exhibition, web-cast, conference, workshop,  open-day, performance, battle, trial, wedding, tea-party, conflagration."
+
+msgid "types.dcmitypes.image"
+msgstr "An image is a primarily symbolic visual representation other than text. For example  - images and photographs of physical objects, paintings, prints, drawings, other images and graphics,  animations and moving pictures, film, diagrams, maps, musical notation. Note that image may include  both electronic and physical representations."
+
+msgid "types.dcmitypes.interactive"
+msgstr "An interactive resource is a resource which requires interaction from the  user to be understood, executed, or experienced. For example - forms on web pages, applets, multimedia  learning objects, chat services, virtual reality."
+
+msgid "types.dcmitypes.movingimage"
+msgstr "A series of visual representations that, when shown in succession, impart an  impression of motion. Examples of moving images are: animations, movies, television programs, videos,  zoetropes, or visual output from a simulation."
+
+msgid "types.dcmitypes.physical"
+msgstr "An inanimate, three-dimensional object or substance. For example -- a computer,  the great pyramid, a sculpture. Note that digital representations of, or surrogates for, these things  should use Image, Text or one of the other types."
+
+msgid "types.dcmitypes.service"
+msgstr "A service is a system that provides one or more functions of value to the  end-user. Examples include: a photocopying service, a banking service, an authentication service,  interlibrary loans, a Z39.50 or Web server."
+
+msgid "types.dcmitypes.software"
+msgstr "Software is a computer program in source or compiled form which may be  available for installation non-transiently on another machine. For software which exists only  to create an interactive environment, use interactive instead."
+
+msgid "types.dcmitypes.sound"
+msgstr "A sound is a resource whose content is primarily intended to be rendered  as audio. For example - a music playback file format, an audio compact disc, and recorded  speech or sounds."
+
+msgid "types.dcmitypes.stillimage"
+msgstr "A static visual representation. Examples of still images are:  paintings, drawings, graphic designs, plans and maps."
+
+msgid "types.dcmitypes.text"
+msgstr "A text is a resource whose content is primarily words for reading.  For example - books, letters, dissertations, poems, newspapers, articles, archives of  mailing lists. Note that facsimiles or images of texts are still of the genre text."
+
+msgid "Dublin Core"
+msgstr "Dublin Core"
+
+msgid "Copyright 2003-06-02 Dublin Core Metadata Initiative. All Rights Reserved. http://www.dublincore.org/copyright/"
+msgstr "Tekijänoikeus 2003-06-02 Dublin Core Metadata Initiative. Kaikki oikeudet pidetään. http://www.dublincore.org/copyright/"
+
+msgid "metadata.dublin.desc"
+msgstr "Dublin Core metadataformaatti on standardi erityyppisten informaatiolähteiden  kuvaamiseen. Informaatiolähteellä tarkoitetaan \"mitä tahansa, jolla on identiteetti \".  Tätä määritelmää on käytetty Internet-standardissa RFC 2396, \"Uniform Resource  Identifiers (URI): Generic Syntax \", Tim Berners-Lee ym. Ei ole tiedossa mitään perustavanlaatuisia  rajoituksia Dublin Core metatietoformaatin käytölle erilaisten resurssityyppien kuvaamisessa."
+
+msgid "Title"
+msgstr "Nimike"
+
+msgid "Creator"
+msgstr "Tekijä"
+
+msgid "Subject and keywords"
+msgstr "Aihe ja avainsanat"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Publisher"
+msgstr "Julkaisija"
+
+msgid "Contributor"
+msgstr "Muu tekijä"
+
+msgid "Date"
+msgstr "Päivämäärä"
+
+msgid "Format"
+msgstr "Laji"
+
+msgid "Resource type"
+msgstr "Formaatti"
+
+msgid "Resource identifier"
+msgstr "Identifiointitunnus"
+
+msgid "Source"
+msgstr "Lähde"
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "Relation"
+msgstr "Suhde"
+
+msgid "Coverage"
+msgstr "Kattavuus"
+
+msgid "Rights management"
+msgstr "Oikeudet"
+
+msgid "A name given to the resource."
+msgstr "Tekijän tai julkaisijan antama tallenteen nimi."
+
+msgid "An entity primarily responsible for making the content of the resource."
+msgstr "Henkilö tai yhteisö joka on ensisijaisesti vastuussa tallenteen sisällön luomisesta."
+
+msgid "A topic of the content of the resource."
+msgstr "Tallenteen sisällön aihealueen kuvaus."
+
+msgid "An account of the content of the resource."
+msgstr "Tallenteen sisällön kuvaus."
+
+msgid "An entity responsible for making the resource available."
+msgstr "Organisaatio, henkilö, joka on julkaissut tai asettanut tallenteen käytettäväksi."
+
+msgid "An entity responsible for making contributions to the content of the resource."
+msgstr "Henkilö, organisaatio tai palvelu, joka tekijä-kentässä mainittujen tekijöiden lisäksi on osallistunut merkittävästi tallenteen luomiseen, mutta jonka panos on ollut toissijainen verrattuna ns. päävastuullisen tekijän osuuteen."
+
+msgid "Information about rights held in and over the resource."
+msgstr "Tallenteeseen liittyvien oikeuksien ilmaus."
+
+msgid "The extent or scope of the content of the resource."
+msgstr "Tallenteen sisällön kattavuus."
+
+msgid "A reference to a related resource."
+msgstr "Viittaus muuhun tallenteeseen, joka liittyy kuvailtavaan tallenteeseen."
+
+msgid "A language of the intellectual content of the resource."
+msgstr "Tallenteen kieli."
+
+msgid "A reference to a resource from which the present resource is derived."
+msgstr "Tallenne, johon kuvailtava tallenne perustuu kokonaan tai osittain."
+
+msgid "The physical or digital manifestation of the resource."
+msgstr "Tallenteen fyysinen tai digitaalinen ilmiasu."
+
+msgid "A date of an event in the lifecycle of the resource."
+msgstr "Päivämäärä, joka liittyy tallenteen johonkin elinkaaren vaiheeseen."
+
+msgid "An unambiguous reference to the resource within a given context."
+msgstr "Tunnus, joka identifioi kuvailtavan tallenteen yksiselitteisesti."
+
+msgid "The nature or genre of the content of the resource."
+msgstr "Tallenteen luonne tai sisällön tyyppi"
+
+msgid "fields.dublin.title"
+msgstr "Tyypillisesti nimike on nimi jolla resurssi yleisesti tunnetaan."
+
+msgid "fields.dublin.creator"
+msgstr "Esimerkiksi henkilö, organisaatio tai sisällöntuottaja.  On suositeltavaa käyttää tekijän nimeä."
+
+msgid "fields.dublin.subject"
+msgstr "Aihe esitetään yleensä asiasanoilla tai fraaseilla. Kontrolloitujen  sanastojen tai luokitusten käyttäminen on suositeltavaa, koska yhteinen terminologia  parantaa hakutulosta oleellisesti."
+
+msgid "fields.dublin.description"
+msgstr "Kuvaus voi sisältää esimerkiksi tekstitallenteen tiivistelmän,  sisällysluettelon tai sisällön graafisen kuvauksen. Tämä jaottelu voidaan ilmaista  tarkenteiden avulla."
+
+msgid "fields.dublin.publisher"
+msgstr "Julkaisija voi olla esimerkiksi kustannusyhtiö, yliopiston  laitos tai muu yhteisö. On suositeltavaa käyttää julkaisijan nimeä."
+
+msgid "fields.dublin.contributor"
+msgstr "Muu tekijä voi olla esimerkiksi toimittaja, kuvittaja,  kääntäjä tai sisällöntuotantopalvelu. On suositeltavaa käyttää tekijän nimeä."
+
+msgid "fields.dublin.date"
+msgstr "Yleensä aikamääre ilmaisee tallenteen julkistamisajan,  luontiajan, voimassaoloajan tai ajanjakson, jolloin tallenne on käytettävissä.  Suositeltavaa on määritellä päivämäärä ISO 8601 standardin mukaisesti, esimerkiksi muodossa VVVV-KK-PP."
+
+msgid "fields.dublin.type"
+msgstr "Laji kertoo tallenteen sisällön yleisen luokan, funktion tai genren.  Tallenteen luonne voi olla Dublin Core -yhteisön määrittelemän listan mukaan kokoelma,  tiedosto, tapahtuma, kuva, interaktiivinen tallenne, palvelu, tietokoneohjelma,  äänitallenne tai teksti. Sisällön tyyppi voi olla esimerkiksi runokokoelma tai  tieteiskirja. On suositeltavaa, että DCMI -standardia tallenteiden luoteista hyödynnetään."
+
+msgid "fields.dublin.format"
+msgstr "Yleensä formaatti ilmaisee tallenteen tiedostoformaatin (esim.  text/html) tai vaihtoehtoisesti myös tallenteen kokotietoja (esimerkiksi kesto  minuutteina tai tavukoko kilo- tai megatavuina). Formaattia voidaan käyttää kuvaamaan ohjelmistoja, laitteistoja tai muita tarvikkeita, joiden avulla formaatin sisältö voidaan esittää tai suorittaa. On suositeltavaa valita formaatti kontrolloidusta  sanastosta (esimerkiksi MIME -standardi tiedostoformaattien kuvaamiseen)."
+
+msgid "fields.dublin.identifier"
+msgstr "Standardoitujen tai yleisesti hyväksyttyjen  identifiointitunnusten käyttö on suositeltavaa. Esimerkkejä standardeista ovat  URI-tunnukset (sisältäen URL), DOI ja ISBN."
+
+msgid "fields.dublin.source"
+msgstr "Lähde toimii linkkinä toiseen tallenteeseen. Suositeltavaa  on viitata lähteeseen jonkin standardin mukaan, esimerkiksi URI-tunnuksella."
+
+msgid "fields.dublin.language"
+msgstr "Ilmaistaan kielikoodilla, esimerkiksi internet-standardit  RFC 3066 ja ISO 639. Jos tallenteessa on käytetty useita kieliä voidaan tätä kenttää toistaa."
+
+msgid "fields.dublin.relation"
+msgstr "Suhde toimii linkkinä toiseen tallenteeseen. On suositeltavaa  viitata suhteessa olevaan URI-tunnuksella. Suhdetyypit ilmaistaan kenttätarkenteilla.  Huom. Viittaus lähdejulkaisuun ilmaistaan lähde-kentässä."
+
+msgid "fields.dublin.coverage"
+msgstr "Tyypillisesti kattavuus-kenttää käytetään tallenteen alueellisen  tai ajallisen kattavuuden ilmaisemiseen. Alueellinen kattavuus viittaa johonkin  alueeseen tai tilaan, joka voidaan määritellä paikan nimellä tai koordinaateilla  (x ,y, z). Ajallinen kattavuus viittaa aikakauteen, jota teoksen sisältö käsittelee,  ei siihen milloin teos on julkaistu. Aikamääritys tehdään joko aikakauden nimeä  (esimerkiksi rauta-aika) käyttäen, TGN -standardia hyödyntäen tai aikamääre-kentässä  määritellyllä tavalla."
+
+msgid "fields.dublin.rights"
+msgstr "Oikeudet-kenttään voidaan tallentaa lyhyt maininta tallenteen  käyttöoikeuksista tai linkki tarkempiin tekijänoikeustietoihin tai palveluun,  joka antaa tietoja tallenteen käyttömahdollisuuksista."
+
+msgid "Metadata rights"
+msgstr "Metadata oikeudet"

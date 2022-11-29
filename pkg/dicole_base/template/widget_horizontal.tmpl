@@ -1,0 +1,7 @@
+<div [% IF itemparams.id %] id="[% itemparams.id %]"[% END %] class="horizontalContent[% IF itemparams.class %] [% itemparams.class %][% END %]">
+[%- FOREACH item = itemparams.contents %]
+<span class="horizontalContentItem">
+    [% PROCESS dicole_base::include_widget widget = item %]
+</span>
+[%- END %]
+</div>

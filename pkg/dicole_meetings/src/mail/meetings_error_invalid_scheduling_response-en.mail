@@ -1,0 +1,35 @@
+[% MTN.t("Problem with your scheduling response") %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Oh noes!') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t("Something went wrong with your response to scheduling option for %(B\$%1\$s%). Please try again.",[meeting_title]) %]<<</p>>>
+
+<<<p>>>[% MTN.t("Does the following time suit you?") %]<<<br>>>
+<<<bold>>>[% scheduling_option %]<<</bold>>><<</p>>>
+
+<<<p>>>[% MTN.t("To answer, simply reply YES or NO to this email.") %] <<</p>>>
+<<<p>>>
+[% IF previous_answer != '' %]
+[% MTN.t("Your previous answer: %1\$s .",[previous_answer]) %]
+[% END %]
+<<</p>>>
+
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=invalid_scheduling' %]
+[% showtext = 1 %]
+[% text = MTN.t('View meeting') %]
+<<<blue_button>>>
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

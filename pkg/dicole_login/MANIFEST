@@ -1,0 +1,20 @@
+Changes
+conf/action.ini
+conf/spops.ini
+conf/tabs.ini
+html/js/dicole/login/login.html
+MANIFEST			This list of files
+MANIFEST.SKIP
+msg/messages-en.po
+msg/messages-fi.po
+msg/messages-sv.po
+OpenInteract2/Action/DicoleLoginJSON.pm
+OpenInteract2/Action/DicoleLostaccount.pm
+OpenInteract2/Action/Login.pm
+OpenInteract2/App/DicoleLogin.pm
+OpenInteract2/SQLInstall/Login.pm
+package.ini
+struct/account_recovery_key.sql
+struct/account_recovery_key.sqlite.sql
+template/account_mail.tmpl
+template/login.tmpl

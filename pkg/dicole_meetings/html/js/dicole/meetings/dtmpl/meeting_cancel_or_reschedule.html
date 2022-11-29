@@ -1,0 +1,23 @@
+<div id="modal-meeting-cancel-or-reschedule" class="m-modal">
+    <div class="modal-header">
+        <h3><%= MTN.t('Cancel Meeting') %></h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t('Do you want to schedule an another meeting right away?') %></p>
+        <form action="#" id="meetings_meeting_cancel_or_reschedule_form" class="meetings-form">
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a class="button pink js_meetings_meeting_cancel_or_reschedule_submit" href="#">
+                <span class="label"><%= MTN.t('Schedule Another Meeting') %></span>
+            </a>
+            <a class="button blue js_meetings_meeting_cancel_open" href="#">
+                <span class="label"><%= MTN.t('Cancel Meeting') %></span>
+            </a>
+            <a href="#" class="button gray js_hook_showcase_close" id="meeting-cancel-open-button">
+                <%= MTN.t('Cancel') %>
+            </a>
+        </div>
+    </div>
+</div>

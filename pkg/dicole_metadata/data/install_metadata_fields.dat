@@ -1,0 +1,66 @@
+$install_metadata = [ {
+        import_type => 'object',
+        spops_class => 'OpenInteract2::DicoleMetadataFields',
+        field_order => [ qw/ metadata_id name label definition comment / ]
+        },
+        [ 1, 'Title', 'Title',
+        'A name given to the resource.',
+        'fields.dublin.title'
+        ],
+        [ 1, 'Creator', 'Creator',
+        'An entity primarily responsible for making the content of the resource.',
+        'fields.dublin.creator'
+        ],
+        [ 1, 'Subject', 'Subject and keywords',
+        'A topic of the content of the resource.',
+        'fields.dublin.subject'
+        ],
+        [ 1, 'Description', 'Description',
+        'An account of the content of the resource.',
+        'fields.dublin.description'
+        ],
+        [ 1, 'Publisher', 'Publisher',
+        'An entity responsible for making the resource available.',
+        'fields.dublin.publisher'
+        ],
+        [ 1, 'Contributor', 'Contributor',
+        'An entity responsible for making contributions to the content of the resource.',
+        'fields.dublin.contributor'
+        ],
+        [ 1, 'Date', 'Date',
+        'A date of an event in the lifecycle of the resource.',
+        'fields.dublin.date'
+        ],
+        [ 1, 'Type', 'Resource type',
+        'The nature or genre of the content of the resource.',
+        'fields.dublin.type'
+        ],
+        [ 1, 'Format', 'Format',
+        'The physical or digital manifestation of the resource.',
+        'fields.dublin.format'
+        ],
+        [ 1, 'Identifier', 'Resource identifier',
+        'An unambiguous reference to the resource within a given context.',
+        'fields.dublin.identifier'
+        ],
+        [ 1, 'Source', 'Source',
+        'A reference to a resource from which the present resource is derived.',
+        'fields.dublin.source'
+        ],
+        [ 1, 'Language', 'Language',
+        'A language of the intellectual content of the resource.',
+        'fields.dublin.language'
+        ],
+        [ 1, 'Relation', 'Relation',
+        'A reference to a related resource.',
+        'fields.dublin.relation'
+        ],
+        [ 1, 'Coverage', 'Coverage',
+        'The extent or scope of the content of the resource.',
+        'fields.dublin.coverage'
+        ],
+        [ 1, 'Rights', 'Rights management',
+        'Information about rights held in and over the resource.',
+        'fields.dublin.rights'
+        ],
+];

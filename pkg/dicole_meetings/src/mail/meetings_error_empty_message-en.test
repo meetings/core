@@ -1,0 +1,9 @@
+[%#- Sent as a reply if the incoming meeting email contains no content -%]
+
+[%- IF test_case == 'tyhjäviesti' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+
+%]
+[%- END %]

@@ -1,0 +1,19 @@
+[% MTN.t('Problem with your meeting invitation') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Something went wrong') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t('Unfortunately we could not process the meeting invitation sent to %1$s.',[sent_to_email]) %]<<</p>>>
+<<<p>>>[% MTN.t('Meetin.gs could not parse the calendar file contained in your email.') %]<<</p>>>
+<<<p>>>[% MTN.t('Please contact our support if the problem persists.') %]<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>> 

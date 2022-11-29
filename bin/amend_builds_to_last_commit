@@ -1,0 +1,36 @@
+#!/bin/bash
+
+read -p "Are you sure dojo, meetings/html/css and the sprite files DO NOT CONTAIN custom changes? " -n 1
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    echo ""
+    exit 1
+fi
+echo ""
+
+git checkout pkg/dicole_dojo
+git checkout pkg/dicole_meetings/html/css
+git checkout pkg/dicole_meetings/html/images/meetings/sass_sprite.png
+git checkout pkg/dicole_meetings/html/scss/_sprite.scss
+git checkout pkg/dicole_meetings/html/js/templates.js
+
+git stash && \
+cd pkg/dicole_dojo && \
+script/build_dojo.sh && \
+git add -u . && \
+cd ../dicole_meetings && \
+script/generate_sprite_data.pl && \
+git add html/images/meetings/sass_sprite.png html/scss/_sprite.scss && \
+php script/generate_themes.php && \
+git add -u html/css && \
+bin/mails/process_templates && \
+git add -u template/mail && \
+cd ../.. && \
+node pkg/dicole_meetings/script/templatizer.js && \
+git add pkg/dicole_meetings/html/js/templates.js && \
+git commit --amend && \
+git stash pop && \
+cd pkg/dicole_meetings && \
+php script/sass-sg.php && \
+php script/generate_themes.php
+

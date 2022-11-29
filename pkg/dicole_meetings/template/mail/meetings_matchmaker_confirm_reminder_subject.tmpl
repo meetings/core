@@ -1,0 +1,1 @@
+[% IF requester_company && requester_name == requester_email %][% requestor = requester_company %][% ELSIF requester_company %][% requestor = requester_name _ ' from ' _ requester_company %][%ELSE %][% requestor = requester_name %][% END %][% MTN.t('Please respond to the meeting request from %1$s', [requestor]) %]

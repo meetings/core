@@ -1,0 +1,45 @@
+<% dojo.forEach(p.comments, function(comment) { %>
+<div class="annotation_comment <% if(comment.published == 0) { %> annotation_comment_unpublished<% } %>">
+	<% if(comment.published == 0 && !comment.publish_url) { %>
+	<div class="annotation_comment_unpublished_message">
+		<%== dicole.msg("Your comment is waiting for approval and will be published shortly.") %>
+	</div>
+	<% } %>
+	<div class="author_background">
+		<a class="author_image" href="<%== comment.user_link %>">
+			<img src="<%== comment.user_avatar ? comment.user_avatar : '/images/theme/default/default-user-avatar-40px.png' %>" alt="<%== comment.user_name %>" />
+		</a>
+	</div>
+	<div class="annotation_comment_content">
+		<a class="author_name" href="<%== comment.user_link %>"><%== comment.user_name %></a>
+		<p><%= comment.content %></p>
+		<div class="meta">
+			<span class="date"><%== comment.date_ago %></span>
+			<% if(comment.support_count) { %>
+			<span class="separator">&bull;</span>
+			<span class="supports alpha_png" title="<%== comment.support_string %>">
+				<span class="support_count"><%== comment.support_count %></span>
+				<% if(comment.support_count > 1) { %>
+				<%== dicole.msg("supports") %>
+				<% } else { %>
+				<%== dicole.msg("support") %>
+				<% } %>
+			</span>
+			<% } if(comment.support_url) { %>
+			<span class="separator">&bull;</span>
+			<a class="support" href="<%== comment.support_url %>"><%== dicole.msg("Support") %></a>
+			<% } else if(comment.unsupport_url) { %>
+			<span class="separator">&bull;</span>
+			<a class="unsupport" href="<%== comment.unsupport_url %>"><%== dicole.msg("Unsupport") %></a>
+			<% } if(comment.publish_url) { %>
+			<span class="separator">&bull;</span>
+			<a class="publish" href="<%== comment.publish_url %>"><%== dicole.msg("Publish") %></a>
+			<% } if(comment.remove_url) { %>
+			<span class="separator">&bull;</span>
+			<a class="remove" href="<%== comment.remove_url %>"><%== dicole.msg("Remove") %></a>
+			<% } %>
+		</div>
+	</div>
+</div>
+<hr />
+<% }); %>

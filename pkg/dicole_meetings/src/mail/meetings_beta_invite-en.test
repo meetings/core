@@ -1,0 +1,10 @@
+[%- IF test_case == 'test' %]
+[%-
+
+meeting_email = 'meeting_email@parameter.com'
+inviting_user_name = 'Jonathan Davis'
+greeting_message_html = 'This is the place and placeholder for the custom text for the inviter to type in. In my opinion Meetin.gs is a great tool that helps me improve my meetings. Knowing the way you organize yours, you should definitely try it. Cheers!'
+register_url = 'http://meetin.gs/get_a_free_account'
+greeting_message_text = 'This is the custom greeting text for the non-html mail'
+%]
+[%- END -%]

@@ -1,0 +1,31 @@
+<div id="modal-edit-media-embed" class="modal-popup">
+    <h2 class="modal-header"><%== 'Edit Embed' %></h2>
+    <form id="meetings_edit_media_embed_form" class="meetings-form">
+        <fieldset>
+            <input type="hidden" name="prese_id" value="<%== p.id %>" />
+
+            <!-- title -->
+            <div class="form-row">
+                <input name="title" value="<%== p.title %>">
+            </div>
+
+            <!-- embed code -->
+            <div class="form-row">
+                <textarea name="embed"><%== p.embed %></textarea>
+            </div>
+
+            <!-- Save & cancel -->
+            <div class="form-row form-save-and-cancel-wrapper">
+                <a href="#" class="button pink js_meetings_edit_media_embed_submit" id="save-media-embed-button">
+                    <%= MTN.t('Save') %>
+                </a>
+                <a href="<%== p.data_url %>" class="button pink js_meetings_remove_media_open" id="remove-media-embed-button">
+                    <%= MTN.t('Remove') %>
+                </a>
+                <a href="#" class="button gray js_hook_showcase_close">
+                    <%= MTN.t('Cancel') %>
+                </a>
+            </div>
+        </fieldset>
+    </form>
+</div>

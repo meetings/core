@@ -1,0 +1,1 @@
+[% IF ! matchmaking_event %][% MTN.t('We have sent your meeting request') %][% ELSIF matchmaker_company %][% MTN.t('Your request to meet has been sent to %1$s from %2$s',[matchmaker_name,matchmaker_company]) %][% ELSE %][% MTN.t('Your request to meet has been sent to %1$s',[matchmaker_name]) %][% END %]

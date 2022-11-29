@@ -1,0 +1,10 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_blogs_entry add close_comments int not null after rating');
+}
+
+1;
+

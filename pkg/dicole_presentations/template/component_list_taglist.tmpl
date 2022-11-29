@@ -1,0 +1,6 @@
+<span class="miniTagCloud">
+	[%- FOREACH tag IN links %]
+		<a class="tag [% tag.class %]" href="#">[% tag.name | html %]</a>
+    [% IF ! loop.last %]<span class="tag_separator">+</span>[% END %]
+	[%- END %]
+</span>

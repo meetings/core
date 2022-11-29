@@ -1,0 +1,7 @@
+<textarea
+[%- IF itemparams.id %] id="[% itemparams.id | html %]"[% END %]
+[%- IF itemparams.name %] name="[% itemparams.name | html %]"[% END %]
+[%- IF itemparams.rows %] rows="[% itemparams.rows | html %]"[% END %]
+[%- IF itemparams.cols %] cols="[% itemparams.cols | html %]"[% END %]
+[%- IF itemparams.class or itemparams.html_editor %] class="[% IF itemparams.html_editor %]mceEditor [% END %][% itemparams.class | html %]"[% END %]>
+[%- itemparams.value | html %]</textarea>

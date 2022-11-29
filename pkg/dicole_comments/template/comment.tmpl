@@ -1,0 +1,56 @@
+<div class="comments_message[% IF is_private == 1 %] comments_message_private[% END %][% IF published == 0 %] comments_message_unpublished[% END %]" id="comments_message_[% thread_id %]_[% post_id %]">
+	<div class="avatar">
+		[% IF user_link %]
+		<a href="[% user_link %]"><img src="[% user_avatar %]" alt="[% user_name %]" /></a>
+		[% ELSE %]
+		<img src="[% user_avatar %]" alt="[% user_name %]" />
+		[% END %]
+	</div>
+	<div class="actions">
+		[% IF can_delete_comments AND published != 0 %]
+		<a href="[% delete_link %]" id="comments_delete_[% post_id %]" alt="Delete message">x</a>
+		[% END %]
+	</div>
+	<div class="comment-content" id="comments_message_content_[% post_id %]">
+[% IF can_delete_comments %]
+		<div id="comment_confirm_container_[% post_id %]" class="comment_confirm_delete">
+			<a id="comment_confirm_delete_[% post_id %]" href="#">[% MSG('Confirm comment delete') | html %]</a>
+			<span class="separator">&bull;</span>
+			<a id="comment_confirm_cancel_[% post_id %]" href="#">[% MSG('Cancel comment delete') | html %]</a>
+		</div>
+[% END %]
+[% IF published == 0 AND can_publish_comments %]
+		<div id="comment_publish_container_[% post_id %]" class="comment_publish">
+			<a id="comment_publish_publish_[% post_id %]" href="[% publish_link %]">[% MSG('Publish comment') | html %]</a>
+[% IF can_delete_comments %]
+			<span class="separator">&bull;</span>
+			<a id="comment_publish_delete_[% post_id %]" href="[% delete_link %]">[% MSG('Delete comment') | html %]</a>
+[% END %]
+		</div>
+[% ELSIF published == 0 %]
+        <div class="comment_unpublished">
+            <span>[% MSG('Your comment is waiting for approval and will be published shortly.') | html %]</span>
+        </div>
+[% END %]
+		<div class="metadata">
+			[% IF user_link %]
+			<a class="people" href="[% user_link %]">[% user_name %]</a>
+			[% ELSE %]
+			[% user_name %]
+			[% END %]
+			[% IF is_private == 1 %] ([% MSG('private') %])[% END %] - [% date %]
+		</div>
+		[% IF short_content %]
+		<div id="comment_message_truncated_[% post_id %]">
+			[% short_content %]
+			<a href="#" id="comment_message_show_more_[% post_id %]">[% MSG('Show more') %] &darr;</a>
+		</div>
+		<div id="comment_message_[% post_id %]">
+			[% content %]
+			<a href="#" id="comment_message_hide_more_[% post_id %]">[% MSG('Hide more') %] &uarr;</a>	
+		</div>
+		[% ELSE %]
+		<div id="comment_message_[% post_id %]">[% content %]</div>
+		[% END %]
+	</div>
+</div>

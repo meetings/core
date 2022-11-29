@@ -1,0 +1,29 @@
+OpenInteract-1.99_06-patch-Dicole.patch
+
+Uncompress OpenInteract 1.99_06, move this patch to the root directory of the source
+and apply patch with the following command:
+
+patch -p1 < OpenInteract-1.99_06-patch-Dicole.patch
+
+------------------------------------------------------------------------------------
+
+The patch modifies the following files:
+
+lib/OpenInteract2/I18N/Initializer.pm
+Fix for the Gettext implementation. Now supports the Gettext header.
+Also, removes unnecessary dublicate key errors.
+
+lib/OpenInteract2/I18N.pm
+Changes the system so that instead of returning "Message error for '$key'"
+it returns the key itself in cases where no translation is found.
+This is to ensure that in incomplete translations the english version is
+displayed instead. Previously it reported the message error.
+Also moved from warn to debug the information of untranslated strings.
+
+lib/OpenInteract2/Request.pm
+Changes the order in how the language is selected:
+ - prefers $lang_config->{choice_param_name} over user or session language
+ - prefers user and session language over user agent provided languages
+ - prefers everything else over $lang_config->{default_language}
+
+- Teemu Arina

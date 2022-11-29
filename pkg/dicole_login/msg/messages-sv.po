@@ -1,0 +1,137 @@
+# $Id: messages-sv.po,v 1.5 2010-07-28 13:45:44 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:08:29+0000\n"
+"PO-Revision-Date: 2005-03-22 02:08:29+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Domain"
+msgstr "Domän"
+
+msgid "Login"
+msgstr "Logga in"
+
+msgid "Login failure. Please check your username and password."
+msgstr "Inloggning misslyckades. Var god och kolla ditt login-namn och lösenord."
+
+msgid "Password"
+msgstr "Lösenord"
+
+msgid "Session was not found, this probably means the session timed out. Please login again to proceed."
+msgstr "Ingen session hittades, detta betyder antagligen att det uppstod ett avbrott. Var god och logga in på nytt för att fortsÃ€tta."
+
+msgid "Thank you for using our system. Always remember to log out after you are done to ensure your own privacy."
+msgstr "Tack för att du anvÃ€nde vårt system. För att skydda din integritet, kom alltid ihåg att logga ut efter du avslutat sessionen."
+
+msgid "Username"
+msgstr "Användarnamn"
+
+msgid "Invalid login, please try again."
+msgstr "Ogiltig login, var god försök pånytt."
+
+msgid "Radius server is not responding, please try again."
+msgstr "Radius servern svarar ej, var god försök pänytt."
+
+msgid "Register"
+msgstr "Registrera"
+
+msgid "Retrieve lost account"
+msgstr "Återställ förlorat konto"
+
+msgid "Account email"
+msgstr "Kontots e-post"
+
+msgid "Your registered email address"
+msgstr "Er registrerade e-postadress"
+
+msgid "Submit"
+msgstr "Skicka"
+
+msgid "Retrieve lost username and password"
+msgstr "Återsäll förlorat inloggningsnamn och lösenord"
+
+msgid "User account information has been sent to email address: %1"
+msgstr "Kontots information har skickats till adressen: %1"
+
+msgid "No user account registered with the provided email address: %1"
+msgstr "Inget konto har registrerats med den givna e-postadressen: %1"
+
+msgid "Please provide your registered email address."
+msgstr "Var god ge er registrerade e-postadress."
+
+msgid "User account information from %1"
+msgstr "Användarinformation från %1"
+
+msgid "Local"
+msgstr "Lokal"
+
+msgid "Error connecting to database, please contact system administrator."
+msgstr "Ett fel uppkom vid anslutandet till databasen, var god kontakta systemets administrator."
+
+msgid "New user creation failed."
+msgstr "Skapandet av ny användare misslyckades."
+
+msgid "Confirm lost account"
+msgstr "Bekräfta förlorat konto"
+
+msgid "New password"
+msgstr "Nytt lösenord"
+
+msgid "Confirm password"
+msgstr "Bekräfta lösenordet"
+
+msgid "Recovery key"
+msgstr "Återställningsnyckel"
+
+msgid "Failed to save recovery information."
+msgstr "."
+
+msgid "Failed to validate recovery key."
+msgstr "."
+
+msgid "Failed to update account recovery information."
+msgstr "."
+
+msgid "Failed to change password."
+msgstr "Ändring av lösenord misslyckades."
+
+msgid "Password changed."
+msgstr "Lösenord ändrat."
+
+msgid "New password saved."
+msgstr "Nytt lösenord sparat."
+
+msgid "Passwords do not match"
+msgstr "Lösenorden stämmer inte överens"
+
+msgid "Save new password"
+msgstr "Spara nytt lösenord"
+
+msgid "This user account is disabled. Please contact your system administrator."
+msgstr "Detta konto har satts ur funktion. Var god kontakta systemets administrator."
+
+msgid "Email and name are required."
+msgstr "Email and name are required."
+
+msgid "Email has already been taken. Try logging in with your previous account or use a different email."
+msgstr "Email has already been taken. Try logging in with your previous account or use a different email."
+
+msgid "msg"
+msgstr "msg"
+
+msgid "Login failed, please check your username and password."
+msgstr "Login failed, please check your username and password."
+
+msgid "Login with Facebook"
+msgstr "Login with Facebook"
+
+msgid "Remember"
+msgstr "Remember"

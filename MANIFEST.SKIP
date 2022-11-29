@@ -1,0 +1,16 @@
+\bCVS\b
+~$
+\.old$
+\.bak$
+\.backup$
+/?\.\#
+^MANIFEST\.
+Build$
+^_build
+\.log$
+^tmp
+^blib
+\.zip$
+^_
+\.swp$
+^pkg/

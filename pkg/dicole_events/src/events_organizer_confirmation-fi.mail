@@ -1,0 +1,22 @@
+[% user_name %] osallistuu tapahtumaasi
+
+[% event_title %] -nimisellä tapahtumalla on uusi osanottaja: [% user_name %] ([% IF organization_title %][% organization_title %], [% END %][% organization %][% IF phone %], [% phone %][% END %], [% email %]).
+
+[%- IF in_html AND attend_info_html %]
+Tässä on lisätiedot, jotka [% user_name %] antoi:
+
+[% attend_info_html %]
+
+[%- END %]
+[%- IF ! in_html AND attend_info_text %]
+Tässä on lisätiedot, jotka [% user_name %] antoi:
+
+[% attend_info_text %]
+
+[%- END %]
+Pääset tapahtuman sivulle allaolevan linkin kautta seuraavan 24 tunnin ajan. Tämän jälkeen järjestelmä vaatii erillisen kirjautumisen.
+[% IF in_html %]<br/><a href="[% url %]">Mene sivulle</a>[% ELSE %][% url %][% END %]
+
+
+
+

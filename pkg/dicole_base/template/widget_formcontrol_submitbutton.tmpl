@@ -1,0 +1,6 @@
+[% IF itemparams.confirm_box %]
+<a[% IF itemparams.id %] id="[% itemparams.id %]"[% END %] href="#" onclick="return showConfirm('confirm_[% itemparams.confirm_box.name %]', this);" class="linkButton[% IF itemparams.class %] [% itemparams.class %][% END %]">[% itemparams.text %]</a>
+[%- PROCESS dicole_base::confirmbox itemparams = itemparams.confirm_box -%]
+[% ELSE %]
+<input[% IF itemparams.id %] id="[% itemparams.id %]"[% END %] type="submit" name="[% itemparams.name %]" value="[% itemparams.text %]" class="submitButton[% IF itemparams.class %] [% itemparams.class %][% END %]"[% IF itemparams.onclick %] onclick="[% itemparams.onclick %]"[% END %] />
+[% END %]

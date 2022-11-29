@@ -1,0 +1,5 @@
+[% IF in_html %]
+<a href="mailto:[% meeting_email | html %]" style="color:[% theme_color %];font-family:Arial,Verdana,sans-serif;text-decoration:underline;">[% text | html %]</a>
+[% ELSE %]
+[% meeting_email %]
+[% END %]

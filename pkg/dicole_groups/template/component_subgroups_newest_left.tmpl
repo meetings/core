@@ -1,0 +1,46 @@
+[%#
+recent_groups => [
+	{
+		name => 'Bändi 1',
+		location => 'Seinäjoki',
+		size => 3,
+		image => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+	{
+		name => 'Bändi 2',
+		location => 'Turku',
+		size => 6,
+		image => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+	{
+		name => 'Bändi 3',
+		location => 'Seinäjoki',
+		size => 2,
+		image => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+],
+%]
+
+<!--<pre>[% dump %]</pre>-->
+
+[% IF recent_groups.size > 0 %]
+<div id="subgroups_recent">
+[%- FOREACH group IN recent_groups -%]
+	<div class="subgroup subgroup_recent">
+		<div class="subgroup_recent_image_bg">
+			<a href="[% group.url %]">
+				<img class="subgroup_recent_image" src="[% group.image %]" />
+			</a>
+		</div>
+		<h2 class="title"><a href="[% group.url %]">[% group.name | html %]</a></h2>
+		<span class="location">[% group.location | html %]</span>
+	</div>
+	[% IF NOT (loop.count % 2) %]<div style="clear:both"></div>[% END %]
+[%- END -%]
+</div>
+[% ELSE %]
+<span class="subgroups_not_found">[% MSG('No areas found.') | html %]</span>
+[% END %]

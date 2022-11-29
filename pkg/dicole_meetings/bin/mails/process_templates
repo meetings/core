@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd `d swd`;
+oi2_manage dicole_script --website=`d iwd` --script=pkg/dicole_development/script/process_mail_templates.script --parameters=dicole_meetings,$1

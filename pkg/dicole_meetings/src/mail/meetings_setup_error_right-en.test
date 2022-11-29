@@ -1,0 +1,17 @@
+[%- IF test_case == 'anttitesti' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+sent_to_email = 'antti@dicole.com'
+
+%]
+[%- END -%]
+
+[%- IF test_case == 'EVO' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+sent_to_email = 'viivi@dicole.com'
+
+%]
+[%- END -%]

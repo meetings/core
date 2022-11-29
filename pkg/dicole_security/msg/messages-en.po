@@ -1,0 +1,326 @@
+# $Id: messages-en.po,v 1.6 2009-01-07 14:42:33 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:10:53+0000\n"
+"PO-Revision-Date: 2005-03-22 02:10:53+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Access admin area"
+msgstr "Access admin area"
+
+msgid "Add collection"
+msgstr "Add collection"
+
+msgid "Add new security settings"
+msgstr "Add new security settings"
+
+msgid "Add securities"
+msgstr "Add securities"
+
+msgid "Add settings"
+msgstr "Add settings"
+
+msgid "Advanced security settings"
+msgstr "Advanced security settings"
+
+msgid "Archetype description"
+msgstr "Archetype description"
+
+msgid "Archetype name"
+msgstr "Archetype name"
+
+msgid "Are you sure you want to remove the selected collections?"
+msgstr "Are you sure you want to remove the selected collections?"
+
+msgid "Assign any security"
+msgstr "Assign any security"
+
+msgid "Collection details"
+msgstr "Collection details"
+
+msgid "Collection name"
+msgstr "Collection name"
+
+msgid "Collection saved"
+msgstr "Collection saved"
+
+msgid "Confirmation"
+msgstr "Confirmation"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "First name"
+msgstr "First name"
+
+msgid "General collection information"
+msgstr "General collection information"
+
+msgid "Global rights updated"
+msgstr "Global rights updated"
+
+msgid "Global security settings"
+msgstr "Global security settings"
+
+msgid "Group levels"
+msgstr "Group levels"
+
+msgid "Group name"
+msgstr "Group name"
+
+msgid "Group security settings"
+msgstr "Group security settings"
+
+msgid "Groups name"
+msgstr "Groups name"
+
+msgid "Groups' rights"
+msgstr "Groups' rights"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "List collections"
+msgstr "List collections"
+
+msgid "List of collections"
+msgstr "List of collections"
+
+msgid "List securities"
+msgstr "List securities"
+
+msgid "Login name"
+msgstr "Login name"
+
+msgid "Module"
+msgstr "Module"
+
+msgid "Receiver and target types"
+msgstr "Receiver and target types"
+
+msgid "Receiver type"
+msgstr "Receiver type"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Remove collections"
+msgstr "Remove collections"
+
+msgid "Remove groups' rights"
+msgstr "Remove groups' rights"
+
+msgid "Remove securities"
+msgstr "Remove securities"
+
+msgid "Remove selected collections"
+msgstr "Remove selected collections"
+
+msgid "Remove users' rights"
+msgstr "Remove users' rights"
+
+msgid "Rights will be applied to all users. Proceed to the next step."
+msgstr "Rights will be applied to all users. Proceed to the next step."
+
+msgid "Rights will target the whole system. Proceed to the next step."
+msgstr "Rights will target the whole system. Proceed to the next step."
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Securities added"
+msgstr "Securities added"
+
+msgid "Security Collections Manager"
+msgstr "Security Collections Manager"
+
+msgid "Security collections"
+msgstr "Security collections"
+
+msgid "Security level description"
+msgstr "Security level description"
+
+msgid "Security level name"
+msgstr "Security level name"
+
+msgid "Security settings added"
+msgstr "Security settings added"
+
+msgid "Select collections"
+msgstr "Select collections"
+
+msgid "Select global rights"
+msgstr "Select global rights"
+
+msgid "Select global securities"
+msgstr "Select global securities"
+
+msgid "Select groups"
+msgstr "Select groups"
+
+msgid "Select groups which receive these rights"
+msgstr "Select groups which receive these rights"
+
+msgid "Select receivers"
+msgstr "Select receivers"
+
+msgid "Select targets"
+msgstr "Select targets"
+
+msgid "Select the collections"
+msgstr "Select the collections"
+
+msgid "Select the groups which the rights will target"
+msgstr "Select the groups which the rights will target"
+
+msgid "Select the users which the rights will target"
+msgstr "Select the users which the rights will target"
+
+msgid "Select the users who receive these rights"
+msgstr "Select the users who receive these rights"
+
+msgid "Select users"
+msgstr "Select users"
+
+msgid "Selected collections"
+msgstr "Selected collections"
+
+msgid "Selected groups"
+msgstr "Selected groups"
+
+msgid "Selected levels"
+msgstr "Selected levels"
+
+msgid "Selected receivers"
+msgstr "Selected receivers"
+
+msgid "Selected targets"
+msgstr "Selected targets"
+
+msgid "Selected users"
+msgstr "Selected users"
+
+msgid "Show list"
+msgstr "Show list"
+
+msgid "System administrator"
+msgstr "System administrator"
+
+msgid "System moderator"
+msgstr "System moderator"
+
+msgid "System user defaults"
+msgstr "System user defaults"
+
+msgid "Target type"
+msgstr "Target type"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "User can assign any security in the global security managers"
+msgstr "User can assign any security in the global security managers"
+
+msgid "User levels"
+msgstr "User levels"
+
+msgid "User name"
+msgstr "User name"
+
+msgid "User security settings"
+msgstr "User security settings"
+
+msgid "User sees the admin tab"
+msgstr "User sees the admin tab"
+
+msgid "Users' rights"
+msgstr "Users' rights"
+
+msgid "World levels"
+msgstr "World levels"
+
+msgid "User"
+msgstr "User"
+
+msgid "Group"
+msgstr "Group"
+
+msgid "System"
+msgstr "System"
+
+msgid "Everybody"
+msgstr "Everybody"
+
+msgid "Allow"
+msgstr "Allow"
+
+msgid "Deny"
+msgstr "Deny"
+
+msgid "Receiving user"
+msgstr "Receiving user"
+
+msgid "Receiving group"
+msgstr "Receiving group"
+
+msgid "Target user"
+msgstr "Target user"
+
+msgid "Target group"
+msgstr "Target group"
+
+msgid "List settings"
+msgstr "List settings"
+
+msgid "Local users"
+msgstr "Local users"
+
+msgid "System roles"
+msgstr "System roles"
+
+msgid "Access personal area"
+msgstr "Access personal area"
+
+msgid "User sees the personal tab"
+msgstr "User sees the personal tab"
+
+msgid "Are you sure you want to remove the selected rights?"
+msgstr "Are you sure you want to remove the selected rights?"
+
+msgid "Remove rights"
+msgstr "Remove rights"
+
+msgid "Remove settings"
+msgstr "Remove settings"
+
+msgid "Rights will be applied globally. Proceed to the next step."
+msgstr "Rights will be applied globally. Proceed to the next step."
+
+msgid "Rights will be applied to all local users. Proceed to the next step."
+msgstr "Rights will be applied to all local users. Proceed to the next step."
+
+msgid "Select the rights you want to remove"
+msgstr "Select the rights you want to remove"
+
+
+
+
+msgid "Manage admin only settings"
+msgstr "Manage admin only settings"
+
+msgid "User can manage admin only settings"
+msgstr "User can manage admin only settings"

@@ -1,0 +1,34 @@
+[% MTN.t('Reminder: RSVP required for %1$s',[meeting_title]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('RSVP reminder for') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+[% IF meeting_rsvp_no_url %]
+[% meeting_rsvp_no_url = meeting_rsvp_no_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=rsvp_reminder' %]
+[% END %]
+[% IF meeting_rsvp_yes_url %]
+[% meeting_rsvp_yes_url = meeting_rsvp_yes_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=rsvp_reminder' %]
+[% END %]
+
+<<<rsvp>>>
+
+<<<br>>>
+
+<<<hr>>>
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=rsvp_reminder' %]
+<<<basic_info>>>
+<<</bubble>>>
+<<<br>>>
+[% IF 0 AND "enable this when ACCEPT & DECLINE actually work" %]
+
+[% tip = 1 %]<<<p>>><<<bold>>>Tip: <<</bold>>>To respond by email, reply to this message with either ACCEPT or DECLINE.<<</p>>>[% END %]
+
+<<<app_buttons>>>
+
+
+<<</html_wrapper>>>

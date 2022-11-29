@@ -1,0 +1,126 @@
+<div id="modal-edit-profile" class="m-modal">
+    <div class="modal-header">
+        <h3><%= MTN.t('Your Information') %></h3>
+    </div>
+    <div class="modal-content">
+        <% if( ! p.email || p.email === '' ){ %>
+        <p>
+        <% if( ! p.message ) { %>
+        <%= MTN.t('Please confirm your personal information before we send out invititations.') %>
+        <% } else { %>
+        <%= p.message %>
+        <% } %>
+        </p>
+        <% } %>
+
+        <form id="meetings_<%= p.prefix %>_form" class="meetings-form">
+            <div id="edit-profile-container">
+                <!-- Fill with facebook -->
+                <div class="facebook-form-fill-section">
+                    <a href="#" id="fill-profile-with-facebook-button" class="button login fb-blue js_meetings_fill_profile_with_facebook">
+                        <i class="ico-facebook"></i>
+                        <%= MTN.t('Fill profile with Facebook') %>
+                    </a>
+                    <p class="facebook-fill-explanation"><%= MTN.t('* Note: We will never post anything on your behalf to Facebook.') %></p>
+                </div>
+                <div class="profile-edit-section">
+                    <input class="js_fb_fillable_facebook_user_id" type="hidden" value="<%== p.facebook_user_id %>" name="facebook_user_id" />
+
+                    <div id="edit_my_profile_photo_container">
+                        <div class="profile-image-wrap">
+                            <% if( p.image ) { %>
+                            <img id="edit_my_profile_photo_image" class="js_fb_fillable_photo_image" src="<%= p.image %>" />
+                            <% } else { %>
+                            <img id="edit_my_profile_photo_image" class="js_fb_fillable_photo_image" src="/images/theme/default/default-user-avatar-134px.png" />
+                            <% } %>
+                        </div>
+                        <br/>
+                        <input id="edit_my_profile_photo_draft_id" class="js_fb_fillable_photo_draft_id" type="hidden" name="draft_id" value="" />
+
+                        <span class="upload button blue">
+                            <span class="progress-text"><%= MTN.t('Upload photo') %></span>
+                            <input id="profile-upload" type="file" name="file" />
+                            <div class="progress-bar"></div>
+                        </span>
+                    </div>
+
+                    <% if( p.email_verify_required ){ %>
+                    <div class="form-row">
+                        <label class="smaller required" for="user_email"><%= MTN.t('Email') %></label>
+                        <input class="js_fb_fillable_email js_focus" id="user_email" type="text" name="email" value="<%== p.email ? p.email : '' %>" />
+                        <span class="required">*</span>
+                    </div>
+                    <% } %>
+
+                    <div class="form-row">
+                        <label class="smaller" for="first_name"><%= MTN.t('First name') %></label>
+                        <input class="js_fb_fillable_first_name" type="text" name="first_name" value="<%== p.first_name ? p.first_name : '' %>" />
+                    </div>
+
+                    <div class="form-row">
+                        <label class="smaller" for="last_name"><%= MTN.t('Last name') %></label>
+                        <input class="js_fb_fillable_last_name" type="text" name="last_name" value="<%== p.last_name ? p.last_name : '' %>" />
+                    </div>
+
+                    <div class="form-row">
+                        <label class="smaller" for="organization"><%= MTN.t('Organization') %></label>
+                        <input type="text" name="organization" value="<%== p.organization ? p.organization : '' %>" />
+                    </div>
+
+                    <div class="form-row">
+                        <label class="smaller" for="organization_title"><%= MTN.t('Title//context:organizational title') %></label>
+                        <input type="text" name="organization_title" value="<%== p.organization_title ? p.organization_title : '' %>" />
+                    </div>
+
+                    <div class="form-row">
+                        <label class="smaller" for="phone"><%= MTN.t('Phone') %></label>
+                        <input type="text" name="phone" value="<%== p.phone ? p.phone : '' %>" />
+                    </div>
+
+                    <div class="form-row">
+                        <label class="smaller" for="skype">Skype</label>
+                        <input type="text" name="skype" value="<%== p.skype ? p.skype : '' %>" />
+                    </div>
+
+                    <div class="form-row">
+                        <label class="smaller" for="linkedin">LinkedIn</label>
+                        <input style="width:350px" type="text" onClick="this.select();" name="linkedin" value="<%== p.linkedin ? p.linkedin :  MTN.t('Copy and paste your LinkedIn profile link here') %>" />
+                        <input type="hidden" name="linkedin_default_value" value="<%= MTN.t('Copy and paste your LinkedIn profile link here') %>" />
+                    </div>
+
+                    <% if( p.email && p.email.length) { %>
+                    <div class="form-row">
+                        <p class="note"><%= MTN.t('Logged in as: %1$s', [p.email]) %></p>
+                    </div>
+                    <% } %>
+
+                    <!-- random params -->
+                    <% dojo.forEach( p.passed_params, function( param ){ %>
+                    <input type="hidden" value="<%= param.value %>" name="<%= param.name %>" />
+                    <% }); %>
+
+                    <!-- empty value handling -->
+                    <% if( ! p.email_verify_required ) { %>
+                    <input type="hidden" name="save_empty_values" value="1" />
+                    <% } %>
+
+                    <!-- tos accept -->
+                    <% if( ! p.tos_disclaimer ) { %>
+                    <input type="hidden" name="accept_tos" value="1" />
+                    <% } %>
+                </div>
+            </div>
+        </form>
+
+        <div id="js_meetings_<%= p.prefix %>_error_container"></div>
+
+    </div>
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a href="#" class="button blue js_meetings_<%= p.prefix %>_submit" id="edit-my-profile-submit">
+                <span class="label"><%== p.save_text ? p.save_text : MTN.t('Save') %></span>
+            </a>
+        </div>
+    </div>
+    <a class="js_hook_showcase_close close-modal" href="#"><i class="ico-cross"></i></a>
+</div>

@@ -1,0 +1,470 @@
+# $Id: messages-fi.po,v 1.8 2008-01-17 22:33:35 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:06:55+0000\n"
+"PO-Revision-Date: 2005-03-22 02:06:55+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add folder"
+msgstr "Lisää kansio"
+
+msgid "Adding document failed: %1"
+msgstr "Dokumentin lisäys epäonnistui: %1"
+
+msgid "Adding folder failed: %1"
+msgstr "Kansion lisäys epäonnistui: %1"
+
+msgid "Adding hyperlink failed: %1"
+msgstr "Linkin lisäys epäonnistui: %1"
+
+msgid "Add new document"
+msgstr "Lisää uusi dokumentti"
+
+msgid "Add new folder"
+msgstr "Lisää uusi kansio"
+
+msgid "Add new hyperlink"
+msgstr "Lisää uusi linkki"
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Changes saved."
+msgstr "Muutokset tallennettu."
+
+msgid "Checked items"
+msgstr "Merkityt kohteet"
+
+msgid "Choose license"
+msgstr "Valitse lisenssi"
+
+msgid "Clipboard is empty."
+msgstr "Leikekirja on tyhjä."
+
+msgid "Close"
+msgstr "Sulje"
+
+msgid "Contributor"
+msgstr "Muu tekijä"
+
+msgid "Copy"
+msgstr "Kopioi"
+
+msgid "Coverage"
+msgstr "Kattavuus"
+
+msgid "Creation date"
+msgstr "Luontiaika"
+
+msgid "Creator"
+msgstr "Tekijä"
+
+msgid "Custom license"
+msgstr "Oikeudet"
+
+msgid "Cut"
+msgstr "Leikkaa"
+
+msgid "Delete"
+msgstr "Poista"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Document content"
+msgstr "Dokumentin kuvaus"
+
+msgid "Document name"
+msgstr "Dokumentin nimi"
+
+msgid "Documents"
+msgstr "Dokumentit"
+
+msgid "Download as Tar/gz archive"
+msgstr "Lataa Tar/gz pakattuna tiedostona"
+
+msgid "Download as Zip archive"
+msgstr "Lataa Zip pakattuna tiedostona"
+
+msgid "Download"
+msgstr "Lataa"
+
+msgid "Download RDF/XML metadata"
+msgstr "Lataa RDF/XML metadata"
+
+msgid "Dublin Core metadata"
+msgstr "Dublin Core metadata"
+
+msgid "Edit content"
+msgstr "Muokkaa sisältöä"
+
+msgid "Edit Dublin Core metadata"
+msgstr "Muokkaa Dublin Core metadataa"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "Edit file"
+msgstr "Muokkaa tiedostoa"
+
+msgid "Edit metadata"
+msgstr "Muokkaa metadataa"
+
+msgid "file_name"
+msgstr "tiedoston_nimi"
+
+msgid "Files"
+msgstr "Tiedostot"
+
+msgid "File to upload"
+msgstr "Ladattava tiedosto"
+
+msgid "Folder name"
+msgstr "Kansion nimi"
+
+msgid "Format"
+msgstr "Formaatti"
+
+msgid "Hyperlink location"
+msgstr "Linkin osoite"
+
+msgid "Hyperlink name"
+msgstr "Linkin nimi"
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "License"
+msgstr "Oikeudet"
+
+msgid "Location: %1"
+msgstr "Sijainti: %1"
+
+msgid "Modified"
+msgstr "Muokattu"
+
+msgid "Modifying file failed: %1"
+msgstr "Tiedoston muokkaus epäonnistui: %1"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "New document"
+msgstr "Uusi dokumentti"
+
+msgid "New hyperlink"
+msgstr "Uusi linkki"
+
+msgid "No files or directories selected."
+msgstr "Tiedostoja tai kansioita ei ole valittu."
+
+msgid "Number of files"
+msgstr "Tiedostojen lukumäärä"
+
+msgid "Open"
+msgstr "Avaa"
+
+msgid "Password"
+msgstr "Salasana"
+
+msgid "Pasted the contents of clipboard."
+msgstr "Tiedot liitetty leikepöydältä."
+
+msgid "Paste"
+msgstr "Liitä"
+
+msgid "Properties"
+msgstr "Ominaisuudet"
+
+msgid "Publisher"
+msgstr "Tekijä"
+
+msgid "Relation"
+msgstr "Relation"
+
+msgid "Rename location"
+msgstr "Nimeä kohde uudelleen"
+
+msgid "Rename"
+msgstr "Nimeä kohde uudelleen"
+
+msgid "Renaming location failed: %1"
+msgstr "Sijainnin nimeäminen epäonnistui: %1"
+
+msgid "Return to home"
+msgstr "Palaa kotiin"
+
+msgid "Resource identifier"
+msgstr "Identifiointitunnus"
+
+msgid "Resource type"
+msgstr "Resurssityyppi"
+
+msgid "Rights"
+msgstr "Oikeudet"
+
+msgid "Root directory cannot be deleted."
+msgstr "Juurihakemistoa ei voida poistaa."
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Saving changes failed: %1"
+msgstr "Muutosten tallennus epäonnistui: %1"
+
+msgid "Security violation. No rights to delete location %1"
+msgstr "Turvallisuusvirhe. Ei oikeuksia poistaa kohdetta %1"
+
+msgid "Security violation. No rights to read location %1"
+msgstr "Turvallisuusvirhe. Ei oikeuksia lukea kohdetta %1"
+
+msgid "Security violation. No rights to write to location %1"
+msgstr "Turvallisuusvirhe. Ei oikeuksia kirjoittaa kohteeseen %1"
+
+msgid "Select action for:"
+msgstr "Valitse toiminto:"
+
+msgid "Selected files and directories copied to clipboard."
+msgstr "Valitut tiedosto ja kansiot kopioitu leikepöydälle."
+
+msgid "Selected files and directories deleted."
+msgstr "Valitut tiedostot ja kansiot poistettu."
+
+msgid "Selected files and directories moved to clipboard."
+msgstr "Valitut tiedostot ja kansiot siirretty leikepöydälle."
+
+msgid "Selected item"
+msgstr "Valittu kohde"
+
+msgid "Select file"
+msgstr "Valitse tiedosto"
+
+msgid "Select license"
+msgstr "Valitse lisenssi"
+
+msgid "Select"
+msgstr "Valitse"
+
+msgid "Server"
+msgstr "Palvelin"
+
+msgid "Share %1 already exists."
+msgstr "Jako %1 on jo olemassa."
+
+msgid "Share path"
+msgstr "Jaon polku"
+
+msgid "Show file view"
+msgstr "Näytä tiedostot"
+
+msgid "Size"
+msgstr "Koko"
+
+msgid "Source"
+msgstr "Lähde"
+
+msgid "Stream media files"
+msgstr "Toista mediatiedostot"
+
+msgid "Subject and keywords"
+msgstr "Aihe ja avainsanat"
+
+msgid "Title"
+msgstr "Otsikko"
+
+msgid "Tree of files and directories"
+msgstr "Puunäkymä tiedostoihin ja kansioihin"
+
+msgid "Tree view"
+msgstr "Puunäkymä"
+
+msgid "Uncompress"
+msgstr "Pura pakkaus"
+
+msgid "Upload failed: %1"
+msgstr "Tiedoston siirtäminen palvelimelle epäonnistui: %1"
+
+msgid "Upload file"
+msgstr "Siirrä tiedosto palvelimelle"
+
+msgid "Upload new file"
+msgstr "Siirrä palvelimelle uusi tiedosto"
+
+msgid "Upload"
+msgstr "Siirrä tiedosto palvelimelle"
+
+msgid "Username"
+msgstr "Käyttäjänimi"
+
+msgid "View file"
+msgstr "Katso tiedosto"
+
+msgid "View"
+msgstr "Katso"
+
+msgid "Workgroup"
+msgstr "Työryhmä"
+
+msgid "Read files of a user"
+msgstr "Lue käyttäjän tiedostoja"
+
+msgid "User can delete files of a user"
+msgstr "Käyttäjä voi poistaa toisen käyttäjän tiedostoja"
+
+msgid "Read user files"
+msgstr "Käyttäjän tiedostojen luku"
+
+msgid "Delete group files"
+msgstr "Ryhmän tiedostojen poisto"
+
+msgid "Group files allows a group to keep a shared document manager."
+msgstr "Ryhmän tiedostot -työkalun avulla ryhmä voi jakaa tiedostoja yhteisen dokumentinhallinnan avulla."
+
+msgid "User can use group files tool"
+msgstr "Käyttäjä voi käyttää ryhmän tiedostot -työkalua"
+
+msgid "User can write and create new group files"
+msgstr "Käyttäjä voi kirjoittaa ja luoda uusia ryhmän tiedostoja"
+
+msgid "Write group files"
+msgstr "Ryhmän tiedostojen kirjoitus"
+
+msgid "Delete user files"
+msgstr "Ryhmän tiedostojen poisto"
+
+msgid "Deny reading files of a user"
+msgstr "Estä toisen käyttäjän tiedostojen lukeminen"
+
+msgid "User can delete existing group files"
+msgstr "Käyttäjä voi poistaa ryhmän tiedostoja"
+
+msgid "Personal files allows a user to keep a personal file storage."
+msgstr "Tiedostot -työkalun avulla käyttäjä voi pitää henkilökohtaista tiedostoaluetta."
+
+msgid "User can read files of a user"
+msgstr "Käyttäjä voi lukea toisen käyttäjän tiedostoja"
+
+msgid "Use group files"
+msgstr "Ryhmän tiedostot -työkalun käyttö"
+
+msgid "Write user files"
+msgstr "Käyttäjän tiedostojen kirjoitus"
+
+msgid "Read group files"
+msgstr "Ryhmän tiedostojen luku"
+
+msgid "Read files of a group"
+msgstr "Ryhmän tiedostojen luku"
+
+msgid "User can read group files"
+msgstr "Käyttäjä voi lukea ryhmän tiedostoja"
+
+msgid "User can write and create new files for a user"
+msgstr "Käyttäjä voi kirjoittaa ja luoda uusia tiedostoja toiselle käyttäjälle"
+
+msgid "No files found."
+msgstr "Ei tiedostoja."
+
+msgid "Latest files"
+msgstr "Viimeisimmät tiedostot"
+
+msgid "Uploaded by"
+msgstr "Siirtänyt palvelimelle"
+
+msgid "Edit metadata after upload"
+msgstr "Muokkaa metatietoja siirron jälkeen"
+
+msgid "Edit metadata after save"
+msgstr "Muokkaa metatietoja tallennuksen jälkeen"
+
+msgid "Descend to previous folder"
+msgstr "Siirry edelliselle tasolle"
+
+msgid "Add files for a group"
+msgstr "Ryhmän tiedostojen lisäys"
+
+msgid "Add files for a user"
+msgstr "Käyttäjän tiedostojen lisäys"
+
+msgid "Add group files"
+msgstr "Ryhmän tiedostojen lisäys"
+
+msgid "Add user files"
+msgstr "Käyttäjän tiedostojen lisäys"
+
+msgid "Deny adding files for a group"
+msgstr "Estä ryhmän tiedostojen lisäys"
+
+msgid "Deny adding files for a user"
+msgstr "Estä käyttäjän tiedostojen lisäys"
+
+msgid "Deny adding, writing and deleting files of a group"
+msgstr "Estä ryhmän tiedostojen lisäys, kirjoitus ja poisto"
+
+msgid "Deny adding, writing and deleting files of a user"
+msgstr "Estä käyttäjän tiedostojen lisäys, kirjoitus ja poisto"
+
+msgid "Deny reading, writing, adding and deleting files of a user"
+msgstr "Estä käyttäjän tiedostojen luku, lisäys, kirjoitus ja poisto"
+
+msgid "Deny reading, writing, deleting and adding files of a group"
+msgstr "Estä ryhmän tiedostojen luku, lisäys, kirjoitus ja poisto"
+
+msgid "User can add files for a user"
+msgstr "Käyttäjä voi lisätä tiedostoja toiselle käyttäjälle"
+
+msgid "User can add new group files"
+msgstr "Käyttäjä voi lisätä ryhmälle tiedostoja"
+
+msgid "Read, write, add and delete files of a group"
+msgstr "Ryhmän tiedostojen luku, kirjoitus, lisäys ja poisto"
+
+msgid "Read, write, add and delete files of a user"
+msgstr "Käyttäjän tiedostojen luku, kirjoitus, lisäys ja poisto"
+
+msgid "Files rights"
+msgstr "Tiedostoalueen oikeudet"
+
+msgid "Browse Dicole Files"
+msgstr "Selaa Dicolen tiedostoja"
+
+msgid "Image location:"
+msgstr "Kuvan sijainti:"
+
+msgid "Image selector"
+msgstr "Kuvan valitsin"
+
+msgid "Image URL:"
+msgstr "Kuvan URL:"
+
+msgid "In line"
+msgstr "Rivillä"
+
+msgid "Left"
+msgstr "Vasemmalla"
+
+msgid "Right"
+msgstr "Oikealla"
+
+msgid "Link selector"
+msgstr "Linkin valitsin"
+
+msgid "Link URL:"
+msgstr "Linkin URL:"
+
+msgid "Image description:"
+msgstr "Kuvan kuvaus:"
+
+msgid "Browse local files"
+msgstr "Selaa paikallisia tiedostoja"
+
+msgid "Latest files."
+msgstr "Viimeisimmät tiedostot."

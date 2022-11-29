@@ -1,0 +1,515 @@
+@mixin sprite_off_button(){
+            width:37px;
+            height:22px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -0px no-repeat;
+            }
+@mixin sprite_small_red_x(){
+            width:14px;
+            height:14px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -24px no-repeat;
+            }
+@mixin sprite_settings_icon(){
+            width:20px;
+            height:19px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -40px no-repeat;
+            }
+@mixin sprite_close_button(){
+            width:18px;
+            height:18px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -61px no-repeat;
+            }
+@mixin sprite_arrow_small_white(){
+            width:10px;
+            height:14px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -81px no-repeat;
+            }
+@mixin sprite_refill_from_fb(){
+            width:222px;
+            height:35px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -97px no-repeat;
+            }
+@mixin sprite_copy_calendar_hover(){
+            width:164px;
+            height:94px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -134px no-repeat;
+            }
+@mixin sprite_or_divider_centered(){
+            width:532px;
+            height:13px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -230px no-repeat;
+            }
+@mixin sprite_calendar(){
+            width:30px;
+            height:32px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -245px no-repeat !important;
+            }
+@mixin sprite_small_gray_x(){
+            width:9px;
+            height:8px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -279px no-repeat;
+            }
+@mixin sprite_facebook_fill(){
+            width:230px;
+            height:35px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -289px no-repeat;
+            }
+@mixin sprite_num_four(){
+            width:30px;
+            height:30px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -326px no-repeat;
+            }
+@mixin sprite_orange_star(){
+            width:17px;
+            height:18px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -358px no-repeat;
+            }
+@mixin sprite_connect_fb_short(){
+            width:164px;
+            height:31px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -378px no-repeat;
+            }
+@mixin sprite_card_basic(){
+            width:24px;
+            height:18px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -411px no-repeat;
+            }
+@mixin sprite_white_x(){
+            width:18px;
+            height:18px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -431px no-repeat;
+            }
+@mixin sprite_num_one(){
+            width:30px;
+            height:30px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -451px no-repeat;
+            }
+@mixin sprite_question_grey(){
+            width:17px;
+            height:17px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -483px no-repeat;
+            }
+@mixin sprite_arrow_white_left(){
+            width:17px;
+            height:18px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -502px no-repeat;
+            }
+@mixin sprite_fb_share(){
+            width:57px;
+            height:18px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -522px no-repeat;
+            }
+@mixin sprite_grey_theme(){
+            width:100px;
+            height:80px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -542px no-repeat;
+            }
+@mixin sprite_corner_x_left(){
+            width:35px;
+            height:35px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -624px no-repeat;
+            }
+@mixin sprite_tiny_arrow_right(){
+            width:6px;
+            height:8px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -661px no-repeat;
+            }
+@mixin sprite_blue_theme(){
+            width:100px;
+            height:80px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -671px no-repeat;
+            }
+@mixin sprite_footer_logo(){
+            width:118px;
+            height:26px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -753px no-repeat;
+            }
+@mixin sprite_cal_icon_large(){
+            width:91px;
+            height:79px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -781px no-repeat;
+            }
+@mixin sprite_ical_smallest(){
+            width:17px;
+            height:16px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -862px no-repeat;
+            }
+@mixin sprite_phone_corner_right(){
+            width:35px;
+            height:35px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -880px no-repeat;
+            }
+@mixin sprite_small_green_tick(){
+            width:17px;
+            height:13px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -917px no-repeat;
+            }
+@mixin sprite_android(){
+            width:100px;
+            height:100px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -932px no-repeat;
+            }
+@mixin sprite_facebook_login_small(){
+            width:171px;
+            height:34px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1034px no-repeat;
+            }
+@mixin sprite_card_amex(){
+            width:24px;
+            height:18px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1070px no-repeat;
+            }
+@mixin sprite_purple_theme(){
+            width:100px;
+            height:80px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1090px no-repeat;
+            }
+@mixin sprite_people(){
+            width:90px;
+            height:75px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1172px no-repeat;
+            }
+@mixin sprite_small_white_arrow_up(){
+            width:9px;
+            height:6px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1249px no-repeat;
+            }
+@mixin sprite_calq_icon_large(){
+            width:91px;
+            height:79px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1257px no-repeat;
+            }
+@mixin sprite_create_blank_hover(){
+            width:164px;
+            height:94px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1338px no-repeat;
+            }
+@mixin sprite_flag_theme_hover(){
+            width:46px;
+            height:39px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1434px no-repeat;
+            }
+@mixin sprite_red_cross_midsize(){
+            width:19px;
+            height:19px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1475px no-repeat;
+            }
+@mixin sprite_card_visa(){
+            width:24px;
+            height:18px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1496px no-repeat;
+            }
+@mixin sprite_ios(){
+            width:100px;
+            height:100px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1516px no-repeat;
+            }
+@mixin sprite_arrow_white_down(){
+            width:13px;
+            height:12px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1618px no-repeat;
+            }
+@mixin sprite_google_corner_right(){
+            width:35px;
+            height:35px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1632px no-repeat;
+            }
+@mixin sprite_flag_pro_hover(){
+            width:46px;
+            height:39px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1669px no-repeat;
+            }
+@mixin sprite_flag_settings_hover(){
+            width:46px;
+            height:39px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1710px no-repeat;
+            }
+@mixin sprite_num_three(){
+            width:30px;
+            height:30px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1751px no-repeat;
+            }
+@mixin sprite_pen_white(){
+            width:9px;
+            height:11px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1783px no-repeat;
+            }
+@mixin sprite_lock_gray(){
+            width:16px;
+            height:20px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1796px no-repeat;
+            }
+@mixin sprite_not_replied(){
+            width:36px;
+            height:36px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1818px no-repeat;
+            }
+@mixin sprite_num_two(){
+            width:30px;
+            height:30px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1856px no-repeat;
+            }
+@mixin sprite_comment(){
+            width:18px;
+            height:16px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1888px no-repeat;
+            }
+@mixin sprite_red_theme(){
+            width:100px;
+            height:80px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1906px no-repeat;
+            }
+@mixin sprite_brown_theme(){
+            width:100px;
+            height:80px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -1988px no-repeat;
+            }
+@mixin sprite_turquoise_theme(){
+            width:100px;
+            height:80px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2070px no-repeat;
+            }
+@mixin sprite_chrome(){
+            width:100px;
+            height:100px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2152px no-repeat;
+            }
+@mixin sprite_num_five(){
+            width:30px;
+            height:30px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2254px no-repeat;
+            }
+@mixin sprite_uploaded(){
+            width:18px;
+            height:16px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2286px no-repeat;
+            }
+@mixin sprite_kello_white(){
+            width:22px;
+            height:21px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2304px no-repeat;
+            }
+@mixin sprite_green_theme(){
+            width:100px;
+            height:80px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2327px no-repeat;
+            }
+@mixin sprite_gray_arrow_down(){
+            width:26px;
+            height:19px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2409px no-repeat;
+            }
+@mixin sprite_arrow_down_blue_2(){
+            width:15px;
+            height:14px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2430px no-repeat;
+            }
+@mixin sprite_copy_calendar(){
+            width:164px;
+            height:94px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2446px no-repeat;
+            }
+@mixin sprite_profile_grey_lines(){
+            width:36px;
+            height:36px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2542px no-repeat;
+            }
+@mixin sprite_arrow_white_small_up(){
+            width:8px;
+            height:6px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2580px no-repeat;
+            }
+@mixin sprite_delete_comment_gray(){
+            width:14px;
+            height:14px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2588px no-repeat;
+            }
+@mixin sprite_meetings_guide(){
+            width:49px;
+            height:32px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2604px no-repeat;
+            }
+@mixin sprite_ball_red(){
+            width:20px;
+            height:20px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2638px no-repeat;
+            }
+@mixin sprite_new_arrow_white_down(){
+            width:19px;
+            height:14px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2660px no-repeat;
+            }
+@mixin sprite_corner_x_right(){
+            width:35px;
+            height:35px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2676px no-repeat;
+            }
+@mixin sprite_redclose(){
+            width:23px;
+            height:22px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2713px no-repeat;
+            }
+@mixin sprite_scheduling_bagde(){
+            width:73px;
+            height:73px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2737px no-repeat;
+            }
+@mixin sprite_darkblue_theme(){
+            width:100px;
+            height:80px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2812px no-repeat;
+            }
+@mixin sprite_comment_count(){
+            width:18px;
+            height:18px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2894px no-repeat;
+            }
+@mixin sprite_connect_google(){
+            width:164px;
+            height:31px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2914px no-repeat;
+            }
+@mixin sprite_profile_green_dot(){
+            width:7px;
+            height:7px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2947px no-repeat;
+            }
+@mixin sprite_gray_question_mark(){
+            width:15px;
+            height:20px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2956px no-repeat;
+            }
+@mixin sprite_arrow_down_blue(){
+            width:15px;
+            height:15px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2978px no-repeat;
+            }
+@mixin sprite_ball_green(){
+            width:20px;
+            height:20px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -2995px no-repeat;
+            }
+@mixin sprite_flag_pro(){
+            width:46px;
+            height:39px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3017px no-repeat;
+            }
+@mixin sprite_google_login_small(){
+            width:171px;
+            height:34px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3058px no-repeat;
+            }
+@mixin sprite_flag_theme(){
+            width:46px;
+            height:39px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3094px no-repeat;
+            }
+@mixin sprite_arrow_right(){
+            width:15px;
+            height:15px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3135px no-repeat;
+            }
+@mixin sprite_email_guide(){
+            width:49px;
+            height:32px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3152px no-repeat;
+            }
+@mixin sprite_meetings_logo(){
+            width:180px;
+            height:40px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3186px no-repeat;
+            }
+@mixin sprite_greenok(){
+            width:27px;
+            height:21px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3228px no-repeat;
+            }
+@mixin sprite_lock_orange(){
+            width:19px;
+            height:24px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3251px no-repeat;
+            }
+@mixin sprite_top_menu_arrow(){
+            width:24px;
+            height:14px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3277px no-repeat;
+            }
+@mixin sprite_pen_green(){
+            width:18px;
+            height:13px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3293px no-repeat;
+            }
+@mixin sprite_pro_corner(){
+            width:39px;
+            height:39px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3308px no-repeat;
+            }
+@mixin sprite_mobile(){
+            width:18px;
+            height:24px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3349px no-repeat;
+            }
+@mixin sprite_edit_comment_gray(){
+            width:14px;
+            height:14px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3375px no-repeat;
+            }
+@mixin sprite_connect_linkedin(){
+            width:164px;
+            height:31px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3391px no-repeat;
+            }
+@mixin sprite_replace_file(){
+            width:14px;
+            height:16px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3424px no-repeat;
+            }
+@mixin sprite_pro_guide(){
+            width:49px;
+            height:32px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3442px no-repeat;
+            }
+@mixin sprite_gray_arrow_up(){
+            width:26px;
+            height:19px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3476px no-repeat;
+            }
+@mixin sprite_on_button(){
+            width:37px;
+            height:22px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3497px no-repeat;
+            }
+@mixin sprite_card_mastercard(){
+            width:24px;
+            height:18px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3521px no-repeat;
+            }
+@mixin sprite_facebook-icon(){
+            width:25px;
+            height:25px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3541px no-repeat;
+            }
+@mixin sprite_connect_fb(){
+            width:196px;
+            height:35px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3568px no-repeat;
+            }
+@mixin sprite_create_blank(){
+            width:164px;
+            height:94px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3605px no-repeat;
+            }
+@mixin sprite_arrow_white_small_down(){
+            width:8px;
+            height:6px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3701px no-repeat;
+            }
+@mixin sprite_profile_red_dot(){
+            width:7px;
+            height:7px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3709px no-repeat;
+            }
+@mixin sprite_flag_settings(){
+            width:46px;
+            height:39px;
+            background:url("/images/meetings/sass_sprite.png?v=23") 0px -3718px no-repeat;
+            }

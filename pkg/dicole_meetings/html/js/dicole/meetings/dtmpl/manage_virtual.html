@@ -1,0 +1,20 @@
+<div id="modal-manage-virtual" class="modal-popup-admin">
+    <h2 class="modal-header"><%== 'Manage Virtual Stream' %></h2>
+    <form id="meetings_manage_virtual_form" class="meetings-form">
+        <fieldset>
+            <label for="stream_html" style="width:210px; margin-bottom:10px;" class="small-label"><%== 'Embed code for stream:' %></label>
+            <textarea style="width:348px;" name="stream_html"><%== p.stream_html %></textarea>
+            <br/>
+            <label for="stream_visible" class="small-label"><%== 'Visible:' %></label>
+            <input type="checkbox" name="stream_visible" value="1" <%= p.stream_visible ? ' checked' : '' %> />
+            <br/><br/>
+        </fieldset>
+    </form>
+    <!-- Save & cancel -->
+    <div class="form-save-and-cancel-wrapper">
+        <a href="#" class="js_meetings_manage_virtual_submit" id="manage-virtual-submit">
+            <span class="button pink"><%= MTN.t('Save') %></span>
+            <span class="indicator"></span>
+        </a>
+    </div>
+</div>

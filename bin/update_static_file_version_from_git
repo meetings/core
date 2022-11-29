@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+chdir( (split /\n/, `d swd`)[0] );
+
+my $static = `git rev-parse HEAD`;
+chomp $static;
+
+chdir( (split /\n/, `d iwd`)[0] );
+
+`perl -pi -e 's/(static_file_version =).*/\$\{1\} $static/' conf/server.ini`;

@@ -1,0 +1,429 @@
+
+msgid "%1 slides"
+msgstr "%1 slides"
+
+msgid "Add a comment"
+msgstr "Add a comment"
+
+msgid "Add a presentation"
+msgstr "Add a presentation"
+
+msgid "Add presentation info"
+msgstr "Add presentation info"
+
+msgid "Add presentations"
+msgstr "Add presentations"
+
+msgid "Admin presentations"
+msgstr "Admin presentations"
+
+msgid "A place to showcase presentations"
+msgstr "A place to showcase presentations"
+
+msgid "Are you sure you want to delete the presentation?"
+msgstr "Are you sure you want to delete the presentation?"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Best rated presentations"
+msgstr "Best rated presentations"
+
+msgid "Best rated presentations tagged with: %1"
+msgstr "Best rated presentations tagged with: %1"
+
+msgid "Bookmark"
+msgstr "Bookmark"
+
+msgid "Choose type"
+msgstr "Choose type"
+
+msgid "Comment presentations"
+msgstr "Comment presentations"
+
+msgid "Confirmaition"
+msgstr "Confirmaition"
+
+msgid "Could not process URL. Sorry."
+msgstr "Could not process URL. Sorry."
+
+msgid "Custom"
+msgstr "Custom"
+
+msgid "Edit presentation"
+msgstr "Edit presentation"
+
+msgid "Embed"
+msgstr "Embed"
+
+msgid "Embed code"
+msgstr "Embed code"
+
+msgid "Embed custom HTML"
+msgstr "Embed custom HTML"
+
+msgid "Feature"
+msgstr "Feature"
+
+msgid "Featured presentations"
+msgstr "Featured presentations"
+
+msgid "Featured presentations tagged with: %1"
+msgstr "Featured presentations tagged with: %1"
+
+msgid "Fetch"
+msgstr "Fetch"
+
+msgid "Fetch it from the internet"
+msgstr "Fetch it from the internet"
+
+msgid "Filter by type"
+msgstr "Filter by type"
+
+msgid "Gizmo"
+msgstr "Gizmo"
+
+msgid "How would you like to add a presentation?"
+msgstr "How would you like to add a presentation?"
+
+msgid "Latest presentations"
+msgstr "Latest presentations"
+
+msgid "Latest presentations tagged with: %1"
+msgstr "Latest presentations tagged with: %1"
+
+msgid "length"
+msgstr "length"
+
+msgid "Length %1"
+msgstr "Length %1"
+
+msgid "Map"
+msgstr "Map"
+
+msgid "No presentations found."
+msgstr "No presentations found."
+
+msgid "No such presentation."
+msgstr "No such presentation."
+
+msgid "on %1"
+msgstr "on %1"
+
+msgid "Presentation created."
+msgstr "Presentation created."
+
+msgid "Presentation featured."
+msgstr "Presentation featured."
+
+msgid "Presentation info"
+msgstr "Presentation info"
+
+msgid "Presentation not featured anymore."
+msgstr "Presentation not featured anymore."
+
+msgid "Presentation removed."
+msgstr "Presentation removed."
+
+msgid "Presentations"
+msgstr "Presentations"
+
+msgid "Presentations rights"
+msgstr "Presentations rights"
+
+msgid "Presentation updated"
+msgstr "Presentation updated"
+
+msgid "presented by"
+msgstr "presented by"
+
+msgid "Presented by %1"
+msgstr "Presented by %1"
+
+msgid "Preview: %1"
+msgstr "Preview: %1"
+
+msgid "Preview image"
+msgstr "Preview image"
+
+msgid "Rate presentations"
+msgstr "Rate presentations"
+
+msgid "Refetch"
+msgstr "Refetch"
+
+msgid "Show more presentations"
+msgstr "Show more presentations"
+
+msgid "Slideshare"
+msgstr "Slideshare"
+
+msgid "Slideshow"
+msgstr "Slideshow"
+
+msgid "Source URL"
+msgstr "Source URL"
+
+msgid "Supported services"
+msgstr "Supported services"
+
+msgid "Tags:"
+msgstr "Tags:"
+
+msgid "Unfeature"
+msgstr "Unfeature"
+
+msgid "Unsupported URL"
+msgstr "Unsupported URL"
+
+msgid "User can add presentations"
+msgstr "User can add presentations"
+
+msgid "User can admin presentations"
+msgstr "User can admin presentations"
+
+msgid "User can comment presentations"
+msgstr "User can comment presentations"
+
+msgid "User can rate presentations"
+msgstr "User can rate presentations"
+
+msgid "User can view presentations"
+msgstr "User can view presentations"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "View presentations"
+msgstr "View presentations"
+
+msgid "You must fill the name."
+msgstr "You must fill the name."
+
+msgid "YouTube"
+msgstr "YouTube"
+
+msgid "Add a media resource"
+msgstr "Add a media resource"
+
+msgid "Add media resource info"
+msgstr "Add media resource info"
+
+msgid "Are you sure you want to delete the media resource?"
+msgstr "Are you sure you want to delete the media resource?"
+
+msgid "Best rated media resources"
+msgstr "Best rated media resources"
+
+msgid "Best rated media resources tagged with: %1"
+msgstr "Best rated media resources tagged with: %1"
+
+msgid "Edit media resource"
+msgstr "Edit media resource"
+
+msgid "Featured media resources"
+msgstr "Featured media resources"
+
+msgid "Featured media resources tagged with: %1"
+msgstr "Featured media resources tagged with: %1"
+
+msgid "How would you like to add a media resource?"
+msgstr "How would you like to add a media resource?"
+
+msgid "Latest media resources"
+msgstr "Latest media resources"
+
+msgid "Latest media resources tagged with: %1"
+msgstr "Latest media resources tagged with: %1"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Media resource created."
+msgstr "Media resource created."
+
+msgid "Media resource featured."
+msgstr "Media resource featured."
+
+msgid "Media resource info"
+msgstr "Media resource info"
+
+msgid "Media resource not featured anymore."
+msgstr "Media resource not featured anymore."
+
+msgid "Media resource removed."
+msgstr "Media resource removed."
+
+msgid "Media resource updated"
+msgstr "Media resource updated"
+
+msgid "No media resources found."
+msgstr "No media resources found."
+
+msgid "No such media resource."
+msgstr "No such media resource."
+
+msgid "Show more media resources"
+msgstr "Show more media resources"
+
+msgid "Best rated media"
+msgstr "Best rated media"
+
+msgid "Featured media"
+msgstr "Featured media"
+
+msgid "Latest media"
+msgstr "Latest media"
+
+msgid "A place to showcase media resources"
+msgstr "A place to showcase media resources"
+
+msgid "%1 comments"
+msgstr "%1 comments"
+
+msgid "by %1"
+msgstr "by %1"
+
+msgid "Contribute to presentations"
+msgstr "Contribute to presentations"
+
+msgid "Latest media objects summary list"
+msgstr "Latest media objects summary list"
+
+msgid "Listing of 5 latest media objects"
+msgstr "Listing of 5 latest media objects"
+
+msgid "No media found."
+msgstr "No media found."
+
+msgid "Ovi"
+msgstr "Ovi"
+
+msgid "Upload a new file"
+msgstr "Upload a new file"
+
+msgid "Uploaded by %1"
+msgstr "Uploaded by %1"
+
+msgid "Upload from your computer"
+msgstr "Upload from your computer"
+
+msgid "New media"
+msgstr "New media"
+
+msgid "Featured media summary"
+msgstr "Featured media summary"
+
+msgid "Featured media (summary title)"
+msgstr "Featured media"
+
+msgid "You must fill both name and description."
+msgstr "You must fill both name and description."
+
+msgid "Are you sure you want to delete the media object \"%1\"?"
+msgstr "Are you sure you want to delete the media object \"%1\"?"
+
+msgid "Add content"
+msgstr "Add content"
+
+msgid "Add content info"
+msgstr "Add content info"
+
+msgid "Content created."
+msgstr "Content created."
+
+msgid "Content featured."
+msgstr "Content featured."
+
+msgid "Content info"
+msgstr "Content info"
+
+msgid "Content not featured anymore."
+msgstr "Content not featured anymore."
+
+msgid "Content removed."
+msgstr "Content removed."
+
+msgid "Content updated"
+msgstr "Content updated"
+
+msgid "How would you like to add content?"
+msgstr "How would you like to add content?"
+
+msgid "No content found."
+msgstr "No content found."
+
+msgid "No such content."
+msgstr "No such content."
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Edit content"
+msgstr "Edit content"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "Uploaded by"
+msgstr "Uploaded by"
+
+msgid "1 material"
+msgstr "1 material"
+
+msgid "%1 materials"
+msgstr "%1 materials"
+
+msgid "Browse materials"
+msgstr "Browse materials"
+
+msgid "Filter results"
+msgstr "Filter results"
+
+msgid "Go"
+msgstr "Go"
+
+msgid "Material tagsearch summary"
+msgstr "Material tagsearch summary"
+
+msgid "Open"
+msgstr "Open"
+
+msgid "Or choose one from the list:"
+msgstr "Or choose one from the list:"
+
+msgid "Other:"
+msgstr "Other:"
+
+msgid "Related pages"
+msgstr "Related pages"
+
+msgid "Search materials (summary title)"
+msgstr "Search materials"
+
+msgid "Type an additional keyword:"
+msgstr "Type an additional keyword:"
+
+msgid "Back to search results"
+msgstr "Back to search results"
+
+msgid "Bookmark added succesfully."
+msgstr "Bookmark added succesfully."
+
+msgid "Bookmark removed succesfully."
+msgstr "Bookmark removed succesfully."
+
+msgid "Document"
+msgstr "Document"
+
+msgid "start a new search"
+msgstr "start a new search"
+
+msgid "Unbookmark"
+msgstr "Unbookmark"
+
+msgid "Who has bookmarked this"
+msgstr "Who has bookmarked this"

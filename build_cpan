@@ -1,0 +1,23 @@
+#!/bin/sh
+
+rm -f pkg/*App*.gz
+cd pkg
+if [ $1 ]
+then
+	./create_cpan $1
+else
+	./create_cpan dicole_*
+fi
+rm -f *.log
+cd ..
+rm -rf cpan_temp
+mkdir cpan_temp
+cp pkg/*.gz cpan_temp/
+cd cpan_temp
+ls *.gz | xargs -n 1 tar -zxf
+rm -f *.gz
+cp -rf */lib/* ../lib/
+cd ..
+rm -rf cpan_temp
+rm -f *.log
+cd ..

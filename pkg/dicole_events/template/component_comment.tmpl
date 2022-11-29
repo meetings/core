@@ -1,0 +1,28 @@
+<div id="[% comment.id | html %]" class="comment[% IF comment.user_is_planner %] event_planner[% END %]">
+	<div class="user-bg alpha_png">
+		<a class="user" href="[% comment.user_link | html %]" title="[% comment.user_name | html %]">
+			<img src="[% comment.user_image or '/images/theme/default/default-user-avatar-50px.png' | html %]" alt="[% comment.user_name | html %]" />
+		</a>
+	</div>
+	<div class="comment_container">
+		[% IF comment.delete_url %]
+		<div class="comment_actions">
+			<a class="delete_comment" href="#"></a>
+		</div>
+		<div class="confirm">
+			<a class="confirm_delete" href="[% comment.delete_url | html %]">[% MSG('Confirm comment delete') | html %]</a>
+			<span class="separator">&bull;</span>
+			<a class="cancel_delete" href="#">[% MSG('Cancel comment delete') | html %]</a>
+		</div>
+		[% END %]
+		<span class="user_details">
+			<span class="user_name">[% comment.user_name | html %]</span>
+			[% IF comment.user_organization %]
+			/
+			<span class="user_organization">[% comment.user_organization | html %]</span>
+			[% END %]
+		</span>
+		<span class="comment_content">[% comment.content %]</span>
+		<span class="date">[% comment.date | html %]</span>
+	</div>
+</div>

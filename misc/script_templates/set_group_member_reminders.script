@@ -1,0 +1,50 @@
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my ( $group_id, $mode, $default ) = split /\s*,\s*/, $params;
+    
+    die unless $group_id;
+    
+    my $group = CTX->lookup_object('groups')->fetch( $group_id );
+    
+    my $users = $group->user || [];
+
+    for my $user ( @$users ) {
+        my $user_id = $user->id;
+        if ( $mode ) {
+            my $old = Dicole::Settings->fetch_single_setting(
+                tool => 'settings_reminders',
+                user_id => $user_id,
+                attribute => $group_id,
+            ) || '';
+            if ( $mode ne $old ) {
+                print "setting reminders for user $user_id in group $group_id to $mode" . ( $old ? " ( old value was $old )" : '' ) . $/;
+                Dicole::Settings->store_single_setting(
+                    tool => 'settings_reminders',
+                    user_id => $user_id,
+                    attribute => $group_id,
+                    value => $mode,
+                );
+            }
+        }
+        if ( $default ) {
+            my $old = Dicole::Settings->fetch_single_setting(
+                tool => 'settings_reminders',
+                user_id => $user_id,
+                attribute => 'group_default',
+            ) || '';
+            if ( $default ne $old ) {
+                print "setting default group reminders for user $user_id to $default" . ( $old ? " ( old value was $old )" : '' ) . $/;
+                Dicole::Settings->store_single_setting(
+                    tool => 'settings_reminders',
+                    user_id => $user_id,
+                    attribute => 'group_default',
+                    value => $default,
+                );
+            }
+        }
+    }
+}
+
+1;

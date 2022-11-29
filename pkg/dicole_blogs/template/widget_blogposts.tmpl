@@ -1,0 +1,74 @@
+[% # $Id: widget_blogposts.tmpl,v 1.2 2008-03-01 15:06:48 amv Exp $ # %]
+
+[%- DEFAULT
+
+itemparams.no_container => 0,
+itemparams.posts => [
+	{
+		id => 10,
+		title => 'Example',
+		date => 'July 2004',
+		author => { name => 'Name', url => 'profile_url' },
+		content => 'html',
+		controls => {
+			delete => 'url',
+			feature => 'url',
+			unfeature => 'url',
+			edit => 'url'
+		},
+		no_details => 0,
+		no_actions => 0,
+		tags => [ 'tag1', 'tag2' ],
+		actions => {
+			promote => 'url',
+			demote => 'url',
+			discuss => 'url',
+		},
+		rate_base_url => 'url',
+		points => '10 points',
+		comments => '(5) comments',
+	},
+]
+	
+-%]
+
+[% IF itemparams.container %]<div class="blogsPostListing">[% END %]
+[% FOREACH post = itemparams.posts %]
+    <div class="blogPost">
+		<div class="blogPostControls">
+			[% IF post.controls.delete %]<a href="[% post.controls.delete %]" class="blogPostDelete"></a>[% END %]
+			[% IF post.controls.feature %]<a href="[% post.controls.feature %]" class="blogPostFeature"></a>[% ELSIF post.controls.unfeature %]<a href="[% post.controls.unfeature %]" class="blogPostUnFeature"></a>[% END %]
+			[% IF post.controls.edit %]<a href="[% post.controls.edit %]" class="blogPostEdit"></a>[% END %]
+		</div>
+		[% IF post.title %]<div class="blogPostTitle"><a  href="[% post.url %]">[% post.title %]</a></div>[% END %]
+		<div class="blogPostAuthor">[% post.date %] - <a  href="[% post.author.url %]">[% post.author.name %]</a></div>
+		<div class="blogPostContent">[% post.content %]</div>
+		[% UNLESS post.no_details -%]
+		<div class="blogPostDetails">
+			<div id="blogs_rate_container_[% post.id %]" class="blogs_rate_container">
+				<ul class="star-rating blogs_rate_links" id="blogs_rate_links_[% post.id %]">
+					<li class="current-rating" style="width:100%;"></li>
+					<li><a href="[% post.rate_base_url %]/1" title="[% MSG('1 star out of 1') %]" class="blogs_rate_link_[% post.id %] one-star "></a></li>
+					<li><a href="[% post.rate_base_url %]/2" title="[% MSG('1 star out of 2') %]" class="blogs_rate_link_[% post.id %] two-stars"></a></li>
+					<li><a href="[% post.rate_base_url %]/3" title="[% MSG('1 star out of 3') %]" class="blogs_rate_link_[% post.id %] three-stars"></a></li>
+					<li><a href="[% post.rate_base_url %]/4" title="[% MSG('1 star out of 4') %]" class="blogs_rate_link_[% post.id %] four-stars"></a></li>
+					<li><a href="[% post.rate_base_url %]/5" title="[% MSG('1 star out of 5') %]" class="blogs_rate_link_[% post.id %] five-stars"></a></li>
+				</ul>
+			</div>
+			<div class="blogPostComments"><span id="blogs_points_container_[% post.id %]">[% post.points %]</span>[% IF post.discuss %], <a href="[% post.discuss %]">[% post.comments %]</a>[% END %]</div>
+			<div class="blogPostTags">[% post.tags.join(', ') %]</div>
+		</div>
+		[% END -%]
+		[%- UNLESS post.no_actions -%]
+		<div class="blogPostActions">
+			<div class="blogs_promote_container">
+			<div class="blogs_promote_links promote_promote_selected">
+			[% IF post.actions.promote %]<a  id="blogs_promote_promote_[% post.id %]" href="[% post.actions.promote %]" class="blogPostPromote">[% MSG( 'Promote' ) %]</a>
+			[% IF post.actions.demote %]<a  id="blogs_promote_demote_[% post.id %]" href="[% post.actions.demote %]" class="blogPostDemote">[% MSG( 'Demote' ) %]</a>
+			</div></div>
+			[% IF post.actions.discuss %]<a  href="[% post.actions.discuss %]" class="blogPostDiscuss">[% MSG( 'Discuss' ) %]</a>[% END %]
+		</div>
+		[%- END %]
+	</div>
+[% END %]
+[% IF itemparams.container %]</div>[% END %]

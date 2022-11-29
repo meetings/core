@@ -1,0 +1,35 @@
+div#meetme-timezone-popup.m-modal
+    div.modal-header
+        h3!=MTN.t('Choose your time')
+    div.modal-content
+        p!=MTN.t('Which time zone would you prefer for displaying the available times?')
+        div.m-form
+            label.radio
+                input(type="radio",name="offset",checked="checked",value=matchmaker.time_zone)
+                if ( matchmaker.event_data && matchmaker.event_data.id && matchmaker.event_data.force_time_zone )
+                    !=MTN.t('Timezone set for') + ' '
+                    =matchmaker.event_data.name+': '
+                    =matchmaker.time_zone_string
+                else
+                    !=MTN.t('Timezone set by') + ' '
+                    =user.name+': '
+                    =matchmaker.time_zone_string
+            p.now
+                !=MTN.t('Current time for this zone is:') + ' '
+                span=moment.utc(d.getTime() + matchmaker.time_zone_offset * 1000).format('hh:mm A')
+            p.radio
+                input#user-tz(type="radio",name="offset",value=ua_tz)
+                !=MTN.t('Your time zone ')
+                select#timezone-select.chosen
+                    each tz, i in tz_data.choices
+                        if( tz === ua_tz )
+                            option(value=tz,selected="selected")=tz_data.data[tz].readable_name
+                        else
+                            option(value=tz)=tz_data.data[tz].readable_name
+
+            p.now
+                !=MTN.t('Current time for this zone is:')
+                span#user-time=moment.utc(d.getTime() + tz_data.data[app.options.ua_time_zone].offset_value * 1000).format('hh:mm A')
+    div.modal-footer
+        div.buttons.right
+            a.button.blue.set-time-zone(href="#")!=MTN.t('Continue')

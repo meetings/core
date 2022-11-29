@@ -1,0 +1,104 @@
+
+sub execute {
+    my ( $self, $p ) = @_;
+
+    my ( $inactive_days, $really_remove, $keep_users );
+
+    $params = eval $p;
+    if ( ref($params) eq 'HASH' ) {
+        $inactive_days = $params->{inactive_days};
+        $really_remove = $params->{really_remove};
+        $keep_users = $params->{keep_users};
+    }
+    else {
+        ( $inactive_days, $really_remove, $keep_users ) = split /\s*,\s*/, $p;
+    }
+    
+    $inactive_days ||= 356*3;
+    if ( $really_remove ) {
+        print "Really removing users that have not been active for " .
+            "$inactive_days days!" . $/;
+    }
+    else {
+        print "Showing which users would get deleted because they have " .
+            "not been active for $inactive_days days." . $/;
+    }
+    
+    my $inactive_seconds = $inactive_days *24*60*60;
+
+    # skip super user
+    my $user_iter = CTX->lookup_object('user')->fetch_iterator( {
+        where => 'user_id != 1',
+        order => 'user_id',
+    } ) || [];
+    
+    my @users_never_seen = ();
+    my @users_deleted = ();
+    my $inactive_since = time - $inactive_seconds;
+    
+    while ( $user_iter->has_next ) {
+        my $user = $user_iter->get_next;
+        next if $user->login_disabled;
+        
+        if ( ! $user->last_login ) {
+            push @users_never_seen, $user;
+            next;
+        }
+        
+        my $actions = CTX->lookup_object('logged_action')->fetch_group( {
+            where => 'user_id = ? AND time > ?',
+            value => [ $user->id, $inactive_since ],
+            limit => '1'
+        } ) || [];
+        
+        if ( ! scalar( @$actions ) ) {
+            my $uid = $user->id;
+            push @users_deleted, $uid;
+            print $keep_users ? 'Disabling login for' : 'Deleting';
+            print " user $uid: " . $user->first_name . ' ' . $user->last_name . $/;
+            next if not $really_remove;
+            if ( $keep_users ) {
+                $user->login_disabled( 1 );
+                $user->save;
+                CTX->lookup_action('deleted_user_operations')->execute( {
+                    user_id => $uid, only_remove_files => 1,
+                } );
+            }
+            else {
+                $user->remove;
+                CTX->lookup_action('deleted_user_operations')->execute( {
+                    user_id => $uid,
+                } );
+            }
+        }
+    }
+    
+    return if ! scalar ( @users_deleted );
+    
+    # now look for the highest id which was removed and remove all users who have
+    # a lower id and have never logged in.
+    my $max;
+    $max = ( ! $max || $_ > $max ) ? $_ : $max for @users_deleted;
+    for my $user ( @users_never_seen ) {
+        my $uid = $user->id;
+        next if $uid > $max;
+        print $keep_users ? 'Disabling login for' : 'Deleting';
+        print " never seen user $uid: " . $user->first_name . ' ' . $user->last_name . $/;
+        next if not $really_remove;
+        if ( $keep_users ) {
+            $user->login_disabled( 1 );
+            $user->save;
+            CTX->lookup_action('deleted_user_operations')->execute( {
+                user_id => $uid, only_remove_files => 1,
+            } );
+        }
+        else {
+            $user->remove;
+            CTX->lookup_action('deleted_user_operations')->execute( {
+                user_id => $uid,
+            } );
+        }
+    }
+}
+
+1;

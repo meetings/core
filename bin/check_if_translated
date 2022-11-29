@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+my $lang = $ARGV[0] || 'en';
+
+my @exclude = qw(
+dicole_group_pages
+dicole_public_site
+dicole_profile
+dicole_metadata
+dicole_forums
+dicole_files
+dicole_documentation
+dicole_search
+);
+
+my $ls = 'ls pkg/dicole*/msg/*' . $lang . '.po' . join ('', map {'| grep -v ' . $_ } @exclude );
+
+my @pos = split $/, `$ls`;
+while (my $str = <STDIN>) {
+    chomp $str;
+    $str =~ s/\[_(\d+)\]/%$1/g;
+    $str =~ s/\~([\[\]])/$1/g;
+
+    open F, "-|" or exec 'grep', '-F', '--', '"'.$str.'"', @pos or die "failed: $!\n";
+    unless ( <F> ) {
+        print $str.$/;
+    }
+    close F;
+}

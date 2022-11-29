@@ -1,0 +1,38 @@
+sub execute {
+    my ( $self, $domain_id ) = @_;
+
+    my $api = CTX->lookup_action('meetings_paypaljson')->_process_payment( params(), $domain_id );
+}
+
+sub params { return {
+  business               => "info\@dicole.com",
+  charset                => "windows-1252",
+  custom                 => "mh\@fi.fi,27643,monthly",
+  first_name             => "M",
+  ipn_track_id           => "D3c8JE06hkkUI42Ilbkx2gx",
+  item_name              => "Meetin.gs subscription",
+  last_name              => "H",
+  mc_currency            => "USD",
+  mc_fee                 => "0.95",
+  mc_gross               => "19.00",
+  notify_version         => "3.4",
+  payer_email            => "mh\@fimnet.fi",
+  payer_id               => "F5G7A2DMPHJTYx",
+  payer_status           => "unverified",
+  payment_date           => "04:58:13 Dec 10, 2011 PST",
+  payment_fee            => "0.95",
+  payment_gross          => "19.00",
+  payment_status         => "Completed",
+  payment_type           => "instant",
+  protection_eligibility => "Ineligible",
+  receiver_email         => "info\@dicole.com",
+  receiver_id            => "XN6ZNQPJSGUY4x",
+  residence_country      => "FI",
+  subscr_id              => "I-X8AVA0BD28HRx",
+  transaction_subject    => "Meetin.gs subscription",
+  txn_id                 => "3SP4040063947012Gx",
+  txn_type               => "subscr_payment",
+  verify_sign            => "x",
+} }
+
+1;

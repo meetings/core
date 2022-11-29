@@ -1,0 +1,101 @@
+[% # $Id: base_simple.tmpl,v 1.77 2010-07-28 13:35:15 amv Exp $ # -%]
+[%- DEFAULT
+	images.default				= '/images'
+	images.theme				= theme_images
+	images.navigation		= images.theme _ '/navigation'
+	images.toolicons			= images.theme _ '/content/toolicons'
+-%]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="[% lang.code %]" xmlns:fb="http://www.facebook.com/2008/fbml">
+	<head>
+		<title>[% page_title %]</title>
+
+    [%- FOREACH meta IN meta_properties %]
+        <meta property="[% meta.property | html %]" content="[% meta.content | html %]" />
+    [%- END %]
+
+		<meta http-equiv="Content-Type" content="text/html; charset=[% lang.charset %]" />
+		<meta http-equiv="imagetoolbar" content="no" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Language" content="[% lang.code %]" />
+
+[% IF custom_png_favicon %]
+		<link rel="shortcut icon" type="image/png" href="[% custom_png_favicon %]" />
+[% ELSIF custom_ico_favicon %]
+		<link rel="shortcut icon" href="[% custom_ico_favicon %]" />
+[% ELSE %]
+		<link rel="shortcut icon" type="image/png" href="[% images.theme %]/dicole_favicon.png" />
+[% END %]
+
+[% IF qbaka_key %]
+<script type="text/javascript">
+window.qbaka || (function(a,c){a.__qbaka_eh=a.onerror;a.__qbaka_reports=[];a.onerror=function(){a.__qbaka_reports.push(arguments);if(a.__qbaka_eh)try{a.__qbaka_eh.apply(a,arguments)}catch(b){}};a.onerror.qbaka=1;a.qbaka={report:function(){a.__qbaka_reports.push([arguments, new Error()]);},customParams:{},set:function(a,b){qbaka.customParams[a]=b},exec:function(a){try{a()}catch(b){qbaka.reportException(b)}},reportException:function(){}};var b=c.createElement("script"),e=c.getElementsByTagName("script")[0],d=function(){e.parentNode.insertBefore(b,e)};b.type="text/javascript";b.async=!0;b.src=('https:'==document.location.protocol?'https:':'http:')+'//cdn.qbaka.net/reporting.js';"[object Opera]"==a.opera?c.addEventListener("DOMContentLoaded",d):d();qbaka.key="[% qbaka_key %]"})(window,document);qbaka.options={autoStacktrace:1,trackEvents:1};
+</script>
+[% END %]
+
+[%- FOREACH theme = theme_css %]
+        [%- FOREACH css = theme %]
+        <link href="[% css.path %]" media="[% css.media %]" rel="stylesheet" type="text/css" />
+        [%- END %]
+[%- END %]
+
+[%- FOREACH widget = head_widgets -%]
+    [%- PROCESS dicole_base::include_widget widget = widget %]
+[%- END -%]
+        [% IF custom_head_html %][% custom_head_html %][% END %]
+	</head>
+
+	<body class="[% body_action_task_classes %]">
+        [% IF custom_body_start_html %][% custom_body_start_html %][% END %]
+		[% IF facebook_connect_app_id %]
+		<div id="fb-root"></div>
+		<script type="text/javascript">
+			window.fbAsyncInit = function() {
+				FB.init({appId: '[% facebook_connect_app_id | html %]', status: true, cookie : true, xfbml: true, oauth: true});
+                if (typeof dojo != 'undefined')
+                    dojo.publish('dicole/facebook/loaded');
+			};
+			
+			(function() {
+				var e = document.createElement('script');
+				e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+				e.async = true;
+				document.getElementById('fb-root').appendChild(e);
+			}());
+		</script>
+		[% END %]
+            <div class="content"><!-- content -->
+                 [% content %]
+            </div>
+            <div class="footer">
+[%- FOREACH widget = footer_widgets -%]
+    [%- PROCESS dicole_base::include_widget widget = widget %]
+[%- END -%]
+            </div>
+[%- FOREACH script = scripts -%]
+		<script defer="defer" src="[% script %]" type="text/javascript"></script>
+[%- END -%]
+
+[%- FOREACH widget = end_widgets -%]
+    [%- PROCESS dicole_base::include_widget widget = widget %]
+[%- END -%]
+        <script type="text/javascript">
+            last_form_submit = false;
+            try { if(document.forms[0]) { document.forms[0].onsubmit = function() {
+                var now = new Date();
+                if ( last_form_submit ) {
+                    // We want to wait 10 seconds before we let the user press
+                    // the submit button again to avoid problems with double clicks
+                    if ( last_form_submit.getTime() + 10000 > now.getTime() ) {
+                        return false;
+                    }
+                }
+                last_form_submit = now;
+                return true;
+            } } }
+            catch(e) {}
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+[% MTN.t('Welcome to %1$s',[matchmaking_event]) %]
+
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Thank you for signing up!')  %]
+[% action_text_type = 'large' %]
+
+<<<text_and_logo>>>
+
+<<<p>>>
+[% MTN.t('Your Meet Me page for %(B$%1$s%) has been created. You are now able to receive meeting requests for the event',[matchmaking_event]) %]
+<<</p>>>
+<<<bubble>>>
+<<<p>>>
+[% MTN.t('The requests are delivered via email. Make sure you add notifications@meetin.gs to your address book and/or %(L$whitelist%) to avoid spam filters.', { L => { href => 'http://www.meetin.gs/whitelist' } }) %]
+<<</p>>>
+<<</bubble>>>
+<<<p>>>
+[% MTN.t('Use this link to login to Meetin.gs and access your settings:') %]
+<<</p>>>
+
+[% url = event_meetme_config_url _ '&utm_source=matchmaking&utm_medium=email&utm_campaign=attendee_meetme_created' %]
+[% text = MTN.t('Meet Me page settings') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+
+[% tip = 1 %]
+<<<p>>>
+
+<<</html_wrapper>>>

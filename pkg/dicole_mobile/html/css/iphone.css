@@ -1,0 +1,182 @@
+body {
+	margin: 0;
+	font-family: Helvetica;
+	background: #FFF;
+	color: black;
+	overflow: hidden;
+	-webkit-text-size-adjust: none; /* Turn off font resizing */
+}
+
+.postContent img {
+	max-width: 100%;
+	border: 1px solid black;
+
+}
+
+.postContent table {
+	max-width: 100%;
+	border: 1px dotted black;
+	border-collapse: collapse;
+	background: white;
+}
+
+.postContent td {
+	padding: 5px;
+}
+
+.loginBox {
+	margin-top: 50px;
+}
+
+.loginMessage {
+	padding: 15px;
+	display: block;
+	margin-bottom: 10px;
+	background: lightgreen;
+	width: 80%;
+	border: 1px solid green;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	position: relative;
+	top: 48px;
+	left: 5%;
+}
+
+.label {
+	color: #666;
+	margin-top: 10px;
+}
+
+#homeButton {
+	left: 6px;
+	right: auto;
+	-webkit-border-image: url(/images/iphone/iPhoneBackButton.png) 0 8 0 14;
+	border-width: 0 8px 0 14px;
+}
+
+.iphoneLoginForm input {
+	font-size: 16px;
+	color: #555;
+	padding: 5px;
+	font-face: arial, verdana;
+	border: 1px solid gray;
+	-webkit-border-radius: 8px;
+	/* Round each corner of the created rectangle */
+	-moz-border-radius: 8px;
+}
+
+.iphoneLoginForm input[type=submit] {
+	margin-top: 10px;
+	background: #8191AA;
+	color: white;
+	border: 1px solid gray;
+	display: block;
+}
+
+.container {
+	position: absolute;
+	width: 100%;
+}
+
+body[orient="profile"] .container {
+	height: 457px;
+}
+
+body[orient="landscape"] .container {
+	height: 309px;
+}
+
+.toolbar {
+	position: absolute;
+	padding: 10px 0;
+	width: 100%;
+	color: white;
+	height: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+	text-overflow: ellipsis;
+	background: url(/images/iphone/iPhoneToolbar.png) #8191AA repeat-x;
+}
+
+body[orient="landscape"] .toolbar {
+	font-size: 20px;
+}
+
+.anchorTop {
+	top: 0;
+}
+
+.anchorBottom {
+	border-top: 1px solid #3f4e63;
+	padding-bottom: 9px;
+	bottom: 0;
+}
+
+.button {
+	position: absolute;
+	top: 7px;
+	right: 6px;
+	-webkit-border-image: url(/images/iphone/iPhoneButton.png) 0 5 0 5;
+	-webkit-border-radius: 0;
+	border-width: 0 5px 0 5px;
+	padding: 0;
+	height: 28px;
+	line-height: 28px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+	text-decoration: none;
+	background: none;
+}
+
+.center {
+	position: absolute;
+	top: 40px;
+	bottom: 40px;
+	background: #FFFFFF;
+	width: 100%;
+}
+
+body[orient="landscape"] .center {
+	top: 40px;
+	bottom: 40px;
+	width: 100%;
+}
+
+.item {
+	background: url(/images/iphone/iPhoneArrow.png) no-repeat right center;
+	border-bottom: 1px solid #E0E0E0;
+	padding: 8px 32px 8px 8px;
+	color: #000000;
+}
+
+.item a {
+	text-decoration: none;
+	color: black !important;
+	display: block;
+	width: 100%;
+}
+
+.postTitle {
+	margin: 10px;
+	margin-bottom: 4px;
+	font-size: 18px;
+	font-weight: bold;
+	color: rgb(76, 86, 108); /* Set each label color */
+	border-bottom: 1px solid gray;
+}
+
+.postContent {
+	margin: 10px;
+	font-size: 16px;
+}
+
+.postDate {
+	margin-left: 10px;
+	font-size: 12px;
+	font-style: italic;
+	color: #888;
+}

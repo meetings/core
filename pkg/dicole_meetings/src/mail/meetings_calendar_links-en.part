@@ -1,0 +1,22 @@
+
+[% IF in_html %]
+<table style="margin-top:15px;margin-bottom:15px;margin-left:15px;margin-right:15px;line-height:25px; font-size:15px; color:#4a4a4a;font-family:arial;">
+<tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+<td colspan="2" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;font-size:15px; color:#4a4a4a; font-family:Arial,Verdana,sans-serif;">
+<<<bold>>>[% MTN.t('Add to calendar:') %] <<</bold>>>
+<a href="[% ics_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+MS Outlook
+</a> | 
+<a href="[% gcal_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+[% MTN.t('Google calendar') %]
+</a> | 
+<a href="[% ics_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+[% MTN.t('Other ICS') %]
+</a>
+</td>
+</tr>
+</table>
+[% ELSE %]
+[% MTN.t('Add to your calendar by navigating to the address below:') %]<<<br>>>
+[% ics_url %]<<<br>>>
+[% END %]

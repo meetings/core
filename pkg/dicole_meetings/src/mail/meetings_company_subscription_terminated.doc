@@ -1,0 +1,5 @@
+PARTNER; Sent when user gets unprovisioned by a company
+
+Used params:
+organization
+login_url

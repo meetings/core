@@ -1,0 +1,20 @@
+[%#
+browse_title = 'Title'
+%]
+
+<div id="browse_header">
+	<div class="left">
+        [% IF current_search %]
+		<h1>[% MSG('People search') | html %]: [% current_search | html %]</h1>        
+        [% ELSE %]
+		<h1>[% MSG('People') | html %]</h1>
+        [% END %]
+	</div>
+	<div class="right">
+		<span id="browse_filter_with_keywords">
+			<a href="#" id="filter_link">[% MSG('Filter with keywords') | html %] 
+			<span class="filter_hide">x</span><span class="filter_show">&darr;</span></a>
+		</span>
+	</div>
+</div>
+

@@ -1,0 +1,14 @@
+$theme:s2m;
+
+// Select color
+$color-select:#e2f3e8;
+
+// Main color
+$color-main:#467c5a;
+$color-main-hover:darken($color-main, 10%);
+$color-main-light:lighten($color-main, 40%);
+
+// Button colors
+$normal-button-begin:#abe57d;
+$normal-button-end:#91cb63;
+$normal-button-bg:#9cd66e;

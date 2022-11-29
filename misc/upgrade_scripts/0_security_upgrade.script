@@ -1,0 +1,90 @@
+
+use SPOPS::SQLInterface;
+use Dicole::Security qw( :target :receiver );
+use Data::Dumper;
+
+sub execute {
+
+    print "Converting dicole_security_user..\n";    
+    insert_security(
+        'dicole_security_user',
+        RECEIVER_USER,
+        'receiver_user_id',
+    );
+
+    print "Converting dicole_security_group..\n";    
+    insert_security(
+        'dicole_security_group',
+        RECEIVER_GROUP,
+        'receiver_group_id',
+    );
+
+    print "Converting dicole_security_world..\n";    
+    insert_security(
+        'dicole_security_world',
+        RECEIVER_LOCAL,
+    );
+
+    print "Converting dicole_security_public..\n";    
+    insert_security(
+        'dicole_security_public',
+        RECEIVER_GLOBAL,
+    );
+
+    print "Converting done. You can drop the tables mentioned above.\n";
+}
+
+sub insert_security {
+    my ( $table_name, $receiver_type, $receiver_key ) = @_;
+    
+    my $iterator = SPOPS::SQLInterface->db_select( {
+            select => [ '*' ],
+            from   => [ $table_name ],
+            db     => CTX->datasource( CTX->lookup_system_datasource_name ),
+            return => 'sth',
+    } );
+
+    while ( my $row = $iterator->fetchrow_hashref() ) {
+
+        my $item = {
+            target_type => $row->{ target_type },
+            receiver_type => $receiver_type,
+
+            target_user_id => 0,
+            target_group_id => 0,
+
+            receiver_user_id => 0,
+            receiver_group_id => 0,
+
+            collection_id => $row->{collection_id},
+        };
+    
+        if ( $row->{ target_type } == TARGET_USER ) {
+            $item->{target_user_id} = $row->{target_id};
+        }
+        elsif ( $row->{ target_type } == TARGET_GROUP ) {
+            $item->{target_group_id} = $row->{target_id};
+        }
+
+        $item->{ $receiver_key } = $row->{receiver_id} if $receiver_key;    
+
+        ## insert item
+        
+        my $fields = [];
+        my $values = [];
+
+        for my $key ( keys %$item ) {
+            push @$fields, $key;
+            push @$values, $item->{$key};
+        }
+        
+        SPOPS::SQLInterface->db_insert( {
+            table   => 'dicole_security',
+            field   => $fields,
+            value   => $values,
+            db      => CTX->datasource( CTX->lookup_system_datasource_name ),
+        } );
+    }
+}
+
+1;

@@ -1,0 +1,19 @@
+[%- # $Id: base_main.tmpl,v 1.2 2009-01-07 14:42:33 amv Exp $ # -%]
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="[% lang.code %]">
+    <head>
+        <title>[% page_title %]</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=[% lang.charset %]" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="Content-Language" content="[% lang.code %]" />
+[%- FOREACH theme = theme_css -%]
+        [%- FOREACH css = theme -%]
+        <link href="[% css.path %]" media="[% css.media %]" rel="stylesheet" type="text/css" />
+        [%- END -%]
+[%- END -%]
+<body>
+<div id="helpContent">
+[%- content -%]
+</div>
+</body>
+</html>

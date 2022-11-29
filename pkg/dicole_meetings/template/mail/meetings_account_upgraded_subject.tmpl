@@ -1,0 +1,1 @@
+[% IF customize_for_cmeet %][% MTN.t("cMeet / Notification") %][% ELSIF provisioned_user %][% MTN.t("Welcome to %1\$s PRO", [ service_name ]) %][% ELSIF new_user %][% MTN.t("Welcome and thank you for upgrading to %1\$s PRO", [ service_name ]) %][% ELSE %][% MTN.t("Thank you for upgrading to %1\$s PRO", [ service_name ]) %][% END %]

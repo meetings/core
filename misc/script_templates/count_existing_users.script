@@ -1,0 +1,88 @@
+#!/usr/bin/perl
+
+my $conf = {
+    tivit => {
+        domain_id => 83,
+        public_groups => [],
+    },
+    novetos => {
+        domain_id => 141,
+        public_groups => [ 10041 ],
+    },
+};
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my ( $name, $months, $start_from_current ) = split /,/, $params;
+    $months ||= 1;
+
+    my $c = $conf->{ $name };
+    die "no conf found for $name" unless $c;
+
+    my $domain_id = $c->{domain_id};
+
+    my $users = CTX->lookup_object('user')->fetch_group({});
+    $users = Dicole::Utils::User->filter_list_to_domain_users( $users, $domain_id );
+
+    my $memberships_by_user = {};
+    if ( scalar @{ $c->{public_groups} } ) {
+        my $group_memberships = CTX->lookup_object('group_user')->fetch_group({
+            where => Dicole::Utils::SQL->column_in( user_id => [ map { $_->id } @$users ] ),
+        });
+        for my $m ( @$group_memberships ) {
+            $memberships_by_user->{ $m->{user_id} } ||= {};
+            $memberships_by_user->{ $m->{user_id} }->{ $m->groups_id } = 1;
+        }
+    }
+
+    for my $month (0..( $months - 1 )) {
+        my $now = DateTime->now;
+        if ( $start_from_current ) {
+            $now->add( months => 1 );
+        }
+        $now->subtract( months => $month );
+        my $before = DateTime->new( year => $now->year, month => $now->month, day => 1, hour => 0);
+        print "Users in domain $domain_id before " . $before->ymd. ":\n";
+
+        my $before_epoch = $before->epoch;
+
+        my @users = ();
+        my @dicole_users = ();
+        my @private_users = ();
+        my @private_dicole_users = ();
+        for my $u ( @$users ) {
+            next if $u->login_disabled;
+            next if lc( Dicole::Utils::User->notes_data( $u )->{ $domain_id }{ billing_info } ) eq 'skip';
+            my $time = Dicole::Utils::User->notes_data( $u )->{ $domain_id }{ creation_time };
+            next if $time && $time > $before_epoch;
+
+            my $on_private = 'yes';
+            if ( scalar @{ $c->{public_groups} } ) {
+                my $pgcount = 0;
+                for my $pg ( @{ $c->{public_groups} } ) {
+                    $pgcount++ if defined( $memberships_by_user->{ $u->id }->{ $pg } );
+                }
+                $on_private = 'no' unless scalar( keys %{ $memberships_by_user->{ $u->id } } ) > $pgcount;
+            }
+
+            my $user_data = [ $u->email, $u->first_name, $u->last_name, Dicole::Utils::User->notes_data( $u )->{ $domain_id }{ billing_info } || '', $on_private ];
+            push @users, $user_data;
+            push @dicole_users, $user_data if $user_data->[0] =~ /\@.*dicole.*/;
+            push @private_users, $user_data if $user_data->[4] eq 'yes';
+            push @private_dicole_users, $user_data if $user_data->[4] eq 'yes' && $user_data->[0] =~ /\@.*dicole.*/;
+        }
+
+        print "total users: " . ( scalar( @users ) || 0 ) . "\n";
+        print "total users without dicole: " . ( ( scalar( @users ) - scalar(@dicole_users) ) || 0 ) . "\n";
+        print "total users on private areas: " . ( scalar( @private_users ) || 0 ) . "\n";
+        print "total users on private areas without dicole: " . ( ( scalar( @private_users ) - scalar(@private_dicole_users) ) || 0 ) . "\n";
+        print "\n";
+        print join ";", qw( email first last billing private );
+        print "\n";
+        print join( "\n", map { join ";", @$_ } @users );
+        print "\n"x2;
+    }
+}
+
+1;

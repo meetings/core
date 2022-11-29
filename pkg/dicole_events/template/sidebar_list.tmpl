@@ -1,0 +1,9 @@
+<div class="sidebar_event_list" align="center">
+[% FOREACH event IN events %]
+    <div class="sidebar_event_list_container">
+        [% IF event.logo_url %]<div><a href="[% event.show_url %]"><img class="sidebar_event_list_image" src="[% event.logo_url %]" alt="[% event.title | html %]" title="" /></a></div>[% END %]
+        <div><a href="[% event.show_url %]"><span class="sidebar_event_list_title">[% event.title | html %]</span></a></div>
+    </div>
+[% END %]
+</div>
+

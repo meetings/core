@@ -1,0 +1,124 @@
+[%#
+	users = [
+		{
+			"id" = 1,
+			"name" = "Pekka Elo",
+			"image" = "#",
+			"url" = "#",
+			"email" = "pekka@elo.com",
+			"level" = "admin",
+			"levels" = ["admin", "user"],
+			"remove" = "#"
+		},
+		{
+			"id" = 2,
+			"name" = "Mauno Matikainen",
+			"image" = "#",
+			"url" = "#",
+			"email" = "mauno@rassarit.com",
+			"level" = "user",
+			"levels" = ["admin", "user"],
+			"remove" = "#"
+		},
+		{
+			"id" = 3,
+			"name" = "Jorma Jortikka",
+			"image" = "#",
+			"url" = "#",
+			"email" = "jorma@jortikkas.com",
+			"level" = "admin",
+			"levels" = ["admin", "user"],
+			"remove" = "#"
+		},
+		{
+			"id" = 4,
+			"name" = "Pasi Paskapää",
+			"image" = "#",
+			"url" = "#",
+			"email" = "pasi@shithead.com",
+			"level" = "user",
+			"levels" = ["user"],
+			"remove" = "#"
+		}
+	]
+	
+	levels = [
+		{
+			"id" = "admin",
+			"name" = "Admin"
+		},
+		{
+			"id" = "user",
+			"name" = "User"
+		}
+	]
+%]
+<div id="group_admin_users">
+	<div id="group_users_search">
+		<h2>[% MSG("Filter user list by name:") | html %] <input id="group_users_search_field" class="tip-field" value="[% MSG("Start typing the name...") | html %]" /></h2>
+	</div>
+	<div id="group_users_filter">
+		<h2><a id="group_users_filter_toggle" href="#">[% MSG("Filter user list by user level") | html %]<span id="group_users_filter_toggle_closed"> &hellip;</span><span id="group_users_filter_toggle_open" style="display:none"> x</span></a></h2>
+		<div id="group_users_filter_buttons" style="overflow:hidden;display:none">
+			[% first = levels.shift %]
+			[% last = levels.pop %]
+			<a id="group_users_filter,[% first.id | html %]" href="#" class="alpha_png left-button"><span class="alpha_png">[% first.name | html %]</span></a>
+			[% FOREACH level IN levels %]
+			<a id="group_users_filter,[% level.id | html %]" href="#" class="alpha_png middle-button"><span class="alpha_png">[% level.name | html %]</span></a>
+			[% END %]
+			<a id="group_users_filter,[% last.id | html %]" href="#" class="alpha_png right-button"><span class="alpha_png">[% last.name | html %]</span></a>
+			[% levels.unshift(first) %]
+			[% levels.push(last) %]
+		</div>
+	</div>
+	<div style="clear:both"></div>
+	<div id="group_users_actions" style="overflow: hidden;">
+		<h2 id="group_users_number"><span id="group_users_number_field"></span> [% MSG("users match the current filters.") | html %]</h2>
+		<a id="group_users_mail_button" href="#" class="button"><span>[% MSG("Mail these people") | html %]</span></a>
+		[% IF export_url %]<a id="group_users_list_button" href="[% export_url | html %]" class="button"><span>[% MSG("Export all users") | html %]</span></a>[% END %]
+	</div>
+	<div id="group_users_mail" style="overflow: hidden; display: none">
+		<input id="group_users_mail_subject" name="group_users_mail_subject" value="[% MSG('Subject') | html %]" class="tip-field" /><br/><br/>
+		<textarea id="group_users_mail_content" name="group_users_mail_content" class="mceEditor"></textarea><br/>
+		<a id="group_users_mail_submit" href="[% mail_url | html %]" class="button"><span>[% MSG('Send') | html %]</span></a>
+		<a id="group_users_mail_self_submit" href="[% mail_self_url | html %]" class="button"><span>[% MSG('Send test email to self') | html %]</span></a>
+	</div>
+	<div id="group_users">
+		<input id="group_users_list" type="hidden" name="group_users_list" />
+		<table id="group_users_table">
+			<thead>
+				<tr>
+					<th><h2>[% MSG("Users") | html %]</h2></th>
+					<th><h2>[% MSG("Level") | html %]</h2></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				[% FOREACH user IN users %]
+				<tr id="user_[% user.id | html %]" class="[% user.level | html %]">
+					<td>
+						<div class="user-avatar">
+							<a href="[% user.url | html %]" title="[% user.name | html %]">
+								<img src="[% user.image or '/images/theme/default/default-user-avatar-40px.png' | html %]" alt="[% user.name | html %]" />
+							</a>
+						</div>
+						<a href="[% user.url | html %]" class="user_name">[% user.name | html %]</a>
+						<br />
+						<a href="mailto:[% user.email | html %]">[% user.email | html %]</a>
+					</td>
+					<td>
+						<select id="user_[% user.id | html %]_level">
+							[% FOREACH level IN levels %]
+							<option value="[% level.id | html %]"[% IF level.id == user.level %] selected="selected"[% END %][% IF not user.levels.grep(level.id).size %] disabled="disabled"[% END %]>[% level.name | html %]</option>
+							[% END %]
+						</select>
+					</td>
+					<td>
+						[% IF user.remove_url %]<a id="user_[% user.id | html %]_remove" href="[% user.remove_url | html %]">[% MSG("Remove") | html %]</a>[% END %]
+					</td>
+				</tr>
+				[% END %]
+			</tbody>
+		</table>
+	</div>
+</div>

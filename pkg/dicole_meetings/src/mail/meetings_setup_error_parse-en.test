@@ -1,0 +1,8 @@
+[%- IF test_case == 'testierrori' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+sent_to_email = 'kikkihiiri@linkka-anna.ank'
+
+%]
+[%- END -%]

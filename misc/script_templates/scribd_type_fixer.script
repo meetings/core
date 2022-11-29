@@ -1,0 +1,26 @@
+sub execute {
+    my ( $self ) = @_;
+
+    my $presentations = CTX->lookup_object('presentations_prese')->fetch_group;
+
+	for my $presentation (@$presentations) {
+		next unless $presentation->attachment_id;
+	
+		my $a = CTX->lookup_object('attachment')->fetch( $presentation->attachment_id );
+	
+		if ( $a->filename =~ /\.(pdf|txt|ps|rtf|epub|odt|odp|ods|odg|odf|sxw|sxc|sxi|sxd|doc|ppt|pps|xls|docx|pptx|ppsx|xlsx|tif|tiff)$/i ) {
+			my $file_extension = $1;
+		
+			if($file_extension =~ /ppt|pps|pptx|ppsx|odp|sxi/) {
+				$presentation->scribd_type('slideshow');
+			}
+			else {
+				$presentation->scribd_type('document');
+			}
+			
+			$presentation->save;
+		}
+	}
+}
+
+1;

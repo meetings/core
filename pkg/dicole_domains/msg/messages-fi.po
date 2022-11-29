@@ -1,0 +1,166 @@
+# $Id: messages-fi.po,v 1.6 2006/04/02 20:13:55 inf Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:08:29+0000\n"
+"PO-Revision-Date: 2005-03-22 02:08:29+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+msgid "You are not allowed to login from this domain. Please try one of the following domains: %1"
+msgstr "Sinulla ei ole oikeutta kirjautua tästä verkkotunnuksesta. Yritä jostakin seuraavista: %1"
+
+msgid "Domain not yet configured."
+msgstr "Verkkotunnusta ei ole vielä määritelty."
+
+msgid "Add domain"
+msgstr "Lisää verkkotunnus"
+
+msgid "Default"
+msgstr "Oletus"
+
+msgid "Domain details"
+msgstr "Verkkotunnuksen tiedot"
+
+msgid "Domain has been saved."
+msgstr "Domain on tallennettu."
+
+msgid "Domain Manager"
+msgstr "Verkkotunnushallinta"
+
+msgid "Domain name"
+msgstr "Verkkotunnus"
+
+msgid "List domains"
+msgstr "Listaa verkkotunnukset"
+
+msgid "List of domains"
+msgstr "Lista verkkotunnuksista"
+
+msgid "Location of logo"
+msgstr "Logon sijainti"
+
+msgid "Manage domains"
+msgstr "Hallitse verkkotunnuksia"
+
+msgid "Modify domain details"
+msgstr "Muokkaa verkkotunnuksen tietoja"
+
+msgid "Remove domains"
+msgstr "Poista verkkotunnuksia"
+
+msgid "Selected domains removed."
+msgstr "Valitut verkkotunnukset on poistettu."
+
+msgid "Show list of domains"
+msgstr "Näytä lista verkkotunnuksista"
+
+msgid "Theme"
+msgstr "Teema"
+
+msgid "User can add, edit and remove domains"
+msgstr "Käyttäjä voi lisätä, muokata ja poistaa verkkotunnuksia"
+
+msgid "Are you sure you want to remove the selected domains?"
+msgstr "Oletko varma, että haluat poistaa merkityt verkkotunnukset?"
+
+msgid "New domain details"
+msgstr "Uuden verkkotunnuksen tiedot"
+
+msgid "Groups that belong to this domain"
+msgstr "Ryhmät jotka kuuluvat tähän verkkotunnukseen"
+
+msgid "Users who belong to this domain"
+msgstr "Käyttäjät jotka kuuluvat tähän verkkotunnukseen"
+
+msgid "Users"
+msgstr "Käyttäjät"
+
+msgid "Groups"
+msgstr "Ryhmät"
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "Organization"
+msgstr "Organisaatio"
+
+msgid "Identification number"
+msgstr "Y-tunnus"
+
+msgid "Customer number"
+msgstr "Asiakasnumero"
+
+msgid "Address"
+msgstr "Osoite"
+
+msgid "Contact person"
+msgstr "Yhteyshenkilö"
+
+msgid "Phone number"
+msgstr "Puhelinnumero"
+
+msgid "Postal number"
+msgstr "Postinumero"
+
+msgid "City"
+msgstr "Kaupunki"
+
+msgid "Country"
+msgstr "Maa"
+
+msgid "Services and notes"
+msgstr "Palvelut ja lisätiedot"
+
+msgid "Last payment"
+msgstr "Viimeinen maksusuoritus"
+
+msgid "Email"
+msgstr "Sähköposti"
+
+msgid "Users last month"
+msgstr "Käyttäjiä viime kuussa"
+
+msgid "Account registration enabled"
+msgstr "Tunnusten rekisteröinti mahdollista"
+
+msgid "New accounts default to disabled"
+msgstr "Uudet rekisteröidut tunnukset poiskytkettyjä"
+
+msgid "Domain admins"
+msgstr "Verkkotunnuksen ylläpitäjät"
+
+msgid "This site has IP address restrictions and you are not allowed to access this site. Blocked IP: %1"
+msgstr "Tällä sivulla on IP osoitteiden suhteen rajoituksia, joiden johdosta pääsysi tälle sivulle on estetty. Estetty IP: %1"
+
+msgid "Custom navigation"
+msgstr "Räätälöity navigaatio"
+
+msgid "Custom new user actions"
+msgstr "Räätälöity toiminta uudelle käyttäjälle"
+
+msgid "Default language"
+msgstr "Oletuskieli"
+
+msgid "URL after logout"
+msgstr "Uloskirjautumisen jälkeinen URL"
+
+msgid "Default timezone"
+msgstr "Oletusaikavyöhyke"
+
+msgid "URL after login"
+msgstr "Sisäänkirjautumisen jälkeinen URL"
+
+msgid "Users this month"
+msgstr "Käyttäjiä tässä kuussa"
+
+msgid "Users month before last"
+msgstr "Käyttäjiä toissa kuussa"

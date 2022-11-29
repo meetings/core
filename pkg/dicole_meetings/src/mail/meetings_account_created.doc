@@ -1,0 +1,11 @@
+Sent when user signs up via email or mobile (22/3/2012: Mobile not yet implemented).
+
+Mail signup adress: signup@meetin.gs
+
+Parameters used: 
+login_url
+
+UTM parameters:
+Source: notification
+Medium: mail
+Campaign: firstlogin

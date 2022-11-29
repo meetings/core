@@ -1,0 +1,27 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+sub execute {
+	my ($self, $params) = @_;
+
+    my $suffix = $params || 'wdev.dicole.net';
+	my $domains = CTX->lookup_object('dicole_domain')->fetch_group;
+
+	for my $domain (@$domains) {
+        
+        my $dn = $domain->domain_name;
+        if ( $dn =~ /\.dicole\.net$/ ) {
+            $dn =~ s/\.dicole\.net$/-$suffix/;
+        }
+        else {
+            $dn =~ s/\./-/g;
+            $dn .= '-' . $suffix;
+        }
+        $domain->domain_name( $dn );
+        $domain->save;
+	}
+}
+
+1;

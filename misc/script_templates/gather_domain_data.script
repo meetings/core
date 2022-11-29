@@ -1,0 +1,101 @@
+use Data::Dumper;
+use Dicole::Utility;
+use Dicole::Settings;
+use IO::All;
+
+sub execute {
+    my ( $self, $params ) = @_;
+    my %domain_map = ();
+    eval {
+        die if $params;
+        my $cache < io('cache.json');
+        my $c = Dicole::Utils::JSON->decode( $cache );
+#        print Data::Dumper::Dumper( $c );
+        %domain_map = %$c
+    };
+
+    unless ( %domain_map ) {
+        my $domains = CTX->lookup_object('dicole_domain')->fetch_group();
+        %domain_map = map { $_->domain_name => { id => $_->domain_id, theme_id => $_->theme_id } } @$domains;
+    
+        for my $d ( @$domains ) {
+            my $dn = $d->domain_name;
+            print "processing $dn\n";
+            my $objs = CTX->lookup_object('logged_action')->fetch_group( {
+                sql => 'SELECT * from dicole_logged_action where domain_id = ? and user_id != 0 and action != "login" order by time desc limit 1',
+                value => [ $d->domain_id ],
+            } );
+            $domain_map{$dn}{last_visit} = eval { $objs->[0]->time } || 0;
+            $domain_map{$dn}{last_visit_name} = DateTime->from_epoch( epoch => eval { $objs->[0]->time } || 0 )->ymd;
+
+            my $groups = CTX->lookup_object('groups')->fetch_group({
+                from => [ 'dicole_domain_group'],
+                where => 'dicole_domain_group.group_id = dicole_groups.groups_id and domain_id = ?',
+                value => [ $d->id ],
+            } );
+
+            $domain_map{$dn}{group_count} = scalar( @$groups );
+
+            for my $g ( @$groups ) {
+                print "processing ". $g->name ."\n";
+                my $objs = CTX->lookup_object('logged_action')->fetch_group( {
+                    sql => 'SELECT * from dicole_logged_action where domain_id = ? and target_group_id = ? and user_id != 0 and action != "login" order by time desc limit 1',
+                    value => [ $d->id, $g->id ],
+                } );
+                 
+                $domain_map{$dn}{groups}{$g->id} = { name => $g->name, id => $d->id };
+                $domain_map{$dn}{groups}{$g->id}{last_visit} = eval { $objs->[0]->time } || 0;
+                $domain_map{$dn}{groups}{$g->id}{last_visit_name} = DateTime->from_epoch( epoch => eval { $objs->[0]->time } || 0 )->ymd;
+            }
+        }
+    
+        my $settings = CTX->lookup_object('dicole_tool_settings')->fetch_group( {
+            where => 'attribute = ?',
+            value => ['custom_css'],
+        } );
+    
+        for my $s ( @$settings ) {
+            next unless length($s->value) > 5;
+            my ( $domain_id ) = $s->tool =~ /navigation_(\d+)/;
+            next unless $domain_id;
+            my $domain = CTX->lookup_object('dicole_domain')->fetch( $domain_id );
+            next unless $domain;
+            my $dn = $domain->domain_name;
+            push @{ $domain_map{ $dn }{css} }, $s->groups_id;
+            $domain_map{ $dn }{groups}{$s->groups_id}{css} = 1 if $s->groups_id;
+            $domain_map{ $dn }{domain_css} = 1 unless $s->groups_id;
+        }
+    
+        Dicole::Utils::JSON->encode( \%domain_map ) . "" > io('cache.json');
+    }
+
+    my @keys = keys %domain_map;
+    @keys = sort { $domain_map{$b}{last_visit} <=> $domain_map{$a}{last_visit} } @keys;
+    for my $dn ( @keys ) {
+        print '' .
+            $/ .
+            $domain_map{$dn}{last_visit_name} .
+            ' ' . '(' . $domain_map{$dn}{id} . ') ' . $dn .
+            ( $domain_map{$dn}{theme_id} ? ', theme ' . $domain_map{$dn}{theme_id} : '' ) .
+            ( $domain_map{ $dn }{domain_css} ? ', +++  custom domain css +++' : ''  ) .
+            ( scalar( @{ $domain_map{ $dn }{group_css} } ) ? ', custom group css: ' . join( ",", @{ $domain_map{ $dn }{group_css} } ) : '' ) .
+            $/;
+        for $gid ( sort { $domain_map{ $dn }{groups}{$b}{last_visit} <=> $domain_map{ $dn }{groups}{$a}{last_visit} } keys %{ $domain_map{ $dn }{groups} } ) {
+            my $dead = 1 unless $domain_map{$dn}{groups}{$gid}{last_visit} > time - 60*60*24*30*3;
+            print '    ' .
+                ( $dead ? '[[[ ' : '') .
+                $domain_map{$dn}{groups}{$gid}{last_visit_name} .
+#                ' ' . '(' . $domain_map{$dn}{id} . ') ' . $dn . ':' .
+                " ($gid) " . $domain_map{ $dn }{groups}{$gid}{name} .
+                ( $domain_map{ $dn }{groups}{$gid}{css} ? ', +++ custom group css +++' : '' ) .
+                ( $dead ? ' ]]]' : '') .
+                $/;
+        }
+    }
+
+    #print Data::Dumper::Dumper( \%domain_map );
+#    print Data::Dumper::Dumper( \%theme_map );
+#    print join $/, map { length($_->value) . ' - ' . $_->tool . ': ' . $_->groups_id } @$settings;
+}
+
+1;

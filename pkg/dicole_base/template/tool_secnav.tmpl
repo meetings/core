@@ -1,0 +1,30 @@
+[%#- $Id: tool_secnav.tmpl,v 1.3 2009-01-07 14:42:33 amv Exp $ -%]
+
+[%#-
+The tool secondary navigation is for browsing longer lists and switching between views etc.
+
+	The template accepts the following information in itemparams:
+	[
+		{
+			template		=> name of the template
+			params  		=> 
+				{
+					template parameters passed to the template in itemparams
+				}		
+		},
+		{
+			..
+		}
+	]
+
+-%]
+
+[%- IF itemparams.0 -%]
+<div class="toolNavigationContainer">
+	[%- FOREACH item = itemparams -%]
+	<span class="toolNavigationItem">
+		[%- PROCESS $item.template itemparams = item.params -%]
+	</span>
+	[%- END -%]
+</div>
+[%- END -%]

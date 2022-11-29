@@ -1,0 +1,7 @@
+div.setting-section
+    h3.setting-sub-title!=MTN.t('Get receipts')
+    p!=MTN.t('Below you see all your transactions. You can get the receipt via email.')
+    ul.receipts
+    each receipt in receipts
+        li.receipt=app.helpers.paymentDateString(receipt.payment_date_epoch) + ' - ' + receipt.amount + ' ' + receipt.currency
+            a.send-receipt(href='#',data-id=receipt.id)!=MTN.t('Send receipt')

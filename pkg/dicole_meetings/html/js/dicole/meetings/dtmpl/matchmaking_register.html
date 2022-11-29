@@ -1,0 +1,72 @@
+<div id="matchmaking-register" class="matchmaking modal-popup">
+    <h2><i class="icon-refresh"></i>Registration for Matchmaking</h2>
+    <p>Fill in your organization details to participate in the matchmaking event. Please provide your organization name, a short pitch on what it does and the logo. The link should lead to your website or product demo.</p>
+    <form id="matchmaking-form" action="#" class="meetings-form">
+        <div class="form-row">
+            <label for="organization" class="required smaller">Organization</label>
+            <input id="organization" name="registration_organization" type="text" value="<%== p.registration_organization ? p.registration_organization : '' %>" />
+            <span class="form-star">*</span>
+        </div>
+        <div class="form-row">
+            <label for="description" class="required smaller">Description</label>
+            <textarea id="description" name="description" rows="6" cols="30"><%== p.description ?  p.description : '' %></textarea>
+            <p class="chars">(characters left: <span id="chars-left"></span>)</p>
+            <span class="form-star">*</span>
+        </div>
+        <div class="form-row">
+            <label for="website" class="smaller">Website</label>
+            <input id="website" name="website" type="text" value="<%== p.website ?  p.website : '' %>"/>
+        </div>
+        <% if( p.track_list.length ) { %>
+        <div class="form-row" style="z-index:10;">
+            <label for="track" class="required smaller">Track</label>
+            <select  name="track" id="track" tabindex="3" style="width:312px;" data-placeholder="Choose the track ">
+                <option value=""></option>
+                <% dojo.forEach( p.track_list, function(track){ %>
+                <option value="<%== track %>"><%== track %></option>
+                <% }); %>
+            </select>
+            <span class="form-star">*</span>
+        </div>
+        <% } %>
+        <% if( p.market_list.length ) { %>
+        <div class="form-row" style="z-index:5;">
+            <label for="category" class="required smaller">Markets</label>
+            <select  name="market" id="category" tabindex="3" multiple="" style="width:312px;" data-placeholder="Define one or more markets you are in">
+                <% dojo.forEach( p.market_list, function(cat){ %>
+                <option value="<%== cat %>"><%== cat %></option>
+                <% }); %>
+            </select>
+            <span class="form-star">*</span>
+        </div>
+        <% } %>
+        <div class="form-row" style="margin-bottom:0px; z-index:0;">
+            <label for="logo" class="smaller">Logo <span class="sub">(jpg, png or gif)</span></label>
+            <input id="matchmaking_logo_draft_id" name="logo_draft_id" value="<%== p.logo_draft_id ? p.logo_draft_id : '' %>" type="hidden" />
+            <div class="logo-preview"><img style="display:none;" id="matchmaking_logo_image" src="<%== p.image_url ? image_url : '' %>"/><span class="js_uploader_matchmaking_logo_placeholder">Your logo here</span></div>
+            <div class="upload-button"><span id="matchmaking_logo_upload_button"></span></div>
+            <div class="progress"><div id="matchmaking_logo_progress_bar"></div></div>
+            <a href="#" id="matchmaking_logo_cancel_button"></a>
+            <input type="hidden" name="matchmaking_event_id" value="<%= p.event_id %>"/>
+            <input type="hidden" name="time_zone" value="<%= p.time_zone %>"/>
+        </div>
+        <div class="form-row extra-space">
+            <p>Upload your pitch deck, service description, teaser or executive summary. The document will be privately shared with the people you agree to meet with. It will not be available for anyone else without your consent.</p>
+        </div>
+        <div class="form-row">
+            <label for="deck" class="required smaller">Presentation<span class="sub">(pdf,ppt,doc &amp; max 10mb)</span></label>
+            <div id="deck-preview" class="file-preview"><span id="matchmaking_deck_complete_text"><%== p.deck_name ? p.deck_name : 'Your file here' %></span></div>
+            <input id="matchmaking_deck_draft_id" name="deck_draft_id" value="<%== p.deck_draft_id ? p.deck_draft_id : ''%>" type="hidden" />
+            <div class="upload-button"><span id="matchmaking_deck_upload_button"></span></div>
+            <div class="progress"><div id="matchmaking_deck_progress_bar"></div></div>
+            <a href="#" id="matchmaking_deck_cancel_button"></a>
+            <span style="display:none;" id="js_uploader_matchmaking_logo_placeholder"></span>
+            <span class="form-star">*</span>
+        </div>
+        <div class="form-row submit">
+            <a id="matchmaking_submit" href="#" class="button pink">Continue</a>
+        </div>
+    </form>
+    <div style="clear:both;"></div>
+</div>
+<div class="matchmaking-link"></div>

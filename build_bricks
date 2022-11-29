@@ -1,0 +1,184 @@
+#!/usr/bin/perl
+
+# $Id: build_bricks,v 1.3 2009-01-07 14:42:32 amv Exp $
+# build_bricks
+#    Generate the various OI2::Bricks::* classes formed by reading in
+#    the various files used for creating a package/website.
+#
+# 2005/03/21, Teemu Arina:
+# This code is based on the work of Chris Winters, derived from the
+# OpenInteract2 source code base
+
+use strict;
+use File::Basename qw( basename );
+use MIME::Base64   qw( encode_base64 );
+use OpenInteract2::Brick;
+use Template;
+
+my ( $OI2_VERSION );
+
+{
+    $OI2_VERSION = read_version();
+    my $template = Template->new();
+
+    my @brick_params = ();
+
+    # Now do the same with packages, but base64 them first...
+
+    my %pkg_brick_base = (
+        brick_dir         => 'pkg',
+        brick_name        => '%s',
+        brick_summary     => "Base-64 encoded OI2 package '%s' shipped with distribution",
+        brick_example     => 'oi2_manage create_website --website_dir=/path/to/site',
+
+    );
+    foreach my $pkg_file ( read_package_files( 'pkg/' ) ) {
+        my %pkg_brick = %pkg_brick_base;
+        my $base_name = $pkg_file->{name};
+        $base_name =~ s/^([^-]+).*/$1/;
+        my $cc_base_name = ucfirst( $base_name );
+        $cc_base_name =~ s/_(\w)/uc($1)/ge;
+        my $pkg_brick_name = $base_name;
+        $pkg_brick{brick_name}        = sprintf( $pkg_brick{brick_name}, $cc_base_name );
+        $pkg_brick{lc_brick_name}     = $pkg_brick_name;
+        $pkg_brick{brick_summary}     = sprintf( $pkg_brick{brick_summary}, $pkg_file->{name} );
+        $pkg_brick{brick_description} = get_package_description(
+            $pkg_file->{name}, $pkg_brick_name
+        );
+        $pkg_brick{all_files} = [ $pkg_file ];
+        push @brick_params, \%pkg_brick;
+    }
+
+
+    my $brick_lib_dir = 'lib/OpenInteract2/Brick';
+    unless ( -d $brick_lib_dir ) {
+        mkdir( $brick_lib_dir );
+    }
+
+    my $brick_template = OpenInteract2::Brick->get_brick_class_template();
+
+    foreach my $brick_param ( @brick_params ) {
+        $brick_param->{authors} = [
+            { name => 'Ionstream Oy / Dicole', email => 'info@dicole.com' },
+        ];
+        $brick_param->{author_names} = [ 'Ionstream Oy / Dicole' ];
+        my $brick_name = $brick_param->{brick_name};
+        my $output_file = "$brick_lib_dir/$brick_name.pm";
+        $template->process( \$brick_template, $brick_param, $output_file )
+            || die "Cannot process files from '$brick_param->{brick_dir}' ",
+                   "-> '$output_file': ", $template->error();
+        print "Generated $output_file with ",
+              scalar( @{ $brick_param->{all_files} } ), " ",
+              "inlined files\n";
+    }
+}
+
+sub read_brick_files {
+    my ( $subdir ) = @_;
+    my $filespec_path = "$subdir/FILES";
+    unless ( -f $filespec_path ) {
+        die "Directory '$subdir' is not a valid sample directory -- it has no 'FILES' file\n";
+    }
+    open( FILESPEC, '<', $filespec_path )
+        || die "Cannot read '$filespec_path': $!";
+    my @files = ();
+    while ( <FILESPEC> ) {
+        chomp;
+        next if ( /^\s*#/ );
+        next if ( /^\s*$/ );
+        my ( $file, $destination ) = split /\s*\-\->\s*/, $_, 2;
+        my $do_evaluate = ( $file =~ s/^\*// ) ? 'no' : 'yes';
+        my $file_path = "$subdir/$file";
+        open( FILE, '<', $file_path )
+            || die "Cannot read '$file_path': $!";
+        my $contents = join( '', <FILE> );
+        close( FILE );
+        push @files, {
+            name        => $file,
+            inline_name => create_inline_name( $file ),
+            destination => $destination,
+            evaluate    => $do_evaluate,
+            contents    => $contents,
+        };
+    }
+    close( FILESPEC );
+    return @files;
+}
+
+sub read_package_files {
+    my ( $subdir ) = @_;
+    my @specs = ();
+    opendir( ZIPS, $subdir )
+        || die "Cannot read zips from '$subdir': $!";
+    my @zips = map { "$subdir/$_" } grep /\.zip$/, readdir( ZIPS );
+    closedir( ZIPS );
+    foreach my $zipfile ( @zips ) {
+        open( ZIP, '<', $zipfile )
+            || die "Cannot read '$zipfile': $!";
+        my ( $buf, @contents );
+        while ( read( ZIP, $buf, 60*57 ) ) {
+            push @contents, encode_base64( $buf );
+        }
+        close( ZIP );
+        my $base_filename = basename( $zipfile );
+        push @specs, {
+            name         => $base_filename,
+            inline_name  => create_inline_name( $base_filename ),
+            destination  => "pkg $base_filename",
+            evaluate     => 'no',
+            contents     => join( '', @contents ),
+        };
+    }
+
+    return @specs;
+}
+
+sub create_inline_name  {
+    my ( $file ) = @_;
+    my $inline_name = uc $file;
+    $inline_name    =~ s/\W//g;
+    return $inline_name;
+}
+
+sub read_version {
+    open( VER, '<', 'VERSION' ) || die "Cannot open version doc: $!";
+    my $version = <VER>;
+    chomp $version;
+    close( VER );
+    $version =~ s/[^\d\_\.]//g;
+    return $version;
+}
+
+sub get_package_description {
+    my ( $pkg_file, $pkg_brick_name ) = @_;
+    my $version_info = get_dicole_version_description();
+    return sprintf( <<'DESC', $pkg_file, $pkg_brick_name, $version_info );
+Are you sure you even need to be reading this? If you are just looking
+to install a package just follow the instructions from the SYNOPSIS.
+
+Still here? This class holds the Base64-encoded versions of package
+file "%s" shipped with OpenInteract2. Once you decode them you
+should store them as a ZIP file and then read them in with
+Archive::Zip or some other utility.
+
+A typical means to do this is:
+
+ my $brick = OpenInteract2::Brick->new( '%s' );
+
+ # there's only one resource in this brick...
+ my ( $pkg_name ) = $brick->list_resources;
+ my $pkg_info = $brick->load_resource( $pkg_name );
+ my $pkg_file = OpenInteract2::Util->decode_base64_and_store(
+     \$pkg_info->{content}
+ );
+
+ # $pkg_file now references a file on the filesystem that you can
+ # manipulate as normal
+
+%s
+DESC
+}
+
+sub get_dicole_version_description {
+    return "These resources are associated with Dicole version $OI2_VERSION.";
+}

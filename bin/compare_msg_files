@@ -1,0 +1,70 @@
+#!/usr/bin/perl
+
+# This script is for comparing differencies between two files.
+# The first parameter is the original english message file which
+# is used as the base of the translation. The second parameter
+# is the foreign language file.
+#
+# The script outputs strings that are not in the foreign message
+# file. Use it the other way around to see what strings in the
+# foreign language file are not in the english base language file.
+
+@ARGV = grep { -f $_ } @ARGV;
+
+if ( scalar @ARGV < 2 ) {
+    print "Usage: $0 [english_msg_file] [foreign_msg_file]\n";
+    exit;
+}
+
+my ( $original_file, $compare_file ) = @ARGV;
+
+my $first = _read_messages( $original_file );
+my $second = _read_messages( $compare_file );
+
+foreach my $key ( keys %{ $first } ) {
+   print "$key = $first->{$key}\n"
+      unless exists $second->{$key};
+}
+
+sub _read_messages {
+   my ( $msg_file ) = @_;
+   open( MSG, '<', $msg_file )
+        || die "Cannot read messages from '$msg_file': $!";
+
+    my %messages = ();
+    my ( $current_key, $current_msg, $readmore );
+    while ( <MSG> ) {
+        chomp;
+
+        # Skip comments and blanks unless we're in a readmore block
+
+        next if ( ! $readmore and /^\s*\#/ );
+        next if ( ! $readmore and /^\s*$/ );
+
+        my $line = $_;
+        my $this_readmore = $line =~ s|\\\s*$||;
+        if ( $readmore ) {
+
+            # lop off spaces at the beginning of continued lines so
+            # they're more easily distinguished
+
+            $line =~ s/^\s+//;
+            $current_msg .= $line;
+        }
+        else {
+            my ( $key, $msg ) = $line =~ /^\s*(\S.+\S)\s*=\s*(.*)$/;
+            if ( $key ) {
+                if ( $current_key ) {
+                    $messages{ $current_key } = $current_msg;
+                }
+                $current_key = $key;
+                $current_msg = $msg;
+                $readmore    = undef;
+            }
+        }
+        $readmore = $this_readmore;
+    }
+    $messages{ $current_key } = $current_msg if $current_key;
+    close( MSG );
+    return \%messages;
+}

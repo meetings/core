@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+
+chdir `d swd`;
+
+system git => branch => $ARGV[0];
+system git => stash => ();
+system git => reset => '--hard' => 'HEAD~1';
+system git => stash => pop => ();

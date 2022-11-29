@@ -1,0 +1,11 @@
+[%#- NOT IMPLEMENTED; how should this work? -%]
+
+[%- IF test_case == 'tapahtumamuistutus' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+user_name = 'Viivi'
+create_events_url = 'http://www.meetin.gs/'
+
+%]
+[%- END %]

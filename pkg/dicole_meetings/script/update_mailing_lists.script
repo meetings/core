@@ -1,0 +1,58 @@
+use WWW::Mailchimp;
+
+my $params = {
+    apikey => 'x-us4',
+    datacenter => 'us4',
+};
+
+my $list_ids = {
+    offers => 'dc0809a55e',
+    info => 'ca2ccf5ce0',
+};
+
+sub execute {
+    my ( $self, $domain_id ) = @_;
+
+    my $users_ids = CTX->lookup_action('domains_api')->e( users_by_domain => { domain_id => $domain_id } );
+    my $users = Dicole::Utils::User->ensure_object_list( $users_ids );
+    my $meetings_api = CTX->lookup_action('meetings_api');
+
+    for my $user ( @$users ) {
+        next unless $user->email;
+        my $user = $meetings_api->_fetch_user_for_email( $user->email, $domain_id );
+        next if $meetings_api->_get_note_for_user( 'meetings_mailing_list_disabled', $user, $domain_id );
+
+        for my $list_key ( keys %$list_ids ) {
+            next if $meetings_api->_get_note_for_user( 'mailchimp_updated_for_' . $list_key, $user, $domain_id );
+            next unless $meetings_api->_get_note_for_user( 'emails_requested_for_' . $list_key, $user, $domain_id ) ||
+                $meetings_api->_get_note_for_user( 'beta_tos_accepted', $user, $domain_id );
+
+            my $mailchimp = WWW::Mailchimp->new( %$params );
+            my $ok = $mailchimp->listSubscribe(
+                 id => $list_ids->{ $list_key },
+                 email_address => $user->email,
+                 update_existing => 1,
+                 double_optin => 0,
+                 merge_vars => [
+                    $user->first_name ? ( FNAME => $user->first_name ) : (),
+                    $user->last_name ? ( LNAME => $user->last_name ) : (),
+                 ],
+            );
+
+            if ( $ok && ref( $ok ) eq 'JSON::XS::Boolean' ) {
+                $meetings_api->_set_note_for_user( 'mailchimp_updated_for_' . $list_key, time, $user, $domain_id );
+                print "Updated $list_key succesfully for " . $user->email . "\n";
+            }
+            else {
+                warn Data::Dumper::Dumper( $ok );
+                if ( $ok && ref( $ok ) eq 'HASH' ) {
+                    if ( $ok->{code} == '502' ) {
+                        $meetings_api->_set_note_for_user( 'mailchimp_updated_for_' . $list_key, time, $user, $domain_id );
+                        warn "Not sending $list_key again for " . $user->email . "\n";
+                    }
+                }
+            }            
+        }
+    }
+
+}

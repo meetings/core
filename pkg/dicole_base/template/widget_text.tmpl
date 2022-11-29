@@ -1,0 +1,24 @@
+[%#- $Id: widget_text.tmpl,v 1.4 2009-01-07 14:42:33 amv Exp $ -%]
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        text => 'text here',
+        filter => undef,
+        html_line_break => undef,
+        preformatted => undef,
+        selected => undef,
+        class => undef,
+    }
+-%]
+[%- IF itemparams.filter %]
+	[%- itemparams.text = itemparams.text | html | html_break %]
+	[%- IF itemparams.html_line_break %][% itemparams.text = itemparams.text | html_line_break %][% END %]
+[%- END -%]
+[%- IF itemparams.preformatted %]
+<pre[%- IF itemparams.class %] class="[% itemparams.class %]"[% END %]>[%- itemparams.text %]</pre>
+[%- ELSE -%]
+    [%- IF itemparams.selected %]<span class="fieldRequiredMarker">&raquo;</span>[% END -%]
+    [%- IF itemparams.class %]<span class="[% itemparams.class %]">[% END -%]
+        [%- itemparams.text -%]
+    [%- IF itemparams.class %]</span>[% END -%]
+[%- END -%]

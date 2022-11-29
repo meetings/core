@@ -1,0 +1,19 @@
+[% IF medias.size %]
+[% FOREACH media IN medias %]
+	<div class="front_media_box">
+		<div class="front_media_image_bg">
+			<a href="[% media.link | html %]" title="[% media.title | html %]" class="front_media_image">
+				<img src="[% media.image | html %]" alt="[% media.title | html %]" />
+			</a>
+		</div>
+		<div class="front_media_info">
+			<a class="front_media_link" href="[% media.link | html %]">[% media.title | html %]</a>
+			<div class="front_media_summary">[% media.summary %]</div>
+			<span class="front_media_date">[% media.date | html %]</span>
+		</div>
+	</div>
+[% END %]
+<a href="[% show_media_url | html %]" class="big-button alpha_png"><span class="alpha_png">[% MSG("Show all") | html %]</span></a>
+[% ELSE %]
+[% MSG("No media found.") | html %]
+[% END %]

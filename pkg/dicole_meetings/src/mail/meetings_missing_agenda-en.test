@@ -1,0 +1,11 @@
+[%- IF test_case == 'missing agenda' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+user_name ='Jonathan Davis'
+login_url = 'http://www.meetin.gs/'
+meeting_title = 'Shareholders meeting'
+participant_names_string = 'Lotta Viitaniemi, Antti Vähäkotamäki and Jussi Kaijalainen'
+
+%]
+[% END %]

@@ -1,0 +1,13 @@
+#profile-wizard
+    div.m-modal
+        div.modal-header
+            h3!=MTN.t('Hang on for a while...')
+        div.modal-content
+            if( user_email && user_email != '0' )
+                p!=MTN.t("We are now synchronizing the data and creating your profile for %1$s. Don't worry, this might take several minutes.",[user_email])
+                div.loader-container(style='height:100px;')
+                p!=MTN.t("If your profile page doesn't show up in 5 minutes, please contact our support at %1$s.",[contact_email])
+                - setTimeout( function(){ window.location.reload(); }, 10000);
+            else
+                p!=MTN.t("Oops, seems like you haven't registered. Please register to the event at %1$s to proceed. If you have already registered, please contact us at %2$s for more information.",[event_website, contact_email])
+

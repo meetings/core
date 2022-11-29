@@ -1,0 +1,65 @@
+#agent-booking-confirm.m-modal
+    .modal-header
+        h3 
+            i.ico-profile
+            != 'Vahvista varaus' || MTN.t('Confirm reservation')
+    .modal-content
+        .infos
+            .info
+                h3=lock.times_string
+            .info
+                h3=booking_data.meeting_type
+                p.m-form.location-area-display
+                p.m-form.location-area
+                    input.location-field(type="text")
+                    i.ico-cross.js-cancel-location
+                    i.ico-check.js-save-location
+                p
+                    a.change-location(href='#')='Muuta sijaintia'||MTN.t('Change location') 
+                    - if (booking_data.agent.verkkosivu) {
+                        span.divider=' | '
+                        a.home-page(href=booking_data.agent.verkkosivu,target='_blank')='Toimiston verkkosivu'||MTN.t('Homepage')
+                    - }
+            .info
+                h3=booking_data.agent.name
+                p=booking_data.agent.title|| MTN.t('Customer service agent');
+        .m-form.content-area
+            .left
+                div.form-row
+                    label.required='Asiakkaan nimi'||MTN.t('Customer name')
+                    input#booking-form-name(type='text')
+                div.form-row
+                    label='Sähköposti'||MTN.t('Email')
+                    input#booking-form-email(type='text',placeholder='Älä täytä jos ei ole sähköpostia')
+                div.form-row
+                    label.required='Puhelinnumero'||MTN.t('Phone number')
+                    input#booking-form-phone(type='text')
+                div.form-row
+                    label.required='Syntymäaika'||MTN.t('Birth date')
+                    input#booking-form-birthdate(type='text')
+                div.form-row
+                    label.required='Osoite'||MTN.t('Address')
+                    input#booking-form-address(type='text')
+                div.form-row
+                    label.required='Postitoimipaikka'||MTN.t('Area')
+                    input#booking-form-area(type='text')
+            .right
+                div.form-row
+                    label.language-label='Kieli'||MTN.t('Language')
+                    select#booking-form-language(type='text')
+                        option(value="fi") Suomi
+                        option(value="sv") Svenska
+                        option(value="en") English
+                div.form-row
+                    label.language-label='Taso'||MTN.t('Level')
+                    select#booking-form-level(type='text')
+                        option(value="etutaso0-1") Etutaso 0-1
+                        option(value="etutaso2-4") Etutaso 2-4
+                div.form-row
+                    label(style="width:300px")='Lisätiedot Lähixcustxzn edustajalle:'||MTN.t('Message to agenda:')
+                div.form-row
+                    textarea#booking-form-agenda(rows="6")
+    .modal-footer
+        .buttons.right
+                a(href='#').button.blue.confirm!='Vahvista'||MTN.t('Confirm')
+                a(href='#').button.gray.cancel!='Peruuta'||MTN.t('Cancel')

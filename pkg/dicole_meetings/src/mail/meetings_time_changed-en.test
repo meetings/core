@@ -1,0 +1,77 @@
+[%#- Sent when the date of the meeting has changed (4 different cases) -%]
+
+[% IF test_case == 'asetettu aika' %]
+[%
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Digikasarmitapaaminen'
+meeting_time = '12:40 (UTC +2)'
+meeting_url = 'www.meatin.gs' 
+time_is_set = '1'
+ics_url = '1' 
+gcal_url = '1' 
+
+%]
+[% END %]
+
+[% IF test_case == 'vaihdettu aika' %]
+[%
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Digikasarmitapaaminen'
+meeting_time = '12:40 (UTC +2)'
+meeting_url = 'www.meatin.gs' 
+time_was_changed = '1'
+ics_url = '1' 
+gcal_url = '1' 
+
+%]
+[% END %]
+
+[% IF test_case == 'poistettu aika' %]
+[%
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Kesäpiknik'
+meeting_url = 'www.meatin.gs' 
+time_was_cleared = '1'
+ics_url = '1' 
+gcal_url = '1' 
+
+%]
+[% END %]
+
+[% IF test_case == 'rsvp' %]
+[%
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Digikasarmitapaaminen'
+meeting_time = '12:40 (UTC +2)'
+meeting_url = 'www.meatin.gs' 
+time_was_changed = '1'
+rsvp_required = '1'
+rsvp_required_by = 'Mummo'
+ics_url = '1' 
+gcal_url = '1' 
+meeting_rsvp_yes_url ='http://url-to-the-meeting-page/'
+meeting_rsvp_no_url ='http://url-to-the-meeting-page/'
+
+
+
+%]
+[% END %]
+
+[% IF test_case == 'Skeduloitu miitti' %]
+[%
+
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'Digikasarmitapaaminen'
+meeting_time = '12:40 (UTC +2)'
+meeting_url = 'www.meatin.gs' 
+proposal_was_chosen = '1'
+ics_url = '1' 
+gcal_url = '1' 
+
+%]
+[% END %]

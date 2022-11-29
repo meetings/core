@@ -1,0 +1,190 @@
+#!/bin/perl
+my $gapier_add_url = 'https://meetings-gapier.appspot.com/add_or_update_row';
+
+sub execute {
+    my ( $s ) = @_;
+    update_schedulings( $s );
+    update_users( $s );
+}
+
+sub update_schedulings {
+    my ( $s ) = @_;
+
+    my $token = 'swipetomeetstats:vonaoxhnxwrgbtid';
+
+#    my $dt = DateTime->new( year => 2015, month => 1, day => 1 );
+    my $dt = Dicole::Utils::Date->epoch_to_datetime( time - 3*30*24*60*60 );
+    my $dtnow = Dicole::Utils::Date->epoch_to_datetime( time );
+
+    my $self = CTX->lookup_action('meetings_api');
+    my $ss = CTX->lookup_object('meetings_scheduling')->fetch_group({
+        where => 'created_date > ?',
+        value => [ $dt->epoch ],
+        order => 'created_date asc'
+    });
+
+    my $days = {};
+
+    while ( $dt->epoch < time + 24*60*60 ) {
+        my $stamp = $dt->ymd;
+        $days->{$stamp} ||= {
+            day => $stamp,
+            total => 0,
+            success => 0,
+            failure => 0,
+            ongoing => 0,
+            'Ongoing IDs' => '',
+            'Ongoing inviters' => '',
+            'Failure: immediate' => 0,
+            'Failure: removed' => 0,
+            'Failure: date set' => 0,
+            'Failure: other' => 0,
+            'Ongoing: nobody opened' => 0,
+            'Ongoing: everyone opened' => 0,
+            'Ongoing: other' => 0,
+         };
+        last if $dt->ymd eq $dtnow->ymd;
+        $dt->add( days => 1 );
+    }
+
+    for my $s ( @$ss ) {
+        my $m = $self->_ensure_meeting_object( $s->meeting_id );
+        my $d = Dicole::Utils::Date->epoch_to_datetime( $s->created_date );
+        my $pos = $self->_fetch_meeting_participant_objects( $m );
+        my $stamp = $d->ymd;
+        next unless $days->{$stamp};
+
+        $days->{$stamp}->{total}++;
+        $days->{$stamp}->{'Average participants'} += scalar( @$pos );
+
+        if ( $s->completed_date ) {
+            $days->{$stamp}->{success}++;
+        }
+        elsif ( $s->removed_date || $s->cancelled_date || $self->_get_note( failed_epoch => $s ) || $m->removed_date || $m->begin_date ) {
+            $days->{$stamp}->{failure}++;
+            if ( $self->_get_note( failed_epoch => $s ) && $self->_get_note( failed_epoch => $s ) < $s->created_date + 20 ) {
+                $days->{$stamp}->{'Failure: immediate'}++;
+            }
+            elsif ( $m->removed_date ) {
+                $days->{$stamp}->{'Failure: removed'}++;
+            }
+            elsif ( $m->begin_date ) {
+                $days->{$stamp}->{'Failure: date set'}++;
+            }
+            else {
+                $days->{$stamp}->{'Failure: other'}++;
+            }
+        }
+        else {
+            $days->{$stamp}->{ongoing}++;
+            $days->{$stamp}->{'Ongoing IDs'} .= ( $days->{$stamp}->{'Ongoing IDs'} ? ', ' : '' ) . $s->id;
+
+            my $inviter = Dicole::Utils::User->ensure_object( $s->creator_id );
+            $days->{$stamp}->{'Ongoing inviters'} .= ( $days->{$stamp}->{'Ongoing inviters'} ? ', ' : '' ) . $inviter->email;
+
+            my $opens = CTX->lookup_object('meetings_scheduling_log_entry')->fetch_group( {
+                where => 'meeting_id = ? AND scheduling_id = ? AND entry_type = ?',
+                value => [ $s->meeting_id, $s->is, 'scheduling_opened' ],
+            } );
+            my $open_by_id = { map { $_->user_id => 1 } @$opens };
+
+            my $everyone_opened = 1;
+            my $nobody_opened = 1;
+
+            for my $po ( @$pos ) {
+                next if $po->user_id == $s->creator_id;
+                if ( $open_by_id->{ $po->user_id } ) {
+                    $nobody_opened = 0;
+                }
+                else {
+                    $everyone_opened = 0;
+                }
+            }
+
+            if ( $everyone_opened ) {
+                $days->{$stamp}->{'Ongoing: everyone opened'} += 1;
+            }
+            elsif ( $nobody_opened ) {
+                $days->{$stamp}->{'Ongoing: nobody opened'} += 1;
+            }
+            else {
+                $days->{$stamp}->{'Ongoing: other'} += 1;
+            }
+        }
+    }
+
+    for my $day ( reverse sort keys %$days ) {
+        my $data = $days->{$day};
+        if ( exists( $data->{'Average participants'} ) ) {
+            my $avg = $data->{'Average participants'} / $data->{total};
+            $avg = int( $avg * 100 ) / 100;
+            $data->{'Average participants'} = $avg;
+        }
+        my $match_json = Dicole::Utils::JSON->encode( { day => delete $data->{day} } );
+        my $set_json = Dicole::Utils::JSON->encode( $data );
+        my $cmd = "curl $gapier_add_url --max-time 10 -s --data-urlencode 'worksheet_token=$token' --data-urlencode 'match_json=$match_json' --data-urlencode 'set_json=$set_json'";
+        print "$cmd" . "\n";
+        print `$cmd` . "\n";
+    }
+}
+
+sub update_users {
+    my ( $s ) = @_;
+
+    my $token = 'swipetomeetuserstats:tavhvhigmkctymfy';
+
+#    my $dt = DateTime->new( year => 2015, month => 1, day => 1 );
+    my $dt = Dicole::Utils::Date->epoch_to_datetime( time - 3*24*60*60 );
+    my $dtnow = Dicole::Utils::Date->epoch_to_datetime( time );
+
+    my $self = CTX->lookup_action('meetings_api');
+    my $users = CTX->lookup_object('user')->fetch_group({
+        where => 'notes like "%swipetomeet%"',
+    });
+
+    my $days = {};
+
+    while ( $dt->epoch < time + 24*60*60 ) {
+        my $stamp = $dt->ymd;
+        $days->{$stamp} ||= {
+            day => $stamp,
+            total => 0,
+            android => 0,
+            ios => 0,
+         };
+        last if $dt->ymd eq $dtnow->ymd;
+        $dt->add( days => 1 );
+    }
+
+    for my $u ( @$users ) {
+        my $ios_login = $self->_get_note_for_user( swipetomeet_ios_device_first_login => $u, 131 );
+        my $android_login = $self->_get_note_for_user( swipetomeet_android_device_first_login => $u, 131 );
+
+        next unless $ios_login || $android_login;
+
+        if ( $ios_login && ( ! $android_login || $ios_login < $android_login ) ) {
+            $android_login = 0;
+        }
+        else {
+            $ios_login = 0;
+        }
+        my $d = Dicole::Utils::Date->epoch_to_datetime( $ios_login || $android_login );
+        my $stamp = $d->ymd;
+        next unless $days->{$stamp};
+
+        $days->{$stamp}->{total}++;
+        $days->{$stamp}->{android}++ if $android_login;
+        $days->{$stamp}->{ios}++ if $ios_login;
+    }
+
+    for my $day ( reverse sort keys %$days ) {
+        my $data = $days->{$day};
+        my $match_json = Dicole::Utils::JSON->encode( { day => delete $data->{day} } );
+        my $set_json = Dicole::Utils::JSON->encode( $data );
+        my $cmd = "curl $gapier_add_url --max-time 10 -s --data-urlencode 'worksheet_token=$token' --data-urlencode 'match_json=$match_json' --data-urlencode 'set_json=$set_json'";
+        print "$cmd" . "\n";
+        print `$cmd` . "\n";
+    }
+}
+
+1;

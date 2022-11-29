@@ -1,0 +1,45 @@
+[%#- Send whenever a login link is requested or required. Examples are: a) user inputs email to login page, b) already registered user tries to sign up (from web or signup@) -%]
+
+[%- IF test_case == 'pin' %]
+[%-
+pin = 1234
+server_host = 'http://dev.meetin.gs'
+user_name = 'Viivi'
+login_url = 'https://meetin.gs/linkki'
+service_name = 'Meetin.gs'
+%]
+[%- END -%]
+
+[%- IF test_case == 'loggaustesti' %]
+[%-
+server_host = 'http://dev.meetin.gs'
+user_name = 'Viivi'
+login_url = 'https://meetin.gs/linkki'
+service_name = 'Meetin.gs'
+
+%]
+[%- END -%]
+
+[%- IF test_case == 'first_time_user' %]
+[%-
+pin = 1234
+server_host = 'http://dev.meetin.gs'
+user_name = 'Viivi'
+login_url = 'https://meetin.gs/linkki'
+new_user = 1
+service_name = 'Meetin.gs'
+%]
+[%- END -%]
+
+[%- IF test_case == 'password_first' %]
+[%-
+pin = 1234
+server_host = 'http://dev.meetin.gs'
+user_name = 'Viivi'
+login_url = 'https://meetin.gs/linkki'
+new_user = 1
+account = 'antti@dicole.com'
+password = 'gRs7HHd'
+service_name = 'Meetin.gs'
+%]
+[%- END -%]

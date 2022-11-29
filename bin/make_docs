@@ -1,0 +1,19 @@
+#!/bin/sh
+
+DICOLE_DOCS="dicole_docs"
+POD_SOURCE="$DICOLE_LIB doc/development"
+POD_TARGET="-dir $DICOLE_DOCS"
+IMAGES_TARGET=$DICOLE_DOCS
+IMAGES_SOURCE='misc/doc/images'
+POD2HTML="mpod2html"
+CSS_TARGET=$DICOLE_DOCS
+CSS_SOURCE="misc/doc"
+CSS_FILE="dicole-documentation.css"
+CSS_LOC="${DICOLE_DOCS}/$CSS_FILE"
+PWD_AS=`pwd`
+POD2HTML_PARAMS="-noidx -tocname index -stylesheet ${PWD_AS}/$CSS_LOC"
+
+rm -rf $DICOLE_DOCS
+$POD2HTML $POD_SOURCE $POD_TARGET $POD2HTML_PARAMS
+cp -r ${CSS_SOURCE}/$CSS_FILE $CSS_TARGET
+cp -r $IMAGES_SOURCE $IMAGES_TARGET

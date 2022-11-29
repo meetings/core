@@ -1,0 +1,42 @@
+[% IF meeting_title %][% MTN.t("Action required: Your meeting %1\$s is not yet ready",[meeting_title]) %][% ELSE %][% MTN.t("Your untitled meeting is not yet ready") %][% END %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Hello,',[user_name]) %]
+
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<bubble>>>
+
+<<<p>>>
+[% IF meeting_title %]
+[% MTN.t('Your meeting %(B$%1$s%) is still a %(B$draft%).',[meeting_title]) %]
+[% ELSE %]
+[% MTN.t('Your %(B$untitled meeting%) is still a %(B$draft%).') %]
+[% END %]
+<<</p>>>
+
+[% calendar_links_disabled = 1 %]
+<<<basic_info>>>
+
+<<</p>>>
+
+<<<p>>>[% MTN.t('%(B$The participants do not yet have access%) to the meeting page and materials.') %]<<</p>>>
+
+<<<p>>>[% MTN.t('Go to the meeting page, check that everything is OK and then click "Ready" on the top right corner, so that the invitations get sent out to the participants.') %]<<</p>>>
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=draft_incomplete' %]
+[% text = MTN.t('Open meeting page') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+<<</bubble>>>
+
+<<<app_buttons>>>
+
+
+<<</html_wrapper>>>

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+echo 'HOWTO USE THIS?'
+echo
+echo 'RUN bin/translations/update_target_pot_files'
+echo 'RUN cleanup: git checkout template/mail'
+echo 'PICK the additions you want by running: git diff src/locale/*.pot'
+echo 'PLACE the front additions manually to src/locale/temp_add_front'
+echo 'PLACE the back additions manually to src/locale/temp_add_back'
+echo 'RUN cleanup: git checkout src/locale/*.pot'
+echo 'RUN this script with add param: bin/translations/manual_add add'
+echo 'NOTE: you will get the additions appended to all .po files as is'
+echo 'NOTE: the temp_add -files will be removed'
+echo 'NOTE: you will have to manually edit the .po files to contain translations'
+echo
+
+if [ "$1" == 'add' ]; then
+echo 'ADDING....'
+
+touch src/locale/temp_add_front
+find src/locale |grep desktop_front |xargs -n1 -I{} sh -c 'cat src/locale/temp_add_front >> {}'
+rm src/locale/temp_add_front
+
+touch src/locale/temp_add_back
+find src/locale |grep desktop_back |xargs -n1 -I{} sh -c 'cat src/locale/temp_add_back >> {}'
+rm src/locale/temp_add_back
+echo 'DONE! You will now have to edit the po files at the end to contain translations.'
+echo
+echo 'AFTER EDITING: commit, compile & amend the relevant changes using the following'
+echo '  git add -p src/locale'
+echo '  git commit -m "translation update"'
+echo '  git stash'
+echo '  bin/translations/compile_translations'
+echo '  bin/translations/git_add_pulled_files'
+echo '  git commit --amend'
+echo '  git stash pop'
+echo '  bin/amend_builds_to_last_commit'
+echo
+fi

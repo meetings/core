@@ -1,0 +1,30 @@
+div#meetme-timezone-popup.m-modal
+    div.modal-header
+        h3!=MTN.t('Check your time zone')
+    div.modal-content
+        p!=MTN.t('Your currently chosen time zone is different from your device time zone. Which time zone would you like to use?')
+        div.m-form
+            label.radio
+                input(type="radio",name="tzname",checked="checked",value=ua_tz)
+                !=MTN.t("Your device's time zone") + ' '
+                =tz_data[ua_tz].readable_name
+            p.now
+                !=MTN.t('Current time for this zone is:') + ' '
+                span=moment.utc(d.getTime() + tz_data[ua_tz].offset_value * 1000).format('hh:mm A')
+
+
+            p.radio
+                input#user-tz(type="radio",name="tzname",value=tz_data[user_tz].name)
+                !=MTN.t('Your time zone setting') + ' '
+                select#timezone-select.chosen
+                    each tz, i in tz_choices
+                        if( tz === user_tz )
+                            option(value=tz_data[tz].name,selected="selected")=tz_data[tz].readable_name
+                        else
+                            option(value=tz_data[tz].name)=tz_data[tz].readable_name
+            p.now
+                !=MTN.t('Current time for this zone is:') + ' '
+                span#user-time=moment.utc(d.getTime() + tz_data[user_tz].offset_value * 1000).format('hh:mm A')
+    div.modal-footer
+        div.buttons.right
+            a(href='#').change-timezone.button.blue!=MTN.t('Continue')

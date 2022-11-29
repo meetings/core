@@ -1,0 +1,19 @@
+[%#- $Id: attachment.tmpl,v 1.3 2009-01-07 14:42:32 amv Exp $ -%]
+
+[%- DEFAULT
+        images.tree = '/images/theme/default' _ '/tree/16x16/'
+    images.nav = '/images/theme/default' _ '/navigation/attachments/'
+        itemparams.attributes.icon = 'mime/document.png'
+    itemparams.attributes.name = 'example.txt'
+    itemparams.attributes.view_href = ''
+        itemparams.attributes.download_href = ''
+        itemparams.attributes.info_href = ''
+    itemparams.attributes.files_href = ''
+-%]
+<span class="attachmentItem">
+[%- IF itemparams.attributes.icon %]<img src="[% images.tree _ itemparams.attributes.icon %]" />[% END %]
+[%- itemparams.attributes.name -%] - [%- IF itemparams.attributes.view_href %]<a href="#" onclick='window.open("[% itemparams.attributes.view_href %]", "view", "toolbar=no,menubar=no,statusbar=no,scrollbars=yes,width=600,height=480");'><img src="[% images.nav %]view.png" title="[% MSG('View') %]" alt="[% MSG('View') %]" /></a>[% END %]
+[%- IF itemparams.attributes.download_href %]<a href="[% itemparams.attributes.download_href %]"><img title="[% MSG('Download') %]" alt="[% MSG('Download') %]" src="[% images.nav %]download.png" /></a>[% END %]
+[%- IF itemparams.attributes.info_href %]<a href="#" onclick='window.open("[% itemparams.attributes.info_href %]", "info", "toolbar=no,menubar=no,statusbar=no,scrollbars=yes,width=600,height=480");'><img title="[% MSG('Properties') %]" alt="[% MSG('Properties') %]" src="[% images.nav %]info.png" /></a>[% END -%]
+[%- IF itemparams.attributes.files_href %]<a href="[% itemparams.attributes.files_href %]"><img title="[% MSG('Link to file area') %]" alt="[% MSG('Link to file area') %]" src="[% images.nav %]files.png" /></a>[% END -%]
+</span>

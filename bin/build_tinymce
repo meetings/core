@@ -1,0 +1,37 @@
+#!/bin/bash
+if [ ! -d misc/tinymcesource ]; then
+    echo "Must be in source root";
+    exit 1;
+fi
+
+mkdir -p tinymcebuild;
+cp misc/tinymcesource/*.tgz tinymcebuild
+cd tinymcebuild
+if [ -d ../misc/tinymcesource/svntrunk ]; then
+    echo "compiling from svn trunk.."
+    mkdir tinymce
+    cp -R ../misc/tinymcesource/svntrunk/* tinymce/
+else
+    echo "compiling from dev package.."
+    tar zxf tinymce_*_dev.tgz
+fi
+
+tar zxf tinymce_lpackage.tgz
+cp -r ../misc/tinymce/jscripts/* tinymce/jscripts/
+cd tinymce
+# remove CVS and svn directories
+find . |grep 'CVS$'|xargs rm -Rf
+find . |grep '\.svn$'|xargs rm -Rf
+# copy paste plugin trimmer also as dicole plugin trimmer
+perl -pi -e 's/(.*)paste(.*)paste(.*)/${1}paste${2}paste$3\n${1}dicole${2}dicole$3/' JSTrim.config
+mono JSTrim.exe -f |grep -v Skip |grep -v Appended
+# remove source javascripts
+find . |grep '_src.js$' | xargs rm
+# remove the $Id rows to avoid dozens of obsolete changes
+find . |grep 'js$'| xargs perl -ni -e 'print $_ unless $_ =~ /\$Id/'
+
+mkdir -p ../../pkg/dicole_tinymce/html/tinymce/
+cp -R jscripts ../../pkg/dicole_tinymce/html/tinymce/
+
+cd ../..
+rm -Rf tinymcebuild

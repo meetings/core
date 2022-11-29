@@ -1,0 +1,10 @@
+<div [%- IF itemparams.id %] id="[% itemparams.id %]"[% END %] class="tag_suggestions[%- IF itemparams.target_id %] tag_suggestions_[% itemparams.target_id %][% END %][% IF itemparams.class %] [% itemparams.class %][% END %]">
+[%- first = 1 %]
+[%- FOREACH item = itemparams.tags %]
+[% IF first %][% first = 0 %][% ELSE %], [% END %]<a class="tag_suggestion" href="#">[% item|html %]</a>
+[% END %]</div>
+
+
+
+
+

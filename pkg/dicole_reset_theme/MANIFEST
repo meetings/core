@@ -1,0 +1,7 @@
+Changes
+conf/theme.ini
+html/css/dicole_reset/style.css
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/App/DicoleResetTheme.pm
+package.ini

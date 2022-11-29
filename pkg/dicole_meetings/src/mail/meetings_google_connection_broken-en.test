@@ -1,0 +1,12 @@
+[%- IF test_case == 'username' %]
+[%-
+user_name ='Jonathan Davis'
+%]
+[%- END %]
+
+[%- IF test_case == 'no_username' %]
+[%-
+
+
+%]
+[%- END %]

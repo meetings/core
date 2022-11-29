@@ -1,0 +1,27 @@
+[% MTN.t('%1$s: What are the next steps?',[meeting_title]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t("There are no action points for the meeting.") %]
+<<<text_and_logo>>>
+<<<h1>>>[% MTN.t("What was the outcome? Hit reply and provide a summary.") %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t("What was the outcome of %(B\$%1\$s?%) Did you make any decisions? What happens next?", [meeting_title])%]<<</p>>>
+
+<<<p>>>[% MTN.t("%(B\$Just reply to this email%) and we'll send a beautiful summary to %(B\$%1\$s%). If you want to put a bit more effort into it just hit the button below and fill the action points. ", [participant_names_string]) %]<<</p>>>
+
+[% url = login_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=action_points_incomplete' %]
+[% text = MTN.t("Fill the Action Points") %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+
+<<</bubble>>>
+
+<<<p>>>[% MTN.t("ps. Feel free to ignore this email if no summary is needed.") %]<<</p>>>
+
+[% IF 0 %]<<<p>>><<<bold>>>[% MTN.t("Should someone else do this instead? Delegate to:") %]<<</bold>>><<</p>>>[% END %]
+
+<<</html_wrapper>>>
+

@@ -1,0 +1,39 @@
+[% IF matchmaker_company && matchmaker_name == matchmaker_email %][% to_be_met = matchmaker_company %][% ELSIF matchmaker_company %][% to_be_met = matchmaker_name _ ' from ' _ matchmaker_company %][% ELSE %][% to_be_met = matchmaker_name %][% END %][% MTN.t('Confirm your request for a meeting with %1$s', [to_be_met]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Hi %1$s,',[user_name ]) %]
+[% action_text_type = 'large' %]
+
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<bubble>>>
+
+<<<p>>>
+[% MTN.t('Your e-mail %(B$%1$s%) is already in our system - Been with us before, have you? Welcome back.',[user_email]) %]
+<<</p>>>
+
+<<<p>>>
+[% IF matchmaker_company && matchmaker_name == matchmaker_email %][% to_be_met = matchmaker_company %][% ELSIF matchmaker_company %][% to_be_met = matchmaker_name _ ' from ' _ matchmaker_company %][% ELSE %][% to_be_met = matchmaker_name %][% END %]
+[% MTN.t('Please, click the button below to confirm your meeting request with %(B$%1$s%).',[to_be_met]) %]
+<<</p>>>
+
+[% url = verify_url %]
+[% text = MTN.t('Confirm meeting request') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+
+<<<hr>>>
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t('Meetin.gs - The smartest way to meet') %]<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

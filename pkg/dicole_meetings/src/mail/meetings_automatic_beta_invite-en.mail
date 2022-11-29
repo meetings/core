@@ -1,0 +1,13 @@
+[% MTN.t("Invitation to Meetin.gs") %]
+
+<<<html_wrapper>>>
+
+<<<p>>>[% MTN.t("Hello %1\$s,"[user_name]) %]<<</p>>>
+<<<p>>>[% MTN.t("Thank you for signing up for Meetin.gs.") %]<<</p>>>
+<<<p>>>[% MTN.t("Action required: click the following link to complete the registration process:") %]<<</p>>>
+[% url = register_url %]
+[% text = MTN.t('Complete registration process') %]
+<<<blue_button>>>
+<<<p>>>[% MTN.t("Remember to add info@meetin.gs to your address book to ensure safe delivery of email in the future.") %]<<</p>>>
+
+<<</html_wrapper>>>

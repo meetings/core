@@ -1,0 +1,16 @@
+
+sub execute {
+    my $users = CTX->lookup_object('user')->fetch_group({}) || [];
+
+    for my $user ( @$users ) {
+        my $settings = Dicole::Settings->new;
+        $settings->user( 1 );
+        $settings->user_id( $user->id );
+        $settings->group( 0 );
+        $settings->tool( 'settings_reminders' );
+        $settings->fetch_settings;
+        $settings->setting('group_default', 'daily');
+    }
+}
+
+1;

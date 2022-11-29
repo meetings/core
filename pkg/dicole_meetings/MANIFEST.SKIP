@@ -1,0 +1,16 @@
+\bCVS\b
+~$
+^oi2_manage\.log$
+\.old$
+\.bak$
+\.backup$
+^tmp
+^_
+^src
+\.sass\-cache
+\.gitignore
+^script/
+^bin/
+^misc
+^build/
+^\.

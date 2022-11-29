@@ -1,0 +1,23 @@
+[% # $Id: image.tmpl,v 1.10 2009-01-07 14:42:33 amv Exp $ # %]
+
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        attributes =
+            {
+                all of the XHTML attributes that go with the element
+            }
+    }
+%]
+
+[% DEFAULT
+    itemparams =
+        {
+            src => '#'
+        }
+
+%]
+
+[% IF itemparams.href %]<a [% IF itemparams.href_target %]target="[% itemparams.href_target %]" [% END %]href="[% itemparams.href %]">[% END %]<img [% FOREACH attr = itemparams.attributes %] [% IF attr.value -%]
+[% attr.key %]="[% attr.value %]"[% END %]
+[%- END -%] />[% IF itemparams.href %]</a>[% END %]

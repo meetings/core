@@ -1,0 +1,10 @@
+Changes
+conf/action.ini
+conf/spops.ini
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleSearch.pm
+OpenInteract2/App/DicoleSearch.pm
+OpenInteract2/SQLInstall/DicoleSearch.pm
+package.ini
+struct/dicole_search.sql

@@ -1,0 +1,49 @@
+[%
+new_users => [
+	{ 
+		value => 0, 
+		name => 'Kalevi Sikiö', 
+		title => 'Kuoleman Lähettiläs'
+		image_55 => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+	{ 
+		value => 1, 
+		name => 'Matti Wanhanen', 
+		title => 'Lautamies',
+		image_55 => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+]
+%]
+
+<div class="networking_new_users">
+	[%-# FOREACH user IN new_users %]
+
+	<div class="networking_avatar">
+		[%- IF user.url -%]
+			<a href="[% user.url | html %]">
+				[%- IF user.image_55 %]
+				<img src="[% user.image_55 | html %]" />
+				[%- END %]
+			</a>
+		[%- END -%]
+
+		<div class="networking_metadata">
+			[%- IF user.url -%]
+			<a class="networking_people" href="[% user.url %]">[% user.name  %]</a>
+			[%- ELSE -%]
+			[%- user.name -%]
+			[%- END -%]
+			[%- user.title -%]
+		</div>
+
+	</div>
+
+	[%- END %]
+	<div class="networking_expand">
+		<a href="">&darr;[%- MSG('Add more members') | html %]</a>
+	</div>
+
+</div>
+

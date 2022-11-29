@@ -1,0 +1,16 @@
+use strict;
+use warnings;
+
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ($self) = @_;
+
+    Dicole::Utils::SQL->execute_sql(
+        'alter table dicole_attachment add video_length_seconds int unsigned'
+    );
+
+    1
+}
+
+1

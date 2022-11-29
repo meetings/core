@@ -1,0 +1,19 @@
+[% MTN.t('Problem with your meeting invitation') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Something went wrong') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t('Unfortunately we could not process the meeting invitation sent to %1$s. We could not find the ICS calendar data in your email.',[sent_to_email]) %]<<</p>>>
+<<<p>>>[% MTN.t('Maybe you want to try again?') %]<<</p>>>
+<<<p>>>[% MTN.t('Please contact our support if the problem persists.') %]<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>> 

@@ -1,0 +1,27 @@
+$install_metadata = [ {
+        import_type => 'object',
+        spops_class => 'OpenInteract2::DicoleTypesets',
+        field_order => [ qw/ groups_id machine_name title url machine_url description status copyright / ]
+        },
+        [ 0, 'Dicolegeneraltypes', 'Dicole general types',
+        'http://www.dicole.org',
+        '',
+        'typeset.gentypes.desc',
+        'Recommended',
+        '(c) Ionstream Oy / Dicole. All rights reserved.'
+        ],
+        [ 0, 'DicolePBLtypes', 'Dicole PBL types',
+        'http://www.dicole.org',
+        '',
+        "typeset.pbltypes.desc",
+        'Recommended',
+        '(c) Ionstream Oy / Dicole. All rights reserved.'
+        ],
+        [ 0,'dcmitypes', 'DCMI Type Vocabulary',
+        'http://dublincore.org/documents/dcmi-type-vocabulary/',
+        'http://purl.org/dc/dcmitype',
+        'typeset.dmitypes.desc',
+        'DCMI Recommendation',
+        'Copyright 2004-06-14 Dublin Core Metadata Initiative. All Rights Reserved. http://www.dublincore.org/copyright/',
+        ],
+];

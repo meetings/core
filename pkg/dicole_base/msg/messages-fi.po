@@ -1,0 +1,377 @@
+# translation of messages-fi.po to Finnish
+# $Id: messages-fi.po,v 1.24 2010-04-29 18:25:29 amv Exp $
+# Teemu Arina <info@dicole.org>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: messages-fi\n"
+"Last-Translator: Teemu Arina <info@dicole.org>\n"
+"POT-Creation-Date: 2005-03-22 02:05:04+0000\n"
+"PO-Revision-Date: 2005-07-15 03:04+0300\n"
+"Language-Team: Finnish <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+msgid "Default personal rights"
+msgstr "Käyttäjän oletusoikeudet"
+
+msgid "Yes"
+msgstr "Kyllä"
+
+msgid "No"
+msgstr "Ei"
+
+msgid "Search"
+msgstr "Hae"
+
+msgid "Clear search"
+msgstr "Tyhjennä haku"
+
+msgid "Next"
+msgstr "Seuraava"
+
+msgid "Previous"
+msgstr "Edellinen"
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Add checked items"
+msgstr "Lisää merkityt kohteet"
+
+msgid "Remove checked"
+msgstr "Poista merkityt"
+
+msgid "Check all"
+msgstr "Merkitse kaikki"
+
+msgid "Clear checkboxes"
+msgstr "Poista merkinnät"
+
+msgid "Nothing found."
+msgstr "Kohteita ei löytynyt."
+
+msgid "Page:"
+msgstr "Sivu:"
+
+msgid "Search:"
+msgstr "Haku:"
+
+msgid "Finish"
+msgstr "Valmis"
+
+msgid "Success"
+msgstr "OK"
+
+msgid "Warning"
+msgstr "Varoitus"
+
+msgid "Error"
+msgstr "Virhe"
+
+msgid "An error occured: %1"
+msgstr "Virhe tapahtui: %1"
+
+msgid "Creating document %1 failed: %1"
+msgstr "Dokumentin %1 luonti epäonnistui: %1"
+
+msgid "Creating folder %1 failed: %2"
+msgstr "Kansion %1 luonti epäonnistui: %2"
+
+msgid "Default"
+msgstr "Oletus"
+
+msgid "Document %1 written."
+msgstr "Dokumentti %1 on luotu."
+
+msgid "File %1 does not exist."
+msgstr "Tiedostoa %1 ei löydy."
+
+msgid "File %1 is not in GZIP format."
+msgstr "Tiedosto %1 ei ole GZIP formaatissa."
+
+msgid "File %1 is not in TAR format."
+msgstr "Tiedosto %1 ei ole TAR formaatissa."
+
+msgid "File %1 is not in ZIP format."
+msgstr "Tiedosto %1 ei ole ZIP formaatissa."
+
+msgid "File %1 uncompressed."
+msgstr "Tiedosto %1 purettu."
+
+msgid "File %1 uploaded."
+msgstr "Tiedosto %1 siirretty palvelimelle."
+
+msgid "File upload field does not exist."
+msgstr "Tiedoston siirtoon palvelimelle tarkoitettua kenttää ei löytynyt."
+
+msgid "Folder %1 already exists."
+msgstr "Kansio %1 on jo olemassa."
+
+msgid "Folder %1 created."
+msgstr "Kansio %1 on luotu."
+
+msgid "Full screen"
+msgstr "Koko näyttö"
+
+msgid "New document %1 created."
+msgstr "Uusi dokumentti %1 on luotu."
+
+msgid "Renamed %1 as %2."
+msgstr "Kohde %1 on nimetty uudelleen. Uusi nimi on %2."
+
+msgid "Renaming location failed: %1"
+msgstr "Kohteen uudelleen nimeäminen epäonnistui: %1"
+
+msgid "Resolution:"
+msgstr "Resoluutio:"
+
+msgid "The following files already exist: %1"
+msgstr "Seuraavat tiedostot ovat jo olemassa: %1"
+
+msgid "Uncompression method for file %1 is not supported."
+msgstr "Tiedostolle %1 ei ole olemassa purkumenetelmää."
+
+msgid "Writing document %1 failed: %2"
+msgstr "Dokumentin %1 kirjoittaminen epäonnistui: %2"
+
+msgid "%1 already exists."
+msgstr "Kohde %1 on jo olemassa."
+
+msgid "Valid XHTML 1.0"
+msgstr "Standardien mukaista XHTML 1.0 -lähdekoodia"
+
+msgid "Select"
+msgstr "Valitse"
+
+msgid "or add new"
+msgstr "tai lisää uusi"
+
+msgid "The fields marked with arrows are required."
+msgstr "Nuolilla merkityt kentät ovat pakollisia."
+
+msgid "The passwords do not match."
+msgstr "Salasanat eivät täsmää."
+
+msgid "The password is too short. Minimum password length is %1 characters."
+msgstr "Salasana on liian lyhyt. Salasanan pitää olla vähintään %1 merkkiä pitkä."
+
+msgid "Browse..."
+msgstr "Selaa..."
+
+msgid "Powered by Dicole Knowledge Work Environment"
+msgstr "Ytimenä toimii Dicole tietotyöympäristö"
+
+msgid "Link to file area"
+msgstr "Linkki tiedostoalueelle"
+
+msgid "Download"
+msgstr "Lataa"
+
+msgid "View"
+msgstr "Katsele"
+
+msgid "Properties"
+msgstr "Tarkemmat tiedot"
+
+msgid "Save failed: %1"
+msgstr "Tallennus epäonnistui: %1"
+
+msgid "Are you sure you want to remove the selected items?"
+msgstr "Oletko varma, että haluat poistaa merkityt kohteet?"
+
+msgid "Confirmation"
+msgstr "Varmistus"
+
+msgid "Error during remove: %1"
+msgstr "Virhe poiston yhteydessä: %1"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "Archive checked"
+msgstr "Arkistoi merkityt"
+
+msgid "Are you sure you want to archive the selected items?"
+msgstr "Oletko varma, että haluat siirtää merkityt kohteet arkistoon?"
+
+msgid "Show archived"
+msgstr "Näytä arkistoidut"
+
+msgid "Error during archive: %1"
+msgstr "Virhe arkistoitaessa: %1"
+
+msgid "Box title"
+msgstr "Laatikon otsikko"
+
+msgid "Restore checked"
+msgstr "Palauta merkityt arkistosta"
+
+msgid "Error during restore: %1"
+msgstr "Virhe palautuksen yhteydessä: %1"
+
+msgid "Show archive"
+msgstr "Näytä arkisto"
+
+msgid "Data was saved successfully."
+msgstr "Tiedot on tallennettu onnistuneesti."
+
+msgid "Steps"
+msgstr "Vaiheet"
+
+msgid "Subscribe with feed reader"
+msgstr "Tilaa noutajaan"
+
+msgid "Personal compilations"
+msgstr "Henkilökohtaiset oikeuskokoelmat"
+
+msgid "Are you sure you want to remove the selected themes?"
+msgstr "Oletko varma, että halut poistaa merkityt teemat?"
+
+msgid "Default theme"
+msgstr "Oletusteema"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Error while installing theme: %1"
+msgstr "Virhe asennettaessa teemaa: %1"
+
+msgid "File is not a valid theme package!"
+msgstr "Tiedosto ei ole toimiva teema!"
+
+msgid "Installed version %1 of theme %2"
+msgstr "Versio %1 asennettu teemasta %2"
+
+msgid "List of themes"
+msgstr "Teemalistaus"
+
+msgid "List themes"
+msgstr "Listaa teemat"
+
+msgid "Manage themes"
+msgstr "Hallitse teemoja"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "No image."
+msgstr "Ei kuvaa."
+
+msgid "Remove themes"
+msgstr "Poista teemoja"
+
+msgid "Screenshot"
+msgstr "Kuvankaappaus"
+
+msgid "Set as default theme"
+msgstr "Aseta oletusteemaksi"
+
+msgid "Show list of themes"
+msgstr "Näytä lista teemoista"
+
+msgid "Theme author"
+msgstr "Teeman tekijä"
+
+msgid "Theme details"
+msgstr "Teeman tiedot"
+
+msgid "Theme in ZIP format"
+msgstr "Teema ZIP pakattuna tiedostona"
+
+msgid "Theme manager"
+msgstr "Teemahallinta"
+
+msgid "Theme Manager"
+msgstr "Teemahallinta"
+
+msgid "Themes registered in the system"
+msgstr "Järjestelmään rekisteröidyt teemat"
+
+msgid "This theme requires parent theme package %1 which is not present."
+msgstr "Tämä teema vaatii isäntäteeman %1, jota ei ole tällä hetkellä asennettuna."
+
+msgid "This theme version is already installed."
+msgstr "Tämä teemaversio on jo asennettu."
+
+msgid "Unable to find conf/theme.ini in theme package %1"
+msgstr "Tiedostoa conf/theme.ini ei löytynyt teemapaketista %1"
+
+msgid "Upload theme in ZIP format"
+msgstr "Siirrä teema palvelimelle ZIP muodossa"
+
+msgid "Upload theme"
+msgstr "Siirrä teema"
+
+msgid "Upload"
+msgstr "Siirrä uusi"
+
+msgid "User can manage themes installed in the system"
+msgstr "Käyttäjä voi hallita järjestelmään asennettuja teemoja"
+
+msgid "Version"
+msgstr "Versio"
+
+msgid "Help"
+msgstr "Ohje"
+
+msgid "Generate password"
+msgstr "Luo satunnainen salasana"
+
+msgid "Send password through email"
+msgstr "Lähetä salasana sähköpostitse"
+
+msgid "Email content for login credentials"
+msgstr "Sähköpostisisältö tunnusten lähettämistä varten"
+
+msgid "Subject of login credentials email"
+msgstr "Tunnukset sisältävän sähköpostin otsikko"
+
+msgid "Calendar"
+msgstr "Kalenteri"
+
+msgid "Given date does not exist"
+msgstr "Annettua päivämäärää ei ole olemassa"
+
+msgid "Powered by Dicole Community Platform"
+msgstr "Powered by Dicole Community Platform"
+
+msgid "You do not have the rights to access the page you tried to open. Contact your administrator for more information."
+msgstr "Yritit avata sivun, jota sinulla ei ole oikeutta nähdä. Ota tarvittaessa yhteyttä ylläpitäjääsi."
+
+msgid "a moment ago (about_when)"
+msgstr "hetki sitten"
+
+msgid "an hour ago (about_when)"
+msgstr "tunti sitten"
+
+msgid "%1 hours ago (about_when)"
+msgstr "%1 tuntia sitten"
+
+msgid "yesterday (about_when)"
+msgstr "eilen"
+
+msgid "on monday (about_when)"
+msgstr "maanantaina"
+
+msgid "on tuesday (about_when)"
+msgstr "tiistaina"
+
+msgid "on wednesday (about_when)"
+msgstr "keskiviikkona"
+
+msgid "on thursday (about_when)"
+msgstr "torstaina"
+
+msgid "on friday (about_when)"
+msgstr "perjantaina"
+
+msgid "on saturday (about_when)"
+msgstr "lauantaina"
+
+msgid "on sunday (about_when)"
+msgstr "sunnuntaina"
+
+msgid "%1 days ago (about_when)"
+msgstr "%1 päivää sitten"

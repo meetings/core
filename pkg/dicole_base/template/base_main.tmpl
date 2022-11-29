@@ -1,0 +1,12 @@
+[% # $Id: base_main.tmpl,v 1.11 2009-01-07 14:42:32 amv Exp $ # %]
+[%- DEFAULT
+	images.default				= '/images'
+	images.theme				= images.default _ '/theme/default'
+	images.navigation		= images.theme _ '/navigation'
+	images.toolicons			= images.theme _ '/content/toolicons'
+	naviDD						= 'true'
+-%]
+[%- WRAPPER dicole_base::base_simple %]
+[% navigation %]
+[% content %]
+[%- END %]

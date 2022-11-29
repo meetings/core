@@ -1,0 +1,635 @@
+#facebook_register_button {
+font-weight: normal;
+}
+
+#navi_logo_link 
+{
+background:transparent url(/images/theme/elisa/logo.png) no-repeat scroll 0 30px;
+display:block;
+width:270px;
+}
+
+body {
+background-color:#0061A0;
+background-image:url(/images/theme/elisa/bg.jpg);
+background-repeat:no-repeat;
+}
+
+.content 
+{
+background:transparent none repeat scroll 0 0;
+border-left:0 none;
+border-right:0 none;
+clear:both;
+height:100%;
+margin:0 auto;
+text-align:left;
+width:75em;
+}
+
+#navi_actions 
+{
+background:transparent url(/images/theme/elisa/boxbg.png) no-repeat scroll 0 0;
+border-bottom:0;
+color:#FFFFFF;
+margin-left:0;
+padding:10px 0 12px;
+text-align:center;
+width:321px;
+}
+
+#navi_actions a.blogs_new_post_action,
+#navi_actions a.networking_my_profile_action,
+#navi_actions a.settings_settings_action
+{
+background:transparent none repeat scroll 0 0;
+padding-left:0;
+}
+
+#navi_actions a {
+color:#FFFFFF !important;
+font-size:12px;
+padding:0;
+padding-left: 5px;
+padding-right: 5px;
+}
+
+#navi_actions .separator {
+border: 0;
+padding:0;
+}
+
+#navi_logout_link
+{
+background:transparent none repeat scroll 0 0;
+color:white;
+display:block;
+float:right;
+font-family:Arial,Helvetiva,sans-serif;
+font-size:12px;
+height:16px;
+margin-right:5px;
+padding-bottom:5px;
+padding-right:0;
+padding-top:10px;
+text-transform:none;
+}
+
+#navi_logged_in_as {
+clear:none;
+display:block;
+float:left;
+font-size:12px;
+margin:10px;
+color: white;
+}
+#navi_logged_in_as a {
+color:white;
+}
+#navi_logged_in_as a:hover {
+color:black !important;
+}
+.navi_other_areas {
+background:transparent url(/images/theme/dicole_simple/arrow-down.gif) no-repeat scroll right center;
+clear:none;
+color:white;
+display:block;
+float:left;
+font-size:12px;
+margin:10px;
+padding-bottom:2px;
+padding-right:13px;
+}
+.navi_other_areas:hover {
+color:black !important;
+}
+
+#navi_tools a.selected {
+font-weight:bold;
+color:white;
+}
+
+#navi_logo_text
+{
+visibility: hidden;
+}
+
+.toolContainer {
+background:transparent none repeat scroll 0 0;
+}
+
+#navi_tools a {
+background:transparent url(/images/theme/elisa/other.png) no-repeat scroll center 10px;
+color:white;
+padding-top:69px;
+width:96px;
+}
+#navi_tools a:visited
+{
+color:white;
+}
+#navi_tools a:hover, #navi_tools a:active {
+color:black;
+background-image:url(/images/theme/elisa/other.png);
+}
+#navi_tools a.selected,
+#navi_tools a.selected:hover
+{
+background:transparent url(/images/theme/elisa/other_selected.png) no-repeat scroll center 0;
+}
+#navi_tools a.summary,
+#navi_tools a.summary:hover {
+background:transparent url(/images/theme/elisa/summary.png) no-repeat scroll center 10px;
+}
+body #navi_header #navi_tools a.summary_selected {
+background:transparent url(/images/theme/elisa/summary_selected.png) no-repeat scroll center 0;
+}
+
+#navi_tools a.blogs,
+#navi_tools a.blogs:hover {
+background:transparent url(/images/theme/elisa/blogs.png) no-repeat scroll center 10px;
+}
+body #navi_header #navi_tools a.blogs_selected {
+background:transparent url(/images/theme/elisa/blogs_selected.png) no-repeat scroll center 0;
+}
+
+#navi_tools a.wikis,
+#navi_tools a.wikis:hover {
+background:transparent url(/images/theme/elisa/wiki.png) no-repeat scroll center 10px;
+}
+body #navi_header #navi_tools a.wikis_selected {
+background:transparent url(/images/theme/elisa/wiki_selected.png) no-repeat scroll center 0;
+}
+
+#navi_tools a.media,
+#navi_tools a.media:hover {
+background:transparent url(/images/theme/elisa/media.png) no-repeat scroll center 10px;
+}
+body #navi_header #navi_tools a.media_selected {
+background:transparent url(/images/theme/elisa/media_selected.png) no-repeat scroll center 0;
+}
+
+#navi_tools a.networking,
+#navi_tools a.networking:hover {
+background:transparent url(/images/theme/elisa/networking.png) no-repeat scroll center 10px;
+}
+body #navi_header #navi_tools a.networking_selected {
+background:transparent url(/images/theme/elisa/networking_selected.png) no-repeat scroll center 0;
+}
+
+#navi_tools a.other,
+#navi_tools a.other:hover,
+#navi_tools a.feeds,
+#navi_tools a.feeds:hover,
+#navi_tools a.files,
+#navi_tools a.files:hover,
+#navi_tools a.group_admin,
+#navi_tools a.group_admin:hover {
+background-image:url(/images/theme/elisa/other.png);
+}
+
+body #navi_header #navi_tools a.other_selected,
+body #navi_header #navi_tools a.feeds_selected,
+body #navi_header #navi_tools a.files_selected,
+body #navi_header #navi_tools a.group_admin_selected
+{
+background:transparent url(/images/theme/elisa/other_selected.png) no-repeat scroll center 0;
+}
+
+.loginBoxFooter
+{
+color:white;
+}
+
+.box_container
+{
+border:0;
+}
+
+.desktop_box .bt 
+{
+display:block;
+background-image:url(/images/theme/elisa/box.png);
+height:11px;
+margin-left:10px;
+}
+
+.desktop_box .bt div 
+{
+display:block;
+background-image:url(/images/theme/elisa/box.png);
+height:11px;
+width:10px;
+left:-10px;
+}
+
+.desktop_box .bb 
+{
+display:block;
+background-image:url(/images/theme/elisa/box.png);
+height:11px;
+margin-left:10px;
+}
+
+.desktop_box .bb div
+{
+display:block;
+background-image:url(/images/theme/elisa/box.png);
+height:11px;
+width:10px;
+left:-10px;
+}
+
+.desktopBoxTitle {
+background:white none repeat scroll 0 0;
+border-color:-moz-use-text-color -moz-use-text-color #CCCCCC;
+border-style:none none solid;
+border-width:0 0 1px;
+color:#666666;
+font-family:arial;
+font-size:15px;
+font-weight:bold;
+letter-spacing:0;
+padding:8px 8px 8px 20px;
+text-align:left;
+text-transform:none;
+}
+
+.desktopBoxControllers 
+{
+border:0;
+border-bottom: 1px solid #CCCCCC;
+background:white none repeat scroll 0 0;
+padding-right:10px;
+}
+
+.toolContentBox-cb .cbb {
+	margin:1em 0;
+	padding:0 10px;
+	border:1px solid #666;
+	background:#fff;
+}
+.toolContentBox-cb .cbb h1 {
+	margin:0 -10px;
+	padding:0.3em 10px;
+	background:#efece6;
+	font:bold 1.2em/1 Arial, Helvetica, sans-serif;
+}
+/* Normal styling */
+.toolContentBox-cb .cb {margin:0.5em 0;}
+	/* Top corners and border */
+.toolContentBox-cb .bt {
+	height:17px;
+	margin:0 0 0 18px;
+	background:url(box.png) no-repeat 100% 0;
+}
+.toolContentBox-cb .bt div {
+	position:relative;
+	left:-18px;
+	width:18px;
+	height:17px;
+	background:url(box.png) no-repeat 0 0;
+	font-size:0;
+	line-height:0;
+}
+
+	/* Bottom corners and border */
+.toolContentBox-cb .bb {
+	height:14px;
+	margin:0 0 0 12px;
+	background:url(box.png) no-repeat 100% 100%;
+}
+.toolContentBox-cb .bb div {
+	position:relative;
+	left:-12px;
+	width:12px;
+	height:14px;
+	background:url(box.png) no-repeat 0 100%;
+	font-size:0;
+	line-height:0;
+}
+
+	/* Wrapper for the content. Use it to set the background colour and insert some padding between the borders and the content. */
+.toolContentBox-cb .i3 {
+	display:block;
+	margin:0;
+	padding:1px 10px;
+	background:#fff;
+}
+	/* Make the content wrapper auto clearing so it will contain floats (see http://positioniseverything.net/easyclearing.html). */
+.toolContentBox-cb .i3:after {
+	content:"."; 
+	display:block; 
+	height:0; 
+	clear:both; 
+	visibility:hidden;
+}
+.toolContentBox-cb .i3 {display:inline-block;}
+.toolContentBox-cb .i3 {display:block;}
+
+.toolContentBox-cb .bt 
+{
+display:block;
+background-color: transparent;
+background-image:url(/images/theme/elisa/box.png);
+height:11px;
+}
+
+.toolContentBox-cb .bt div 
+{
+display:block;
+background-color: transparent;
+background-image:url(/images/theme/elisa/box.png);
+height:11px;
+}
+
+.toolContentBox-cb .bb 
+{
+display:block;
+background-color: transparent;
+background-image:url(/images/theme/elisa/box.png);
+height:11px;
+}
+.toolContentBox-cb .bb div
+{
+display:block;
+background-color: transparent;
+background-image:url(/images/theme/elisa/box.png);
+height:11px;
+}
+
+div.toolContentBox
+{
+background:transparent none repeat scroll 0 0;
+border:0;
+padding:0;
+}
+
+div.toolContentBox span.boxLegend {
+background:white none repeat scroll 0 0;
+border-color:-moz-use-text-color -moz-use-text-color #CCCCCC;
+border-style:none none solid;
+border-width:0 0 1px;
+font-size:16px;
+font-weight:bold;
+letter-spacing:0;
+text-transform:none;
+}
+
+#navi_tools .fileActionPopup a:hover {
+height:22px;
+opacity:0.9999;
+background:transparent url(/images/theme/dicole_simple/main-navi/26x26/regular/generic.png) no-repeat scroll left center;
+}
+
+html>body .loginBox div.toolContentBox .boxLegend {
+background:#EEEEEE none repeat scroll 0 0;
+border:0;
+border-bottom:1px solid lightgray;
+margin:0 0 8px;
+padding:8px 0;
+}
+
+#navi_tools a.selected {color: #0061A0;}
+#navi_logged_in_as a {color: #0061A0;}
+.navi_other_areas {color: #0061A0;}
+.menutitletext {color: #0061A0;}
+.contentItemContainer h1, .contentItemContainer h2 {color: #0061A0 !important;}
+.contentItemContainer h3 {color: #0061A0 !important;}
+a.sh_switch_open {color: #0061A0 !important;}
+a.sh_switch_close {color: #0061A0 !important;}
+.toc_entry a {color: #0061A0 !important;}
+a.linkBar.networking_remove_contact_button {color: #0061A0 !important;}
+a.linkBar.networking_add_contact_button {color: #0061A0 !important;}
+.networking_profile_user_name  {color: #0061A0;}
+.networking_profile_right_contact a {color: #0061A0 !important;}
+.networking_profile_right_contacts a {color: #0061A0 !important;}
+.networking_profile_card_info a {color: #0061A0 !important;}
+.networking_profile_right_tags a.linkBar {color: #0061A0 !important;}
+.networking_toggle_contact_container a {color: #0061A0 !important;}
+#networking_profile_portrait_container a.linkBar {color: #0061A0 !important;}
+#networking_profile_contact_container a.linkBar {color: #0061A0 !important;}
+.blueLinks a, .blueLinks a:visited, .blueLinks a:link, .blueLinks a:active {color: #0061A0;}
+.footer {color: #0061A0;}
+.footer a {color: #0061A0;}
+.combined_list .element a {color: #0061A0 !important;}
+.blogPost a {color: #0061A0 !important;}
+.blogPostTitle {color: #0061A0;}
+.blogPostTitle a, .desktopBoxContent .blogPostTitle a {color: #0061A0 !important;}
+.tagPrimary {color: #0061A0 !important;}
+.tagSecondary {color: #0061A0 !important;}
+a.tag_added {color: #0061A0 !important;}
+a.tag_selected {color: #0061A0 !important;}
+a.linkBar.wiki_navigation_detect {color: #0061A0 !important;}
+a.linkBar.wiki_navigation_history {color: #0061A0 !important;}
+a.linkBar.wiki_navigation_create {color: #0061A0 !important;}
+a.linkBar.wiki_navigation_browse {color: #0061A0 !important;}
+a.linkBar.wiki_navigation_settings {color: #0061A0 !important;}
+a.linkBar.settings_navigation_settings {color: #0061A0 !important;}
+a.linkBar.settings_navigation_reminders {color: #0061A0 !important;}
+a.linkBar.settings_navigation_change {color: #0061A0 !important;}
+a.linkBar.networking_navigation_explore {color: #0061A0 !important;}
+a.linkBar.networking_navigation_my_contacts {color: #0061A0 !important;}
+a.linkBar.networking_navigation_invite {color: #0061A0 !important;}
+a.linkBar.blogs_navigation_featured {color: #0061A0 !important;}
+a.linkBar.blogs_navigation_new {color: #0061A0 !important;}
+a.linkBar.blogs_navigation_promoted {color: #0061A0 !important;}
+a.linkBar.blogs_navigation_rated {color: #0061A0 !important;}
+a.linkBar.blogs_navigation_contacts {color: #0061A0 !important;}
+a.linkBar.blogs_navigation_my {color: #0061A0 !important;}
+a.linkBar.pages_alphabetically {color: #0061A0 !important;}
+a.linkBar.latest_pages {color: #0061A0 !important;}
+a.linkBar.version_changes {color: #0061A0 !important;}
+a.linkBar.change_history {color: #0061A0 !important;}
+a.linkBar.printable_page {color: #0061A0 !important;}
+a.linkBar.unlock_page {color: #0061A0 !important;}
+a.linkBar.lock_page {color: #0061A0 !important;}
+a.linkBar.add_page_to_summary {color: #0061A0 !important;}
+a.linkBar.remove_page_from_summary {color: #0061A0 !important;}
+a.linkBar.remove_page {color: #0061A0 !important;}
+.desktopBoxControllers {color: #0061A0;}
+.loginBox .valuePairKey {color: #0061A0;}
+.blogs_seed_listing_title {color: #0061A0 !important;}
+.blogs_seed_listing_stats {color: #0061A0 !important;}
+.blogs_seed_listing_owner {color: #0061A0 !important;}
+a.linkBar.blogs_navigation_seeds {color:#0061A0 !important;}
+a.linkBar.blogs_navigation_no_seeds {color:#0061A0 !important;}
+a.linkBar.blogs_navigation_closed_seeds {color:#0061A0 !important;}
+a.linkBar.blogs_navigation_all_seeds {color:#0061A0 !important;}
+a.linkBar.blogs_navigation_add_seed {color:#0061A0 !important;}
+a.linkBar.blogs_navigation_edit_seed {color:#0061A0 !important;}
+a.linkBar.blogs_navigation_post {color:#0061A0 !important;}
+a.linkBar.blogs_select_post_seed_link {color:#0061A0 !important;}
+}
+
+#navi_logo_link span {
+visibility: visible;
+color: white;
+font-family: verdana;
+font-style: normal;
+font-weight: normal;
+padding-top: 64px;
+padding-bottom: 5px;
+font-size: 16px;
+padding-left: 98px;
+height: 25px;
+width: 230px;
+}
+body {
+    
+    background-image: none;
+    
+    
+    background-color: #DDDDDD;
+    
+}
+
+
+
+#navi_logo_link {
+	
+	background: transparent url("http://media.dicole.net/dcp_logos/j-impact-logo-mini.png") no-repeat scroll 20px 68px;
+	
+	
+	
+}
+
+
+
+
+
+#navi_logo_text {
+    color: #000000;
+    font-size: 12px;
+    
+    
+    
+    padding-left: 150px;
+    padding-top: 65px;
+}
+
+
+
+
+
+#navi_actions {
+    display: none;
+}
+
+
+
+
+
+
+.no_group_admin_extras .subgroups_create_area {
+  display:none;
+}
+
+.content #navi_header #navi_login {
+  height: 38px;
+}
+.content #navi_header #navi_login a {
+  font-family: Verdana,Arial,Sans-Serif;
+  color: #333;
+  font-size: 12px;
+}
+.content #navi_header #navi_login a:hover {
+  color: #000 !important;
+}
+.content #navi_header #navi_login a#navi_register_link {
+  padding-top: 10px;
+}
+#navi_header #navi_logout_link, #navi_header #navi_login_link {
+  background: none;
+}
+
+#navi_header #navi_tools a {
+  color: #333;
+}
+#navi_header #navi_tools a.selected {
+  color: #000;
+}
+
+
+
+#navi_logo_banner {
+    margin-top: 40px;
+}
+#navi_logo_text {
+    visibility: visible;
+    font-style: normal;
+}
+#navi_header {
+background:transparent url('http://work-dev.dicole.net/images/novetos/novetos_navi_bg.jpg') no-repeat scroll 0px 35px !important;
+}
+#navi_logo_link {
+margin-top: 10px;
+}
+
+#navi_tools a {
+background:transparent url('http://media.dicole.net/dcp/novetos_navi_buttons.png') no-repeat scroll 0 0 !important;
+color:black;
+padding-top:69px;
+width:96px;
+margin: 2px;
+}
+#navi_tools a:visited
+{
+color:black;
+}
+#navi_tools a:hover, #navi_tools a:active {
+color:black;
+background:transparent url('http://media.dicole.net/dcp/novetos_navi_buttons.png') no-repeat scroll 0 -97px !important;
+}
+#navi_tools a.summary { background-position: 0 0 !important; }
+#navi_tools a.summary.selected { background-position: 0 -97px !important; }
+#navi_tools a.summary:hover { background-position: 0 -97px !important; }
+#navi_tools a.summary.selected:hover { background-position: 0 -194px !important; }
+
+#navi_tools a.blogs { background-position: -96px 0 !important; }
+#navi_tools a.blogs.selected { background-position: -96px -97px !important; }
+#navi_tools a.blogs:hover { background-position: -96px -97px !important; }
+#navi_tools a.blogs.selected:hover { background-position: -96px -194px !important; }
+
+#navi_tools a.group_admin { background-position: -288px 0 !important; }
+#navi_tools a.group_admin.selected { background-position: -288px -97px !important; }
+#navi_tools a.group_admin:hover { background-position: -288px -97px !important; }
+#navi_tools a.group_admin.selected:hover { background-position: -288px -194px !important; }
+
+#navi_tools a.wikis { background-position: -192px 0 !important; }
+#navi_tools a.wikis.selected { background-position: -192px -97px !important; }
+#navi_tools a.wikis:hover { background-position: -192px -97px !important; }
+#navi_tools a.wikis.selected:hover { background-position: -192px -194px !important; }
+
+#navi_tools a.networking { background-position: -384px 0 !important; }
+#navi_tools a.networking.selected { background-position: -384px -97px !important; }
+#navi_tools a.networking:hover { background-position: -384px -97px !important; }
+#navi_tools a.networking.selected:hover { background-position: -384px -194px !important; }
+
+#navi_tools a.events { background-position: -480px 0 !important; }
+#navi_tools a.events.selected { background-position: -480px -97px !important; }
+#navi_tools a.events:hover { background-position: -480px -97px !important; }
+#navi_tools a.events.selected:hover { background-position: -480px -194px !important; }
+
+#navi_tools a.subgroups { background-position: -288px 0 !important; }
+#navi_tools a.subgroups.selected { background-position: -288px -97px !important; }
+#navi_tools a.subgroups:hover { background-position: -288px -97px !important; }
+#navi_tools a.subgroups.selected:hover { background-position: -288px -194px !important; }
+
+#navi_tools a.other { background-position: -767px 0 !important; }
+#navi_tools a.other.selected { background-position: -767px -97px !important; }
+#navi_tools a.other:hover { background-position: -767px -97px !important; }
+#navi_tools a.other.selected:hover { background-position: -767px -194px !important; }
+
+#navi_tools a.media { background-position: -863px 0 !important; }
+#navi_tools a.media.selected { background-position: -863px -97px !important; }
+#navi_tools a.media:hover { background-position: -863px -97px !important; }
+#navi_tools a.media.selected:hover { background-position: -863px -194px !important; }
+
+#navi_tools .fileActionPopup a {
+background:transparent url(/images/theme/dicole_simple/main-navi/26x26/regular/generic.png) no-repeat scroll left center !important;
+}
+
+#navi_tools .fileActionPopup a:hover {
+background:transparent url(/images/theme/dicole_simple/main-navi/26x26/regular/generic.png) no-repeat scroll left center !important;
+}

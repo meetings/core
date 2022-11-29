@@ -1,0 +1,25 @@
+<form id="invite_users" action="#">
+	<a id="invite_users_close" href="#" title="<%== dicole.msg('Close') %>"></a>
+	<h2><%== dicole.msg("Invite new users") %></h2>
+	<h3><%== dicole.msg("Invite by adding e-mail addresses (separate with commas)") %></h3>
+	<div class="input_field">
+		<input id="invite_users_list" name="invite_users_list" />
+	</div>
+	<h3><%== dicole.msg("Message") %></h3>
+	<div class="input_field">
+		<textarea id="invite_users_message" name="invite_users_message" class="mceEditor"></textarea>
+	</div>
+	<div class="input_field">
+		<label for="invite_users_level"><%== dicole.msg("Level for invited users") %></label>
+		<select id="invite_users_level">
+		<% dojo.forEach(p.levels, function(level) { %>
+			<option value="<%== level.id %>"><%== level.name %></option>
+		<% }); %>
+		</select>
+	</div>
+	<a href="#" class="big-button"><input id="invite_users_button" type="submit" value="<%== dicole.msg("Invite the users") %>" /></a>
+	<span class="required_info">
+		<span class="required_star">*</span>
+		<%== dicole.msg("Please fill the fields marked with the star to complete the registration.") %>
+	</span>
+</form>

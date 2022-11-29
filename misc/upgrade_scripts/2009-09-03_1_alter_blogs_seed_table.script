@@ -1,0 +1,10 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_blogs_seed add exclude_from_summary int after seed_closed');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_blogs_seed add exclude_from_digest int after seed_closed');
+}
+
+1;

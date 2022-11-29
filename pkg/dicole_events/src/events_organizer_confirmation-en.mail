@@ -1,0 +1,21 @@
+[% user_name %] will be attending your event
+
+[% event_title %] has a new attendee: [% user_name %] ([% IF organization_title %][% organization_title %], [% END %][% organization %][% IF phone %], [% phone %][% END %], [% email %]).
+
+[%- IF in_html AND attend_info_html %]
+Here is the additional information [% user_name %] provided:
+
+[% attend_info_html %]
+
+[%- END %]
+[%- IF ! in_html AND attend_info_text %]
+Here is the additional information [% user_name %] provided:
+
+[% attend_info_text %]
+
+[%- END %]
+You can access the event page through the following link for the next 24 hours, after this you will have to log in separately:
+[% IF in_html %]<br/><a href="[% url %]">Go to the page</a>[% ELSE %][% url %][% END %]
+
+
+

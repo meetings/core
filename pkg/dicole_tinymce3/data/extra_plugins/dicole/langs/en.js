@@ -1,0 +1,21 @@
+tinyMCE.addI18n('en.dicole',{
+    button_save_open : 'Save your changes',
+    button_cancel_open : 'Discard your changes',
+    button_image_open : 'Add an image from the internet',
+    button_link_open : 'Add/Edit a link',
+    button_html_open : 'Add/Edit a custom HTML snippet',
+    button_showroom_open : 'Add/Edit unrestricted HTML in a showroom',
+    button_attachment_open : 'Add an attachment',
+    button_embed_open : 'Add a media object',
+    button_advanced_open : 'Show more controls',
+    button_justify_left : 'Align left',
+    button_justify_center : 'Align center',
+    button_table_open : 'Show table controls',
+    button_save_text: 'Save',
+    button_cancel_text: 'Cancel',
+    button_confirm_delete: 'Confirm?',
+    uploader_add_attachment: 'Add attachment',
+    uploader_waiting: 'Waiting...',
+    uploader_uploading: 'Uploading ',
+    uploader_done: 'Done. Wait.'
+});

@@ -1,0 +1,145 @@
+=head1 NAME
+
+A plan for implementing a glossary
+
+=head1 TASK INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.3 $
+
+=item B<Severity>
+
+Major
+
+=item B<Priority>
+
+P1
+
+=item B<Risk factor>
+
+2
+
+=item B<Estimate>
+
+No estimate.
+
+=item B<Status>
+
+Waiting for implementation.
+
+=back
+
+=head1 ABSTRACT
+
+This document explains a tool for providing a central glossary for a social
+network.
+
+=head1 DETAILS
+
+As social constructivists often point out, it is often characteristic for a
+social group to form their own culture and their own language. Because all
+networked groups have their own inside meainings for certain words and acronyms,
+it is important that a central glossary of terms is provided which allows
+writing down the culture and shared meaning of words into a glossary and
+possibility to view the meaning once such a word is encountered in the
+community writings.
+
+This also helps newcomers to understand the community language and participate
+in its activities.
+
+=head2 Creating a glossary
+
+A glossary is an optional tool for a group or course. Once it is selected it
+allows defining a glossary of terms.
+
+The glossary has a description, which is displayed in the glossary main page,
+describing the content and target group of the glossary. 
+
+Administrators should also be able to define in a public group that a glossary
+is global, which means that the terms are highlighted all around the site.
+
+Each new glossary item has the following fields available:
+
+=over 4
+
+=item *
+
+Term. This is the complete sentence of word which is used to identify the
+glossary item.
+
+=item *
+
+Synonyms. This is a list of synonyms or keywords for the glossary item, which
+should also be linked into this term.
+
+=item *
+
+Description. This is the readable description of the glossary item displayed to
+the user.
+
+=item *
+
+Category, in which the term belongs into.
+
+=item *
+
+Author. This is the recorded author who submitted the glossary item.
+
+=back
+
+=head2 Browsing glossaries
+
+Once some terms are submitted to the glossary, it is possible to browse it. It
+is possible to sort glossary items by category (even limiting the display to
+certain category), by name (ascending or descending) and by author. Also
+searching from the glossary by keywords should be possible.
+
+=head2 Linking to a glossary
+
+The linking to the glossary should happen automatically. For example, if you
+have the word I<perl> in your text, it should be automatically highlighted and
+linked with the glossary item I<Perl>. Clicking the highlighted word or sentence
+opens up a popup window with the description of the glossary item and
+possibility to close the popup window.
+
+=head2 Towards an advanced glossary
+
+For us just thinking about a simple glossary is not pushing the limits enough,
+so I just include some random advanced ideas here for discussion.
+
+It might be possible that instead of a glossary the wiki like
+L<group pages|group_pages> are used. This of course requires that the users are
+aware that the wiki system could also be used to build a central glossary of
+terms. This makes it a little bit difficult to use since glossary is most useful when
+the page is opened in a popup window instead of being loaded into the current
+window. Maybe a possibility to specify that a certain wiki page is a popup kind
+of page and the result is just as it is a glossary?
+
+More investigation in glossary standards should be taken. For example, maybe it
+could be possible to specify ontologies between two glossaries, resulting in
+possibility to use your own glossary with ontologies specified between the two.
+Imagine reading an unfamiliar dialect with the help of your automatic glossary
+transformation tool. The text is automatically translated into your own dialect
+with the help of a glossary that has some ontologies built-in? Think about that.
+
+More feedback is also welcome in the way how to collaboratively build glossary
+terms. With this specification it is left in the hands of the users to find
+their own way to morph together their understandings of a certain word. Maybe
+the forum system could support moving a summary knowledge artefact as a glossary
+item?
+
+=head1 NOTES AND STATUS
+
+This section should be filled with information and status of the current
+implementation of the specifications.
+
+=head1 AUTHORS
+
+Teemu Arina E<lt>teemu@ionstream.fiE<gt>

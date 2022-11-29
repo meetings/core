@@ -1,0 +1,47 @@
+#!/usr/bin/perl
+
+use 5.010;
+
+use strict;
+use warnings;
+
+use IO::All;
+use File::Basename qw(basename);
+
+use Dicole::MogileFS;
+
+my $mogile = Dicole::MogileFS->new(
+	domain => 'dicole.dcp.thumbnails',
+	class  => 'thumbnail',
+);
+
+my $base_dir = '/usr/local/dicole/html/images/profiles';
+
+sub execute {
+	my ($self, $params) = @_;
+
+	my @thumbs = glob "$base_dir/web_thumbnail*.png";
+
+	say "Migrating " . @thumbs . " thumbnails to MogileFS...";
+
+	for my $thumb (@thumbs) {
+		my ($key) = basename($thumb) =~ /^web_thumbnail_(.+\.png)$/
+			or do { warn "Skipped $thumb\n"; next };
+
+        if ($mogile->get_urls($key)) {
+            warn "Skipped $key\n";
+            next;
+        }
+
+		$mogile->store_file($key => $thumb)
+			or do { warn "Failed to upload $thumb\n"; next };
+
+		say "Stored $key";
+	}
+
+	say "Migration complete.";
+
+	1;
+}
+
+1;

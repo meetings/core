@@ -1,0 +1,14 @@
+PARTNER; Sent 2 hours after the meeting to the organizer if the meeting has no action points.
+
+Email can be replied to in order to fill the action points. In the future there are also plans on sending the "after meeting digest" immediately in response to receiving the action points reply email.
+
+
+Parameters:
+meeting_title
+login_url
+participant_names_string
+
+UTM Parameters
+source: notification
+medium: email
+campaign: missing_action_points

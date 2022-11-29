@@ -1,0 +1,11 @@
+[%- IF test_case == 'no action points' %]
+[%-
+
+login_url = 'http://www.fillintheactionpoints.com/'
+meeting_title = 'business workshop'
+participant_names_string => 'Lotta Viitaniemi, Jussi Kaijalainen and Antti Vähäkotamäki'
+
+%]
+[% END %]
+
+

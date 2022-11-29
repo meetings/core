@@ -1,0 +1,32 @@
+[% MTN.t('Meetin.gs receipt') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Receipt') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t('This is a receipt for your Meetin.gs PRO subscription payment.') %]<<</p>>>
+<<<p>>>
+<<<bold_begin>>>[% MTN.t('Item:') %] <<<bold_end>>>[% item_name %]<<<br>>>
+<<<bold_begin>>>[% MTN.t('Amount*:') %] <<<bold_end>>>[% amount %]<<<br>>>
+<<<bold_begin>>>[% MTN.t('Account:') %] <<<bold_end>>>[% user_login %]<<<br>>>
+<<<bold_begin>>>[% MTN.t('Date:') %] <<<bold_end>>>[% payment_date %]<<<br>>>
+<<<bold_begin>>>[% MTN.t('Biller:') %] <<<bold_end>>>Meetin.gs Ltd, PO. box 955, 00101 Helsinki, Finland<<<br>>>
+<<</p>>>
+[% IF vat_included %]
+<<<p>>>[% MTN.t('* 24% VAT included') %]<<</p>>>
+[% ELSE %]
+<<<p>>>[% MTN.t('* 0% VAT included') %]<<</p>>>
+[% END %]
+
+[% squirrel = 'pro' %]
+<<<squrre>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

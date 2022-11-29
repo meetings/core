@@ -1,0 +1,4 @@
+#!/bin/bash
+sleep 0.2
+flock --nonblock /tmp/mmeets -c "sass --style compressed pkg/dicole_meetings/html/scss/normal.scss pkg/dicole_meetings/html/css/blue_hn_fn.css && d s meetings && d arts"
+

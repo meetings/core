@@ -1,0 +1,2 @@
+[% IF in_html %][% MTN.t('This is an automated message from %(L$Meetin.gs%)',{ L => { href => 'http://www.meetin.gs/'}}) %]
+[% ELSE %][% MTN.t('This is an automated message from Meetin.gs') %][% END %].

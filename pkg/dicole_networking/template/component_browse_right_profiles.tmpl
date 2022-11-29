@@ -1,0 +1,22 @@
+[% FOREACH profile IN profiles %]
+    <div class="browse_item">
+        <div class="left">
+            <a href="[% profile.url %]">
+		[%- IF profile.image_55 -%]
+			[%- img_src = profile.image_55 -%]
+		[%- ELSE -%]
+			[%- img_src = '/images/default_profile_55.png' -%]
+		[%- END -%]
+               	<img src="[% img_src %]" alt="[% profile.name | html %]" />
+            </a>
+        </div>
+        <div class="item_content">
+               <h2 class="title"><a href="[% profile.url %]">[% profile.name | html %]</a></h2>
+                <div class="tags">
+                    [% FOREACH tag IN profile.tags %]
+                    <a class="tag" href="[% tag.link %]">[% tag.name | html %]</a>
+                    [% END %]
+                </div>
+        </div>
+    </div>
+[% END %]

@@ -1,0 +1,41 @@
+<div id="signup-box-wrapper">
+    <div id="edit-partner-box" class="modal-popup" style="-moz-box-shadow:0px 0px 3px #333; -webkit-box-shadow:0px 0px 3px #333; box-shadow:0px 0px 3px #333;">
+        <h2 class="modal-header">Edit partner</h2>
+
+        <!-- Left side -->
+        <div class="signup-left">
+
+            <!-- signup box -->
+            <form name="meetings_edit_partner_form" id="meetings_edit_partner_form" class="meetings-form" enctype="application/x-www-form-urlencoded" accept-charset="utf-8" method="post" action="">
+
+                <div class="form-row" style="margin-left:30px">
+                    <label for="name" class="name">Partner name:</label><br/>
+                    <input type="text" name="name" id="name" value="[% name | html %]" style="padding:4px; width:200px;"/>
+                </div>
+                <div class="form-row" style="margin-left:30px">
+                    <label for="from_email" class="name">Partner from email:</label><br/>
+                    <input type="text" name="from_email" id="from_email" value="[% from_email | html %]" style="padding:4px; width:200px;"/>
+                </div>
+                <div>
+                    create email subject: <input type="text" name="meetings_meeting_created_subject_template" value="[% partner_lexicon.meetings_meeting_created_subject_template | html %]" size="80"/>
+                </div>
+                <div>
+                    create email html: <textarea name="meetings_meeting_created_html_template">[% partner_lexicon.meetings_meeting_created_html_template | html %]</textarea>
+                </div>
+                <div>
+                    create email text: <textarea name="meetings_meeting_created_text_template">[% partner_lexicon.meetings_meeting_created_text_template | html %]</textarea>
+                </div>
+
+                <input type="hidden" name="save" value="1" />
+
+                <input type="submit" value="Save" />
+            </form>
+        </div>
+
+        <div id="js_meetings_invite_beta_free_error_container" class="error-container-rounded error_container_hidden">
+        </div>
+    </div>
+</div>
+<div id="push"></div>
+</div><!-- End content wrapper -->
+<div id="bb-footer"></div>

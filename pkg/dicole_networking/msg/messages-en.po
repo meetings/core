@@ -1,0 +1,333 @@
+
+msgid "Add and remove contacts of a user"
+msgstr "Add and remove contacts of a user"
+
+msgid "Add contact"
+msgstr "Add contact"
+
+msgid "Address 1"
+msgstr "Address 1"
+
+msgid "Address 2"
+msgstr "Address 2"
+
+msgid "Blog: "
+msgstr "Blog: "
+
+msgid "Blog URL"
+msgstr "Blog URL"
+
+msgid "Contact & personal"
+msgstr "Contact & personal"
+
+msgid "Contact & personal information"
+msgstr "Contact & personal information"
+
+msgid "Contacts of %1"
+msgstr "Contacts of %1"
+
+msgid "Edit contact & personal information"
+msgstr "Edit contact & personal information"
+
+msgid "Edit education information"
+msgstr "Edit education information"
+
+msgid "Edit employer information"
+msgstr "Edit employer information"
+
+msgid "Edit networking profile"
+msgstr "Edit networking profile"
+
+msgid "Edit networking profile of a user"
+msgstr "Edit networking profile of a user"
+
+msgid "Educational information"
+msgstr "Educational information"
+
+msgid "Employer"
+msgstr "Employer"
+
+msgid "Employer name"
+msgstr "Employer name"
+
+msgid "Explore"
+msgstr "Explore"
+
+msgid "Facebook account"
+msgstr "Facebook account"
+
+msgid "Ideas"
+msgstr "Ideas"
+
+msgid "Invite new members"
+msgstr "Invite new members"
+
+msgid "Twitter account"
+msgstr "Twitter account"
+
+msgid "Linkedin account"
+msgstr "Linkedin account"
+
+msgid "Manage user contacts"
+msgstr "Manage user contacts"
+
+msgid "My contacts"
+msgstr "My contacts"
+
+msgid "Navigation"
+msgstr "Navigation"
+
+msgid "Networking"
+msgstr "Networking"
+
+msgid "Networking tool"
+msgstr "Networking tool"
+
+msgid "Never"
+msgstr "Never"
+
+msgid "Organizational title"
+msgstr "Organizational title"
+
+msgid "People you might know"
+msgstr "People you might know"
+
+msgid "Personal motto"
+msgstr "Personal motto"
+
+msgid "Phone: "
+msgstr "Phone: "
+
+msgid "Professional description"
+msgstr "Professional description"
+
+msgid "Professional information"
+msgstr "Professional information"
+
+msgid "profile"
+msgstr "profile"
+
+msgid "profiles"
+msgstr "profiles"
+
+msgid "Remove contact"
+msgstr "Remove contact"
+
+msgid "Sampling of contacts"
+msgstr "Sampling of contacts"
+
+msgid "Show all contacts"
+msgstr "Show all contacts"
+
+msgid "Show all posts"
+msgstr "Show all posts"
+
+msgid "Skill profile"
+msgstr "Skill profile"
+
+msgid "Skype: "
+msgstr "Skype: "
+
+msgid "Skype account"
+msgstr "Skype account"
+
+msgid "Statistics"
+msgstr "Statistics"
+
+msgid "Tags of interest"
+msgstr "Tags of interest"
+
+msgid "Upload portrait"
+msgstr "Upload portrait"
+
+msgid "View contacts of a user"
+msgstr "View contacts of a user"
+
+msgid "View networking profiles"
+msgstr "View networking profiles"
+
+msgid "View user contacts"
+msgstr "View user contacts"
+
+msgid "My profile"
+msgstr "My profile"
+
+msgid "Add and remove personal contacts"
+msgstr "Add and remove personal contacts"
+
+msgid "Edit personal networking profile"
+msgstr "Edit personal networking profile"
+
+msgid "Edit personal networking profile of a user"
+msgstr "Edit personal networking profile of a user"
+
+msgid "Manage personal contacts"
+msgstr "Manage personal contacts"
+
+msgid "Networking rights"
+msgstr "Networking rights"
+
+msgid "View contacts"
+msgstr "View contacts"
+
+msgid "View contacts of users"
+msgstr "View contacts of users"
+
+msgid "View profiles"
+msgstr "View profiles"
+
+msgid "Add personal tags"
+msgstr "Add personal tags"
+
+msgid "Edit personal tags"
+msgstr "Edit personal tags"
+
+msgid "Explore network"
+msgstr "Explore network"
+
+msgid "No people found."
+msgstr "No people found."
+
+msgid "Personal tags"
+msgstr "Personal tags"
+
+msgid "Personal tags updated."
+msgstr "Personal tags updated."
+
+msgid "Save changes"
+msgstr "Save changes"
+
+msgid "Requested user was not found."
+msgstr "Requested user was not found."
+
+msgid "Add more members"
+msgstr "Add more members"
+
+msgid "Admins"
+msgstr "Admins"
+
+msgid "Last active users"
+msgstr "Last active users"
+
+msgid "Most active members"
+msgstr "Most active members"
+
+msgid "New members"
+msgstr "New members"
+
+msgid "Requsted user was not found."
+msgstr "Requsted user was not found."
+
+msgid "Show all users"
+msgstr "Show all users"
+
+msgid "Skills and interests"
+msgstr "Skills and interests"
+
+msgid "Last visitors"
+msgstr "Last visitors"
+
+msgid "Show more keywords"
+msgstr "Show more keywords"
+
+msgid "With keywords"
+msgstr "With keywords"
+
+msgid "%1 people"
+msgstr "%1 people"
+
+msgid "1 person"
+msgstr "1 person"
+
+msgid "Edit profile information"
+msgstr "Edit profile information"
+
+msgid "Invite by adding e-mail addresses (separate with commas)"
+msgstr "Invite by adding e-mail addresses (separate with commas)"
+
+msgid "Invite new users"
+msgstr "Invite new users"
+
+msgid "Invite the users"
+msgstr "Invite the users"
+
+msgid "Level for invited users"
+msgstr "Level for invited users"
+
+msgid "Show profile information"
+msgstr "Show profile information"
+
+msgid "LinkedIn-page"
+msgstr "LinkedIn-page"
+
+msgid "Manage users (action)"
+msgstr "Manage users"
+
+msgid "Show user listing"
+msgstr "Show user listing"
+
+msgid "Browse people"
+msgstr "Browse people"
+
+msgid "Degree"
+msgstr "Degree"
+
+msgid "Education"
+msgstr "Education"
+
+msgid "Error while converting image."
+msgstr "Error while converting image."
+
+msgid "Image to upload"
+msgstr "Image to upload"
+
+msgid "Image to upload in GIF or JPG format"
+msgstr "Image to upload in GIF or JPG format"
+
+msgid "Image uploaded."
+msgstr "Image uploaded."
+
+msgid "Other degree"
+msgstr "Other degree"
+
+msgid "School"
+msgstr "School"
+
+msgid "Show profile"
+msgstr "Show profile"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Target degree"
+msgstr "Target degree"
+
+msgid "People (navigation)"
+msgstr "People"
+
+msgid "About"
+msgstr "About"
+
+msgid "Bookmarked media"
+msgstr "Bookmarked media"
+
+msgid "Bookmarked pages"
+msgstr "Bookmarked pages"
+
+msgid "Check to send privately"
+msgstr "Check to send privately"
+
+msgid "Leave a message"
+msgstr "Leave a message"
+
+msgid "Send message"
+msgstr "Send message"
+
+msgid "New search by name"
+msgstr "New search by name"
+
+msgid "People search"
+msgstr "People search"
+
+msgid "Search by name"
+msgstr "Search by name"

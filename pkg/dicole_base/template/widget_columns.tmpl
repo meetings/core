@@ -1,0 +1,37 @@
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+[%- IF itemparams.left %]
+<td[% IF itemparams.left_td_class %] class="[% itemparams.left_td_class %]"[% END %][% IF itemparams.left_proportional || itemparams.left_absolute %] style="width: [% itemparams.left_proportional || itemparams.left_absolute %]"[% END %]>
+<div[% IF itemparams.left_class %] class="[% itemparams.left_class %]"[% END %] style="
+[%- IF itemparams.height %] height: [% itemparams.height %];[% END %]
+[%- IF itemparams.left_absolute %] width: [% itemparams.left_absolute %];[% END %]
+[%- IF itemparams.left_overflow %] overflow: [% itemparams.left_overflow %];[% END %]">
+[%- IF itemparams.padding %]<div style="margin: [% itemparams.padding %]px">[% END %]
+[% PROCESS dicole_base::include_widget widget = itemparams.left %]
+[%- IF itemparams.padding %]</div>[% END %]
+</div>
+</td>
+[%- END %]
+[%- IF itemparams.center %]
+<td[% IF itemparams.center_td_class %] class="[% itemparams.center_td_class %]"[% END %] style="width: [% itemparams.center_proportional %]">
+<div[% IF itemparams.center_class %] class="[% itemparams.center_class %]"[% END %] width="100%" style="
+[%- IF itemparams.height %] height: [% itemparams.height %];[% END %]
+[%- IF itemparams.center_overflow %] overflow: [% itemparams.center_overflow %];[% END %]">
+[%- IF itemparams.padding %]<div style="margin: [% itemparams.padding %]px">[% END %]
+[% PROCESS dicole_base::include_widget widget = itemparams.center %]
+[%- IF itemparams.padding %]</div>[% END %]
+</div>
+</td>
+[%- END %]
+[%- IF itemparams.right %]
+<td[% IF itemparams.right_td_class %] class="[% itemparams.right_td_class %]"[% END %][% IF itemparams.right_proportional || itemparams.right_absolute %] style="width: [% itemparams.right_proportional || itemparams.right_absolute %]"[% END %]>
+<div[% IF itemparams.right_class %] class="[% itemparams.right_class %]"[% END %] style="
+[%- IF itemparams.height %] height: [% itemparams.height %];[% END %]
+[%- IF itemparams.right_absolute %] width: [% itemparams.right_absolute %];[% END %]
+[%- IF itemparams.right_overflow %] overflow: [% itemparams.right_overflow %];[% END %]">
+[%- IF itemparams.padding %]<div style="margin: [% itemparams.padding %]px">[% END %]
+[% PROCESS dicole_base::include_widget widget = itemparams.right %]
+[%- IF itemparams.padding %]</div>[% END %]
+</div>
+</td>
+[%- END %]
+</tr></table>

@@ -1,0 +1,726 @@
+=head1 NAME
+
+File Manager - Implementation plan for File Manager
+
+=head1 TASK INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.12 $
+
+=item B<Severity>
+
+Major
+
+=item B<Priority>
+
+P1
+
+=item B<Risk factor>
+
+2
+
+=item B<Estimate>
+
+No estimate.
+
+=item B<Status>
+
+Currently in implementation.
+
+=back
+
+=head1 ABSTRACT
+
+This document explains how Dicole File Manager (a central component for content
+management) tool should be implemented.
+
+=head1 DETAILS
+
+While evaluating various learning environments we noticed that the content
+management functionalities are often far behind compared to a normal file manager
+you have on your desktop. One reason is that the web has some disadvantages
+compared to a typical desktop program that results in some difficulty in
+implementation. To make file management easy, the tool should have the following
+features:
+
+=over 4
+
+=item *
+
+different navigation views: tree view, icon view, detailed view
+
+=item *
+
+basic functionality: add, remove, rename, copy and move files and folders
+
+=item *
+
+upload and download multiple files and folders
+
+=item *
+
+viewing content in the browser
+
+=item *
+
+attach meta descriptions (meta data) to files and folders
+
+=item *
+
+file and folder access rules
+
+=back
+
+Let's look into these parts in detail and evaluate how these things could be implemented.
+
+=head2 Different navigation views
+
+=over 4
+
+=item B<Tree View>
+
+The tree view is built around a common metaphor. Anyone can see how the
+different files and folders relate to each other.
+
+In a tree view it is important that you may close and open folders so that only
+part of the tree is visible to the user. A visual icon associated with each file
+and folder should help distinguishing each item individually.
+
+It is also a good idea to allow selecting a folder as the new starting point of
+the tree representation by double-clicking a folder or through other means
+limiting the display to a certain sub folder. If this is possible, descending to
+previous folders and returning to the home folder should be possible.
+
+=item B<Icon View>
+
+Icon view is usually a view where you browse files and folders level by level,
+folder by folder. You move up and down in folders and you see the contents of
+one folder at a time. This is harder to perceive than  tree view but some are
+used to it through the metaphor familiarized by the Windows file management world.
+
+=item B<Detailed View>
+
+Detailed view is usually an icon view extended with detailed information of each
+item but it is also possible to display detailed information in a tree view.
+
+=back
+
+For all these views ascending and descending sorting should be available.
+Clicking once a column sorts it ascending, clicking the second time sorts the
+column descending. We suggest that a secondary sort is not required because a
+secondary sort is rarely used and would anyway add more complexity to the
+sorting functionality.
+
+To make this to function in an easier way, reducing complexity is the first
+goal. If we combine detailed view with both icon view and tree view, we get rid
+of one additional way to view the folder tree. What details are displayed should
+be configurable by the user through a separate configuration tool:
+
+=over 4
+
+=item *
+
+what columns of detailed information to display. If none, only icon and name of
+the item will be displayed. Possible selections include size, date, creator,
+content type and anything available through meta descriptions.
+
+=item *
+
+icon/tree resolution. 16x16 resolution is often too small for shortsighted and
+old people. It also makes it hard to create descriptive icons, reducing the
+advantage of icons. In the other hand, those who have no problem with small
+icons get a compact view. For these reasons, the possibility to change the icon
+resolution to 22x22 and say, 32x32 is recommended.
+
+=item *
+
+enable/disable user sorting. Default sorting to a certain specified column.
+
+=back
+
+If we think of any additional views that could be useful especially for
+educational purposes, we came up with a Slide show View. Separating it as a
+separate tool is a good idea because it introduces a lot of additional
+functionality and could be useful as it is, even without the file manager
+functionality itself. The tool specifications are introduced in the L<Material
+Bank|material_bank> specifications.
+
+=head2 Basic functionality
+
+There is nothing special about basic functionality but it should be possible to
+remove a number of files and folders at a time in order to reduce unnecessary
+steps.
+
+There are a number of ways to implement moving and copying files and folders
+around inside the environment. The most familiar method every beginner usually
+learns is the functionality of clipboard with cut, copy and paste. It is
+recommended method because it is easy to understand (yet many web-based file
+managers have invented their own ways to move files around). Moving and copying
+files between users, groups and courses should be possible.
+
+In the web context it would be nice if you could in addition to uploading files
+from your own computer, upload files from a different computer. This means you
+could enter an URL (http or ftp) from which the system will download a file and
+add it to the folder tree. This way you could easily include material like PDF
+documents from the web without the need to first download a file into your own
+computer and then upload the same file into the environment. We will call this
+method "sideload".
+
+To extend this idea even further, one could provide a link to a document that is
+actually a RDF/XML (RDF is short for
+L<Resource Description Framework|http://www.w3.org/RDF/>), read the
+meta descriptions from that document and download the actual resource from the
+location defined in the document. This would enable easy transferring of
+instructional material and documents between learning environments and other
+software systems that support RDF/XML as a way to export data from the system.
+
+The following information should be available and recorded for each file and folder:
+
+=over 4
+
+=item *
+
+name
+
+=item *
+
+size
+
+=item *
+
+creation date
+
+=item *
+
+modification date
+
+=item *
+
+content type
+
+=back
+
+Rest will be described with meta descriptions, introduced later in this section.
+
+=head2 Upload and download multiple files and folders
+
+The problem with the web standards is that a normal file upload field may only
+contain one file at a time. Uploading folders is not possible. Similarly, you
+can only download one file at a time and preserving folder structure is not
+possible. This usually results in frustration because you have to operate one
+file at a time and often build the directory structure yourself.
+
+Since Zip archives in the Windows world and Tar (also compressed Tar) archives
+in the Unix/Linux world are nowadays widely used file archive formats, it is
+suggested that a learning environment supports downloading multiple files and
+folders as an archive and uncompressing uploaded archives server-side. This
+eases the process of downloading and uploading multiple files and folders.
+
+There are other alternatives like file upload Java-applets and ActiveX
+controllers but this often means sacrificing some of the security (allowing
+extensions to access user's file system) and/or requirements (needs installation
+of extensions on user's computer) in the client side.
+
+Another way to facilitate easy file management is making a shared drive (with
+SMB protocol, for example) available for the users in the local network. When
+they store their personal files there the files will be accessible through the
+learning environment as well if the learning environment supports access to a
+shared drive.
+
+=head2 Viewing content in the browser
+
+The content management in the learning environment should be built to support
+relative linking. This means that for example a HTML document that has images
+and other pages (frames, stylesheets, other HTML pages etc.) works without
+modifications once uploaded into the environment.
+
+Viewing is most useful when any content can be displayed inline, which means
+that the content can be embedded anywhere in the learning environment. If you
+have uploaded an illustration of your theory on the file area, you sure would
+like to display it along the theory you are writing in the discussion forums.
+
+Modern browsers support a system called browser plugins. These plugins allow
+external applications to handle the display of content not supported by the
+browser itself. In our research we have found that it is possible to display the
+following documents inline on any website:
+
+Native browser support:
+
+=over 4
+
+=item *
+
+images (jpg, gif, png),  audio (wav, mid, aiff, au) and video (mpg, avi)
+
+=item *
+
+java applets: class, jar
+
+=item *
+
+text files, HTML, XHTML, XML, VRML, remote websites
+
+=back
+
+With plugin or application support:
+
+=over 4
+
+=item *
+
+ppt, xls, doc (with MS Office viewers)
+
+=item *
+
+pdf (with Acrobat plugin)
+
+=item *
+
+tiff, bmp, psd, sgi, tga (with QuickTime)
+
+=item *
+
+audio: mp3, ogg, wma (With Windows Media Player and others)
+
+=item *
+
+video: asf, mpg, avi, wmv (with Windows Media Player and others)
+
+=item *
+
+video:  ra, rm, rt, smil (with Realmedia Player)
+
+=item *
+
+video: qt, mov (with QuickTime)
+
+=item *
+
+moving image: swf, dcr, spl (Macromedia plugins)
+
+=back
+
+Nowadays the support for displaying content in a browser under Linux is actually
+better than under Windows because of a wonderful Mozilla/Netscape/Firefox/Opera
+plugin called L<Plugger|http://fredrik.hubbe.net/plugger.html>.
+It allows displaying a wide range of content types inline
+with the help of some external programs, resulting in better support for
+different content types.
+
+=head2 Meta descriptions
+
+Lately there has been a lot of hype about meta data standards in the learning
+environment community, but for a reason. To support interoperability, a learning
+environment should support moving and sharing content between learning
+environments. The term L<Learning Object|http://www.reusability.org/read/>
+is usually used to describe reusable instructional
+material that has meta data associated with it.
+
+There are many standards for content meta descriptions. Not all files in a
+learning environment are Learning Objects, which means that describing the
+content requires at least a general content meta description standard. Our
+suggestion is that the environment should at least support the widely used
+L<Dublin Core|http://www.dublincore.org/documents/dces/> Meta data standard,
+which is a loose and general standard for describing any kind of resources.
+
+Also, if the environment supports document version control, Dublin Core has some
+description fields available (relation, isVersionOf, hasVersion, isReplacedBy,
+replaces) that could be used for document version and version history purposes
+if necessary.
+
+Luckily L<IEEE
+LOM|http://www.imsglobal.org/metadata/imsmdv1p2p1/imsmd_infov1p2p1.html>,
+which has become the industry standard for describing Learning
+Objects has many fields that could be
+L<converted|http://www.imsproject.org/metadata/mdbestv1p1.html#Dublin2>
+from content described with
+Dublin Core. In that sense it is suggested that IEEE LOM is used as an extended
+set to describe instructional material and Dublin Core as a way to describe
+general content.
+
+A learning environment should support importing and exporting content as RDF/XML
+as recommended by content meta data standard initiative in question.
+
+=head2 File and folder access rules
+
+Every learning environment that supports file sharing between users and groups
+should have file and folder access rights. For users this is to protect personal
+data and for groups this is to provide different levels of access to files. Some
+users should only have read access while others should be able to read a file
+only during a certain period of time (for example, instructional material that
+is only periodically available).
+
+The following file and folder access rights should be present for user, group
+and world (anyone) for any resource:
+
+=over 4
+
+=item *
+
+none
+
+=item *
+
+read
+
+=item *
+
+write
+
+=back
+
+The following special rights should be present:
+
+=over 4
+
+=item *
+
+hide
+
+=back
+
+Removing files requires write access. The access rights are identified by
+reading rights for user, group and world and choosing the best combination
+available for the user. This method is similar to Unix file permissions.
+
+If the interface is well designed the access rights affect the available
+functionality for each item. For example, if the user doesn't have write access
+to a file it is not possible to edit or remove the file.
+
+For pedagogical and practical reasons, timing the permissions should be
+possible. For example, a teacher has a face-to-face lesson. She tells the
+students that additional material will be available on the web tomorrow around
+lunch time. Unfortunately she wont  be able to make that content available
+during that time. Timing content permissions beforehand could solve her problem.
+
+=head2 Integration with the community
+
+To make document management even more important in the community context the
+document sharing and collaborative management features should be present. There
+are various ways of collaborative content management. A list of a few important
+ones:
+
+=over 4
+
+=item *
+
+the possibility to share documents
+
+=item *
+
+possibility to work on documents simultaneously as a group (version control)
+
+=item *
+
+document as a central starting point for a discussion
+
+=back
+
+Sharing documents would require a way to access other groups and users file
+areas. It is usually associated with access rights.
+
+Working simultaneously on document requires at least:
+
+=over 4
+
+=item *
+
+a way to upload a new version of a document
+
+=item *
+
+version numbers and version history visible
+
+=item *
+
+information about who made which version and when
+
+=back
+
+Additional features could be:
+
+=over 4
+
+=item *
+
+version log for writing down the changes
+
+=item *
+
+locking a document for editing so others see you are working on it
+
+=item *
+
+comparing differences between documents
+
+=back
+
+There is nothing special in the above features. What is important is the way how
+the documents can be collaboratively improved, discussed and evaluated.
+
+For collaborative document writing a concept which is called a
+L<Wiki|http://en.wikipedia.org/wiki/Wiki> has emerged
+in the Internet community. The basic principle is that anyone is at the same
+time the editor and the organizer of the document. The concept of Wiki is easy
+to understand and use, so it enables collaborative document writing and editing.
+This concept of a Wiki is called L<Group Pages|group_pages> in Dicole an
+discussed in a separate document. The key is the possible integration of the
+Group Pages concept with the file manager through exporting and importing.
+
+In the other hand collaborative discussion of a document is also important in
+addition to collaborative document writing. It is a way to build collaborative
+meta descriptions of certain content which could aim to improve the document,
+evaluate it or just simply discuss about it. There is no point in implementing a
+possibility to comment a document. The functionality would simply just overlap
+with the concept of discussion forums so linking to a document should be
+possible from the more powerful discussion forums.
+
+This brings us to an idea that it should be possible to link to documents in the
+file area from anywhere in the environment. This would for example enable a way
+to write collaboratively about a certain document by using the Group Pages.
+
+To make attaching links to the document in the file area easy, a file selection
+dialog should be implemented. This is a simple stripped version of file manager
+that allows browsing the folder tree, creating new folders, uploading content
+and finally, selecting the document we want. Many people hate browser popups but
+here it is justified to use one because it is more intuitive to use and saves us
+from the problem of temporarily saving what has already been done.
+
+Once the file has been selected we have to think of a common general way to
+embed the file in the page. The content for the file link could be something
+like this:
+
+  [ ICON ] my_filename.doc [ properties ] [ view ] [ download ] [ file area ]
+
+Buttons I<properties> and I<view> would both open a popup showing corresponding pages
+from the file area. Button I<download> would just simply download the document and
+the button I<file area> would take one to the file area where the document is
+located.
+
+If we think about how to display a document inline and embedded we should think
+the file dialog for a second. It could for example contain a checkbox that turns
+embedding on, resulting in displaying the document inline among the text.
+
+=head1 NOTES AND STATUS
+
+B<2004-08-30, Teemu Arina:>
+
+From the todo-list, these are now implemented:
+
+=over 4
+
+=item *
+
+access rights
+
+=item *
+
+document selection dialog
+
+=item *
+
+embedding documents elsewhere with the help of document selection dialog
+
+=back
+
+B<Document selection dialog>
+
+We have implemented a WYSIWYG editor called HTMLarea and extended it to include a
+file selection dialog which allows selecting files inside Dicole. I also have code
+for file attachments where attachment has controls like I<properties, view, download> and
+I<link to file area> but it is not yet used anywhere in Dicole. The HTMLarea can only
+embed images but soon it will support various media types as inline elements.
+
+The file selection dialog uses the file manager code but the browsing is a flat view
+instead of a tree view.
+
+B<Access rights>
+
+Access rights to files are not implemented as described in this document. This is because
+the security framework is only able to target user, group and world, instead of an arbitary
+item. The other reason is that it might be a bit too complicated to manage fine-grained
+security access rights. The security is implemented as follows:
+
+=over 4
+
+=item *
+
+The initial structure of the document tree is fixed: on the root level there are two
+folders, I<groups> and I<users>. No user has more than read access to these folders.
+
+=item *
+
+Under I<groups> and I<users> folders there are physically folders for each group and
+user, but in a numerical id format instead of the actual user/group name. This is
+to ensure that links created to the file area always work and do need rewriting even
+if the group/user names are modified. For the user itself instead of displaying the
+numerical id a login name or group name is displayed. If a group is under another group,
+the folder name is constructed as follows:
+
+I<Parent :: Child>
+
+Where Parent is the name of the parent group and Child is the group name itself.
+This way the tree might contain several identical group names from different levels
+and it is still possible to see a difference between them according to the parent
+group name. For technical reasons the folder structure under groups is not the same
+as the tree structure of groups. If it were, the links would broke once again
+if a group is moved around the tree. Instead we use a flat representation as described.
+
+=item *
+
+It is not possible to rename, delete or cut group and user folders even if the
+user has write or delete access. The system itself takes care of removing and renaming
+folders.
+
+=item *
+
+There are three different kind of access rights: read, write and delete. Each access
+right gives access to file and folder operations as the name implies.
+
+=item *
+
+If the user has no read access to certain group or user folder, the folder is not
+displayed in the tree.
+
+=item *
+
+Access rights are in four collections at the moment: two collections where the other
+allows only read access and the other allows read/write/delete access and two collections
+that deny the rights given by these collections.
+
+=item *
+
+Access rights have a target and a receiver. The receiver is always a certain user while
+the target can be another user or group.
+
+=item *
+
+By default all group members have only read access to the documents of the group
+and the group administrator has read/write/delete access. This behaviour can be changed
+through the group settings->default member rights tool.
+
+=item *
+
+It is possible to give more rights to group members to group files through
+the settings->custom member rights tool.
+
+=item *
+
+Administrator is able to give a certain user the right to read or read/write/delete
+files of another user with the Advanced security settings tool. Select I<user> as
+target and I<user> as receiver and select the counterparts.
+
+=back
+
+There are some lack of features at the moment:
+
+=over 4
+
+=item *
+
+Access rights cover recursively files and folers under a certain group/user. At
+the moment it is not possible to give fine-grained access rights to folders and files
+that are different from given default access rights. This might change if a need
+for more detailed security system is required.
+
+=item *
+
+Users themselves are not yet able to share their folders to others. This is done
+by the administrator from the admin level.  This feature will be implemented later.
+
+=item *
+
+It is not possible to remove or modify access rights created between users by
+the administrator. This lack of feature will be fixed later. For now you have to
+directly modify the I<dicole_security_user> database table.
+
+=back
+
+B<2004-08-30, Teemu Arina:>
+
+The current implementation of SMB shares and file system operations do not support
+adding new share types in an enough modular way. This is because the file operations
+are always mapped and operated between the two, like I<filesystem E<lt>-E<gt> SMB share>. If
+we add a new filesystem like FTP, we would have to write the implementation between
+the three and the work would rise as we add more filesystems.
+
+We have to write an abstracted file system that works like
+I<filesystem E<lt>-E<gt> abstract filesystem> and I<SMB share E<lt>-E<gt> abstract filesystem>.
+This allows us for example to copy a file from the filesystem to an abstracted filesystem and
+from there copy it to the real location, for example a SMB share. In other words, a
+filesystem only knows how to communicate with the abstracted filesystem.
+
+B<2004-03-07, Teemu Arina:>
+
+Initial version of SMB shares added. I had to rewrite the file manager code base
+to support modular implementations of basic file operations. In other words it
+could be quite easy to implement support for other remote shares or
+alien file systems.
+
+Because every file management operation must have an SMB share implementation
+some of the available functionality is not working for SMB shares yet (as of writing
+copy/move, download as Zip/Tgz).
+
+B<2004-03-03, Teemu Arina:>
+
+Dicole document manager lacks the following features
+described in this document (we do not list features already present):
+
+=over 4
+
+=item *
+
+Icon View, Detailed View, View Configuration
+
+=item *
+
+sorting
+
+=item *
+
+sideload
+
+=item *
+
+meta data sideload
+
+=item *
+
+meta data import (exports Qualified Dublin Core)
+
+=item *
+
+IEEE LOM
+
+=item *
+
+SMB shares
+
+=item *
+
+access rights
+
+=item *
+
+version control
+
+=item *
+
+document selection dialog
+
+=item *
+
+embedding documents elsewhere with the help of document selection dialog
+
+=back
+
+=head1 AUTHORS
+
+Teemu Arina E<lt>teemu@ionstream.fiE<gt>

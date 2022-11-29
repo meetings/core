@@ -1,0 +1,37 @@
+
+my $domain_id = 131;
+my @valid_groups = qw(
+);
+my %vg = map { $_ => 1 } @valid_groups;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_host = Dicole::URL->get_domain_url( $domain_id, 443 );
+    
+    CTX->lookup_action('meetings_api')->e( send_campaign_email => {
+        domain_id => $domain_id,
+#        dry_run => 1,
+#        single_send_limit => 1,
+#        skip_sent_check => 1,
+#        limit_to_users => ['ilmari@dicole.com'],
+        template_key_base => 'meetings_campaign_redirect_problem',
+        exclude_user_checker => sub {
+            my ( $self, $user ) = @_;
+            return 1 unless $vg{ $user->email };
+            return 0;
+        },
+        template_params_generator => sub {
+            my ( $self, $user ) = @_;
+            my $params = {
+                user_name => Dicole::Utils::User->name( $user ),
+                login_url => $self->_form_user_create_meetings_url( $user, $domain_id, $domain_host ), 
+            };
+
+            return $params;
+        },
+    } );
+}
+
+1;
+

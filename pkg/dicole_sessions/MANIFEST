@@ -1,0 +1,8 @@
+Changes
+conf/spops.ini
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/App/DicoleSessions.pm
+OpenInteract2/SQLInstall/DicoleSessions.pm
+package.ini
+struct/dicole_sessions.sql

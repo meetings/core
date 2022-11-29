@@ -1,0 +1,3 @@
+<span
+[%- IF itemparams.id %] id="[% itemparams.id %]"[% END %]
+[%- IF itemparams.class %] class="[% itemparams.class %]"[% END %]>[%- FOREACH item = itemparams.contents %][% PROCESS dicole_base::include_widget widget = item %][%- END %]</span>

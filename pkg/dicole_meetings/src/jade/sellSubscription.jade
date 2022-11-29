@@ -1,0 +1,45 @@
+div#sell-subscription.m-modal
+    div.modal-header
+        if( mode === 'trial_ending' )
+            h3!=MTN.t('Continue using Meetin.gs PRO ')
+        else if( mode === 'upgrade_now' )
+            h3!=MTN.t('Upgrade to Meetin.gs PRO')
+        else
+            h3!=MTN.t('Your Meetin.gs trial has expired')
+    div.modal-content
+        if( mode === 'upgrade_now' )
+            p!=MTN.t('Upgrade Meetin.gs now to secure a seamless transition after your trial ends. You will not be charged for the trial period anyways.')
+        else if( mode === 'trial_ending' )
+            p!=MTN.t("Thank you for trying Meetin.gs PRO. Upgrade now and claim your first year as a Meetin.gs PRO user for half the price.")
+        else if( mode === 'meetme' )
+            p!=MTN.t('Additional Meet Me pages is a Meetin.gs PRO feature.')
+        else if( mode === 'lct' )
+            p!=MTN.t('Google Hangouts, Microsoft Lync and custom options are PRO features.')
+        else if( mode === 'invite' )
+            p!=MTN.t('Meetings with more than 6 participants is a PRO feature.')
+        else if( mode === 'settings' )
+            p!=MTN.t('Configuring user rights on a per meeting basis is a PRO feature.')
+
+        div.pro-trial-upgrade
+            div.star-box
+                h3!=MTN.t('$ 12')
+                p!=MTN.t('/ month')
+        h3.pro-header!=MTN.t('Benefits for upgrading:')
+        if( mode === 'upgrade_now' )
+            ul.pro-list
+                li!=MTN.t('Save everyone from the pain of scheduling meetings.')
+                li!=MTN.t('Avoid the hassle by gathering all the meeting materials into one place.')
+                li!=MTN.t('No more access codes: Join in with phone, Skype, Lync and Hangouts with a single tap.')
+                li!=MTN.t('Be notified of meeting updates in an instant.')
+        else
+            ul.pro-list
+                li!=MTN.t('Unlimited meeting schedulers')
+                li!=MTN.t('Expanded live communication tools')
+                li!=MTN.t('Visual customization and branding')
+                li!=MTN.t('Unlimited meeting participants')
+                li!=MTN.t('Unlimited meeting materials')
+
+    div.modal-footer 
+        div.buttons.right
+            a(href='#').start-subscription.button.blue!=MTN.t('Upgrade now')
+            a(href='#').button.gray.close.js_hook_showcase_close!=MTN.t('Later')

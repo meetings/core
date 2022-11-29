@@ -1,0 +1,594 @@
+
+msgid "%1 Comments"
+msgstr "%1 Kommentarerer"
+
+msgid "Best rated posts"
+msgstr "Högst bedömda poster"
+
+msgid "Blog following tool"
+msgstr "Verktyg för uppföljning av bloggar"
+
+msgid "Blogs"
+msgstr Bloggar""
+
+msgid "Blogs rights"
+msgstr "Bloggens rättigheter"
+
+msgid "Choose view"
+msgstr "Välj vy"
+
+msgid "Comment blogs"
+msgstr "Kommentera bloggar"
+
+msgid "Demote"
+msgstr "Degradera"
+
+msgid "Discuss"
+msgstr "Diskutera"
+
+msgid "Edit post"
+msgstr "Redigera inlägget"
+
+msgid "Entry removed"
+msgstr "Inlägget raderat"
+
+msgid "Entry updated"
+msgstr "Inlägget uppdaterad"
+
+msgid "Feature blogs"
+msgstr "Befordrade bloggar"
+
+msgid "Featured post"
+msgstr "Befordrad post"
+
+msgid "Featured posts"
+msgstr "Befordrade poster"
+
+msgid "Featured posts tagged with: %1"
+msgstr "Befordrade poster taggade med: %1"
+
+msgid "Filter by tag"
+msgstr "Filtrera enligt tags"
+
+msgid "Posts by %1"
+msgstr "Poster av %1"
+
+msgid "Posts by %2 tagged with: %1"
+msgstr "Poster av %2 taggade med: %1"
+
+msgid "Posts by contacts"
+msgstr "Poster av dina kontakter"
+
+msgid "Posts by contacts tagged with: %1"
+msgstr "Poster av kontakter taggade med: %1"
+
+msgid "Manage others comments to blogs"
+msgstr "Hantera andras kommentarer till bloggar"
+
+msgid "Most promoted posts"
+msgstr "Mest befordrade poster"
+
+msgid "Most promoted posts tagged with: %1"
+msgstr "Mest befordrade poster taggade med: %1"
+
+msgid "My posts"
+msgstr "Mina poster"
+
+msgid "New posts"
+msgstr "Nya poster"
+
+msgid "New posts tagged with: %1"
+msgstr "Nya poster taggade med: %1"
+
+msgid "No, I changed my mind"
+msgstr "Nej, jag har ändrat mig"
+
+msgid "Popular tags"
+msgstr "Populära tags"
+
+msgid "Post"
+msgstr "Posta"
+
+msgid "Write a post"
+msgstr "Skriv en post"
+
+msgid "Promote"
+msgstr "Befordra"
+
+msgid "Promote blogs"
+msgstr "Befordra bloggar"
+
+msgid "Publish"
+msgstr "Publicera"
+
+msgid "Rate blogs"
+msgstr "Bedöm bloggar"
+
+msgid "Read blogs"
+msgstr "Läs bloggar"
+
+msgid "Read more"
+msgstr "Läs mera"
+
+msgid "Remove comments from blogs"
+msgstr "Radera kommentarer från bloggar"
+
+msgid "Search by tag"
+msgstr "Sök enligt tag"
+
+msgid "Suggested tags"
+msgstr "Föreslagna tags"
+
+msgid "Syndication feed (RSS 2.0)"
+msgstr "Syndication feed (RSS 2.0)"
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "User can comment blogs"
+msgstr "Användare kan kommentera bloggar"
+
+msgid "User can feature blogs"
+msgstr "Användare kan framhäva bloggar"
+
+msgid "User can promote and demote blogs"
+msgstr "Användare kan befordra och degradera bloggar"
+
+msgid "User can rate blogs"
+msgstr "Användare kan bedöma bloggar"
+
+msgid "User can read the blogs"
+msgstr "Användare kan läsa bloggarna"
+
+msgid "User can remove comments from blogs"
+msgstr "Användare kan radera kommentarer från bloggar"
+
+msgid "Yes, I am sure that I want to delete the message permanently"
+msgstr "Ja, jag är säker att jag vill radera detta meddelande permanent"
+
+msgid "You are about to delete a message"
+msgstr "Du håller på att radera ett meddelande"
+
+msgid "You must fill both title and content."
+msgstr "Du måste ange både titel och innehåll."
+
+msgid "You must have at least one tag."
+msgstr "Du måste ha åtminstone en tag."
+
+msgid "New post"
+msgstr "Ny post"
+
+msgid "Add tag"
+msgstr "Lägg till tag"
+
+msgid "tagged with: %1"
+msgstr "taggad med: %1"
+
+msgid "Blogs featured post summary"
+msgstr "Sammandrag av utvalda blogposter"
+
+msgid "Blogs new comments summary"
+msgstr "Sammandrag av nya kommentarer till bloggar"
+
+msgid "Blogs new posts summary"
+msgstr "Sammandrag av nya blogposter"
+
+msgid "Comment by %1"
+msgstr "Kommentar av %1"
+
+msgid "Comment to %1"
+msgstr "Kommentar till %1"
+
+msgid "Latest blog comments"
+msgstr "Senaste kommentarer till bloggar"
+
+msgid "Latest blog entries and comments."
+msgstr "Senaste blogginlägg och kommentarer."
+
+msgid "Latest blog posts"
+msgstr "Senaste bloggposter"
+
+msgid "No blog comments found."
+msgstr "Inga kommentarer till bloggar hittades."
+
+msgid "No blog posts found."
+msgstr "Inga bloggposter hittades."
+
+msgid "Unknown user"
+msgstr "Okänd användare"
+
+msgid "Show more posts"
+msgstr "Visa mera poster"
+
+msgid "The message you requested does not exist."
+msgstr "Meddelandet du sökte finns inte."
+
+msgid "%1 post(s)"
+msgstr "%1 post(er)"
+
+msgid "Active seeds"
+msgstr "Aktiva frön"
+
+msgid "Add popular tags"
+msgstr "Lägg till populära tags"
+
+msgid "Add seed to summary"
+msgstr "Lägg till frö till sammandrag"
+
+msgid "Add suggested tags"
+msgstr "Lägg till föreslagna tags"
+
+msgid "All seeds"
+msgstr "Alla frön"
+
+msgid "Be the first to add one!"
+msgstr "Var den första att lägg till en!"
+
+msgid "Browse all posts"
+msgstr "Bläddra alla poster"
+
+msgid "Browse my own posts"
+msgstr "Bläddra egna poster"
+
+msgid "Browse posts by contacts"
+msgstr "Bläddra poster av kontakter "
+
+msgid "Change seed"
+msgstr "Byt frö"
+
+msgid "Closed seeds"
+msgstr "Stängda frön"
+
+msgid "Closing comment"
+msgstr "Avslutande kommentar"
+
+msgid "Create a seed"
+msgstr "Skapa ett frö"
+
+msgid "Create seeds"
+msgstr "Skapa frön"
+
+msgid "Custom creator string"
+msgstr "Custom creator sträng"
+
+msgid "Edit seed"
+msgstr "Redigera frö"
+
+msgid "Edit seeds"
+msgstr "Redigera frön"
+
+msgid "Enable promoting"
+msgstr "Möjliggör främjande"
+
+msgid "Enable rating"
+msgstr "Möjliggör värdering"
+
+msgid "Most recent post on %1"
+msgstr "Senaste post om %1"
+
+msgid "Move posts between seeds"
+msgstr "Flytta poster mellan frön"
+
+msgid "Move post to seed \"%1\""
+msgstr "Flytta post till frö \"%1\""
+
+msgid "My own posts"
+msgstr "Mina egna poster"
+
+msgid "My own posts tagged with: %1"
+msgstr "Mina egna poster taggade med: %1"
+
+msgid "No posts found."
+msgstr "Inga poster hittades."
+
+msgid "No seeds found."
+msgstr "Inga frön hittades."
+
+msgid "Organized by %1"
+msgstr "Organiserad av %1"
+
+msgid "Post seed assigned."
+msgstr "Posta frö ."
+
+msgid "Post to seed \"%1\""
+msgstr "Posta till frö \"%1\""
+
+msgid "Remove post from seed"
+msgstr "Radera post från fröt"
+
+msgid "Remove seed"
+msgstr "Radera frö"
+
+msgid "Remove seed from summary"
+msgstr "Radera frÃ¶ frÃ¥n Översikten"
+
+msgid "Reopen seed"
+msgstr "Återöppna frö"
+
+msgid "Seed"
+msgstr "Frö"
+
+msgid "Seed added to summary."
+msgstr "Fröt lades till Översikten."
+
+msgid "Seed closed."
+msgstr "Frö avslutat."
+
+msgid "Seed created"
+msgstr "Frö skapat"
+
+msgid "Seed guide"
+msgstr "Guide över frön"
+
+msgid "Seed has been closed and no further contributions will be accepted."
+msgstr "Fröet avslutat, ytterligare inlägg är inte möjliga."
+
+msgid "Seed information"
+msgstr "Information om fröt"
+
+msgid "Seed promoted."
+msgstr "Frö har blivit främjat."
+
+msgid "Seed promotion removed."
+msgstr "Främjandet av fröt har avlägsnats."
+
+msgid "Seed removed."
+msgstr "Frö raderat."
+
+msgid "Seed removed from summary."
+msgstr "Frö raderat från sammandrag."
+
+msgid "Seed reopened."
+msgstr "Frö återöppnat."
+
+msgid "Seed updated"
+msgstr "Frö updaterat"
+
+msgid "Select new seed"
+msgstr "Välj ett nytt frö"
+
+msgid "Select seed to post to"
+msgstr "Välj frö att posta till"
+
+msgid "Show seeds"
+msgstr "Visa frön"
+
+msgid "Unpromote seed"
+msgstr "Avlägsna befording av frö"
+
+msgid "User can create seeds"
+msgstr "Användare kan skapa frön"
+
+msgid "User can edit other's seeds"
+msgstr "Användare kan redigera andras frön"
+
+msgid "User change post seeds"
+msgstr "Användare kan byta frön"
+
+msgid "Views"
+msgstr "Vyer"
+
+msgid "Write a post without a seed"
+msgstr "Skriv en post utan ett frö"
+
+msgid "You are moving post titled \"%1\" into a new seed. Please select one of the options below:"
+msgstr "Du håller på att flytta post med namnet \"%1\" till ett nytt frö. Var god välj ett av alternativen nedan:"
+
+msgid "You can not edit a post in a closed seed."
+msgstr "Du kan inte ändra en post som ligger i ett stängt frö."
+
+msgid "You can not post to a closed seed."
+msgstr "Du kan inte posta till ett stängt frö."
+
+msgid "You must fill both title and description."
+msgstr "Du måste fylla i både namn och beskrivning."
+
+msgid "Seeds tagged with: %1"
+msgstr "Frön taggade med: %1"
+
+msgid "All seeds tagged with: %1"
+msgstr "Alla frön taggade med: %1"
+
+msgid "Closed seeds tagged with: %1"
+msgstr "Stänga frön taggade med: %1"
+
+msgid "Close seed"
+msgstr "Stäng frö"
+
+msgid "Create"
+msgstr "Skapa"
+
+msgid "Promoted"
+msgstr "Befordra"
+
+msgid "Promote seed"
+msgstr "Befordra frö"
+
+msgid "Add attachment"
+msgstr "Lägg till bilaga"
+
+msgid "Attachments"
+msgstr "Bilagor"
+
+msgid "The file you requested does not exist."
+msgstr "Filen du sökte finns inte till."
+
+msgid "No tags."
+msgstr "Inga tags."
+
+msgid "(Drag & drop links and images to the editor window)"
+msgstr "(Dragga & droppa länkar och bilder till redigeringsrutan)"
+
+msgid "Save & continue editing"
+msgstr "Spara & fortsätt redigera"
+
+msgid "Publish & continue editing"
+msgstr "Publicera & fortsätt redigera"
+
+msgid "Add missing tags"
+msgstr "Lägg till tags som fattas"
+
+msgid "Add tags to post"
+msgstr "Lägg till tags till post"
+
+msgid "Add tags to posts"
+msgstr "Lägg till tags till poster"
+
+msgid "Click to add popular tags"
+msgstr "Klicka för att lägga till populära tags"
+
+msgid "Click to add suggested tags"
+msgstr "Klicka för att lägga till föreslagna tags"
+
+msgid "Save tag changes"
+msgstr "Spara ändringar till tags"
+
+msgid "Tags of post \"%1\""
+msgstr "Tags i posten \"%1\""
+
+msgid "Tags updated."
+msgstr "Tags uppdaterade."
+
+msgid "The user whose files you requested does not exist."
+msgstr "Användaren vars filer du sökte finns inte."
+
+msgid "User add tags to posts"
+msgstr "Användare kan lägga till tags till poster"
+
+msgid "User can change post seeds"
+msgstr "Användare kan ändra postade frön"
+
+msgid "Add tags to post \"%1\""
+msgstr "Lägg till tags till posten \"%1\""
+
+msgid "Post information"
+msgstr "Information om posten"
+
+msgid " tagged with: %1"
+msgstr " taggad med: %1"
+
+msgid "Write a message"
+msgstr "Skriv ett meddelande"
+
+msgid " tagged with: "
+msgstr " taggad med: "
+
+msgid " Posts by contacts "
+msgstr " Poster av kontakter "
+
+msgid "Delete message"
+msgstr "Radera meddelande"
+
+msgid " Featured posts "
+msgstr " Befordrade poster "
+
+msgid "Posts tagged with: %1"
+msgstr "Poster taggade med: %1"
+
+msgid " Featured posts  "
+msgstr " Befordrade poster  "
+
+msgid "Best rated posts tagged with: %1"
+msgstr "Högst bedömda poster taggade med: %1"
+
+msgid "My posts tagged with: %1"
+msgstr "Mina poster taggade med: %1"
+
+msgid "Click to add tags popular elsewhere"
+msgstr "Välj taggar populära annanstans"
+
+msgid "Click to add tags popular in this seed"
+msgstr "Välj taggar populära i detta frö"
+
+msgid "Contribute to blogs"
+msgstr "Bidrag till bloggarna"
+
+msgid "Manage blogs"
+msgstr "Hantera bloggar"
+
+msgid "Post to blogs"
+msgstr "Skriv blogginlägg"
+
+msgid "User can post to blogs"
+msgstr "Användaren kan skriva bloggposter"
+
+msgid "Seeds"
+msgstr "Frön"
+
+msgid "Feature post"
+msgstr "Nosta esiin"
+
+msgid "Unfeature post"
+msgstr "Poista esille nosto"
+
+msgid "Reseed"
+msgstr "Vaihda aihetta"
+
+msgid "Posts by tag"
+msgstr "Poster med tag"
+
+msgid "Reposter saved."
+msgstr "Reposter saved."
+
+msgid "Selected domains removed."
+msgstr "Selected domains removed."
+
+msgid "Topics by tag"
+msgstr "Frön med tag"
+
+msgid "Exclude posts from mail digest"
+msgstr "Exclude posts from mail digest"
+
+msgid "Exclude posts from summary"
+msgstr "Exclude posts from summary"
+
+msgid "Source:"
+msgstr "Source:"
+
+msgid "1 star out of 1"
+msgstr "1 star out of 1"
+
+msgid "1 star out of 2"
+msgstr "1 star out of 2"
+
+msgid "1 star out of 3"
+msgstr "1 star out of 3"
+
+msgid "1 star out of 4"
+msgstr "1 star out of 4"
+
+msgid "1 star out of 5"
+msgstr "1 star out of 5"
+
+msgid "Conversations"
+msgstr "Conversations"
+
+msgid "Latest conversation comments"
+msgstr "Latest conversation comments"
+
+msgid "Latest conversations"
+msgstr "Latest conversations"
+
+msgid "No conversation comments found."
+msgstr "No conversation comments found."
+
+msgid "No conversations found."
+msgstr "No conversations found."
+
+msgid "Edit message"
+msgstr "Edit message"
+
+msgid "Posts"
+msgstr "Posts"
+
+msgid "No comments"
+msgstr "No comments"
+
+msgid "One comment"
+msgstr "One comment"
+
+msgid "Related events"
+msgstr "Related events"
+
+msgid "Move to an another topic"
+msgstr "Move to an another topic"

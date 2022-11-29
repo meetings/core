@@ -1,0 +1,18 @@
+<div class="tag_control[% IF itemparams.class %] [% itemparams.class %][% END %]" id="[% itemparams.id %]">
+
+    <input type="hidden" name="[% itemparams.name %]" id="tag_data_[% itemparams.id %]" value="[% itemparams.value | html %]" />
+    <input type="hidden" name="[% itemparams.name %]_old" id="tag_data_old_[% itemparams.id %]" value="[% itemparams.old_value | html %]" />
+
+    <div class="tag_list_container" id="tag_list_[% itemparams.id %]">
+        <!-- -->
+    </div>
+
+    <div class="tag_add_link_container" id="tag_add_link_container_[% itemparams.id %]">
+        <a class="tag_add_link" id="tag_add_link_[% itemparams.id %]" href="#">[% itemparams.add_more_tags_text | html %]</a>
+    </div>
+
+    <div class="tag_add_input_container" id="tag_add_input_container_[% itemparams.id %]">
+        <input class="tag_add_input_field" name="[% itemparams.name %]_add_tags_input_field" id="tag_add_input_field_[% itemparams.id %]" type="text" value="" />
+        <input class="tag_add_input_submit" name="[% itemparams.name %]_add_tags_input_submit" id="tag_add_input_submit_[% itemparams.id %]" type="button" value="[% itemparams.add_tag_text | html %]" />
+    </div>
+</div>

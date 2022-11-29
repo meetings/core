@@ -1,0 +1,113 @@
+use 5.010;
+use strict;
+use warnings;
+use Data::Dump 'dump';
+
+use Courriel::Builder     qw/build_email subject from to plain_body/;
+use Email::Sender::Simple qw/sendmail/;
+
+sub execute {
+    my ($self) = @_;
+
+    my $meetings     = CTX->lookup_action('meetings_api');
+    my $paypal       = CTX->lookup_action('meetings_paypal_api');
+    my $transactions = CTX->lookup_object('meetings_paypal_transaction');
+
+    my $paypal_client = $paypal->_client;
+
+    my $paypal_dates = DateTime::Format::CLDR->new(
+        pattern => "YYYY-LL-dd'T'HH:mm:ss'Z'",
+        locale  => 'en_US'
+    );
+
+    my $start_date = $paypal_dates->format_datetime(DateTime->now->subtract(months => 1));
+
+    my %transactions = $paypal_client->TransactionSearch(STARTDATE => $start_date);
+
+    my @transactions = parse_transactions(%transactions);
+
+    my @not_found;
+
+    for my $paypal_transaction (@transactions) {
+        my $id = $paypal_transaction->{transaction_id};
+
+        next if $id =~ /^I-/;
+
+        #my %details = $paypal_client->GetTransactionDetails(TRANSACTIONID => $id);
+
+        #my %normalized_details = $paypal->_normalize_api_transaction_details_result(%details);
+
+        #my %munged_transaction = combine_paypal_transaction_and_details($paypal_transaction, \%normalized_details);
+
+        my $saved_transaction = CTX->lookup_object('meetings_paypal_transaction')->fetch_group({
+            where => 'transaction_id = ?',
+            value => [ $id ]
+        })->[0];
+
+        if ($saved_transaction) {
+            #merge_transaction($paypal_transaction, $saved_transaction);
+            #warn "Skipping existing transaction '$id'\n";
+        } else {
+            push @not_found, $id;
+        }
+    }
+
+    if (@not_found) {
+        my $email = build_email(
+            subject('Missing PayPal transactions'),
+            to('ilmari@dicole.com'),
+            from('info@dicole.com'),
+            plain_body("The following IDs were not found locally:\n" . join "\n", @not_found)
+        );
+
+        sendmail($email);
+    }
+}
+
+sub parse_transactions {
+    my %transactions = @_;
+
+    my $paypal = CTX->lookup_action('meetings_paypal_api');
+
+    my @transactions;
+
+    for my $transaction (grep { /^L_TRANSACTIONID(\d+)$/ } keys %transactions) {
+        my ($num) = $transaction =~ /(\d+)$/;
+
+        my %transaction = map { /^L_(.+[^\d])$num$/; $1 => $transactions{$_} } grep { /^L_(.+[^\d])$num$/ } keys %transactions;
+
+        %transaction = $paypal->_normalize_api_search_transaction_result(%transaction);
+
+        $transactions[$num] = \%transaction;
+    }
+
+    return @transactions;
+}
+
+sub combine_paypal_transaction_and_details {
+    my ($transaction, $details) = @_;
+
+    return (%$transaction, %$details);
+}
+
+sub create_transaction {
+    my ($paypal_transaction) = @_;
+
+    my ($email, $user_id, $subscription_type) = split /,/, $paypal_transaction->{custom};
+
+    my $datetime = eval { CTX->lookup_action('meetings_paypal_api')->_paypal_datetime_parser->parse_datetime($paypal_transaction->{FIXME}) };
+
+    my $transaction = CTX->lookup_object('meetings_paypal_transaction')->new({
+        transaction_id => $paypal_transaction->{transaction_id},
+        domain_id      => 76,
+        user_id        => $user_id,
+        payment_date   => $datetime->epoch,
+        received_date  => time,
+        notes          => Dicole::Utils::JSON->encode($paypal_transaction)
+    });
+
+}
+
+1;
+
+# vi: ft=perl et ts=4 sw=4

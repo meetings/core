@@ -1,0 +1,40 @@
+                  
+
+<div class="media-view-item">
+
+<div class="close-control"><a href="#" class="function-presentations-show-hide" onclick="return false;"><span>Close</span></a></div>
+
+<div class="header type-[% type %]">
+  <h2>[% title | html %]</h2>
+  <div class="author">[% by_author | html %]</div>
+</div>
+
+<div align="center" class="embedded-item"> <!-- behold the mighty align="center" ! -->
+[% embed %]
+</div>
+
+[% rating_html %]
+
+<div class="info">
+<div class="message">[% description %]</div>
+
+<!--<div class="rating"><div class="rating-3">3 stars</div></div>-->
+
+<div class="tags">[% FOREACH taag IN tags %][% IF ! loop.first %], [% END %][% taag | html %][% END %]</div>
+
+<div class="upload-info"><span class="uploader">[% by_uploaded | html %]</span> <span class="upload-date">[% on_date | html %]</span></div>
+
+</div>
+[% IF edit_url %]<a href="[% edit_url %]" class="editbutton">Edit</a>[% END %]
+
+<div class="comments">
+<h2>[% strings.comments %]</h2>
+
+[% comments_html %]
+
+</div>
+
+</div>
+
+                  
+  

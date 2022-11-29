@@ -1,0 +1,25 @@
+sub execute {
+    my ($self) = @_;
+
+    my $new_items = CTX->lookup_object("feeds_items")->fetch_group({where => "uid_hash is not null"});
+    for my $item ( @$new_items ) {
+        if ( $item->{guid} ) {
+            $_->remove for @{
+                CTX->lookup_object("feeds_items")->fetch_group( {
+                    where => "feed_id = ? and guid = ? and uid_hash is null",
+                    value => [ $item->{feed_id}, $item->{guid} ]
+                } ) || []
+            };
+        }
+        if ( $item->{"link"} && length($item->{"link"}) > 10 ) {
+            $_->remove for @{
+                CTX->lookup_object("feeds_items")->fetch_group({
+                    where => "feed_id = ? and link =? and uid_hash is null",
+                    value => [ $item->{feed_id}, $item->{"link"} ]
+                }) || []
+            };
+        }
+    }
+}
+
+1;

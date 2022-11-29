@@ -1,0 +1,52 @@
+[% MTN.t('%1$s: Your scheduled meetings',[matchmaking_event]) %]
+
+<<<html_wrapper>>>
+[% action_text = MTN.t('Hi %1$s,',[user_name]) %]
+<<<text_and_logo>>>
+<<<h1>>>[% MTN.t('Time to get ready for %1$s.',[matchmaking_event]) %]<<</h1>>>
+<<<bubble>>>
+<<<p>>><<<bold>>>[% MTN.t('This is a summary of your upcoming meetings during the event:') %]<<</bold>>><<</p>>>
+<<<p>>>[% MTN.t('Consider reviewing the meetings one more time and checking if there are any agenda items or materials, that you might have missed. Preparing well is one of the key factors for holding an efficient meeting.') %]<<</p>>>
+
+[% FOREACH meeting IN meetings %]
+<<<p>>><<<bold>>>[% meeting.title %][% IF ! meeting.is_confirmed %] [% MTN.t('(Not confirmed)') %][% END %]<<</bold>>>
+<<<br>>><<<bold>>>[% MTN.t('Who:') %] <<</bold>>>[% meeting.participants %]
+<<<br>>><<<bold>>>[% MTN.t('Time:') %] <<</bold>>>[% meeting.time %]
+<<<br>>><<<bold>>>[% MTN.t('Location:') %] <<</bold>>>[% meeting.location %]
+[% url = meeting.meeting_url %]
+[% IF meeting.is_confirmed %][% text = MTN.t('View to confirm the meeting') %]
+[% ELSE %]
+[% text = MTN.t('View meeting details') %][% END %]
+<<<br>>><<<link>>><<</p>>>
+[% IF ! meeting.is_confirmed %][% show_help = 1 %][% END %]
+[% END %]
+
+[% IF show_help %]
+<<<p>>><<<bold>>>[% MTN.t('IMPORTANT: Some of your meetings are not confirmed.') %]<<</bold>>><<</p>>>
+<<<p>>>[% MTN.t('You have not accepted or declined all the meeting requests you received or you have not confirmed, that the online meeting page is ready to be shared with the participants. Both of these actions may be completed on each meeting page.') %] <<<bold>>>[% MTN.t('You should do this now as the matchmaking will not be completed otherwise.') %]<<</bold>>><<</p>>>[% END %]
+
+[% IF matchmaking_instructions_html %]
+
+<<<p>>><<<bold>>>[% MTN.t('General instructions for meetings at %1$s:',[matchmaking_event]) %]<<</bold>>><<</p>>>
+
+[% IF in_html %]
+<<<p>>>[% matchmaking_instructions_html %]<<</p>>>
+[% ELSE %]
+<<<p>>>[% matchmaking_instructions_text %]<<</p>>>
+[% END %]
+
+[% END %]
+<<</bubble>>>
+
+[% IF ! hide_app_promotion %]
+<<<p>>>
+[% MTN.t("Did you know, that you can use your mobile device to easily access all the information related to your meetings during %1\$s? It's easy.",[matchmaking_event]) %] 
+<<</p>>>
+
+<<<app_buttons>>>
+
+<<<br>>>
+
+[% END %]
+
+<<</html_wrapper>>>

@@ -1,0 +1,6 @@
+#! /usr/bin/perl
+
+my @filelist = split /\n/, `find -name *.pm`;
+foreach my $file (@filelist) {
+	`perl -c $file`;
+}

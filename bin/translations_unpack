@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+my $zip = $ARVG[0] || 'translations.zip';
+`unzip $zip`;
+my @files = split "\n", `find translations | grep messages`;
+for my $file ( @files ) {
+  chomp $file;
+  my $to = $file;
+  $to =~ s/___/\//g;
+  $to =~ s/translations/pkg/;
+  system "cp", $file, $to;
+}
+`rm -Rf translations`;

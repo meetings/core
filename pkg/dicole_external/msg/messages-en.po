@@ -1,0 +1,140 @@
+# $Id: messages-en.po,v 1.1 2006-07-31 22:05:02 inf Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2006-07-31 01:51:29+0000\n"
+"PO-Revision-Date: 2006-07-31 01:51:29+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "-"
+msgstr "-"
+
+msgid "Access external tools"
+msgstr "Access external tools"
+
+msgid "Add integration"
+msgstr "Add integration"
+
+msgid "Custom fields to use (replaces %%field%% in parameter values with the value of custom object field)"
+msgstr "Custom fields to use (replaces %%field%% in parameter values with the value of custom object field)"
+
+msgid "Custom object ID"
+msgstr "Custom object ID"
+
+msgid "Custom SPOPS object for fetching parameter values"
+msgstr "Custom SPOPS object for fetching parameter values"
+
+msgid "Custom SQL WHERE query (you can use %%user_id%% and %%target_id%% in the query)"
+msgstr "Custom SQL WHERE query (you can use %%user_id%% and %%target_id%% in the query)"
+
+msgid "Fill in username"
+msgstr "Fill in username"
+
+msgid "Fill in user password"
+msgstr "Fill in user password"
+
+msgid "Group"
+msgstr "Group"
+
+msgid "Group ID's that can access"
+msgstr "Group ID's that can access"
+
+msgid "Identification name"
+msgstr "Identification name"
+
+msgid "Identification name not defined."
+msgstr "Identification name not defined."
+
+msgid "Integration details"
+msgstr "Integration details"
+
+msgid "Integration has been saved."
+msgstr "Integration has been saved."
+
+msgid "Integration with name %1 already exists."
+msgstr "Integration with name %1 already exists."
+
+msgid "Integrator"
+msgstr "Integrator"
+
+msgid "List integrations"
+msgstr "List integrations"
+
+msgid "List of integrations"
+msgstr "List of integrations"
+
+msgid "Manage integrations"
+msgstr "Manage integrations"
+
+msgid "Modify integration"
+msgstr "Modify integration"
+
+msgid "Name of navigation element"
+msgstr "Name of navigation element"
+
+msgid "Navigation icon"
+msgstr "Navigation icon"
+
+msgid "Navigation identification name not defined."
+msgstr "Navigation identification name not defined."
+
+msgid "Navigation ID"
+msgstr "Navigation ID"
+
+msgid "Navigation item with name %1 already exists."
+msgstr "Navigation item with name %1 already exists."
+
+msgid "Navigation parent element"
+msgstr "Navigation parent element"
+
+msgid "Parameters"
+msgstr "Parameters"
+
+msgid "Password field in request"
+msgstr "Password field in request"
+
+msgid "Persistent in navigation"
+msgstr "Persistent in navigation"
+
+msgid "Position number in navigation"
+msgstr "Position number in navigation"
+
+msgid "Remove integrations"
+msgstr "Remove integrations"
+
+msgid "Request"
+msgstr "Request"
+
+msgid "Show list of integrations"
+msgstr "Show list of integrations"
+
+msgid "Type of external tool"
+msgstr "Type of external tool"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Use navigation element"
+msgstr "Use navigation element"
+
+msgid "User can manage integrations"
+msgstr "User can manage integrations"
+
+msgid "User field in request"
+msgstr "User field in request"
+
+msgid "User ID's that can access"
+msgstr "User ID's that can access"
+
+msgid "Use target ID as custom object ID"
+msgstr "Use target ID as custom object ID"
+
+msgid "Use user ID as custom object ID"
+msgstr "Use user ID as custom object ID"

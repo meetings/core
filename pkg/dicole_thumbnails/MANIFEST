@@ -1,0 +1,11 @@
+Changes
+conf/action.ini
+conf/spops.ini
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleThumbnails.pm
+OpenInteract2/Action/DicoleThumbnailsAPI.pm
+OpenInteract2/Action/DicoleThumbnailsCommon.pm
+OpenInteract2/App/DicoleThumbnails.pm
+OpenInteract2/SQLInstall/DicoleThumbnails.pm
+package.ini

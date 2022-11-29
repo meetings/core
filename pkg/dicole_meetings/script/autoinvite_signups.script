@@ -1,0 +1,22 @@
+my $domain_id = 76;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_host = Dicole::URL->get_domain_url( $domain_id ); 
+    
+    my $sendable_signups = CTX->lookup_object('meetings_beta_signup')->fetch_group({
+        where => 'domain_id = ? AND invited_user_id = 0 AND signup_date < ?',
+# 23h        value => [ $domain_id, time - ( 60 * 60 * 23 ) ],
+        value => [ $domain_id, time ],
+    });
+
+    for my $signup ( @$sendable_signups ) {
+        CTX->lookup_action('meetings_api')->e( autoinvite_signup_to_beta => {
+            domain_id => $domain_id,
+            domain_host => $domain_host,
+            signup => $signup,
+        } );
+    }
+}
+

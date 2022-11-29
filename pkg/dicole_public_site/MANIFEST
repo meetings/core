@@ -1,0 +1,24 @@
+Changes
+conf/action.ini
+conf/fields.ini
+conf/spops.ini
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicolePublicSite.pm
+OpenInteract2/App/DicolePublicSite.pm
+OpenInteract2/SQLInstall/DicolePublicSite.pm
+package.ini
+struct/dicole_ps_box.sql
+struct/dicole_ps_box.sqlite.sql
+struct/dicole_ps_page.sql
+struct/dicole_ps_page.sqlite.sql
+struct/dicole_ps_page_box.sql
+struct/dicole_ps_page_box.sqlite.sql
+template/bottom.tmpl
+template/center.tmpl
+template/container.tmpl
+template/footer.tmpl
+template/header.tmpl
+template/left.tmpl
+template/right.tmpl
+template/top.tmpl

@@ -1,0 +1,48 @@
+[%# $Id: dicole_html_mail_digest_sv.tmpl,v 1.2 2008-12-04 15:47:06 amv Exp $ -%]
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style type="text/css">
+table.header { width: 100%; color: inherit; background: #F8F8F8; border-bottom: solid #ccc 1px; padding: 3px; font-weight: bold; font-size: 14px }
+div.tooltitle { display: block; width: 100%; letter-spacing: 1px; border-bottom: solid #ccc 1px; font-size: 12px; font-weight: bold; background: #F8F8F8; padding: 3px }
+a { color: #0474DC; text-decoration: none }
+a:hover { text-decoration: underline }
+li { list-style-type: square; }
+body { color: black; background: white; font-family: Arial, Verdana }
+p.footer { color: #9D9D9D; margin-top: 10px; border-top: solid silver 1px }
+td.digestdate { font-style: italic; color: #818181 }
+span.date { color: #828282; font-style: italic; font-size: 92% }
+span.author { font-size: 90% }
+a.group { color: #0474DC; text-decoration: none; font-weight: bold }
+</style>
+</head>
+<body>
+<table class="header">
+<tr>
+<td align="left">Sammandrag [% IF group_name %]för gruppen <a class="group" href="[% group_addr %]">[% group_name %]</a>[% ELSE %]<a class="group" href="[% personal_addr %]">till din personliga aggregator</a>[% END %] för händelser</td>
+<td align="right" class="digestdate">[% current_date %]</td>
+</tr>
+</table>
+
+<p>Här är händelser som inträffat efter [% last_date %].<br />
+Om du vill ändra inställningarna för dina epostsammandrag, <a href="[% settings_addr %]">ändra dina inställningar.</a></p>
+
+[% FOREACH tool = tool_digests %]
+
+<div class="tooltitle">[% tool.tool_name %]</div>
+<ul>
+[% FOREACH content = tool.items_html -%]
+<li>[% content %]</li>
+
+[%#
+<span class="date">2007-03-08 17:52</span> - <a href="#">I think this stuff is great</a> - <span class="author">Teemu Arina</span>
+-%]
+[% END %]
+</ul>
+[% END %]
+
+<p class="footer">Detta är en automatisk rapport sammanställd av Dicole DKWE, svara inte på detta epostmeddelande.</p>
+
+</body>
+</html>

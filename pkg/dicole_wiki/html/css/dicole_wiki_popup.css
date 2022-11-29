@@ -1,0 +1,17 @@
+a.wiki_title_select {
+    display: block;
+    padding: 5px;
+    margin: 2px;
+}
+
+a.wiki_title_select:hover {
+    background: #aaaaff;
+}
+
+#page_input, #header_input {
+    width: 98%;
+}
+
+body.action_wiki_popup div.content {
+    width: 615px;
+}

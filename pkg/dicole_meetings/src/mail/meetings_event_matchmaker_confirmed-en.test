@@ -1,0 +1,11 @@
+[%- IF test_case == 'simple' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+user_name ='kääppä'
+event_name = 'Custom Name'
+matchmaker_company = 'United Cauliflower'
+matchmaker_description = 'Tää meidän setti on niinkun ihan sikahuikee ja huokee. Tehdään superfood-hengessä luomuperunoista ja sipuleista mehutiivistettä. Kun Punavuoren hipsterit tajuu tän niin sit meitä viedään ja lujaa. Hilloo beibi, hilloo.'
+
+%]
+[% END %]

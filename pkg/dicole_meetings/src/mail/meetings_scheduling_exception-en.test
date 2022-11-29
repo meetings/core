@@ -1,0 +1,39 @@
+[%#- Various border case responses when replying to scheduling through email. -%]
+
+[%- IF test_case == 'time set' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meeting_time = 'Thu 12.2.2042 from 12:00 to 13:00'
+meeting_title = 'Cola tasting symposium'
+meeting_url = 'http://meetin.gs/meeting_url' 
+time_zone = 'GMT +2'
+
+%]
+[%- END -%]
+
+[%- IF test_case == 'all answered' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meeting_time = ''
+meeting_title = 'Sprite bubble review'
+open_scheduling_options = []
+scheduling_options = [{},{},{}]
+meeting_url = 'http://meetin.gs/meeting_url' 
+
+%]
+[%- END -%]
+
+[%- IF test_case == 'no options' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meeting_time = ''
+meeting_title = 'Pepsi foam expo'
+open_scheduling_options = []
+scheduling_options = []
+meeting_url = 'http://meetin.gs/meeting_url' 
+
+%]
+[%- END -%]

@@ -1,0 +1,74 @@
+[% IF success %][% IF user_is_participant %][% MTN.t('Confirmation: Your email to %1$s received',[meeting_title]) %][% ELSE %][% MTN.t('Confirmation: Your email received') %][% END %][% ELSE %][% MTN.t('Problem processing your email') %][% END %]
+
+<<<html_wrapper>>>
+
+[% IF success %]
+[% action_text = MTN.t('We received your email to') %]
+[% ELSE %]
+[% action_text = MTN.t('Problem with your email to') %]
+[% END %]
+<<<text_and_logo>>>
+<<<h1>>>[% IF user_is_participant %][% meeting_title %][%ELSE%][% meeting_email %][%END%]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>
+[% IF success %]
+
+[% IF user_is_participant %]
+[% MTN.t('We got the email you sent to %1$s and updated it to the meeting page.',[meeting_title]) %]
+[% ELSE %]
+[% MTN.t('We got the email you sent') %]
+[% END %]
+
+[% ELSIF NOT filesize_exceeded %]
+
+[% IF user_is_participant %]
+[% MTN.t('Unfortunately we could not process your email to %1$s. Please try again.',[meeting_title]) %]
+[% ELSE %]
+[% MTN.t('Unfortunately we could not process the email you sent. Please try again.') %]
+[% END %]
+
+[% ELSE %]
+
+[% IF user_is_participant %]
+[% MTN.t('The following files sent to %1$s were over the size limit of %2$s and could not be uploaded to the meeting page: %3$s.',[meeting_title,size_limit,file_names]) %]
+[% ELSE %]
+[% MTN.t('The  following files were over the size limit of %1$s and could not be uploaded to the meeting page: %2$s.',[size_limit,file_names])%]
+[% END %]
+
+[% END %]
+
+[% IF user_is_participant %]
+[% MTN.t('The following files sent to %1$s were over the size limit of %2$s and could not be uploaded to the meeting page: %3$s.',[meeting_title,size_limit,file_names]) %]
+[% ELSE %]
+[% MTN.t('The  following files were over the size limit of %1$s and could not be uploaded to the meeting page: %2$s.',[size_limit,file_names])%]
+[% END %]
+
+<<</p>>>
+
+<<<p>>>
+[% IF ! user_is_participant %]
+[% MTN.t('Your email address %1$s was not found as a participant for this meeting. If you want to join, reply to this message with the word JOIN as the first word.',[anon_email]) %]
+[% ELSE %]
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=email_confirmed' %]
+[% text = MTN.t('Open meeting page') %]
+<<<blue_button>>>
+[% END %]
+<<</p>>>
+
+<<<hr>>>
+
+[% tip = 1 %]
+<<<p>>>[% IF user_is_participant %][% MTN.t("Don't want to receive confirmation emails like this in the future? Use this link to disable them:") %] <<<br>>>
+
+[% url = disable_url %]
+[% text = MTN.t('disable confirmation emails') %]
+<<<inline_link>>>
+[% ELSE %][% END %]<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

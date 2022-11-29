@@ -1,0 +1,28 @@
+[% MTN.t('%1$s  asked you to pick a time for a meeting', [ creator_user_name ] ) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Hi %1$s,', [user_name]) %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+<<<p>>>[% MTN.t('%1$s  would like you to pick a time for a meeting.', [ creator_user_name ] ) %]<<</p>>>
+
+[% IF message_html OR message_text %]
+<<<p>>>[% MTN.t('Message from %1$s:', [creator_user_name] ) %]<<</p>>>
+[% IF in_html %]
+<<<p>>>[% message_html %]<<</p>>>
+[%ELSE%]
+<<<p>>>[% message_text %]<<</p>>>
+[%END%]
+[% END %]
+
+[% url = pick_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=login' %]
+[% text = MTN.t("Pick a time") %]
+<<<blue_button>>>
+<<</bubble>>>
+<<<br>>>
+[% squirrel = 'thief' %]
+<<<squrre>>>
+<<</html_wrapper>>>

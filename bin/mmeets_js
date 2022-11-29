@@ -1,0 +1,3 @@
+#!/bin/bash
+sleep 0.2
+flock --nonblock /tmp/mmeets -c "d s meetings && d arts"

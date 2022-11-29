@@ -1,0 +1,114 @@
+- if( typeof data === 'undefined' ) return; // Some notifications can be broken with no data
+- var title = data.meeting.title_value || MTN.t('Untitled meeting');
+- var time_string = app.helpers.fullTimeString( created_at * 1000 , app.models.user.get('time_zone_offset') );
+a(href='#',class='notification' + (is_read ? '' : ' unread'),data-id=id)
+    case type
+        when 'rsvp'
+            i(class='ico ico-error')
+            p.text!=MTN.t('Please respond to the invitation: %1$s', [ title ])
+                span.date=time_string
+
+        when 'invited'
+            i(class='ico ico-meetings')
+            p.text!=MTN.t('%1$s invited you to %2$s', [ data.author.name, title ])
+                span.date=time_string
+
+        when 'new_material'
+            i(class='ico ico-material_'+data.material.type_class)
+            // It seems in some cases data.author is not defined, so check that
+            - var author = data && data.author && data.author.name ? data.author.name : MTN.t('somebody');
+            p.text!=MTN.t('%1$s added material %2$s in %3$s', [author, data.material.title, title])
+                span.date=time_string
+
+        when 'new_participant'
+            i(class='ico ico-profile')
+            p.text!=MTN.t('New participant: %1$s in %2$s',[data.user.name, title])
+                span.date=time_string
+
+        when 'new_meeting_date'
+            i(class='ico ico-time')
+            if( data.meeting.begin_epoch )
+                // TODO: parse timestamp for user
+                p.text!=MTN.t('Meeting time was changed to %1$s for %2$s', [ app.helpers.fullTimeString(data.meeting.begin_epoch * 1000, app.models.user.get('time_zone_offset')), title])
+                    span.date=time_string
+            else if( data.meeting.begin_epoch == '0')
+                p.text!=MTN.t('Meeting time was removed from %1$s', [title])
+                    span.date=time_string
+
+        when 'new_meeting_location'
+            i(class='ico ico-location')
+            p.text!=MTN.t('Meeting location changed to %1$s for %2$s', [data.meeting.location, title])
+                span.date=time_string
+
+        when 'new_material_comment'
+            i(class='ico ico-comment')
+            p.text!=MTN.t('%1$s commented %2$s in %3$s', [data.author.name, data.material.title, title])
+                span.date=time_string
+
+        when 'new_meeting_title'
+            i(class='ico ico-meetings')
+            p.text!=MTN.t('%1$s changed the title of %2$s to %3$s', [data.author.name, data.old_title, title])
+                span.date=time_string
+
+        when 'decided_meeting_date'
+            i(class='ico ico-time')
+            if( data.meeting.begin_epoch )
+                // TODO: parse timestamp for user
+                p.text!=MTN.t('Meeting time was changed to %1$s', [ app.helpers.fullTimeString(data.meeting.begin_epoch * 1000, app.models.user.get('time_zone_offset'))])
+                    span.date=time_string
+            else if( data.meeting.begin_epoch == '0' )
+                p.text!=MTN.t('Meetin time was removed from')
+                    span.date=time_string
+
+        when 'decided_meeting_location'
+            i(class='ico ico-location')
+            p.text!=MTN.t('Meeting location was set to %1$s for %2$s', [data.meeting.location, title])
+                span.date=time_string
+
+        when 'meetme_request'
+            i(class='ico ico-meetings')
+            if( data.author.organization.length )
+                p.text!=MTN.t('%1$s from %2$s would like to meet you. Please respond now.', [data.author.name, data.author.organization])
+                    span.date=time_string
+            else
+                p.text!=MTN.t('%1$s would like to meet you. Please respond now.', [data.author.name])
+                    span.date=time_string
+
+        when 'meetme_invited'
+            i(class='ico ico-meetings')
+            p.text!=MTN.t('%1$s accepted your request to meet.', [data.author.name])
+                span.date=time_string
+
+        when 'meetme_rsvp'
+            i(class='ico ico-meetings')
+            p.text!=MTN.t('%1$s accepted your request and wants to double check your RSVP.', [data.author.name])
+                span.date=time_string
+
+        when 'new_scheduling_answers_needed'
+            i(class='ico ico-schedule') // should be ico-swipe
+            p.text!=MTN.t('%1$s is looking for a suitable time for a meeting.', [data.author.name])
+                span.date=time_string
+
+        when 'more_scheduling_answers_needed'
+            i(class='ico ico-schedule') // should be ico-swipe
+            p.text!=MTN.t('We need more input from you to schedule %1$s.', [title])
+                span.date=time_string
+
+        when 'scheduling_date_found'
+            i(class='ico ico-time')
+            p.text!=MTN.t('Time found for %1$s on %2$s.', [title, app.helpers.fullTimeString(data.meeting.begin_epoch * 1000, app.models.user.get('time_zone_offset')) ])
+                span.date=time_string
+
+        when 'scheduling_date_not_found'
+            i(class='ico ico-time')
+            p.text!=MTN.t('We were unable to find a suitable time for %1$s.', [title])
+                span.date=time_string
+
+        when 'scheduling_is_missing_answers'
+            i(class='ico ico-profile')
+            p.text!=MTN.t('Scheduling is stagnant. We are missing responses for %1$s.', [title])
+                span.date=time_string
+
+        default
+            - if(window.qbaka) qbaka.report('Unrecognized notification type: ' + type )
+        

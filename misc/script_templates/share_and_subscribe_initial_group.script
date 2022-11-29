@@ -1,0 +1,78 @@
+#!/usr/bin/perl
+
+# Share user WHOLE weblog of user to a group and subscribe
+# blog and/or comments to group feed reader
+# Also sets the group as starting page
+# Does this to all members of the group who have no starting
+# page selected
+
+my $group_id = 1;
+
+# Folder for blog feeds - empty if no subscribe
+my $blog_folder = 'Latest blog posts';
+
+# Folder for blog comment feeds - empty if no subscribe
+my $comment_folder = 'Latest comments';
+
+# Feed language: fi/en
+my $language = 'fi';
+
+
+use Dicole::Security qw( :target :receiver );
+
+sub execute {
+    die "group id needed" unless $group_id;
+
+    my $group = CTX->lookup_object('groups')->fetch( $group_id );
+    
+
+    for my $user ( @{ $group->user } ) {
+        next if defined $user->last_login;
+
+	print "doing " . $user->id . $/;
+        
+        $user->starting_page( $group_id );
+        $user->save;
+        
+        my $uid = $user->id;
+        
+        # Share blog to group
+        CTX->lookup_object( 'dicole_security' )->new( {
+            target_type => TARGET_USER,
+            target_user_id => $uid,
+            receiver_type => RECEIVER_GROUP,
+            receiver_group_id => $group_id,
+            collection_id => Dicole::Security->collection_id_by_idstring(
+                'user_weblog_reading'
+            )
+        } )->save;
+
+        # Blog adding
+        CTX->lookup_action('add_feedreader_feed')->execute( {
+            target_type => 'group',
+            target_group_id => $group_id,
+            folder => $blog_folder,
+            url => Dicole::URL->create_from_parts(
+                action => 'personal_weblog',
+                task => 'feed',
+                target => $uid,
+                additional => [ $language, 'feed.rdf' ],
+            ),
+        } ) if $blog_folder;
+
+        # Blog comment adding
+        CTX->lookup_action('add_feedreader_feed')->execute( {
+            target_type => 'group',
+            target_group_id => $group_id,
+            folder => $comment_folder,
+            url => Dicole::URL->create_from_parts(
+                action => 'personal_weblog',
+                task => 'comment_feed',
+                target => $uid,
+                additional => [ $language, 'feed.rdf' ],
+            ),
+        } ) if $comment_folder;
+    }
+}
+
+1;

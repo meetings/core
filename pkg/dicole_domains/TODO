@@ -1,0 +1,2 @@
+* testing
+  * deleting multiple users -> assert that all users are removed from domain

@@ -1,0 +1,27 @@
+Changes
+conf/action.ini
+html/css/dicole/reset.css
+html/images/shareflect/black-66.png
+html/images/shareflect/location.jpg
+html/images/shareflect/map-marker-tooltip-backgrou
+html/images/shareflect/map-marker-tooltip-background.png
+html/js/dicole/Shareflect.js
+html/js/dicole/shareflect/add_controls.html
+html/js/dicole/shareflect/Animation.js
+html/js/dicole/shareflect/CustomTooltip.js
+html/js/dicole/shareflect/Data.js
+html/js/dicole/shareflect/location_alert.html
+html/js/dicole/shareflect/location_tooltip.html
+html/js/dicole/shareflect/Map.js
+html/js/dicole/shareflect/new_message.html
+html/js/dicole/shareflect/river.html
+html/js/dicole/shareflect/River.js
+html/js/dicole/shareflect/river_controls.html
+html/js/dicole/shareflect/river_message.html
+html/js/dicole/shareflect/view_controls.html
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleShareflect.pm
+OpenInteract2/App/DicoleShareflect.pm
+package.ini
+template/main_display.tmpl

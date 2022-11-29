@@ -1,0 +1,9 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_tag_attached add attached_date bigint unsigned not null default 0');
+}
+
+1;

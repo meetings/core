@@ -1,0 +1,15 @@
+<div class="alert">
+    <h3>New message</h3>
+    <img src="/images/shareflect/location.jpg" width="75" height="75" class="location"/>
+    <div class="title">
+        <%= p.author.name %> at <%= p.location.title %>
+    </div>
+    <div class="tags">
+        <% dojo.forEach( p.tags, function( tag ) { %>
+            <span class="tag"><%= tag %></span>
+        <% } ); %>
+    </div>
+    <div class="excerpt">
+        <%= p.excerpt %>
+    </div>
+</div>

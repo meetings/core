@@ -1,0 +1,16 @@
+[%#- $Id: widget_hyperlink.tmpl,v 1.7 2009-02-05 00:11:43 amv Exp $ -%]
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        link => '#',
+        class => undef,
+        title => '',
+        disable_click => 1,
+        content => {
+            raw => undef,
+            template => 'mytemplate',
+            params => {},
+        }
+    }
+-%]
+<a [% IF itemparams.id %] id="[% itemparams.id %]"[% END %] href="[% itemparams.link %]"[% IF itemparams.title %] title="[% itemparams.title %]"[% END %][% IF itemparams.class %] class="[% itemparams.class %]"[% END %][% IF itemparams.disable_click %] onclick="return false;"[% END %]>[% PROCESS dicole_base::include_widget widget = itemparams.content %]</a>

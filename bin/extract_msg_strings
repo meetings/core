@@ -1,0 +1,57 @@
+#!/usr/bin/perl
+#
+# $Id: extract_msg_strings,v 1.14 2010-02-10 01:30:13 amv Exp $
+
+# MimerDesk 
+# Web based groupware and eLearning environment                                
+# www.mimerdesk.org
+#
+# Copyright (C) 2001 Ionstream Ltd. <info@ionstream.fi>
+# www.ionstream.fi
+#
+# This program is free software; you can redistribute it and/or modify it   
+# under the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 2 of the License, or (at your option)
+# any later version.
+#
+# This program is distributed with a hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+foreach $file (@ARGV)
+{
+    next unless -f $file;
+    open FILE, "< $file", 		or die "Can't open file $file: $!";
+    $out = undef;
+    while ( my $line = <FILE> ) {
+        $_ = $line;
+        if ( /\>_msg\(.*?(?:'((?:[^'\\]|\\.)+)'|"((?:[^"\\]|\\.)+)")/ms ) {
+            print $1 . " = " . $1 . "\n" if $1;
+            print $2 . " = " . $2 . "\n" if $2;
+        }
+        elsif ( /dicole\.msg\(.*?(?:'((?:[^'\\]|\\.)+)'|"((?:[^"\\]|\\.)+)")/ms ) {
+            print $1 . " = " . $1 . "\n" if $1;
+            print $2 . " = " . $2 . "\n" if $2;
+        }
+	elsif ( /\$lh\-\>maketext\(.*?(?:'((?:[^'\\]|\\.)+)'|"((?:[^"\\]|\\.)+)")/ms ) {
+            print $1 . " = " . $1 . "\n" if $1;
+            print $2 . " = " . $2 . "\n" if $2; 
+        }
+        elsif ( $file =~ /\.ini$/ && /^\s*(desc|empty_text|tool_name|name|description|c_path_name|c_box_title|c_confirm_text|c_back_text)\s*?=\s*?(\S.+?)$/ ) {
+	    print $2 . " = " . $2 . "\n";
+	}
+        elsif ( $file =~ /\.tmpl$/ ) {
+            my @strings = $line =~ /OI\.msg\(.*?(?:'((?:[^'\\]|\\.)+)'|"((?:[^"\\]|\\.)+)")/g;
+            print $_ . " = " . $_ . "\n" for @strings;
+
+            @strings = $line =~ /MSG\(.*?(?:'((?:[^'\\]|\\.)+)'|"((?:[^"\\]|\\.)+)")/g;
+            print $_ . " = " . $_ . "\n" for @strings;
+	}
+   }
+   close FILE or die "Can't close file $file: $!";
+}

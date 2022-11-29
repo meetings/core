@@ -1,0 +1,10 @@
+[%- WRAPPER dicole_mobile::mobile_main title = 'Dicole: ' _ post.title -%]
+<div class="toolbar anchorTop">Feed item</div>
+<a class="button" href="/m/logout">Logout</a>
+<a id="homeButton" class="button" href="/m/group_feed_reader/[% group.id %]">Back</a>
+<div class="center">
+<div class="postTitle">[% post.title %]</div>
+<div class="postDate">[% post.author %] - [% post.date %]<br />From feed [% post.source %]</div>
+<div class="postContent">[% post.content %]<br /><br /><a href="[% post.link %]">Read the original post</a></div>
+</div>
+[% END %]

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html id="mail-view-html">
+<head>
+<link href="/css/dicole_reset/style.css?v=[% static_file_version %]" media="all" rel="stylesheet" type="text/css" />
+<link type="text/css" media="all" rel="stylesheet" href="/css/meetings/main.css?v=[% static_file_version %]" />
+<link type="text/css" media="all" rel="stylesheet" href="[% css_url %]?v=[% static_file_version %]" />
+<meta charset="utf-8" />
+<title>Mail summary</title>
+</head>
+<body id="mail-view-body">
+<div id="mail-summary">
+
+    <!-- Material section -->
+    <div id="materials-wrapper">
+        <h2>[% MTN.t('Meeting materials') %]</h2>
+        <div id="mail-materials-container">
+        [% IF materials.lenght == 0 %]
+        <p class="no-material-message">[% MTN.t('No Material for this meeting.') %]</p>
+        [% END %]
+
+        [% FOREACH material IN materials %]
+        <a href="[% material.data_url %]" class="material-item [% material.type_class %] [% IF loop.first %]item-first [% END %] [% IF loop.last %]item-last [% END %]">
+
+                <span class="material-icon">
+                <i class="ico-material_[% material.type_class %]"></i>
+                </span>
+        		<span class="material-title">
+        			[% material.title %]
+        		</span>
+                <span class="material-description">
+                    [% IF material.fetch_type != "chat" %]
+        			[% IF material.author_name %] [% material.author_name %] [% ELSIF material.anon_email %] [% material.anon_email %] [% ELSE %] mail gateway [% END %]
+        			[% END %]
+                    [% IF material.readable_type %]
+        			<!--	| [% material.readable_type %]-->
+                    [% END %]
+        		</span>
+        		[% IF material.comment_count > 0 %]
+        		<span class="material-comments">
+        		    [% material.comment_count %] comment[% IF material.comment_count > 1 %]s[% END %]
+        		</span>
+        		[% END %]
+        </a>
+        [% END %]
+        </div>
+    </div>
+
+    <!-- Participant section -->
+    <div id="participants-wrapper">
+        <h2>[% MTN.t('Participants') %]</h2>
+        <div id="mail-participants">
+        [% FOREACH user IN participants %]
+        	<a class="[% IF loop.first %]first [% END %][% IF loop.last %]last [% END %]user js_meetings_show_user_open" href="[% user.data_url %]" title="[% user.name | html %]">
+          		<img src="[% user.image or '/images/theme/default/default-user-avatar-36px.png' | html %]" alt="[% user.name | html %]" />
+          		[% IF ! user.image %]<span>[% user.initials | html %]</span>[% END %]
+        	</a>
+        [% END %]
+        </div>
+    </div>
+</div>
+</body>
+</html>

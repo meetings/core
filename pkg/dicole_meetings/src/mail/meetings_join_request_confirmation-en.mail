@@ -1,0 +1,17 @@
+[% MTN.t("Your request to join received",[meeting_title]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Request to join') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t("We got your email. Now sit back and relax. You will receive meeting invitation when the organizer approves your request.") %]<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

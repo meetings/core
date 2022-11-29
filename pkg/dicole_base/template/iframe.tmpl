@@ -1,0 +1,60 @@
+<script language="JavaScript">
+<!--
+function getObject(objectId) {
+	// cross-browser function to get an object's style object given its id
+	if(document.getElementById && document.getElementById(objectId)) {
+	// W3C DOM
+	return document.getElementById(objectId);
+	} else if (document.all && document.all(objectId)) {
+	// MSIE 4 DOM
+	return document.all(objectId);
+	} else if (document.layers && document.layers[objectId]) {
+	// NN 4 DOM.. note: this won't find nested layers
+	return document.layers[objectId];
+	} else {
+	return false;
+	}
+} // getObject
+function calcHeight()
+{
+var vp = alertSize();
+var iFrm = getObject("ifrm");
+iFrm.style.height=vp.y-125 + 'px';
+iFrm.style.width='99.7%';
+}
+function alertSize() {
+	var x,y;
+	if (self.innerHeight) // all except Explorer
+	{
+		x = self.innerWidth;
+		y = self.innerHeight;
+	}
+	else if (document.documentElement && document.documentElement.clientHeight)
+		// Explorer 6 Strict Mode
+	{
+		x = document.documentElement.clientWidth;
+		y = document.documentElement.clientHeight;
+	}
+	else if (document.body) // other Explorers
+	{
+		x = document.body.clientWidth;
+		y = document.body.clientHeight;
+	}
+	return {x:x,y:y};
+}
+//-->
+</script>
+
+[% params.width = itemparams.width || '99%' %]
+[% params.height = itemparams.height || '100%' %]
+
+<iframe src="[% itemparams.url %]" frameborder="0" scrolling="auto" name="ifrm" id="ifrm" onload="calcHeight()" onmouseover="setTimeout(function(){ closeMenus(); }, 250);"
+[%- IF params.width %] width="[% params.width %]"[% END %]>
+<ilayer src="[% itemparams.url %]"
+[%- IF params.width %] width="[% params.width %]"[% END %][% IF params.height %] height="[% params.height %]"[% END %]></ilayer>
+</iframe>
+<script type="text/javascript">
+<!--
+window.onresize=calcHeight;
+//-->
+</script>

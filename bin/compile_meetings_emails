@@ -1,0 +1,3 @@
+#!/bin/bash
+su root -c '/bin/bash -ic "source /etc/environment; cd /usr/local/src/dicole-crmjournal/; bin/mail_to_po_templates dicole_meetings; d d meetings; d w"'
+

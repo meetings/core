@@ -1,0 +1,44 @@
+#agent-booking.m-modal
+    .modal-header
+        h3 
+            i.ico-profile
+            !='Varaa aika'||MTN.t('Reserve a time')
+    .modal-content
+        .agent-selectors
+            .selector-container
+                span='Alue'||MTN.t('Area')
+                select#agent-area(data-key="alue")
+                    <!-- option(value='')='Valitse alue'||MTN.t('Choose an area') -->
+                    each area in selector_data.areas
+                        option(value=area.value,selected=area.value==selected_area?'selected':undefined)=area.text
+            .selector-container
+                span='Tyyppi'||MTN.t('Type')
+                select#agent-type(data-key="tyyppi")
+                    option(value='')='Valitse tyyppi'||MTN.t('Choose meeting type')
+                    each type in selector_data.types
+                        option(value=type.value)=type.text
+            .selector-container
+                span='Kieli'||MTN.t('Language')
+                select#agent-language(data-key="language")
+                    each agent in selector_data.languages
+                        option(value=agent.value)=agent.text
+            .selector-container
+                span='Toimisto'||MTN.t('Office')
+                select#agent-office(data-key="toimisto")
+                    option(value='')='Valitse toimisto'||MTN.t('Choose an office')
+                    each office in selector_data.offices
+                        option(value=office.value)=office.text
+            .selector-container
+                span='Etutaso'||MTN.t('Level')
+                select#agent-level(data-key="level")
+                    each agent in selector_data.levels
+                        option(value=agent.value)=agent.text
+            .selector-container
+                span='Henkilö'||MTN.t('Agent')
+                select#agent-agent(data-key="agentti")
+                    option(value='')='Valitse henkilö'||MTN.t('Choose an agent')
+                    each agent in selector_data.agents
+                        option(value=agent.value)=agent.text
+        .js-calendar-guide
+            p.note='Valitse vähintään tyyppi ja sen jälkeen joko toimisto tai henkilö'||MTN.t('You need to select meeting type and either an office or an agent.')
+        .calendar-container.js-calendar-container

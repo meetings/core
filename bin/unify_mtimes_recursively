@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+
+use Getopt::Long;
+
+my $dir = '';
+my $date = `date -u +%Y%m%d%H%M.%S`;
+
+Getopt::Long::GetOptions(
+    "dir=s" => \$dir,
+    "date=s" => \$date,
+);
+
+chdir( $dir ) if $dir;
+die "No dir found: $dir" unless ! $dir || -d $dir;
+
+`find . | TZ=GMT0 xargs -n1 touch -mt $date`;
+

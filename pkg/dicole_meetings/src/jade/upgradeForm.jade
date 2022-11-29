@@ -1,0 +1,98 @@
+div#upgrade-page.m-modal
+    div.modal-header
+        h3!=MTN.t('Upgrade to Meetin.gs PRO')
+    div.modal-content.m-form
+        div.section
+            ul.list.inside
+                if( type === 'monthly' )
+                    li!=MTN.t('You are subscribing to Meetin.gs PRO monthly plan.')
+                else
+                    li!=MTN.t('You are subscribing to Meetin.gs PRO yearly plan.')
+                li!=MTN.t('Subscription will be renewed automatically at the end of each billing cycle.')
+                li!=MTN.t('You can unsubscribe any time during the billing cycle.')
+                li!=MTN.t('We support all major credit cards. All transactions are secure and encrypted.')
+        if( ! user || ! user.id )
+            div.section
+                h4.modal-sub-header!=MTN.t('New Account')
+                div.form-row
+                    label.inline.required(for='cc-email')!=MTN.t('Email address')
+                    div.field-wrap
+                        input(type='email',name='email',placeholder='',required)#cc-email
+        div.section
+            h4.modal-sub-header!=MTN.t('Credit Card')
+            div.form-row
+                label.inline.required(for='cc-name')!=MTN.t('Name on Card')
+                div.field-wrap
+                    input(type='text',name='name',placeholder='',value=(user && user.name ) ? user.name : '',required)#cc-name
+            div.form-row
+                label.inline.required.cc-number-wrap(for='cc-num')!=MTN.t('Card number')
+                div.field-wrap.card
+                    input.mid.payment-input(type='text',placeholder='•••• •••• •••• ••••',autocompletetype="cc-number",required)#cc-num
+            div.form-row
+                label.inline.required(for='cc-exp')!=MTN.t('Expiry Date')
+                div.field-wrap
+                    input.small.payment-input(type='text',placeholder='MM / YY',autocompletetype="cc-exp",required)#cc-exp
+            div.form-row
+                label.inline.required(for='cc-cvc')!=MTN.t('Security Code (CVC)')
+                div.field-wrap
+                    input.smaller.payment-input(type='text',placeholder='CVC',autocompletetype="cc-cvc",required)#cc-cvc
+
+        div.section
+            h4.modal-sub-header!=MTN.t('Company (optional)')
+            div.form-row
+                label(for='cc-company')!=MTN.t('Company Name')
+                div.field-wrap
+                    input(type='text',name='company',placeholder='')#cc-company
+            div.form-row.checkbox
+                input(type='checkbox',name='cc-vat-check')#cc-vat-check
+                label(for='cc-vat-check')!=MTN.t('I have VAT number (Value Added Tax)')
+            div.form-row.hidden.js-vat-wrap
+                label(for='cc-vat')!=MTN.t('VAT-ID')
+                div.field-wrap
+                    input(type='text',name='vat',placeholder='e.g. FI24332464')#cc-vat
+
+        div.section
+            h4.modal-sub-header!=MTN.t('Billing Address')
+            div.form-row
+                label.required(for='cc-address1')!=MTN.t('Street Address')
+                div.field-wrap
+                    input(type='text',name='address1',placeholder='',required)#cc-address1
+            div.form-row.no-label
+                div.field-wrap
+                    input(type='text',name='address2',placeholder='',required)#cc-address2
+            div.form-row
+                label.required(for='cc-city')!=MTN.t('City')
+                div.field-wrap
+                    input(type='text',name='city',placeholder='',required)#cc-city
+            div.form-row
+                label.required(for='cc-zip')!=MTN.t('Postal code')
+                div.field-wrap
+                    input.small(type='text',name='zip',placeholder='',required)#cc-zip
+            div.form-row
+                label.required(for='cc-country')!=MTN.t('Country')
+                select(name='contry',data-placeholder!=MTN.t('Select country'),required)#cc-country.modified
+                    option(value='')
+                    each country in app.country_list
+                        if(user && typeof user.presumed_country_code === 'string' && country.code.toLowerCase() === user.presumed_country_code.toLowerCase() )
+                            option(value=country.code,selected='selected')=country.name
+                        else
+                            option(value=country.code)=country.name
+
+        div.section.price-container
+            div.form-row
+                label.ignored-field(for='cc-coupon')!=MTN.t('Promotional code')
+                div.field-wrap
+                    input(type='text',name='cc-coupon',placeholder='',value=preset_coupon)#cc-coupon
+            div.price-box
+                if( type === 'monthly')
+                    p#cc-billing-period!=MTN.t('You will be billed monthly:')
+                    p#cc-price $12
+                else
+                    p#billing-period!=MTN.t('You will be billed yearly:')
+                    p#cc-price $129
+                p#cc-reverse-tax(style='display:none;')!=MTN.t('(reverse tax applies)')
+            div#cc-errors
+            div#cc-vat-id-error(style='display:none;')
+                p.error-message=MTN.t('Unfortunately due to recent changes in EU VAT legislation, purchasing without a valid VAT ID is temporarily disabled for your country.')
+        a.button.blue.disabled.pay-now#cc-submit
+            span.label!=MTN.t('Pay now')

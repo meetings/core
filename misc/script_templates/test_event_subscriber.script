@@ -1,0 +1,73 @@
+sub execute {
+    my ( $self ) = @_;
+
+    my $server = 'http://events-dev.dicole.net/';
+
+    my $res_open = Dicole::Utils::HTTP->json_api_call( $server . 'open', {
+        domain => 'work-dev.dicole.net',
+        token => 'v1_e_2943_0_0_wnMho6drOQuEXephHDa0Yng5TtM',
+    } );
+
+    d( $res_open );
+
+    my $session = $res_open->{result}{session};
+
+    die "no session :(" unless $session;
+
+    my $res_sub = Dicole::Utils::HTTP->json_api_call( $server . 'subscribe', {
+        session => $session,
+        query => {
+            group => 9,
+            history => 1,
+        },
+    } );
+
+    d( $res_sub );
+
+    my $sub_id = $res_sub->{result}{subscription};
+
+    die "no subscription id :(" unless $sub_id;
+
+#     my $res_unsub = Dicole::Utils::HTTP->json_api_call( $server . 'unsubscribe', {
+#         session => $session,
+#         subscription => $sub_id,
+#     } );
+# 
+#     d( $res_unsub );
+# 
+#     my $res_close = Dicole::Utils::HTTP->json_api_call( $server . 'close', {
+#         session => $session,
+#     } );
+# 
+#     d( $res_close );
+
+    my %confirmed = ();
+    my %received = ();
+
+    while (1) {
+        my $res_poll = Dicole::Utils::HTTP->json_api_call( $server . 'poll', {
+            session => $session,
+            received => [ keys %received ],
+        } );
+
+        d( $res_poll );
+
+        for my $h ( @{ $res_poll->{result}{confirmed} || [] } ) {
+            print "marking as confirmed: " . $h . $/;
+
+            $confirmed{ $h } = $received{ $h };
+            delete $received{ $h };
+        }
+
+        for my $e ( @{ $res_poll->{result}{events} || [] } ) {
+            my $h = $e->{hash};
+            next if $confirmed{ $h };
+            print "marking as received: " . $h . $/;
+            $received{ $h } = $e;
+        }
+
+        sleep( 5 );
+    }
+}
+
+1;

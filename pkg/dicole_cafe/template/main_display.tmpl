@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Cache-Control" content="NO-CACHE">
+	<meta http-equiv="Pragma" content="NO-CACHE">
+	<meta http-equiv="Expires" content="-1">
+	
+	<link rel="shortcut icon" type="image/png" href="/images/theme/default/dicole_favicon.png" />
+    <link rel="stylesheet" href="/css/dicole/cafe.css" type="text/css" media="screen, projection" />
+    [% IF domain_css %]<style type="text/css" media="all">[% domain_css %]</style>[% END %]
+    [% IF group_css %]<style type="text/css" media="all">[% group_css %]</style>[% END %]
+    <script type="text/javascript" src="/js/dojo/dojo.js"></script>
+    <script type="text/javascript" src="/js/dojo/dicole.js"></script>
+    <script type="text/javascript">dicole.set_global_variables([% global_vars %]);</script> 
+	<script type="text/javascript" src="/js/dicole/Cafe.js"></script>
+	<!--[if lt IE 7]>
+		<style type="text/css">
+		.cafe_avatar, #cafe_toggle_options, h2 { behavior: url('/js/dicole/cafe/iepngfix.htc') }
+		.cafe_ie_disabled { display: none; }
+		</style>
+	<![endif]-->
+
+	<script type="text/javascript">
+
+// IE debug mode: dojo.require('dicole.Cafe');
+//dicole.assign_lexicon( [% lexicon %] );
+var domain_name = "[% domain_name | html %]";
+var auth_token = "[% auth_token | html %]";
+var group_id = "[% group_id | html %]";
+var group_name = "[% group_name | html %]";
+var tag = "[% tag | html %]";
+var custom_title = "[% custom_title | html %]";
+var show_twitter = "[% show_twitter | html %]";
+var show_pages = "[% show_pages | html %]";
+var show_posts = "[% show_posts | html %]";
+var show_media = "[% show_media | html %]";
+var columns = [];
+
+var cafe;
+
+dojo.addOnLoad( function() {
+
+	if(show_posts) columns.push('hot-in-blogs');
+	if(show_pages) columns.push('hot-in-wiki');
+	if(show_media) columns.push('hot-media');
+	if(show_twitter) columns.push('hot-in-twitter');
+	
+    cafe = new dicole.Cafe( domain_name, auth_token, group_id, tag, columns );
+	
+} );
+
+	</script>
+</head>
+<body class="action_cafe cafe_font_size_small">
+
+<div class="cafe_header">
+	<div class="clock_and_options">
+		<span id="cafe_clock" class="time">13:37</span>
+		<a id="cafe_toggle_options" href="#"></a>
+	</div>
+   	<a id="navi_logo_link" href="#"><!-- [% group_starting_page | html %] --><span id="navi_logo_text">[% custom_title OR group_name | html %]</span></a>
+	<div id="cafe_options_shadow">
+		<div id="cafe_options">
+			<a href="#" id="cafe_close_options"> </a>
+			<div class="cafe_font_size">
+				<span>[% MSG( "Font size" ) | html %]</span> <a href="#" id="cafe_font_size_small" style="font-size: 11px !important; padding: 6px 0 0px !important;">a</a> <a href="#" id="cafe_font_size_normal" style="font-size: 14px !important; padding: 5px 0 1px !important;">a</a> <a href="#"  id="cafe_font_size_big" style="font-size: 18px !important;">a</a>
+			</div>
+			<div class="cafe_scrollbar_options">
+				<span class="cafe_ie_disabled"><input type="checkbox" id="cafe_show_scrollbars"> [% MSG( "Show scrollbars" ) | html %]</span><br/>
+				<span class="cafe_ie_disabled"><input type="checkbox" id="cafe_show_scrollbuttons"> [% MSG( "Show scrollbar buttons" ) | html %]</span><br/>
+				<input type="checkbox" checked id="cafe_show_activity"> [% MSG( "Show active users" ) | html %]<br/>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="cafe_content" id="cafe_content">
+
+
+</div>
+	
+<div id="active-users">
+    <h2>[% MSG( "Active users" ) | html %]<br/><span class="cafe_most_active_user"></span></h2>
+    <div class="cafe_results"></div>
+</div>
+
+</body>
+</html>

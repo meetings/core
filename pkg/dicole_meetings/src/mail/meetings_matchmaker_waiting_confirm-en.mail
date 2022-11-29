@@ -1,0 +1,88 @@
+[% IF ! matchmaking_event %][% MTN.t('We have sent your meeting request') %][% ELSIF matchmaker_company %][% MTN.t('Your request to meet has been sent to %1$s from %2$s',[matchmaker_name,matchmaker_company]) %][% ELSE %][% MTN.t('Your request to meet has been sent to %1$s',[matchmaker_name]) %][% END %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Hello %1$s,',[user_name ]) %]
+[% action_text_type = 'large' %]
+
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<bubble>>>
+
+<<<p>>> 
+[% IF matchmaker_company %]
+[% MTN.t('You have requested a meeting with %(B$%1$s%) from %(B$%2$s%).',[matchmaker_name,matchmaker_company]) %]
+[% ELSE %]
+[% MTN.t('You have requested a meeting with %(B$%1$s%).',[matchmaker_name]) %]
+[% END %]
+<<</p>>>
+
+
+<<<p>>>
+<<<bold>>>[% MTN.t('Title://context:meeting title') %]<<</bold>>> [%meeting_title%]
+<<<br>>>
+<<<bold>>>[% MTN.t('Where:') %]<<</bold>>> [%meeting_location%]
+<<<br>>>
+<<<bold>>>[% MTN.t('When:') %]<<</bold>>> [%meeting_time%]
+<<<br>>>
+<<<bold>>>[% MTN.t('Who:') %]<<</bold>>> [%matchmaker_name%][% IF ! ( matchmaker_email == matchmaker_name ) %] ([%matchmaker_email%])[% END %]
+<<</p>>>
+
+<<<calendar_links>>>
+
+<<<p>>>[% MTN.t('What happens next? The other person will now accept or decline your request to meet. We will send you a notification when we have a response (expect this within a few days).') %]<<</p>>>
+
+<<<p>>>
+[% IF matchmaking_event %]
+<<<p>>>[% MTN.t('If you have any questions, please contact %(L$support@meetin.gs%).',{ L => { href => 'support@meetin.gs'} }) %]<<</p>>>
+[% IF meeting_slots >= 1 %]
+<<<p>>>
+[% MTN.t('Also, you still have %(B$%1$s slots available%) to request a meeting at %2$s. Go back to matchmaking to schedule another meeting.',[matchmaking_event]) %]
+<<</p>>>
+[% url = matchmaking_url %]
+[% text = MTN.t('Go to matchmaking') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+
+[% ELSIF meeting_slots < 0 %]
+<<<p>>>[% MTN.t('Organize another meeting at the %1$s.',[matchmaking_event]) %]<<</p>>>
+[% url = matchmaking_url %]
+[% text = MTN.t('Go to matchmaking') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+
+
+[% ELSE %]
+<<<p>>>
+[% MTN.t('It seems you have used all your slots for the matchmaking. No worries, you can use your account to organize as many meetings as you like at Meetin.gs.') %]
+<<</p>>>
+
+[% url = create_events_url _ '&utm_source=matchmaking&utm_medium=email&utm_campaign=waiting_confirm' %]
+[% text = MTN.t('Create a meeting') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+[% END %] 
+[% ELSE %]
+[% MTN.t("While waiting, why don't you setup your own meet me page?") %]
+
+[% url = 'https://meetin.gs/meetings/wizard?utm_source=matchmaking&utm_medium=email&utm_campaign=waiting_confirm' %]
+[% text = MTN.t('Claim your own Meet Me page') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+[% END %]
+<<</p>>>
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+
+<<<hr>>>
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t('Meetin.gs - The smartest way to meet') %]<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

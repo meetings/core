@@ -1,0 +1,58 @@
+use WWW::Mailchimp;
+use Dicole::Utils::Data;
+
+my $params = {
+    apikey => 'x-us4',
+    datacenter => 'us4',
+};
+
+my $list_id = 'dc0809a55e';
+
+#my $dry_run = 1;
+my $dry_run = 0;
+
+sub execute {
+    my ( $self, $domain_id ) = @_;
+
+    $domain_id ||= `/usr/local/bin/d lc meetings_domain`;
+    my $meetings_api = CTX->lookup_action('meetings_api');
+
+    my $unsubs = WWW::Mailchimp->new( %$params )->listMembers(
+            id => $list_id,
+            limit => 15000,
+            status => 'unsubscribed',
+        );
+
+    my $cleans = WWW::Mailchimp->new( %$params )->listMembers(
+            id => $list_id,
+            limit => 15000,
+            status => 'cleaned',
+        );
+
+    my $type = 'unsub';
+    for my $data ( @{$unsubs->{data}}, 'switch', @{$cleans->{data}} ) {
+        if ( ! ref( $data ) && $data eq 'switch' ) {
+            $type = 'clean';
+            next;
+        }
+
+        print "[DRY] Processing " . $data->{email} . "\n" if $dry_run;
+
+        my $user = $meetings_api->_fetch_user_for_email( $data->{email}, $domain_id );
+        next unless $user;
+        $user = $meetings_api->_fetch_user_for_email( $user->email, $domain_id ) if $user->email && $user->email ne 'deleted';
+
+        next if $meetings_api->_get_note_for_user( 'meetings_mailing_list_disabled', $user, $domain_id );
+
+        my $reason = "mailchimp:$type:" . $data->{reason};
+
+        $meetings_api->_set_note_for_user( 'meetings_mailing_list_disabled', time, $user, $domain_id ) unless $dry_run;
+        $meetings_api->_set_note_for_user( 'meetings_mailing_list_disabled_reason', $reason, $user, $domain_id ) unless $dry_run;
+        
+        print "[DRY] " if $dry_run;
+        print "Unsubscribed " . $user->email . " succesfully.\n";
+    }
+
+}
+
+1;

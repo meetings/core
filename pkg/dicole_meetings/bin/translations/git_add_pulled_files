@@ -1,0 +1,2 @@
+#!/bin/bash
+git add html/js/dicole/meetings/lang/ src/locale/ template/locale/

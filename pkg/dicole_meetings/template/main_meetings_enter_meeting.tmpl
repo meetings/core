@@ -1,0 +1,53 @@
+<div class="generic-box-wrapper">
+    <div id="enter-meeting" class="generic-box modal-popup">
+        [% IF email_sent %]
+        [% IF authorize_partner_url %]
+
+        <!-- Email sent & ask for authorize -->
+        <h2 class="modal-header" style="text-align:left;">Login link sent</h2>
+        <p>[% MTN.t('A login email has been sent.') %]</p>
+        <p>[% MTN.t("If you want to authorize the partner to login you directly in the future please click the button below.") %]</p>
+        <div class="form-row" style="margin-bottom:20px;">
+            <a href="[% authorize_partner_url | html %]">
+                <span class="button pink" style="width:80px; margin:0 0 0 15px;">[% MTN.t('Authorize') %]</span>
+            </a>
+        </div>
+
+        [% ELSE %]
+
+        <!-- Email sent -->
+        <h2 class="modal-header" style="text-align:left;">[% MTN.t('Check your email to continue') %]</h2>
+        <p>[% MTN.t('We have now sent an email to %(B$%1$s%). Click the link within to login.',[target_email]) %]</p>
+        <p>[% MTN.t('To ensure safe delivery of email from us in the future, please add %(B$info@meetin.gs%) to your address book.') %]</p>
+        <hr/>
+        <div style="margin:5px 0 20px 0; text-align:center;">
+            <span class='st_linkedin_vcount' displayText='LinkedIn' st_url="http://www.meetin.gs" st_title="Meetin.gs - Free, Easy and Better Online Meeting Organizer" st_image="http://www.meetin.gs/wp-content/themes/platformpro-meetings/images/meetings_about_page.png"></span>
+            <span  class='st_twitter_vcount' displayText='Twitter' st_url="http://www.meetin.gs/" st_title="Meetin.gs - Free, Easy and Better Online Meeting Organizer"></span>
+            <span  class='st_email_vcount' displayText='Email' st_url="http://www.meetin.gs" st_title="Meetin.gs - Free, Easy and Better Online Meeting Organizer" st_image="http://www.meetin.gs/wp-content/themes/platformpro-meetings/images/meetings_about_page.png" st_summary="With Meetin.gs it is simple to organize online and face-to-face meetings and collaborate around material, notes and agenda."></span>
+            <span  class='st_facebook_vcount' displayText='Facebook' st_url="http://www.meetin.gs"></span>
+        </div>
+        [% END %]
+        [% ELSE %]
+
+        <!-- Email not found, display list -->
+        <h2 class="modal-header" style="text-align:left;">[% MTN.t('Welcome to the Meeting') %]</h2>
+        <p class="info">[% MTN.t('Title://context:meeting title') %] [% meeting_title %]</p>
+        [% IF meeting_location %]
+        <p class="info">[% MTN.t('Location:') %] [% meeting_location %]</p>
+        [% END %]
+        [% IF meeting_time %]
+        <p class="info">[% MTN.t('Time:') %]</p>
+        [% END %]
+        <p class="tip">[% MTN.t('We need you to log in to access the meeting page.') %]</p>
+        <p class="tip">[% MTN.t('Choose yourself from the list to receive a login email:') %]</p>
+        <div id="participants-container">
+            [% FOREACH participant IN participant_infos %]
+            <a class="participant" href="[% participant.url %]"><img src="[% IF participant.image %][% participant.image %][% ELSE %]/images/theme/default/default-user-avatar-36px.png[% END %]" alt="[% participant.email %]"/>[% participant.email %]</a>
+            [% END %]
+        </div>
+        [% END %]
+    </div>
+</div>
+<div id="push"></div>
+</div><!-- End content wrapper -->
+<div id="bb-footer"></div>

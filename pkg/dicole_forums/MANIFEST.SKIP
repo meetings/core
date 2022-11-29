@@ -1,0 +1,11 @@
+\bCVS\b
+~$
+\.old$
+\.bak$
+\.backup$
+/?\.\#
+^MANIFEST\.
+^tmp
+^_
+\.swp$
+^pkg

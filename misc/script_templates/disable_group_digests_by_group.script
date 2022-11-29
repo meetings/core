@@ -1,0 +1,28 @@
+use Dicole::Utility;
+use Dicole::Settings;
+
+sub execute {
+    my ( $self, $params ) = @_;
+    my $digest_group_id = 482;
+    my $by_group_id = 621;
+    my %skip_users = (
+        2 => 1,
+        4414 => 1,
+    );
+
+    my $users = CTX->lookup_object('user')->fetch_group();
+    for my $u ( @$users ) {
+        next unless Dicole::Utility->user_belongs_to_group( $u->id, $by_group_id );
+        next if $skip_users{ $u->id };
+        print "Disabling group $digest_group_id digests for user " . $u->id . ' (' . Dicole::Utils::User->name( $u ) . ")\n";
+        Dicole::Settings->store_single_setting(
+            group_id => 0,
+            user_id => $u->id,
+            tool => 'settings_reminders',
+            attribute => $digest_group_id,
+            value => '',
+        );
+    }
+}
+
+1;

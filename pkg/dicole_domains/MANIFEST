@@ -1,0 +1,26 @@
+Changes
+conf/action.ini
+conf/fields.ini
+conf/spops.ini
+conf/tabs.ini
+conf/tool.ini
+html/images/theme/default/content/toolicons/domainmanager.gif
+html/images/theme/default/navigation/icons/16x16/domainmanager_mini.gif
+MANIFEST			This list of files
+MANIFEST.SKIP
+msg/messages-en.po
+msg/messages-fi.po
+OpenInteract2/Action/DicoleDomainManager.pm
+OpenInteract2/Action/DicoleDomains.pm
+OpenInteract2/Action/DicoleDomainsAdmin.pm
+OpenInteract2/App/DicoleDomains.pm
+OpenInteract2/SQLInstall/DicoleDomains.pm
+package.ini
+struct/dicole_domain.sql
+struct/dicole_domain_admin.sql
+struct/dicole_domain_group.sql
+struct/dicole_domain_user.sql
+TAGS
+template/component_domains_left_admin_navi.tmpl
+template/component_domains_right_admin_look.tmpl
+TODO

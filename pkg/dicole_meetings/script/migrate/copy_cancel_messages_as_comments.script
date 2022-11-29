@@ -1,0 +1,37 @@
+sub execute {
+    my ( $s, $domain_id ) = @_;
+
+    my $self = CTX->lookup_action('meetings_api');
+
+    my $meetings = $self->_fetch_meetings( {
+        where => 'attend_info like "%cancel_message%"',
+        order => 'event_id asc',
+    }, { include_cancelled => 1 } );
+
+    for my $meeting ( @$meetings ) {
+        next if $self->_get_note( cancel_message_properly_copied, $meeting );
+
+        print "Copying comment for " . $meeting->id . "\n";
+
+        my $date = $self->_get_note( cancelled_date => $meeting );
+        my $user_id = $self->_get_note( cancelled_by_user_id => $meeting );
+        my $message = $self->_get_note( cancel_message => $meeting );
+        my $user = $user_id ? Dicole::Utils::User->ensure_object( $user_id ) : undef;
+        unless ( $message  ) {
+            print "Skipping because no message\n";
+        }
+        unless ( $user ) {
+            print "Skipping because no user\n";
+        }
+        unless ( $date ) {
+            print "Skipping because no date\n";
+        }
+
+        $self->_post_meeting_comment_under_agenda( $meeting, undef, $message, $user, undef, { skip_event => 1, creation_epoch => $date } );
+
+        $self->_set_note( cancel_message_properly_copied => time, $meeting );
+    }
+
+}
+
+1;

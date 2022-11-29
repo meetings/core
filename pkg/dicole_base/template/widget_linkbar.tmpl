@@ -1,0 +1,17 @@
+[%# $Id: widget_linkbar.tmpl,v 1.3 2009-01-07 14:42:33 amv Exp $ -%]
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        link => '#',
+        class => undef,
+        content => {
+            raw => undef,
+            template => 'mytemplate',
+            params => {},
+        },
+        onclick => undef
+    }
+-%]
+<a [% IF itemparams.id %] id="[% itemparams.id %]"[% END %] href="[% itemparams.link %]" class="linkBar[% IF itemparams.class %] [% itemparams.class %][% END %]"[% IF itemparams.onclick %] onclick="[% itemparams.onclick %]"[% END %]>
+[% PROCESS dicole_base::include_widget widget = itemparams.content %]
+</a>

@@ -1,0 +1,14 @@
+[%#- Sent if the reply to a scheduling option does not appear to be a yes or a no. -%]
+
+[%- IF test_case == 'invalid response' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+scheduling_option = 'sun 7.8. from 13 to 20'
+meeting_title = 'kadunvaltaus'
+previous_answer = 'NO'
+meeting_url = 'www.meetin.gs'
+time_zone = 'UTC+14'
+
+%]
+[%- END %]

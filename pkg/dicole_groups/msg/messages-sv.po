@@ -1,0 +1,881 @@
+# $Id: messages-sv.po,v 1.13 2010-07-20 05:51:04 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:08:07+0000\n"
+"PO-Revision-Date: 2005-03-22 02:08:07+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add a group"
+msgstr "Add a group"
+
+msgid "Add custom member security rights"
+msgstr "Add custom member security rights"
+
+msgid "Add custom settings"
+msgstr "Add custom settings"
+
+msgid "Add groups"
+msgstr "Add groups"
+
+msgid "Administration"
+msgstr "Administration"
+
+msgid "Applying not yet implemented!"
+msgstr "Applying not yet implemented!"
+
+msgid "Apply to group"
+msgstr "Apply to group"
+
+msgid "Browse groups"
+msgstr "Browse groups"
+
+msgid "Change group info"
+msgstr "Change group info"
+
+msgid "Change group's tools"
+msgstr "Change group's tools"
+
+msgid "Change group's users"
+msgstr "Change group's users"
+
+msgid "Change member security rights"
+msgstr "Change member security rights"
+
+msgid "Changes were saved."
+msgstr "Changes were saved."
+
+msgid "Class"
+msgstr "Class"
+
+msgid "Collection name"
+msgstr "Collection name"
+
+msgid "Could not detect join policy: Can't join!"
+msgstr "Could not detect join policy: Can't join!"
+
+msgid "Course"
+msgstr "Course"
+
+msgid "Create a subgroup"
+msgstr "Create a subgroup"
+
+msgid "Custom member rights"
+msgstr "Custom member rights"
+
+msgid "Custom member security settings"
+msgstr "Custom member security settings"
+
+msgid "Default member rights"
+msgstr "Default member rights"
+
+msgid "Default member security settings"
+msgstr "Default member security settings"
+
+msgid "Default members right settings"
+msgstr "Default members right settings"
+
+msgid "Default rights updated"
+msgstr "Default rights updated"
+
+msgid "Deny group moderation"
+msgstr "Deny group moderation"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Edit group"
+msgstr "Edit group"
+
+msgid "Edit group information"
+msgstr "Edit group information"
+
+msgid "Edit groups"
+msgstr "Edit groups"
+
+msgid "Edit group tools"
+msgstr "Edit group tools"
+
+msgid "Edit group users"
+msgstr "Edit group users"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Failed modifying user: %1"
+msgstr "Failed modifying user: %1"
+
+msgid "First name"
+msgstr "First name"
+
+msgid "Free join"
+msgstr "Free join"
+
+msgid "General group information"
+msgstr "General group information"
+
+msgid "Group admin"
+msgstr "Group admin"
+
+msgid "Group data saved"
+msgstr "Group data saved"
+
+msgid "Group info"
+msgstr "Group info"
+
+msgid "Group information"
+msgstr "Group information"
+
+msgid "Group listing"
+msgstr "Group listing"
+
+msgid "Group moderator"
+msgstr "Group moderator"
+
+msgid "Groups tools"
+msgstr "Groups tools"
+
+msgid "Groups users"
+msgstr "Groups users"
+
+msgid "Group tools"
+msgstr "Group tools"
+
+msgid "Group type"
+msgstr "Group type"
+
+msgid "Group user defaults"
+msgstr "Group user defaults"
+
+msgid "Group users"
+msgstr "Group users"
+
+msgid "Hidden"
+msgstr "Hidden"
+
+msgid "Join group"
+msgstr "Join group"
+
+msgid "Join policy"
+msgstr "Join policy"
+
+msgid "Join succesful!"
+msgstr "Join succesful!"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "List custom member security rights"
+msgstr "List custom member security rights"
+
+msgid "List all groups"
+msgstr "List all groups"
+
+msgid "Login name"
+msgstr "Login name"
+
+msgid "Modify group details"
+msgstr "Modify group details"
+
+msgid "Must apply"
+msgstr "Must apply"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "No active group found!"
+msgstr "No active group found!"
+
+msgid "Closed"
+msgstr "Closed"
+
+msgid "-- None --"
+msgstr "-- None --"
+
+msgid "No"
+msgstr "No"
+
+msgid "No such group ( id '%1' ) found!"
+msgstr "No such group ( id '%1' ) found!"
+
+msgid "No tools available since group has no area. Porceed to the next step please!"
+msgstr "No tools available since group has no area. Porceed to the next step please!"
+
+msgid "Organization"
+msgstr "Organization"
+
+msgid "Other groups"
+msgstr "Other groups"
+
+msgid "Groups"
+msgstr "Groups"
+
+msgid "Parent group"
+msgstr "Parent group"
+
+msgid "Part group"
+msgstr "Part group"
+
+msgid "Part succesful!"
+msgstr "Part succesful!"
+
+msgid "Project"
+msgstr "Project"
+
+msgid "Remove custom member security rights"
+msgstr "Remove custom member security rights"
+
+msgid "Remove custom settings"
+msgstr "Remove custom settings"
+
+msgid "Remove members right settings"
+msgstr "Remove members right settings"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Section"
+msgstr "Section"
+
+msgid "Securities added"
+msgstr "Securities added"
+
+msgid "Select collections"
+msgstr "Select collections"
+
+msgid "Select default member rights"
+msgstr "Select default member rights"
+
+msgid "Select default member securities"
+msgstr "Select default member securities"
+
+msgid "Select default member security rights"
+msgstr "Select default member security rights"
+
+msgid "Select default rights"
+msgstr "Select default rights"
+
+msgid "Selected collections"
+msgstr "Selected collections"
+
+msgid "Selected tools"
+msgstr "Selected tools"
+
+msgid "Selected users"
+msgstr "Selected users"
+
+msgid "Select group tools"
+msgstr "Select group tools"
+
+msgid "Select group users"
+msgstr "Select group users"
+
+msgid "Select users"
+msgstr "Select users"
+
+msgid "Show custom settings"
+msgstr "Show custom settings"
+
+msgid "Show group listing"
+msgstr "Show group listing"
+
+msgid "Tool name"
+msgstr "Tool name"
+
+msgid "User can add and remove group members"
+msgstr "User can add and remove group members"
+
+msgid "User can add and remove group tools"
+msgstr "User can add and remove group tools"
+
+msgid "User can add groups to the system"
+msgstr "User can add groups to the system"
+
+msgid "User can change group information"
+msgstr "User can change group information"
+
+msgid "User can change groups members' default security rights"
+msgstr "User can change groups members' default security rights"
+
+msgid "User can edit all groups in the system"
+msgstr "User can edit all groups in the system"
+
+msgid "User can give custom security rights to individual group members"
+msgstr "User can give custom security rights to individual group members"
+
+msgid "User can list custom security rights to individual group members"
+msgstr "User can list custom security rights to individual group members"
+
+msgid "User can list groups and show their information"
+msgstr "User can list groups and show their information"
+
+msgid "User can remove custom security rights from individual group members"
+msgstr "User can remove custom security rights from individual group members"
+
+msgid "User groups tree"
+msgstr "User groups tree"
+
+msgid "Usergroup"
+msgstr "Usergroup"
+
+msgid "User login name"
+msgstr "User login name"
+
+msgid "User sees the settings dropdown in this group"
+msgstr "User sees the settings dropdown in this group"
+
+msgid "View settings dropdown"
+msgstr "View settings dropdown"
+
+msgid "Visibility"
+msgstr "Visibility"
+
+msgid "Visible"
+msgstr "Visible"
+
+msgid "Work area"
+msgstr "Work area"
+
+msgid "Workgroup"
+msgstr "Workgroup"
+
+msgid "Common group"
+msgstr "Common group"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "You already are a group member!"
+msgstr "You already are a group member!"
+
+msgid "You are not a group member!"
+msgstr "You are not a group member!"
+
+msgid "You can't join this group!"
+msgstr "You can't join this group!"
+
+msgid "Recent groups"
+msgstr "Recent groups"
+
+msgid "Portrait"
+msgstr "Portrait"
+
+msgid "People who belong to this group"
+msgstr "People who belong to this group"
+
+msgid "List members"
+msgstr "List members"
+
+msgid "List of members"
+msgstr "List of members"
+
+msgid "Group members"
+msgstr "Group members"
+
+msgid "Can not see group members"
+msgstr "Can not see group members"
+
+msgid "See group members"
+msgstr "See group members"
+
+msgid "Controls"
+msgstr "Controls"
+
+msgid "Weblog"
+msgstr "Weblog"
+
+msgid "Group roles"
+msgstr "Group roles"
+
+msgid "Group member visibility"
+msgstr "Group member visibility"
+
+msgid "Add root level groups"
+msgstr "Add root level groups"
+
+msgid "Can not create subgroups"
+msgstr "Can not create subgroups"
+
+msgid "Can not see group info"
+msgstr "Can not see group info"
+
+msgid "Change member rights"
+msgstr "Change member rights"
+
+msgid "Create subgroups"
+msgstr "Create subgroups"
+
+msgid "Default group user"
+msgstr "Default group user"
+
+msgid "Edit info"
+msgstr "Edit info"
+
+msgid "Edit member rights"
+msgstr "Edit member rights"
+
+msgid "Edit users"
+msgstr "Edit users"
+
+msgid "General group rights"
+msgstr "General group rights"
+
+msgid "Go to work area"
+msgstr "Go to work area"
+
+msgid "Group administration"
+msgstr "Group administration"
+
+msgid "Groups info"
+msgstr "Groups info"
+
+msgid "Member rights"
+msgstr "Member rights"
+
+msgid "Removing a group is not supported yet"
+msgstr "Removing a group is not supported yet"
+
+msgid "See group info"
+msgstr "See group info"
+
+msgid "Show group info"
+msgstr "Show group info"
+
+msgid "User can add groups under this group"
+msgstr "User can add groups under this group"
+
+msgid "User can add root level groups"
+msgstr "User can add root level groups"
+
+msgid "User can list public groups and show their information"
+msgstr "User can list public groups and show their information"
+
+msgid "User can remove the group"
+msgstr "User can remove the group"
+
+msgid "User can see a list of group members"
+msgstr "User can see a list of group members"
+
+msgid "User can see the groups info"
+msgstr "User can see the groups info"
+
+msgid "View group info"
+msgstr "View group info"
+
+msgid "View group members"
+msgstr "View group members"
+
+msgid "You are not allowed to remove the group!"
+msgstr "You are not allowed to remove the group!"
+
+msgid "Remove group"
+msgstr "Remove group"
+
+msgid "Are you sure you want to part this group?"
+msgstr "Are you sure you want to part this group?"
+
+msgid "You can not remove the group as long as it has subgroups!"
+msgstr "You can not remove the group as long as it has subgroups!"
+
+msgid "Group removed."
+msgstr "Group removed."
+
+msgid "Group created! Please choose tools for the workarea."
+msgstr "Group created! Please choose tools for the workarea."
+
+msgid "Group created!"
+msgstr "Group created!"
+
+msgid "Other"
+msgstr "Other"
+
+msgid "Are you sure you want to remove this group?"
+msgstr "Are you sure you want to remove this group?"
+
+msgid "Community"
+msgstr "Community"
+
+msgid "Community area"
+msgstr "Community area"
+
+msgid "People"
+msgstr "People"
+
+msgid "Area joined"
+msgstr "Area joined"
+
+msgid "Read only group access"
+msgstr "Read only group access"
+
+msgid "Allows users to see group info as a group tool"
+msgstr "Allows users to see group info as a group tool"
+
+msgid "Group info tool"
+msgstr "Group info tool"
+
+msgid "Can create root level groups"
+msgstr "Can create root level groups"
+
+msgid "band"
+msgstr "band"
+
+msgid "bands"
+msgstr "bands"
+
+msgid "Click to upload a photo"
+msgstr "Click to upload a photo"
+
+msgid "Create a new group"
+msgstr "Create a new group"
+
+msgid "Facebook-page"
+msgstr "Facebook-page"
+
+msgid "filter more"
+msgstr "filter more"
+
+msgid "Filter with keywords"
+msgstr "Filter with keywords"
+
+msgid "General info"
+msgstr "General info"
+
+msgid "Group browser summary box"
+msgstr "Group browser summary box"
+
+msgid "Group description"
+msgstr "Group description"
+
+msgid "Group location"
+msgstr "Group location"
+
+msgid "Group updated"
+msgstr "Group updated"
+
+msgid "Group visibility"
+msgstr "Group visibility"
+
+msgid "I accept the EULA"
+msgstr "I accept the EULA"
+
+msgid "Links"
+msgstr "Links"
+
+msgid "Localizations"
+msgstr "Localizations"
+
+msgid "Look"
+msgstr "Look"
+
+msgid "members"
+msgstr "members"
+
+msgid "MySpace-page"
+msgstr "MySpace-page"
+
+msgid "No results"
+msgstr "No results"
+
+msgid "Other webpage"
+msgstr "Other webpage"
+
+msgid "Register the group"
+msgstr "Register the group"
+
+msgid "Reports"
+msgstr "Reports"
+
+msgid "See group admin extras"
+msgstr "See group admin extras"
+
+msgid "See gruop admin extras"
+msgstr "See gruop admin extras"
+
+msgid "Twitter-page"
+msgstr "Twitter-page"
+
+msgid "Users"
+msgstr "Users"
+
+msgid "with keywords"
+msgstr "with keywords"
+
+msgid "1 group"
+msgstr "1 group"
+
+msgid "%1 groups"
+msgstr "%1 groups"
+
+msgid "[_1 ]members"
+msgstr "[_1 ]members"
+
+msgid "Apply for fan"
+msgstr "Apply for fan"
+
+msgid "Areas"
+msgstr "Areas"
+
+msgid "Are you sure you want to remove the user?"
+msgstr "Are you sure you want to remove the user?"
+
+msgid "BAND"
+msgstr "BAND"
+
+msgid "Cancel upload"
+msgstr "Cancel upload"
+
+msgid "Confirm"
+msgstr "Confirm"
+
+msgid "Download as list"
+msgstr "Download as list"
+
+msgid "E-Mail"
+msgstr "E-Mail"
+
+msgid "Fans"
+msgstr "Fans"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Filter bands"
+msgstr "Filter bands"
+
+msgid "Group info summary box"
+msgstr "Group info summary box"
+
+msgid "Groups (summary title)"
+msgstr "Groups"
+
+msgid "Group subgroup browsing tool"
+msgstr "Group subgroup browsing tool"
+
+msgid "Group (summary title)"
+msgstr "Group"
+
+msgid "Group summary tools"
+msgstr "Group summary tools"
+
+msgid "Group tags"
+msgstr "Group tags"
+
+msgid "Level"
+msgstr "Level"
+
+msgid "member(s)"
+msgstr "member(s)"
+
+msgid "Members"
+msgstr "Members"
+
+msgid "Moderator"
+msgstr "Moderator"
+
+msgid "Modify the header"
+msgstr "Modify the header"
+
+msgid "More groups"
+msgstr "More groups"
+
+msgid "Most active bands"
+msgstr "Most active bands"
+
+msgid "Newest groups"
+msgstr "Newest groups"
+
+msgid "New group administration"
+msgstr "New group administration"
+
+msgid "Please fill the fields marked with the star to complete the registration."
+msgstr "Please fill the fields marked with the star to complete the registration."
+
+msgid "Samples"
+msgstr "Samples"
+
+msgid "Send e-mail"
+msgstr "Send e-mail"
+
+msgid "Show all bands"
+msgstr "Show all bands"
+
+msgid "Spotlight"
+msgstr "Spotlight"
+
+msgid "Upload a photo"
+msgstr "Upload a photo"
+
+msgid "%1 members"
+msgstr "%1 members"
+
+msgid "1 area"
+msgstr "1 area"
+
+msgid "%1 areas"
+msgstr "%1 areas"
+
+msgid "Additional settings"
+msgstr "Additional settings"
+
+msgid "Area description"
+msgstr "Area description"
+
+msgid "Area info"
+msgstr "Area info"
+
+msgid "Area location"
+msgstr "Area location"
+
+msgid "Area name"
+msgstr "Area name"
+
+msgid "Area summary tools"
+msgstr "Area summary tools"
+
+msgid "Area tags"
+msgstr "Area tags"
+
+msgid "Area visibility"
+msgstr "Area visibility"
+
+msgid "Basic member rights"
+msgstr "Basic member rights"
+
+msgid "Create area"
+msgstr "Create area"
+
+msgid "Filter areas"
+msgstr "Filter areas"
+
+msgid "Forced user adding"
+msgstr "Forced user adding"
+
+msgid "More areas"
+msgstr "More areas"
+
+msgid "Most active areas"
+msgstr "Most active areas"
+
+msgid "Show all areas"
+msgstr "Show all areas"
+
+msgid "Show more fans"
+msgstr "Show more fans"
+
+msgid "User rights exceptions"
+msgstr "User rights exceptions"
+
+msgid "I accept the <a href=\\\"%1\\\">terms of service</a>"
+msgstr "I accept the <a href=\\\"%1\\\">terms of service</a>"
+
+msgid "Add and remove users"
+msgstr "Add and remove users"
+
+msgid "Filter user list by name:"
+msgstr "Filter user list by name:"
+
+msgid "Filter user list by user level"
+msgstr "Filter user list by user level"
+
+msgid "I accept the <a href=\\\"%1\\\">terms of service</a>"
+msgstr "I accept the <a href=\\\"%1\\\">terms of service</a>"
+
+msgid "Start typing the name..."
+msgstr "Start typing the name..."
+
+msgid "User managing"
+msgstr "User managing"
+
+msgid "users match the current filters."
+msgstr "users match the current filters."
+
+msgid "You have been invited to %1"
+msgstr "You have been invited to %1"
+
+msgid "No areas found."
+msgstr "No areas found."
+
+msgid "Enter area"
+msgstr "Enter area"
+
+msgid "Optimal image size is 400x300px."
+msgstr "Optimal image size is 400x300px."
+
+msgid "YouTube-page"
+msgstr "YouTube-page"
+
+msgid "Admin only settings"
+msgstr "Admin only settings"
+
+msgid "Area settings"
+msgstr "Area settings"
+
+msgid "Area workspace disabled"
+msgstr "Area workspace disabled"
+
+msgid "Front page (wiki automatic first page name)"
+msgstr "Front page"
+
+msgid "Group custom banner"
+msgstr "Group custom banner"
+
+msgid "Send test email to self"
+msgstr "Send test email to self"
+
+msgid "Subgroup creation disabled"
+msgstr "Subgroup creation disabled"
+
+msgid "Subgroup parent"
+msgstr "Subgroup parent"
+
+msgid "Subgroup type"
+msgstr "Subgroup type"
+
+msgid "Test mail sent to self."
+msgstr "Test mail sent to self."
+
+msgid "Custom user rights"
+msgstr "Custom user rights"
+
+msgid "Default rights"
+msgstr "Default rights"
+
+msgid "User reports"
+msgstr "User reports"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Can see page elements that are meant only for admins"
+msgstr "Can see page elements that are meant only for admins"
+
+msgid "You can not send the mail without a subject."
+msgstr "You can not send the mail without a subject."
+
+msgid "Export all users"
+msgstr "Export all users"
+
+msgid "User level"
+msgstr "User level"
+
+msgid "Access the system through the following link:"
+msgstr "Access the system through the following link:"
+
+msgid "Add users with these email domains: (separate with , )"
+msgstr "Add users with these email domains: (separate with , )"
+
+msgid "Count"
+msgstr "Count"
+
+msgid "Resource reports"
+msgstr "Resource reports"

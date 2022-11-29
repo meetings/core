@@ -1,0 +1,1 @@
+[% IF user_has_joined %][% MTN.t('You have joined') %][% ELSIF matchmaker_meeting %][% MTN.t('Meeting confirmed:') %] [% ELSIF open_scheduling_options.size > 0 %][% MTN.t('Invitation to schedule:') %][% ELSE %][% MTN.t('Meeting invitation:') %][% END %] [% meeting_title %]

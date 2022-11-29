@@ -1,0 +1,12 @@
+\bCVS\b
+~$
+^oi2_manage\.log$
+^build
+^src
+^script
+^data
+\.bak$
+\.backup$
+^tmp
+^_
+

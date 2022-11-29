@@ -1,0 +1,48 @@
+[%#- $Id: input_textarea.tmpl,v 1.15 2009-01-07 14:42:33 amv Exp $ -%]
+
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        attributes =
+            {
+                all of the XHTML attributes that go with the element
+            }
+        required
+        error
+        content
+    }
+
+-%]
+
+[% itemparams.attributes.id = itemparams.attributes.name %]
+<textarea[% FOREACH param = itemparams.attributes %] [% param.key %]="[% param.value %]"[% END %]>[% itemparams.content | html %]</textarea>
+[%- IF itemparams.htmlarea -%]
+<script type="text/javascript">
+initEditor(document.getElementById('[% itemparams.attributes.id %]')[% ", 1" IF itemparams.htmlarea_fullpage %])
+</script>
+[%- END -%]
+[%- IF itemparams.wikiedit -%]
+<script language="JavaScript" src="/wikiedit/protoedit.js"></script>
+<script language="JavaScript" src="/wikiedit/wikiedit2.js"></script>
+<script type="text/javascript">
+wE = new WikiEdit();
+wE.init('[% itemparams.attributes.id %]','','','/wikiedit');
+</script>
+[%- END -%]
+[%- IF itemparams.fckeditor -%]
+<script type="text/javascript" src="/fckeditor/fckeditor.js"></script>
+<script type="text/javascript">
+var oFCKeditor[% itemparams.attributes.id %] = new FCKeditor( '[% itemparams.attributes.id %]' );
+oFCKeditor[% itemparams.attributes.id %].BasePath = '/fckeditor/';
+oFCKeditor[% itemparams.attributes.id %].Config['SkinPath'] = '/fckeditor/editor/skins/office2003/';
+[% IF itemparams.htmlarea_fullpage %]oFCKeditor[% itemparams.attributes.id %].Config["FullPage"] = true;[% END %]
+oFCKeditor[% itemparams.attributes.id %].Config["AutoDetectLanguage"] = false;
+oFCKeditor[% itemparams.attributes.id %].Config["DefaultLanguage"] = "[% itemparams.lang %]";
+oFCKeditor[% itemparams.attributes.id %].ReplaceTextarea();
+</script>
+[%- END -%]
+[%-
+    IF itemparams.error || itemparams.required;
+        PROCESS dicole_base::input_req_error;
+    END
+-%]

@@ -1,0 +1,7 @@
+
+sub execute {
+    my ( $self ) = @_;
+    Dicole::Utils::SQL->execute_sql('alter table dicole_networking_profile add gmaps_badloc text after gmaps_location');
+}
+
+1;

@@ -1,0 +1,4 @@
+<p>[% sender_name | html %] <a href="[% comment_url | html %]">commented</a> on <a href="[% object_url | html %]">[% object_name | html %]</a>! Here is the comment:</p>
+[% comment_content_html %]
+
+<p><b>Continue the discussion <a href="[% comment_action_url | html %]"> [% IF group_name %]at [% group_name | html %][% ELSE %]here[% END %]</a>!</b></p>

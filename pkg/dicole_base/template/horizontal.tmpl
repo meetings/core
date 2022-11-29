@@ -1,0 +1,29 @@
+[%#- $Id: horizontal.tmpl,v 1.3 2009-01-07 14:42:33 amv Exp $ -%]
+
+[%#-
+Template for creating a horizontal list of elements that appear one after another
+
+	The template accepts the following information in itemparams:
+	[
+		{
+			template		=> name of the template
+			params  		=> 
+				{
+					template parameters passed to the template in itemparams
+				}		
+
+		},
+		{
+			..
+		}
+	]
+
+-%]
+
+[%-
+	IF itemparams.0;
+		FOREACH item = itemparams;
+			PROCESS $item.template itemparams = item.params;
+		END;
+	END
+-%]

@@ -1,0 +1,124 @@
+diff -uNr OpenInteract-1.99_04_old/lib/OpenInteract2/Cache/File.pm OpenInteract-1.99_04/lib/OpenInteract2/Cache/File.pm
+--- OpenInteract-1.99_04_old/lib/OpenInteract2/Cache/File.pm	2004-12-09 19:12:09.804154599 +0200
++++ OpenInteract-1.99_04/lib/OpenInteract2/Cache/File.pm	2004-12-09 19:13:33.290327947 +0200
+@@ -23,13 +23,13 @@
+     # Allow values that are passed in to override anything
+     # set in the config object
+ 
+-    unless ( -d $cache_conf->{dir} ) {
++    unless ( -d $cache_conf->{directory} ) {
+         $log->error( "Cannot create a filesystem cache without a valid ",
+-                     "directory. (Given: $cache_conf->{dir})" );
++                     "directory. (Given: $cache_conf->{directory})" );
+         return undef;
+     }
+ 
+-    my $cache_dir      = $cache_conf->{dir};
++    my $cache_dir      = $cache_conf->{directory};
+     my $max_size       = $cache_conf->{max_size};
+     my $default_expire = $cache_conf->{default_expire};
+     my $cache_depth    = $cache_conf->{directory_depth};
+@@ -50,6 +50,11 @@
+                                    cache_depth        => $cache_depth });
+ }
+ 
++sub purge_all {
++    my ( $self, $cache ) = @_;
++    $cache->clear;
++    return 1;
++}
+ 
+ sub get_data {
+     my ( $self, $cache, $key ) = @_;
+diff -uNr OpenInteract-1.99_04_old/lib/OpenInteract2/Config/Initializer.pm OpenInteract-1.99_04/lib/OpenInteract2/Config/Initializer.pm
+--- OpenInteract-1.99_04_old/lib/OpenInteract2/Config/Initializer.pm	2004-12-09 19:12:09.796155637 +0200
++++ OpenInteract-1.99_04/lib/OpenInteract2/Config/Initializer.pm	2004-12-09 19:14:06.934969329 +0200
+@@ -137,7 +137,7 @@
+ 
+     unless ( $config->{convert_date_format} ) {
+         my $default_format = '%Y-%m-%d %H:%M:%S';
+-        $log->warn( "SPOPS object [$config->{key}: $config->{class}] does ",
++        $log->is_debug && $log->debug( "SPOPS object [$config->{key}: $config->{class}] does ",
+                     "not have a conversion date format set. This is ",
+                     "STRONGLY encouraged -- please look at ",
+                     "'OpenInteract2::Manual::SPOPS' under 'DATE ",
+diff -uNr OpenInteract-1.99_04_old/lib/OpenInteract2/I18N/Initializer.pm OpenInteract-1.99_04/lib/OpenInteract2/I18N/Initializer.pm
+--- OpenInteract-1.99_04_old/lib/OpenInteract2/I18N/Initializer.pm	2004-12-09 19:12:09.782157454 +0200
++++ OpenInteract-1.99_04/lib/OpenInteract2/I18N/Initializer.pm	2004-12-09 19:14:49.362476529 +0200
+@@ -78,7 +78,8 @@
+         $lang_msg{ $lang } ||= {};
+         foreach my $msg_key ( keys %{ $messages } ) {
+             if ( $lang_msg{ $lang }->{ $msg_key } ) {
+-                $log->error( "DUPLICATE MESSAGE KEY FOUND. Key '$msg_key' ",
++                $log->is_debug &&
++                    $log->debug( "DUPLICATE MESSAGE KEY FOUND. Key '$msg_key' ",
+                              "from '$msg_file' was already found in message ",
+                              "file '$key_from{ $msg_key }' read in earlier. ",
+                              "Existing key will not be overwritten which ",
+@@ -135,7 +136,7 @@
+             $current_msg .= $line;
+         }
+         else {
+-            my ( $key, $msg ) = $line =~ /^\s*([\w\.]+)\s*=\s*(.*)$/;
++            my ( $key, $msg ) = $line =~ /^\s*(\S.*\S)\s*=\s*(.*)$/;
+             if ( $key ) {
+                 if ( $current_key ) {
+                     $messages{ $current_key } = $current_msg;
+@@ -218,7 +219,7 @@
+ 
+ %Lexicon = (
+ [% FOREACH msg_key = messages.keys %]
+-  '[% msg_key %]' => qq{[% messages.$msg_key %]},
++  qq{[% msg_key %]} => qq{[% messages.$msg_key %]},
+ [% END %]
+ );
+ 
+diff -uNr OpenInteract-1.99_04_old/lib/OpenInteract2/I18N.pm OpenInteract-1.99_04/lib/OpenInteract2/I18N.pm
+--- OpenInteract-1.99_04_old/lib/OpenInteract2/I18N.pm	2004-12-09 19:12:09.919139677 +0200
++++ OpenInteract-1.99_04/lib/OpenInteract2/I18N.pm	2004-12-09 19:15:15.138141487 +0200
+@@ -34,8 +34,10 @@
+         }
+     };
+     if ( $@ ) {
+-        $log->error( "Failed to translate '$key': $@" );;
+-        return "Message error for '$key'";
++         $log->is_debug && $log->debug( "Failed to translate '$key': $@" );
++	 $key =~ s/\[_1\]/$args[0]/;
++         $key =~ s/\[_2\]/$args[1]/;
++	 return $key;
+     }
+     return $msg;
+ }
+diff -uNr OpenInteract-1.99_04_old/lib/OpenInteract2/Setup.pm OpenInteract-1.99_04/lib/OpenInteract2/Setup.pm
+--- OpenInteract-1.99_04_old/lib/OpenInteract2/Setup.pm	2004-12-09 19:12:09.932137990 +0200
++++ OpenInteract-1.99_04/lib/OpenInteract2/Setup.pm	2004-12-09 19:15:44.312368487 +0200
+@@ -16,6 +16,7 @@
+ use OpenInteract2::Context   qw( CTX );
+ use OpenInteract2::Exception qw( oi_error );
+ use OpenInteract2::Filter;
++use OpenInteract2::Config::GlobalOverride;
+ use OpenInteract2::I18N::Initializer;
+ use OpenInteract2::Manage;
+ use OpenInteract2::Package;
+diff -uNr OpenInteract-1.99_04_old/lib/OpenInteract2/SQLInstall.pm OpenInteract-1.99_04/lib/OpenInteract2/SQLInstall.pm
+--- OpenInteract-1.99_04_old/lib/OpenInteract2/SQLInstall.pm	2004-12-09 19:12:09.913140455 +0200
++++ OpenInteract-1.99_04/lib/OpenInteract2/SQLInstall.pm	2004-12-09 19:15:57.826621370 +0200
+@@ -367,7 +367,8 @@
+             $ds_name = $spops_class->CONFIG->{datasource};
+         }
+         elsif ( $import_type eq 'dbdata' ) {
+-            my $ds_lookup = $data_struct->[0]->{datasource_pointer};
++	    my $ds_lookup = 'system';
++#            my $ds_lookup = $data_struct->[0]->{datasource_pointer};
+             if ( $ds_lookup eq 'system' ) {
+                 $ds_name = CTX->lookup_system_datasource_name;
+             }
+@@ -391,7 +392,7 @@
+         }
+ 
+         $self->_set_datasource( $data_file, $ds_name );
+-        $self->transform_data( $importer );
++        $self->transform_data( $importer ) unless $import_type eq 'dbdata';
+         my $file_status = $importer->run;
+ 
+         my $file_ok = 1;

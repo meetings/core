@@ -1,0 +1,32 @@
+[% MTN.t('Add %1$s to your Meetin.gs account',[meeting_title]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Add to your account') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>><<<bold>>>[% MTN.t('When:') %] <<</bold>>>[% IF meeting_time %][% meeting_time %][% ELSE %][% MTN.t('Not known yet') %][% END %]<<<br>>>
+<<<bold>>>[% MTN.t('Where:') %]<<</bold>>> [% meeting_location_string %]<<<br>>>
+<<</p>>>
+
+<<<p>>>
+[% MTN.t('Click the following link to add the meeting to your account.') %]
+<<<br>>> 
+[% MTN.t('After this you can invite people to join the meeting page.') %]
+<<</p>>>
+
+[% url = transfer_url %]
+[% showtext = 1 %]
+[% text = MTN.t('Add meeting') %]
+<<<blue_button>>>
+
+<<<p>>>[% MTN.t("If this isn't your meeting, you can ignore this message.") %]<<</p>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

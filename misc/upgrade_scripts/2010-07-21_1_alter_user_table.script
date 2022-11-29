@@ -1,0 +1,11 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table sys_user add facebook_user_id text after email');
+
+}
+
+1;
+

@@ -1,0 +1,22 @@
+[% FOREACH group IN groups %]
+	<div class="subgroup subgroup_profile">
+		<div class="left">
+			<a href="[% group.url %]">
+				[%- IF group.image_90 -%]
+				[%- img_src = group.image_90 -%]
+				[%- ELSE -%]
+				[%- img_src = '/images/theme/default/avatar-120x90px.png' -%]
+				[%- END -%]
+				<img src="[% img_src %]" alt="[% group.name | html %]" />
+			</a>
+		</div>
+		<div class="item_content">
+			<h2 class="title"><a href="[% group.url %]">[% group.name | html %]</a></h2>
+			<div class="tags">
+				[% FOREACH tag IN group.tags %]
+				<a class="tag" href="[% tag.link %]">[% tag.name | html %]</a>
+				[% END %]
+			</div>
+		</div>
+	</div>
+[% END %]

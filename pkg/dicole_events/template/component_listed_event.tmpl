@@ -1,0 +1,28 @@
+<div class="event">
+	<div class="left">
+		<a href="[% show_url | html %]"><img src="[% logo_url or '/images/events/default-logo.png' | html %]" alt="[% title | html %]" /></a>
+	</div>
+	<div class="right">
+		<div class="social-media-tag" title="[% MSG('Social Media Tag') %]">#[% sos_med_tag | html %]</div>
+		[% IF rsvp == 'yes' %]<div class="attending">[% MSG('Attending') %]</div>[% END %]
+		[% IF ongoing %]<a href="[% show_url | html %]" class="button live"><span>[% MSG('Live now!') %]</span></a>[% END %]
+	</div>
+	<div class="event-content">
+		<h2 class="title"><a href="[% show_url | html %]">[% title | html %]</a></h2>
+		[% IF private_event %]
+		<h3 class="status">[% MSG("This event is private.") | html %]</h3>
+		[% ELSIF invite_only %]
+		<h3 class="status">[% MSG("This event is only for invited participants.") | html %]</h3>
+		[% END %]
+		<p class="abstract">
+			<span class="meta">
+				<span class="date[% IF ongoing %] live[% END %]">[% date | html %]</span>
+				<span class="separator">&nbsp;/&nbsp;</span>
+				<span class="location">[% location_name | html %]</span>
+				<span class="separator">&nbsp;–&nbsp;</span>
+			</span>
+			[% abstract | html %]
+		</p>
+		<div class="tags">[% FOREACH tag IN linked_tags %]<a class="tag" href="[% tag.url | html %]">[% tag.name | html %]</a>[% END %]</div>
+	</div>
+</div>

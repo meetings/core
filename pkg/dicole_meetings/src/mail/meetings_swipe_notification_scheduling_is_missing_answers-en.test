@@ -1,0 +1,10 @@
+[%- IF test_case == 'test' %]
+[%-
+server_host = 'http://dev.meetin.gs'
+user_name = 'Antero Aalto'
+swipe_url = 'https://meetin.gs/linkki'
+organizer_name = 'Teemu Arina'
+meeting_title = 'Get-toghether'
+from_swipetomeet = 1
+%]
+[%- END -%]

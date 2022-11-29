@@ -1,0 +1,14 @@
+PARTNER; Sent when somebody pays for the service, or gets promoted to a company pro user
+
+Parameters used:
+login_url
+new_user
+provisioned_user
+partner_support_url
+provisioner_user_name
+customize_for_cmeet
+
+UTM Parameters
+Source: notifications
+Medium: email
+Campaign: congratspro

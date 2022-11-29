@@ -1,0 +1,16 @@
+[%#
+browse_title = 'Title'
+%]
+
+<div id="browse_header">
+	<div class="left">
+		<h1>[%- browse_title -%]</h1>
+	</div>
+	<div class="right">
+		<span id="browse_filter_with_keywords">
+			<a href="#" id="filter_link">[% MSG('Filter with keywords') | html %] 
+			<span class="filter_hide">x</span><span class="filter_show">&darr;</span></a>
+		</span>
+	</div>
+</div>
+

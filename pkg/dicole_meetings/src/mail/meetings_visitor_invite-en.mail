@@ -1,0 +1,126 @@
+[% IF user_has_joined %][% MTN.t('You have joined') %][% ELSIF matchmaker_meeting %][% MTN.t('Meeting confirmed:') %] [% ELSIF open_scheduling_options.size > 0 %][% MTN.t('Invitation to schedule:') %][% ELSE %][% MTN.t('Meeting invitation:') %][% END %] [% meeting_title %]
+
+<<<html_wrapper>>>
+[% IF matchmaker_meeting %]
+[% action_text = MTN.t('%1$s confirmed the meeting',[inviting_user_name ]) %]
+[% ELSE %]
+[% action_text = MTN.t('%1$s invited you to',[inviting_user_name ]) %]
+[% END %]
+<<<text_and_logo>>>
+
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+[% IF meeting_rsvp_no_url %]
+[% meeting_rsvp_no_url = meeting_rsvp_no_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=visitor_invite' %]
+[% END %]
+[% IF meeting_rsvp_yes_url %]
+[% meeting_rsvp_yes_url = meeting_rsvp_yes_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=visitor_invite' %]
+[% END %]
+
+<<<rsvp>>>
+
+[% IF rsvp_required %]
+<<<br>>>
+<<<hr>>>
+[% END %]
+
+[% IF greeting_message_text && greeting_message_html %]
+<<<p>>>
+[% IF in_html %]
+<<<italic>>>[% greeting_message_html %]<<</italic>>>
+[% ELSE %]
+[% greeting_message_text %]
+[% END %]
+<<</p>>>
+<<<hr>>>
+[% END %]
+
+[% IF meeting_time == "" && open_scheduling_options.size > 0 %][% calendar_links_disabled = 1 %]
+[% disable_time = 1 %]
+[% basic_info_button_right = 0 %]
+[% ELSIF rsvp_required %]
+[% basic_info_button_right = 0 %]
+[% ELSE %]
+[% basic_info_button_right = 1 %]
+[% END %]
+[% IF meeting_url %]
+[% meeting_url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=visitor_invite' %]
+[% END %]
+<<<basic_info>>>
+
+[% IF rsvp_required %]
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=visitor_invite' %]
+[% showtext = 1 %]
+
+[% END %]
+
+[% IF ics_url && gcal_url && ! calendar_links_disabled %][% END %]
+
+[% IF meeting_time == "" && open_scheduling_options.size > 0 %]
+<<<hr>>>
+<<<p>>>
+<<<bold>>>[% MTN.t('Do these times suit you? Answer on the meeting page.') %]<<</bold>>>
+<<</p>>>
+
+<<<list>>>
+[% FOREACH option IN open_scheduling_options %]
+<<<item>>>
+[% option.timestring %]
+<<</item>>>
+[% END %]
+<<</list>>>
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=visitor_invite' %]
+[% text = MTN.t('Answer now') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+
+[% END # end meeting scheduling part %]
+
+<<<hr>>>
+
+[% IF agenda_html %]
+<<<bubble_h1>>>[% agenda_title %]<<</h1>>>
+[% IF in_html %]
+[% agenda_html %]
+[% ELSE %]
+[% agenda_text %]
+[% END%]
+
+[% IF ! lahixcustxz_hack %]
+[% url = comment_now_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=visitor_invite' %]
+[% showtext = 1 %]
+[% text = MTN.t('Comment now') %]
+<<<blue_button>>>
+[% END %]
+
+[% END %]
+<<</bubble>>>
+
+
+<<<summary_screenshot>>>
+<<<br>>>
+<<<hr>>>
+
+<<<app_buttons>>>
+
+
+[% tip = 1 %]
+<<<p>>>
+[% IF meeting_time == "" && open_scheduling_options.size > 0 %]
+[% MTN.t('%(B$Tip:%) You can also choose suitable dates by replying to this message with SCHEDULE as the first word.') %]
+[% ELSE %]
+[% MTN.t('%(B$Tip:%) You can also add material by emailing attachments to %(L$%1$s%). The documents will automatically appear on the meeting page.',{ params => [ meeting_email ], L => { attributes => { href => 'mailto:' _ meeting_email } } } ) %]
+[% END %]
+<<</p>>>
+
+[% IF 0 %]
+<<<p>>>
+[% MTN.t('To learn more about operating Meetin.gs by email, reply to this email with %(B$EMAIL HELP%) as the first words of your reply. The help will arrive momentarily!') %]
+<<</p>>>
+[% END %]
+
+<<</html_wrapper>>>

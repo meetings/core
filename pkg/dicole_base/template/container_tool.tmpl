@@ -1,0 +1,146 @@
+[% # $Id: container_tool.tmpl,v 1.27 2010-06-08 20:48:08 amv Exp $ # -%]
+
+[%- DEFAULT
+   images.default               = '/images'
+    images.theme                = theme_images
+   images.navigation        = images.theme _ '/navigation'
+   images.toolicons       = images.theme _ '/content/toolicons'
+-%]
+
+[%- IF page.wrap_form -%]
+[%- page.form_params.id = page.form_params.name -%]
+<form [% FOREACH form_param = page.form_params %][% IF form_param.key %][% form_param.key %]="[% form_param.value %]" [% END %][% END %]>
+[%- END -%]
+
+[%-
+  FOREACH field = hiddenFields;
+    field.type = 'hidden';
+    PROCESS dicole_base::input_input itemparams = field;
+  END;
+-%]
+
+<!-- Tool -->
+<div class="tool[% IF tool.custom_css_class %] [% tool.custom_css_class %][% END %]">
+
+<!-- ===== Tool info ===== -->
+    <div class="toolActionContainer" style="overflow:hidden;padding:0 10px">
+        <div style="float:right" class="right">
+            [%- FOREACH btn = tool.action_buttons -%]
+                <a class="toolActionButton big-button [% btn.class ? ' ' _ btn.class : '' %]" href="[% btn.url or '#' %]"><span>[% btn.name | html %]</span></a>
+            [% END %]
+        </div>
+    </div>
+    <div class="toolInfoContainer">
+        <div class="toolInfoLeft">
+
+            [%- IF tool.info.icon -%]
+            <img src="[%- tool.info.icon_path ? tool.info.icon_path : images.toolicons -%]/[%- tool.info.icon -%]" alt="[% tool.info.name %]" />
+            [%- END -%]
+
+            <div class="toolInfoLeftContent"> [% tool.info.name | html %]</div>
+        </div>
+
+        [%- IF tool.info.messages -%]
+            [%- FOREACH message = tool.info.messages -%]
+        <a class="toolInfoRight2 [% 'failure' IF message.code == '0' %][% 'success' IF message.code == '1' %][% 'warning' IF message.code == '2' %]" id="toolInfoRightBox_[% loop.count %]" href="#" onclick="document.getElementById('toolInfoRightBox_[% loop.count %]').style.display = 'none'; return false;" >
+            <span class="title2">[% message.title | html %]</span>
+            <span class="content2">[%- message.content | html -%]</span>
+        </a>
+            [%- END -%]
+        [%- END -%]
+
+    </div>
+
+    <div class="toolContainer">
+        <div class="toolContentContainer">
+
+<!-- ===== Tool tabs ===== -->
+
+            [%- IF tool.nice_tabs AND !tool.no_tool_tabs  -%]
+            <div class="nice_tabs"><table border="0" cellspacing="0" cellpadding="0"><tr>
+                [%- FOREACH tab = tool.tabs -%]
+                <td[% IF tab.active == '1' %] class="selected"[% END %]><div class="cb"><div class="bt"><div></div></div><div class="i1"><div class="i2"><div class="i3"><a href="[% tab.href %]">[% tab.name %]</a></div></div></div><div class="bb"><div></div></div></div></td>
+                [%- END -%]
+            </tr></table></div>
+            [%- ELSIF !tool.no_tool_tabs -%]
+            <div class="toolTabs">
+                <div class="tabs left">
+                    <ul>
+                    [%- FOREACH tab = tool.tabs -%]
+                    <li [% IF tab.active == '1' %]class="selected"[% END %]><a href="[% tab.href %]">[% tab.name %]</a></li>
+                    [%- END -%]
+                    </ul>
+               </div>
+           </div>
+           <div class="tabsBottom"></div>
+           <div class="toolPath blueLinks"><!-- toolPath -->
+               [%- IF tool.help -%]
+               <a class="helpLink" href="#" onclick="helpOpen('[% tool.help %]');">[% MSG('Help') %]</a>
+               [%- END -%]
+               [%- IF !tool.path -%]&nbsp;[%- END -%]
+               [%- FOREACH directory = tool.path %]
+               / [%- IF directory.href %]<a href="[% directory.href %]">[%- END -%][%- directory.name -%][%- '</a>' IF directory.href -%]
+               [%- END -%]
+           </div>
+           [%- END -%]
+
+<!-- ===== Tool content ===== -->
+
+           <div class="toolContent">
+               <table class="toolContentAlign">
+                   <tr>
+                   [%- colnum = tool.containers_columns.size -%]
+                   [%- FOREACH column = tool.containers_columns -%]
+                   [%- col = loop.count - 1 -%]
+                   [%- current_col = loop.count- %]
+                       <td class="tool_column_td tool_[% colnum %]_column_td_[% current_col %]">
+                       <div class="tool_column_div tool_[% colnum %]_column_div_[% current_col %]">
+                       [%- FOREACH container = column %]
+                           [%- IF tool.containers.$container.form_params -%]
+                           [%- tool.containers.$container.form_params.id = tool.containers.$container.form_params.name -%]
+                           <form [% FOREACH form_param = tool.containers.$container.form_params %][% IF form_param.key %][% form_param.key %]="[% form_param.value %]" [% END %][% END %]>
+                           [%- END -%]
+                           <div class="toolContentBox toolContentBox-cb[% IF tool.containers.$container.class %] [% tool.containers.$container.class | html %][% END %] cb"><div class="bt"><div></div></div><div class="i1"><div class="i2"><div class="i3">
+                               <span class="boxLegend">[%- tool.containers.$container.name | html -%]</span>
+                               [%- FOREACH item = tool.containers.$container.content %]
+                               <div class="contentItemContainer blueLinks">
+                                   [%- PROCESS $item.template itemparams = item.params %]
+                               </div>
+                               [%- END %]
+                           </div></div></div><div class="bb"><div></div></div></div>
+                           [%- IF tool.containers.$container.form_params %]</form>[% END -%]
+                       [%- END -%]
+                       </div>
+                       </td>
+                   [%- END -%]
+                   </tr>
+               </table>
+           </div>
+
+       </div><!-- // toolContentContainer -->
+
+    [%- IF tool.feeds -%]
+        <div class="toolFeeds">
+
+            [%- FOREACH feed = tool.feeds %]
+            [% IF feed.dicole_url %]<a href="[% feed.dicole_url %]"><img src="[% images.theme %]/feeds/[% feed.dicole_type %]-[% feed.lang %].gif" alt="[% feed.dicole_desc %]" title="[% feed.dicole_desc %]" /></a>[% END %]
+            [%- END %]
+
+            [%- FOREACH feed = tool.feeds %]
+            [% IF feed.rss_url %]<a href="[% feed.rss_url %]"><img src="[% images.theme %]/feeds/[% feed.rss_type %].gif" alt="[% feed.rss_desc %]" title="[% feed.rss_desc %]" /></a>[% END %]
+            [%- END %]
+
+        </div>
+    [%- END -%]
+
+   </div><!-- // toolContainer -->
+</div><!-- // tool -->
+
+<div id="helpBox" class="helpBox">
+   <div class="helpBoxInner" id="helpBoxInner">
+      <div class="helpTopic">[% MSG('Help') %]<a href="#" onclick="helpClose();"><span class="helpClose"><!-- --></span></a></div>
+      <div class="helpContainer" id="helpContainer"></div>
+   </div>
+</div>
+
+[%- IF page.wrap_form -%]</form>[%- END -%]

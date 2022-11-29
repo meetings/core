@@ -1,0 +1,61 @@
+[%- IF test_case == 'test' %]
+[%-
+from_user_name = 'Bert Bunjo'
+type = 'invitation'
+invitation_message = "hello\n\ntest"
+inviting_user_name = 'Ilkeä Antti'
+meeting_title = 'Mörönmetsästys'
+rsvp_required_by = 'Ilkeä Antti'
+rsvp_required = 1; 
+greeting_message_text = 'heipparallaa'
+greeting_message_html = 'Hi, please let me know if you are coming. Looking forward to having a great meeting!'
+meeting_url = 'http://meetin.gs/mörköjahti'
+disable_url = 'http://meetin.gs/meetings_global/disable_ical_emails?dic=v1_e_12314_123sdkjsdjij3ksakhfghdfls'
+meeting_rsvp_no_url = 'http://meetin.gs/morkojahti'
+meeting_rsvp_yes_url = 'http://meetin.gs/morkojahti'
+
+%]
+[%- END %]
+[%- IF test_case == 'created' %]
+[%-
+type = 'created'
+inviting_user_name = 'Ilkeä Antti'
+meeting_title = 'Mörönmetsästys'
+rsvp_required_by = 'Ilkeä Antti'
+rsvp_required = 1; 
+greeting_message_text = 'heipparallaa'
+greeting_message_html = 'Hi, please let me know if you are coming. Looking forward to having a great meeting!'
+meeting_url = 'http://meetin.gs/mörköjahti'
+disable_url = 'http://meetin.gs/meetings_global/disable_ical_emails?dic=v1_e_12314_123sdkjsdjij3ksakhfghdfls'
+meeting_rsvp_no_url = 'http://meetin.gs/morkojahti'
+meeting_rsvp_yes_url = 'http://meetin.gs/morkojahti'
+
+%]
+[%- END %]
+[%- IF test_case == 'time_changed' %]
+[%-
+type = 'time_changed'
+inviting_user_name = 'Ilkeä Antti'
+meeting_title = 'Mörönmetsästys'
+rsvp_required_by = 'Ilkeä Antti'
+rsvp_required = 1; 
+greeting_message_text = 'heipparallaa'
+greeting_message_html = 'Hi, please let me know if you are coming. Looking forward to having a great meeting!'
+meeting_url = 'http://meetin.gs/mörköjahti'
+disable_url = 'http://meetin.gs/meetings_global/disable_ical_emails?dic=v1_e_12314_123sdkjsdjij3ksakhfghdfls'
+meeting_rsvp_no_url = 'http://meetin.gs/morkojahti'
+meeting_rsvp_yes_url = 'http://meetin.gs/morkojahti'
+
+%]
+[%- END %]
+
+[%- IF test_case == 'scheduling' %]
+[%-
+type = 'scheduling_completed'
+from_swipetomeet = 1
+meeting_title = 'Lunch meeting'
+meeting_url = 'http://meetin.gs/mörköjahti'
+disable_url = 'http://meetin.gs/meetings_global/disable_ical_emails?dic=v1_e_12314_123sdkjsdjij3ksakhfghdfls'
+
+%]
+[%- END %]

@@ -1,0 +1,19 @@
+# $Id: messages-en.po,v 1.1 2006/03/07 00:11:54 jpir Exp $
+
+msgid ""
+msgstr ""
+
+msgid "Virtual conference"
+msgstr "Virtual conference"
+
+msgid "Online users"
+msgstr "Online users"
+
+msgid "No online users"
+msgstr "No online users"
+
+msgid "The virtual conferencing tool is an optional service with a monthly cost. Please contact Dicole Oy if you want to enable the service."
+msgstr "The virtual conferencing tool is an optional service with a monthly cost. Please contact Dicole Oy if you want to enable the service."
+
+msgid "In virtual conference"
+msgstr "In virtual conference"

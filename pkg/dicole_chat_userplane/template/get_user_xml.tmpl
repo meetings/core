@@ -1,0 +1,35 @@
+<user>
+  <userid>[% userID %]</userid>
+  <admin>[% admin %]</admin>
+  <displayname>[% displayname %]</displayname>
+  <avsettings>
+    <audiosend>true</audiosend>
+    <videosend>true</videosend>
+    <audioreceive>true</audioreceive>
+    <videoreceive>true</videoreceive>
+    <audiokbps>44</audiokbps>
+    <videokbps>150</videokbps>
+  </avsettings>
+  <images>
+    <icon>[% image_icon %]</icon>
+    <thumbnail>[% image_thumb %]</thumbnail>
+    <fullsize>[% image_full %]</fullsize>
+  </images>
+  <chat>
+    <gui>
+      <viewprofile>false</viewprofile>
+      <instantcommunicator>true</instantcommunicator>
+    </gui>
+    <restrictedrooms allowRestricted="true">
+      <room createOnLogin="true" creatorID="[% room_creator_id %]">
+        <name>[% room_name %]</name>
+        <description></description>
+      </room>
+    </restrictedrooms>
+    <initialroom>[% initial_room %]</initialroom>
+    <userdatavalues>
+      <line>Dicole Oy</line>
+      <line>[% profile_url %]</line>
+    </userdatavalues>
+  </chat>
+</user>

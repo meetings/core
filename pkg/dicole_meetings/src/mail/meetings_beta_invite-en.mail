@@ -1,0 +1,41 @@
+[% MTN.t('%1$s has invited you to Meetin.gs',[inviting_user_name]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('%1$s wants you to try', [inviting_user_name]) %]
+<<<text_and_logo>>>
+<<<h1>>>Meetin.gs<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>
+[% IF in_html %] 
+[% greeting_message_html %]
+[% ELSE %]
+[% greeting_message_text %]
+[% END %]
+<<</p>>>
+
+<<<hr>>>
+
+<<<p>>>[% MTN.t("Meetin.gs is a free service that helps you to keep meeting participants on the same page and materials up to date.") %]<<</p>>>
+
+<<<p>>>[% MTN.t("Register your account here.") %]<<</p>>>
+[% IF in_html %] 
+[% url = register_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=recommended' %]
+[% text = MTN.t('Sign up now') %]
+<<<blue_button>>>
+[% ELSE %]
+[% url = register_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=recommended' %]
+[% END %]
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+
+<<</bubble>>>
+
+<<<app_buttons>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

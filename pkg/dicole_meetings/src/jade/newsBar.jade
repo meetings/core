@@ -1,0 +1,6 @@
+div.feature
+    p!=item.contenthtml
+        if( count_left > 1 )
+            a.next-link(href="#",data-id=item.uniqueid)!=MTN.t('Next')
+        else
+            a.next-link(href="#",data-id=item.uniqueid)!=MTN.t('Dismiss')

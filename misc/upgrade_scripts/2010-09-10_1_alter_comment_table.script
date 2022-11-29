@@ -1,0 +1,13 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_comments_post add removed_by int unsigned not null after date');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_comments_post add removed bigint unsigned not null after date');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_comments_post add published_by int unsigned not null after date');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_comments_post add published bigint unsigned not null after date');
+}
+
+1;
+

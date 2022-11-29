@@ -1,0 +1,22 @@
+Changes
+conf/action.ini
+conf/spops.ini
+html/css/dicole_tag.css
+html/js/dicole/tags.js
+html/js/dicole/tags/Slider.js
+html/js/dicole/tags/TagBrowser.js
+html/js/dicole/tags/TagBrowser2.js
+MANIFEST			This list of files
+MANIFEST.SKIP
+msg/messages-en.po
+msg/messages-fi.po
+msg/messages-sv.po
+OpenInteract2/Action/DicoleTag.pm
+OpenInteract2/Action/DicoleTagExports.pm
+OpenInteract2/App/DicoleTag.pm
+OpenInteract2/SQLInstall/DicoleTag.pm
+package.ini
+struct/dicole_tag.sql
+struct/dicole_tag_attached.sql
+struct/dicole_tag_collection.sql
+struct/dicole_tag_index.sql

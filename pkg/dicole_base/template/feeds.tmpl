@@ -1,0 +1,4 @@
+[% # $Id: feeds.tmpl,v 1.3 2009-01-07 14:42:32 amv Exp $ # %]
+[%- FOREACH feed = feeds %]
+<a href="[% feed.url %]"><img width="80" height="15" src="[% images.theme %]/feeds/[% feed.type %][% IF feed.lang %]-[% feed.lang %][% END %].gif" alt="[% feed.desc %]" title="[% feed.desc %]" /></a>
+[%- END -%]

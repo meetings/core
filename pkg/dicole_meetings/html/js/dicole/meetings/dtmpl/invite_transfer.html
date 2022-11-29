@@ -1,0 +1,30 @@
+<div id="modal-invite-transfer" class="modal-popup">
+    <h2 class="modal-header"><%= MTN.t('Transfer Your Invite') %></h2>
+    <form id="meetings_invite_transfer_form" class="meetings-form">
+        <fieldset>
+            <p><%= MTN.t('What email would you like to use to receive the meeting updates?') %></p>
+
+            <div class="form-row">
+                <label for="email" class="smaller" style="width:70px;"><%= MTN.t('Email') %></label>
+                <input type="text" name="email" />
+            </div>
+
+            <p><%= MTN.t('You can also set Meetin.gs to do this transfer automatically in the future.') %></p>
+            <div class="form-row">
+                <label class="smaller" for="future" style="width:230px; font-size:13px;"><%= MTN.t('Transfer automatically in the future') %></label>
+                <input name="future" size="35" type="checkbox" value="1" checked="checked" />
+            </div><br/>
+        </fieldset>
+    </form>
+
+    <!-- Save & cancel -->
+    <div class="form-save-and-cancel-wrapper">
+        <a href="#" class="button pink js_meetings_invite_transfer_submit" id="invite-transfer-submit">
+            <%= MTN.t('Send') %>
+        </a>
+        <a href="#" class="button gray js_hook_showcase_close">
+            <%= MTN.t('Cancel') %>
+        </a>
+    </div>
+
+</div>

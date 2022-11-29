@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+
+my $oi = $ENV{OPENINTERACT2};
+
+if (!scalar(@ARGV)) {
+    print "Usage: $0 [package_name]\n";
+    exit;
+}
+
+foreach $cmd (@ARGV) {
+
+     if (-d $cmd) {
+
+         print "Running export_package on $cmd..\n";
+         chdir( $cmd );
+         system("update_manifest");
+         chdir( ".." );
+         system("oi2_manage export_package --package_dir=. --package=$cmd 2>&1");
+     }
+     else {
+     
+         print("could not find $cmd\n") if lc $cmd ne 'none';
+     }
+}

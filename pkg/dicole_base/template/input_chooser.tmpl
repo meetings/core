@@ -1,0 +1,38 @@
+[%#- $Id: input_chooser.tmpl,v 1.6 2009-01-07 14:42:33 amv Exp $ -%]
+
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        attributes =
+            {
+                all of the XHTML attributes that go with the element
+            }
+        button_text = 'Browse...'      # Text for the browse button
+        autosubmit = 0                 # Submit the parent form when selection was made?
+        chooser = '/select_file/detect'  # URL of the file selection dialog
+        path = ''                      # Initial relative path of the chooser
+        required
+        error
+
+    }
+
+A BLUE '«' will be printed after the corresponding input field if it is required.
+A RED '«' will be printed after the corresponding input field if it was left blank when submitting, or the information was not in the right format.
+
+The two conditions can exist with a single input field.
+In this case the BLUE « comes first.
+-%]
+[% DEFAULT
+    itemparams.button_text = MSG( 'Browse...' )
+    itemparams.autosubmit = 0
+    itemparams.chooser = '/select_file/detect/'
+    itemparams.path = ''
+    itemparams.dialog_name = 'chooser'
+%]
+<input[% FOREACH param = itemparams.attributes %] [% param.key %]="[% param.value | html %]"[% END %] />
+<input type="button" class="submitButton" onclick='filefield = this.form.[% itemparams.attributes.name %]; [% itemparams.dialog_name %] = window.open("[% itemparams.chooser %][% itemparams.path %]", "[% itemparams.dialog_name %]", "toolbar=no,menubar=no,statusbar=no,scrollbars=yes,width=500,height=480"); [% itemparams.dialog_name %].filefield = filefield; [% itemparams.dialog_name %].autosubmit = [% itemparams.autosubmit %]; [% itemparams.dialog_name %].parentform = this.form; window.filefield = filefield' value="[% itemparams.button_text %]" />
+[%-
+    IF itemparams.error || itemparams.required;
+        PROCESS dicole_base::input_req_error;
+    END
+-%]

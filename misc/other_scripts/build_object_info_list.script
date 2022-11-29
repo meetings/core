@@ -1,0 +1,31 @@
+use Dicole::Meta;
+
+sub execute {
+    my ( $self ) = @_;
+    my $spops_config = CTX->spops_config;
+    my $info = Dicole::Meta->spops_special_info;
+    my $d = {};
+    my $i = {};
+    my $c = {};
+    foreach my $alias ( sort keys %{ $spops_config } ) {
+        next unless ( $alias and $alias !~ /^_/ and $info->{$alias} );
+        my $object_info = $spops_config->{ $alias };
+        if ( $info->{$alias} eq '1' ||  $info->{$alias}->{show} ) {
+            my $object = CTX->lookup_object( $alias );
+    	    $d->{ $object_info->{package_name} }->{$alias} = $object->field;
+        }
+        if ( $info->{$alias} ne '1' ) {
+            $i->{ $object_info->{package_name} }->{$alias} = $info->{$alias};
+        }
+die if $c->{$object_info->{class}};
+        $c->{$object_info->{class}} = $alias;
+    }
+    $Data::Dumper::Sortkeys = 1;
+#    print Data::Dumper::Dumper( $i );
+#    print Data::Dumper::Dumper( $d );
+    print Data::Dumper::Dumper( $c );
+}
+
+1;
+
+

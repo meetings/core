@@ -1,0 +1,11 @@
+div.user-settings
+    div.menu
+        a.menu-link.login(href='/meetings/user/settings/login',class=mode === 'login' ? 'selected' : '')!=MTN.t('Login methods')
+        if ( ! dicole.get_global_variable('meetings_user_is_visitor') )
+            a.menu-link.calendar(href='/meetings/user/settings/calendar',class=mode === 'calendar' ? 'selected' : '')!=MTN.t('Calendar integration')
+            a.menu-link.timeline(href='/meetings/user/settings/timeline',class=mode === 'timeline' ? 'selected' : '')!=MTN.t('Timeline')
+        a.menu-link.timezone(href='/meetings/user/settings/regional',class=mode === 'regional' ? 'selected' : '')!=MTN.t('Regional')
+        if ( ! dicole.get_global_variable('meetings_user_is_visitor') )
+            a.menu-link.branding(href='/meetings/user/settings/branding',class=mode === 'branding' ? 'selected' : '')!=MTN.t('Branding')
+        a.menu-link.account(href='/meetings/user/settings/account',class=mode === 'account' ? 'selected' : '')!=MTN.t('Account')
+    div.settings-container

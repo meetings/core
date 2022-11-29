@@ -1,0 +1,88 @@
+use IO::All;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    $params = eval( 'my $v = ' . $params );
+
+    my $domain_id = $params->{domain_id};
+
+    system "mkdir", "-p", "dbdump";
+    system "rm", "-Rf", "dbdump";
+    system "mkdir", "-p", "dbdump";
+
+    dump_to_files( $domain_id, $params->{include_bantora} );
+
+    my $target =  "dbdump-$domain_id";
+    system "mkdir", "-p", $target;
+    system "rm", "-Rf", $target;
+    system "mv", "dbdump", $target;
+
+    my $tar = "$target.tar.gz";
+    system "tar", "czf", $tar, $target;
+    system "rm", "-Rf", $target;
+
+    my $result = $tar;
+    if ( my $p = $params->{password} ) {
+        my $gpg = "$tar.gpg";
+        system "gpg", "-c", "--passphrase", $p, "--output", $gpg, $tar;
+        system "rm", "-Rf", $tar;
+        $result = $gpg;
+    }
+
+    if ( my $f = $params->{file} ) {
+        system "mv", $result, $f;
+        $result = $f;
+    }
+}
+
+
+sub dd {
+    my ( $table, @where ) = @_;
+
+    my $main = CTX->server_config->{datasource}->{main};
+    my ( $db, $host ) = split /:/, $main->{dsn};
+    my $user = $main->{username};
+    my $pass = $main->{password};
+
+    # Expects that the where queries and all don't contain "-chars ;)
+    my @params = map { $_ ? '"-w' . $_ . '"' : () } @where;
+    my $params = join ' ', @params;
+    my $dump = `mysqldump "--quote-names" "--allow-keywords" "-u$user" "-p$pass" "-h$host" $params "$db" "$table"`;
+    $dump > io( "dbdump/$table.dump" );
+
+    my $sql_where = join ' AND ', map { $_ ? "( $_ )" : () } @where;
+    $sql_where ||= '(1=1)';
+    my $csv = `mysql "-u$user" "-p$pass" "-h$host" "$db" -B -e "select * from $table where $sql_where;" | sed 's/\\t/","/g;s/^/"/;s/\$/"/;s/\\n//g'`;
+    $csv > io( "dbdump/$table.csv" );
+}
+
+sub dump_to_files {
+    my ( $domain_id, $include_bantora ) = @_;
+
+    my $uids = CTX->lookup_action('dicole_domains')->execute( users_by_domain => { domain_id => $domain_id } );
+    my $gids = CTX->lookup_action('dicole_domains')->execute( groups_by_domain => { domain_id => $domain_id } );
+
+    my $u = Dicole::Utils::SQL->column_in( user_id => $uids );
+    my $g = Dicole::Utils::SQL->column_in( group_id => $gids );
+    my $gs = Dicole::Utils::SQL->column_in( groups_id => $gids );
+    my $d = "domain_id = $domain_id";
+
+    if ( $include_bantora ) {
+        dd( bantora_event => '' );
+        dd( bantora_event_invite => '' );
+        dd( bantora_event_planner => '' );
+        dd( bantora_event_status => '' );
+        dd( bantora_user_event => '' );
+    }
+
+    dd( sys_user => $u );
+    dd( dicole_tag => $d );
+    dd( dicole_tag_index => $d );
+    dd( dicole_tag_attached => $d );
+    dd( dicole_networking_profile => $d );
+    dd( dicole_networking_contact => $d );
+
+}
+
+1;

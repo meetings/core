@@ -1,0 +1,15 @@
+conf/action.ini
+html/js/dicole/development.js
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleDevelopment.pm
+OpenInteract2/Action/DicoleDevelopmentAPI.pm
+OpenInteract2/Action/DicoleDevelopmentCommon.pm
+OpenInteract2/Action/DicoleDevelopmentJSON.pm
+OpenInteract2/Action/DicoleDevelopmentRaw.pm
+OpenInteract2/App/DicoleDevelopment.pm
+package.ini
+script/process_mail_templates.script
+template/main_edit_mail_file.tmpl
+template/main_list_mail_files.tmpl
+template/part_preview_tests.tmpl

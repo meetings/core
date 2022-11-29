@@ -1,0 +1,19 @@
+[% MTN.t('%1$s is tomorrow: Why do you meet?',[meeting_title]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t("We noticed that this meeting has no agenda.") %]
+<<<text_and_logo>>>
+<<<h1>>>[% MTN.t("Why do you meet? Hit reply and provide a short summary.") %]<<</h1>>>
+<<<bubble>>>
+<<<p>>>[% MTN.t("Not every meeting requires an agenda, but sharing a couple of points why %(B\$%1\$s%) takes place can be useful to everyone present.", [meeting_title] ) %]<<</p>>>
+
+<<<p>>>[% MTN.t("%(B\$Just reply to this email%) and we'll send a beautiful agenda to %(B\$%1\$s%). If you want to put a bit more effort into it just hit the button below and fill the agenda.", [participant_names_string]) %]<<</p>>>
+
+[% url = login_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=fill_agenda' %]
+[% showtext = 1 %]
+[% text = MTN.t('Fill the agenda') %]
+<<<blue_button>>>
+<<</bubble>>>
+
+<<</html_wrapper>>>

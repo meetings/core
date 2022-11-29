@@ -1,0 +1,26 @@
+Changes
+conf/action.ini
+conf/fields.ini
+conf/spops.ini
+conf/tabs.ini
+conf/tool.ini
+doc/dicole_user_manager.pod
+html/images/theme/default/content/toolicons/users.gif
+html/images/theme/default/navigation/icons/16x16/users_mini.gif
+html/js/dicole/user_manager.js
+html/js/dicole/user_manager/select_register_method.html
+html/js/dicole/user_manager/user_create.html
+MANIFEST			This list of files
+MANIFEST.SKIP
+msg/messages-en.po
+msg/messages-fi.po
+msg/messages-sv.po
+OpenInteract2/Action/DicoleRegister.pm
+OpenInteract2/Action/DicoleRegisterJSON.pm
+OpenInteract2/Action/UserManager.pm
+OpenInteract2/Action/UserManagerAPI.pm
+OpenInteract2/Action/UserManagerCommon.pm
+OpenInteract2/App/DicoleUserManager.pm
+package.ini
+template/new_user_admin_mail.tmpl
+template/new_user_mail.tmpl

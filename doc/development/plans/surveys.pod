@@ -1,0 +1,238 @@
+=head1 NAME
+
+Plan for a quiz/test/survey application
+
+=head1 TASK INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.3 $
+
+=item B<Severity>
+
+Major
+
+=item B<Priority>
+
+P1
+
+=item B<Risk factor>
+
+2
+
+=item B<Estimate>
+
+No estimate.
+
+=item B<Status>
+
+Waiting for implementation.
+
+=back
+
+=head1 ABSTRACT
+
+This document explains a tool for providing surveys and generating quizzes.
+
+=head1 DETAILS
+
+In typical class setting it is common that understanding is tested with a simple
+assessment that may contain single choice, multiple choice, written essay or
+other types of questions.
+
+This is different in online learning, although some build their online courses
+and provide the final test in ways common in traditional instruction. It is no
+surprice that testing understanding in online courses with online survey 
+tools is not considered as a good thing by some people. There is much more room
+for cheating and in that sense online assessments should not affect that much
+the resulting grade.
+
+I personally see an online survey tool important for collecting feedback and
+surveys from participants of the online course. For some it is also a good
+personal evaluation tool for self-regulated learning. Once you have read a book,
+an online survey of the book topics could refresh your mind about what you have
+read and hint you about possible gaps in your understanding.
+
+To not limit the pedagogical possibilities, it could also be used for testing
+how well students remember certain topics. In light of current scientific
+research statically memorizing things do not necessarily lead to learning, but
+of course you are for example required to remember certain words in order to
+build up sentences.
+
+Another reason for the existence of such a tool is to make sure some students
+have actually become familiar with the material before a certain event. A survey
+of that material does not affect the grade but the teacher receives important
+information like who have read some of the material and who haven't.
+
+That kind of information is often necessary for deciding what to do with the
+next lesson that requires collaborative participation in a game and where
+knowledge of the underlying material is important. Students who did not do their
+homework could do something more productive instead of ruining the lesson while
+others participate in the collaborative game. 
+
+=head2 Creating a survey
+
+Creating a survey in a course allows selecting the following general things for
+the survey:
+
+=over 4
+
+=item *
+
+Title of the survey to identify the survey in question.
+
+=item *
+
+Time of availability of the survey. Includes start and end time of the
+availability period. Outside the period the survey is hidden.
+
+=item *
+
+Multi-page survey. Multi-page survey has each question on a single page, instead
+of all questions on one page. Multi-page survey allows also defining the
+duration of the survey, in other words how much time one has to complete the survey.
+
+=item *
+
+Grading. If there is no grading, it is a simple survey for collecting feedback.
+This affects the functionality and display in that sense that the survey has no
+correct answers or resulting grade.
+
+=item *
+
+Statistics availability. Normally no statistics are provided and in the quiz the
+one who took the test is able to see results of the quiz only if defined so.
+This controls if the survey takers may see the group statistics, i.e. what the
+average results were for everyone etc.
+
+=back
+
+Here is the quiz and test specific features. The grading option specifies if
+these additional features are available:
+
+=over 4
+
+=item *
+
+Minimum grade for passing the quiz. It is possible to define number of points
+for answers, so this is the minimum grade required for passing the test.
+
+=item *
+
+Number of attempts. This controls how many times one is able to redo the test.
+
+=item *
+
+Optional additional attempts. This controls if it is possible to try the test
+again without affecting the resulting grade. The first record is kept as the
+grade and the additional attempts are only for practice.
+
+=item *
+
+Immediately provide correct answers. This controls if the system points out the
+correct results once the test is made. If this is not turned on only the
+resulting grade is provided.
+
+=item *
+
+If the survey does not contain open-ended questions
+which require teacher interaction, the resulting grade is immediatly provided.
+
+=back
+
+=head2 Creating questions
+
+creating a question allows inputting the question. The question may be text or
+media. It is also possible to specify labels, which allow dividing the
+survey into clear chapters.
+
+There are multiple ways to provide the answers:
+
+=over 4
+
+=item *
+
+Single choice with either radio buttons or a dropdown. Allows selecting one
+single answer. In surveys allows creating a freeform "something else" field or
+textarea for reasoning why a certain answer was chosen.
+
+=item *
+
+Multiple choice with checkboxes. Allows selecting multiple answers to one
+question. In surveys allows creating a freeform "something else" field or
+textarea for reasoning why a certain answer was chosen.
+
+=item *
+
+Freeform single line. Allows entering one textfield with specified length as an
+answer.
+
+=item *
+
+Freeform multiple lines. Allows inputting a number of textfields as the answer.
+Optionally the textfields must contain answers in a specified order.
+
+=item *
+
+Freeform open-ended. Allows entering an essay answer to the provided question
+with a simple text area.
+
+=item *
+
+Matching pairs. The classic draw line from item to item. Allows input of
+multiple x matches y, where all y are placed in a dropdown associated with each
+x.
+
+=item *
+
+Matching with decoys. Another way to do matching pairs is by defining all
+options of y for each x. This allows inputting decoys that do not actually match
+with anything.
+
+=item *
+
+Range. Allows selecting one option out of range of 1 to 5. Possible to specify
+titles for each range fragment.
+
+=back
+
+If grading is enabled, allows specifying the following things:
+
+=over 4
+
+=item *
+
+Correct answer.
+
+=item *
+
+Maximum points received for a correct answer.
+
+=item *
+
+Scoring type. All or nothing, afterwards by teacher (for open-ended answers, for
+example) or cumulative, where all partly correct answers are counted.
+
+=back
+
+=head2 Statistics
+
+Once a survey or quiz has been completed, statics for the answer become
+available for the survey arranger. The statistics allow displaying result of
+each survey individually, how many times one took the survey, how long it took
+to complete the survey and a summary of all answers with graphs and averages.
+
+=head1 NOTES AND STATUS
+
+This section should be filled with information and status of the current
+implementation of the specifications.
+
+=head1 AUTHORS
+
+Teemu Arina E<lt>teemu@ionstream.fiE<gt>

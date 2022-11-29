@@ -1,0 +1,150 @@
+#agent-admin.m-modal
+    .modal-header
+        h3 
+            i.ico-profile
+            - if ( selected_area ) {
+                each area in all_areas
+                    - if ( selected_area == area.id ) {
+                        span!=( 'Käyttäjähallinta'||MTN.t('Manage users') ) + ': ' + area.name
+                        - if ( areas == '_all' ) {
+                            a.deselect-area(href="#")=' [vaihda]'
+                        - }
+                    - }
+            - } else {
+                span!='Käyttäjähallinta'||MTN.t('Manage users')
+            - }
+    .modal-content
+        - if ( selected_area ) {
+            .section-listing(style='float:right')
+                each section, index in all_sections
+                    - if ( section.id == selected_section ) {
+                        a.section-button-selected.select-section(href="#",x-data-section=section.id)=section.name
+                    - } else {
+                        a.section-button.select-section(href="#",x-data-section=section.id)=section.name
+                    - }
+                    - if ( index < all_sections.length - 1 ) {
+                        =' - '
+                    - }
+        - } else {
+            .area-listing
+                each area, index in all_areas
+                    - if ( area.id == selected_area ) {
+                        a.area-button-selected.select-area(href="#",x-data-area=area.id)=area.name
+                    - } else {
+                        a.area-button.select-area(href="#",x-data-area=area.id)=area.name
+                    - }
+                    - if ( index < all_areas.length - 1 ) {
+                        =' - '
+                    - }
+        - }
+        - if ( selected_area && selected_section == 'users' ) {
+            h4
+                span Käyttäjät
+                a.show-object-adding(href="#")=' [lisää]'
+                a.hide-object-adding(href="#",style='display:none')=' [peruuta lisääminen]'
+            #object-adding-container(style='display:none')
+                include agentAdminUsers
+
+                div.input-row.input-button-row
+                    button.add-user-button='Lisää'||MTN.t('Add')
+                    !=' '
+                    span.save-reopen-indicator='Käyttäjä lisätty onnistuneesti!'
+
+            .user-listing
+                each admin_user in users
+                    .object-container(id="object-" + admin_user.safe_uid)
+                        h5.user-name-container
+                            span.user-name(title=admin_user.user_email)=admin_user.name
+                            a.object-edit-button.plus(href="#",x-data-object-id=admin_user.safe_uid)=' [muokkaa]'
+                            a.object-edit-button.minus(href="#",x-data-object-id=admin_user.safe_uid,style='display:none')=' [peruuta muokkaus]'
+                        .object-editor(style='display:none')
+                            include agentAdminUsers
+
+                            div.input-row.input-button-row
+                                button.edit-user-button(x-data-object-container-id="object-" + admin_user.safe_uid)='Tallenna'||MTN.t('Save')
+                                !=' '
+                                button.remove-user-button(x-data-object-container-id="object-" + admin_user.safe_uid)='Poista'||MTN.t('Remove')
+                                !=' '
+                                span.save-reopen-indicator='Käyttäjä tallennettu onnistuneesti!'
+
+        - }
+        - if ( selected_area && selected_section == 'offices' ) {
+            h4
+                span Toimistot
+                a.show-object-adding(href="#")=' [lisää]'
+                a.hide-object-adding(href="#",style='display:none')=' [peruuta lisääminen]'
+            #object-adding-container(style='display:none')
+                include agentAdminOffices
+
+                div.input-row.input-button-row
+                    button.add-office-button='Lisää'||MTN.t('Add')
+                    !=' '
+                    span.save-reopen-indicator='Toimisto lisätty onnistuneesti!'
+            .office-listing
+                each office in offices
+                    .object-container(id="object-" + office.safe_uid)
+                        h5.office-name-container
+                            span.office-name=office.full_name
+                            a.object-edit-button.plus(href="#",x-data-object-id=office.safe_uid)=' [muokkaa]'
+                            a.object-edit-button.minus(href="#",x-data-object-id=office.safe_uid,style='display:none')=' [peruuta muokkaus]'
+                        .object-editor(style='display:none')
+                            include agentAdminOffices
+
+                            div.input-row.input-button-row
+                                button.edit-office-button(x-data-object-container-id="object-" + office.safe_uid)='Tallenna'||MTN.t('Save')
+                                !=' '
+                                button.remove-office-button(x-data-object-container-id="object-" + office.safe_uid)='Poista'||MTN.t('Remove')
+                                !=' '
+                                span.save-reopen-indicator='Toimisto tallennettu onnistuneesti!'
+
+        - }
+        - if ( selected_area && selected_section == 'calendars' ) {
+            h4
+                span Kalenterit
+                a.show-object-adding(href="#")=' [lisää]'
+                a.hide-object-adding(href="#",style='display:none')=' [peruuta lisääminen]'
+            #object-adding-container(style='display:none')
+                include agentAdminCalendars
+
+                div.input-row.input-button-row
+                    button.add-calendar-button='Lisää'||MTN.t('Add')
+                    !=' '
+                    span.save-reopen-indicator='Kalenteri lisätty onnistuneesti!'
+
+            .calendar-listing
+                each admin_calendar in calendars
+                    .object-container(id="object-" + admin_calendar.safe_uid)
+                        h5.calendar-name-container
+                            span.calendar-name=admin_calendar.office_full_name + ' - ' + admin_calendar.user_email
+                            a.object-edit-button.plus(href="#",x-data-object-id=admin_calendar.safe_uid)=' [muokkaa]'
+                            a.object-edit-button.minus(href="#",x-data-object-id=admin_calendar.safe_uid,style='display:none')=' [peruuta muokkaus]'
+                        .object-editor(style='display:none')
+                            include agentAdminCalendars
+
+                            div.input-row.input-button-row
+                                button.edit-calendar-button(x-data-object-container-id="object-" + admin_calendar.safe_uid)='Tallenna'||MTN.t('Save')
+                                !=' '
+                                button.remove-calendar-button(x-data-object-container-id="object-" + admin_calendar.safe_uid)='Poista'||MTN.t('Remove')
+                                !=' '
+                                span.save-reopen-indicator='Kalenteri tallennettu onnistuneesti!'
+        - }
+        - if ( selected_area && selected_section == 'settings' ) {
+            h4
+                span Asetukset
+            #object-container(id="object-general")
+                - admin_setting=settings[0]
+                include agentAdminSettings
+
+                div.input-row.input-button-row
+                    button.edit-setting-button(x-data-object-container-id="object-general")='Tallenna'||MTN.t('Save')
+                    !=' '
+                    span.save-reopen-indicator='Asetukset tallennettu onnistuneesti!'
+
+        - }
+        - if ( selected_area && selected_section == 'reports' ) {
+            h4
+                span Raportit
+            each report in reports
+                div.input-row
+                    a(href!=report.url)=report.name
+        - }

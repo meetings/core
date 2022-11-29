@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+use JSON;
+
+my $file = $ARGV[0];
+
+unless ( `which po2json` ) {
+    print STDERR "No po2json installed. Install it with: cpanm Locale::Simple\n\n";
+    exit(1);
+}
+
+my $json_data = `po2json $file`;
+my $data = JSON->new->decode( $json_data );
+
+my $wrapped_data = {
+    domain => 'messages',
+    missing_key_callback => 'REPLACEWITHCALLBACK',
+    locale_data => {
+        messages => $data,
+    },
+};
+
+
+my $output = 'window.MTN = window.MTN || {};'."\n".'window.MTN.jed_instance = new Jed(' . JSON->new->pretty(1)->encode( $wrapped_data ) . ');';
+$output =~ s/"REPLACEWITHCALLBACK"/function(key) \{console.error('Missing translation key: ' + key)\}/;
+
+print $output;
+
+

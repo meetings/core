@@ -1,0 +1,606 @@
+# $Id: messages-fi.po,v 1.33 2007-08-28 20:30:44 inf Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:12:04+0000\n"
+"PO-Revision-Date: 2005-03-22 02:12:04+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Abstract"
+msgstr "Tiivistelmä"
+
+msgid "Write weblog entry"
+msgstr "Merkinnän lisäys blogiin"
+
+msgid "Write entry"
+msgstr "Kirjoita merkintä"
+
+msgid "Add topic"
+msgstr "Lisää aihe"
+
+msgid "All topics"
+msgstr "Kaikki aiheet"
+
+msgid "All shared topics"
+msgstr "Kaikki jaetut aiheet"
+
+msgid "Author"
+msgstr "Kirjoittaja"
+
+msgid "Browse by topic"
+msgstr "Selaa aiheittain"
+
+msgid "Configure weblog"
+msgstr "Blogin asetusten muokkaus"
+
+msgid "Content"
+msgstr "Sisältö"
+
+msgid "Delete weblog entries"
+msgstr "Merkintöjen poistaminen blogista"
+
+msgid "Deny reading weblog"
+msgstr "Estä blogin lukuoikeus"
+
+msgid "Deny maintaining weblog"
+msgstr "Estä blogin ylläpitäminen"
+
+msgid "Edit weblog entries"
+msgstr "Blogin merkintöjen muokkaus"
+
+msgid "Edit entry"
+msgstr "Muokkaa merkintää"
+
+msgid "Group weblog"
+msgstr "Ryhmäblogi"
+
+msgid "Error removing entry with name %1."
+msgstr "Merkinnän (%1) poisto epäonnistui."
+
+msgid "Failed adding entry: %1"
+msgstr "Merkinnän (%1) lisäys epäonnistui"
+
+msgid "Failed adding topic: %1"
+msgstr "Aiheen (%1) lisäys epäonnistui"
+
+msgid "Failed to edit entry: %1"
+msgstr "Merkinnän (%1) muokkaus epäonnistui"
+
+msgid "Weblog allows the group to inform about latest activity and comment on the outside world."
+msgstr "Blogi kokoaa ryhmän viimeisimmät ajankohtaisuudet ja antaa mahdollisuuden muiden mielenkiintoisten asioiden kommentointiin."
+
+msgid "Read weblog"
+msgstr "Blogin lukija"
+
+msgid "Maintain weblog"
+msgstr "Blogin ylläpitäjä"
+
+msgid "Latest weblog entries"
+msgstr "Viimeisimmät blogin merkinnät"
+
+msgid "List of entries"
+msgstr "Merkintöjen listaus"
+
+msgid "New entry details"
+msgstr "Uuden merkinnän tiedot"
+
+msgid "No entries."
+msgstr "Merkintöjä ei ole saatavilla."
+
+msgid "No topics found."
+msgstr "Aiheita ei ole saatavilla."
+
+msgid "Permalink and comments (%1)"
+msgstr "Permalink ja kommentit (%1)"
+
+msgid "Entry details"
+msgstr "Merkinnän tiedot"
+
+msgid "Entry saved"
+msgstr "Merkintä tallennettiin onnistuneesti"
+
+msgid "Blog entry with id %1 does not exist or it was deleted."
+msgstr "Blogimerkintää id-tunnisteella %1 ei ole saatavilla tai se on poistettu."
+
+msgid "Entry with name %1 successfully removed."
+msgstr "Merkintä (%1) poistettiin onnistuneesti."
+
+msgid "Publish time"
+msgstr "Julkaisuajankohta"
+
+msgid "Recent"
+msgstr "Viimeisimmät"
+
+msgid "Recent entries"
+msgstr "Uusimmat merkinnät"
+
+msgid "Recent blog entries"
+msgstr "Uusimmat blogimerkinnät"
+
+msgid "Recent entries to topic %1"
+msgstr "Viimeisimmät merkinnät aiheesta %1"
+
+msgid "Remove entry"
+msgstr "Poista merkintä"
+
+msgid "Remove selected"
+msgstr "Poista valitut"
+
+msgid "Remove topics"
+msgstr "Poista aiheet"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Settings"
+msgstr "Asetukset"
+
+msgid "Show recent entries"
+msgstr "Näytä viimeisimmät merkinnät"
+
+msgid "Syndication feed (RSS 1.0)"
+msgstr "RSS (1.0) -syöte"
+
+msgid "This entry will be removed. Are you sure you want to remove this entry?"
+msgstr "Tämä merkintä poistetaan pysyvästi. Haluatko varmasti poistaa merkinnän?"
+
+msgid "Title"
+msgstr "Otsikko"
+
+msgid "Topic"
+msgstr "Aihe"
+
+msgid "Topic added"
+msgstr "Aihe lisättiin onnistuneesti"
+
+msgid "Topics"
+msgstr "Aiheet"
+
+msgid "User can add weblog entries"
+msgstr "Käyttäjä voi lisätä blogiin merkintöjä"
+
+msgid "User can configure the weblog"
+msgstr "Käyttäjä voi muokata blogin asetuksia"
+
+msgid "User can delete weblog entries"
+msgstr "Käyttäjä voi poistaa blogin merkintöjä"
+
+msgid "User can edit weblog entries"
+msgstr "Käyttäjä voi muokata blogin merkintöjä"
+
+msgid "User can read the weblog"
+msgstr "Käyttäjä voi lukea blogin merkintöjä"
+
+msgid "Access denied to read entry with id %1."
+msgstr "Käyttö evätty. Merkinnän numero %1 lukeminen epäonnistui."
+
+msgid "Comments"
+msgstr "Kommentit"
+
+msgid "Post your comment"
+msgstr "Lähetä kommenttisi"
+
+msgid "No comments."
+msgstr "Ei kommentteja."
+
+msgid "Comment has been added."
+msgstr "Kommentti on lisätty."
+
+msgid "Failed adding comment: %1"
+msgstr "Kommentin lisäys epäonnistui: %1"
+
+msgid "Comment weblog entries"
+msgstr "Blogin merkintöjen kommentointi"
+
+msgid "User can comment weblog entries"
+msgstr "Käyttäjä voi kommentoida blogin merkintöjä"
+
+msgid "Delete weblog comments"
+msgstr "Blogin kommenttien poistaminen"
+
+msgid "User can delete weblog comments"
+msgstr "Käyttäjä voi poistaa blogin kommentteja"
+
+msgid "Are you sure you want to remove the selected comment?"
+msgstr "Oletko varma, että haluat poistaa valitun kommentin?"
+
+msgid "Confirmation"
+msgstr "Varmistus"
+
+msgid "Remove"
+msgstr "Poista"
+
+msgid "Error removing comment %1."
+msgstr "Virhe poistettaessa kommenttia %1."
+
+msgid "Comment removed."
+msgstr "Kommentti poistettu."
+
+msgid "No topics defined. You have to define topics before you can post."
+msgstr "Aiheita ei ole määritelty. Sinun täytyy määritellä aiheita, ennen kuin voit lähettää viestejä."
+
+msgid "Select at least one topic."
+msgstr "Valitse vähintään yksi aihe."
+
+msgid "Selected topics removed."
+msgstr "Valitut aiheet on poistettu."
+
+msgid "Weblog"
+msgstr "Blogi"
+
+msgid "Weblog allows one to inform about latest activity and comment on the outside world."
+msgstr "Blogin avulla voidaan kirjata viimeisimmät ajankohtaisuudet ja kommentoida muita mielenkiintoisia asioita."
+
+msgid "Read weblog of a user"
+msgstr "Käyttäjän blogin luku"
+
+msgid "User can read weblog of a user"
+msgstr "Käyttäjä voi lukea toisen käyttäjän blogia"
+
+msgid "Add posts to a weblog of a user"
+msgstr "Viestien lisäys käyttäjän blogiin"
+
+msgid "User can add weblog entries for a user"
+msgstr "Käyttäjä voi lisätä merkintöjä toisen käyttäjän blogiin"
+
+msgid "Edit entries in a weblog of a user"
+msgstr "Merkintöjen muokkaus käyttäjän blogissa"
+
+msgid "User can edit weblog entries of a user"
+msgstr "Käyttäjä voi muokata merkintöjä toisen käyttäjän blogia"
+
+msgid "Configure weblog of a user"
+msgstr "Käyttäjän blogin asetusten muokkaus"
+
+msgid "User can configure weblog tool of a user"
+msgstr "Käyttäjä voi muokata toisen käyttäjän blogin asetuksia"
+
+msgid "Remove posts in a weblog of a user"
+msgstr "Viestien poisto käyttäjän blogista"
+
+msgid "User can delete weblog entries of a user"
+msgstr "Käyttäjä voi poistaa toisen käyttäjän blogin merkintöjä"
+
+msgid "Comment weblog of a user"
+msgstr "Käyttäjän blogin kommentointi"
+
+msgid "User can comment weblog entries of a user"
+msgstr "Käyttäjä voi kommentoida toisen käyttäjän blogia"
+
+msgid "Delete comments in a weblog of a user"
+msgstr "Kommenttien poisto käyttäjän blogista"
+
+msgid "User can delete weblog comments of a user"
+msgstr "Käyttäjä voi poistaa toisen käyttäjän blogin kommentteja"
+
+msgid "Maintain weblog of a user"
+msgstr "Käyttäjän blogin ylläpitäminen"
+
+msgid "Deny maintaining weblog of a user"
+msgstr "Estä käyttäjän blogin ylläpitäminen"
+
+msgid "Deny reading weblog of a user"
+msgstr "Estä käyttäjän blogin lukeminen"
+
+msgid "Show entry"
+msgstr "Näytä merkintä"
+
+msgid "Limit outsider access by IP addresses (each on a separate line)"
+msgstr "Rajoita syöte IP osoitteiden mukaan (eroteltu omille riveilleen)"
+
+msgid "Feed is publicly accessible"
+msgstr "Syöte on julkisesti saatavilla"
+
+msgid "Number of items in feed"
+msgstr "Kohteiden määrä syötteessä"
+
+msgid "All"
+msgstr "Kaikki"
+
+msgid "Show only entry abstracts in feeds"
+msgstr "Näytä syötteessä ainoastaan tiivistelmät"
+
+msgid "Settings saved."
+msgstr "Asetukset on tallennettu."
+
+msgid "Failed to edit settings: %1"
+msgstr "Asetusten muuttaminen epäonnistui: %1"
+
+msgid "Edit settings"
+msgstr "Muokkaa asetuksia"
+
+msgid "Bookmarklets"
+msgstr "Erikoiskirjanmerkit"
+
+msgid "You may use these bookmarklets to blog a certain website with a single click. To install the bookmarklet, add the bookmarklet link to your bookmarks. To use it, simply just click the bookmark when you are on a page you want to post. If you want to quote something, just highlight the text you want to quote before clicking the bookmarklet."
+msgstr "Voit käyttää näitä erikoiskirjanmerkkejä lähettääksesi blogiin merkinnän haluamastasi verkkosivusta yhdellä hiiren painalluksella. Asenna kirjanmerkki siirtämällä linkki selaimesi kirjanmerkkeihin. Käyttääksesi kirjanmerkkiä, klikkaa sitä kun olet haluamallasi sivulla. Jos haluat lainata tekstiä, maalaa haluamasi teksti ennen kuin klikkaat erikoiskirjanmerkkiä."
+
+msgid "Post to weblog"
+msgstr "Lähetä blogiin"
+
+msgid "Back to add form"
+msgstr "Takaisin lisäyslomakkeeseen"
+
+msgid "Available bookmarklets"
+msgstr "Saatavilla olevat erikoiskirjanmerkit"
+
+msgid "Entry successfully saved. You may now close the window."
+msgstr "Merkintä on tallennettu onnistuneesti. Voit nyt sulkea ikkunan."
+
+msgid "Select users to share topic %s with"
+msgstr "Valitse käyttäjät joille jaat aiheen %s"
+
+msgid "Select groups to share topic %s with"
+msgstr "Valitse ryhmä joille jaat aiheen %s"
+
+msgid "Share topic %s"
+msgstr "Jaa aihe %s"
+
+msgid "Share weblog"
+msgstr "Jaa blogi"
+
+msgid "Select topic to share"
+msgstr "Valitse jaettava aihe"
+
+msgid "Share to local users"
+msgstr "Jaa paikallisille käyttäjille"
+
+msgid "Share to outsiders"
+msgstr "Jaa ulkopuolisille käyttäjille"
+
+msgid "Feed settings"
+msgstr "Syötteen asetukset"
+
+msgid "Share"
+msgstr "Jaa"
+
+msgid "Share to users"
+msgstr "Jaa käyttäjille"
+
+msgid "Share to groups"
+msgstr "Jaa ryhmille"
+
+msgid "Select users to share all topics with"
+msgstr "Valitse käyttäjät joille jaat kaikki aiheet"
+
+msgid "Select groups to share all topics with"
+msgstr "Valitse ryhmät joille jaat kaikki aiheet"
+
+msgid "Weblog of user %s"
+msgstr "Käyttäjän %s blogi"
+
+msgid "Other accessible weblog feeds"
+msgstr "Muut saatavilla olevien blogisyötteet"
+
+msgid "Other weblogs"
+msgstr "Muut blogit"
+
+msgid "Weblog rights"
+msgstr "Blogin oikeudet"
+
+msgid "Allow reading one topic from a weblog of a group"
+msgstr "Salli aiheen lukeminen ryhmän blogista"
+
+msgid "Allow reading one topic from a weblog of a user"
+msgstr "Salli aiheen lukeminen käyttäjän blogista"
+
+msgid "Entry is not in topic!"
+msgstr "Merkintä ei ole annetussa aiheessa!"
+
+msgid "Read group weblog topic"
+msgstr "Oikeus lukea ryhmän blogin aihetta"
+
+msgid "Read weblog topic"
+msgstr "Oikeus lukea blogin aihetta"
+
+msgid "User can read a topic from a weblog of a group"
+msgstr "Käyttäjä voi lukea aihetta ryhmän blogista"
+
+msgid "User can read a topic from a weblog of a user"
+msgstr "Käyttäjä voi lukea aihetta käyttäjän blogista"
+
+msgid "Date"
+msgstr "Päiväys"
+
+msgid "Publish date"
+msgstr "Julkaisupäivä"
+
+msgid "Removal date"
+msgstr "Poistopäivä"
+
+msgid "Use removal date"
+msgstr "Käytä merkinnän poistopäivää"
+
+msgid "User weblog writer"
+msgstr "Käyttäjän blogin kirjoittaja"
+
+msgid "Weblog writer"
+msgstr "Blogin kirjoittaja"
+
+msgid "Deny weblog writing"
+msgstr "Estä blogin kirjoitus"
+
+msgid "Deny user weblog writing"
+msgstr "Estä käyttäjän blogin kirjoitus"
+
+msgid "Comment group weblog topic"
+msgstr "Oikeus kommentoida ryhmän blogin aiheessa"
+
+msgid "User can comment entries in a topic from a weblog of a group"
+msgstr "Käyttäjä voi kommentoida viestejä ryhmän blogin aiheessa"
+
+msgid "Comment weblog topic"
+msgstr "Oikeus kommentoida blogin aiheessa"
+
+msgid "User can comment entries in a topic from a weblog of a user"
+msgstr "Käyttäjä voi kommentoida viestejä blogin aiheessa"
+
+msgid "Delete weblog post comments"
+msgstr "Oikeus poistaa kommentteja verkkolokin viesteistä"
+
+msgid "Entry not found"
+msgstr "Kirjausta ei löydy"
+
+msgid "No topics defined. You have to define topics before you can post."
+msgstr "Ei määriteltyjä aiheita. Lisää vähintään yksi aihe ennen viestien kirjoittamista."
+
+msgid "Reply in personal weblog"
+msgstr "Vastaa viestiin omassa blogissa"
+
+msgid "Reply to a %1post%2:"
+msgstr "Vastaus %1viestiin%2:"
+
+msgid "Reply to a %1post%2 by %3:"
+msgstr "Vastaus %1viestiin%2, jonka %3 kirjoitti:"
+
+msgid "Reply to a %1post%2 by %3 titled %4:"
+msgstr "Vastaus %1viestiin%2, jonka %3 kirjoitti otsikolla %4:"
+
+msgid "Reply to a %1post%2 titled %3:"
+msgstr "Vastaus %1viestiin%2 otsikolla %3:"
+
+msgid "Are you sure you want to remove the post from replies?"
+msgstr "oletko varma, että haluat poistaa viestin vastauksien joukosta?"
+
+msgid "Could not find replied post!"
+msgstr "Viestiä, johon yritit vastata ei löydy!"
+
+msgid "Error removing reply %1."
+msgstr "Virhe poistettaessa viestiä %1."
+
+msgid "No rights to inform replied post owner of reply."
+msgstr "Sinulla ei ole oikeuksia ilmoittaa viestistäsi vastatun viestin omistajan blogissa."
+
+msgid "Replies in other weblogs"
+msgstr "Muissa blogeissa sijaitsevat vastaukset"
+
+msgid "Reply removed."
+msgstr "Vastaus poistettu."
+
+msgid "Read more.."
+msgstr "Lue lisää.."
+
+msgid "This post is a reply to following posts"
+msgstr "Tämä viesti on vastaus seuraaviin viesteihin"
+
+msgid "Sharing"
+msgstr "Jakaminen"
+
+msgid "Select group to share all topics with"
+msgstr "Valitse ryhmä joille jaat kaikki aiheet"
+
+msgid "Select group to share topic %1 with"
+msgstr "Valitse ryhmä jolle jaat aiheen %1"
+
+msgid "Select user to share all topics with"
+msgstr "Valitse käyttäjä jolle jaat kaikki aiheet"
+
+msgid "Select user to share topic %1 with"
+msgstr "Valitse käyttäjä jolle jaat aiheen %1"
+
+msgid "Logged in users"
+msgstr "Sisäänkirjautuneet käyttäjät"
+
+msgid "New group"
+msgstr "Uusi ryhmä"
+
+msgid "New user"
+msgstr "Uusi käyttäjä"
+
+msgid "Whole internet"
+msgstr "Koko internet"
+
+msgid "Custom weblog name"
+msgstr "Blogin nimi"
+
+msgid "General settings"
+msgstr "Yleiset asetukset"
+
+msgid "Attach"
+msgstr "Liitä"
+
+msgid "Attach personal posts as reply"
+msgstr "Liitä omia viestejä vastaukseksi"
+
+msgid "Replies attached."
+msgstr "Vastaukset liitetty."
+
+msgid "Select entries to attach as reply"
+msgstr "Valitse vastaukseksi liitettävät viestit"
+
+msgid "Comment on '%1'"
+msgstr "Kommentti viestiin '%1'"
+
+msgid "Comments from weblog of group %1"
+msgstr "Kommentit ryhmän %1 blogista"
+
+msgid "Comments from weblog of user %1"
+msgstr "Kommentit käyttäjän %1 blogista"
+
+msgid "Subscribe comments with feed reader"
+msgstr "Tilaa kommentit noutajaan"
+
+msgid "Syndication feed (RSS 1.0) for comments"
+msgstr "Kommenttien RSS (1.0)-syöte"
+
+msgid "Weblog comments"
+msgstr "Blogin kommentit"
+
+msgid "Anonymous"
+msgstr "Nimetön"
+
+msgid "Deny sharing weblog"
+msgstr "Kiellä blogin jakaminen"
+
+msgid "User can give rights to use the weblog"
+msgstr "Käyttäjä voi antaa oikeuksia lukea blogia"
+
+
+msgid "Commenting without javascript is disabled to reduce spam. Please turn javascript on to comment."
+msgstr "Kommentointi ilman javascriptiä on estetty roskapostin vähentämiseksi. Ole hyvä ja kytke javascript päälle kommentoidaksesi."
+
+msgid "Your comment has been identified as spam."
+msgstr "Kommenttisi on identifioitu roskapostiksi."
+
+msgid "Latest posts in weblog."
+msgstr "Viimeisimmät viestit blogissa."
+
+msgid "Remove sharing of topic %1 for %2"
+msgstr "Poista aiheen %1 jakaminen kohteelle %2"
+
+msgid "Share topic %1 to some group"
+msgstr "Jaa aihe %1 jollekin ryhmälle"
+
+msgid "Share topic %1 to some user"
+msgstr "Jaa aihe %1 jollekin käyttäjälle"
+
+msgid "Share topic %1 for %2"
+msgstr "Jaa aihe %1 kohteelle %2"
+
+msgid "Share group weblog"
+msgstr "Jaa ryhmän blogi"
+
+msgid "User can give rights to use the group weblog"
+msgstr "Käyttäjä voi antaa oikeuksia lukea ryhmän blogia"
+
+msgid "You have not saved the text you have written. If you continue you will lose the text you have written."
+msgstr "Et ole tallentanut kirjoittamaasi tekstiä. Jos jatkat pois sivulta, menetät kirjoittamasi tekstin."
+
+msgid "Add entries to a weblog of a user"
+msgstr "Lisätä viestejä käyttäjän blogiin"
+
+msgid "Add weblog entries"
+msgstr "Lisätä viestejä blogiin"
+
+msgid "Remove entries in a weblog of a user"
+msgstr "Poistaa viestejä käyttäjän blogista"
+
+msgid "Weblog alows the group to inform about latest activity and comment on the outside world."
+msgstr "Blogi mahdollistaa ryhmän viimeisimmistä tapahtumista ilmoittamisen."

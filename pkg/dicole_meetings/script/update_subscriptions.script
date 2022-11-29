@@ -1,0 +1,23 @@
+use strict;
+use warnings;
+use 5.010;
+
+use Data::Dump;
+use Dicole::Utils::User;
+
+my $domain_id = 76;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $pro_users = CTX->lookup_action('meetings_api')->e('get_subscribed_users');
+
+    say "Updating " . @$pro_users . " subscriptions";
+
+    for my $user (@$pro_users) {
+        say "* " . $user->login_name;
+        dd CTX->lookup_action('meetings_paypal_api')->e(update_subscription => { user => $user });
+    }
+}
+
+1;

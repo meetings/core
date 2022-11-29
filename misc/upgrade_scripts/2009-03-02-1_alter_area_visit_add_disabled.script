@@ -1,0 +1,7 @@
+
+sub execute {
+    my ( $self ) = @_;
+    Dicole::Utils::SQL->execute_sql('alter table dicole_area_visit add visiting_disabled tinyint unsigned not null default 0 after sticky');
+}
+
+1;

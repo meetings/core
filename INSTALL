@@ -1,0 +1,421 @@
+
+Dicole installation instructions
+--------------------------------
+
+1. ABSTRACT
+-----------
+
+Here is the draft documentation for Dicole installation. The installation
+is a little bit hackish at the moment but we'll come up with a better
+one later in the development.
+
+Recommended system for installation (tested to work):
+Linux
+Apache 1.x (with mod_perl)
+MySQL
+
+Notes:
+We haven't tested Dicole with databases other than MySQL. However,
+OpenInteract2 allows you to run the platform on several different databases.
+Enabling Dicole to work with something like PostgreSQL requires the sequences to be created,
+for example. Refer to OpenInteract2 documentation for details. If you want to run Dicole
+under some other database, please try to modify the code to work with your
+database and let us know what you encountered.
+
+It's a known issue at the moment that Dicole is only functional under Apache 1.x/mod_perl.
+If you want to use other request handlers supported by OpenInteract2, you would
+have to create a new dicole_apache factory type for each target web platform.
+See Dicole::Request and Dicole::Request::Apache for more details.
+
+2. OPENINTERACT INSTALLATION
+----------------------------
+
+Configuring OI goes like this:
+
+2.1. Configure & install apache
+
+  - Install mod_perl+apache
+  - Prefer packages included in your distribution
+
+2.2. Install OpenInteract2
+
+
+Download OpenInteract2 from the CVS:
+
+  cvs -d:pserver:anonymous@openinteract.cvs.sourceforge.net:/cvsroot/openinteract login
+  cvs -z3 -d:pserver:anonymous@openinteract.cvs.sourceforge.net:/cvsroot/openinteract co -P OpenInteract2
+
+Patch the sources:
+
+  cd OpenInteract2
+  patch -p1 < ../misc/oi_patches/1.99_06/OpenInteract-1.99_06-patch-Dicole.patch
+
+Install all modules listed in Makefile.PL (search.cpan.org or -MCPAN).
+Then do the installation:
+
+  perl Makefile.PL
+  make && make test && make install
+
+2.3. Modify your environment
+
+Set the following environment variable. We assume you have it defined at
+all times:
+
+  export OPENINTERACT2=/usr/local/dicole
+
+2.4. Install base OpenInteract website
+
+Install OpenInteract default website:
+
+  oi2_manage create_website
+
+2.5. Create database
+
+Read the documentation of MySQL to find out how to create a database and a user
+for the database. Hint: try mysql_setpermission
+
+Edit conf/server.ini (in website_dir) to match your system configuration based
+on your MySQL setup.
+
+Install database tables:
+
+  oi2_manage install_sql --package=SYSTEM
+
+2.6. Create superuser password
+
+Write "superuser" password down:
+
+  oi2_manage create_password --password=password
+
+2.7. Create some Dicole related directories
+
+  mkdir -p $OPENINTERACT2/files/groups
+  mkdir -p $OPENINTERACT2/files/users/1
+  mkdir -p $OPENINTERACT2/html/images/profiles
+  mkdir -p $OPENINTERACT2/html/images/theme/default/tree/16x16/feeds
+
+Next, depending on whether you use modperl or fcgi, edit the Apache rewrite rules.
+
+2.8.a Edit conf/httpd_cgi_solo.conf (or fcgi_solo?)
+
+    RewriteRule favicon\.(ico)$ - [L]
+    RewriteRule ^/css - [L]
+    RewriteRule ^/js - [L]
+    RewriteRule ^/wikiedit - [L]
+    RewriteRule ^/fckeditor - [L]
+    RewriteRule ^/tinymce - [L]
+    RewriteRule ^/screencasts - [L]
+    RewriteRule ^/images - [L]
+    RewriteRule ^/server-status - [L]
+
+
+2.8.b Edit conf/httpd_modperl_solo.conf
+
+In httpd_modperl_solo.conf, add the following lines:
+
+  <Location /htmlarea>
+      SetHandler default-handler
+  </Location>
+
+  <Location /css>
+      SetHandler default-handler
+  </Location>
+
+  <Location /js>
+      SetHandler default-handler
+  </Location>
+
+  <Location /wikiedit>
+      SetHandler default-handler
+  </Location>
+
+  <Location /fckeditor>
+      SetHandler default-handler
+  </Location>
+
+  <Location /tinymce>
+      SetHandler default-handler
+  </Location>
+
+In httpd_modperl_solo.conf, comment out the following lines:
+
+  #<LocationMatch "\.(jpg|gif|png|js|pdf|jar|zip|gz|css|ico)$">
+  #    SetHandler default-handler
+  #</LocationMatch>
+
+2.9. Modify httpd.conf
+
+Add the following line into your apache httpd.conf:
+
+  Include /usr/local/dicole/conf/httpd_modperl_solo.conf
+
+2.10. Testing installation
+
+- fire apache and pray...
+- make sure you get the login screen of OpenInteract2
+
+3. DICOLE INSTALLATION
+----------------------
+
+First, if you don't yet have the latest CVS sources, get them:
+
+  cvs -d :pserver:anonymous@cvs.dicole.org:8000/opt/cvs login
+  cvs -d :pserver:anonymous@cvs.dicole.org:8000/opt/cvs checkout dicole
+  cd dicole
+
+Install Module::Build (if not available):
+
+  perl -MCPAN -e 'install "Module::Build"'
+
+Now, move to Dicole source directory.
+
+Enter the command:
+
+  ./Build.PL
+
+This command will either return that your configuration is ok
+or report missing perl modules. See the requirements of Perl
+modules and see if your distribution includes any binaries of the
+missing modules. This is especially encouraged for modules like
+DBD::Mysql and DBI.
+
+Issue the command 'bin/install-perl-modules' and it will
+do the installation of rest of the required perl modules from
+CPAN (search.cpan.org).
+
+if some of the modules fail to install because some tests fail,
+see /root/.cpan/build and try to issue the following commands for
+modules that failed to install:
+
+perl Makefile.PL
+make
+make install
+make clean
+
+Install Shared mime info database from:
+http://freedesktop.org/Software/shared-mime-info
+
+Now in the Dicole source directly, enter the following commands:
+
+perl Build.PL
+./Build install
+./Build clean
+
+----------------------------
+
+Ok. Now configure your $OPENINTERACT2/conf/server.ini to match
+the following instructions:
+
+Add the following sections somewhere:
+[dicole]
+base = dicole_base
+title = Dicole
+online_timeout = 600
+tinymce = 1
+
+[date_format]
+date_time = %a %b %d %H:%M %Y
+date_time_long = %A %B %d %H:%M %Y
+date_time_seconds = %a %b %d %H:%M:%S %Y
+date_time_seconds_long = %A %B %d %H:%M:%S %Y
+date_time_locale = %c
+date = %b %d %Y
+date_locale = %x
+date_long = %B %d %Y
+month_year = %b %Y
+month_year_long = %B %Y
+day = %a %d
+day_long = %A %d
+time = %H:%M
+time_locale = %X
+time_seconds = %H:%M:%S
+
+In section [cache], modify the following:
+use             = yes
+use_spops       = yes
+
+In section [dir], add the following:
+dicole_files = $WEBSITE/files
+dicole_profilepics = $WEBSITE/html/images/profiles
+dicole_feed_icons = $WEBSITE/html/images/theme/default/tree/16x16/feeds
+
+Specify the url of your server which is used to point to for example feeds.
+If your real server url is HTTPS or has a different host name than specified
+in the httpd.conf (e.g. reverse proxy configuration), specify it here:
+[server_info]
+server_url = https://myserver
+
+In section [content_generator TT], modify the following:
+class                 = Dicole::ContentGenerator::TT2Process
+..
+custom_init_class     = Dicole::ContentGenerator::TT2Init
+
+In section [controller tt-template], modify the following:
+class             = Dicole::Controller::MainTemplate
+
+Below [controller tt-template] section, add the following lines:
+[controller popup]
+content_generator = TT
+class             = Dicole::Controller::Popup
+
+[controller xmlrpc]
+class             = OpenInteract2::Controller::XMLRPC
+
+[controller json-rpc]
+class             = Dicole::Controller::JSONRPC
+
+[controller json]
+class             = Dicole::Controller::JSON
+
+[controller jswrite]
+class             = Dicole::Controller::JSWrite
+
+[controller json-api]
+class             = Dicole::Controller::JSONAPI
+
+
+In section [system_class], add the following lines:
+dicole_request   = Dicole::Request
+dicole_response  = Dicole::Response
+security_key     = Dicole::Security::Key
+
+In [request] set:
+apache     = Dicole::Request::Apache
+
+And in [response] set:
+apache     = Dicole::Response::Apache
+
+
+----------------------------
+
+Now, edit your startup.pl, located at $OPENINTERACT2/conf/startup.pl
+Add the line:
+
+use Dicole::Security::Key;
+
+----------------------------
+
+Now, install some Dicole packages:
+
+bin/install-dicole new_install
+
+----------------------------
+
+Unpack tinymce package to the html directory
+
+cp misc/tinymce/tinymce.tar.gz $OPENINTERACT2/html/
+cd $OPENINTERACT2/html/
+tar zxvf tinymce.tar.gz
+
+----------------------------
+
+Modify existing OI2 tables:
+
+oi2_manage connect_database \
+--command="-e 'alter table sys_user add column timezone tinytext'"
+
+oi2_manage connect_database \
+--command="-e 'alter table sys_user add column starting_page int unsigned'"
+
+oi2_manage connect_database \
+--command="-e 'alter table sys_user add column custom_starting_page text'"
+
+oi2_manage connect_database \
+--command="-e 'alter table sys_user add column dicole_theme int unsigned'"
+
+oi2_manage connect_database \
+--command="-e 'alter table sys_user add column incomplete int unsigned'"
+
+oi2_manage connect_database \
+--command="-e 'alter table sys_user add column external_auth text'"
+
+oi2_manage connect_database \
+--command="-e 'alter table sys_user add column login_disabled int unsigned'"
+
+oi2_manage connect_database \
+--command="-e 'alter table sys_user add latest_activity bigint unsigned default 0'"
+
+oi2_manage connect_database \
+--command="-e 'alter table sys_user add facebook_user_id text after email'"
+----------------------------
+
+Now you can finish up the server.ini by setting:
+
+[action_info]
+none      = login
+not_found = login
+
+-- NOTE to somebody --
+These can only be done after the dicole_base package has defined the
+'login'-action. So they can't be defined by default :-(
+
+Other possibility would be to install all dicole packages before modifying
+the server.ini at all - would this be possible?
+-- END of note --
+
+-----------------------------
+
+We recommend that you remove some unnecessary OpenInteract2 packages:
+oi2_manage remove_package --package=base_box
+oi2_manage remove_package --package=base_error
+oi2_manage remove_package --package=base_page
+oi2_manage remove_package --package=base
+oi2_manage remove_package --package=comments
+oi2_manage remove_package --package=news
+oi2_manage remove_package --package=system_doc
+oi2_manage remove_package --package=whats_new
+oi2_manage remove_package --package=object_tags
+
+We will later in the development remove rest of the OpenInteract2
+base package dependencies.
+
+----------------------------
+
+Copy the action and spops override configurations and set the website
+directory permissions:
+
+cp misc/conf/*override.ini $OPENINTERACT2/conf
+
+chown -R apache:apache $OPENINTERACT2
+(or what ever is the effective uid/gid of your apache)
+
+----------------------------
+
+Edit /etc/crontab and add something like this to make sure the feeds update
+correctly (the example is an interval of two hours):
+
+* 2 * * * root /usr/bin/oi2_manage update_feeds --website_dir=/usr/local/dicole/ >/dev/null 2>&1
+
+----------------------------
+
+Add the following line in your Apache mime.types file:
+
+application/json-rpc
+
+----------------------------
+
+Restart apache and pray...
+
+If something goes wrong, check $OPENINTERACT2/logs/oi2.log
+
+1. Login as superuser.
+2. Go to url http://yourdicole.com/usermanager/reset_default_personal_rights
+
+Now superuser has rights to its own personal tools ;)
+
+This is all for now. If you have any problems or anything other to say,
+come visit us at http://www.dicole.org and join the community.
+
+4. NOTES
+--------
+
+If you want enclosure support to Feed Reader, use the patch in
+misc/patches/xml-rss-enclosure.patch against XML::RSS
+
+5. DEVELOPMENT
+--------------
+
+You need node for development. needed packages: templatizer
+
+---------------
+$Id: INSTALL,v 1.76 2010-07-28 10:58:34 amv Exp $

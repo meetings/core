@@ -1,0 +1,346 @@
+# $Id: messages-en.po,v 1.7 2009-01-07 14:42:33 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:07:11+0000\n"
+"PO-Revision-Date: 2005-03-22 02:07:11+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add forum"
+msgstr "Add forum"
+
+msgid "Add new message"
+msgstr "Add new message"
+
+msgid "Add new topic"
+msgstr "Add new topic"
+
+msgid "Add topic"
+msgstr "Add topic"
+
+msgid "Are you sure you want to remove this forum?"
+msgstr "Are you sure you want to remove this forum?"
+
+msgid "Author"
+msgstr "Author"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Category"
+msgstr "Category"
+
+msgid "Changes were saved."
+msgstr "Changes were saved."
+
+msgid "Changing type sets of a live discussion forum is not a good idea."
+msgstr "Changing type sets of a live discussion forum is not a good idea."
+
+msgid "Confirmation"
+msgstr "Confirmation"
+
+msgid "Content"
+msgstr "Content"
+
+msgid "Created"
+msgstr "Created"
+
+msgid "Deny forums moderation"
+msgstr "Deny forums moderation"
+
+msgid "Deny forums use"
+msgstr "Deny forums use"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Display forum details"
+msgstr "Display forum details"
+
+msgid "Display message"
+msgstr "Display message"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Edit forum"
+msgstr "Edit forum"
+
+msgid "Edit forum messages"
+msgstr "Edit forum messages"
+
+msgid "Edit forum messages owned by the user"
+msgstr "Edit forum messages owned by the user"
+
+msgid "Error removing forum %1."
+msgstr "Error removing forum %1."
+
+msgid "Error removing topic %1."
+msgstr "Error removing topic %1."
+
+msgid "Failed adding forum: %1"
+msgstr "Failed adding forum: %1"
+
+msgid "Failed adding message: %1"
+msgstr "Failed adding message: %1"
+
+msgid "Failed adding topic: %1"
+msgstr "Failed adding topic: %1"
+
+msgid "Failed modifying forum: %1"
+msgstr "Failed modifying forum: %1"
+
+msgid "Forum %1 successfully removed."
+msgstr "Forum %1 successfully removed."
+
+msgid "Forum details"
+msgstr "Forum details"
+
+msgid "Forum has been saved."
+msgstr "Forum has been saved."
+
+msgid "Forum with id %1 does not exist."
+msgstr "Forum with id %1 does not exist."
+
+msgid "Forums"
+msgstr "Forums"
+
+msgid "Forums moderator"
+msgstr "Forums moderator"
+
+msgid "Forums user"
+msgstr "Forums user"
+
+msgid "Group forums is a bulletin board where discussions are gathered in forums, topics and trees of messages."
+msgstr "Group forums is a bulletin board where discussions are gathered in forums, topics and trees of messages."
+
+msgid "Icon"
+msgstr "Icon"
+
+msgid "Impossible to remove root message %1."
+msgstr "Impossible to remove root message %1."
+
+msgid "Latest forum posts"
+msgstr "Latest forum posts"
+
+msgid "List of forums"
+msgstr "List of forums"
+
+msgid "List of topics"
+msgstr "List of topics"
+
+msgid "Manage forum threads"
+msgstr "Manage forum threads"
+
+msgid "Manage forums"
+msgstr "Manage forums"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Message contents"
+msgstr "Message contents"
+
+msgid "Message has been saved."
+msgstr "Message has been saved."
+
+msgid "Message information"
+msgstr "Message information"
+
+msgid "Message part type set"
+msgstr "Message part type set"
+
+msgid "Message type set"
+msgstr "Message type set"
+
+msgid "Message with id %1 does not exist."
+msgstr "Message with id %1 does not exist."
+
+msgid "Modify forum details"
+msgstr "Modify forum details"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "New forum details"
+msgstr "New forum details"
+
+msgid "New message details"
+msgstr "New message details"
+
+msgid "New topic details"
+msgstr "New topic details"
+
+msgid "Next"
+msgstr "Next"
+
+msgid "No messages found."
+msgstr "No messages found."
+
+msgid "Not available"
+msgstr "Not available"
+
+msgid "Posted"
+msgstr "Posted"
+
+msgid "Posts"
+msgstr "Posts"
+
+msgid "Previous"
+msgstr "Previous"
+
+msgid "Read forums"
+msgstr "Read forums"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Remove forum"
+msgstr "Remove forum"
+
+msgid "Remove forum messages"
+msgstr "Remove forum messages"
+
+msgid "Remove forum messages owned by the user"
+msgstr "Remove forum messages owned by the user"
+
+msgid "Remove message"
+msgstr "Remove message"
+
+msgid "Remove topic"
+msgstr "Remove topic"
+
+msgid "Reply"
+msgstr "Reply"
+
+msgid "Reply to message"
+msgstr "Reply to message"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Save and add new"
+msgstr "Save and add new"
+
+msgid "Select paragraphs to quote"
+msgstr "Select paragraphs to quote"
+
+msgid "Select paragraphs to quote in your message"
+msgstr "Select paragraphs to quote in your message"
+
+msgid "Show"
+msgstr "Show"
+
+msgid "Show forum management"
+msgstr "Show forum management"
+
+msgid "Show forums"
+msgstr "Show forums"
+
+msgid "Show topic listing"
+msgstr "Show topic listing"
+
+msgid "Show topics"
+msgstr "Show topics"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "This is the first post to a topic and removing it will remove the topic including all messages posted into it. Are you sure you want to remove this topic?"
+msgstr "This is the first post to a topic and removing it will remove the topic including all messages posted into it. Are you sure you want to remove this topic?"
+
+msgid "This message and all replies below this message will be removed. Are you sure you want to remove this message?"
+msgstr "This message and all replies below this message will be removed. Are you sure you want to remove this message?"
+
+msgid "Thread type set"
+msgstr "Thread type set"
+
+msgid "Thread with id %1 does not exist."
+msgstr "Thread with id %1 does not exist."
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Topic"
+msgstr "Topic"
+
+msgid "Topic %1 successfully removed."
+msgstr "Topic %1 successfully removed."
+
+msgid "Topic has been saved. Now write the first message."
+msgstr "Topic has been saved. Now write the first message."
+
+msgid "Topics"
+msgstr "Topics"
+
+msgid "Tree of messages in topic"
+msgstr "Tree of messages in topic"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Updated"
+msgstr "Updated"
+
+msgid "User can edit any forum message in this group"
+msgstr "User can edit any forum message in this group"
+
+msgid "User can edit messages owned by the user in this group"
+msgstr "User can edit messages owned by the user in this group"
+
+msgid "User can manage forum threads in this group"
+msgstr "User can manage forum threads in this group"
+
+msgid "User can manage forums in this group"
+msgstr "User can manage forums in this group"
+
+msgid "User can read forums in this group"
+msgstr "User can read forums in this group"
+
+msgid "User can remove any forum message in this group"
+msgstr "User can remove any forum message in this group"
+
+msgid "User can remove forum messages owned by the user in this group"
+msgstr "User can remove forum messages owned by the user in this group"
+
+msgid "User can write and reply forum messages in this group"
+msgstr "User can write and reply forum messages in this group"
+
+msgid "Viewed # times"
+msgstr "Viewed # times"
+
+msgid "Warning: all data you have currently written will be lost. Are you sure you want to cancel?"
+msgstr "Warning: all data you have currently written will be lost. Are you sure you want to cancel?"
+
+msgid "Warning: all data you have currently written will be lost. Are you sure you want to return back to selecting message paragraphs?"
+msgstr "Warning: all data you have currently written will be lost. Are you sure you want to return back to selecting message paragraphs?"
+
+msgid "Write forum messages"
+msgstr "Write forum messages"
+
+msgid "Topic has no messages. Please write the first message."
+msgstr "Topic has no messages. Please write the first message."
+
+msgid "Quote and reply"
+msgstr "Quote and reply"
+
+msgid "Edit message"
+msgstr "Edit message"
+
+msgid "Forum rights"
+msgstr "Forum rights"
+
+msgid "Unread"
+msgstr "Unread"
+
+msgid "Unread messages"
+msgstr "Unread messages"
+
+

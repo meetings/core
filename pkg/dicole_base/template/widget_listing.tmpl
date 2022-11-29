@@ -1,0 +1,88 @@
+[%# $Id: widget_listing.tmpl,v 1.5 2009-01-07 14:42:33 amv Exp $ -%]
+[%#
+    The template accepts the following information in itemparams:
+    {
+        widths => [
+            '40%',
+            '60%'
+        ],
+
+        keys => [
+            {
+                raw => 'My Key',
+                template => undef,
+                params => undef,
+                class => '',
+            },
+            {
+                raw => undef,
+                template => 'text',
+                params => {
+                    text => 'My Other Key',
+                },
+                class => 'myTR',
+            }
+        ],
+
+        rows => [
+            [
+                {
+                    raw => '<span class="oddText">HelLo</span>',
+                    template => undef,
+                    params => undef,
+                    class => 'oddTextTD',
+                },
+                {
+                    raw => undef,
+                    template => 'text',
+                    params => {
+                        text => 'Other Hello',
+                    },
+                    class => undef,
+                }
+            ],
+            ...
+        ]
+    }
+
+-%]
+
+[%- list = itemparams -%]
+<table id="list" class="keyValueListing">
+[%- IF list.keys %]
+    <tr>
+
+    [%- cellcount = 0 -%]
+    [%- FOREACH cell = list.keys -%]
+        <td class="listingcell[% IF cell.class %] [% cell.class %][% END %]"[% IF list.widths %] width="[% list.widths.$cellcount %]"[% END %]>
+
+        [% PROCESS dicole_base::include_widget widget = cell %]
+
+        </td>
+        [%- cellcount = cellcount + 1 %]
+    [%- END %]
+
+    </tr>
+[%- END -%]
+
+[%- count = 0 -%]
+
+[%- FOREACH row = list.rows -%]
+    [%- row_count = count - 1 %]
+    <tr class="[% IF count % 2 == 1 %]odd[% ELSE %]even[% END %][% IF list.row_params.$row_count.class %] [% list.row_params.$row_count.class %][% END %]">
+
+    [%- cellcount = 0 -%]
+    [%- FOREACH cell = row -%]
+        <td class="listingValue[% IF cell.class %] [% cell.class %][% END %]"[% IF  count == 0 && ! list.cells && list.widths %] width="[% list.widths.$cellcount %]"[% END %]>
+
+        [% PROCESS dicole_base::include_widget widget = cell %]
+
+        </td>
+        [%- cellcount = cellcount + 1 %]
+    [%- END %]
+
+    </tr>
+    [%- count = count + 1 %]
+[%- END %]
+</table>
+

@@ -1,0 +1,44 @@
+// Required params: fbid, google_connected
+- user.facebook_user_id = user.facebook_user_id || 0;
+div.setting-head
+    h3.setting-title
+        i.icon.ico-password
+        !=MTN.t('Login methods')
+    p.setting-desc!=MTN.t('Manage how you log in to the service.')
+div.setting-content
+    div.setting-section
+        h3.setting-sub-title!=MTN.t('Third-party login options')
+        p!=MTN.t("Connect one of your third-party accounts to login easily:")
+            // Facebook
+            div#facebook_connect_container
+                input.js_fb_fillable_Facebook_user_id(type='hidden',value=user.facebook_user_id,name=user.facebook_user_id)
+                p.disconnected#profile-edit-facebook-disconnected(style=user.facebook_user_id ? 'display:none;' : '')
+                    a#connect-facebook.js_meetings_connect_profile_with_facebook.button.login.fb-blue(href=app.helpers.getServiceUrl({ service : 'facebook', action : 'connect', return_url : '/meetings/user/settings/login' }))
+                            i.ico-facebook
+                            !=MTN.t('Connect with Facebook')
+                p.connected#profile-edit-facebook-connected(style=user.facebook_user_id ? '' : 'display:none;')
+                    span.ok
+                    !=MTN.t('Your account is connected to Facebook')
+                    a.disconnect.js_meetings_disconnect_profile_from_facebook#disconnect-facebook-submit(href='#',data-network-id='facebook')!=MTN.t('Disconnect')
+            // Google
+            div#google_connect_container
+                p.disconnected(style=user.google_connected ? 'display:none;' : '')
+                    a#connect-google.button.login.google-blue(href=app.helpers.getServiceUrl({ service : 'google', action : 'connect', return_url : '/meetings/user/settings/login' }))
+                        i.ico-google
+                        !=MTN.t('Connect with Google')
+
+                p.connected(style=user.google_connected ? '': 'display:none;')
+                    span.ok
+                    !=MTN.t('Your account is connected to Google')
+                    a.disconnect(href='#',data-network-id='google')!=MTN.t('Disconnect')
+    div.setting-section
+        h3.setting-sub-title!=MTN.t('Set up a password')
+        p!=MTN.t('Create a password to easily login without your personal login link.')
+        div.m-form
+            label.inline!=MTN.t('Password')
+                input#password(type='password', value='', placeholder!=MTN.t('New password'))
+
+div.setting-footer
+    a.button.blue.save-password(href='#')
+        span.label!=MTN.t('Save')
+

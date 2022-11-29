@@ -1,0 +1,14 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_groups add meta text after type');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_groups add created_date bigint unsigned not null after creator_id');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_groups add domain_id int unsigned not null after groups_id');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_groups add points int unsigned not null after created_date');
+
+}
+
+1;
+

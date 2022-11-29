@@ -1,0 +1,36 @@
+
+my $domain_id = 131;
+my @valid_groups = (1787,3833,3841,3843,3857,3859,3871,3877,3889,3891,4101,4243,4305,4349,4541,4751,4801,4873,4895,5117,5183,5201,5223,5343,5359,5447,5465,5593,5727,5777,5983,6041,6049,6093,6099,6141,6155,6189,6213,6291,6459,6663,6773,6789,6853,6859,6879,6921,7093,7101,7193,7203,7219,7387,7437,7477,7523,7551,7585,7659,7911);
+my %vg = map { $_ => 1 } @valid_groups;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_host = Dicole::URL->get_domain_url( $domain_id, 443 );
+    
+    CTX->lookup_action('meetings_api')->e( send_campaign_email => {
+        domain_id => $domain_id,
+#        dry_run => 1,
+#        single_send_limit => 5000,
+#        skip_sent_check => 1,
+#        limit_to_users => ['ilmari@dicole.com'],
+        template_key_base => 'meetings_campaign_redirect_problem',
+        exclude_user_checker => sub {
+            my ( $self, $user ) = @_;
+            return 1 unless $vg{ $self->_determine_user_base_group( $user, $domain_id ) };
+            return 0;
+        },
+        template_params_generator => sub {
+            my ( $self, $user ) = @_;
+            my $params = {
+                user_name => Dicole::Utils::User->name( $user ),
+                login_url => $self->_form_user_create_meetings_url( $user, $domain_id, $domain_host ), 
+            };
+
+            return $params;
+        },
+    } );
+}
+
+1;
+

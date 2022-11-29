@@ -1,0 +1,23 @@
+[%#- Sent when a quickmeet link sending is requested -%]
+
+[%- IF test_case == 'viestilla' %]
+[%-
+server_host = 'http://dev.meetin.gs'
+user_name = 'Antero Aaltolainen'
+creator_user_name = 'Santeri Myyjähenkilö'
+pick_url = 'https://meetin.gs/linkki'
+message_text = 'Thank you for the conversation, please use my scheduler to pick a time for our meeting BTW. This is the text version'
+message_html = 'Thank you for the conversation, please use my scheduler to pick a time for our meeting. BTW. This is the html version'
+%]
+[%- END -%]
+
+[%#- Sent when a quickmeet link sending is requested -%]
+
+[%- IF test_case == 'ilman viestia' %]
+[%-
+server_host = 'http://dev.meetin.gs'
+user_name = 'Antero Aaltolainen'
+creator_user_name = 'Santeri Myyjähenkilö'
+pick_url = 'https://meetin.gs/linkki'
+%]
+[%- END -%]

@@ -1,0 +1,13 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_event add removed_date bigint unsigned not null after created_date');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_user add removed_date bigint unsigned not null after created_date');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_event add notes mediumtext after freeform_content');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_events_user add notes mediumtext after attend_info');
+}
+
+1;
+

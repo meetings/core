@@ -1,0 +1,33 @@
+<div id="preview_links" style="display:block">
+[% FOREACH test IN tests %]
+<a href="#" class="preview_link" id="[% test.id | html %]">[% test.id | html %]</a> 
+[% END %]
+<a href="#" onclick="$('#preview_links').hide(); $('#preview_links_hidden').show(); $('#ddd').hide();">hide</a>
+</div>
+<!--
+<div id="preview_links_hidden" style="display:none">
+<a href="#" onclick="$('#preview_links').show(); $('#preview_links_hidden').hide(); $('#ddd').show();">show</a>
+</div>
+-->
+<style>
+.email_subject {
+font-weight: bold;
+font-size: 120%;
+margin-top: 10px;
+margin-left: 10px;
+margin-bottom: 10px;
+}
+.email_body p {
+margin-bottom: 1em;
+}
+</style>
+<div id="preview_containers">
+[% FOREACH test IN tests %]
+<div class="preview_container" id="[% test.id | html %]_container">
+<div class="email_subject">[% test.subject %]</div>
+<div class="email_body">
+[% test.html %]
+</div>
+</div>
+[% END %]
+</div>

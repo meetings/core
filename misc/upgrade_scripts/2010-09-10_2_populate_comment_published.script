@@ -1,0 +1,14 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    my $posts = CTX->lookup_object('comments_post')->fetch_group;
+    for my $post ( @$posts ) {
+	$post->published( $post->date );
+	$post->save;
+    }
+}
+
+1;
+

@@ -1,0 +1,37 @@
+[% IF in_html %]
+                    </td>
+                    <td style="border-collapse: collapse; background-image:url('[% server_host %]/images/meetings/email/r_border_repeat.gif'); background-repeat:repeat-y; width:8px;" width="8"></td>
+                </tr>
+            </table>
+            <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin-left:auto; margin-right:auto; margin-bottom:20px; width: 616px; background-image:url('[% server_host %]/images/meetings/email/bottom_shadow.jpg'); background-repeat:repeat-x;">
+            <tr>
+                <td style="border-collapse: collapse;">
+                    <p style="margin-top:10px; margin-left:10px; margin-right:10px; margin-bottom:0px; color:#4a4a4a; font-size:10px; text-align:center; font-family:Arial,Verdana,sans-serif;">
+                        [% MTN.t('This is an automated message from') %] <a href="http://www.meetin.gs/" style="color:#4a4a4a; text-decoration:underline;">Meetin.gs</a>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-collapse: collapse;">
+                    <p style="margin-top:10px; margin-left:10px; margin-right:10px; margin-bottom:10px; color:#4a4a4a; font-size:10px; text-align:center; font-family:Arial,Verdana,sans-serif;">
+                        <a href="http://support.meetin.gs/" style="color:#4a4a4a; text-decoration:underline;">[% MTN.t('Support') %]</a> | 
+                        <a href="http://meetin.gs/meetings/privacy_policy" style="color:#4a4a4a; text-decoration:underline;">[% MTN.t('Privacy Policy') %]</a> 
+                        [% IF meeting_unsubscribe_url %] | <a href="[% meeting_unsubscribe_url %]" style="color:#4a4a4a; text-decoration:underline;">[% MTN.t('Unsubscribe from this meeting') %]</a>[% END %] | <a href="http://www.meetin.gs/whitelist/" style="color:#4a4a4a">[% MTN.t('Whitelist Us') %]</a>
+ [% IF promo_unsubscribe_url %] | <a href="[% promo_unsubscribe_url %]" style="color:#4a4a4a; text-decoration:underline;">[% MTN.t("Don't send me promotional mail") %]</a>[% END %]
+                    </p>
+                </td>
+            </tr>
+            </table>
+        </td>
+	</tr>
+</table>
+</body>
+</html>
+[% ELSE %]
+[% MTN.t('This is an automated message from Meetin.gs.') %]
+---N---
+---N---
+[% MTN.t('Support:') %] http://support.meetin.gs/
+---N---
+[% MTN.t('Privacy Policy:') %] http://meetin.gs/meetings/privacy_policy/
+[% END %]

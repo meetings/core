@@ -1,0 +1,55 @@
+[% MTN.t('Meetin.gs: login information and next steps') %]
+
+<<<html_wrapper>>>
+[% action_text = MTN.t('Welcome to Meetin.gs') %]
+<<<text_and_logo>>>
+<<<h1>>>[% MTN.t('Thank you for signing up!') %]<<</h1>>>
+
+[% image_file = server_host _ '/images/meetings/email/instructions_header.png' %]
+<<<image>>>
+
+<<<p>>>[% MTN.t("Here's your login link to Meetin.gs. Keep in mind, that this link is personal. You can use it whenever you need to login. If you lose it, you can request a new link from our site") %].<<</p>>>
+[% url = login_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=welcome' %]
+[% text = MTN.t('Log in') %]
+<<<blue_button>>>
+<<<p>>><<<bold>>>[% MTN.t('A few suggestions on what to do next to get the most out of the service, improve your productivity and get meetings done:') %]<<</bold>>>
+<<<bubble>>>
+<<<list>>>
+<<<item>>>
+<<<bold>>>[% MTN.t('Keep track of meetings while on the move:') %]<<</bold>>>
+<<<br>>>
+
+[% IF customize_for_cmeet %]
+[% iphone_url = 'http://mtn.gs/cmeetiphone' %]
+[% android_url = 'http://mtn.gs/cmeetandroid' %]
+[% ELSE %]
+[% iphone_url = 'http://bit.ly/swipetomeet-ios' %]
+[% android_url = 'http://bit.ly/swipetomeet-android' %]
+[% END %]
+
+[% MTN.t('Download the %(L$iPhone App%)',{ L => { href => iphone_url }}) %]
+<<<br>>>
+[% MTN.t('Download the %(L$Android App%)',{ L => { href => android_url }}) %]
+<<</item>>>
+<<<item>>>
+[% MTN.t('%(B$Manage meetings right on your browser%) and schedule meetings with people on LinkedIn and more - Install the %(L$Chrome extension%)', { L => { href => 'http://chrome.meetin.gs' } }) %]
+<<</item>>>
+<<<item>>>
+[% url =meetme_config_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=welcome' %]
+[% MTN.t('%(B$Save time scheduling meetings%) - Share your %(L$Meet Me page%)', { L => { href => ur }}) %]
+<<<item>>>
+[% MTN.t('Need help getting started? Read one of our %(L$tutorials%)', { L => { href => 'http://www.meetin.gs/category/tutorial/' } }) %]
+<<<item>>>
+[% MTN.t('Get advice from our %(L$support forums%)',{ L => { href => 'http://support.meetin.gs/' } }) %]
+<<</item>>>
+<<</list>>>
+<<</bubble>>>
+
+<<<app_buttons>>>
+
+
+<<<br>>>
+[% squirrel = 'thief' %]
+<<<squrre>>>
+
+<<</html_wrapper>>>

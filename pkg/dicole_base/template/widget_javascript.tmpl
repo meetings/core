@@ -1,0 +1,10 @@
+[%# $Id: widget_javascript.tmpl,v 1.2 2009-01-07 14:42:33 amv Exp $ -%]
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        defer => 1,
+        src => '/js/script.js',
+	code => 'alert("hello")',
+    }
+-%]
+<script type="text/javascript"[% IF itemparams.defer %] defer="defer"[% END %][% IF itemparams.src %] src="[% itemparams.src %]"[% END %]>[% itemparams.code %]</script>

@@ -1,0 +1,93 @@
+<% if ( ! p.set_time ) { %>
+<div id="js_manage_navi_container"></div>
+<% } %>
+<div id="modal-manage-meeting" class="modal-popup-admin">
+    <h2 class="modal-header"><%= MTN.t('Basic Information') %></h2>
+    <div class="error-container js_meetings_manage_basic_error_container error_container_hidden"></div>
+    <form id="meetings_manage_basic_form" name="new-meeting" class="meetings-form">
+        <fieldset>
+            <!-- Meeting title -->
+            <div id="title" class="form-row bottom-border">
+                <p class="title"><%= MTN.t('Title//context:meeting title') %><span>&nbsp;:&nbsp; <%== p.title_string %></span></p>
+                <a href="#" class="js_meetings_set_title_open">
+                    <span class="button-small blue"><%= MTN.t('Change') %></span>
+                </a>
+            </div>
+
+            <% if( p.proposal_count > 0 ) { %>
+            <div id="being_scheduled" class="form-row bottom-border">
+                <p class="date"><%= MTN.t('Date') %> <span>&nbsp;:&nbsp; <%= MTN.t('Meeting is being scheduled.') %></span></p>
+                <div>
+                    <% if ( p.participant_count > 1 ) { %>
+
+                    <a href="#" class="js_meetings_being_scheduled_show_status" id="show-current-status-button">
+                        <span class="button-small blue" style="margin:0 0 5px 0"><%= MTN.t('Show current status') %></span>
+                    </a>
+
+                    <% } %>
+                    <a href="#" data-post-url="<%= dicole.get_global_variable('meetings_scheduler_cancel_url') %>" class="js_meetings_scheduler_cancel_open" id="manage-cancel-scheduling-button">
+                        <span class="button-small gray" style="margin:0 0 5px 0"><%= MTN.t('Cancel scheduling') %></span>
+                    </a>
+                </div>
+            </div>
+            <% } else { %>
+
+            <!-- Meetin date -->
+            <div id="date" class="form-row bottom-border">
+                <p class="date">
+                <%= MTN.t('Date') %>
+                <span>&nbsp;:&nbsp; <%= p.begin_date ? p.begin_date : MTN.t('Not set') %>
+                </p>
+                <% if( p.begin_date ) { %>
+                <p class="time">
+                <%= MTN.t('Time') %>
+                <span>&nbsp;:&nbsp; <%= p.begin_time_string %>
+                </p>
+                <p class="duration">
+                <%= MTN.t('Duration') %>
+                <span>&nbsp;:&nbsp; <%= p.duration_hours ? p.duration_hours + 'h ' : '' %><%= p.duration_minutes ? p.duration_minutes + 'min' : '' %></span>
+                </p>
+                <a href="#" class="js_set_time">
+                    <span class="button-small blue"><%= MTN.t('Change') %></span>
+                </a>
+                <% } else {%>
+                <a href="#" class="js_set_time">
+                    <span class="button-small blue"><%= MTN.t('Set time') %></span>
+                </a>
+                <p style="margin: 5 0 0 0px; font-size:16px;"><%= MTN.t('Do you want to suggest multiple dates to participants instead of setting the date directly?') %></p>
+                <a id="start-suggesting-dates-button" href="#" data-post-url="<%= dicole.get_global_variable('meetings_get_info_url') %>" class="button-small blue js_meetings_scheduler_picker_open">
+                    <%= MTN.t('Start suggesting dates') %>
+                </a>
+                <% } %>
+            </div>
+            <% } %>
+
+
+
+            <!-- Meeting location -->
+            <div id="location" class="form-row">
+                <% if(p.location_string) { %>
+                <p class="location"><%= MTN.t('Location') %><span>&nbsp;:&nbsp; <%== p.location_string %></span></p>
+                <a href="#" class="js_meetings_set_location_open">
+                    <span class="button-small blue"><%= MTN.t('Change') %></span>
+                </a>
+                <% } else { %>
+                <p class="location"><%= MTN.t('Location') %><span>&nbsp;:&nbsp; <%= MTN.t('Online') %></span></p>
+                <a href="#" class="js_meetings_set_location_open">
+                    <span class="button-small blue"><%= MTN.t('Change') %></span>
+                </a>
+
+                <% } %>
+            </div>
+
+            <!-- Meeting close -->
+            <div id="submit" class="form-row centered">
+                <!-- <a href="#" class="js_hook_showcase_close" id="manage-basic-submit" style="margin-bottom:15px;"> -->
+                <!--     <span class="button pink"><%= MTN.t('Save') %></span> -->
+                <!--     <span class="indicator"></span> -->
+                <!-- </a> -->
+            </div>
+        </fieldset>
+    </form>
+    <a href="#" class="js_hook_showcase_close close-cross alpha_png"></a>
+</div>

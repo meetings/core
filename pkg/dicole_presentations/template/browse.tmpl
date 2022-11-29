@@ -1,0 +1,155 @@
+[%# Example data: -%]
+[%#
+pages => [
+    {
+        number => 1 || 2,
+        presentations => [
+            {
+                title => 'Great presentation',
+                author => 'A. Johnson',
+                type => 'video' || 'slideshow',
+                duration => '3:30' || '24 slides',
+                rating => 50 || 100,
+                rating_simple => 0 || 1 || 2 || 3 || 4 || 5,
+                image => '/...',
+                comments => 3,
+                description => 'short description',
+                date => '12 3 2009',
+            },
+        ]
+    }
+]
+
+selected_listing => 'new' || 'best' || 'promoted'
+selected_type => 'video' || 'slideshow' || 'image' || 'other'
+selected_tag => 'tag name'
+
+new_link => '/'
+best_link => '/'
+promoted_link => '/'
+
+video_link => '/'
+slideshow_link => '/'
+image_link => '/'
+other_link => '/'
+
+%]
+
+[%- IF messages -%]
+    [%- FOREACH message = messages -%]
+<a class="toolInfoRight2 [% 'failure' IF message.code == '0' %][% 'success' IF message.code == '1' %][% 'warning' IF message.code == '2' %]" id="toolInfoRightBox_[% loop.count %]" href="#" onclick="document.getElementById('toolInfoRightBox_[% loop.count %]').style.display = 'none'; return false;" >
+    <span class="title2">[% message.title | html %]</span>
+    <span class="content2">[%- message.content | html -%]</span>
+</a>
+    [%- END -%]
+[%- END -%]
+
+<div class="media">
+<div class="media-top-control"> 
+
+[% IF add_media_link %]<div class="media-add"><a href="[% add_media_link | html %]"><span>Add media</span></a></div>[% END %]
+
+[% IF pages.size > 1 %]
+<ul class="pagination">
+<li class="navigation"><a class="function-mediacard-control-prev" href="#" onclick="return false;">&laquo;</a></li>
+[% FOREACH page IN pages %]
+<li><a href="#" class="function-mediacard-control function-mediacard-control-[% page.next_number | html %]-next function-mediacard-control-[% page.prev_number | html %]-prev[% IF loop.first %] selected[% END %]" id="mediacard-control-[% page.number | html %]" onclick="return false;">[% page.number | html %]</a></li>
+[% END %]
+<li class="navigation"><a class="function-mediacard-control-next" href="#" onclick="return false;">&raquo;</a></li>
+</ul>
+[% END %]
+
+</div>
+
+[% IF pages.size < 1 %]
+<div class="catalogue empty">
+
+<p>Uh oh, this part of the media section is empty.</p>
+[% IF add_media_link %]<p><a href="[% add_media_link | html %]">Fill it with some content! &raquo;</a></p>[% END %]
+
+</div>
+[% END %]
+
+[% FOREACH page IN pages %]
+
+<ul class="mediacard-list" id="mediacard-control-[% page.number | html %]-list"[% IF ! loop.first %] style="display: none"[% END %]>
+
+[% FOREACH prese IN page.presentations %]
+
+
+<li>
+<a href="[% prese.json_url | html %]" class="function-presentations-show" id="mediacard-show-prese-[% prese.id %]" onclick="return false;">
+<div class="mediacard">
+  [% IF prese.image %]<img class="thumbnail" src="[% prese.image | html %]" alt="" />[% END %]
+  <div class="info">
+    <div class="description">
+      <h4>[% prese.title | html %]</h4>
+
+      <div class="author">[% prese.by_author | html %]</div>
+    </div>
+    <div class="data">
+      <div class="rating rating-[% prese.rating_simple | html %]"><span>[% prese.rating_simple | html %] stars</span></div>
+      <div class="length type-[% prese.type | html %]">
+        <span>[% prese.duration | html %]</span>
+      </div>
+
+    </div>
+  </div>
+  <div id="mediacard-show-prese-[% prese.id %]-tooltip" class="tooltip">
+    <div class="excrept">[% prese.description | html %]</div>
+    <div class="date">[% prese.date | html %]</div>
+    <div class="comments">[% prese.comments | html %]</div>
+  </div>
+
+</div>
+</a>
+</li>
+
+[% END %]
+
+</ul>
+
+[% END %]
+
+
+<div class="media-actions">
+
+<ul class="media-filter-buttons">
+<li>
+  <ul class="filter-by-property">
+    <li><a [% IF selected_listing == 'new' AND selected_type == 'any' %]class="selected" [% END %]href="[% new_link | html %]"><span>Newest</span></a><!--<div class="rss-link"><a href="#">RSS</a></div>--></li>
+<!-- disbled for now    <li><a [% IF selected_listing == 'best' AND selected_type == 'any' %]class="selected" [% END %]href="[% best_link | html %]"><span>Best rated</span></a></li> -->
+    <li><a [% IF selected_listing == 'featured' AND selected_type == 'any' %]class="selected" [% END %]href="[% featured_link | html %]"><span>Featured</span></a></li>
+    <!-- <li><a href="#"><span>By tag</span></a></li> -->
+
+  </ul>
+</li>
+
+<li>
+  <ul class="filter-by-type">
+    <li><a [% IF selected_listing == 'new' AND selected_type == 'video' %]class="selected" [% END %]href="[% video_link | html %]"><span><span class="type-video">Videos</span></span></a></li>
+    <li><a [% IF selected_listing == 'new' AND selected_type == 'slideshow' %]class="selected" [% END %]href="[% slideshow_link | html %]"><span><span class="type-slideshow">Slidesets</span></span></a></li>
+    <li><a [% IF selected_listing == 'new' AND selected_type == 'image' %]class="selected" [% END %]href="[% image_link | html %]"><span><span class="type-image">Images</span></span></a></li>
+    <li><a [% IF selected_listing == 'new' AND selected_type == 'other' %]class="selected" [% END %]href="[% other_link | html %]"><span><span class="type-other">Other</span></span></a></li>
+  </ul>
+</li>
+
+<!-- this is disabled because it was a pain to implement in IE6 :D
+<li>
+  <div class="search"><form id="media-search-form" method="post>"<input onfocus="this.value=''" id="media-search" type="text" name="media-search" value="[% IF current_search %][% current_search | html %][% ELSE %]Search[% END %]" /></form></div>
+</li>
+-->
+
+</ul>
+
+</div>
+
+<a id="presentations-initial-open-template" href="[% initial_open_template %]" style="display: none"></a>
+
+<a id="presentations-show-container-wrapper" class="function-presentations-show-hide" href="#" onclick="return false;" style="display: none; position: absolute; float: left; left: 0px; top: 0px; background: black; filter:alpha(opacity=30); -moz-opacity: 0.3; opacity: 0.3;">
+</a>
+<div id="presentations-show-container" style="float: left; z-index: 2; position: absolute; background: white; display: none;">
+</div>
+</a>
+
+</div>

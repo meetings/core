@@ -1,0 +1,13 @@
+[%- IF test_case == 'siirtomaili' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+user_name ='kääppä'
+transfer_url = 'http://www.meetin.gs/'
+meeting_title = 'Sadekarnevaalit'
+meeting_time = '24.4. 3pm - 4pm'
+meeting_location_string = 'Kadulla'
+
+
+%]
+[% END %]

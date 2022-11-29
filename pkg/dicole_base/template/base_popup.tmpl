@@ -1,0 +1,10 @@
+[% # $Id: base_popup.tmpl,v 1.9 2009-01-07 14:42:32 amv Exp $ # %]
+
+[%- DEFAULT
+	images.default				= '/images'
+	images.theme				= images.default _ '/theme/default'
+	images.help				= images.default _ '/help'
+-%]
+[%- WRAPPER dicole_base::base_simple %]
+	[%- content %]
+[%- END %]

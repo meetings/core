@@ -1,0 +1,305 @@
+# $Id: messages-sv.po,v 1.2 2009-03-11 02:21:14 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:10:29+0000\n"
+"PO-Revision-Date: 2005-03-22 02:10:29+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "-- Select --"
+msgstr "-- Select --"
+
+msgid "AIM screen name"
+msgstr "AIM screen name"
+
+msgid "Address"
+msgstr "Adress"
+
+msgid "Basic contact information"
+msgstr "Allmän kontaktinformation"
+
+msgid "Basic information"
+msgstr "Allmän information"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Changes were saved."
+msgstr "Ändringar sparades."
+
+msgid "Cities worked"
+msgstr "Städer jag jobbat i"
+
+msgid "City"
+msgstr "Stad"
+
+msgid "Contact information"
+msgstr "Kontaktinformation"
+
+msgid "Country"
+msgstr "Land"
+
+msgid "Date of birth"
+msgstr "Födelsedatum"
+
+msgid "Degree"
+msgstr "Examen"
+
+msgid "Deny editing profile of a user"
+msgstr "Deny editing profile of a user"
+
+msgid "Department or unit"
+msgstr "Avdelning eller enhet"
+
+msgid "Edit"
+msgstr "Redigera"
+
+msgid "Edit profile"
+msgstr "Redigera profil"
+
+msgid "Edit profile of a user"
+msgstr "Redigera användarprofil"
+
+msgid "Education"
+msgstr "Utbildning"
+
+msgid "Education overview"
+msgstr "Sammandrag av utbildningar"
+
+msgid "Email"
+msgstr "E-post"
+
+msgid "Failed modifying profile: %1"
+msgstr "Failed modifying profile: %1"
+
+msgid "Favorite books or publications"
+msgstr "Favoritböcker eller publikationer"
+
+msgid "Favorite music, movies, artists..."
+msgstr "Favoritböcker, -filmer, -artister..."
+
+msgid "Favorite events or tradeshows"
+msgstr "Favorite events or tradeshows"
+
+msgid "Fax number"
+msgstr "Faxnummer"
+
+msgid "Female"
+msgstr "Kvinna"
+
+msgid "Full name"
+msgstr "Hela namnet"
+
+msgid "Gender"
+msgstr "Kön"
+
+msgid "Hobbies"
+msgstr "Hobbies"
+
+msgid "Home phone"
+msgstr "Hemtelefon"
+
+msgid "ICQ number"
+msgstr "ICQ nummer"
+
+msgid "Identification number"
+msgstr "Identifikationsnummer"
+
+msgid "Interests"
+msgstr "Intressen"
+
+msgid "International cooperation"
+msgstr "Internationellt samarbete"
+
+msgid "Jabber"
+msgstr "Jabber"
+
+msgid "Male"
+msgstr "Man"
+
+msgid "MSN profile"
+msgstr "MSN profil"
+
+msgid "Mobile phone"
+msgstr "Mobiltelefon"
+
+msgid "Not available."
+msgstr "Inte tillgänglig."
+
+msgid "Organization"
+msgstr "Organisation"
+
+msgid "Organizations worked"
+msgstr "Organisationer jag arbetat i"
+
+msgid "Other degree"
+msgstr "Annan examen"
+
+msgid "Past organization"
+msgstr "Past organization"
+
+msgid "Past title"
+msgstr "Tidigare titel"
+
+msgid "Personal"
+msgstr "Personlig"
+
+msgid "Personal description"
+msgstr "Beskrivning av mig"
+
+msgid "Personal heroes"
+msgstr "Mina hjältar"
+
+msgid "Personal mantra"
+msgstr "Min mantra"
+
+msgid "Personal weblog"
+msgstr "Min blogg"
+
+msgid "Personal website"
+msgstr "Min webbsajt"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Postal address"
+msgstr "Postadress"
+
+msgid "Postal code"
+msgstr "Postnummer"
+
+msgid "Professional"
+msgstr "Yrke"
+
+msgid "Professional description"
+msgstr "Jobbbeskrivning"
+
+msgid "Professional goals"
+msgstr "Mål i jobbet"
+
+msgid "Professional history"
+msgstr "Jobbhistoria"
+
+msgid "Professional mantra"
+msgstr "Jobbmantra"
+
+msgid "Professional mentors"
+msgstr "Mina mentorer"
+
+msgid "Professional website"
+msgstr "Jobbsajt"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Research done"
+msgstr "Forskningsarbete jag gjort"
+
+msgid "View profile"
+msgstr "Granska profil"
+
+msgid "Room number"
+msgstr "Rum nummer"
+
+msgid "Save"
+msgstr "Spara"
+
+msgid "School"
+msgstr "Skola"
+
+msgid "Skills"
+msgstr "Färdigheter"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Spoken languages"
+msgstr "Språk"
+
+msgid "State"
+msgstr "Delstat"
+
+msgid "Street address"
+msgstr "Gatuadress"
+
+msgid "Target degree"
+msgstr "Examina jag har som mål"
+
+msgid "Technical skills"
+msgstr "Tekniska färdigheter"
+
+msgid "Telephone"
+msgstr "Telefon"
+
+msgid "Timezone"
+msgstr "Tidszon"
+
+msgid "Title or position"
+msgstr "Titel eller position"
+
+msgid "Titles held"
+msgstr "Titlar jag haft"
+
+msgid "Unknown"
+msgstr "Okänd"
+
+msgid "User can edit profile"
+msgstr "Användare kan editera profil"
+
+msgid "Image to upload in GIF or JPG format"
+msgstr "Ladda upp bild i GIF eller JPG format"
+
+msgid "Upload"
+msgstr "Ladda upp"
+
+msgid "Upload image"
+msgstr "Ladda upp bild"
+
+msgid "Personal portrait"
+msgstr "Personligt porträtt"
+
+msgid "Professional portrait"
+msgstr "Jobbporträtt"
+
+msgid "Image uploaded."
+msgstr "Bild uppladdad."
+
+msgid "Error while converting image."
+msgstr "Ett fel inträffade när bilden konverterades."
+
+msgid "Upload image in GIF or JPG format."
+msgstr "Ladda upp bild i GIF eller JPG format."
+
+msgid "Error while uploading file. Upload does not exist."
+msgstr "Ett fel uppstod när filen skulle laddas upp. Uppladdningen finns inte."
+
+msgid "Upload failed: %1"
+msgstr "Uppladdningen misslyckades: %1"
+
+msgid "No image."
+msgstr "Ingen bild."
+
+msgid "Profile image"
+msgstr "Profilbild"
+
+msgid "Image to upload"
+msgstr "Bild att ladda upp"
+
+msgid "Show profile"
+msgstr "Visa profile"
+
+msgid "Personal profile includes the professional and personal profiles and contact information of a user."
+msgstr "Profilen består av både personlig och jobbrelaterad information om användaren samt kontaktuppgifter."
+
+msgid "Welcome %1! Today is %2 and the time is %3."
+msgstr "Wälkommen %1! Idag är det %2 och klockan är is %3."
+
+msgid "Welcome!"
+msgstr "Välkommen!"

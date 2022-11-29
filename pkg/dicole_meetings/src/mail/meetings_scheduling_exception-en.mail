@@ -1,0 +1,37 @@
+[% IF meeting_time != "" %][% MTN.t('The time for %1$s has been already set',[meeting_title]) %][% ELSIF scheduling_options.size > 0 %][% MTN.t('No new scheduling options for %1$s',[meeting_title]) %] [% ELSE %][% MTN.t('No scheduling options for %1$s',[meeting_title]) %][% END %]
+
+<<<html_wrapper>>>
+
+[% IF meeting_time != "" %]
+[% action_text = MTN.t('Time is set for') %]
+[% ELSIF scheduling_options.size > 0 %]
+[% action_text = MTN.t('You already responded scheduling for') %]
+[% ELSE %]
+[% action_text = MTN.t('No open scheduling options for') %]
+[% END %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>[% IF meeting_time != "" %]
+[% MTN.t('The meeting will be on %(B$%1$s%)',[meeting_time]) %]
+[% ELSIF open_scheduling_options.size == 0 && scheduling_options.size > 0 %]
+[% MTN.t('To change your answers by email, reply RESCHEDULE to this message. You also can do this on the meeting page.') %]
+
+[% ELSE %]
+[% MTN.t("The time suggestions for %1\$s haven't been set up yet, or the meeting organizer has removed all the previous times.", [meeting_title]) %]
+[% END %]<<</p>>>
+
+[% showtext = 1 %]
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=exception' %]
+[% text = MTN.t('View meeting') %]
+<<<blue_button>>>
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

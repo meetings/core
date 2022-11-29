@@ -1,0 +1,40 @@
+div#meeting-settings
+    div.setting-head
+        h3.setting-title
+            i.icon.ico-settings
+            !=MTN.t('Calendar integration')
+        p.setting-desc!=MTN.t('Connect your calendars to see your upcoming events on the Meeting Timeline and show your availability on the Meet Me page.')
+    div.setting-content
+        div.setting-section.third-party
+            h3.setting-sub-title!=MTN.t('Manage accounts')
+            p!=MTN.t('Connect and disconnect third-party accounts.')
+            div#google_connect_container
+                p.disconnected(style=user.google_connected ? 'display:none;' : '')
+                        a#connect-google.button.login.google-blue(href=app.helpers.getServiceUrl({ service : 'google', action : 'connect', return_url : '/meetings/user/settings/calendar' }))
+                            i.ico-google
+                            !=MTN.t('Connect with Google')
+
+                p.connected(style=user.google_connected ? '': 'display:none;')
+                    span.ok
+                    !=MTN.t('Your account is connected to Google')
+                    a.disconnect(href='#',data-network-id='google')!=MTN.t('Disconnect')
+
+        if( containers && containers.length )
+            div.setting-section.connected-devices
+                h3.setting-sub-title!=MTN.t('Manage connected devices')
+                p!=MTN.t('This is a list of your devices connected with the service.')
+                p.note!=MTN.t('Note: Disconnected devices can only be reconnected using that device.')
+                each container in containers
+                    - if( container.container_id === 'google' ) continue;
+                    p
+                        a.disconnect-device.underline(href='#',data-id=container.container_id, data-name=container.container_name, data-type=container.container_type)
+                            !=MTN.t('Disconnect %1$s',[container.container_name])
+
+        div.setting-section.ics-export
+            h3.setting-sub-title!=MTN.t('Export meetings to your calendar')
+            div.ics.m-form
+                p!=MTN.t('Copy this ICS-calendar feed to your calendar software to automatically export all your meetings to your calendar. For more detailed instructions, click %(L$here%).', { L : { href : '#', classes : 'underline js_meetings_ics_feed_instructions_open' }})
+                textarea#ics-url(cols='30',rows='3', style='width:90%;',readonly='readonly')
+                    =user.external_ics_url
+                p.note!=MTN.t('Note: This is your private link and it should be handled with care.')
+

@@ -1,0 +1,8 @@
+* ok
+  * k‰ytt‰j‰n poistaminen domainista
+  * mailin l‰hetys uuden k‰ytt‰j‰n yhteydess‰ (menee vanhoilla konffeilla)
+  * ‰l‰ delli k‰ytt‰j‰‰ kannasta, poista vain domainista
+
+* todo
+  * listausten rajoittaminen
+  * new_user_template not found, jos koittaa l‰hett‰‰ salasanaa mailitse

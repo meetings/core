@@ -1,0 +1,181 @@
+<!-- Media aka file or embed -->
+<% if ( p.type == 'media' ) { %>
+
+<div class="material-top">
+    <!-- Title -->
+    <% p.title = dicole.meetings_common.truncate_text(p.title,65); %>
+    <% if ( p.user_can_edit_material == 1 ) { %>
+    <h2 data-fetch-url="<%= p.data_url %>" class="inplace_media_title_container section-sub-header js_meetings_rename_media_open js_tooltip" data-tooltip-text="<%= MTN.t('Click to rename.') %>"><i class="ico-edit"></i><%== p.title %></h2>
+    <% } else { %>
+    <h2 data-fetch-url="<%= p.data_url %>" id="inplace-title" class="inplace_media_title_container section-sub-header"><%== p.title %></h2>
+    <% } %>
+
+    <div class="controls">
+        <!-- if file -->
+        <% if ( p.from_file ) { %>
+        <% if ( p.user_can_edit_material ) { %>
+
+        <% if(! ( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) ) { %>
+        <a id="file-replace-media-open" href="<%= p.data_url %>" class="js_meetings_replace_media_open" title="Replace">
+            <i class="ico-replace"></i>
+        </a>
+        <% } %>
+
+        <% if( p.user_can_manage == 1) { %>
+        <a id="file-remove-media-open" href="<%= p.data_url %>" class="js_meetings_remove_media_open" title="Delete">
+            <i class="ico-delete"></i>
+        </a>
+        <% } } %>
+
+
+        <!-- If embed -->
+        <% } else { %>
+        <a id="embed-edit-media-open" href="<%= p.data_url %>" class="js_meetings_edit_media_embed_open" title="Edit">
+            <i class="ico-edit"></i>
+        </a>
+        <% if( p.user_can_manage ) { %>
+        <a id="embed-remove-open" href="<%= p.data_url %>" class="js_meetings_remove_media_open" title="Delete">
+            <i class="ico-delete"></i>
+        </a>
+        <% } %>
+        <% } %>
+    </div><!-- end controls -->
+</div><!-- End material top  -->
+
+<div class="inplace_media_embed_container<%= (! p.user_can_edit_material && p.from_file) ? ' no-menu' : '' %>">
+    <%= p.simple_embed %>
+
+    <% if ( p.from_file ) { %>
+    <div style="clear:both"></div>
+    <a id="file-download-button" href="<%= p.download_url %>" style="display:block; margin-top:15px; float:left">
+        <span class="button-small blue">
+            <%= MTN.t('Download')%>
+            <%= ( p.readable_type ) ? ' | '+p.readable_type : '' %>
+            <%= ( p.readable_size ) ? ' | '+p.readable_size : '' %>
+        </span>
+    </a>
+    <div class="save-to-gdrive">
+        <span id="js_possible_save_to_drive"></span>
+    </div>
+    <% } %>
+
+</div>
+
+<!-- Comments -->
+<div class="js_inplace_comments_container inplace_comments_container"></div>
+<% } %>
+
+
+
+
+<!-- Shared document aka wiki -->
+<% if ( p.type == 'page' ) { %>
+<div class="material-top">
+    <!-- Title -->
+    <% p.title = dicole.meetings_common.truncate_text(p.readable_title,65); %>
+    <% if ( ! p.locked_by_name && p.user_can_edit_material == 1 ) { %>
+    <h2 data-fetch-url="<%= p.data_url %>" class="inplace_media_title_container section-sub-header js_meetings_rename_page_open js_tooltip" data-tooltip-text="<%= MTN.t('Click to rename.') %>"><i class="ico-edit"></i><%== p.title %></h2>
+    <% } else { %>
+    <h2 data-fetch-url="<%= p.data_url %>" id="inplace-title" class="inplace_media_title_container section-sub-header"><%== p.title %></h2>
+    <% } %>
+
+    <div class="controls">
+        <% if ( ! p.locked_by_name ) { %>
+        <% if( p.user_can_edit_material == 1 ) { %>
+        <% if( ! ( navigator.userAgent.match(/iPhone|iPad|iPod/i) && navigator.userAgent.match(/ OS 4_/i) ) ) { %>
+        <a id="shared-document-edit-open" href="<%= p.data_url %>" class="js_meetings_edit_page_embed_open" title="Edit">
+            <i class="ico-edit"></i><%= MTN.t('Edit') %>
+        </a>
+        <% } } %>
+
+        <% if( p.user_can_edit_material == 1 ) { %>
+
+        <% } %>
+
+        <a id="shared-document-print" href="#" class="js_print_wiki" title="Print">
+            <i class="ico-print"></i>
+        </a>
+
+        <% if( p.user_can_manage == 1 ) { %>
+        <a id="shared-document-delete-open" href="<%= p.data_url %>" class="js_meetings_remove_page_open" title="Delete">
+            <i class="ico-delete"></i>
+        </a>
+        <% } %>
+        <% } %>
+
+    </div>
+
+</div>
+<!-- If not locked, show controls -->
+
+
+<div class="js_meetings_inplace_page_container inplace_page_embed_container <% if ( ! p.locked_by_name && p.user_can_edit_material == 1 ) { %>js_meetings_edit_page_embed_dblclick_open" data-edit-href="<%= p.data_url %>" title="Double-click to start editing.<% } %>">
+    <% if ( p.locked_by_name ) { %>
+    <div class="locked_info_container">
+        <% if ( p.locked_by_self ) { %>
+        <h2><%= MTN.t('This document is locked by you') %></h2>
+        <p><%= MTN.t('Your previous session with this page was left open. To continue editing, click the link below.') %></p>
+        <p><a href="<%= p.data_url %>" class="js_meetings_continue_page_embed_open"><%= MTN.t('Continue editing') %></a></p>
+        <% } else { %>
+        <h2><%= MTN.t('This document is locked by user:') %></h2>
+        <h2><%== p.locked_by_name %></h2>
+        <p><%= MTN.t('You can edit the document once the user has finished editing the page.') %></p>
+        <% } %>
+    </div>
+    <% } %>
+    <div class="js_meetings_inplace_page_content_container">
+        <% if( ! ( navigator.userAgent.match(/iPhone|iPad|iPod/i) && navigator.userAgent.match(/ OS 4_/i) ) && p.user_can_edit_material ) { %>
+        <% if ( p.autolinked_content ) { %>
+        <%= p.autolinked_content %>
+        <p id="js_edit_tip" class="edit-tip" style="display:none;"><%= MTN.t('Click "Edit" button above to start editing.') %></p>
+        <% } else { %>
+        <% if ( p.material_class == 'agenda' && p.attached_to_matchmaking_event ) { %>
+        <p class="tip">
+        <%= MTN.t('%(S$READ the following instructions carefully.%) These instructions will be replaced when you fill the document. The other party will receive anything you write here as part of the invitation when you click "Ready".')%></p>
+        <p class="tip"><%= MTN.t('When filling the agenda, consider the following:') %></p>
+        <ul class="tip">
+            <li><%= MTN.t('Did the other party propose a preliminary agenda below? Take into account their wishes.') %></li>
+            <li><%= MTN.t('What is your company all about and what stage are you in?') %></li>
+            <li><%= MTN.t('What are you expecting from the other party?') %></li>
+            <li><%= MTN.t('What materials have you uploaded for the other party to look at before the meeting takes place? Consider uploading the following documents: executive summary and company presentation / pitch deck. You can add them on the left.') %></li>
+            <li><%= MTN.t('Are you providing a link to a product demo? Add instructions for getting started with the demo.') %></li>
+        </ul>
+        <p class="tip"><%= MTN.t('Clear? Now click "Edit" button above to fill the information.') %></p>
+        <% } else if ( p.material_class == 'agenda' ) { %>
+        <p class="tip">
+        <%= MTN.t('%(S$Click "Edit" button%) above to fill the agenda, so participants will know why the meeting takes place:') %>
+        </p>
+        <ul class="tip">
+            <li><%= MTN.t('What is the objective and desired outcome of the meeting?') %></li>
+            <li><%= MTN.t('What happens during the meeting?') %></li>
+            <li><%= MTN.t('How participants should prepare?') %></li>
+        </ul>
+        <p class="tip"><%= MTN.t("NOTE: We'll send the agenda along with the invitation email.") %></p>
+        <% } else if ( p.material_class == 'action_points' ) { %>
+        <p class="tip"><%= MTN.t('%(S$Click "Edit" button%) above to fill in the action points:') %></p>
+        <ul class="tip">
+            <li><%= MTN.t('What actions are we committing to?') %></li>
+            <li><%= MTN.t('Who is responsible for each action?') %></li>
+            <li><%= MTN.t('When will those actions be completed?') %></li>
+        </ul>
+        <p class="tip"><%= MTN.t("NOTE: We'll send the action points along with the meeting summary email 12 hours after the meeting.") %></p>
+        <% } else { %>
+        <p class="tip"><%= MTN.t('%(S$Click "Edit" button%) above to edit this document.') %></p>
+        <% } %>
+        </p>
+        <% } %>
+        <% } else { %>
+        <%= p.autolinked_content ? p.autolinked_content : '' %>
+        <% } %>
+    </div>
+</div>
+<div class="js_inplace_comments_container inplace_comments_container alpha_png"></div>
+<% } %>
+<% if ( p.type == 'chat' ) { %>
+<h2 class="section-sub-header"><%== p.title %></h2>
+<div class="js_inplace_comments_container inplace_comments_container alpha_png"></div>
+<% } %>
+
+
+
+

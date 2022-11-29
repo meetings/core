@@ -1,0 +1,16 @@
+div#lct-picker.m-modal
+    div.modal-header.back-button
+        h3!=MTN.t('Custom URL settings')
+        i.ico-leftarrow.back
+    div.modal-content.m-form
+        p!=MTN.t('Enter a link with instructions for joining the meeting with your custom tool.')
+        label!=MTN.t('Web address (URL)')
+            input#com-custom-uri(type='text',value=(meeting.online_conferencing_data && meeting.online_conferencing_data.custom_uri) ? meeting.online_conferencing_data.custom_uri : '',placeholder!=MTN.t('Copy the URL here'))
+        label!=MTN.t('Name of the tool')
+            input#com-custom-name(type='text',value=(meeting.online_conferencing_data && meeting.online_conferencing_data.custom_name) ? meeting.online_conferencing_data.custom_name : '',placeholder='')
+        label!=MTN.t('Tool instructions for participants')
+        textarea#com-custom-description=(meeting.online_conferencing_data && meeting.online_conferencing_data.custom_description) ? meeting.online_conferencing_data.custom_description : ''
+    div.modal-footer
+        div.buttons.right
+            a.button.blue.save(href='#')!=MTN.t('Save')
+

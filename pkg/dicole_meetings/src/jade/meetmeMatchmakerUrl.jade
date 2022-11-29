@@ -1,0 +1,9 @@
+if( locals.meetme_fragment )
+    p.your-url.m-form
+        | URL: 
+        ='https://' + window.location.hostname + '/meet/'
+        input.handle-value(type='text',value=meetme_fragment)
+        span.warning
+else
+    p.finding-url
+        !=MTN.t('Checking url...')

@@ -1,0 +1,368 @@
+# $Id: messages-sv.po,v 1.5 2010-01-15 19:35:03 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-05-07 11:48:39+0000\n"
+"PO-Revision-Date: 2005-05-07 11:48:39+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Access denied."
+msgstr "Tillgång avvisad."
+
+msgid "Add feed"
+msgstr "Lägg till en feed"
+
+msgid "Attached image"
+msgstr "Bifogad bild"
+
+msgid "Category"
+msgstr "Kategori"
+
+msgid "Comments"
+msgstr "Kommentarer"
+
+msgid "Confirmation"
+msgstr "Bekräftelse"
+
+msgid "Contributor"
+msgstr "Bidragare"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "Coverage"
+msgstr "Täckning"
+
+msgid "Creative Commons"
+msgstr "Creative Commons"
+
+msgid "Custom title"
+msgstr "Egen rubrik"
+
+msgid "Description"
+msgstr "Beskrivning"
+
+msgid "Edit"
+msgstr "Redigera"
+
+msgid "Email this"
+msgstr "Skicka som e-post"
+
+msgid "Enclosure"
+msgstr "Bilaga"
+
+msgid "Error reading OPML file: %1"
+msgstr ": %1"
+
+msgid "Export feeds (OPML)"
+msgstr "(OPML)"
+
+msgid "Feed details"
+msgstr ""
+
+msgid "Feed reader"
+msgstr ""
+
+msgid "Feed Reader"
+msgstr ""
+
+msgid "Feed reader is a tool for reading Atom and RSS news feeds."
+msgstr "."
+
+msgid "Feeds"
+msgstr ""
+
+msgid "Feed successfully removed."
+msgstr "."
+
+msgid "Feed URL"
+msgstr "URL"
+
+msgid "Feed XML"
+msgstr "XML"
+
+msgid "Folder"
+msgstr "Mapp"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "From"
+msgstr "Från"
+
+msgid "Generator"
+msgstr "Generator"
+
+msgid "Identifier"
+msgstr "Identifier"
+
+msgid "Imported %1 feed(s) from the OPML file."
+msgstr "Importerade %1 feed(s) från OPML filen."
+
+msgid "Import"
+msgstr "Importera"
+
+msgid "Import OPML file"
+msgstr "Importera OPML fil"
+
+msgid "IM this"
+msgstr ""
+
+msgid "Keywords separated with spaces"
+msgstr "Nyckelord skilda med mellanslag"
+
+msgid "Language"
+msgstr "Språk"
+
+msgid "Latest posts in folder %1"
+msgstr "Senaste  i mapp %1"
+
+msgid "Last post"
+msgstr "Senaste post"
+
+msgid "Last updated"
+msgstr "Senast uppdaterad"
+
+msgid "Latest posts from all feeds based on category %1"
+msgstr " %1"
+
+msgid "Latest posts from all feeds"
+msgstr ""
+
+msgid "Maintain feed reader"
+msgstr ""
+
+msgid "Manage feed reader"
+msgstr ""
+
+msgid "Managing editor"
+msgstr ""
+
+msgid "No posts."
+msgstr "."
+
+msgid "Notes"
+msgstr "Anteckningar"
+
+msgid "Number of readers"
+msgstr "Antal läsare"
+
+msgid "OPML file to upload"
+msgstr "OPML fil"
+
+msgid "Provided URL is not a valid feed: %1"
+msgstr ": %1"
+
+msgid "Public"
+msgstr "Allmän"
+
+msgid "Publisher"
+msgstr ""
+
+msgid "Relation"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Rights"
+msgstr "Rättigheter"
+
+msgid "Source"
+msgstr ""
+
+msgid "Subject"
+msgstr ""
+
+msgid "Technorati this"
+msgstr ""
+
+msgid "This feed will be removed from your list of feeds. Are you sure?"
+msgstr "?"
+
+msgid "Title"
+msgstr ""
+
+msgid "Tree of feeds"
+msgstr ""
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Unable to fetch user object with id %1."
+msgstr "%1."
+
+msgid "Unable to parse Atom feed: %1"
+msgstr ": %1"
+
+msgid "Unable to parse RSS feed: %1"
+msgstr ": %1"
+
+msgid "Upload failed: %1"
+msgstr ": %1"
+
+msgid "Upload"
+msgstr "Ladda upp"
+
+msgid "URL must begin with http:// or https://"
+msgstr "URL måste börja med http:// eller https://"
+
+msgid "Webmaster"
+msgstr "Webmaster"
+
+msgid "Website"
+msgstr "Website"
+
+msgid "%1 is not a valid number."
+msgstr "%1 är inte  giltig nummer/siffra?."
+
+msgid "%1 - Readers: %2 - Updated: %3"
+msgstr "%1 - Läsare: %2 - Uppdaterad: %3"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Discovered feeds"
+msgstr "feeds"
+
+msgid "Discover feeds"
+msgstr "feeds"
+
+msgid "URL where to search for feeds"
+msgstr "URL"
+
+msgid "Found %1 potential feeds. Click the feed title to add it."
+msgstr "%1 ."
+
+msgid "Back to add form"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "New search"
+msgstr ""
+
+msgid "You may use these bookmarklets to subscribe to a website which has a feed available. To install the bookmarklet, add the bookmarklet link to your bookmarks. To use it, simply just click the bookmark when you are on a page you want to subscribe with."
+msgstr "."
+
+msgid "Bookmarklets"
+msgstr ""
+
+msgid "Subscribe with feed reader"
+msgstr ""
+
+msgid "Bookmarklet"
+msgstr ""
+
+msgid "Available bookmarklets"
+msgstr "Tilgängliga bookmarklets"
+
+msgid "Modifications to feed were successfully saved."
+msgstr "."
+
+msgid "No feeds found on the given address."
+msgstr "."
+
+msgid "Download playlist"
+msgstr ""
+
+msgid "Link"
+msgstr "Länk"
+
+msgid "Show on summary page"
+msgstr ""
+
+msgid "Remove from summary page"
+msgstr ""
+
+msgid "Group feedreader moderator"
+msgstr ""
+
+msgid "Group feedreader user"
+msgstr ""
+
+msgid "Deny group feedreader use"
+msgstr ""
+
+msgid "Deny group feedreader moderation"
+msgstr ""
+
+msgid "Feedreader rights"
+msgstr ""
+
+msgid "Add shared tool"
+msgstr ""
+
+msgid "Available blog feeds"
+msgstr ""
+
+msgid "Tool"
+msgstr ""
+
+msgid "Feed (%1) successfully added."
+msgstr "Feed (%1)."
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Error when updating feed (%1): %2"
+msgstr " (%1): %2"
+
+msgid "Feed successfully updated."
+msgstr "."
+
+msgid "You are adding a pre-defined feed. Please select a folder for the feed."
+msgstr "."
+
+msgid "Add shared weblog"
+msgstr ""
+
+msgid "Deny user feedreader managing"
+msgstr ""
+
+msgid "Read feed reader"
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
+msgid "Blogs shared directly to this group"
+msgstr ""
+
+msgid "Blogs shared directly to you"
+msgstr ""
+
+msgid "Publicly available blogs"
+msgstr ""
+
+msgid "Subscribe comments"
+msgstr ""
+
+msgid "Feed reader: independent extra summary boxes"
+msgstr "Feed reader: independent extra summary boxes"
+
+msgid "Feed reader summary boxes to summary even if feed reader is not selected"
+msgstr "Feed reader summary boxes to summary even if feed reader is not selected"
+
+msgid "Lastest posts in folder %1"
+msgstr "Lastest posts in folder %1"
+
+msgid "Latest news in groups feed reader."
+msgstr "Latest news in groups feed reader."
+
+msgid "Latest news in your feed reader."
+msgstr "Latest news in your feed reader."
+
+msgid "Latest posts"
+msgstr "Latest posts"
+
+msgid "Exclude from digest"
+msgstr "Exclude from digest"

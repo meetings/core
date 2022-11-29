@@ -1,0 +1,16 @@
+sub execute {
+    my ( $self ) = @_;
+
+    my $server = 'http://work-dev.dicole.net/events_json/';
+
+    my $res_open = Dicole::Utils::HTTP->json_api_call( $server . 'passthrough', {
+        auth_domain => 'work-dev.dicole.net',
+        token => 'v1_e_2943_0_0_wnMho6drOQuEXephHDa0Yng5TtM',
+        method => 'user_information',
+        params => { user => 5},
+    } );
+
+    d( $res_open );
+}
+
+1;

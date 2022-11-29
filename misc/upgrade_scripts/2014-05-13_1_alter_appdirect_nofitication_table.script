@@ -1,0 +1,10 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_appdirect_notification add event_url text after payload');
+}
+
+1;
+

@@ -1,0 +1,25 @@
+div.setting-head
+    h3.setting-title
+        i.icon.ico-timeline
+        !=MTN.t('Timeline settings')
+    p.setting-desc!=MTN.t('Manage which of your calendars are shown on the timeline.')
+div.setting-content
+    div.sources.m-form
+        if( _.size(sources) )
+            each source in sources
+                div.setting-section
+                    each suggestion,index in source
+                        if( index === 0 )
+                            h3.setting-sub-title=suggestion.container_name
+                        label.slider
+                            span.slider-text=suggestion.name
+                            span.js_form_slider_button.slider-button(data-setting=suggestion.uid,class=suggestion.enabled ? 'on-position' : 'off-position')
+        else
+            p!=MTN.t('You have no calendars connected with your account. Connect your third-party accounts or devices to import your calendar events to your Meeting Timeline.')
+            p
+                a.button.blue(href='/meetings/user/settings/calendar')!=MTN.t('Calendar integration')
+
+if( _.size(sources) )
+    div.setting-footer
+        a.button.blue.save-timeline(href='#')
+            span.label!=MTN.t('Save')

@@ -1,0 +1,180 @@
+[%#
+last_active_users => [
+	{
+		name => 'Johnny',
+		image_90 => '/images/default_profile_90.png',
+		url => 'http://www.dicole.com',
+	},
+	{
+		name => 'Juba',
+		image_90 => '/images/default_profile_90.png',
+		url => 'http://www.dicole.com',
+	},
+	{
+		name => 'Antero',
+		image_90 => '/images/default_profile_90.png',
+		url => 'http://www.dicole.com',
+	},
+	{
+		name => 'Santeri',
+		image_90 => '/images/default_profile_90.png',
+		url => 'http://www.dicole.com',
+	},
+	{
+		name => 'Keikari',
+		image_90 => '/images/default_profile_90.png',
+		url => 'http://www.dicole.com',
+	}
+],
+
+links => [
+		{
+		name => 'Rock',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Skillz',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Parkour',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Vegetarism',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Dogs',
+		class => 'tagSecondary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Martial Arts',
+		class => 'tagSecondary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Pop',
+		class => 'tagSecondary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Networking',
+		class => 'tagTertiary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		value => 0,
+		name => 'Techno',
+		class => 'tagTertiary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Heavy Metal',
+		class => 'tagTertiary'
+		link => 'http://www.dicole.com'
+		}
+		{
+		name => 'Parkour',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Vegetarism',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Dogs',
+		class => 'tagSecondary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Martial Arts',
+		class => 'tagSecondary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Pop',
+		class => 'tagSecondary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Networking',
+		class => 'tagTertiary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Techno',
+		class => 'tagTertiary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Parkour',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Vegetarism',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Dogs',
+		class => 'tagSecondary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Martial Arts',
+		class => 'tagSecondary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Pop',
+		class => 'tagSecondary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Networking',
+		class => 'tagTertiary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Techno',
+		class => 'tagTertiary'
+		link => 'http://www.dicole.com'
+		},
+]
+%]
+<div class="networking_last_active_users">
+	[%- FOREACH user IN last_active_users %]
+	<a href="[% user.url | html %]">
+[% IF user.image_90 %]
+		<img class="networking_profile" src="[% user.image_90 | html %]" title="[% user.name | html %]">
+[% ELSE %]
+		<img class="networking_profile" src="/images/default_profile_90.png" title="[% user.name | html %]" />
+[% END %]
+	</a>
+	[%- END %]
+	<br />
+
+	<div id="networking_add_more_users">
+		<a href="[%- show_all_url | html %]">&darr; [% MSG('Show all users') | html %]</a>
+	</div>
+	
+	<span class="boxLegend">[% MSG('Skills and interests') | html %]</span>
+	<div>
+		[%- first = 1 %]
+		<span class="miniLinkCloud miniTagCloud">
+		[%- FOREACH item IN links %]
+    <a class="tag [% item.class %]" href="[% item.link %]">[% item.name %]</a>
+		[%- END %]
+		</span>
+	</div>
+
+</div>

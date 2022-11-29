@@ -1,0 +1,13 @@
+<select
+[%- IF itemparams.id %] id="[% itemparams.id %]"[% END %]
+[%- IF itemparams.name %] name="[% itemparams.name %]"[% END %]
+[%- IF itemparams.class %] class="[% itemparams.class %]"[% END %]
+[%- IF itemparams.autourl %] onchange="if(this.options[this.selectedIndex].value) location.href=this.options[this.selectedIndex].value"
+[%- ELSIF itemparams.autosubmit %] onchange="void(this.form.submit())"[% END -%]>
+[%- FOREACH option = itemparams.options %]
+    <option value="[% option.value %]"
+[%- IF option.selected %] selected="[% option.selected %]"[% END %]>
+        [% option.text %]
+    </option>
+[%- END %]
+</select>

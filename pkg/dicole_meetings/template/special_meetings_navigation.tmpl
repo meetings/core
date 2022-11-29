@@ -1,0 +1,26 @@
+<div id="content-wrapper">
+
+    <!-- Notifications about new stuff -->
+    <div id="new-features" style="display:none;">
+    </div>
+
+    <!-- Header -->
+    <div id="header-wrapper">
+        <div id="header-menu-positioner"></div>
+    </div>
+
+
+    <!-- Messages -->
+    <div id="message-box-container">
+        [% IF messages.size > 0 %]
+        <a class="message-box" onclick="dojo.destroy(this);">
+            [% FOREACH message IN messages %]
+            <div style="clear:both;">
+                <span class="[% message.type %]-icon"></span><span class="[% message.type %]">[% message.text | html %]</span>
+            </div>
+            [% END %]
+        </a>
+        [% END %]
+    </div>
+
+

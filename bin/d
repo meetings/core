@@ -1,0 +1,59 @@
+#!/usr/bin/perl
+
+my $repo = '/opt/meetings/dcp/';
+my $cd = "cd $repo";
+my $install = `$cd; bin/local_config website_dir`;
+my $cdi = "cd $install";
+
+use strict;
+
+$ENV{OPENINTERACT2} = $install;
+
+my $alias = shift @ARGV;
+if ( $alias ) {
+    system( sprintf( commands()->{$alias}, join( " ", @ARGV ) ) );
+}
+else {
+        print "Usage:\n";
+    my $h = commands();
+    for my $key ( sort keys %$h ) {
+        print $key . " => " . $h->{$key} . "\n";
+    }
+
+    print "\n";
+}
+
+sub commands {
+
+    return {
+        l => $cd . '; perl Build.PL; ./Build; sudo ./Build install | grep -v Skip',
+        p => $cd . '; bin/devcopy',
+        t => $cd . '; bin/tinycopy',
+        i => $cd . '; bin/devinst2 %s',
+        s => $cd . '; bin/supacopy %s',
+        c => $cd . 'pkg; TRGT="%s"; if [ -d $TRGT ]; then cd $TRGT; else cd dicole_$TRGT; fi; ls OpenInteract2/Action/*.pm|xargs -n1 perl -wc -I . -I ' . $install . 'tmplib/',
+        mc => $cd . 'pkg; TRGT="meetings"; if [ -d $TRGT ]; then cd $TRGT; else cd dicole_$TRGT; fi; ls OpenInteract2/Action/DicoleMeetings%s.pm|xargs -n1 perl -wc -I . -I ' . $install . 'tmplib/',
+        a => '/etc/init.d/lighttpd restart',
+        da => 'sleep 1; /etc/init.d/lighttpd restart',
+        d => 'd i %s; d a;',
+        b => 'oi2_manage connect_database',
+        swd => $cd . '; pwd',
+        iwd => $cdi . '; pwd',
+        r => $cd . '; bin/rollout %s',
+        w => $cd . '; bin/restart_domain_workers `d lc meetings_domain`',
+        dfw => $cd . '; bin/run_logging_debug_workers.sh work_on_fg',
+        dbw => $cd . '; bin/run_logging_debug_workers.sh work_on_bg',
+        daw => $cd . '; bin/run_logging_debug_workers.sh work_on_ag',
+        lc => $cd . '; bin/local_config %s',
+        mwcss => $cd . '; iwatch -v -e modify -c "' . "/bin/bash -c 'source /etc/environment; bin/mmeets_css'" . '" -r pkg/dicole_meetings/html/scss',
+        mwjade => $cd . '; iwatch -v -e modify -c "' . "/bin/bash -c 'source /etc/environment; bin/mmeets_jade'" . '" -r pkg/dicole_meetings/src/jade',
+        mwjs => $cd . '; iwatch -v -e modify -c "' . "/bin/bash -c 'source /etc/environment; bin/mmeets_js'" . '" -r pkg/dicole_meetings/html/js',
+        mwall => 'parallel sh -c -- "d mwcss" "d mwjade" "d mwjs"',
+        arts => $cdi . '; date > html/images/arts.txt',
+        gs => "echo $cd",
+        gi => "echo $cdi",
+        pmt => "$cd; bin/output_utc_date_in_touch_format",
+        umt => "$cd; bin/unify_mtimes_recursively --dir $install/html --date %s",
+        www => "d i meetings; pkill oi2_manage; d dfw; d dfw; d dbw; d dbw; d daw",
+    };
+}

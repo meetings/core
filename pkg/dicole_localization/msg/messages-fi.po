@@ -1,0 +1,27 @@
+
+msgid "Customizable strings"
+msgstr "Omavalintaiset käännökset"
+
+msgid "Custom value"
+msgstr "Oma käännös"
+
+msgid "Key"
+msgstr "Avain"
+
+msgid "Language selection"
+msgstr "Kielen valinta"
+
+msgid "Localization manager"
+msgstr "Käännösten hallinta"
+
+msgid "Manage domain localizations"
+msgstr "Ympäristön käännösten hallinta"
+
+msgid "Manage group localizations"
+msgstr "ryhmän käänösten hallinta"
+
+msgid "User can manage domain localizations"
+msgstr "Käyttäjä voi hallita ympäristön käännöksiä"
+
+msgid "User can manage group localizations"
+msgstr "Käyttäjä voi hallita ryhmän käännöksiä"

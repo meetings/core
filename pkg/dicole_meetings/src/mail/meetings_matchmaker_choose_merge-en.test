@@ -1,0 +1,68 @@
+[%- IF test_case == 'name_and_company' %]
+[%-
+
+matchmaker_name = 'Jorma Perälä'
+matchmaker_company = 'Superstartup'
+matchmaker_email = 'jorma@superstartup.com'
+user_email = 'isokenka.investori@investaattori.com'
+user_name = 'Isokenkä Investori'
+verify_url = 'http://www.dicole.com/'
+matchmaker_event = 'Arctic 15'
+
+%]
+[% END %]
+
+[%- IF test_case == 'no_company' %]
+[%-
+
+matchmaker_name = 'Jorma Perälä'
+matchmaker_company = ''
+matchmaker_email = 'jorma@superstartup.com'
+user_email = 'isokenka.investori@investaattori.com'
+user_name = 'Isokenkä Investori'
+verify_url = 'http://www.dicole.com/'
+matchmaker_event = 'Arctic 15'
+
+%]
+[% END %]
+
+[%- IF test_case == 'no-name' %]
+[%-
+
+matchmaker_name = 'jorma@superstartup.com'
+matchmaker_company = 'Superstartup'
+matchmaker_email = 'jorma@superstartup.com'
+user_email = 'isokenka.investori@investaattori.com'
+user_name = 'Isokenkä Investori'
+verify_url = 'http://www.dicole.com/'
+matchmaker_event = 'Arctic 15'
+
+%]
+[% END %]
+
+[%- IF test_case == 'no-company-no-name' %]
+[%-
+
+matchmaker_name = 'jorma@superstartup.com'
+matchmaker_company = ''
+matchmaker_email = 'jorma@superstartup.com'
+user_email = 'isokenka.investori@investaattori.com'
+user_name = 'Isokenkä Investori'
+verify_url = 'http://www.dicole.com/'
+matchmaker_event = 'Arctic 15'
+
+%]
+[% END %]
+
+[%- IF test_case == 'MeetMe' %]
+[%-
+
+matchmaker_name = 'Jorma Perälä'
+matchmaker_company = 'Superstartup'
+matchmaker_email = 'jorma@superstartup.com'
+user_email = 'isokenka.investori@investaattori.com'
+user_name = 'Isokenkä Investori'
+verify_url = 'http://www.dicole.com/'
+
+%]
+[% END %]

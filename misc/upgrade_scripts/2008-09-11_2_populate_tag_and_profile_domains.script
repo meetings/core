@@ -1,0 +1,156 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+    
+    my $profiles = CTX->lookup_object('networking_profile')->fetch_group;
+    for my $profile ( @$profiles ) {
+        next if $profile->domain_id;
+        
+        my $domains = $self->_user_domains( $profile->user_id );
+        my $tags = CTX->lookup_action('tagging')->execute( get_tags => {
+            object => $profile,
+        } );
+        
+        for my $domain_id ( @$domains ) {
+            my $new = CTX->lookup_object('networking_profile')->new;
+            $new->{$_} = $profile->{$_} for ( qw/
+                user_id
+                portrait
+                portrait_thumb
+                contact_organization
+                contact_title
+                contact_address_1
+                contact_address_2
+                contact_email
+                contact_skype
+                contact_phone
+                personal_blog
+                personal_facebook
+                personal_jaiku
+                personal_linkedin
+                personal_motto
+                prof_description
+                employer_title
+                employer_name
+                employer_address_1
+                employer_address_2
+                employer_phone
+                educ_school
+                educ_degree
+                educ_other_degree
+                educ_target_degree
+                educ_skill_profile
+            / );
+            $new->domain_id( $domain_id );
+            $new->save;
+            CTX->lookup_action('tagging')->execute( clone_tags => {
+                from_object => $profile,
+                to_object => $new,
+                to_domain_id => $domain_id,
+            } );
+        }
+# Store the original
+#         CTX->lookup_action('tagging')->execute( remove_tags => {
+#             object => $profile,
+#         } );
+#         $profile->remove;
+    }
+    
+    my $contacts = CTX->lookup_object('networking_contact')->fetch_group;
+    for my $contact ( @$contacts ) {
+        next if $contact->domain_id;
+        
+        my $user_domains = $self->_user_domains( $contact->user_id );
+        my $contact_domains = $self->_user_domains( $contact->contacted_user_id );
+        my %domain_count = ();
+        $domain_count{$_}++ for (@$user_domains, @$contact_domains);
+        my @shared_domains = map { ( $domain_count{$_} > 1 ) ? $_ : () } keys %domain_count;
+        
+        for my $shared_domain_id ( @shared_domains ) {
+            next unless $shared_domain_id;
+            my $new = CTX->lookup_object('networking_contact')->new;
+            $new->{$_} = $contact->{$_} for ( qw/
+                user_id
+                contacted_user_id
+            / );
+            $new->domain_id( $shared_domain_id );
+            $new->save;
+        }
+    }
+    
+    my %processed = ();
+    my $attaches = CTX->lookup_object('tag_attached')->fetch_group;
+    for my $attach ( @$attaches ) {
+        next if $processed{$attach->object_type}{$attach->object_id};
+        $processed{$attach->object_type}{$attach->object_id}++;
+        my $object = eval { $attach->object_type->fetch( $attach->object_id ) };
+        next unless $object;
+        next if $attach->object_type eq 'OpenInteract2::NetworkingProfile';
+        
+        my $group = 0;
+        if ( $attach->object_type eq 'OpenInteract2::PresentationsPrese' ) {
+            $group = $object->group_id;
+        }
+        elsif ( $attach->object_type eq 'OpenInteract2::WikiPage' ) {
+            $group = $object->groups_id;
+        }
+        elsif ( $attach->object_type eq 'OpenInteract2::BlogsSeed' ) {
+            $group = $object->group_id;
+        }
+        elsif ( $attach->object_type eq 'OpenInteract2::BlogsEntry' ) {
+            $group = $object->group_id;
+        }
+        
+        next unless $group;
+        my $domains = $self->_group_domains( $group );
+        my $d = pop @$domains;
+        $self->_assign_single_domain_for_object( $object, $d || 0 );
+    }
+
+}
+
+sub _group_domains {
+    my ( $self, $group_id ) = @_;
+    
+    return CTX->lookup_action('dicole_domains')->execute( get_group_domains => {
+        group_id => $group_id
+    } );
+}
+
+sub _user_domains {
+    my ( $self, $user_id ) = @_;
+    
+    return CTX->lookup_action('dicole_domains')->execute( get_user_domains => {
+        user_id => $user_id
+    } );
+}
+
+sub _assign_single_domain_for_object {
+    my ( $self, $object, $domain_id ) = @_;
+    
+    my $attaches = CTX->lookup_object('tag_attached')->fetch_group( {
+        where => 'object_id = ? AND object_type = ?',
+        value => [ $object->id, ref( $object ) ],
+    } );
+    my @tag_ids = map { $_->tag_id } @$attaches;
+    my $tags = CTX->lookup_object('tag')->fetch_group( {
+        where => Dicole::Utils::SQL->column_in( tag_id => \@tag_ids ),
+    } );
+    for my $tag ( @$tags ) {
+        next if $tag->domain_id;
+        $tag->domain_id( $domain_id );
+        $tag->save;
+    }
+    my $indexes = CTX->lookup_object('tag_index')->fetch_group( {
+        where => 'object_id = ? AND object_type = ?',
+        value => [ $object->id, ref( $object ) ],
+    } );
+    for my $index ( @$indexes ) {
+        next if $index->domain_id;
+        $index->domain_id( $domain_id );
+        $index->save;
+    }
+}
+
+1;

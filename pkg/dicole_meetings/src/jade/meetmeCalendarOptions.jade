@@ -1,0 +1,28 @@
+if( user.suggestion_sources && user.suggestion_sources.length > 0 )
+    if( mode === 'closed' )
+        - var selected_cals = _.size(matchmaker.source_settings.enabled);
+        - var unselected_cals = _.size(matchmaker.source_settings.disabled);
+        - var new_cals = user.suggestion_sources.length - ( selected_cals + unselected_cals );
+        - var xtra = (unselected_cals === 0 && selected_cals === 0) ? _.where(user.suggestion_sources, {'selected_by_default':1}).length : 0;
+        // TODO: Checking that there actually is a default cal
+        p.sources-info!=MTN.t('Connected calendars: %1$s active %2$s inactive and %3$s new calendars', {params : [ selected_cals + xtra, unselected_cals, new_cals ]}) + ' '
+            a(href='#').open-cal-options!=MTN.t('change')
+        if( user.suggestion_sources.length > matchmaker.source_settings.disabled.length + matchmaker.source_settings.enabled.length )
+            span.new-cals-note!=MTN.t('( NOTE: Calendars not configured )')
+    else
+        p.sources-info!=MTN.t('Select which calendars you want to check for your availability')
+        div.m-form
+            - user.suggestion_sources = _.sortBy(user.suggestion_sources, function(o){ return o.name.toLowerCase(); });
+            - var grouped_sources = _.groupBy(user.suggestion_sources, function(r) { return r.container_id; });
+            each source in grouped_sources
+                div.cal-section
+                    each suggestion,i in source
+                        if( i === 0 )
+                            h3.cal-title=suggestion.container_name
+                        label.checkbox
+                            if( matchmaker.source_settings && suggestion.uid in matchmaker.source_settings.enabled )
+                                input.cal-box(type='checkbox',name='calendars',checked='checked',data-id=suggestion.uid)
+                                = suggestion.name
+                            else
+                                input.cal-box(type='checkbox',name='calendars',data-id=suggestion.uid) 
+                                = suggestion.name

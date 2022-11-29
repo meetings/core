@@ -1,0 +1,80 @@
+[%- IF messages -%]
+    [%- FOREACH message = messages -%]
+<a class="toolInfoRight2 [% 'failure' IF message.code == '0' %][% 'success' IF message.code == '1' %][% 'warning' IF message.code == '2' %]" id="toolInfoRightBox_[% loop.count %]" href="#" onclick="document.getElementById('toolInfoRightBox_[% loop.count %]').style.display = 'none'; return false;" >
+    <span class="title2">[% message.title | html %]</span>
+    <span class="content2">[%- message.content | html -%]</span>
+</a>
+    [%- END -%]
+[%- END -%]
+
+<div class="media">
+
+<div class="media-top-control"> 
+ 
+<div class="media-back-button"><a href="[% back_link %]"><span>Back to media list</span></a></div>
+ 
+<h2>Add a media resource</h2>
+
+</div>
+
+<div id="media-add"> 
+
+<ul class="upload-options">
+  <li class="unselected" id="media-add-tab-upload-li"><h3><a id="media-add-tab-upload" href="#" onclick="return false;">Upload</a></h3>
+  <p id="media-add-tab-upload-explanation" class="explanation">Upload a media file from your computer.</p></li>
+  <li class="unselected" id="media-add-tab-fetch-li"><h3><a id="media-add-tab-fetch" href="#" onclick="return false;">Fetch</a></h3>
+  <p id="media-add-tab-fetch-explanation" class="explanation">Use media provided by a third party service, such as YouTube or SlideShare.</p></li>
+
+</ul>
+                     
+
+<div class="media-add-form">
+<form method="post" accept-charset="utf-8" enctype="multipart/form-data">
+
+<div id="media-add-tab-upload-content" style="display: none;">
+<div class="upload">
+
+<input type="file" name="upload_attachment" /><input class="submitButton" type="submit" value="Upload" name="upload_submit" />
+
+<p class="explanation">Supported file formats: JPG, PNG, GIF, MOV, MPG, AVI, FLV, MP3</p>
+
+</div>
+</div>
+<div id="media-add-tab-fetch-content" style="display: none;">
+<div class="fetch">
+
+<p>Do you use one of these?</p>
+
+<div align="center" class="logos">
+<a class="youtube" href="#"><span>YouTube</span></a>
+<a class="slideshare" href="#"><span>SlideShare</span></a>
+<a class="ovi" href="#"><span>OVI</span></a>
+</div>
+<div class="submit_seed">
+<input type="text" name="fetch_seed" value="Paste address here" /> <input class="submitButton" type="submit" value="Fetch" name="fetch_submit" />
+</div>
+
+</div>
+<div class="divider"><span>or</span></div>
+
+
+
+<div class="embed">
+
+
+<textarea cols="50" rows="15" name="embed_seed">Paste embed code here</textarea>
+
+<p class="explanation"><strong>What's this?</strong> Media services usually provide you with a code you can use to embed their media onto another site. Normally embed codes look something like this: <tt>&lt;object width="425"...</tt> Copy this code from the media service into your clipboard and paste it here.<!-- <a href="#">[hide this message]</a></p>-->
+
+<input class="submitButton" type="submit" value="Embed" name="embed_submit" />
+
+</div>
+</div>
+
+</form>
+</div>
+
+<div>
+
+</div>
+</div>

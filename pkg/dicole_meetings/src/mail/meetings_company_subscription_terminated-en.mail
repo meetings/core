@@ -1,0 +1,30 @@
+[% MTN.t('Your %1$s PRO subscription has ended', [ service_name ] ) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Subscription cancelled') %]
+[% action_text_type = 'large' %]
+<<<text_and_logo>>>
+
+<<<bubble>>>
+
+<<<bold>>><<<p>>>[% MTN.t('Your %1$s PRO subscription paid by %2$s has been terminated.',[ service_name, organization] ) %]<<</p>>><<</bold>>>
+
+<<<p>>>[% MTN.t('You may still access your meeting information and materials via %1$s.', [ service_name ] ) %]<<</p>>>
+
+<<<p>>>[% MTN.t('All your information in the service can be removed permanently through the settings menu.') %]<<</p>>>
+<<<p>>>[% MTN.t('Log in to access your data or to remove your account:') %]<<</p>>>
+
+
+
+[% url = login_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=firstlogin' %]
+[% showtext = 1 %]
+[% text = MTN.t('Log in') %]
+<<<blue_button>>>
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

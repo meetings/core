@@ -1,0 +1,176 @@
+.user_about_me_header, .user_about_me_container,
+.input_field.user_role_container,
+.input_field.user_location_container,
+.user_create_links_container,
+.user_create_links_header,
+.tags_container {
+display: none;
+}
+
+.events_show_info_container_rsvp .middle-button {
+display: none;
+}
+
+.events_show_info_container_rsvp .seats {
+display: none;
+}
+
+.desktopBoxTitle {
+font-size: 16px;
+}
+
+.desktop_box .bt {
+    display: none;
+}
+
+#description h3 {
+font-weight: bold;
+}
+
+#event-info #description, #event-info #abstract {
+padding-left: 30px;
+padding-right: 30px;
+font-size: 10pt;
+}
+
+div .events_listing_navigation .i3 {
+padding-top: 10px;
+}
+
+div.contentItemContainer {
+padding: 0px;
+}
+
+.toolContentBox-cb .bt {
+display:none;
+}
+.toolContentBox-cb .i3 {
+padding-top: 0px;
+}
+.action_networking_task_show_profile .tool_2_column_td_1 { display: none; }
+
+.content { width: 953px; } /** fixes opera paddings **/
+
+.front_event_box {
+margin: 0 0 10px 0;
+padding: 5px 0 0 0;
+}
+
+.summary_top_container {
+padding-left: 18px;
+padding-right: 17px;
+}
+.summary_right_box_container {
+padding-left: 9px;
+}
+.summary_left_box_container .summary_box_container {
+margin-bottom: 9px;
+}
+.wiki_summary_page_8195 .summary_box_title {
+display: none;
+}
+.wiki_summary_page_8195 .summary_box_container {
+padding: 5px;
+border: 0px solid #000;
+background: none;
+}
+.summary_box_title {
+background: url("/images/tuuma/keltainen_gradientti.png") top left repeat-x;
+height: 46px;
+padding: 0px 0px 0px 20px;
+line-height: 46px;
+}
+.summary_box_container {
+/**background: url("/images/tuuma/harmaa_gradientti.png") top left repeat-x white;**/
+padding: 5px 15px 10px;
+}
+.summary_box_title, .summary_box_title a {
+color: #fff;
+}
+
+div.toolContentBox span.boxLegend {
+background-image: url("/images/tuuma/keltainen_gradientti.png");
+height: 46px;
+padding: 0px 0px 0px 20px;
+line-height: 46px;
+color: #fff;
+}
+
+.desktopBoxContent {
+/**background: url("/images/tuuma/harmaa_gradientti.png") left -48px repeat-x white;**/
+}
+
+.toolContentBox-cb .i3 {
+/**background: url("/images/tuuma/harmaa_gradientti.png") left top repeat-x white;**/
+
+}
+
+#navi_header {
+position:relative;
+
+}
+#navi_tools {
+
+}
+#navi_header #navi_tools a {
+  padding-top: 69px;
+}
+#navi_login {
+margin-right: 20px;
+}
+
+#navi_login a, #navi_login div {
+margin-top: 0px;
+}
+#navi_logout_link {
+padding-top: 0px;
+}
+
+#navi_login_link {
+  background: none;  padding-right: 0px;
+}
+
+td.desktopBoxTitle, td.desktopBoxControllers {
+background: url("/images/tuuma/keltainen_gradientti.png") top left repeat-x;
+height: 46px;
+line-height: 46px;
+padding: 0 0 0 20px;
+}
+
+td.desktopBoxTitle, td.desktopBoxTitle a {
+color: #fff;
+}
+
+/* style fixes */
+#navi_tools a:hover{color:#fc990c;}
+#navi_tools a.selected:hover{color:#fff;}
+.front_event_link {
+  color: #0061A0;
+}
+.front_event_link:hover { color: #0061A0; text-decoration:underline; }
+.summary_box_title, .summary_box_title a {
+  color: #FFFFFF; font-size:16px; font-weight:bold; letter-spacing:0;
+}
+
+div.summary_box_content{margin-top:5px;}
+.navi_other_areas{color:#2f9de4;}
+.navi_other_areas:hover{color:#eee !important;}
+#navi_logged_in_as a {
+  color: #2f9de4;
+}
+#navi_logged_in_as a:hover {
+  color: #eee !important;
+}
+#navi_logout_link{color:#2f9de4;}
+#navi_logout_link:hover{color: #eee !important;}
+
+#navi_logo_link {
+width:300px;
+height:130px;
+/**background-image: none;**/
+}
+
+/*IE7 fixes*/
+div.summary_left_box_container, div.summary_right_box_container{*display:inline;}
+#navi_tools, #navi_login{*display:block; *width: expression('500px');}
+

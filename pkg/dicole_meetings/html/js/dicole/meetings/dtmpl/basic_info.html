@@ -1,0 +1,143 @@
+<!-- Meeting info  -->
+<h1>
+    <% if(p.is_manager){ %>
+    <a id="js_set_title" class="js_meetings_set_title_open js_tooltip" data-tooltip-text="<%= MTN.t('Click to change title.') %>" href="#">
+        <%== p.title_string %>
+    </a>
+    <% } else { %>
+    <%== p.title_string %>
+    <% } %>
+</h1>
+
+<p class="date">
+<i class="ico-calendar"></i>
+<% if ( p.is_manager && ! p.cancelled_epoch ) { %>
+<a id="js_set_time" href="#" class="js_set_time js_tooltip" data-tooltip-text="<%= MTN.t('Click to edit date and time.') %>">
+    <% if( p.desktop_calendar.day !== '?' ) { %>
+        <%== p.desktop_calendar.weekday + ' ' + p.desktop_calendar.day + ' ' + p.desktop_calendar.month %>
+        <i class="ico-time"></i><%== p.time_string + ' ('+p.timezone_string+')' %>
+    <% } else { %>
+        <%= MTN.t('Set the date and time') %>
+    <% } %>
+    </a>
+    <% } else { %>
+        <% if( p.desktop_calendar.day !== '?' ) { %>
+            <%== p.desktop_calendar.weekday + ' ' + p.desktop_calendar.day + ' ' + p.desktop_calendar.month %>
+            <i class="ico-time"></i><%== p.time_string + ' ('+p.timezone_string+')' %>
+        <% } else { %>
+            <%= MTN.t('Date and time not set.') %>
+        <% } %>
+    <% } %>
+</p>
+
+<p class="location">
+    <i class="ico-location"></i>
+    <% if( p.is_manager ) { %>
+    <a id="js_set_location" class="js_meetings_set_location_open js_tooltip" data-tooltip-text="<%= MTN.t('Click to change location.') %>" href="<%== p.get_location_url %>">
+            <%== p.physical_location_string %>
+        </a>
+    <% }else { %>
+            <%== p.physical_location_string %>
+    <% } %>
+</p>
+
+<% if( p.online_conferencing_option || p.is_manager ) { %>
+<p class="online-tool">
+    <i class="ico-teleconf"></i>
+    <% if( p.is_manager ) { %>
+    <a class="js_open_lct js_tooltip" data-tooltip-text="<%= MTN.t('Click to configure live communication tools.')%>" href="<%== p.get_location_url %>">
+            <%== p.virtual_location_string %>
+        </a>
+    <% }else { %>
+            <%== p.virtual_location_string %>
+    <% } %>
+</p>
+<% } %>
+
+<!--<p class="teleconf">-->
+<!--<i class="ico-teleconf"></i>-->
+<!--</p>-->
+
+<!-- Meeting participants -->
+<div class="participants">
+        <% dojo.forEach(p.participants, function(user, i) { %>
+
+        <div class="wrap js_tooltip js_meetings_show_user_open" data-tooltip-nodeid="utp_<%= i %>" data-fetch-url="<%== user.desktop_data_url %>">
+            <% if( user.image ) { %>
+            <img class="<%= ( user.rsvp_status === 'no' ) ? 'not-coming' : '' %>" src="<%== user.image || '/images/theme/default/default-user-avatar-50px.png' %>" alt="<%== user.name %>" />
+            <% } else { %>
+            <span class="placeholder" title="<%== user.name ? user.name : user.email %>"><%== user.initials %></span>
+            <% } %>
+            <% if( user.rsvp_status == 'yes' ) { %>
+            <span class="rsvp yes"></span>
+            <% } else if( user.rsvp_status == 'no' ) { %>
+            <span class="rsvp no"></span>
+            <% } else { %>
+            <span class="rsvp unknown"></span>
+            <% } %>
+            <div style="display:none;" id="utp_<%= i %>">
+                <%== user.name ? user.name : MTN.t('You') %>
+                <br/><%== user.rsvp_string || '' %> <%== user.last_action_string || '' %>
+                <br/><%= MTN.t('click to see profile') %>
+            </div>
+        </div>
+        <% }); %>
+
+        <div class="wrap no-bg">
+            <% if (p.invite_participants_data_url != "") { %>
+            <a href="#" class="button blue more js_meetings_invite_participants_open" id="invite-participants-open-button">
+                <i class="ico-add"></i>
+            </a>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<!-- Right side manage buttons -->
+<% if(p.is_manager){ %>
+<a id="flag-settings" class="js_open_manage flag" title="<%= MTN.t('Click to edit meeting.') %>" href="#" >
+</a>
+<% if( false && dicole.get_global_variable('meetings_user_is_pro') ) { // hidden for now %>
+<a id="flag-theme" class="js_meetings_theming_open flag" title="<%= MTN.t('Click to edit theme.') %>" href="<%= dicole.get_global_variable('meetings_admin_urls')['appearance_url'] %>">
+</a>
+<% } %>
+<% } %>
+
+</div>
+
+<!-- Calendar link menu -->
+<div id="calendar-menu" style="display:none;">
+<div id="calendar-menu-top"></div>
+<div id="calendar-menu-main">
+    <% if ( p.is_manager ) { %>
+    <a href="#" class="js_set_time"><%== p.begin_date ? MTN.t('Change date') : MTN.t('Set date') %></a>
+
+    <% if ( ! p.attached_to_matchmaking_event ) { %>
+    <a href="#" class="js_meetings_scheduler_picker_open"><%= MTN.t('Suggest dates') %></a>
+    <% } %>
+
+    <% } %>
+    <% if ( p.ics_url && p.gevent_publish_url ) { %>
+    <div class="cal-links"<%= p.is_manager ? '' : ' style="border-top:none;"' %>>
+        <a target="_blank" href="<%== p.ics_url %><%= MTN.t('Add to MS Outlook') %></a>
+        <a target="_blank" href="<%== p.gevent_publish_url %>"><%= MTN.t('Add to Google Calendar') %></a>
+        <a target="_blank" href="<%== p.ics_url %>"><%= MTN.t('Download ICS') %></a>
+    </div>
+    <% } %>
+    <% if ( p.begin_date ) { %>
+    <div class="info">
+        <span class="title"><%= MTN.t('Details') %></span>
+        <% if( p.begin_date ) { %>
+        Date: <%== p.begin_date %><br/>
+        <% } %>
+        <% if( p.desktop_calendar.hm ) { %>
+        Time: <%== p.desktop_calendar.hm %><br/>
+        <% } %>
+        Timezone: <%== dicole.get_global_variable('meetings_user_timezone_offset_string') %></br>
+        <% if( p.duration_hours || p.duration_minutes ) { %>
+        Duration: <%==  (p.duration_hours > 0) ? p.duration_hours+'h' : '' %> <%== (p.duration_minutes > 0) ? p.duration_minutes+'min' : '' %>
+        <% } %>
+    </div>
+    <% } %>
+</div>
+</div>

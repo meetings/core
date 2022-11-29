@@ -1,0 +1,75 @@
+
+msgid "Embedded HTML"
+msgstr "Embeddattu HTML"
+
+msgid "Type the HTML:"
+msgstr "Kirjoita HTML:"
+
+msgid "Active wiki pages:"
+msgstr "Viimeksi muokatut wikisivut:"
+
+msgid "Add image"
+msgstr "Lisää kuva"
+
+msgid "Clear"
+msgstr "Tyhjennä"
+
+msgid "External link"
+msgstr "Ulkoinen linkki"
+
+msgid "Internal link"
+msgstr "Sisäinen linkki"
+
+msgid "Invisible save"
+msgstr "Näkymätön tallennus"
+
+msgid "What did you change?"
+msgstr "Mitä muutit?"
+
+msgid "Loading uploader..."
+msgstr "Ladataan..."
+
+msgid "Height"
+msgstr "Korkeus"
+
+msgid "Insert"
+msgstr "Lisää"
+
+msgid "Paste HTML here"
+msgstr "Kopioi HTML tähän"
+
+msgid "pixels"
+msgstr "pikseliä"
+
+msgid "Width"
+msgstr "Leveys"
+
+msgid "Image description:"
+msgstr "Kuvan kuvaus:"
+
+msgid "Image location:"
+msgstr "Kuvan sijainti:"
+
+msgid "Image selector"
+msgstr "Kuvan valitsin"
+
+msgid "Image URL:"
+msgstr "Kuvan URL:"
+
+msgid "In line"
+msgstr "Rivillä"
+
+msgid "Left"
+msgstr "Vasemmalla"
+
+msgid "Link selector"
+msgstr "Linkin valitsin"
+
+msgid "Link URL:"
+msgstr "Linkin URL:"
+
+msgid "Right"
+msgstr "Oikealla"
+
+msgid "Show more pages"
+msgstr "Näytä lisää sivuja"

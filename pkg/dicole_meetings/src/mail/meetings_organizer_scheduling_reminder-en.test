@@ -1,0 +1,25 @@
+[% IF test_case == 'skedulointikutsuja' %]
+[%
+
+meeting_title = 'Festarit'
+meeting_url = 'www.meetin.gs'
+
+invited_user_name = 'Andy Little-Eaglehill'
+invited_user_address = 'andy@eagle.com'
+
+%]
+[% END %]
+
+[% IF test_case == 'skedulointi  ei-kutsuja' %]
+[%
+
+meeting_title = 'Vuosikokous'
+meeting_url = 'ww.meetin.gs'
+
+invited_user_name = 'Andy Little-Eaglehil'
+invited_user_address = 'andy@eagle.com'
+not_inviter = '1'
+inviting_user = 'Kää Piö'
+
+%]
+[% END %]

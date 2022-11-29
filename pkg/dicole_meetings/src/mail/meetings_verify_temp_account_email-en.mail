@@ -1,0 +1,25 @@
+[% MTN.t('Action required: please verify your email address') %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('One more thing,') %]
+<<<text_and_logo>>>
+<<<h1>>>[% MTN.t('Click continue to verify your email address') %]<<</h1>>>
+
+<<<bubble>>>
+[% IF meeting %]
+<<<p>>>[% MTN.t('Your meeting is almost up and running. Click the following link to continue.') %]<<</p>>>
+[% ELSE %]
+<<<p>>>[% MTN.t('We still need you to verify your email address, so please click the following link to continue.') %]<<</p>>>
+[% END %]
+[% url = verify_url %]
+[% showtext = 1 %]
+[% showarrow = 1 %]
+[% text = MTN.t('Continue') %]
+<<<blue_button>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

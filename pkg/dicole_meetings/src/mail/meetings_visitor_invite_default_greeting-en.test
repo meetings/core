@@ -1,0 +1,28 @@
+[%#- Used as the default greeting message for inviting users from GUI -%]
+
+[%- IF test_case == 'suggestions' %]
+[%-
+
+open_scheduling_option_count = 4
+inviting_user_name = 'Inviting Username'
+
+%]
+[% END %]
+[%- IF test_case == 'no suggestions' %]
+[%-
+
+open_scheduling_option_count = 0
+inviting_user_name = 'Inviting Username'
+
+%]
+[% END %]
+
+[%- IF test_case == 'rsvp' %]
+[%-
+
+open_scheduling_option_count = 0
+rsvp_required = '1'
+inviting_user_name = 'Inviting Username'
+
+%]
+[% END %]

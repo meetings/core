@@ -1,0 +1,100 @@
+.content #navi_header #navi_login {
+  height: 38px;
+}
+.content #navi_header #navi_login a {
+  font-family: Verdana,Arial,Sans-Serif;
+  color: #AAAAAA;
+  font-size: 12px;
+}
+.content #navi_header #navi_login a:hover {
+  color: #666666 !important;
+}
+.content #navi_header #navi_login a#navi_register_link {
+  padding-top: 10px;
+}
+#navi_header #navi_logout_link, #navi_header #navi_login_link {
+  background: none;
+}
+
+
+.footer {
+/**background-color: #0E0E0E;**/
+border-top: 0;
+}
+
+#tuuma-footer {
+width: 500px;
+margin: 0 auto;
+height: 121px;
+/**background-color: #0E0E0E;**/
+left:210px;
+position:relative;
+}
+
+#tuuma-footer-image {
+background: url("/images/tuuma/tuuma_footer_logos.png") no-repeat scroll center 0;
+float: right;
+height: 60px;
+margin-top: 20px;
+width: 150px;
+}
+
+#tuuma-footer-text {
+color: #FFF;
+padding-top: 40px;
+}
+
+#tuuma-footer-text a {
+color: #D49603;
+}
+
+
+#navi_tools a {
+background:transparent url(/images/theme/oz/navi-buttons.png) no-repeat scroll 0 0 !important;
+color:white;
+padding-top:69px;
+width:96px;
+margin: 2px;
+}
+#navi_tools a:visited
+{
+color:white;
+}
+#navi_tools a:hover, #navi_tools a:active {
+color:black;
+background:transparent url(/images/theme/oz/navi-buttons.png) no-repeat scroll 0 -97px !important;
+}
+#navi_tools a.summary { background-position: 0 0 !important; }
+#navi_tools a.summary.selected { background-position: 0 -97px !important; }
+#navi_tools a.summary:hover { background-position: 0 -97px !important; }
+#navi_tools a.summary.selected:hover { background-position: 0 -194px !important; }
+
+#navi_tools a.blogs { background-position: -96px 0 !important; }
+#navi_tools a.blogs.selected { background-position: -96px -97px !important; }
+#navi_tools a.blogs:hover { background-position: -96px -97px !important; }
+#navi_tools a.blogs.selected:hover { background-position: -96px -194px !important; }
+
+#navi_tools a.wikis { background-position: -192px 0 !important; }
+#navi_tools a.wikis.selected { background-position: -192px -97px !important; }
+#navi_tools a.wikis:hover { background-position: -192px -97px !important; }
+#navi_tools a.wikis.selected:hover { background-position: -192px -194px !important; }
+
+#navi_tools a.networking { background-position: -384px 0 !important; }
+#navi_tools a.networking.selected { background-position: -384px -97px !important; }
+#navi_tools a.networking:hover { background-position: -384px -97px !important; }
+#navi_tools a.networking.selected:hover { background-position: -384px -194px !important; }
+
+#navi_tools a.events{ background-position: -575px 0 !important; }
+#navi_tools a.events.selected { background-position: -575px -97px !important; }
+#navi_tools a.events:hover { background-position: -575px -97px !important; }
+#navi_tools a.events.selected:hover { background-position: -575px -193px !important; }
+
+#navi_tools a.media { background-position: -288px 0 !important; }
+#navi_tools a.media.selected { background-position: -288px -97px !important; }
+#navi_tools a.media:hover { background-position: -288px -97px !important; }
+#navi_tools a.media.selected:hover { background-position: -288px -194px !important; }
+
+#navi_tools a.other { background-position: -480px 0 !important; }
+#navi_tools a.other.selected { background-position: -480px -97px !important; }
+#navi_tools a.other:hover { background-position: -480px -97px !important; }
+#navi_tools a.other.selected:hover { background-position: -480px -194px !important; }

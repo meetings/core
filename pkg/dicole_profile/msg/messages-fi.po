@@ -1,0 +1,305 @@
+# translation of messages-fi.po to
+# $Id: messages-fi.po,v 1.7 2009-01-07 14:42:33 amv Exp $
+# , 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: messages-fi\n"
+"Last-Translator: \n"
+"POT-Creation-Date: 2005-03-22 02:10:34+0000\n"
+"PO-Revision-Date: 2005-03-24 11:01+0200\n"
+"Language-Team:  <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+msgid "-- Select --"
+msgstr "-- Valitse --"
+
+msgid "AIM screen name"
+msgstr "AIM screen -nimi"
+
+msgid "Address"
+msgstr "Osoite"
+
+msgid "Basic contact information"
+msgstr "Perus yhteystiedot"
+
+msgid "Basic information"
+msgstr "Perustiedot"
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Changes were saved."
+msgstr "Muutokset on tallennettu."
+
+msgid "Cities worked"
+msgstr "Kaupungit, joissa työskennellyt"
+
+msgid "City"
+msgstr "Kaupunki"
+
+msgid "Contact information"
+msgstr "Yhteystiedot"
+
+msgid "Country"
+msgstr "Maa"
+
+msgid "Date of birth"
+msgstr "Syntymäaika"
+
+msgid "Degree"
+msgstr "Tutkinto"
+
+msgid "Deny editing profile of a user"
+msgstr "Estä käyttäjän profiilin muokkaaminen"
+
+msgid "Department or unit"
+msgstr "Laitos tai yksikkö"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "Edit profile"
+msgstr "Profiilin muokkaus"
+
+msgid "Edit profile of a user"
+msgstr "Käyttäjän profiilin muokkaus"
+
+msgid "Education"
+msgstr "Koulutus"
+
+msgid "Education overview"
+msgstr "Tarkempi koulutustausta"
+
+msgid "Email"
+msgstr "Sähköposti"
+
+msgid "Failed modifying profile: %1"
+msgstr "Profiilin muokkaus epäonnistui: %1"
+
+msgid "Favorite books or publications"
+msgstr "Suosikki kirjat tai julkaisut"
+
+msgid "Favorite music, movies, artists..."
+msgstr "Suosikki musiikki, elokuvat, taitelijat..."
+
+msgid "Favorite events or tradeshows"
+msgstr "Suosikki tapahtumat tai messut"
+
+msgid "Fax number"
+msgstr "Faxi"
+
+msgid "Female"
+msgstr "Nainen"
+
+msgid "Full name"
+msgstr "Koko nimi"
+
+msgid "Gender"
+msgstr "Sukupuoli"
+
+msgid "Hobbies"
+msgstr "Harrastukset"
+
+msgid "Home phone"
+msgstr "Kotipuhelin"
+
+msgid "ICQ number"
+msgstr "ICQ numero"
+
+msgid "Identification number"
+msgstr "Identifikaatiotunnus"
+
+msgid "Interests"
+msgstr "Kiinnostuksen kohteet"
+
+msgid "International cooperation"
+msgstr "Kansainvälinen yhteistyö"
+
+msgid "Jabber"
+msgstr "Jabber"
+
+msgid "MSN profile"
+msgstr "MSN profiili"
+
+msgid "Male"
+msgstr "Mies"
+
+msgid "Mobile phone"
+msgstr "Matkapuhelin"
+
+msgid "Not available."
+msgstr "Ei saatavilla."
+
+msgid "Organization"
+msgstr "Organisaatio"
+
+msgid "Organizations worked"
+msgstr "Organisaatiot, joissa työskennellyt"
+
+msgid "Other degree"
+msgstr "Muu tutkinto"
+
+msgid "Past organization"
+msgstr "Edellinen organisaatio"
+
+msgid "Past title"
+msgstr "Edellinen nimike"
+
+msgid "Personal"
+msgstr "Henkilökohtainen"
+
+msgid "Personal description"
+msgstr "Henkilökohtainen kuvaus"
+
+msgid "Personal heroes"
+msgstr "Henkilökohtaiset sankarit tai esikuvat"
+
+msgid "Personal mantra"
+msgstr "Henkilökohtainen motto"
+
+msgid "Personal weblog"
+msgstr "Henkilökohtainen blogi"
+
+msgid "Personal website"
+msgstr "Henkilökohtainen kotisivu"
+
+msgid "Phone"
+msgstr "Puhelin"
+
+msgid "Postal address"
+msgstr "Postiosoite"
+
+msgid "Postal code"
+msgstr "Postinumero"
+
+msgid "Professional"
+msgstr "Ammatillinen / työ"
+
+msgid "Professional description"
+msgstr "Ammatillinen kuvaus"
+
+msgid "Professional goals"
+msgstr "Ammatilliset tavoitteet"
+
+msgid "Professional history"
+msgstr "Ammatillinen työhistoria"
+
+msgid "Professional mantra"
+msgstr "Ammatillinen motto"
+
+msgid "Professional mentors"
+msgstr "Ammatilliset esikuvat tai neuvonantajat"
+
+msgid "Professional website"
+msgstr "Työnantajan kotisivu"
+
+msgid "Profile"
+msgstr "Profiili"
+
+msgid "View profile"
+msgstr "Katsele profiilia"
+
+msgid "Research done"
+msgstr "Tutkimustyö"
+
+msgid "Room number"
+msgstr "Huoneen numero"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "School"
+msgstr "Koulu"
+
+msgid "Skills"
+msgstr "Taidot"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Spoken languages"
+msgstr "Kielitaito"
+
+msgid "State"
+msgstr "Osavaltio"
+
+msgid "Street address"
+msgstr "Katuosoite"
+
+msgid "Target degree"
+msgstr "Tavoiteltu tutkinto"
+
+msgid "Technical skills"
+msgstr "Tekniset taidot"
+
+msgid "Telephone"
+msgstr "Puhelinnumero"
+
+msgid "Timezone"
+msgstr "Aikavyöhyke"
+
+msgid "Title or position"
+msgstr "Nimike, toimenkuva tai virka"
+
+msgid "Titles held"
+msgstr "aikaisemmat nimikkeet"
+
+msgid "Unknown"
+msgstr "Tuntematon"
+
+msgid "User can edit profile"
+msgstr "Käyttäjä voi muokata profiilia"
+
+msgid "Image to upload in GIF or JPG format"
+msgstr "Palvelimelle siirrettävä kuva GIF tai JPG muodossa"
+
+msgid "Upload"
+msgstr "Siirrä"
+
+msgid "Upload image"
+msgstr "Vaihda kuva"
+
+msgid "Personal portrait"
+msgstr "Henkilökohtainen muotokuva"
+
+msgid "Professional portrait"
+msgstr "Ammatillinen muotokuva"
+
+msgid "Image uploaded."
+msgstr "Kuva siirretty."
+
+msgid "Error while converting image."
+msgstr "Virhe muokattaessa kuvaa."
+
+msgid "Upload image in GIF or JPG format."
+msgstr "Siirrä kuva GIF tai JPG muodossa."
+
+msgid "Error while uploading file. Upload does not exist."
+msgstr "Virhe siirrettäessä tiedostoa: Siirrettyä tiedostoa ei löytynyt."
+
+msgid "Upload failed: %1"
+msgstr "Siirto epäonnistui: %1"
+
+msgid "No image."
+msgstr "Ei kuvaa."
+
+msgid "Profile image"
+msgstr "Profiilikuva"
+
+msgid "Image to upload"
+msgstr "Siirrettävä kuva"
+
+msgid "Show profile"
+msgstr "näytä profiili"
+
+msgid "Personal profile includes the professional and personal profiles and contact information of a user."
+msgstr "Henkilökohtainen profiili, joka sisältää ammatti/työ ja henkilökohtaisen profiilin ja yhteystiedot."
+
+msgid "Welcome %1! Today is %2 and the time is %3."
+msgstr "Tervetuloa %1! Tänään on %2 ja kello on %3."
+
+msgid "Welcome!"
+msgstr "Tervetuloa!"

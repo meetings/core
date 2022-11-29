@@ -1,0 +1,15 @@
+Here are some command which will come handy when installing and updating tinymce for dicole. You need tinymce-dev source package and mono (apt-get install mono).
+
+First you should copy files in misc/tinymce/ to your tinymce-dev root, preserving the directory structures. This will add the dicole plugin and add the plugin into the list of plugins to compile.
+
+The following should be run in tinymce-dev root.
+
+$DICOLE_SRC_ROOT=/home/amv/repo/dicole/ or whatever
+
+#### Compile tinymce sources and dicole plugin and replace
+#### /html/tinymce/jscripts with the current data
+mono JSTrim_mono.exe && rm -Rf ${OPENINTERACT2}/html/tinymce/jscripts && cp -R jscripts/ ${OPENINTERACT2}/html/tinymce/
+
+#### Update the current files to the source repository
+find jscripts/tiny_mce/plugins/dicole/ -type f |xargs -n1 |xargs -i cp {} ${DICOLE_SRC_ROOT}/misc/tinymce/{}
+

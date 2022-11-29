@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+my $update_only = $ARGV[0] eq '-u' ? 1 : 0;
+
+system rm => -Rf => "build/sources";
+system mkdir => -p => "build/sources";
+
+for my $file ( split "\n", `bin/translations/x_list_all_translation_source_files` ) {
+    next if $update_only && `git status -s $file` =~ /^\?\?/;
+    my $file_base = $file;
+    $file_base =~ s/.*\///;
+    my $target = "build/sources/$file_base.pot";
+    system "bin/translations/x_gather_translations_from_code '$file' > '$target.nouniq'";
+    system "msguniq --no-wrap --use-first -o '$target.raw' '$target.nouniq'";
+#    system "rm $target.raw";
+}

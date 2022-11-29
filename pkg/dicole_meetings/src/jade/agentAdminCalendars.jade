@@ -1,0 +1,63 @@
+div.input-row
+    span.input-label Käyttäjä
+    select.object-field(x-data-object-field='user_email',disabled=typeof(admin_calendar)=='undefined'?undefined:'disabled')
+        option(value='') [valitse käyttäjä]
+        each u in users
+            option(value=u.email,selected=u.email==(typeof(admin_calendar)=='undefined'?undefined:admin_calendar.user_email)?'selected':undefined)=u.email
+div.input-row
+    span.input-label Toimisto
+    select.object-field(x-data-object-field='office_full_name',disabled=typeof(admin_calendar)=='undefined'?undefined:'disabled')
+        option(value='') [valitse toimisto]
+        each o in offices
+            option(value=o.full_name,selected=o.full_name==(typeof(admin_calendar)=='undefined'?undefined:admin_calendar.office_full_name)?'selected':undefined)=o.full_name
+
+div.input-row
+    div.input-label-row
+        span Palvelukielet:
+    each lang in all_languages
+        div
+            input.object-field(x-data-object-field='languages',x-data-object-field-type='array',type='checkbox',value=lang.id,checked=(typeof(admin_calendar)!=='undefined' && admin_calendar.languages_map[lang.id]) ? 'checked' : undefined )
+            span=lang.name
+
+            
+div.input-row
+    div.input-label-row
+        span Palvelutasot:
+    each sl in all_service_levels
+        div
+            input.object-field(x-data-object-field='service_levels',x-data-object-field-type='array',type='checkbox',value=sl.id,checked=(typeof(admin_calendar)!=='undefined' && admin_calendar.service_levels_map[sl.id]) ? 'checked' : undefined )
+            span=sl.name
+
+            
+div.input-row
+    div.input-label-row
+        span Tapaamistyyypit:
+    each mt in all_meeting_types
+        div
+            input.object-field(x-data-object-field='meeting_types',x-data-object-field-type='array',type='checkbox',value=mt.id,checked=(typeof(admin_calendar)!=='undefined' && admin_calendar.meeting_types_map[mt.id]) ? 'checked' : undefined )
+            span=mt.name
+
+div.input-row
+    div.input-label-row
+        span Verkkotapaamisen
+div.input-row
+    span.input-label osoite
+    input.object-field(x-data-object-field='extra_meeting_email',size=40,value=typeof(admin_calendar)=='undefined'?undefined:admin_calendar.extra_meeting_email)
+
+div.input-row
+    div.input-label-row
+        span Kalenterin rajattu saatavuus:
+div.input-row
+    span.input-label Ensimmäinen varattava päivä
+    input.object-field.js_dmy_datepicker_input(id='first-day-'+(typeof(admin_calendar)=='undefined'?'new':admin_calendar.safe_uid),x-data-object-field='first_reservable_day',size=10,value=typeof(admin_calendar)=='undefined'?undefined:admin_calendar.first_reservable_day)
+div.input-row
+    span.input-label Viimeinen varattava päivä
+    input.object-field.js_dmy_datepicker_input(id='last-day-'+(typeof(admin_calendar)=='undefined'?'new':admin_calendar.safe_uid),x-data-object-field='last_reservable_day',size=10,value=typeof(admin_calendar)=='undefined'?undefined:admin_calendar.last_reservable_day)
+
+- if ( selected_area == 'esim' ) {
+    div.input-row
+        span.input-label Yhdistä sisäinen kalenteri
+        select.object-field(x-data-object-field='disable_calendar_sync')
+            option(value='') Kyllä
+            option(value='yes',selected='yes'==(typeof(admin_calendar)=='undefined'?undefined:admin_calendar.disable_calendar_sync)?'selected':undefined) Ei
+- }

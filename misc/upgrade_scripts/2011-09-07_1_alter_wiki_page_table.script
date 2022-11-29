@@ -1,0 +1,12 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_wiki_page add creator_id int not null after last_modified_time');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_wiki_page add created_date bigint not null after last_modified_time');
+    Dicole::Utils::SQL->execute_sql('create index xyz on dicole_wiki_page (groups_id, created_date)');
+}
+
+1;
+

@@ -1,0 +1,10 @@
+\bCVS\b
+~$
+^oi2_manage\.log$
+\.old$
+\.bak$
+\.backup$
+\.DS_Store$
+^tmp
+^_
+

@@ -1,0 +1,1 @@
+[% IF success %][% IF user_is_participant %][% MTN.t('Confirmation: Your email to %1$s received',[meeting_title]) %][% ELSE %][% MTN.t('Confirmation: Your email received') %][% END %][% ELSE %][% MTN.t('Problem processing your email') %][% END %]

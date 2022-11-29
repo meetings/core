@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+my $outputdir = '.';
+my @files = @ARGV;
+if ( $files[0] eq '-o' ) {
+    shift @files;
+    my $outputdir = shift @files;
+}
+
+my @out = ();
+foreach $file ( @files ) {
+    next unless -f $file;
+    open FILE, "< $file", or die "Can't open file $file: $!";
+    my $filebase = $file;
+    my $count = 1;
+    while ( my $line = <FILE> ) {
+        my @msgs = $line =~ /(?:MTN\.t|_nmsg|_ncmsg)\(\s*((?:'[^']+'|"(?:[^"\\]|\\.)+")(?:\s*\,\s*(?:'[^']+'|"(?:[^"\\]|\\.)+"))?)/g;
+        for my $message ( @msgs ) {
+            my ( $singular, $plural ) = $message =~ /('[^']+'|"(?:[^"\\]|\\.)+")(?:\s*\,\s*('[^']+'|"(?:[^"\\]|\\.)+"))?/;
+            for my $quotedmsg ( $singular, $plural || () ) {
+                if ( $quotedmsg =~ /^"/ ){
+                    $quotedmsg =~ s/\\\$/\$/g;
+                }
+                if ( $quotedmsg =~ /^'/ ){
+                    $quotedmsg =~ s/(["\\])/\\$1/g;
+                    $quotedmsg =~ s/^'(.*)'$/"$1"/;
+                }
+            }
+
+            my $out = "#. $filebase:$count\nmsgid $singular\n";
+            if ( $plural ) {
+                $out .= "msgid_plural $plural\n";
+                $out .= "msgstr[0] \"\"\n";
+                $out .= "msgstr[1] \"\"\n";
+            }
+            else {
+                $out .= "msgstr \"\"\n";
+            }
+            push @out, $out;
+        }
+        $count++;
+    }
+}
+
+print join( "\n", @out );

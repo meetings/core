@@ -1,0 +1,14 @@
+[%#- Sent when user requests a receipt. Currently broken as the amount does not show correctly. -%]
+
+[%- IF test_case == 'kaapo' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+user_name = 'Kääpiö Görmörå'
+payment_date = '2011-10-24 15:32 UTC'
+user_login = 'körmy@mörmör.com'
+amount = 'USD 12.00'
+item_name = 'Meetin.gs monthly subscription'
+
+%]
+[%- END %]

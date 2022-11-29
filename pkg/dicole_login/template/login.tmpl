@@ -1,0 +1,41 @@
+
+<table class="valuePairList">
+	<tr>
+		<td class="valuePairKey" width="15%">[% MSG("Username") | html %]</td>
+		<td class="valuePairValue">
+			<span>
+				<input class="req" id="focusElement" name="login_login_name" size="35" type="text" value="" />
+				<span class="fieldRequiredMarker">&laquo;</span>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="valuePairKey">[% MSG("Password") | html %]</td>
+		<td class="valuePairValue">
+			<span>
+				<input class="req" id="login_password" name="login_password" size="35" type="password" value="" />
+				<span class="fieldRequiredMarker">&laquo;</span>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="valuePairKey">[% MSG("Remember") | html %]</td>
+		<td class="valuePairValue" style="text-align: left">
+			<span>
+				<input name="login_remember" size="35" type="checkbox" value="1" style="margin:10px" />
+			</span>
+		</td>
+	</tr>
+</table>
+<div class="toolNavigationContainer" align="center">
+	<span class="toolNavigationItem">
+		<input type="submit" name="login" value="[% MSG("Login (action)") | html %]" class="submitButton" />
+	</span>
+	[% IF facebook_connect_app_id %]<div style="clear:both;margin:5px">
+		<a id="facebook_login_button" class="js_facebook_login" href="#"><span>[% MSG("Login with Facebook") | html %]</span></a>
+	</div>[% END %]
+	[% IF register_url %]<div style="clear:both;margin:5px">
+		<a id="login_register_button" class="js_open_register_dialog" href="#"><span>[% MSG("Register (action)") | html %]</span></a>
+	</div>[% END %]
+    <div style="clear:both;margin:5px"><a href="/lostaccount/">[% MSG("Retrieve lost username and password") | html %]</a></div>
+</div>

@@ -1,0 +1,6 @@
+[% FOREACH anno IN annos %]
+<div class="anno_container" id="wiki_anno_open_comments_[% anno.id %]">
+<h2>#[% anno.id %]</h2>
+[% PROCESS dicole_wiki::component_printable_comments comments = anno.comments %]
+</div>
+[% END %]

@@ -1,0 +1,21 @@
+tinyMCE.addI18n('fi.dicole',{
+    button_save_open : 'Tallenna muutokset',
+    button_cancel_open : 'Hylkää muutokset',
+    button_image_open : 'Lisää kuva internetistä',
+    button_link_open : 'Lisää/Muokkaa linkki',
+    button_html_open : 'Lisää/Muokkaa vapaata HTML-koodia',
+    button_showroom_open : 'Lisää/Muokkaa esitystilassa näytettävää rajoitamatonta HTML-koodia',
+    button_attachment_open : 'Lisää liitetiedosto',
+    button_embed_open : 'Lisää mediaobjekti',
+    button_advanced_open : 'Näytä lisätoiminnot',
+    button_justify_left : 'Tasaa vasemmalle',
+    button_justify_center : 'Tasaa keskelle',
+    button_table_open : 'Näytä taulukkojen hallinnan napit',
+    button_save_text: 'Tallenna',
+    button_cancel_text: 'Lopeta',
+    button_confirm_delete: 'Varmistetaanko?',
+    uploader_add_attachment: 'Lisää liite',
+    uploader_waiting: 'Odotetaan...',
+    uploader_uploading: 'Lähetetään ',
+    uploader_done: 'Valmis. Odota.'
+});

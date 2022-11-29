@@ -1,0 +1,480 @@
+// New form styles
+.m-form{
+    input:focus, textarea:focus {
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+    input[disabled="disabled"]{
+        opacity:0.6;
+    }
+    label, input, button, select, textarea,p {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 20px;
+    }
+    input[type="radio"], input[type="checkbox"] {
+        margin: 4px 0 0;
+        margin-top: 1px 9;
+        line-height: normal;
+    }
+    input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+        width: auto;
+    }
+    label{
+        display: block;
+        margin-bottom: 5px;
+        font-family:"museo-sans-n3","museo-sans",Helvetica,Arial;
+        font-weight:300;
+        color:$p-color;
+        input[type="checkbox"],input[type="radio"]{
+            margin-right:14px;
+        }
+    }
+    .chzn-container{
+        vertical-align:middle;
+    }
+    label.inline-block{
+        display:inline-block;
+        input[type="text"],input[type="password"],select{
+            margin-left:14px;
+        }
+    }
+    label.inline{
+        display:inline;
+        input[type="text"],input[type="password"],select{
+            margin-left:14px;
+        }
+    }
+    p.slider,label.slider{
+        line-height:22px;
+        .slider-button{
+            margin-right:14px;
+        }
+    }
+    input[type="text"],input[type="password"],input[type="email"] {
+        font-size:14px;
+        font-family:"museo-sans-n3", "museo-sans", Helvetica, Arial, sans-serif;
+        font-weight:300;
+        color:$color-gray-dark;
+        margin:0;
+        padding:5px 7px;
+        border:solid 1px #b4b3b3;
+        @include rounded($rounding);
+    }
+    .radio,.checkbox{
+        min-height: 20px;
+        padding-left: 28px;
+        input[type="radio"],input[type="checkbox"] {
+            float: left;
+            margin-left: -28px;
+        }
+    }
+    textarea{
+        width: 100%;
+        padding: 7px;
+        margin: 0;
+        border:solid 1px $ui-border-color;
+        color:$p-color;
+        @include rounded($rounding);
+    }
+    .hidden{
+        display:none;
+    }
+    .form-row.no-label,.form-row.checkbox{
+        padding-left:185px;
+        label{
+            margin-left:14px;
+            text-align:left;
+        }
+        input[type="radio"],input[type="checkbox"] {
+            float:left;
+            margin-left:0;
+            width:auto;
+        }
+    }
+    .form-row{
+        clear:both;
+        width:100%;
+        position:relative;
+        margin-bottom:14px;
+        input{
+            width:220px;
+        }
+        .mid{
+            width:176px;
+        }
+        .small{
+            width:96px;
+        }
+        .smaller{
+            width:66px;
+        }
+        select{
+            width:232px;
+        }
+        .field-wrap{
+            display:inline-block;
+            position:relative;
+        }
+        .field-wrap:after{
+            position:absolute;
+            top:7px;
+            right:10px;
+            font-family: 'icomoon';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+        }
+        .field-wrap.error input{
+            border-color:$color-red;
+        }
+        .field-wrap.valid input{
+            border-color:$color-green;
+        }
+        .field-wrap.error:after{
+            content:'\e60f';
+            color:$color-red;
+        }
+        .field-wrap.valid:after{
+            content:'\e61f';
+            color:$color-green;
+        }
+        label{
+            margin-right:21px;
+            text-align:right;
+            width:160px;
+            display:inline-block;
+        }
+    }
+    label.error{
+        color:$color-red;
+    }
+    label.required:after {
+        content:" *";
+        color:$color-red;
+        margin-right:-10px;
+        margin-left:8px;
+        display:inline-block;
+    }
+}
+
+// Old form styles
+.meetings-form{
+    text-align:left;
+    input[disabled="disabled"]{
+        opacity:0.6;
+    }
+
+    fieldset {
+        padding: 5px;
+    }
+
+    br{
+        clear:both;
+    }
+
+    div.form-row{
+        clear:both;
+        float:left;
+        width:100%;
+    }
+
+    div.centered{
+        text-align:center;
+    }
+
+    // Input classes
+    input.title-input{width:236px; padding:9px;}
+    input.date-input{width:95px; padding:3px;}
+    input.time-input{width:65px; padding:3px;}
+    input.duration-input{width:55px; padding:6px;}
+    input.location-input{width: 200px; padding:6px;}
+    input.radio{border:none;}
+
+    // General label
+    label{
+        display:block;
+        float:left;
+        font-family:"museo-sans-n5","museo-sans",Helvetica,Arial;
+        font-weight:300;
+        color:$p-color;
+    }
+
+    // Label classes
+    label.large{
+        font-size:26px;
+        //padding-top:3px;
+    }
+    label.smaller{
+        font-size:15px;
+        color:$p-color;
+        padding-top:4px;
+    }
+    label.small{
+        color:$p-color;
+        font-size:18px;
+        padding-top:4px;
+    }
+    label.edit-profile{
+        color:$p-color;
+        font-size:12px;
+        padding:4px 0 0 0;
+    }
+
+    label.required{
+        color:$color-pink;
+    }
+
+    // Spesific labels
+    label#time-label{
+        margin-top:10px;
+    }
+
+    // Style for star denoting a required form field
+    span.form-star{
+        color:$color-pink;
+        font-family:"museo-sans-n5", "museo-sans";
+        font-size:26px;
+    }
+
+    // Style for datepicker image
+    img.date-picker{
+        margin-bottom:-12px;
+    }
+
+    // Style for small info text
+    span.info-text{
+        font-size:12px;
+        font-family:Helvetica;
+        color:#9a9a9a;
+    }
+
+    // General input style
+    input{
+        font-size:14px;
+        font-family:"museo-sans-n3", "museo-sans", Helvetica, Arial, sans-serif;
+        font-weight:300;
+        color:$color-gray-dark;
+        margin:0;
+        padding: 5px;
+        border:solid 1px #b4b3b3;
+        @include rounded($rounding);
+    }
+
+    select{
+        margin-top:2px;
+        padding:2px;
+    }
+
+    // General textarea style
+    textarea{
+        width: 200px;
+        padding: 5px;
+        margin: 0;
+        border:solid 1px #b4b3b3;
+        @include rounded($rounding);
+    }
+
+    // Timeselect for forms
+    div#time-quickpicks{
+        .time-selector{
+            width:26px;
+            height:26px;
+            display:block;
+            float:left;
+            margin-right:3px;
+        }
+        span{
+            color:$color-gray-dark;
+            padding:5px 10px 0 0;
+            float:left;
+            font:14px "museo-sans-n5", "museo-sans", Helvetica, Arial;
+        }
+
+        //.min-30{background: url("/images/meetings/sprite.png") -71px -66px no-repeat;}
+        //.min-60{background: url("/images/meetings/sprite.png") -43px -56px no-repeat;}
+        //.min-90{background: url("/images/meetings/sprite.png") -71px -39px no-repeat;}
+        //.min-120{background: url("/images/meetings/sprite.png") -98px -63px no-repeat;}
+    }
+}
+
+// New meeting form on summarypage and new meeting page
+form#meetings_manage_basic_form, form#meetings_set_date_form, form#meetings_set_location_form{
+    padding:10px;
+    label{
+        width:100px;
+    }
+
+    div#title{
+        padding-bottom:15px;
+        input{
+            width:236px;
+        }
+    }
+    div#date{
+        position:relative;
+        padding-bottom:10px;
+        h3{
+            color:#6C6C6C;
+            font-size:18px;
+            padding:0;
+            margin:0;
+            position: absolute;
+            top:4px;
+            left:0px;
+        }
+        div.opaque{
+            opacity:0.6;
+            filter:alpha(opacity = 60);
+            zoom:1;
+        }
+    }
+    div#duration{
+        padding-bottom:3px;
+        span.info-text{
+            font:14px "museo-sans-n5", "museo-sans", Helvetica, Arial;
+            color:$color-gray-dark;
+        }
+    }
+    div#location{
+        padding-bottom:10px;
+        input{
+            width:200px;
+        }
+    }
+    div#submit{}
+
+    div#time-quickpicks{
+        padding:5px 0 15px 100px;
+        width:250px;
+    }
+    label.schedule{
+        height:19px;
+        width:220px !important;
+    }
+    label.schedule, label.no_date {
+        font:16px "museo-sans-n3", "museo-sans", Helvetica;
+        color:$p-color;
+        width:auto;
+    }
+    input.schedule, input.no_date {
+        margin:3px 10px 0 0;
+        float:left;
+    }
+    div#scheduling-fader{
+        input{
+            float:left;
+            margin:5px 0 0 0;
+            padding:0;
+            display:inline;
+        }
+        label{
+            margin:2px 0 0 10px;
+            padding:0;
+            display:inline;
+            float:left;
+        }
+        height:19px;
+        width:250px;
+        margin:5px 0 10px 100px;
+        display:inline-block;
+    }
+    div#date-select-fader{
+        width:250px;
+        height:71px;
+        margin-left:100px;
+        display:inline-block;
+
+        input{
+            float:left;
+            display:inline;
+        }
+        span{
+            float:left;
+            display:inline;
+        }
+        input#set-date{
+            margin:10px 5px 0 0;
+            padding:0px;
+        }
+        input#meetings_summary_begin_date_input{
+            margin:3px 3px 0 0;
+            width:70px;
+        }
+        input.begin-time{margin:3px 3px 0 0px; width:38px;}
+        input.duration-hours{margin:0 3px 0 5px; width:15px;}
+        input.duration-minutes{margin:0 3px 0 1px; width:20px;}
+        div.duration{
+            margin:12px 0 0 0;
+            span.info-text{
+                margin:7px 2px 0 2px;
+            }
+            input{
+                float:left;
+                display:inline;
+            }
+            label{
+                display:inline;
+                float:left;
+            }
+            label.duration{
+                color: #6C6C6C;
+                font-size: 15px;
+                padding-top: 5px;
+                width:80px;
+                margin-left:10px;
+            }
+        }
+    }
+    div#no-date-fader{
+        width:250px;
+        height:19px;
+        margin:10px 0px 0px 100px;
+        display:inline-block;
+        input{
+            float:left;
+            margin:5px 0 0 0;
+            padding:0;
+            display:inline;
+        }
+        label{
+            margin:2px 0 0 10px;
+            padding:0;
+            display:inline;
+            float:left;
+        }
+    }
+}
+
+div#edit_my_profile_photo_container {
+    position:absolute;
+    top:0px;
+    right:35px;
+
+    img{margin-bottom:5px;}
+
+    #edit_my_profile_photo_reset_button{
+        display:block;
+        padding:10px;
+        text-align:center;
+    }
+    #edit_my_profile_photo_cancel_button {
+        clear:both;
+        display:none;
+        text-align:center;
+        span{
+            font:14px "museo-sans-n5", "museo-sans";
+            color:$color-red;
+        }
+    }
+}
+
+// Textarea generals
+textarea{
+    font-size:15px;
+    font-family:"museo-sans-n3", "museo-sans", Helvetica, Arial, sans-serif;
+    font-weight:300;
+    color:$p-color;
+}

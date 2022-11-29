@@ -1,0 +1,212 @@
+# $Id: messages-sv.po,v 1.4 2010-04-08 19:22:13 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:10:29+0000\n"
+"PO-Revision-Date: 2005-03-22 02:10:29+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Online members"
+msgstr "Medlemmar online"
+
+msgid "Adds a summary of online group members."
+msgstr "Tillägger ett sammandrag av gruppmedlemmar som är online"
+
+msgid "Online group members"
+msgstr "Gruppmedlemmar online"
+
+msgid "No online members."
+msgstr "Inga medlemmar online."
+
+msgid "Unknown"
+msgstr "Okänd"
+
+msgid "Offline"
+msgstr "Offline-läge"
+
+msgid "Online"
+msgstr "Online-läge"
+
+msgid "Away"
+msgstr "Borta"
+
+msgid "Not available"
+msgstr "Inte tillgänglig"
+
+msgid "Do Not Disturb"
+msgstr "Stör ej"
+
+msgid "Invisible"
+msgstr "Osynlig"
+
+msgid "Skype Me"
+msgstr "Ring mig"
+
+msgid "Skype menu for user"
+msgstr "Skype-meny för användare"
+
+msgid "Call user"
+msgstr "Ring användare"
+
+msgid "Add user to contact list"
+msgstr "Lägg till användare till kontakter"
+
+msgid "Start a text chat with user"
+msgstr "Inled textchat med användare"
+
+msgid "Show the Skype profile of user"
+msgstr "Visa användarens Skype-profil"
+
+msgid "Send a file to user"
+msgstr "Skicka en fil till användare"
+
+msgid "Online users"
+msgstr "Användare som är online"
+
+msgid "%1 seconds ago"
+msgstr "%1 sekunder sedan"
+
+msgid "No online users."
+msgstr "Inga användare online."
+
+msgid "%1 day(s)"
+msgstr "%1 day(s)"
+
+msgid "%1 day(s) ago"
+msgstr "%1 day(s) ago"
+
+msgid "%1 days ago"
+msgstr "%1 days ago"
+
+msgid "1 day ago"
+msgstr "1 day ago"
+
+msgid "%1 hour(s)"
+msgstr "%1 hour(s)"
+
+msgid "%1 hour(s) ago"
+msgstr "%1 hour(s) ago"
+
+msgid "%1 hours ago"
+msgstr "%1 hours ago"
+
+msgid "1 hour ago"
+msgstr "1 hour ago"
+
+msgid "%1 minute(s)"
+msgstr "%1 minute(s)"
+
+msgid "%1 minute(s) ago"
+msgstr "%1 minute(s) ago"
+
+msgid "%1 minutes ago"
+msgstr "%1 minutes ago"
+
+msgid "1 minute ago"
+msgstr "1 minute ago"
+
+msgid "%1 second(s)"
+msgstr "%1 second(s)"
+
+msgid "Gives raports of usage"
+msgstr "Användarrapport"
+
+msgid "Mail information"
+msgstr "Information om e-postmeddelandet"
+
+msgid "Mail members"
+msgstr "Skicka e-post åt användarna"
+
+msgid "Message sent to you succesfully."
+msgstr "Meddelandet har skickats åt dig"
+
+msgid "Messages were sent succesfully."
+msgstr "Meddelandena har skickats."
+
+msgid "Now"
+msgstr "Nu"
+
+msgid "Raports"
+msgstr "Rapporter"
+
+msgid "Sender address"
+msgstr "Avsändarens adress"
+
+msgid "Sender name"
+msgstr "Avsändarens namn"
+
+msgid "Send mail"
+msgstr "Skicka e-post"
+
+msgid "Send mail to group users"
+msgstr "Skicka e-post åt gruppens användare"
+
+msgid "Send test mail to self"
+msgstr "Skicka test e-post åt dig själv"
+
+msgid "Some messages could not be sent: %1"
+msgstr "Det uppkom problem med att skicka några meddelande: %1"
+
+msgid "User can send mail to group users"
+msgstr "Användare kan skicka e-post åt gruppernas användare"
+
+msgid "You must fill all fields."
+msgstr "Du måste fylla alla fält"
+
+msgid "Activity"
+msgstr "Aktivitet"
+
+msgid "Blog posts"
+msgstr "Bloggposter"
+
+msgid "Daily usage"
+msgstr "Daglig användning"
+
+msgid "Domain reports"
+msgstr "Domänrapporter"
+
+msgid "Group reports"
+msgstr "Groupprapporter"
+
+msgid "Report"
+msgstr "Rapport"
+
+msgid "User based usage"
+msgstr "Användning medlemsvis"
+
+msgid "Weekly usage"
+msgstr "Användning per vecka"
+
+msgid "Weekly Usage"
+msgstr "Användning per vecka"
+
+msgid "Wiki edits"
+msgstr "Ändringar i wiki"
+
+msgid "Management area"
+msgstr "Management area"
+
+msgid "See domain reports"
+msgstr "See domain reports"
+
+msgid "See group reports"
+msgstr "See group reports"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "User can see domain reports"
+msgstr "User can see domain reports"
+
+msgid "User can see group reports"
+msgstr "User can see group reports"
+
+msgid "Show more users"
+msgstr "Show more users"

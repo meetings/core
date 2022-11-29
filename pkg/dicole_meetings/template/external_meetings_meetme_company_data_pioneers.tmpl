@@ -1,0 +1,98 @@
+<style type="text/css">
+#company-data{
+    padding-top:14px;
+}
+#company-data .data{
+    line-height:22px;
+    text-align:left;
+    padding-bottom:14px;
+    font-size:14px;
+    font-family: "museo-sans-n3", "museo-sans", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #4C4B4B;
+}
+#company-data .data:last-child{
+    padding-bottom:0px;
+}
+#company-data .box .bold{
+    font-weight:bold;
+}
+#company-data .box{
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    background: #FFF;
+    background: rgba(255, 255, 255, 0.8);
+    color: #FFF;
+    border-bottom: 0;
+    opacity: 1;
+    z-index: 0;
+    min-height: 100px;
+    height: auto !important;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+    padding:28px;
+    margin-bottom:28px;
+    text-align:left;
+    width:700px;
+}
+#company-data .box .col{
+    vertical-align:top;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    padding-right:32px;
+    display:inline-block;
+    width:24%;
+}
+#company-data .box .col:last-child{
+    padding-right:0px;
+}
+#company-data .box .col .logo{
+    width:100%;
+}
+.wraptocenter {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width:100%;
+    height:115px;
+}
+.wraptocenter * {
+    vertical-align: middle;
+}
+</style>
+<div id="company-data">
+    <div class="box">
+        <div class="company">
+            <div class="col">
+                <div class="wraptocenter"><span></span>
+                    <img class="logo" src="[% logo | html %]" alt="[% company_name | html %]" />
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="data">
+                    <span class="bold">Product name</span>:<br/> [% product_name | html %]
+                </div>
+                <div class="data">
+                    <span class="bold">Raised</span>:<br/> [% raised | html %]
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="data">
+                    <span class="bold">Country</span>:<br/> [% country | html %]
+                </div>
+                <div class="data">
+                    <span class="bold">Short pitch</span>:<br/> [% one_sentence_pitch | html_para_break %]
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="company1 box">
+        <div class="data">
+            <span class="bold">Pitch</span>: [% many_words_pitch | html_para_break %]
+        </div>
+    </div>
+</div>
+

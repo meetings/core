@@ -1,0 +1,9 @@
+[%#
+	embed = "#"
+	description = "Blaa <a href=\"#\">Lue lisää &rarr;</a>"
+%]
+<div class="featured_box_content">
+	<div class="featured_box_embed">[% embed %]</div>
+	<div class="featured_box_description">[% description %]</div>
+	<a href="[% more_url | html %]" class="big-button alpha_png" style="float:right"><span class="alpha_png">[% MSG("Read more") | html %] &rarr;</span></a>
+</div>

@@ -1,0 +1,366 @@
+use DateTime;
+use Dicole::Utils::SQL;
+
+#my @default_exclude = (2, 5, 170, 176, 177, 927, 937);
+my @default_exclude = ( );
+
+sub execute {
+    my ($self, $p) = @_;
+
+    my ($domain_id, $start_time, @exclude);
+    
+    my $params = eval $p;
+    if ( ref( $params ) eq 'HASH' ) {
+        $domain_id = $params->{domain_id};
+        $start_time = $params->{start_time};
+        @exclude = $params->{exclude} ? @{ $params->{exclude} } : @default_exclude;
+    }
+    else {
+        ( $domain_id, $start_time, @exclude ) = split /\s*,\s*/, $p;
+        @exclude = @default_exclude unless scalar @exclude;
+    }
+
+    $domain_id ||= 0;
+    $start_time ||= 0;
+    $start_time = slot2date( $start_time, 'day_start' )->epoch if $start_time =~ /\-/;
+
+    my $users;
+    if ( $domain_id ) {
+        $users = CTX->lookup_object('user')->fetch_group({
+            from => [ 'sys_user', 'dicole_domain_user' ],
+            where => 'sys_user.user_id = dicole_domain_user.user_id AND ' .
+                'dicole_domain_user.domain_id = ? AND ' .
+                Dicole::Utils::SQL->column_not_in('sys_user.user_id', \@exclude ),
+            value => [ $domain_id ],
+        }) || [];
+    }
+    else {
+        $users = CTX->lookup_object('user')->fetch_group({
+            where => Dicole::Utils::SQL->column_not_in('user_id', \@exclude ),
+        }) || [];
+    }
+
+    my @uids = map { $_->{user_id} } @$users;
+
+    # Detect domain groups to limit the changes to those done in these groups
+    # and posts/comments to those shared to given groups.
+    my $groups;
+    if ( $domain_id ) {
+        $groups = CTX->lookup_object('groups')->fetch_group({
+            from => [ 'dicole_groups', 'dicole_domain_group' ],
+            where => 'dicole_groups.groups_id = dicole_domain_group.group_id AND ' .
+                'dicole_domain_group.domain_id = ?',
+            value => [ $domain_id ],
+        }) || [];
+    }
+    else {
+        $groups = CTX->lookup_object('groups')->fetch_group() || [];
+    }
+
+    my @gids = map { $_->{groups_id} } @$groups;
+    my %gidmap = map { $_ => 1 } @gids;
+
+    my $posts = CTX->lookup_object('weblog_posts')->fetch_group({
+        where => 'date > ? AND ' .
+            Dicole::Utils::SQL->column_in( 'user_id', \@uids ),
+        value => [ $start_time ],
+    }) || [];
+    
+    # TODO: Strip posts down to those that are shared to this domain
+
+    my $comments = CTX->lookup_object('weblog_comments')->fetch_group({
+        from => ['dicole_weblog_comments', 'dicole_weblog_posts'],
+        where => 'dicole_weblog_comments.date > ? AND ' .
+            Dicole::Utils::SQL->column_in( 'dicole_weblog_posts.user_id', \@uids ) .
+            ' AND dicole_weblog_comments.post_id = dicole_weblog_posts.post_id' .
+            ' AND ' . Dicole::Utils::SQL->column_in( 'dicole_weblog_comments.user_id', \@uids ),
+        value => [ $start_time ],
+    }) || [];
+
+    # TODO: Strip comments down to those that posted under posts that are shared to this domain
+
+    my $versions = CTX->lookup_object('wiki_version')->fetch_group({
+        where => 'creation_time > ? AND ' .
+            Dicole::Utils::SQL->column_in( 'creator_id', \@uids ),
+        value => [ $start_time ],
+    }) || [];
+    
+    # Strip to those that are done in groups that belong to domain
+    $versions = [ grep { $gidmap{ $_->{groups_id} } } @$versions ];
+     
+    my $actions = CTX->lookup_object('logged_action')->fetch_group( {
+        where => 'time > ? AND domain_id = ? AND ' .
+            Dicole::Utils::SQL->column_in( 'user_id', \@uids ),
+        value => [ $start_time, $domain_id ],
+    } );
+    
+    my %timedata = ();
+    my %weekdata = ();
+    my %userdata = ();
+    
+    for my $uo ( @$users ) {
+        $userdata{ $uo->{user_id} }->{id} = $uo->{user_id};
+        $userdata{ $uo->{user_id} }->{name} = $uo->{last_name} . ' ' . $uo->{first_name};
+    }
+    
+    for my $post ( @$posts ) {
+        $timedata{ epoch2slot( $post->{date} ) }->{posts}->{ $post->{user_id} }++;
+        $weekdata{ epoch2weekslot( $post->{date} ) }->{posts}->{ $post->{user_id} }->{ epoch2slot( $post->{date} ) }++;
+    }
+    
+    for my $comment ( @$comments ) {
+        $timedata{ epoch2slot( $comment->{date} ) }->{comments}->{ $comment->{user_id} }++;
+        $weekdata{ epoch2weekslot( $comment->{date} ) }->{comments}->{ $comment->{user_id} }->{ epoch2slot( $comment->{date} ) }++;
+    }
+
+    for my $version ( @$versions ) {
+        $timedata{ epoch2slot( $version->{creation_time} ) }->{changes}->
+            { $version->{page_id} }->{ $version->{creator_id} }++;
+        $weekdata{ epoch2weekslot( $version->{creation_time} ) }->{changes}->
+            { $version->{page_id} }->{ $version->{creator_id} }->{ epoch2slot( $version->{creation_time} ) }++;
+    }
+    
+    for my $action ( @$actions ) {
+        $timedata{ epoch2slot( $action->{'time'} ) }->{active_users}->{ $action->{user_id} }++;
+        $weekdata{ epoch2weekslot( $action->{'time'} ) }->{active_users}->{ $action->{user_id} }++;
+    }
+
+    # count real post and change counts
+    # count real slotcounts
+    
+    my %slotdata = ();
+    
+    for my $timeslot ( keys %timedata ) {
+        my $date = $timedata{ $timeslot };
+        $slotdata{ $timeslot }->{slot} = $timeslot;
+        if ( my $changes = $date->{changes} ) {
+            for my $page_id ( keys %$changes ) {
+                my $changers = $changes->{$page_id};
+                for my $user_id ( keys %$changers ) {
+                    $userdata{ $user_id }->{changes}++;
+                    $slotdata{ $timeslot }->{changes}++;
+                }
+            }
+        }
+        if ( my $posters = $date->{posts} ) {
+            for my $user_id ( keys %$posters ) {
+                $userdata{ $user_id }->{posts} += $date->{posts}->{$user_id};
+                $slotdata{ $timeslot }->{posts} += $date->{posts}->{$user_id};
+            }
+        }
+        if ( my $commenters = $date->{comments} ) {
+            for my $user_id ( keys %$commenters ) {
+                $userdata{ $user_id }->{comments} += $date->{comments}->{$user_id};
+                $slotdata{ $timeslot }->{comments} += $date->{comments}->{$user_id};
+            }
+        }
+        if ( my $active_users = $date->{active_users} ) {
+            for my $user_id ( keys %$active_users ) {
+                $userdata{ $user_id }->{active_days} += 1;
+                $slotdata{ $timeslot }->{active_users} += 1;
+            }
+        }
+    }
+    
+    my %weekslotdata = ();
+    
+    for my $timeslot ( keys %weekdata ) {
+        my $date = $weekdata{ $timeslot };
+        $weekslotdata{ $timeslot }->{slot} = $timeslot;
+        if ( my $changes = $date->{changes} ) {
+            for my $page_id ( keys %$changes ) {
+                my $changers = $changes->{$page_id};
+                for my $user_id ( keys %$changers ) {
+                    $weekslotdata{ $timeslot }->{changes} +=
+                        scalar( keys ( %{ $date->{changes}->{$page_id}->{$user_id} } ) );
+                }
+            }
+        }
+        if ( my $posters = $date->{posts} ) {
+            for my $user_id ( keys %$posters ) {
+                for my $dateslot ( keys %{ $posters->{$user_id} } ) {
+                    $weekslotdata{ $timeslot }->{posts} +=
+                        $date->{posts}->{$user_id}->{$dateslot};
+                }
+            }
+        }
+        if ( my $commenters = $date->{comments} ) {
+            for my $user_id ( keys %$commenters ) {
+                for my $dateslot ( keys %{ $commenters->{$user_id} } ) {
+                    $weekslotdata{ $timeslot }->{comments} +=
+                       $date->{comments}->{$user_id}->{$dateslot};
+                }
+            }
+        }
+        if ( my $active_users = $date->{active_users} ) {
+            for my $user_id ( keys %$active_users ) {
+                $weekslotdata{ $timeslot }->{active_users} += 1;
+            }
+        }
+    }
+ 
+    # create, update and delete userdata objects
+    my $user_usages = CTX->lookup_object('logged_usage_user')->fetch_group( {
+        where => 'domain_id = ?',
+        value => [ $domain_id ],
+    } ) || [];
+    my %user_usages = map { $_->{user_id} => $_ } @$user_usages;
+ 
+    for my $v ( sort { $a->{name} cmp $b->{name} } values %userdata ) {
+        process_object( \%user_usages, 'user_id', 'logged_usage_user' , {
+            domain_id => $domain_id,
+            user_id => $v->{id},
+            wiki_total => $v->{changes} || 0,
+            blog_total => $v->{posts} || 0,
+            comment_total => $v->{comments} || 0,
+        } );
+    }
+    $_->delete for values %user_usages;
+
+    # create, update and delete daily data objects
+    my $daily_usages = CTX->lookup_object('logged_usage_daily')->fetch_group( {
+        where => 'domain_id = ?',
+        value => [ $domain_id ],
+    } ) || [];
+    my %daily_usages = map { $_->{date} => $_ } @$daily_usages;
+
+    my $last_slot = '';
+    for my $v ( sort { $a->{slot} cmp $b->{slot} } values %slotdata ) {
+        fill_empty_slots( \%daily_usages, $domain_id, $last_slot, $v->{slot} );
+        $last_slot = $v->{slot};
+        my $date = slot2epoch( $v->{slot} );
+        process_object( \%daily_usages, 'date', 'logged_usage_daily' , {
+            domain_id => $domain_id,
+            date => $date,
+            wiki_count => $v->{changes} || 0,
+            blog_count => $v->{posts} || 0,
+            comment_count => $v->{comments} || 0,
+            activity => $v->{active_users} || 0,
+        } );
+    }
+    $_->delete for values %daily_usages;
+    
+    # create, update and delete weekly data objects
+    my $weekly_usages = CTX->lookup_object('logged_usage_weekly')->fetch_group( {
+        where => 'domain_id = ?',
+        value => [ $domain_id ],
+    } ) || [];
+    my %weekly_usages = map { $_->{date} => $_ } @$weekly_usages;
+    
+    my $last_weekslot = '';
+    for my $v ( sort { $a->{slot} cmp $b->{slot} } values %weekslotdata ) {
+        fill_empty_weekslots( \%weekly_usages, $domain_id, $last_weekslot, $v->{slot} );
+        $last_weekslot = $v->{slot};
+        my $date = weekslot2epoch( $v->{slot} );
+        process_object( \%weekly_usages, 'date', 'logged_usage_weekly' , {
+            domain_id => $domain_id,
+            date => $date,
+            wiki_count => $v->{changes} || 0,
+            blog_count => $v->{posts} || 0,
+            comment_count => $v->{comments} || 0,
+            activity => $v->{active_users} || 0,
+        } );
+    }
+    $_->delete for values %weekly_usages;
+
+}
+
+sub process_object {
+    my ( $objects, $id, $type, $data ) = @_;
+    my $object = $objects->{ $data->{$id} };
+    if ( $object ) {
+        delete $objects->{ $data->{$id} };
+        my $save = 0;
+        for my $key ( keys %$data ) {
+            if ( $object->{$key} ne $data->{$key} ) {
+                $object->{$key} = $data->{$key};
+                $save = 1;
+            }
+        }
+        $object->save if $save;
+    }
+    else {
+        $object = CTX->lookup_object( $type )->new( $data );
+        $object->save;
+    }
+}
+
+sub epoch2slot {
+    my ( $date ) = @_;
+    my $dt = DateTime->from_epoch( epoch => $date );
+    $dt->set_time_zone( 'Europe/Helsinki' );
+    return $dt->ymd;
+}
+sub slot2date {
+    my ( $slot , $day_start ) = @_;
+    my ( $year, $month, $day ) = split '-', $slot;
+    return DateTime->new(
+        year => $year, month => $month, day => $day, hour => $day_start ? 0 : 12, time_zone => 'Europe/Helsinki'
+    );
+}
+
+sub slot2epoch {
+    return slot2date( @_ )->epoch;
+}
+
+sub epoch2weekslot {
+    my ( $date ) = @_;
+    my $dt = DateTime->from_epoch( epoch => $date );
+    $dt->set_time_zone( 'Europe/Helsinki' );
+    my ($week_year, $week_number) = $dt->week;
+    return $week_year .'-'. sprintf("%02d",$week_number );
+}
+
+sub weekslot2date {
+    my ( $slot ) = @_;
+    my ( $year, $week ) = split '-', $slot;
+    my $dt = DateTime->new(
+        year => $year, hour => 12, time_zone => 'Europe/Helsinki'
+    );
+    $dt->add( days => 7 * ( $week - 1 ) );
+    return $dt;
+}
+
+sub weekslot2epoch {
+    return weekslot2date( @_ )->epoch;
+}
+
+sub fill_empty_slots {
+    my ( $daily_usages, $domain_id, $last_slot, $now_slot ) = @_;
+    return unless $last_slot && $now_slot;
+    my $last = slot2date( $last_slot );
+    $last->add( days => 1 );
+    while ( slot2epoch( epoch2slot( $last->epoch ) ) < slot2epoch( $now_slot ) ) {
+        my $date = slot2epoch( epoch2slot( $last->epoch ) );
+        process_object( $daily_usages, 'date', 'logged_usage_daily' , {
+            domain_id => $domain_id,
+            date => $date,
+            wiki_count => 0,
+            blog_count => 0,
+            comment_count => 0,
+            activity => 0,
+        } );
+        $last->add( days => 1 );
+    }
+}
+
+sub fill_empty_weekslots {
+    my ( $weekly_usages, $domain_id, $last_slot, $now_slot ) = @_;
+    return unless $last_slot && $now_slot;
+    my $last = weekslot2date( $last_slot );
+    $last->add( days => 7 );
+    while ( weekslot2epoch( epoch2weekslot( $last->epoch ) ) < weekslot2epoch( $now_slot ) ) {
+        my $date = weekslot2epoch( epoch2weekslot( $last->epoch ) );
+        process_object( $weekly_usages, 'date', 'logged_usage_weekly' , {
+            domain_id => $domain_id,
+            date => $date,
+            wiki_count => 0,
+            blog_count => 0,
+            comment_count => 0,
+            activity => 0,
+        } );
+        $last->add( days => 7 );
+    }
+}
+
+1;

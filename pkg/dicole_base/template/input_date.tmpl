@@ -1,0 +1,66 @@
+[%#- $Id: input_date.tmpl,v 1.4 2009-01-07 14:42:33 amv Exp $ -%]
+
+[%#-
+
+Todo:
+
+implement attributes
+
+%]
+
+[%- USE date %]
+[%- DEFAULT
+	itemparams.attributes.value =
+		{
+			day 	=> date.format(date.now, '%e', lang.lang_code) - 10 + 10
+			month	=> date.format(date.now, '%m', lang.lang_code) - 10 + 10
+			year	=> date.format(date.now, '%Y', lang.lang_code)
+			hour	=> date.format(date.now, '%k', lang.lang_code)
+			minute	=> date.format(date.now, '%M', lang.lang_code)
+		}
+	itemparams.date =
+		{
+			days 	= [ 1 .. 31 ]
+			months  = [ 1 .. 12 ]
+			years   = [ 1900 .. 2040 ]
+		}
+	itemparams.time =
+		{
+			hours	= [ 0 .. 23 ]
+			minutes = [ 0 .. 60 ]
+		}
+	
+	# roundedminutes = (( itemparams.attributes.value.minute + 8 ) - (( itemparams.attributes.value.minute + 8 ) % 15 )) % 60
+-%]
+[%- UNLESS itemparams.hide_date %]
+<select name="[% itemparams.attributes.name %]_day">
+[%- FOREACH  day = itemparams.date.days %]
+<option[% IF itemparams.attributes.value.day == day %] selected="selected"[% END %][% IF option.value %] value="[% day %]"[% END %]>[% day %]</option>
+[%- END -%]
+</select>
+<select name="[% itemparams.attributes.name %]_month">
+[%- FOREACH month = itemparams.date.months %]
+<option[% IF itemparams.attributes.value.month == month %] selected="selected"[% END %][% IF option.value %] value="[% month %]"[% END %]>[% month %]</option>
+[%- END -%]
+</select>
+<select name="[% itemparams.attributes.name %]_year">
+[%- FOREACH year = itemparams.date.years %]
+<option[% IF itemparams.attributes.value.year == year %] selected="selected"[% END %][% IF option.value %] value="[% year %]"[% END %]>[% year %]</option>
+[%- END -%]
+</select>
+[%- END %]
+[%- IF itemparams.show_time %]
+<select name="[% itemparams.attributes.name %]_hour">
+[%- FOREACH hour = itemparams.time.hours %]
+<option[% IF itemparams.attributes.value.hour == hour %] selected="selected"[% END %][% IF option.value %] value="[% hour %]"[% END %]>[% hour %]</option>
+[%- END -%]
+</select>
+<select name="[% itemparams.attributes.name %]_minute">
+[%- FOREACH minute = itemparams.time.minutes %]
+<option[% IF itemparams.attributes.value.minute == minute %] selected="selected"[% END %][% IF option.value %] value="[% minute %]"[% END %]>[% minute %]</option>
+[%- END -%]
+</select>
+[%- END -%]
+[%- IF itemparams.error || itemparams.required %]
+[%- PROCESS dicole_base::input_req_error %]
+[%- END %]

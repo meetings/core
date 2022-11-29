@@ -1,0 +1,24 @@
+[% # $Id: widget_kvlisting.tmpl,v 1.4 2008-02-21 04:34:23 amv Exp $ -%]
+[%- list = itemparams -%]
+[%- rowcount = 0 -%]
+
+<table class="valuePairList">
+[%- FOREACH item = list.rows %]
+<tr class="[% IF rowcount % 2 == 0 %]even[% ELSE %]odd[% END %][% IF item.class %][% item.class %][% END %]">
+
+<td class="valuePairKey[% IF item.key.class %] [% item.key.class %][% END %]" style="width: [% itemparams.key_proportional || itemparams.key_absolute || itemparams.widths.0 %]">
+<div style="[% IF itemparams.key_absolute %] width: [% itemparams.key_absolute %];[% END %]">
+    [% PROCESS dicole_base::include_widget widget = item.key %]
+</div>
+</td>
+
+<td class="valuePairValue[% IF item.value.class %] [% item.value.class %][% END %]" style="width: [% itemparams.value_proportional || itemparams.widths.1 %]">
+<div>
+    [% PROCESS dicole_base::include_widget widget = item.value %]
+</div>
+</td>
+
+</tr>
+[%- rowcount = rowcount + 1 %]
+[%- END %]
+</table>

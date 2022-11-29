@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for LANG in "en" "fi" "sv" "nl" "fr"
+do
+    bin/translations/x_convert_po_to_js src/locale/desktop_front-$LANG.po > html/js/dicole/meetings/lang/$LANG.js
+done

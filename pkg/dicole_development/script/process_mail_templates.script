@@ -1,0 +1,37 @@
+sub execute {
+    my ( $self, $params ) = @_;
+    my ( $pkg, $update_only ) = split ",", $params;
+    my $dev_api = CTX->lookup_action('development_api');
+
+    my $dir = ( -d "pkg/$pkg" ) ? "pkg/$pkg" : "pkg/dicole_$pkg";
+    unless ( -d $dir ) {
+        print "Could not find package $pkg - Check the spelling and make sure you are running this in source root!\n";
+        die;
+    }
+    die unless -d "$dir/src/mail/";
+
+    system "rm", "-Rf", "$dir/template/mail";
+    system "mkdir", "-p", "$dir/template/mail";
+
+    my $files = `ls $dir/src/mail/*.mail`;
+    for my $file ( split /\n/, $files ) {
+        chomp $file;
+        my $lang = 'en';
+        my ( $base ) = $file =~ /.*\/(.*)\-en\.mail/;
+        next unless $base;
+        next if $update_only && `git status -s $file` =~ /^\?\?/;
+
+        my $content = `cat $file`;
+        my $template = $dev_api->e( prepare_template_params => { dir => $dir, content => $content, lang => 'en' } );
+
+        for my $target ( qw( subject html text ) ) {
+            my $target_file = $base . '_' . $target . '.tmpl';
+
+            open F, ">$dir/template/mail/$target_file";
+            print F $template->{$target};
+            close F;
+        }
+    }
+}
+
+1;

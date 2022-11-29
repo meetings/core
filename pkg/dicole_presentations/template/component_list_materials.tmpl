@@ -1,0 +1,30 @@
+[% FOREACH object IN objects %]
+        <a class="js_tooltip presentations-listing-type-[% object.type %] presentations_list_material_item" data-tooltip-class="material-tooltip" data-tooltip-nodeid="material-tooltip-[% object.id %]" data-tooltip-width="440" data-tooltip-directions="right,down,left" href="[% object.url %]">
+            <span class="top-wrapper">
+                <span class="top-sizing-wrapper">
+                    <span class="type type-[% object.type %]"><!-- --></span>
+                    <span class="title">[% object.title | html %]</span>
+                    <span class="tags">
+                    [% FOREACH tag IN object.tags %]
+                       <span class="tag">[% tag.name | html %]</span>
+                    [% END %]
+                    </span>
+                    <span class="description">[% object.description %]</span>
+                </span>
+            </span>
+            <span class="comments-count">[% object.comment_count || 0 %] <span class="comments-count-text">comments</span></span>
+            <span class="bookmarks-count">[% object.bookmark_count || 0 %] <span class="bookmarks-count-text">bookmarks</span></span>
+        </a>
+        <div id="material-tooltip-[% object.id %]" style="display: none">
+            [% IF object.image %]<div class="image"><img src="[% object.image %]" /></div>[% END %]
+            <span class="title">[% object.title | html %]</span>
+            <span class="tags">
+            [% FOREACH tag IN object.tags %]
+               <span class="tag">[% tag.name | html %]</span>
+            [% END %]
+            </span>
+            <span class="description">[% object.description %]</span>
+            [% IF object.presenter_name %]<span  class="presented-by">Presented by: [% object.presenter_name | html %]</span>[% END %]
+            <span class="uploaded-by">Uploaded [% IF object.creator_name %]by [% object.creator_name | html %] [% END %]on [% object.date %]</span>
+        </div>
+[% END %]

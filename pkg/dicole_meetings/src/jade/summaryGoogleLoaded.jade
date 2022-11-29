@@ -1,0 +1,13 @@
+div#summary-connecting.tab
+    div#google-connecting.m-modal
+        div.modal-header
+            h3
+                i.ico-calendar
+                !=MTN.t('Connecting your calendar')
+        div.modal-content
+            p!=MTN.t('We have now imported your calendar items. You can change the calendar integration settings anytime at your personal settings.')
+            p!=MTN.t('Next you should add Meetin.gs to your Google calendar. Do you want to subscribe to the meeting calendar feed now?')
+        div.modal-footer
+            div.buttons.right
+                a.button.blue.subscribe(href='/meetings/user/settings/calendar')!=MTN.t('Subscribe')
+                a.button.gray.cancel!=MTN.t('Not now')

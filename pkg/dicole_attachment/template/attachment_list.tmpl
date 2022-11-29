@@ -1,0 +1,8 @@
+<div>
+[% FOREACH a IN attachments %]
+<div class="attachment_list_container" style="float: left;">
+[% IF a.thumbnail_url %]<a href="[% a.download_url | html %]"><img src="[% a.thumbnail_url | html %]" title="[% a.filename | html %]" /></a><br />[% END %]
+<a href="[% a.download_url | html %]">[% a.filename | html %]</a>
+</div>
+[% END %]
+</div>

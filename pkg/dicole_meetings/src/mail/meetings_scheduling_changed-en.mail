@@ -1,0 +1,56 @@
+[% IF open_scheduling_options.size > 1 %][% MTN.t("New scheduling options:") %] [% ELSE %][% MTN.t("New scheduling option:") %] [% END %][% meeting_title %]
+
+<<<html_wrapper>>>
+
+[% IF open_scheduling_options.size > 1 %]
+[% action_text = MTN.t('Open scheduling options for') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+[% ELSE %]
+
+[% action_text = MTN.t('Open scheduling option for') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+[% END %]
+
+<<<bubble>>>
+
+<<<p>>>
+[% MTN.t("New time suggestions are waiting for your reply. You can respond on the meeting page.") %]
+<<</p>>>
+
+<<<p>>>[% IF open_scheduling_options.size > 1 %][% MTN.t("Unanswered times:") %] [% ELSE %] [% MTN.t("Unanswered time:") %][% END %]<<</p>>>
+
+<<<list>>>
+[% FOREACH option IN open_scheduling_options %]
+<<<item>>>
+<<<bold>>>[% option.timestring %]<<</bold>>>
+<<</item>>>
+[% END %]
+<<</list>>>
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=scheduling_changed' %]
+[% showtext = 1 %]
+[% text = MTN.t('Answer now') %]
+<<<blue_button>>>
+
+<<<br>>>
+
+<<<hr>>>
+
+<<<basic_info>>>
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t("%(B\$Tip:%) To respond by email, reply to this message with the word SCHEDULE.") %] <<</p>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

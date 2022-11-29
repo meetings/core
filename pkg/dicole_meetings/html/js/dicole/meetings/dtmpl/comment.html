@@ -1,0 +1,32 @@
+<div class="comment">
+    <div class="comment-user-pic">
+        <a title="<%== p.comment.user_name %>" href="<%= p.comment.user_data_url %>" class="user js_meetings_show_user_open">
+            <img alt="<%== p.comment.user_name %>" src="<%= p.comment.user_image ? p.comment.user_image : '/images/meetings/face_icon.png' %>">
+        </a>
+    </div>
+    <% if( ! p.comment.user_image ) { %>
+    <span class="comment-initials">
+        <%== p.comment.user_initials ? p.comment.user_initials : '' %>
+    </span>
+    <% } %>
+    <div class="comment-content">
+        <div class="comment-text">
+            <%= p.comment.content %>
+        </div>
+        <div class="comment-info">
+            <span class="user-name"><%== p.comment.user_name %></span> <span class="date">- <%== p.comment.datetimestamp %></span>
+        </div>
+    </div>
+    <div class="comment-controls">
+        <% if ( p.comment.right_to_delete && ! p.chat.disable_deleting ) { %>
+        <a href="#" class="js_comment_delete_link js_tooltip" data-tooltip-class="tooltip-small" data-tooltip-text="<%= MTN.t('Remove comment') %>">
+            <i class="ico-cross"></i>
+        </a>
+        <% } %>
+        <% if ( p.comment.right_to_edit && ! p.chat.disable_editing ) { %>
+        <a href="#" class="js_comment_edit_link js_tooltip" data-tooltip-class="tooltip-small" data-tooltip-text="<%= MTN.t('Edit comment') %>">
+            <i class="ico-edit"></i>
+        </a>
+        <% } %>
+    </div>
+</div>

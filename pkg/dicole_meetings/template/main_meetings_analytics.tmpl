@@ -1,0 +1,510 @@
+<div id="analytics">
+
+    <script type="text/javascript">
+    function return_axises( hash ) {
+        var array = [];
+        var array_sorted = [];
+        var obj = {};
+        obj.x = [];
+        obj.y = [];
+
+        // Get keys & sort
+        for (var key in hash) {
+            array.push(key);
+        }
+        array.sort();
+
+        // Build new sorted arrays
+        for (var i in array) {
+            //array_sorted[i] = hash[i];
+            obj.x.push(i);
+            obj.y.push(hash[i]);
+        }
+        obj.y.reverse();
+        return obj;
+    };
+
+    function fix_labels( xText, week_numbers ){
+        for(var i in xText){
+          var _oldLabel = xText[i].attr('text'),
+              _newLabel = "Week " + week_numbers[7 - _oldLabel];
+          xText[i].attr({'text': _newLabel});
+      }
+    };
+
+    function secondsToTimeStr(secs){
+        var set_neg = false;
+        if((secs+'').toString().charAt(0) == '-'){
+           secs = parseInt(secs.toString().substring(1));
+           set_neg = true;
+        }
+
+        var days = Math.floor(secs / (60 * 60 * 24));
+        secs = secs % (60 * 60 * 24 );
+
+        var hours = Math.floor(secs / (60 * 60));
+        secs = secs % (60 * 60);
+
+        var minutes = Math.ceil(secs / 60);
+
+        var obj = {
+            "d": days,
+            "h": hours,
+            "m": minutes,
+        };
+
+        string = '';
+
+        if(obj.d > 0) string += obj.d + 'd ';
+        if(obj.h > 0) string += obj.h + 'h ';
+        if(obj.m > 0) string += obj.m + 'min';
+
+        if(set_neg) string = '-'+string;
+
+        if(string == '') string = 0;
+
+        return string;
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // Get all stats
+        var stats = dicole.get_global_variable('meetings_stats');
+
+        // Number of meetings -----------------------------------
+        // Graph
+        var number_of_meetings = Raphael("number_of_meetings_graph");
+        number_of_meetings.g.txtattr.font = "12px 'Museo Sans', Helvetica";
+        var axises = return_axises( stats.number_of_meetings_weekly );
+
+        var chart = number_of_meetings.g.linechart(10,10,550,140,axises.x,axises.y, {"colors":["#00a0cd", "#ccc"], "symbol":"", axis:"0 0 1 1", axisxstep: 7, gutter: 25});
+        fix_labels(chart.axis[0].text.items, stats.week_numbers);
+
+        stats.online_percentage = stats.virtual_meetings_last_30_p;
+        stats.online_percentage_prev = stats.virtual_meetings_prev_30_p;
+        stats.online_percentage_gain = stats.virtual_meetings_gain_p;
+
+        // Pie last 30
+        //var number_of_meeings_pie = Raphael("number_of_meeings_pie");
+        //number_of_meeings_pie.g.piechart(32, 32, 30, [100],{colors: ["#73d5ee", "#0d9dc3"]});
+
+        // Pie prev 30
+        //var number_of_meeings_pie2 = Raphael("number_of_meeings_pie2");
+        //number_of_meeings_pie2.g.piechart(32, 32, 30, [stats.online_percentage_prev, 100 - stats.online_percentage_prev],{colors: ["#73d5ee", "#0d9dc3"]});
+
+
+        // Number of materials -----------------------------------
+        // Graph
+        var number_of_materials = Raphael("number_of_materials_graph");
+        number_of_materials.g.txtattr.font = "12px 'Museo Sans', Helvetica";
+        axises = return_axises( stats.number_of_materials_weekly );
+
+        chart = number_of_materials.g.linechart(10,10,550,140,axises.x,axises.y, {"colors":["#00a0cd", "#ccc"], "symbol":"", axis:"0 0 1 1", axisxstep: 7, gutter: 25});
+        fix_labels(chart.axis[0].text.items, stats.week_numbers);
+
+        stats.material_percentage = stats.meetings_with_material_last_30_p;
+        stats.material_percentage_prev = stats.meetings_with_material_prev_30_p;
+        stats.material_percentage_gain = stats.meetings_with_material_gain_p;
+
+
+        // Pie last 30
+        //var number_of_materials_pie = Raphael("number_of_materials_pie");
+        //number_of_materials_pie.g.piechart(32, 32, 30, [70,30],{colors: ["#73d5ee", "#0d9dc3"]});
+
+        // Pie prev 30
+        //var number_of_materials_pie2 = Raphael("number_of_materials_pie2");
+        //number_of_materials_pie2.g.piechart(32, 32, 30, [70,30],{colors: ["#73d5ee", "#0d9dc3"]});
+
+        // Comments -----------------------------------
+        // Graph
+        var number_of_notes = Raphael("number_of_notes_graph");
+        number_of_notes.g.txtattr.font = "12px 'Museo Sans', Helvetica";
+        axises = return_axises( stats.number_of_notes_weekly );
+
+        chart = number_of_notes.g.linechart(10,10,550,140,axises.x,axises.y, {"colors":["#00a0cd", "#ccc"], "symbol":"", axis:"0 0 1 1", axisxstep: 7, gutter: 25});
+        fix_labels(chart.axis[0].text.items, stats.week_numbers);
+
+        stats.notes_percentage = stats.meetings_with_notes_last_30_p;
+        stats.notes_percentage_prev = stats.meetings_with_notes_prev_30_p;
+        stats.notes_percentage_gain = stats.meetings_with_notes_gain_p;
+
+        // Pie last 30
+        //var number_of_notes_pie = Raphael("number_of_notes_pie");
+        //number_of_notes_pie.g.piechart(32, 32, 30, [70,30],{colors: ["#73d5ee", "#0d9dc3"]});
+
+        // Pie prev 30
+        //var number_of_notes_pie2 = Raphael("number_of_notes_pie2");
+        //number_of_notes_pie2.g.piechart(32, 32, 30, [70,30],{colors: ["#73d5ee", "#0d9dc3"]});
+
+        // Interactions
+        dojo.style( dojo.byId('content_shared_before_percentage'), 'width', stats.meetings_with_content_before_total_p +'%' );
+        dojo.style( dojo.byId('meetings_with_shared_content'), 'width', stats.meetings_with_content_total_p +'%' );
+        dojo.style( dojo.byId('meetings_with_followups'), 'width',  stats.meetings_with_content_after_total_p +'%' );
+        dojo.byId('content_shared_before_percentage_txt').innerHTML = stats.meetings_with_content_before_total_p +'%';
+        dojo.byId('meetings_with_shared_content_txt').innerHTML = stats.meetings_with_content_total_p +'%';
+        dojo.byId('meetings_with_followups_txt').innerHTML = stats.meetings_with_content_after_total_p +'%';
+
+
+        stats.siml = secondsToTimeStr(stats.seconds_in_meetings_last_30);
+        stats.simp = secondsToTimeStr(stats.seconds_in_meetings_prev_30);
+        stats.simg = secondsToTimeStr(stats.seconds_in_meetings_last_30 - stats.seconds_in_meetings_prev_30);
+
+        stats.average = secondsToTimeStr(stats.seconds_in_meetings_last_30_average);
+        stats.average_prev = secondsToTimeStr(stats.seconds_in_meetings_prev_30_average);
+        stats.average_gain = secondsToTimeStr(stats.seconds_in_meetings_gain_average);
+
+        stats.time_spent_in_meetings = secondsToTimeStr(stats.seconds_in_meetings_total);
+        stats.average_meeting_length =  secondsToTimeStr( stats.seconds_in_meetings_total / stats.meetings_participated_in_count );
+        stats.average_number_of_participants = ( stats.number_of_participants_total / stats.meetings_participated_in_count ).toFixed(2);
+
+        // Add stats to document
+        for (var k in stats ) {
+            dojo.query('.js_analytics_'+k).forEach( function( node ) {
+                node.innerHTML = stats[k];
+
+                if ( dojo.hasClass( node, 'percentage' ) ) {
+                    node.innerHTML = node.innerHTML + '&#37;';
+                }
+
+                if ( dojo.hasClass( node, 'js_gain_color' ) ) {
+                    if ( stats[k] > 0 || ( stats[k].toString().charAt(0) != '0' && stats[k].toString().charAt(0) != '-' ) ) {
+                        dojo.addClass( node, 'green' );
+                        if( stats[k].toString().charAt(0) != '+' ) node.innerHTML = '+' + node.innerHTML;
+                    }
+                    if ( stats[k] < 0 || stats[k].toString().charAt(0) == '-') {
+                        dojo.addClass( node, 'red' );
+                    }
+                }
+
+                if ( dojo.hasClass( node, 'js_gain_color_inverse' ) ) {
+                    if ( stats[k] > 0 || ( stats[k].toString().charAt(0) != '0' && stats[k].toString().charAt(0) != '-' ) ) {
+                        dojo.addClass( node, 'red' );
+                        if( stats[k].toString().charAt(0) != '+' ) node.innerHTML = '+' + node.innerHTML;
+
+                    }
+                    if ( stats[k] < 0 || stats[k].toString().charAt(0) == '-') {
+                        dojo.addClass( node, 'green' );
+                    }
+                }
+            } );
+        }
+
+        // Add since joined time & timescales
+        if( stats.user_join_mdy != undefined ){
+            var user_join_element = dojo.byId('user-join-date');
+            user_join_element.innerHTML = ' since ' + stats.user_join_mdy;
+        }
+        if( stats.sixty_days_ago_mdy != undefined && stats.thirty_days_ago_mdy != undefined){
+            dojo.query('.prev-30-days').forEach( function ( node ) {
+                node.outerHTML = stats.sixty_days_ago_mdy + ' - ' + stats.thirty_days_ago_mdy;
+            });
+
+        }
+
+    }, false);
+
+    </script>
+
+	<h2 class="modal-header">[% MTN.t('Your Meeting Analytics') %]</h2>
+
+    <!-- In Total -->
+    <div class="analytic-container">
+        <h3>[% MTN.t('In total') %]<span id="user-join-date"></span></h3>
+        <div class="analytic-bg">
+            <div class="analytic-row" style="height:90px;">
+                <div class="analytic-col cols-4 border">
+                    <p><span class="js_analytics_virtual_meetings_total_p percentage"></span><br />[% MTN.t('online meetings') %]</p>
+                </div>
+                <div class="analytic-col cols-4 border">
+                    <p><span class="js_analytics_time_spent_in_meetings"></span><br />[% MTN.t('spent in meetings') %]</p>
+                </div>
+                <div class="analytic-col cols-4 border">
+                    <p><span class="js_analytics_average_meeting_length"></span><br />[% MTN.t('average meeting length') %]</p>
+                </div>
+                <div class="analytic-col cols-4">
+                    <p><span class="js_analytics_average_number_of_participants"></span><br />[% MTN.t('average participant') %]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="analytic-divider">
+        <div class="divider-bg volume"></div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- Number of meetings -->
+    <div class="analytic-container">
+        <h3>[% MTN.t('Number of meetings') %]</h3>
+        <div class="analytic-bg">
+            <div class="analytic-row border-bottom" style="height:90px;">
+                <div class="analytic-col cols-3 border">
+                    <p><span class="prev-30-days">[% MTN.t('Previous 30 days') %]</span> <br /> <span class="js_analytics_number_of_meetings_prev_30"></span></p>
+                </div>
+                <div class="analytic-col cols-3 border">
+                    <p>[% MTN.t('Last 30 days') %] <br /> <span class="js_analytics_number_of_meetings_last_30"></span></p>
+                </div>
+                <div class="analytic-col cols-3">
+                    <p>[% MTN.t('Change') %]<br /> <span class="js_analytics_number_of_meetings_gain js_gain_color"> </span></p>
+                </div>
+            </div>
+
+            <!-- Percentages -->
+            <div class="analytic-row border-bottom" style="height:90px;">
+                <div class="analytic-col cols-3 border">
+                    <!-- <div id="number_of_meeings_pie2" style="margin:10px auto; width:64px; height:64px;"></div> -->
+                    <p><span class="js_analytics_online_percentage_prev percentage"></span><br/>[% MTN.t('online meetings') %]</p>
+                </div>
+                <div class="analytic-col cols-3 border">
+                    <!-- <div id="number_of_meeings_pie" style="margin:10px auto; width:64px; height:64px;"></div> -->
+                    <p><span class="js_analytics_online_percentage percentage"></span><br/>[% MTN.t('online meetings') %]</p>
+                </div>
+                <div class="analytic-col cols-3">
+                    <p><span class="js_analytics_online_percentage_gain js_gain_color percentage"></span><br /> [% MTN.t('online meetings') %]</p>
+                </div>
+            </div>
+
+            <div class="analytic-row" style="height:220px;">
+                <div class="analytic-col cols-1">
+                    <p>[% MTN.t('Number of meetings in the last 8 weeks') %]</p>
+                    <div id="number_of_meetings_graph" style="width:560px; height:160px; margin:0 auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Number of materials -->
+    <div class="analytic-container">
+        <h3>[% MTN.t('Number of materials') %]</h3>
+        <div class="analytic-bg">
+            <div class="analytic-row border-bottom" style="height:90px;">
+                <div class="analytic-col cols-3 border">
+                    <p><span class="prev-30-days">[% MTN.t('Previous 30 days') %]</span> <br /> <span class="js_analytics_number_of_materials_prev_30"></span></p>
+                </div>
+
+                <div class="analytic-col cols-3 border">
+                    <p>[% MTN.t('Last 30 days') %] <br /> <span class="js_analytics_number_of_materials_last_30"></span></p>
+                </div>
+                <div class="analytic-col cols-3">
+                    <p>[% MTN.t('Change') %]<br /> <span class="js_analytics_number_of_materials_gain js_gain_color"> </span></p>
+                </div>
+            </div>
+
+            <div class="analytic-row border-bottom" style="height:90px;">
+                <div class="analytic-col cols-3 border">
+                    <!-- <div id="number_of_materials_pie2" style="margin:10px auto; width:64px; height:64px;"></div> -->
+                    <p><span class="js_analytics_material_percentage_prev percentage"></span><br/>[% MTN.t('meetings with materials') %]</p>
+                </div>
+                <div class="analytic-col cols-3 border">
+                    <!-- <div id="number_of_materials_pie" style="margin:10px auto; width:64px; height:64px;"></div> -->
+                    <p><span class="js_analytics_material_percentage percentage"></span><br/>[% MTN.t('meetings with materials') %]</p>
+                </div>
+                <div class="analytic-col cols-3">
+                    <p><span class="js_analytics_material_percentage_gain js_gain_color percentage"> </span><br />[% MTN.t(' meetings with materials') %]</p>
+                </div>
+            </div>
+
+            <div class="analytic-row" style="height:220px;">
+                <div class="analytic-col cols-1">
+                    <p>[% MTN.t('Meetings with materials in the last 8 weeks') %]</p>
+                    <div id="number_of_materials_graph" style="width:560px; height:160px; margin:0 auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Number of notes -->
+    <div class="analytic-container">
+        <h3>[% MTN.t('Number of shared comments in the last 30 days') %]</h3>
+        <div class="analytic-bg">
+            <div class="analytic-row border-bottom" style="height:90px;">
+                <div class="analytic-col cols-3 border">
+                    <p><span class="prev-30-days">[% MTN.t('Previous 30 days') %]</span> <br /> <span class="js_analytics_number_of_notes_prev_30"></span></p>
+                </div>
+
+                <div class="analytic-col cols-3 border">
+                    <p>[% MTN.t('Last 30 days') %] <br /> <span class="js_analytics_number_of_notes_last_30"></span></p>
+                </div>
+                <div class="analytic-col cols-3">
+                    <p>[% MTN.t('Change') %]<br /> <span class="js_analytics_number_of_notes_gain js_gain_color"> </span></p>
+                </div>
+            </div>
+
+            <div class="analytic-row border-bottom" style="height:90px;">
+                <div class="analytic-col cols-3 border">
+                    <!-- <div id="number_of_notes_pie2" style="margin:10px auto; width:64px; height:64px;"></div> -->
+                    <p><span class="js_analytics_notes_percentage_prev percentage"></span><br />[% MTN.t('meetings with discussion') %]</p>
+                </div>
+                <div class="analytic-col cols-3 border">
+                    <!-- <div id="number_of_notes_pie" style="margin:10px auto; width:64px; height:64px;"></div> -->
+                    <p><span class="js_analytics_notes_percentage percentage"></span><br />[% MTN.t('meetings with discussion') %]</p>
+                </div>
+                <div class="analytic-col cols-3">
+                    <p><span class="js_analytics_notes_percentage_gain js_gain_color percentage"></span><br /> [% MTN.t('meetings with discussion') %]</p>
+                </div>
+            </div>
+
+            <div class="analytic-row" style="height:220px;">
+                <div class="analytic-col cols-1">
+                    <p>[% MTN.t('Number of shared comments in the last 8 weeks') %]</p>
+                    <div id="number_of_notes_graph" style="width:560px; height:160px; margin:0 auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Number of participants -->
+    <div class="analytic-container">
+        <h3>[% MTN.t('Number of participants') %]</h3>
+        <div class="analytic-bg">
+            <div class="analytic-row" style="height:90px;">
+                <div class="analytic-col cols-3 border">
+                    <p><span class="prev-30-days">[% MTN.t('Previous 30 days') %]</span><br /> <span class="js_analytics_number_of_participants_prev_30"></span></p>
+                </div>
+                <div class="analytic-col cols-3 border">
+                    <p>[% MTN.t('Last 30 days') %]<br /> <span class="js_analytics_number_of_participants_last_30"></span></p>
+                </div>
+                <div class="analytic-col cols-3">
+                    <p>[% MTN.t('Change') %]<br /> <span class="js_analytics_number_of_participants_gain js_gain_color"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="analytic-divider">
+        <div class="divider-bg interaction"></div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- Sharing in brief -->
+    <div class="analytic-container">
+        <h3>[% MTN.t('Sharing in brief') %]</h3>
+        <div class="analytic-bg">
+            <div class="analytic-row border-bottom" style="height:260px;">
+                <div class="analytic-col cols-1">
+                    <p>[% MTN.t('Meetings with content shared before the meeting') %]</p>
+                    <div class="bar-graph">
+                        <div class="bar-container">
+                            <div class="bar" id="content_shared_before_percentage" style="width:50%;"></div>
+                        </div>
+                        <div class="percentage" id="content_shared_before_percentage_txt">50%</div>
+                    </div>
+                    <p>[% MTN.t('Meetings with shared content') %]</p>
+                    <div class="bar-graph">
+                        <div class="bar-container">
+                            <div class="bar" id="meetings_with_shared_content" style="width:50%;"></div>
+                        </div>
+                        <div class="percentage" id="meetings_with_shared_content_txt">50%</div>
+                    </div>
+                    <p>[% MTN.t('Meetings with follow-ups after the meeting') %]</p>
+                    <div class="bar-graph">
+                        <div class="bar-container">
+                            <div class="bar" id="meetings_with_followups" style="width:50%;"></div>
+                        </div>
+                        <div class="percentage" id="meetings_with_followups_txt">50%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="analytic-divider">
+        <div class="divider-bg time"></div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- Time spent in meetings -->
+    <div class="analytic-container">
+        <h3>[% MTN.t('Time spent in meetings') %]</h3>
+        <div class="analytic-bg">
+            <div class="analytic-row border-bottom" style="height:90px;">
+                <div class="analytic-col cols-3 border">
+                    <p><span class="prev-30-days">[% MTN.t('Previous 30 days') %]</span> <br /> <span class="js_analytics_simp"></span></p>
+                </div>
+                <div class="analytic-col cols-3 border">
+                    <p>[% MTN.t('Last 30 days') %] <br /> <span class="js_analytics_siml"></span></p>
+                </div>
+                <div class="analytic-col cols-3">
+                    <p>[% MTN.t('Change') %]<br /> <span class="js_analytics_simg js_gain_color_inverse"> </span></p>
+                </div>
+            </div>
+
+            <!-- Percents -->
+            <div class="analytic-row border-bottom" style="height:90px;">
+                <div class="analytic-col cols-3 border">
+                    <!-- <div id="number_of_notes_pie2" style="margin:10px auto; width:64px; height:64px;"></div> -->
+                    <p><span class="js_analytics_meetings_of_work_month_prev_30_p percentage"></span><br />[% MTN.t('of time spent in meetings') %]</p>
+                </div>
+                <div class="analytic-col cols-3 border">
+                    <!-- <div id="number_of_notes_pie" style="margin:10px auto; width:64px; height:64px;"></div> -->
+                    <p><span class="js_analytics_meetings_of_work_month_last_30_p percentage"></span><br />[% MTN.t('of time spent in meetings*') %]</p>
+                </div>
+                <div class="analytic-col cols-3">
+                    <p><span class="js_analytics_meetings_of_work_month_gain_p js_gain_color_inverse percentage"></span><br />[% MTN.t('of time spent in meetings') %]</p>
+                </div>
+            </div>
+        </div>
+        <p class="explanation">[% MTN.t('*Based on 160 monthly work hours.') %]</p>
+    </div>
+
+    <!-- Meeting length on average -->
+    <div class="analytic-container">
+        <h3>[% MTN.t('Meeting length on average') %]</h3>
+        <div class="analytic-bg">
+            <div class="analytic-row" style="height:90px;">
+                <div class="analytic-col cols-3 border">
+                    <p><span class="prev-30-days">[% MTN.t('Previous 30 days') %]</span><br /><span class="js_analytics_average_prev"></span></p>
+                </div>
+                <div class="analytic-col cols-3 border">
+                    <p>[% MTN.t('Last 30 days') %]<br /> <span class="js_analytics_average"></span></p>
+                </div>
+                <div class="analytic-col cols-3">
+                    <p>[% MTN.t('Change') %]<br /> <span class="js_analytics_average_gain js_gain_color_inverse"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="analytic-divider">
+        <div class="divider-bg footprint"></div>
+        <div class="divider-line"></div>
+    </div>
+
+    <h3>[% MTN.t('We are currently researching a way to calculate the carbon footprint of your meetings.') %]</h3>
+    <p id="carbon_footprint_interesting_done" [% IF ! carbon_footprint_requested %] style="display:none;"[% END %]>[% MTN.t('We will email you when the service is available.') %]</p>
+    <p id="carbon_footprint_interesting" [% IF carbon_footprint_requested %] style="display:none;"[% END %]>[% MTN.t('Are you interested in this kind of data? We can email you when this feature becomes available.') %]</p>
+    [% IF ! carbon_footprint_requested %]
+    <p>
+        <a href="#" class="js_interesting_feature" data-feature="carbon_footprint">
+		<span class="button pink">[% MTN.t('Email me') %]</span>
+        </a>
+    </p>
+    [% END %]
+
+    <div class="analytic-divider">
+        <div class="divider-bg money"></div>
+        <div class="divider-line"></div>
+    </div>
+
+    <h3>[% MTN.t('We are currently researching a way to calculate how much your meetings cost.') %]</h3>
+
+    <p id="meeting_cost_interesting_done" [% IF ! meeting_cost_requested %] style="display:none;"[% ELSE %] style="margin-bottom:30px;"[% END %]>[% MTN.t('We will email you when the service is available.') %] </p>
+
+    <p id="meeting_cost_interesting" [% IF meeting_cost_requested %] style="display:none;"[% END %]>[% MTN.t('Are you interested in this kind of data? We can email you when this feature becomes available.') %]</p>
+    [% IF ! meeting_cost_requested %]
+    <p style="margin-bottom:35px">
+        <a href="#" class="js_interesting_feature" data-feature="meeting_cost">
+		<span class="button pink">[% MTN.t('Email me') %]</span>
+        </a>
+    </p>
+    [% END %]
+
+</div>
+
+
+<div id="push"></div>
+</div><!-- End content wrapper -->
+<div id="bb-footer"></div>

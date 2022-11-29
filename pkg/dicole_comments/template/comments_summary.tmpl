@@ -1,0 +1,16 @@
+<div class="comments_summary">
+	[% FOREACH comment IN comments %]
+	<div class="comments_summary_comment">
+		<div class="comments_summary_comment_author">
+			[% IF comment.author_url %]<a class="comments_summary_comment_author_image" href="[% comment.author_url | html %]" title="[% comment.author_name | html %]">[% END %]
+				<img src="[% comment.author_image or '/images/theme/default/default-user-avatar-40px.png' | html %]" alt="[% comment.author_name | html %]" />
+			[% IF comment.author_url %]</a>[% END %]
+		</div>
+		<div class="comments_summary_comment_content">
+			<span class="comments_summary_comment_date">[% comment.date | html %]</span>
+			<a class="comments_summary_comment_title" href="[% comment.comment_url | html %]">[% comment.comment_title | html %]</a>
+		</div>
+		<div style="clear:both"></div>
+	</div>
+	[% END %]
+</div>

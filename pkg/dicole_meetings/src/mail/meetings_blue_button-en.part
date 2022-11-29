@@ -1,0 +1,24 @@
+[% IF in_html %]
+[% IF in_basic_info %]
+[% margins = 'margin-left:0px; margin-right:0px; margin-top:10px; margin-bottom:10px;'%]
+[% ELSIF inthebubble %]
+[% margins = 'margin-left:15px; margin-right:15px; margin-top:10px; margin-bottom:10px;'%]
+[% ELSE %]
+[% margins = 'margin-left:50px; margin-right:50px; margin-top:10px; margin-bottom:10px;'%]
+[% END %]
+<table border="0" cellspacing="0" cellpadding="5" style="[% margins %]">
+<tr>
+<td height="55" style="background-image:url('[% server_host %]/images/meetings/email/[% theme_color_name %]_button_gradient.png'); background-repeat:repeat-x; vertical-align:middle; border-radius: 6px; padding:0px; -webkit-border-radius: 6px; font-size: 15px; font-family: Arial, Helvetica, sans-serif; color: #ffffff; -khtml-border-radius: 6px; margin: 0; text-align: center; -moz-border-radius: 6px; background-color:[% theme_color %];" bgcolor="[% theme_color %]">
+<a href="[% url | html %]" style="display:block;padding-top:15px; padding-bottom:15px; padding-left:15px; padding-right:15px; font-weight:bold; text-transform:upper-case; font-family:Arial, Helvetica, sans-serif; color: #ffffff; text-decoration:none; margin:0;">
+[% text | html %]
+[% IF ! noarrow %]
+<img style="display:inline-block;border:none; margin-bottom:-3px; margin-left:10px; margin-right:0px;  margin-top:0px;" src="[% server_host %]/images/meetings/email/button_arrow.png"/>
+[% END %]
+</a>
+</td>
+</tr>
+</table>
+[% ELSE %][% IF showtext %][% text | html %]: ---N---[% END %][% url | html %]
+---N---
+---N---
+[% END %]

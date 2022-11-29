@@ -1,0 +1,25 @@
+#!/bin/bash
+
+bin/mails/process_templates
+bin/translations/x_generate_pots_for_all_files $1
+rm -Rf build/targets
+mkdir -p build/targets
+
+bin/translations/x_init_target_file src/locale/desktop_front.pot
+cat build/sources/*.js.pot.raw build/sources/*.html.pot.raw build/sources/*.jade.pot.raw > build/targets/desktop_front.pot.raw
+msguniq --sort-output --no-wrap -o build/targets/desktop_front.pot.raw.uniq build/targets/desktop_front.pot.raw
+cat build/targets/desktop_front.pot.raw.uniq | grep -v '#-#-#-#-#' >> src/locale/desktop_front.pot
+perl -pi -e 's/\:\d+$// if /$\#/' src/locale/desktop_front.pot
+
+bin/translations/x_init_target_file src/locale/desktop_back.pot
+cat build/sources/*.tmpl.pot.raw build/sources/*.pm.pot.raw > build/targets/desktop_back.pot.raw
+msguniq --sort-output --no-wrap -o build/targets/desktop_back.pot.raw.uniq build/targets/desktop_back.pot.raw
+cat build/targets/desktop_back.pot.raw.uniq | grep -v '#-#-#-#-#' >> src/locale/desktop_back.pot
+perl -pi -e 's/\:\d+$// if /$\#/' src/locale/desktop_back.pot
+
+msginit --no-wrap --no-translator -l en -i src/locale/desktop_front.pot -o src/locale/desktop_front-en.po 2>&1 |grep -v Created
+perl -pi -e '$_ = "" if $.>2 && $.<7' src/locale/desktop_front-en.po
+
+msginit --no-wrap --no-translator -l en -i src/locale/desktop_back.pot -o src/locale/desktop_back-en.po 2>&1 |grep -v Created
+perl -pi -e '$_ = "" if $.>2 && $.<7' src/locale/desktop_back-en.po
+

@@ -1,0 +1,4379 @@
+# 
+# Translators:
+# Translation Team <translationteam@meetin.gs>, 2014-2015
+msgid ""
+msgstr ""
+"Project-Id-Version: meetings_core\n"
+"PO-Revision-Date: 2015-02-17 21:12+0000\n"
+"Last-Translator: Translation Team <translationteam@meetin.gs>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/meetings_core/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Website"
+msgstr "Site internet"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Category"
+msgstr "Catégorie"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Country"
+msgstr "Pays"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Founded"
+msgstr "Créé"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Revenue (USD)"
+msgstr "Revenu (USD)"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Funding raised"
+msgstr "Fonds collectés"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Funding we are looking for"
+msgstr "Les financements que nous recherchons"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "# of employees"
+msgstr "# d'employés"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Mainly looking for"
+msgstr "Principalement à la recherche de"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Company description"
+msgstr "Description de la société"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "Team"
+msgstr "Équipe"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "Product description"
+msgstr "Description du produit"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Business model"
+msgstr "Modèle professionnel"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Competitors"
+msgstr "Concurrents"
+
+#. template/external_meetings_meetme_company_data_generic.tmpl
+msgid "Areas of interest"
+msgstr "Domaines d'intérêt"
+
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "Market"
+msgstr "Marché"
+
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "Revenue, USD"
+msgstr "Chiffre d'affaires (USD)"
+
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "Funding received, USD"
+msgstr "Financement reçu (USD)"
+
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "Funding we are looking for, USD"
+msgstr "Financement recherché (USD)"
+
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "Target market"
+msgstr "Marché cible"
+
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "Signifigant investors and advisors"
+msgstr "Investisseurs et conseillers principaux"
+
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "Notable milestones / metrics"
+msgstr "Jalons / indicateurs notables"
+
+#. template/external_meetings_meetme_company_data_slush.tmpl
+msgid "Other relevant information"
+msgstr "Autres informations pertinentes"
+
+#. template/main_meetings_404.tmpl
+msgid "Sorry, this page does not exist."
+msgstr "Désolés, cette page n'existe pas."
+
+#. template/main_meetings_404.tmpl
+msgid "Here's a link back to the %(L$Meeting timeline%)."
+msgstr "Voici un lien vers l'%(L$historique de la réunion%)."
+
+#. template/main_meetings_account_forwarded.tmpl
+msgid "Hi %1$s!"
+msgstr "bonjour %1$s !"
+
+#. template/main_meetings_account_forwarded.tmpl
+msgid ""
+"All email to you from Meetin.gs is currently being redirected to %1$s! "
+"Please check the inbox for that address to find your log in link for "
+"Meetin.gs."
+msgstr "Vos e-mails provenant de Meetin.gs sont actuellement redirigés vers %1$s ! Merci de vérifier la boîte de réception de cette adresse afin de retrouver le lien de connexion à Meetin.gs."
+
+#. template/main_meetings_account_forwarded.tmpl
+msgid ""
+"If this is a mistake you can recover your account by clicking %(L$this "
+"link%)."
+msgstr "S'il s'agit d'une erreur, vous pouvez récupérer votre compte en cliquant sur %(L$ce lien%)."
+
+#. template/main_meetings_already_a_user.tmpl
+msgid "You are already a user in the service!"
+msgstr "Vous êtes déjà utilisateur de ce service !"
+
+#. template/main_meetings_already_a_user.tmpl
+msgid ""
+"We have sent a secure link to %1$s which you can use to log in and start the"
+" meeting creation process."
+msgstr "Nous vous avons envoyé un lien sécurisé sur %1$s que vous pouvez utiliser pour vous connecter et débuter le processus de création de réunion."
+
+#. template/main_meetings_already_a_user.tmpl
+msgid "Spread the word, inform your friends!"
+msgstr "Faites passer le mot, dites-le à vos à amis !"
+
+#. template/main_meetings_already_a_user.tmpl
+msgid ""
+"Also follow us on Facebook and Twitter to stay updated on how to run better "
+"meetings:"
+msgstr "Vous pouvez aussi nous suivre sur Facebook et Twitter et vous tenir au courant sur la façon de mener vos réunions encore mieux :"
+
+#. template/main_meetings_already_a_user.tmpl
+msgid "Follow us on Twitter"
+msgstr "Suivez-nous sur Twitter"
+
+#. template/main_meetings_already_a_user.tmpl
+msgid "Follow us on Facebook"
+msgstr "Suivez-nous sur Facebook"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Your Meeting Analytics"
+msgstr "Vos Réunions d'Analyse"
+
+#. template/main_meetings_analytics.tmpl
+msgid "In total"
+msgstr "En tout"
+
+#. template/main_meetings_analytics.tmpl
+msgid "online meetings"
+msgstr "réunions en ligne"
+
+#. template/main_meetings_analytics.tmpl
+msgid "spent in meetings"
+msgstr "passé en réunion"
+
+#. template/main_meetings_analytics.tmpl
+msgid "average meeting length"
+msgstr "durée moyenne d'une réunion"
+
+#. template/main_meetings_analytics.tmpl
+msgid "average participant"
+msgstr "moyenne des participants"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Number of meetings"
+msgstr "Nombre de réunions"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Previous 30 days"
+msgstr "Les 30 derniers jours"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Last 30 days"
+msgstr "30 derniers jours"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Change"
+msgstr "Changer"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Number of meetings in the last 8 weeks"
+msgstr "Nombre de réunions au cours des 8 dernières semaines"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Number of materials"
+msgstr "Nombre de données"
+
+#. template/main_meetings_analytics.tmpl
+msgid "meetings with materials"
+msgstr "réunions avec documentation"
+
+#. template/main_meetings_analytics.tmpl
+msgid " meetings with materials"
+msgstr "réunions avec documentation"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Meetings with materials in the last 8 weeks"
+msgstr "Réunions avec documentation au cours des 8 dernières semaines"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Number of shared comments in the last 30 days"
+msgstr "Nombre de commentaires partagés au cours des 30 derniers jours"
+
+#. template/main_meetings_analytics.tmpl
+msgid "meetings with discussion"
+msgstr "réunions avec discussion"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Number of shared comments in the last 8 weeks"
+msgstr "Nombre de commentaires partagés au cours des 8 dernières semaines"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Number of participants"
+msgstr "Nombre de participants"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Sharing in brief"
+msgstr "Partage en bref"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Meetings with content shared before the meeting"
+msgstr "Réunions avec contenu partagé avant la réunion"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Meetings with shared content"
+msgstr "Réunions avec contenu partagé"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Meetings with follow-ups after the meeting"
+msgstr "Réunions avec suites après la réunion"
+
+#. template/main_meetings_analytics.tmpl
+msgid "Time spent in meetings"
+msgstr "Temps passé en réunion"
+
+#. template/main_meetings_analytics.tmpl
+msgid "of time spent in meetings"
+msgstr "du temps passé en réunion"
+
+#. template/main_meetings_analytics.tmpl
+msgid "of time spent in meetings*"
+msgstr "de temps passé en réunion*"
+
+#. template/main_meetings_analytics.tmpl
+msgid "*Based on 160 monthly work hours."
+msgstr "*Basé sur un volume de travail mensuel de 160 heures."
+
+#. template/main_meetings_analytics.tmpl
+msgid "Meeting length on average"
+msgstr "Durée d'une réunion en moyenne"
+
+#. template/main_meetings_analytics.tmpl
+msgid ""
+"We are currently researching a way to calculate the carbon footprint of your"
+" meetings."
+msgstr "Nous tentons actuellement de trouver un moyen de calculer l'empreinte carbone de vos réunions."
+
+#. template/main_meetings_analytics.tmpl
+msgid "We will email you when the service is available."
+msgstr "Nous vous enverrons un email quand le service sera disponible."
+
+#. template/main_meetings_analytics.tmpl
+msgid ""
+"Are you interested in this kind of data? We can email you when this feature "
+"becomes available."
+msgstr "Ce genre de données vous intéresse-t-il ? Nous pouvons vous envoyer un email lorsque ce paramètre sera disponible."
+
+#. template/main_meetings_analytics.tmpl
+msgid "Email me"
+msgstr "M'envoyer un email"
+
+#. template/main_meetings_analytics.tmpl
+msgid ""
+"We are currently researching a way to calculate how much your meetings cost."
+msgstr "Nous recherchons en ce moment un moyen de calculer le coût de vos réunions."
+
+#. template/main_meetings_connect_service_account.tmpl
+msgid "We did not find any connected accounts"
+msgstr "Nous n'avons trouvé aucun compte connecté"
+
+#. template/main_meetings_connect_service_account.tmpl
+msgid ""
+"Your %1$s account is not yet connected to any existing Meetin.gs account. If"
+" you are already an user, please give us the email address you are using "
+"Meetin.gs with."
+msgstr "Votre compte %1$s ne correspond pour l'instant à aucun compte Meetin.gs existant. Si vous êtes déjà inscrit, merci de nous communiquer l'adresse e-mail que vous utilisez sur Meetin.gs."
+
+#. template/main_meetings_connect_service_account.tmpl
+msgid ""
+"We will send you an email which you can use to confirm that you would like "
+"to log in to Meetin.gs with your %1$s account in the future."
+msgstr "Nous allons vous envoyer un e-mail dont vous pourrez vous servir plus tard pour confirmer que vous souhaitez vous connecter à Meetin.gs sur votre compte %1$s."
+
+#. template/main_meetings_connect_service_account.tmpl
+#. template/main_meetings_login.tmpl
+msgid "Email"
+msgstr "E-mail"
+
+#. template/main_meetings_connect_service_account.tmpl
+msgid "Connect"
+msgstr "Connectez-vous"
+
+#. template/main_meetings_connect_service_account.tmpl
+msgid "Back to login"
+msgstr "Retour à la page connexion"
+
+#. template/main_meetings_enter_meeting.tmpl
+msgid "A login email has been sent."
+msgstr "Un e-mail de connexion vous a été envoyé."
+
+#. template/main_meetings_enter_meeting.tmpl
+msgid ""
+"If you want to authorize the partner to login you directly in the future "
+"please click the button below."
+msgstr "Si vous voulez dorénavant autoriser le partenaire à vous connecter directement, veuillez cliquer sur le bouton ci-dessous."
+
+#. template/main_meetings_enter_meeting.tmpl
+msgid "Authorize"
+msgstr "Autoriser"
+
+#. template/main_meetings_enter_meeting.tmpl
+#. template/main_meetings_enter_summary.tmpl
+#. template/main_meetings_ext_login.tmpl
+msgid "Check your email to continue"
+msgstr "Vérifiez votre e-mail avant de poursuivre"
+
+#. template/main_meetings_enter_meeting.tmpl
+#. template/main_meetings_ext_login.tmpl
+msgid ""
+"We have now sent an email to %(B$%1$s%). Click the link within to login."
+msgstr "Nous avons envoyé un e-mail à %(B$%1$s%). Cliquez sur le lien à l'intérieur pour vous connecter."
+
+#. template/main_meetings_enter_meeting.tmpl
+msgid ""
+"To ensure safe delivery of email from us in the future, please add "
+"%(B$info@meetin.gs%) to your address book."
+msgstr "Afin que les e-mails que nous vous enverrons vous parviennent en toute sécurité, veuillez ajouter %(B$info@meetin.gs%) à votre carnet d'adresses."
+
+#. template/main_meetings_enter_meeting.tmpl
+msgid "Welcome to the Meeting"
+msgstr "Bienvenue à cette réunion"
+
+#. template/main_meetings_enter_meeting.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "Title://context:meeting title"
+msgstr "Title:"
+
+#. template/main_meetings_enter_meeting.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "Location:"
+msgstr "Lieu :"
+
+#. template/main_meetings_enter_meeting.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "Time:"
+msgstr "Horaire :"
+
+#. template/main_meetings_enter_meeting.tmpl
+msgid "We need you to log in to access the meeting page."
+msgstr "Vous devez vous connecter pour accéder à la page réunion."
+
+#. template/main_meetings_enter_meeting.tmpl
+msgid "Choose yourself from the list to receive a login email:"
+msgstr "Sélectionnez votre nom dans la liste pour recevoir un e-mail de connexion :"
+
+#. template/main_meetings_enter_summary.tmpl
+msgid ""
+"Since you have had an account with Meetin.gs before, we have sent an email "
+"to %(B$%1$s%). Please click the link within the email to continue."
+msgstr "Comme vous avez déjà eu un compte avec Meetin.gs, nous avons envoyé un email à %(B$%1$s%). Veuillez cliquer sur le lien contenu dans l'email pour continuer."
+
+#. template/main_meetings_enter_summary.tmpl
+#. template/main_meetings_ext_login.tmpl
+msgid ""
+"To ensure safe delivery of email from us in the future, please add "
+"%(L$info@meetin.gs%) to your address book."
+msgstr "Pour permettre à nos futurs emails de bien vous parvenir, veuillez ajouter %(L$info@meetin.gs%) à votre liste d'adresse."
+
+#. template/main_meetings_login.tmpl
+msgid "Login to continue"
+msgstr "Identifiez-vous pour continuer"
+
+#. template/main_meetings_login.tmpl
+msgid "Login with Facebook"
+msgstr "Connexion avec Facebook"
+
+#. template/main_meetings_login.tmpl
+msgid "Login with Google"
+msgstr "Connexion avec Google"
+
+#. template/main_meetings_login.tmpl
+msgid "OR"
+msgstr "OU"
+
+#. template/main_meetings_login.tmpl
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid "Log in"
+msgstr "Connexion"
+
+#. template/main_meetings_login.tmpl
+msgid "Send a login link to my email:"
+msgstr "Envoyer un lien de connexion à mon adresse email :"
+
+#. template/main_meetings_login.tmpl
+msgid "Send"
+msgstr "Envoyer"
+
+#. template/main_meetings_logout.tmpl
+msgid "You have successfully logged out"
+msgstr "Vous vous êtes déconnecté avec succès"
+
+#. template/main_meetings_logout.tmpl
+msgid "Use 5 seconds to share Meetin.gs with your friends:"
+msgstr "Prenez 5 secondes pour partager Meetin.gs avec vos amis :"
+
+#. template/main_meetings_logout.tmpl
+msgid "For  feedback, please head over to our %(L$support forums%)."
+msgstr "Pour soumettre un commentaire, veuillez vous rendre sur nos %(L$forums d'aide%). "
+
+#. template/main_meetings_logout.tmpl
+msgid "Log in again"
+msgstr "Se connecter à nouveau"
+
+#. template/main_meetings_mail_summary.tmpl
+msgid "Meeting materials"
+msgstr "Données de réunion"
+
+#. template/main_meetings_mail_summary.tmpl
+msgid "No Material for this meeting."
+msgstr "Aucune donnée pour cette réunion."
+
+#. template/main_meetings_mail_summary.tmpl
+msgid "Participants"
+msgstr "Participants"
+
+#. template/main_meetings_meeting.tmpl
+msgid "Loading..."
+msgstr "En cours..."
+
+#. template/main_meetings_meeting.tmpl
+msgid "Mobile upload instructions"
+msgstr "Instructions de mise à jour mobile"
+
+#. template/main_meetings_new_user.tmpl
+msgid "%1$s has invited you to %2$s"
+msgstr "%1$s vous a invité(e) à %2$s"
+
+#. template/main_meetings_new_user.tmpl
+msgid "Please confirm a few things to proceed:"
+msgstr "Veuillez apporter quelques confirmations pour continuer :"
+
+#. template/main_meetings_new_user.tmpl
+msgid "Is this the email you wish to receive meeting updates to?"
+msgstr "Voulez-vous recevoir les mises à jour de réunion à cette adresse email ?"
+
+#. template/main_meetings_new_user.tmpl
+msgid "If not, %(L$change your email%)."
+msgstr "Si non, %(L$changer votre email%)."
+
+#. template/main_meetings_new_user.tmpl
+msgid "Is this your current time?"
+msgstr "Est-ce votre heure actuelle ?"
+
+#. template/main_meetings_new_user.tmpl
+msgid "If not, change your time zone:"
+msgstr "Si non, changez votre fuseau horaire :"
+
+#. template/main_meetings_new_user.tmpl
+msgid ""
+"Before we proceed, we need to be sure that we show the time correctly for "
+"you."
+msgstr "Auparavant, nous devons nous assurer que nous vous montrons correctement la date."
+
+#. template/main_meetings_new_user.tmpl
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+msgid "Continue"
+msgstr "Continuez"
+
+#. template/main_meetings_new_user.tmpl
+msgid ""
+"* By proceeding you accept the %(L$Terms of Service%) and you allow %1$s to "
+"access your Meetin.gs data"
+msgstr "* En continuant, vous acceptez les %(L$Termes du Service%) et vous permettez à %1$s d'accéder à vos données Meetin.gs"
+
+#. template/main_meetings_new_user.tmpl
+msgid "* By proceeding you accept the %(L$Terms of Service%)"
+msgstr "* En continuant vous acceptez les %(L$conditions d'utilisation%)"
+
+#. template/main_meetings_secure_login_info.tmpl
+msgid ""
+"This meeting is secure. We have sent you an email with a secure login link."
+msgstr "La réunion est sûre. Nous vous avons envoyé un email avec le lien de connexion sûre."
+
+#. template/main_meetings_summary.tmpl
+msgid "Upcoming"
+msgstr "Prochainement"
+
+#. template/main_meetings_summary.tmpl
+msgid "Past"
+msgstr "Ancien"
+
+#. template/main_meetings_summary.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Add to calendar"
+msgstr "Ajouter au calendrier"
+
+#. template/main_meetings_thank_you.tmpl
+msgid "Thanks! Now check your inbox."
+msgstr "Merci ! Vérifiez à présent votre boite de réception."
+
+#. template/main_meetings_thank_you.tmpl
+msgid "You can send the invites after clicking the link we sent you."
+msgstr "Vous pourrez envoyer les invitations après avoir cliqué sur le lien que nous vous avons envoyé."
+
+#. template/main_meetings_thank_you.tmpl
+msgid "For feedback, please head over to our %(L$support forums%)."
+msgstr "Pour communiquer vos impressions, veuillez vous rendre sur nos  %(L$forums d'aide%)."
+
+#. template/main_meetings_verify_email.tmpl
+msgid " Please check your email to continue"
+msgstr "Veuillez vérifier votre email pour continuer"
+
+#. template/main_meetings_verify_email.tmpl
+msgid ""
+"We just sent you an email to %(B$%1$s%) from %(B$info@meetin.gs%). Click the"
+" link in the email to confirm your account."
+msgstr "Nous vous avons envoyé un email à %(B$%1$s%) de %(B$info@meetin.gs%). Cliquez sur le lien contenu dans l'email pour confirmer votre compte."
+
+#. template/main_meetings_verify_email.tmpl
+msgid ""
+"We just sent you an email to %(B$%1$s%) from %(B$info@meetin.gs%). You can "
+"send the invites after clicking the link in the email. We'll also add the "
+"meeting to your account."
+msgstr "Nous vous avons envoyé un e-mail sur %(B$%1$s%) de %(B$info@meetin.gs%). Vous pourrez envoyer les invitations après avoir cliqué sur le lien contenu dans cet e-mail. Nous allons également ajouter l réunion à votre compte."
+
+#. template/main_meetings_verify_email.tmpl
+msgid ""
+"We just sent you an email to %(B$%1$s%) from %(B$info@meetin.gs%). You can "
+"send the invites after clicking the link we just sent you."
+msgstr "Nous vous avons envoyé un email à %(B$%1$s%) de %(B$info@meetin.gs%). Vous pourrez envoyer les invitations après avoir cliqué sur le lien que nous vous avons envoyé."
+
+#. template/main_meetings_verify_email.tmpl
+msgid ""
+"If you cannot find the email, please check your spam folder and add "
+"%(B$info@meetin.gs%) to your address book to ensure safe delivery of email "
+"from us in the future."
+msgstr "Si vous ne trouvez pas l'email, veuillez vérifier votre dossier courrier indésirable et ajouter % (B$info@meetin.gs%) à votre liste de contacts pour vous assurer que nos emails vous parviendront bien désormais."
+
+#. template/main_meetings_verify_email.tmpl
+msgid "For more information see how to %(L$whitelist us%)."
+msgstr "Pour plus d'informations voir comment %(L$nous mettre sur liste blanche%)."
+
+#. template/mail/meetings_account_created_html.tmpl
+msgid "Welcome!"
+msgstr "Bienvenue !"
+
+#. template/mail/meetings_account_created_html.tmpl
+msgid "Thanks for taking the time to sign up, we really appreciate it."
+msgstr "Merci d'avoir pris le temps de vous inscrire."
+
+#. template/mail/meetings_account_created_html.tmpl
+msgid "Continue to Meetin.gs"
+msgstr "Continuer vers Meetin.gs"
+
+#. template/mail/meetings_account_created_html.tmpl
+msgid ""
+"We have tried to make Meetin.gs as easy to use as possible. In case you have"
+" trouble getting started, here's a short %(L$guide%) to help you out."
+msgstr "Nous avons rendu l'utilisation de Meetin.gs aussi simple que possible. Si vous avez des difficultés pour démarrer l'utilisation, voici un bref %(L$guide%) pour vous aider."
+
+#. template/mail/meetings_account_created_html.tmpl
+msgid ""
+"If there is anything else I can help you with, please give me or my team a "
+"shout."
+msgstr "S'il y a autre chose que je peux faire pour vous aider, veuillez me contacter ou contacter mon équipe."
+
+#. template/mail/meetings_account_created_html.tmpl
+#. template/mail/meetings_visitor_invite_default_greeting_html.tmpl
+msgid "Best regards,"
+msgstr "Cordialement,"
+
+#. template/mail/meetings_account_created_html.tmpl
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_authorize_partner_html.tmpl
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_email_confirmed_html.tmpl
+#. template/mail/meetings_error_empty_message_html.tmpl
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+#. template/mail/meetings_google_connection_broken_html.tmpl
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+#. template/mail/meetings_join_request_prompt_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_missing_action_points_html.tmpl
+#. template/mail/meetings_missing_agenda_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+#. template/mail/meetings_paypal_receipt_html.tmpl
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+#. template/mail/meetings_scheduling_exception_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_setup_error_data_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_trial_end_html.tmpl
+#. template/mail/meetings_trial_extend_html.tmpl
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "This is an automated message from"
+msgstr "Ceci est un message automatique provenant de"
+
+#. template/mail/meetings_account_created_html.tmpl
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_authorize_partner_html.tmpl
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_email_confirmed_html.tmpl
+#. template/mail/meetings_error_empty_message_html.tmpl
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+#. template/mail/meetings_google_connection_broken_html.tmpl
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+#. template/mail/meetings_join_request_prompt_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_missing_action_points_html.tmpl
+#. template/mail/meetings_missing_agenda_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+#. template/mail/meetings_paypal_receipt_html.tmpl
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+#. template/mail/meetings_scheduling_exception_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_setup_error_data_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_trial_end_html.tmpl
+#. template/mail/meetings_trial_extend_html.tmpl
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Support"
+msgstr "Assistance"
+
+#. template/mail/meetings_account_created_html.tmpl
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_authorize_partner_html.tmpl
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_email_confirmed_html.tmpl
+#. template/mail/meetings_error_empty_message_html.tmpl
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+#. template/mail/meetings_google_connection_broken_html.tmpl
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+#. template/mail/meetings_join_request_prompt_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_missing_action_points_html.tmpl
+#. template/mail/meetings_missing_agenda_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+#. template/mail/meetings_paypal_receipt_html.tmpl
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+#. template/mail/meetings_scheduling_exception_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_setup_error_data_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_trial_end_html.tmpl
+#. template/mail/meetings_trial_extend_html.tmpl
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#. template/mail/meetings_account_created_html.tmpl
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_authorize_partner_html.tmpl
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_email_confirmed_html.tmpl
+#. template/mail/meetings_error_empty_message_html.tmpl
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+#. template/mail/meetings_google_connection_broken_html.tmpl
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+#. template/mail/meetings_join_request_prompt_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_missing_action_points_html.tmpl
+#. template/mail/meetings_missing_agenda_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+#. template/mail/meetings_paypal_receipt_html.tmpl
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+#. template/mail/meetings_scheduling_exception_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_setup_error_data_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_trial_end_html.tmpl
+#. template/mail/meetings_trial_extend_html.tmpl
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Unsubscribe from this meeting"
+msgstr "Désabonnez-moi de cette réunion"
+
+#. template/mail/meetings_account_created_html.tmpl
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_authorize_partner_html.tmpl
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_email_confirmed_html.tmpl
+#. template/mail/meetings_error_empty_message_html.tmpl
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+#. template/mail/meetings_google_connection_broken_html.tmpl
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+#. template/mail/meetings_join_request_prompt_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_missing_action_points_html.tmpl
+#. template/mail/meetings_missing_agenda_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+#. template/mail/meetings_paypal_receipt_html.tmpl
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+#. template/mail/meetings_scheduling_exception_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_setup_error_data_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_trial_end_html.tmpl
+#. template/mail/meetings_trial_extend_html.tmpl
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Whitelist Us"
+msgstr "Nous Mettre Sur Liste Blanche"
+
+#. template/mail/meetings_account_created_html.tmpl
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_authorize_partner_html.tmpl
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_email_confirmed_html.tmpl
+#. template/mail/meetings_error_empty_message_html.tmpl
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+#. template/mail/meetings_google_connection_broken_html.tmpl
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+#. template/mail/meetings_join_request_prompt_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_missing_action_points_html.tmpl
+#. template/mail/meetings_missing_agenda_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+#. template/mail/meetings_paypal_receipt_html.tmpl
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+#. template/mail/meetings_scheduling_exception_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_setup_error_data_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_trial_end_html.tmpl
+#. template/mail/meetings_trial_extend_html.tmpl
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Don't send me promotional mail"
+msgstr "Ne m'envoyez pas d'e-mail promotionnel"
+
+#. template/mail/meetings_account_created_html.tmpl
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_authorize_partner_html.tmpl
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_email_confirmed_html.tmpl
+#. template/mail/meetings_error_empty_message_html.tmpl
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+#. template/mail/meetings_google_connection_broken_html.tmpl
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+#. template/mail/meetings_join_request_prompt_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_missing_action_points_html.tmpl
+#. template/mail/meetings_missing_agenda_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+#. template/mail/meetings_paypal_receipt_html.tmpl
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+#. template/mail/meetings_scheduling_exception_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_setup_error_data_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_trial_end_html.tmpl
+#. template/mail/meetings_trial_extend_html.tmpl
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "This is an automated message from Meetin.gs."
+msgstr "Ceci est un message automatique provenant de Meetin.gs."
+
+#. template/mail/meetings_account_created_html.tmpl
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_authorize_partner_html.tmpl
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_email_confirmed_html.tmpl
+#. template/mail/meetings_error_empty_message_html.tmpl
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+#. template/mail/meetings_google_connection_broken_html.tmpl
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+#. template/mail/meetings_join_request_prompt_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_missing_action_points_html.tmpl
+#. template/mail/meetings_missing_agenda_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+#. template/mail/meetings_paypal_receipt_html.tmpl
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+#. template/mail/meetings_scheduling_exception_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_setup_error_data_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_trial_end_html.tmpl
+#. template/mail/meetings_trial_extend_html.tmpl
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Support:"
+msgstr "Assistance :"
+
+#. template/mail/meetings_account_created_html.tmpl
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_authorize_partner_html.tmpl
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_email_confirmed_html.tmpl
+#. template/mail/meetings_error_empty_message_html.tmpl
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+#. template/mail/meetings_google_connection_broken_html.tmpl
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+#. template/mail/meetings_join_request_prompt_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_missing_action_points_html.tmpl
+#. template/mail/meetings_missing_agenda_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+#. template/mail/meetings_paypal_receipt_html.tmpl
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+#. template/mail/meetings_scheduling_exception_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_setup_error_data_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_trial_end_html.tmpl
+#. template/mail/meetings_trial_extend_html.tmpl
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Privacy Policy:"
+msgstr "Politique de confidentialité"
+
+#. template/mail/meetings_account_created_subject.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Welcome to Meetin.gs"
+msgstr "Bienvenue sur Meetin.gs"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "Your %1$s PRO was activated"
+msgstr "Votre %1$s PRO a été activé"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Thank you for signing up"
+msgstr "Merci de votre inscription"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "Thank you for upgrading %1$s"
+msgstr "Merci d'avoir mis %1$s à niveau"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "http://support.meetin.gs/"
+msgstr "http://support.meetin.gs/fr"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "Welcome to %1$s. We are really happy to have you."
+msgstr "Bienvenue sur %1$s. Nous sommes vraiment heureux de vous avoir."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid ""
+"Your PRO account was activated by %1$s and you can now start organizing "
+"meetings with the full suite. If you have any questions about the service, "
+"please don't hesitate to contact our %(L$support%)."
+msgstr "Votre compte PRO a été activé par %1$s et vous pouvez maintenant commencer à organiser des réunions avec la suite complète. Si vous avez des questions sur le service, n'hésitez pas à contacter notre %(L$support%)."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid ""
+"Your account is upgraded to PRO and you can now start organizing meetings "
+"with the full suite. If you have any questions about the service, please "
+"don't hesitate to contact our %(L$support%)."
+msgstr "Votre compte passe à PRO et vous pouvez maintenant commencer à organiser des réunions avec toutes les options disponibles. Si vous avez des questions sur le service, n'hésitez pas à contacter notre %(L$assistance%)."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid ""
+"Here's your login link to %1$s. Keep in mind, that this link is personal. "
+"You can use it whenever you need to login. If you lose the link, you can "
+"always get a new one from our site"
+msgstr "Voici votre identifiant sur %1$s. N'oubliez pas que ce lien est personnel. Vous pouvez l'utiliser dès que vous devez vous connecter. Si vous perdez le lien, vous pouvez toujours en obtenir un autre depuis notre site"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "Be sure to explore and benefit from all the PRO features:"
+msgstr "Assurez-vous d'essayer et de bénéficier de toutes les caractéristiques PRO :"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid "Unlimited schedulers on the Meet Me page"
+msgstr "Planificateurs illimités sur la page Rencontrez-Moi"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid ""
+"Claim your Meet Me page and set up as many schedulers as you wish. Different"
+" kind of schedulers serve different kind of needs."
+msgstr "Demandez votre page Meet Me et configurez autant de feuilles de route que vous le souhaitez. Il y a différents types de feuilles de route adaptées à toutes sortes de besoins."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid "Expanded Live Communication Tools"
+msgstr "Outils Élargis de Communication en Direct "
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid ""
+"Use all the expanded Live Communication Tools such as Lync, Google Hangouts,"
+" or a custom tool of your own choice."
+msgstr "Utilisez tous les Outils de Communication Live comme Lync, Google Hangouts, ou un outil de votre propre choix."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid "Visual customization and branding"
+msgstr "Personnalisation et stratégie de marque"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid ""
+"Remember to customize the look according to your brand. Add your logo, "
+"select your own background image, and set the highlight color."
+msgstr "N'oubliez pas de personnaliser l'apparence selon votre marque. Ajoutez votre logo, sélectionnez vos propres images de fond, et déterminez les couleurs."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid "Unlimited meeting participants"
+msgstr "Nombre illimité de participants"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "You can now invite as many people to a single meeting as you wish."
+msgstr "Vous pouvez maintenant inviter autant de personnes que vous le souhaitez à une seule réunion."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid "Unlimited meeting materials"
+msgstr "Nombre illimité de données"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "You are now able to share all the materials without limitations."
+msgstr "Vous pouvez maintenant partager toutes les données sans aucune limitation."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Meetings on the move"
+msgstr "Des réunions en mouvement"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid ""
+"In order to stay always connected we recommend to download the free mobile "
+"app and receive meeting details and updates straight to your mobile phone:"
+msgstr "Afin de rester toujours connecté, nous vous recommandons de télécharger l'application mobile gratuite pour recevoir des détails des réunions et les mises à jour directement sur votre téléphone mobile:"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid ""
+"Download the free mobile app and receive meeting details and updates "
+"straight to your mobile phone:"
+msgstr "Téléchargez notre application mobile gratuite pour recevoir les détails et les mises à jour des réunions directement sur votre téléphone :"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Download SwipeToMeet app by Meetin.gs to receive meeting details and updates straight to your mobile device:"
+msgstr "Téléchargez notre application mobile SwipeToMeet by Meetin.gs pour recevoir les détails et les mises à jour des réunions directement sur votre téléphone :"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+#. template/mail/meetings_beta_invite_html.tmpl
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Meetings on the move for iPhone and android:"
+msgstr "Des réunions mobiles pour iPhone et android :"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "Welcome to cMeet"
+msgstr "Bienvenue sur cMeet"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "Dear %1$s,"
+msgstr "Cher %1$s,"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid ""
+"Your cMeet account was activated and you can start organizing meetings with "
+"the full suite."
+msgstr "Votre compte cMeet a été activé et vous pouvez commencer à organiser vos réunions comme bon vous semble."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid ""
+"With the link below, you can log in to cMeet. Keep in mind, that this link "
+"is personal. You can use it whenever you need to login."
+msgstr "Vous pouvez accéder à cMeet via le lien ci-dessous. Attention, il s'agit bien de votre login personnel. Vous pouvez l'utiliser à tout moment."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid ""
+"By setting up your password through the cMeet application (Settings / Login "
+"methods / Set up a password) you can easily login with your e-mail address "
+"and the password you defined."
+msgstr "En introduisant votre mot de passe dans l'application cMeet (Settings / Login methods / Set up a password) vous pouvez facilement vous connecter avec votre adresse email et le mot de passe que vous avez défini."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid ""
+"You can consult our FAQ, installation guide, user manual and terms & "
+"conditions by clicking %(L$here%)."
+msgstr "Vous pouvez consulter nos FAQ, guide d'installation, manuel d'utilisation et conditions générales en cliquant %(L$ici%)."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid ""
+"Please contact your business support agent or call 1940 or visit our website"
+" %(L$BASEbusiness.be/cmeet%) may you have any questions."
+msgstr "Veuillez appeler votre agent habituel ou le 1940 ou consulter notre site Internet %(L$BASEbusiness.be/cmeet%) pour toute question."
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "Enjoy our service!"
+msgstr "Nous espérons que vous apprécierez nos services!"
+
+#. template/mail/meetings_account_upgraded_html.tmpl
+msgid "BASE business support team"
+msgstr "BASE business support team"
+
+#. template/mail/meetings_account_upgraded_subject.tmpl
+msgid "cMeet / Notification"
+msgstr "cMeet / Notification"
+
+#. template/mail/meetings_account_upgraded_subject.tmpl
+msgid "Welcome to %1$s PRO"
+msgstr "Bienvenue sur %1$s PRO"
+
+#. template/mail/meetings_account_upgraded_subject.tmpl
+msgid "Welcome and thank you for upgrading to %1$s PRO"
+msgstr "Bienvenue et merci d'être passé à %1$s PRO"
+
+#. template/mail/meetings_account_upgraded_subject.tmpl
+msgid "Thank you for upgrading to %1$s PRO"
+msgstr "Merci d'être passé à %1$s PRO"
+
+#. template/mail/meetings_authorize_partner_html.tmpl
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+msgid "Hello!"
+msgstr "Bonjour !"
+
+#. template/mail/meetings_authorize_partner_html.tmpl
+msgid "Do you wish to authorize %1$s to directly log you in to Meetin.gs?"
+msgstr "Souhaitez-vous autoriser %1$s à vous connecter directement sur Meetin.gs ?"
+
+#. template/mail/meetings_authorize_partner_html.tmpl
+msgid "Authorize and log in"
+msgstr "Autoriser et se connecter"
+
+#. template/mail/meetings_authorize_partner_html.tmpl
+msgid ""
+"Authorization allows %1$s to log you in according to their privacy policy."
+msgstr "L'autorisation permet à %1$s de vous connecter selon leur politique de confidentialité."
+
+#. template/mail/meetings_authorize_partner_html.tmpl
+msgid "You can also skip this authorization and %(L$log in directly%)"
+msgstr "Vous pouvez également ignorer cette autorisation et %(L$vous connecter directement%)"
+
+#. template/mail/meetings_authorize_partner_subject.tmpl
+msgid " Confirm %1$s authorization"
+msgstr "Confirmer autorisation %1$s"
+
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "Hello %1$s,"
+msgstr "Bonjour %1$s,"
+
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+msgid "Thank you for signing up for Meetin.gs."
+msgstr "Merci pour votre inscription à Meetin.gs."
+
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+msgid ""
+"Action required: click the following link to complete the registration "
+"process:"
+msgstr "Une action est requise : cliquez sur le lien suivant afin de compléter la procédure d'inscription :"
+
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+msgid "Complete registration process"
+msgstr "Complétez la procédure d'inscription"
+
+#. template/mail/meetings_automatic_beta_invite_html.tmpl
+msgid ""
+"Remember to add info@meetin.gs to your address book to ensure safe delivery "
+"of email in the future."
+msgstr "Pensez à ajouter info@meetin.gs à votre carnet d'adresses afin qu'à l'avenir, les e-mails vous parviennent en toute sécurité. "
+
+#. template/mail/meetings_automatic_beta_invite_subject.tmpl
+msgid "Invitation to Meetin.gs"
+msgstr "Invitation à Meetin.gs"
+
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+msgid ""
+"%1$s invited you to Meetin.gs but you have not activated your account yet."
+msgstr "%1$s vous à invité sur Meetin.gs mais vous n'avez pas encore activé votre compte."
+
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+msgid "Why register?"
+msgstr "Pourquoi s'inscrire ?"
+
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+msgid "avoid endless email chains"
+msgstr "évitez les boucles interminables d'e-mails"
+
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+msgid "schedule online meetings with ease"
+msgstr "planifiez vos réunions en ligne en toute simplicité"
+
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+msgid "distribute meeting materials and notes"
+msgstr "distribuez les documents pour la réunion ainsi que les notes."
+
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+msgid "It is free. Register your account here:"
+msgstr "C'est gratuit. Enregistrez votre compte ici :"
+
+#. template/mail/meetings_automatic_beta_reminder_html.tmpl
+msgid "Register to Meetin.gs"
+msgstr "Inscrivez-vous sur Meetin.gs"
+
+#. template/mail/meetings_automatic_beta_reminder_subject.tmpl
+msgid "Reminder: You have been invited to Meetin.gs"
+msgstr "Rappel : Vous avez reçu une invitation sur Meetin.gs"
+
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+msgid "Thanks for signing up for Meetin.gs."
+msgstr "Merci pour votre inscription sur Meetin.gs."
+
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+msgid "Be a meeting rockstar and organize your first meeting now."
+msgstr "Devenez une rock-star de la réunion en organisant votre premier événement dès maintenant."
+
+#. template/mail/meetings_automatic_create_meeting_html.tmpl
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "Create a meeting"
+msgstr "Créez une réunion"
+
+#. template/mail/meetings_automatic_create_meeting_subject.tmpl
+msgid "Meetin.gs is waiting for you"
+msgstr "Meetin.gs vous attend"
+
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+msgid "It's been a while since we last saw you."
+msgstr "On ne vous a pas vu depuis longtemps."
+
+#. template/mail/meetings_automatic_use_meetings_html.tmpl
+msgid "Getting back to business is easy, just organize your next meeting."
+msgstr "Il est facile de se remettre au travail, il suffit d'organiser votre prochaine réunion."
+
+#. template/mail/meetings_automatic_use_meetings_subject.tmpl
+msgid "Meetin.gs is missing you"
+msgstr "Vous manquez à Meetin.gs"
+
+#. template/mail/meetings_beta_invite_default_greeting_html.tmpl
+msgid "Hi there,"
+msgstr "Coucou,"
+
+#. template/mail/meetings_beta_invite_default_greeting_html.tmpl
+msgid "I've found Meetin.gs useful for organizing meetings."
+msgstr "Meetin.gs m'a été utile pour organiser des réunions."
+
+#. template/mail/meetings_beta_invite_html.tmpl
+msgid "%1$s wants you to try"
+msgstr "%1$s souhaite que vous tentiez de"
+
+#. template/mail/meetings_beta_invite_html.tmpl
+msgid ""
+"Meetin.gs is a free service that helps you to keep meeting participants on "
+"the same page and materials up to date."
+msgstr "Meetin.gs est un service gratuit qui vous aide à maintenir les participants à vos réunions sur la même page et les documents à jour."
+
+#. template/mail/meetings_beta_invite_html.tmpl
+msgid "Register your account here."
+msgstr "Enregistrez votre compte ici."
+
+#. template/mail/meetings_beta_invite_html.tmpl
+msgid "Sign up now"
+msgstr "Enregistrez-vous maintenant"
+
+#. template/mail/meetings_beta_invite_subject.tmpl
+msgid "%1$s has invited you to Meetin.gs"
+msgstr "%1$s vous a invité sur Meetin.gs"
+
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+msgid "Subscription cancelled"
+msgstr "Abonnement annulé"
+
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+msgid "Your %1$s PRO subscription paid by %2$s has been terminated."
+msgstr "Votre abonnement %1$s PRO payé par %2$s a été résilié."
+
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+msgid "You may still access your meeting information and materials via %1$s."
+msgstr "Vous pouvez toujours accéder aux informations et aux documents de vos réunions via %1$s."
+
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+msgid ""
+"All your information in the service can be removed permanently through the "
+"settings menu."
+msgstr "L'ensemble de vos informations stockées sur le service peut être supprimé définitivement depuis le menu des paramètres."
+
+#. template/mail/meetings_company_subscription_terminated_html.tmpl
+msgid "Log in to access your data or to remove your account:"
+msgstr "Connectez-vous pour accéder à vos données ou pour supprimer votre compte :"
+
+#. template/mail/meetings_company_subscription_terminated_subject.tmpl
+msgid "Your %1$s PRO subscription has ended"
+msgstr "Votre abonnement %1$s PRO est terminé"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Time to get ready for:"
+msgstr "Il est temps de se tenir prêt pour :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Here's your summary for:"
+msgstr "Voici votre résumé pour :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "What's new with:"
+msgstr "Ce qui change avec :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Was held on %1$s"
+msgstr "A été tenue le %1$s"
+
+#. template/mail/meetings_digest_email_html.tmpl
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "On %1$s"
+msgstr "Sur %1$s"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Skype is enabled for this meeting."
+msgstr "Skype est activé pour cette réunion."
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "A teleconference number has been set for this meeting."
+msgstr "Un numéro de téléconférence a été fixé pour cette réunion."
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Google Hangouts is enabled for this meeting."
+msgstr "Google Hangouts est activé pour cette réunion."
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Microsoft Lync is enabled for this meeting."
+msgstr "Microsoft Lync est activé pour cette réunion."
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "A custom live communication tool is used for this meeting."
+msgstr "Un outil de communication en direct est utilisé pour cette réunion."
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid ""
+"Get ready and open the meeting page to easily join the online conference."
+msgstr "Tenez-vous prêt et ouvrez la page de réunion pour facilement rejoindre la conférence en ligne."
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Open Meeting page"
+msgstr "Ouvrir La Page Réunion"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "New title:"
+msgstr "Nouveau titre :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Time has been set:"
+msgstr "L'horaire est fixé :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "New time:"
+msgstr "Nouvel horaire :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "New location:"
+msgstr "Nouveau lieu :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Time has been removed."
+msgstr "L'horaire a été supprimé."
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "New participants:"
+msgstr "Nouveaux participants :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "%1$s updated the %(MATERIAL_LINK$agenda%):"
+msgstr "%1$s a mis à jour le %(MATERIAL_LINK$agenda%):"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid ""
+"The %(MATERIAL_LINK$agenda%) has been updated. Here is the latest version:"
+msgstr "Le %(MATERIAL_LINK$agenda%) a été mis à jour. Voici la dernière version :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "%1$s updated the %(MATERIAL_LINK$action points%):"
+msgstr "%1$s a mis à jour le %(MATERIAL_LINK$points d'action%):"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid ""
+"The %(MATERIAL_LINK$action points%) have been updated. Here is the latest "
+"version: "
+msgstr "Le %(MATERIAL_LINK$points d'action%) a été mis à jour. Voici la dernière version :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "New comments for scheduling discussion:"
+msgstr "Il y a des nouveaux commentaires à propos de la discussion sur la planification :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "New shared materials:"
+msgstr "Nouveaux éléments partagés :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "%(MATERIAL_LINK$%1$s%) by %(I$%2$s%)"
+msgstr "%(MATERIAL_LINK$%1$s%) par %(I$%2$s%)"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "New comments for %(MATERIAL_LINK$%1$s%)"
+msgstr "Nouveaux commentaires pour %(MATERIAL_LINK$%1$s%)"
+
+#. template/mail/meetings_digest_email_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Click to enter meeting"
+msgstr "Cliquez pour saisir une réunion"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Now that the meeting is over, would you like to organize a follow-up?"
+msgstr "Maintenant que la réunion est terminée, voulez-vous organiser une suite ?"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Organize a follow-up meeting"
+msgstr "Organiser la suite de la réunion "
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Want to run a meeting like this? Organize it now for free:"
+msgstr "Vous voulez gérer une réunion comme celle-ci ? Organisez-en une maintenant gratuitement :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Organize a meeting"
+msgstr "Organisez une réunion"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "Tip:"
+msgstr "Conseil :"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "You can also add material by emailing attachments to "
+msgstr "Vous pouvez aussi ajouter des données par email à"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "The documents will automatically appear on the meeting page."
+msgstr "Les documents apparaîtront automatiquement sur la page réunion."
+
+#. template/mail/meetings_digest_email_subject.tmpl
+msgid "Meeting starts in 15 minutes:"
+msgstr "La réunion va commencer dans 15 minutes :"
+
+#. template/mail/meetings_digest_email_subject.tmpl
+msgid "Action points:"
+msgstr "Points d'action :"
+
+#. template/mail/meetings_digest_email_subject.tmpl
+msgid "Summary:"
+msgstr "Résumé :"
+
+#. template/mail/meetings_digest_email_subject.tmpl
+msgid "New updates:"
+msgstr "Nouvelles mises à jour :"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+msgid "Hello,"
+msgstr "Bonjour,"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+msgid "Your meeting %(B$%1$s%) is still a %(B$draft%)."
+msgstr "Votre réunion %(B$%1$s%) est encore à l'état de %(B$brouillon%)."
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+msgid "Your %(B$untitled meeting%) is still a %(B$draft%)."
+msgstr "Votre %(B$réunion sans titre%) est encore un %(B$brouillon%)."
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "When"
+msgstr "Date"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Not known yet"
+msgstr "Inconnu pour l'instant"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Where"
+msgstr "Lieu"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Not set"
+msgstr "Non défini(e)"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Who"
+msgstr "Qui"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_email_confirmed_html.tmpl
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Open meeting page"
+msgstr "Ouvrir la page réunion"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Google calendar"
+msgstr "Calendrier Google"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Other ICS"
+msgstr "Autres fichiers ICS"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Calendar links:"
+msgstr "Liens agenda :"
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+msgid ""
+"%(B$The participants do not yet have access%) to the meeting page and "
+"materials."
+msgstr "%(B$Les participants n'ont pas accès%) à la page de réunion et aux données."
+
+#. template/mail/meetings_draft_incomplete_html.tmpl
+msgid ""
+"Go to the meeting page, check that everything is OK and then click \"Ready\""
+" on the top right corner, so that the invitations get sent out to the "
+"participants."
+msgstr "Allez sur la page de réunion, vérifiez que tout est en ordre et cliquez sur «  Prêt » en haut à droite pour que les invitations soient envoyées aux participants."
+
+#. template/mail/meetings_draft_incomplete_subject.tmpl
+msgid "Action required: Your meeting %1$s is not yet ready"
+msgstr "Action requise : votre réunion %1$s n'est pas encore prête"
+
+#. template/mail/meetings_draft_incomplete_subject.tmpl
+msgid "Your untitled meeting is not yet ready"
+msgstr "Votre réunion sans titre n'est pas encore prête"
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid "We received your email to"
+msgstr "Nous avons reçu votre e-mail à"
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid "Problem with your email to"
+msgstr "Problème avec votre e-mail à"
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid "We got the email you sent to %1$s and updated it to the meeting page."
+msgstr "Nous avons reçu l'e-mail que vous avez envoyé à %1$s et l'avons mis à jour sur la page de la réunion."
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid "We got the email you sent"
+msgstr "Nous avons reçu l'e-mail que vous avez envoyé"
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid ""
+"Unfortunately we could not process your email to %1$s. Please try again."
+msgstr "Nous n'avons malheureusement pas pu traiter votre e-mail pour %1$s. Merci de réessayer."
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid ""
+"Unfortunately we could not process the email you sent. Please try again."
+msgstr "Nous n'avons malheureusement pas pu traiter l'e-mail que vous avez envoyé. Merci de réessayer."
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid ""
+"The following files sent to %1$s were over the size limit of %2$s and could "
+"not be uploaded to the meeting page: %3$s."
+msgstr "Les fichiers suivants envoyés à %1$s dépassaient la limite de %2$s et n'ont pas pu être joints à la page de la réunion : %3$s."
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid ""
+"The  following files were over the size limit of %1$s and could not be "
+"uploaded to the meeting page: %2$s."
+msgstr "Les fichiers suivants dépassent la limite de %1$s et n'ont pas pu être joints à la page de la réunion : %2$s."
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid ""
+"Your email address %1$s was not found as a participant for this meeting. If "
+"you want to join, reply to this message with the word JOIN as the first "
+"word."
+msgstr "Votre adresse e-mail %1$s n'a pas été trouvée parmi la liste des participants de cette réunion. Si vous souhaitez la rejoindre, répondez à ce message en utilisant JOIN comme premier mot."
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid ""
+"Don't want to receive confirmation emails like this in the future? Use this "
+"link to disable them:"
+msgstr "Vous ne souhaitez plus recevoir ce genre d'e-mails de confirmation ? Désactivez les grâce au lien suivant :"
+
+#. template/mail/meetings_email_confirmed_html.tmpl
+msgid "disable confirmation emails"
+msgstr "désactiver les e-mails de confirmation"
+
+#. template/mail/meetings_email_confirmed_subject.tmpl
+msgid "Confirmation: Your email to %1$s received"
+msgstr "Confirmation : Votre e-mail à %1$s a été reçu"
+
+#. template/mail/meetings_email_confirmed_subject.tmpl
+msgid "Confirmation: Your email received"
+msgstr "Confirmation : Votre e-mail a été reçu"
+
+#. template/mail/meetings_email_confirmed_subject.tmpl
+msgid "Problem processing your email"
+msgstr "Problème lors du traitement de votre e-mail"
+
+#. template/mail/meetings_error_empty_message_html.tmpl
+msgid "Problem with your email"
+msgstr "Il y a un problème avec votre e-mail"
+
+#. template/mail/meetings_error_empty_message_html.tmpl
+msgid ""
+"Meetin.gs did not know what to do with your email - it appeared to be empty."
+msgstr "Meetin.gs n'a pas pu traiter votre e-mail - il paraissait vide."
+
+#. template/mail/meetings_error_empty_message_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+msgid "Maybe you want to try again?"
+msgstr "Vous souhaitez peut-être renouveler l'opération ?"
+
+#. template/mail/meetings_error_empty_message_subject.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+msgid "Something went wrong"
+msgstr "Une erreur s'est produite"
+
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_setup_error_data_html.tmpl
+msgid "Oh noes!"
+msgstr "Oh, des nons !"
+
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+msgid ""
+"Something went wrong with your response to scheduling option for %(B$%1$s%)."
+" Please try again."
+msgstr "Une erreur s'est produite lors de votre réponse à l'option de planification pour %(B$%1$s%). Veuillez renouveler l'opération."
+
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+msgid "Does the following time suit you?"
+msgstr "L'horaire suivant vous convient-il ?"
+
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+msgid "To answer, simply reply YES or NO to this email."
+msgstr "Pour répondre, dites simplement OUI ou NON dans cet email."
+
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+msgid "Your previous answer: %1$s ."
+msgstr "Votre réponse précédente est : %1$s"
+
+#. template/mail/meetings_error_invalid_scheduling_response_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+#. template/mail/meetings_scheduling_exception_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+msgid "View meeting"
+msgstr "Voir la réunion"
+
+#. template/mail/meetings_error_invalid_scheduling_response_subject.tmpl
+msgid "Problem with your scheduling response"
+msgstr "Problème de réponse de planification"
+
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+#. template/mail/meetings_google_connection_broken_html.tmpl
+msgid "Hi,"
+msgstr "Bonjour,"
+
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+msgid ""
+"You have successfully registered for the %(B$%1$s%) event, with the "
+"following information"
+msgstr "Vous vous êtes inscrit à l'événement %(B$%1$s%) avec succès avec les informations suivantes"
+
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+msgid "Organization:"
+msgstr "Organisation :"
+
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+msgid "Description:"
+msgstr "Description :"
+
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+msgid "To edit your information, click on the link below"
+msgstr "Pour modifier vos informations, cliquez sur le lien ci-dessous"
+
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+msgid "Edit information"
+msgstr "Modifier les informations"
+
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+msgid ""
+"%(B$Tip:%) To ensure safe delivery of matchmaking invitations, add "
+"%(L$%1$s%) to your email client's address book or trusted addresses."
+msgstr "%(B$Tip:%) Pour assurer la livraison d'invitations de liaison, ajoutez %(L$%1$s%) à l'adresse email de votre client ou aux adresses vérifiées."
+
+#. template/mail/meetings_event_matchmaker_confirmed_html.tmpl
+msgid ""
+"If you need any help or want to change your submission, contact us at "
+"%(B$%(L$%1$s%)%)"
+msgstr "Si vous avez besoin d'aide ou voulez changer votre soumission, contactez-nous à %(B$%(L$%1$s%)%)"
+
+#. template/mail/meetings_event_matchmaker_confirmed_subject.tmpl
+msgid "You are now registered for the matchmaking event"
+msgstr "Vous êtes désormais inscrit à l'événement de mise en relation"
+
+#. template/mail/meetings_google_connection_broken_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+msgid "Hi %1$s,"
+msgstr "Bonjour %1$s,"
+
+#. template/mail/meetings_google_connection_broken_html.tmpl
+msgid ""
+"It seems that the connection between Meetin.gs and your Google account has "
+"been broken."
+msgstr "Il semblerait que la connexion entre Meetin.gs et votre compte Google ait été rompue."
+
+#. template/mail/meetings_google_connection_broken_html.tmpl
+msgid "Reconnect Google account"
+msgstr "Reconnecter le compte Google"
+
+#. template/mail/meetings_google_connection_broken_html.tmpl
+msgid "If the problem persists, please contact our %(L$support%)."
+msgstr "Si le problème persiste, merci de contacter notre %(L$assistance%)."
+
+#. template/mail/meetings_google_connection_broken_html.tmpl
+msgid ""
+"%(B$Why is this important?%) We are using your data to suggest you upcoming "
+"meetings, help you in scheduling and in checking your availability for Meet "
+"Me pages."
+msgstr "%(B$pourquoi est-ce important?%) Nous utilisons vos données afin de vous suggérer des événements à venir, de vous aider à les planifier et de vérifier vos disponibilités sur les pages Meet Me."
+
+#. template/mail/meetings_google_connection_broken_subject.tmpl
+msgid "We are having problems connecting to your Google account"
+msgstr "Nous ne parvenons pas à nous connecter sur votre compe Google"
+
+#. template/mail/meetings_ical_nofity_email_html.tmpl
+msgid "Inviter"
+msgstr "Inviter"
+
+#. template/mail/meetings_ical_nofity_email_html.tmpl
+msgid "%1$s attached the following message:"
+msgstr "%1$s a joint le message suivant :"
+
+#. template/mail/meetings_ical_nofity_email_html.tmpl
+#. template/mail/meetings_ics_description_html.tmpl
+msgid "Check the meeting details, agenda and materials:"
+msgstr "Vérifiez les informations liées à cette réunion, l'ordre du jour et les documents :"
+
+#. template/mail/meetings_ical_nofity_email_html.tmpl
+msgid ""
+"This is an automated iCal message from Meetin.gs. If you do not wish to "
+"receive iCal messages from Meetin.gs in the future, please follow the link "
+"below:"
+msgstr "Ceci est un message iCal automatique provenant de Meetin.gs. Si vous ne souhaitez plus recevoir de message iCal émanant de Meetin.gs, veuillez cliquer sur le lien ci-dessous :"
+
+#. template/mail/meetings_ical_nofity_email_subject.tmpl
+msgid "Reminder:"
+msgstr "Rappel :"
+
+#. template/mail/meetings_ical_nofity_email_subject.tmpl
+msgid "Updated:"
+msgstr "Mis à jour :"
+
+#. template/mail/meetings_ical_nofity_email_subject.tmpl
+msgid "Updated Invitation:"
+msgstr "Invitation mise à jour :"
+
+#. template/mail/meetings_ical_nofity_email_subject.tmpl
+msgid "Invitation:"
+msgstr "Invitation :"
+
+#. template/mail/meetings_ics_description_html.tmpl
+msgid "Email your material and notes to:"
+msgstr "Envoyez vos documents et vos notes par e-mail à :"
+
+#. template/mail/meetings_ics_description_html.tmpl
+msgid "Be smart and organize your next meeting with Meetin.gs:"
+msgstr "Soyez malin et organisez votre prochaine réunion avec Meetin.gs :"
+
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+#. template/mail/meetings_join_request_prompt_html.tmpl
+msgid "Request to join"
+msgstr "Demande de participation"
+
+#. template/mail/meetings_join_request_confirmation_html.tmpl
+msgid ""
+"We got your email. Now sit back and relax. You will receive meeting "
+"invitation when the organizer approves your request."
+msgstr "Nous avons votre e-mail. Vous pouvez vous installer confortablement et vous détendre. Vous recevrez une invitation à la réunion lorsque l'organisateur aura approuvé votre demande."
+
+#. template/mail/meetings_join_request_confirmation_subject.tmpl
+msgid "Your request to join received"
+msgstr "Votre demande de participation a été reçue"
+
+#. template/mail/meetings_join_request_prompt_html.tmpl
+msgid ""
+"%1$s wants to join your meeting. Click the link to accept and we'll send the"
+" invitation."
+msgstr "%1$s souhaite participer à votre réunion. Cliquez sur le lien pour donner votre accord et nous lui enverrons une invitation."
+
+#. template/mail/meetings_join_request_prompt_html.tmpl
+msgid "In case you don't want to accept the request, don't do anything."
+msgstr "Si vous ne souhaitez pas accepter cette requête, ne faites rien."
+
+#. template/mail/meetings_join_request_prompt_subject.tmpl
+msgid "%1$s wants to join %2$s"
+msgstr "%1$s souhaite participer à %2$s"
+
+#. template/mail/meetings_login_link_email_html.tmpl
+msgid "Hi %1$s"
+msgstr "Bonjour %1$s:"
+
+#. template/mail/meetings_login_link_email_html.tmpl
+msgid ""
+"Welcome to %1$s. We are really happy to have you. If you need any help "
+"getting started, please don't hesitate to contact us."
+msgstr "Bienvenue sur %1$s. Nous sommes vraiment heureux de votre présence. Si vous avez besoin d'aide pour débuter, n'hésitez pas à nous contacter."
+
+#. template/mail/meetings_login_link_email_html.tmpl
+msgid "Your %1$s PIN is %(B$%2$s%)"
+msgstr "Votre CODE %1$s est %(B$%2$s%)"
+
+#. template/mail/meetings_login_link_email_html.tmpl
+msgid ""
+"To login, please enter the code to the corresponding field on your mobile "
+"device."
+msgstr "Pour vous connecter, merci de taper le code dans le champ correspondant sur votre appareil mobile."
+
+#. template/mail/meetings_login_link_email_html.tmpl
+msgid "If the PIN has expired, simply request a new PIN from the app."
+msgstr "Si votre code n'est plus valide, il suffit de demander un nouveau CODE sur l'appli."
+
+#. template/mail/meetings_login_link_email_html.tmpl
+msgid "Here's your login link to %1$s."
+msgstr "Voici votre lien de connexion vers %1$s."
+
+#. template/mail/meetings_login_link_email_html.tmpl
+msgid "Here are your credentials for logging in at a later time:"
+msgstr ""
+
+#. template/mail/meetings_login_link_email_html.tmpl
+msgid "Account: %1$s"
+msgstr ""
+
+#. template/mail/meetings_login_link_email_html.tmpl
+msgid "Password: %1$s"
+msgstr ""
+
+#. template/mail/meetings_login_link_email_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+msgid "%1$s - The smartest way to meet"
+msgstr "%1$s - La façon la plus futée de se réunir"
+
+#. template/mail/meetings_login_link_email_subject.tmpl
+msgid "%1$s PIN: %2$s"
+msgstr "Code %1$s : %2$s"
+
+#. template/mail/meetings_login_link_email_subject.tmpl
+msgid "Log in to %1$s"
+msgstr "Connexion à %1$s"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+msgid "%(B$%1$s%) from %(B$%2$s%) accepted your request to meet"
+msgstr "%(B$%1$s%) de %(B$%2$s%) a accepté votre demande de rencontre"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+msgid "%(B$%1$s%) accepted your request to meet"
+msgstr "%(B$%1$s%) a accepté votre demande de rencontre"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+msgid "Where:"
+msgstr "Où :"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+msgid "When:"
+msgstr "Quand :"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+#. template/mail/meetings_meeting_info_html.tmpl
+msgid "Who:"
+msgstr "Qui :"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "Add to calendar:"
+msgstr "Ajouter au calendrier :"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "Add to your calendar by navigating to the address below:"
+msgstr "Ajoutez à votre calendrier en naviguant sur l'adresse ci-dessous :"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+msgid "The meeting page is now being prepared by %(B$%1$s%)."
+msgstr "La page de réunion est en cours de préparation par %(B$%1$s%)."
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+msgid ""
+"When the preparation is complete, the other party will send you a link to "
+"access the shared meeting page."
+msgstr "Quand la préparation sera terminée, l'autre partie vous enverra un lien pour accéder à la page de réunion partagée."
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid ""
+"Also, you still have %(B$%1$s slots available%) to request a meeting at "
+"%2$s. Go back to matchmaking to schedule another meeting."
+msgstr "Vous avez encore %(B$%1$s emplacements disponibles%) pour demander une réunion à %2$s. Retournez à la liaison pour programmer une autre réunion."
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "Go to matchmaking"
+msgstr "Aller à liaison"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+msgid "Go back to %1$s to schedule another meeting."
+msgstr "Revenez à %1$s pour programmer une autre réunion."
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid ""
+"It seems you have used all your slots for the matchmaking. No worries, you "
+"can use your account to organize as many meetings as you like at Meetin.gs."
+msgstr "Il semble que vous avez utilisé tous vos emplacements pour la liaison. Ne vous inquiétez pas, vous pouvez utiliser votre compte pour organiser autant de réunions que vous souhaitez sur Meetin.gs."
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+msgid ""
+"%1$s is now preparing the online meeting page, that you can use to "
+"collaborate, share and discuss all the meeting related materials and agenda."
+msgstr "%1$s prépare à présent la page de réunion en ligne que vous pouvez utiliser pour participer, partager et discuter des données et programmes liés aux réunions."
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+msgid ""
+"When this is done, you will be notified and invited to join the meeting "
+"page."
+msgstr "Cela fait, vous recevrez une notification et serez invité à joindre la page de réunion."
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+msgid "Didn't get your own Meet Me page yet? Why don't you do it right now?"
+msgstr "Vous n'avez pas encore votre propre page Rencontrez-Moi ? Pourquoi ne pas l'obtenir immédiatement ?"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "Claim your own Meet Me page"
+msgstr "Demandez votre propre page Rencontrez-moi"
+
+#. template/mail/meetings_matchmaker_accepted_html.tmpl
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "Meetin.gs - The smartest way to meet"
+msgstr "Meetin.gs - La façon la plus futée de se réunir"
+
+#. template/mail/meetings_matchmaker_accepted_subject.tmpl
+msgid "%1$s from %2$s accepted your request to meet"
+msgstr "%1$s de %2$s a accepté votre demande de réunion"
+
+#. template/mail/meetings_matchmaker_accepted_subject.tmpl
+msgid "%1$s accepted your request to meet"
+msgstr "%1$s a accepté votre demande de réunion"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid "Thank you for signing up!"
+msgstr "Merci pour votre inscription !"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid ""
+"Your Meet Me page for %(B$%1$s%) has been created. Your availability will "
+"now be listed on the attendee list. You can share your Meet Me page with "
+"anyone by sending them the following link:"
+msgstr "Votre page Meet Me pour %(B$%1$s%) a été créée. Vos disponibilités vont maintenant apparaître sur la liste des participants. Vous pouvez partager votre page Meet Me avec qui vous le souhaitez en leur envoyant le lien suivant :"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid "Use this link to access your settings:"
+msgstr "Cliquez sur ce lien pour accéder à vos réglages :"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid "Meet Me page settings"
+msgstr "Réglages de la page Meet Me"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid ""
+"You will soon receive meeting requests through email. Make sure you add "
+"info@meetin.gs to your address book and/or %(L$whitelist%) to ensure safe "
+"delivery of email."
+msgstr "Vous allez bientôt recevoir des notifications de réunion par e-mail. N'oubliez pas de rajouter info@meetin.gs à votre carnet d'adresses et / ou %(L$whitelist%) afin que les e-mails vous parviennent en toute sécurité."
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid "Continue setting up the service for personal use"
+msgstr "Poursuivez la configuration du service pour un usage personnel"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid ""
+"The service is powered by Meetin.gs - the smartest way to meet, online or "
+"face-to-face. Put your meetings on the cloud and make them accessible from "
+"any device. Claim your own Meet Me page for personal or business use."
+msgstr "Ce service est opéré par Meetin.gs - la façon la plus futée de se réunir en ligne ou en face à face. Mettez vos réunions sur le Cloud et elles seront accessibles depuis n'importe quel appareil. Demandez votre propre page Meet Me pour votre usage personnel ou professionnel."
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid "The service saves you time organizing meetings and it is free to use."
+msgstr "Ce service vous permet de gagner du temps dans l'organisation de vos réunions et il est gratuit."
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid "Continue setup for personal use"
+msgstr "Poursuivez la configuration pour un usage personnel"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid "A few suggestion on what to do next:"
+msgstr "Quelques suggestions sur la prochaine étape :"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid "Keep track of meetings on your phone:"
+msgstr "Suivez vos réunions sur votre téléphone :"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid "Download the %(L$iPhone App%)"
+msgstr "Téléchargez %(L$l'Appli iPhone%)"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid "Download the %(L$Android App%)"
+msgstr "Téléchargez %(L$l'Appli Android%)"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+msgid ""
+"Manage meetings right on your browser and schedule meetings with people on "
+"LinkedIn and more - Install the %(L$Chrome extension%)"
+msgstr "Gérez les réunions directement depuis votre navigateur et organisez des réunions avec des gens sur LinkedIn et autre - Installez l' %(L$extension Chrome%)"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid "Need help getting started? Read one of our %(L$tutorials%)"
+msgstr "Vous avez besoin d'aide pour démarrer ? Consultez l'un de nos %(L$tutoriels%)"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_html.tmpl
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid "Get advice from our %(L$support forums%)"
+msgstr "Trouvez des conseils dans nos %(L$forums d'assistance%)"
+
+#. template/mail/meetings_matchmaker_attendee_meetme_created_subject.tmpl
+msgid "Welcome to %1$s"
+msgstr "Bienvenue à %1$s"
+
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+msgid ""
+"Your e-mail %(B$%1$s%) is already in our system - Been with us before, have "
+"you? Welcome back."
+msgstr "Votre adresse email %(B$%1$s%) est déjà dans notre système - vous nous connaissez déjà, n'est-ce pas ? Bon retour parmi nous."
+
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+msgid ""
+"Please, click the button below to confirm your meeting request with "
+"%(B$%1$s%)."
+msgstr "Veuillez cliquer sur le bouton ci-dessous pour confirmer votre demande de réunion avec %(B$%1$s%)."
+
+#. template/mail/meetings_matchmaker_choose_merge_html.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+msgid "Confirm meeting request"
+msgstr "Confirmer demande de réunion"
+
+#. template/mail/meetings_matchmaker_choose_merge_subject.tmpl
+#. template/mail/meetings_matchmaker_choose_registration_subject.tmpl
+msgid "Confirm your request for a meeting with %1$s"
+msgstr "Confirmez votre demande de réunion avec %1$s."
+
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+msgid "You're almost there!"
+msgstr "Vous avez bientôt terminé !"
+
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+msgid "Your request to meet with %1$s is almost complete."
+msgstr "Votre demande de réunion avec %1$s est presque terminée."
+
+#. template/mail/meetings_matchmaker_choose_registration_html.tmpl
+msgid ""
+"To confirm the meeting and to verify your email address, click on the button"
+" below."
+msgstr "Pour confirmer la réunion et vérifier votre adresse email, cliquez sur le bouton ci-dessous."
+
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+msgid "You have received an invitation to meet!"
+msgstr "Vous avez reçu une invitation à une réunion !"
+
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+msgid "%1$s suggested the following agenda:"
+msgstr "%1$s a suggéré le programme suivant :"
+
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+msgid "%1$s from %2$s suggested the following agenda:"
+msgstr "%1$s de %2$s propose le programme suivant :"
+
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+msgid ""
+"Please answer as soon as possible. Accepting the meeting request will take "
+"you to the online meeting page to send the invitation. If you decline the "
+"request, you will get the opportunity to respond why you cannot meet."
+msgstr "Veuillez répondre aussi vite que possible. Accepter la demande de réunion vous emmènera sur la page de réunion en ligne pour envoyer l'invitation. Si vous refusez la demande, vous aurez l'occasion de préciser pourquoi vous ne pouvez pas participer à la réunion."
+
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+msgid "Accept"
+msgstr "Accepter"
+
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+msgid "Decline"
+msgstr "Refuser"
+
+#. template/mail/meetings_matchmaker_confirm_needed_html.tmpl
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+msgid "Accept or decline on the meeting page:"
+msgstr "Acceptez ou déclinez sur la page réunion :"
+
+#. template/mail/meetings_matchmaker_confirm_needed_subject.tmpl
+msgid "%1$s has requested a meeting at %2$s"
+msgstr "%1$s a requis une réunion à %2$s"
+
+#. template/mail/meetings_matchmaker_confirm_needed_subject.tmpl
+msgid "%1$s from %2$s has requested a meeting at %3$s"
+msgstr "%1$s de %2$s a demandé une réunion à %3$s"
+
+#. template/mail/meetings_matchmaker_confirm_needed_subject.tmpl
+msgid "%1$s has requested a meeting with you"
+msgstr "%1$s a requis une réunion avec vous"
+
+#. template/mail/meetings_matchmaker_confirm_needed_subject.tmpl
+msgid "%1$s from %2$s has requested a meeting with you"
+msgstr "%1$s de %2$s a demandé une réunion avec vous"
+
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+msgid "%1$s is still waiting for your response."
+msgstr "%1$s attend toujours votre réponse."
+
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+msgid "%1$s proposed the following agenda:"
+msgstr "%1$s a proposé le programme suivant :"
+
+#. template/mail/meetings_matchmaker_confirm_reminder_html.tmpl
+msgid "Please, respond as soon as possible."
+msgstr "Veuillez répondre aussi vite que possible."
+
+#. template/mail/meetings_matchmaker_confirm_reminder_subject.tmpl
+msgid "Please respond to the meeting request from %1$s"
+msgstr "Veuillez répondre à la demande de réunion de %1$s"
+
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+msgid "Sorry,"
+msgstr "Désolés,"
+
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+msgid "%1$s declined your request to meet with the following message:"
+msgstr "%1$s a décliné votre demande de réunion avec le message suivant :"
+
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+msgid ""
+"%1$s from %2$s declined your request to meet with the following message:"
+msgstr "%1$s de %2$s a refusé votre demande de rencontre avec le message suivant :"
+
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_declined_subject.tmpl
+msgid "%1$s declined your request to meet."
+msgstr "%1$s a refusé votre demande de réunion."
+
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+#. template/mail/meetings_matchmaker_declined_subject.tmpl
+msgid "%1$s from %2$s declined your request to meet."
+msgstr "%1$s de %2$s a décliné votre invitation de rencontre."
+
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+msgid "What was this about?"
+msgstr "Quel était le sujet ?"
+
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+msgid "You now have %(B$%1$s slots available%) to request a meeting at %2$s."
+msgstr "Vous avez maintenant %(B$%1$s créneaux disponibles%) pour demander une réunion à %2$s."
+
+#. template/mail/meetings_matchmaker_declined_html.tmpl
+msgid "Try to schedule another meeting."
+msgstr "Essayer d'organiser une autre réunion."
+
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "You have requested a meeting with %(B$%1$s%) from %(B$%2$s%)."
+msgstr "Vous avez demandé une réunion avec %(B$%1$s%) de %(B$%2$s%)."
+
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "You have requested a meeting with %(B$%1$s%)."
+msgstr "Vous avez demandé une réunion avec %(B$%1$s%)."
+
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid ""
+"What happens next? The other person will now accept or decline your request "
+"to meet. We will send you a notification when we have a response (expect "
+"this within a few days)."
+msgstr "Que se passe-t-il maintenant ? L'autre personne va accepter ou refuser la demande de réunion. Nous vous enverrons une notification quand nous aurons une réponse (dans quelques jours)."
+
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "If you have any questions, please contact %(L$support@meetin.gs%)."
+msgstr "Si vous avez des questions, n'hésitez pas à contacter %(L$support@meetin.gs%)."
+
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "Organize another meeting at the %1$s."
+msgstr "Organiser une autre réunion au %1$s."
+
+#. template/mail/meetings_matchmaker_waiting_confirm_html.tmpl
+msgid "While waiting, why don't you setup your own meet me page?"
+msgstr "Pendant que vous patientez, pourquoi ne pas organiser votre propre page rencontrez-moi ?"
+
+#. template/mail/meetings_matchmaker_waiting_confirm_subject.tmpl
+msgid "We have sent your meeting request"
+msgstr "Nous avons envoyé votre demande de réunion"
+
+#. template/mail/meetings_matchmaker_waiting_confirm_subject.tmpl
+msgid "Your request to meet has been sent to %1$s from %2$s"
+msgstr "Votre demande de réunion a été envoyée à %1$s de %2$s"
+
+#. template/mail/meetings_matchmaker_waiting_confirm_subject.tmpl
+msgid "Your request to meet has been sent to %1$s"
+msgstr "Votre demande de réunion a été envoyée à %1$s"
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "Time to get ready for %1$s."
+msgstr "Tenez-vous prêt pour %1$s."
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "This is a summary of your upcoming meetings during the event:"
+msgstr "Voici un résumé de vos réunions à venir durant l'événement :"
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid ""
+"Consider reviewing the meetings one more time and checking if there are any "
+"agenda items or materials, that you might have missed. Preparing well is one"
+" of the key factors for holding an efficient meeting."
+msgstr "Examinez les réunions encore une fois et vérifiez s'il y a des programmes ou des données que vous auriez pu ne pas voir. Une bonne préparation est l'un des facteurs clé pour une réunion efficace."
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "(Not confirmed)"
+msgstr "(Non confirmé)"
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "View to confirm the meeting"
+msgstr "Afficher pour confirmer la réunion"
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "View meeting details"
+msgstr "Afficher les détails de la réunion"
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "IMPORTANT: Some of your meetings are not confirmed."
+msgstr "IMPORTANT : certaines de vos réunions ne sont pas confirmées."
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid ""
+"You have not accepted or declined all the meeting requests you received or "
+"you have not confirmed, that the online meeting page is ready to be shared "
+"with the participants. Both of these actions may be completed on each "
+"meeting page."
+msgstr "Vous n'avez pas accepté ni décliné les notifications de réunions qui vous ont été envoyées ou vous n'avez pas confirmé que la page réunion en ligne était prête à être partagée avec tous les participants. Ces deux actions peuvent être effectuées sur chaque page réunion."
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid ""
+"You should do this now as the matchmaking will not be completed otherwise."
+msgstr "Nous vous conseillons de le faire maintenant ou la mise en relation ne sera pas complète. "
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "General instructions for meetings at %1$s:"
+msgstr "Instructions générales pour les réunions à %1$s :"
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid ""
+"Did you know, that you can use your mobile device to easily access all the "
+"information related to your meetings during %1$s? It's easy."
+msgstr "Saviez-vous que vous pouvez utiliser votre appareil mobile pour accéder facilement aux informations liées à vos réunions pendant %1$s ? C'est très simple."
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "Get Meetin.gs app for your iOS device now:"
+msgstr "Téléchargez dès maintenant l'application Meetin.gs pour votre appareil iOS :"
+
+#. template/mail/meetings_matchmaking_event_before_summary_html.tmpl
+msgid "Or scan the code:"
+msgstr "Ou scanner le code :"
+
+#. template/mail/meetings_matchmaking_event_before_summary_subject.tmpl
+msgid "%1$s: Your scheduled meetings"
+msgstr "%1$s : vos réunions programmées"
+
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+msgid ""
+"During the %1$s event you will be able to view your scheduled meetings also "
+"from our mobile site. Access meeting details, materials, participants and "
+"more."
+msgstr "Au cours de l'événement %1$s, vous pourrez aussi visualiser les réunions planifiées depuis notre site mobile. Vous aurez accès aux informations liées à cette réunion, aux documents, aux participants et plus encore."
+
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+msgid "Simply open this email on your mobile device and tap the button below:"
+msgstr "Il suffit d'ouvrir cet e-mail sur votre appareil mobile et taper sur le bouton ci-dessous :"
+
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+msgid "Open the list of meetings"
+msgstr "Ouvrir la liste des réunions"
+
+#. template/mail/meetings_matchmaking_mobile_notification_html.tmpl
+msgid ""
+"If you have any questions regarding the meetings at the venue such as the "
+"exact location, speak to the staff at the event registration & info and they"
+" will be happy to help you."
+msgstr "Si vous avez des questions relatives aux réunions, comme sur le lieu exact, adressez-vous au personnel dans la catégorie inscription à l'événement et informations. Ils seront heureux de vous aider."
+
+#. template/mail/meetings_matchmaking_mobile_notification_subject.tmpl
+msgid "%1$s: Mobile site to access your meetings"
+msgstr "%1$s : un site mobile pour accéder à vos réunions"
+
+#. template/mail/meetings_meeting_created_html.tmpl
+msgid "You just created"
+msgstr "Vous venez de créer"
+
+#. template/mail/meetings_meeting_created_html.tmpl
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+msgid "Welcome to Meetin.gs!"
+msgstr "Bienvenue à Meetin.gs !"
+
+#. template/mail/meetings_meeting_created_html.tmpl
+msgid ""
+"Your awesome meeting page is now up and running. We also created a Meetin.gs"
+" account for you."
+msgstr "Votre super page réunion est désormais opérationnelle. Nous avons également créé un compte Meetin.gs pour vous."
+
+#. template/mail/meetings_meeting_created_html.tmpl
+msgid "Your awesome meeting page is now up and running."
+msgstr "Votre super page réunion est désormais opérationnelle."
+
+#. template/mail/meetings_meeting_created_html.tmpl
+msgid ""
+"%(B$Ttip:%) You can add material by emailing attachments to %(L$%1$s%). The "
+"documents will automatically appear on the meeting page."
+msgstr "%(B$Ttip:%) Vous pouvez ajouter des données par email à %(L$%1$s%).  Les documents apparaîtront automatiquement sur la page de réunion."
+
+#. template/mail/meetings_meeting_created_subject.tmpl
+msgid "Meeting created: %1$s"
+msgstr "Réunion créée : %1$s"
+
+#. template/mail/meetings_meeting_info_html.tmpl
+msgid "Information about"
+msgstr "Informations à propos de"
+
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_scheduling_option_html.tmpl
+msgid "Suggested time:"
+msgid_plural "Suggested times:"
+msgstr[0] "Heures proposées :"
+msgstr[1] "Heures proposées :"
+
+#. template/mail/meetings_meeting_info_html.tmpl
+msgid ""
+"Please note that your help is needed to find a suitable time for %1$s. To "
+"help finding the right time, reply to this message with SCHEDULE."
+msgstr "Veuillez noter que vous êtes sollicité pour trouver un horaire qui convienne pour %1$s. Pour aider à trouver l'horaire adéquat, répondez à ce message en indiquant SCHEDULE."
+
+#. template/mail/meetings_meeting_info_html.tmpl
+msgid ""
+"You will then receive the suggested time by email. Please respond to the "
+"email with YES or NO."
+msgid_plural ""
+"You will then receive %1$s suggested times by email. Please respond to each "
+"of them with YES or NO."
+msgstr[0] "Vous allez ensuite recevoir %1$s propositions d'horaires par e-mail. Merci de répondre à chacune d'entre elles par OUI ou NON."
+msgstr[1] "Vous allez recevoir %1$s propositions d'horaires par e-mail. Merci de répondre à chacune d'entre elles par OUI ou NON."
+
+#. template/mail/meetings_meeting_info_html.tmpl
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+msgid "You can also respond on the meeting page."
+msgstr "Vous pouvez également répondre sur la page réunion."
+
+#. template/mail/meetings_meeting_info_html.tmpl
+msgid "Share materials by emailing them here:"
+msgstr "Partagez vos documents par e-mail ici :"
+
+#. template/mail/meetings_meeting_info_html.tmpl
+msgid ""
+"The materials you send as attachments will appear on the meeting page. The "
+"message you write in the text field of the same email will appear as a "
+"comment to that material. You can also share materials on the meeting page."
+msgstr "Les documents que vous avez envoyés en pièces jointes apparaîtront sur la page réunion. Le message tapé dans le champ texte de ce même e-mail apparaîtra comme commentaire de ces documents. Vous pouvez également partager des documents sur la page réunion."
+
+#. template/mail/meetings_meeting_info_html.tmpl
+msgid "Shared materials:"
+msgstr "Articles partagés :"
+
+#. template/mail/meetings_meeting_info_html.tmpl
+msgid "%(B$%1$s%) comments have been shared."
+msgstr "%(B$%1$s%) des commentaires ont été partagés."
+
+#. template/mail/meetings_meeting_info_subject.tmpl
+msgid "Info: %1$s"
+msgstr "Info : %1$s"
+
+#. template/mail/meetings_missing_action_points_html.tmpl
+msgid "There are no action points for the meeting."
+msgstr "Il n'y a pas de points d'action pour la réunion."
+
+#. template/mail/meetings_missing_action_points_html.tmpl
+msgid "What was the outcome? Hit reply and provide a summary."
+msgstr "Quels ont été les résultats ? Appuyez sur « répondre » pour donner un résumé."
+
+#. template/mail/meetings_missing_action_points_html.tmpl
+msgid ""
+"What was the outcome of %(B$%1$s?%) Did you make any decisions? What happens"
+" next?"
+msgstr "Quel a été le résultat de %(B$%1$s?%) Avez-vous pris des décisions ? Que se passe-t-il ensuite ?"
+
+#. template/mail/meetings_missing_action_points_html.tmpl
+msgid ""
+"%(B$Just reply to this email%) and we'll send a beautiful summary to "
+"%(B$%1$s%). If you want to put a bit more effort into it just hit the button"
+" below and fill the action points. "
+msgstr "%(B$Répondez à cet email%) et nous enverrons un joli résumé à %(B$%1$s%). Encore un petit effort : appuyez sur le bouton ci-dessous et remplissez les points d'action."
+
+#. template/mail/meetings_missing_action_points_html.tmpl
+msgid "Fill the Action Points"
+msgstr "Remplir les Points Action"
+
+#. template/mail/meetings_missing_action_points_html.tmpl
+msgid "ps. Feel free to ignore this email if no summary is needed."
+msgstr "PS : n'hésitez pas à ignorer cet email si aucun résumé n'est nécessaire."
+
+#. template/mail/meetings_missing_action_points_html.tmpl
+msgid "Should someone else do this instead? Delegate to:"
+msgstr "Quelqu'un d'autre doit-il s'en occuper ? Déléguer à :"
+
+#. template/mail/meetings_missing_action_points_subject.tmpl
+msgid "%1$s: What are the next steps?"
+msgstr "%1$s : Quelles sont les prochaines étapes ?"
+
+#. template/mail/meetings_missing_agenda_html.tmpl
+msgid "We noticed that this meeting has no agenda."
+msgstr "Nous avons remarqué que cette réunion n'a pas de programme."
+
+#. template/mail/meetings_missing_agenda_html.tmpl
+msgid "Why do you meet? Hit reply and provide a short summary."
+msgstr "Pourquoi cette réunion ? Appuyez sur répondre et fournissez un bref résumé."
+
+#. template/mail/meetings_missing_agenda_html.tmpl
+msgid ""
+"Not every meeting requires an agenda, but sharing a couple of points why "
+"%(B$%1$s%) takes place can be useful to everyone present."
+msgstr "Toutes les réunions ne nécessitent pas un programme, mais expliquer un peu pourquoi %(B$%1$s%) a lieu peut être utile aux personnes présentes."
+
+#. template/mail/meetings_missing_agenda_html.tmpl
+msgid ""
+"%(B$Just reply to this email%) and we'll send a beautiful agenda to "
+"%(B$%1$s%). If you want to put a bit more effort into it just hit the button"
+" below and fill the agenda."
+msgstr "%(B$Vient de répondre à cet email%) et enverra un joli programme à %(B$%1$s%). Encore un dernier effort : appuyez sur le bouton ci-dessous et remplissez le programme."
+
+#. template/mail/meetings_missing_agenda_html.tmpl
+msgid "Fill the agenda"
+msgstr "Remplir le programme"
+
+#. template/mail/meetings_missing_agenda_subject.tmpl
+msgid "%1$s is tomorrow: Why do you meet?"
+msgstr "%1$s a lieu demain : pourquoi cette réunion ?"
+
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid "Activate Meetin.gs PRO now"
+msgstr "Activer maintenant Meetin.gs PRO"
+
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid ""
+"Thank you for trying out Meetin.gs. This is the reminder, that you requested"
+" using our iOS application."
+msgstr "Merci d'essayer Meetin.gs. Ceci est le rappel que vous avez demandé en utilisant notre application iOS."
+
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid "Upgrade your Meetin.gs account now to get all the benefits:"
+msgstr "Mettez maintenant à jour votre compte Meetin.gs pour profiter de tous les avantages :"
+
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid ""
+"You get to customize the look and feel of the service and notifications "
+"according to your brand. Add your logo, select your own background image, "
+"and set the highlight color."
+msgstr "Personnalisez l'apparence et l'atmosphère du service et des notifications selon votre marque. Ajoutez votre logo, sélectionnez vos propres images de fond, et déterminez les couleurs."
+
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid ""
+"You will be able to invite as many people to a single meeting as you wish."
+msgstr "Vous pourrez inviter autant de personnes que vous le souhaitez à une même réunion."
+
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid "You get to to share all the materials without limitations."
+msgstr "Partagez tous vos documents sans limite."
+
+#. template/mail/meetings_mobile_pro_reminder_request_html.tmpl
+msgid "Upgrade to Meetin.gs PRO"
+msgstr "Passer à Meetin.gs PRO"
+
+#. template/mail/meetings_mobile_pro_reminder_request_subject.tmpl
+msgid "Reminder: Go PRO and Save time with Meetin.gs"
+msgstr "Rappel : devenez PRO et Économisez du temps avec Meetin.gs"
+
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+msgid "Missing RSVP for"
+msgstr "Il manque une réponse pour"
+
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+msgid ""
+"It's been three days but %1$s has not told if they are coming to your "
+"meeting."
+msgstr "Cela fait trois jours, mais %1$s n'a pas confirmé sa participation à votre réunion."
+
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+msgid "Are you sure this is the correct email address?"
+msgstr "Êtes-vous certain que l'adresse e-mail est correcte ?"
+
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+msgid ""
+"The invite was sent to %(B$%1$s%) - are you sure this is the correct email "
+"address?"
+msgstr "L'invitation a été envoyée à %(B$%1$s%) - êtes-vous certain qu'il s'agit de la bonne adresse e-mail ?"
+
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+msgid "If not, you can resend the invite on the meeting page"
+msgstr "Autrement, il vaut mieux renvoyer l'invitation sur la page réunion"
+
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+msgid ""
+"Occasionally the emails also get stuck in spam filters and contacting "
+"personally is the best way to reach someone."
+msgstr "Les e-mails peuvent parfois se retrouver bloqués par un filtre spam aussi, pour joindre quelqu'un, vaut-il mieux le contacter en personne."
+
+#. template/mail/meetings_organizer_accept_reminder_html.tmpl
+msgid ""
+"%(B$Tip:%) You can also manage the answers yourself through the icons in the"
+" participant list."
+msgstr "%(B$Conseil:%) Vous pouvez également gérer les réponses vous-même à partir des icônes se trouvant sur la liste des participants. "
+
+#. template/mail/meetings_organizer_accept_reminder_subject.tmpl
+msgid "%1$s's RSVP missing"
+msgstr "La réponse de %1$s est introuvable"
+
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+msgid "Missing scheduling response for"
+msgstr "Il manque la réponse à la planification pour"
+
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+msgid "It's been three days but %1$shas not responded to scheduling."
+msgstr "Cela fait trois jours, mais %1$s n'a pas répondu à la demande de planification."
+
+#. template/mail/meetings_organizer_scheduling_reminder_html.tmpl
+msgid ""
+"%(B$Tip:%) As the admin you can also manage the participants' answers "
+"yourself."
+msgstr "%(B$Conseil:%) En tant qu'administrateur, vous pouvez également gérer la réponse des participants vous-même. "
+
+#. template/mail/meetings_organizer_scheduling_reminder_subject.tmpl
+msgid "%1$s's scheduling answers missing"
+msgstr "Les réponses pour la planification de l'événement %1$s sont introuvables"
+
+#. template/mail/meetings_paypal_receipt_html.tmpl
+msgid "Receipt"
+msgstr "Reçu"
+
+#. template/mail/meetings_paypal_receipt_html.tmpl
+msgid "This is a receipt for your Meetin.gs PRO subscription payment."
+msgstr "Ceci est un reçu pour le paiement de votre abonnement à Meetin.gs PRO."
+
+#. template/mail/meetings_paypal_receipt_html.tmpl
+msgid "Item:"
+msgstr "Article :"
+
+#. template/mail/meetings_paypal_receipt_html.tmpl
+msgid "Amount*:"
+msgstr "Montant* :"
+
+#. template/mail/meetings_paypal_receipt_html.tmpl
+msgid "Account:"
+msgstr "Compte :"
+
+#. template/mail/meetings_paypal_receipt_html.tmpl
+msgid "Date:"
+msgstr "Date :"
+
+#. template/mail/meetings_paypal_receipt_html.tmpl
+msgid "Biller:"
+msgstr "Facturier:"
+
+#. template/mail/meetings_paypal_receipt_html.tmpl
+msgid "* 24% VAT included"
+msgstr "* 24% TVA incluse"
+
+#. template/mail/meetings_paypal_receipt_html.tmpl
+msgid "* 0% VAT included"
+msgstr "* 0 % TVA incluse"
+
+#. template/mail/meetings_paypal_receipt_subject.tmpl
+msgid "Meetin.gs receipt"
+msgstr "Reçu de Meetin.gs"
+
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+msgid "%1$s  would like you to pick a time for a meeting."
+msgstr "%1$s souhaite que vous choisissiez l'heure de la réunion."
+
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+msgid "Message from %1$s:"
+msgstr "Message de %1$s :"
+
+#. template/mail/meetings_quickmeet_invitation_html.tmpl
+msgid "Pick a time"
+msgstr "Choisissez une heure"
+
+#. template/mail/meetings_quickmeet_invitation_subject.tmpl
+msgid "%1$s  asked you to pick a time for a meeting"
+msgstr "%1$s vous demande de choisir l'heure de la réunion"
+
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+msgid "You are invited to join scheduling"
+msgstr ""
+
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+msgid "%1$s is scheduling a meeting using SwipeToMeet."
+msgstr ""
+
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+msgid "See the meeting details and provide your availability now."
+msgstr ""
+
+#. template/mail/meetings_request_scheduling_answers_html.tmpl
+msgid "Meeting details & Scheduling"
+msgstr ""
+
+#. template/mail/meetings_request_scheduling_answers_subject.tmpl
+msgid "%1$s is trying to find a suitable time for a meeting"
+msgstr ""
+
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+msgid "RSVP reminder for"
+msgstr "Rappel pour que vous répondiez à"
+
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "%1$s requested you to RSVP for this meeting:"
+msgstr "%1$s vous a demandé de répondre pour cette réunion :"
+
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Please RSVP for this meeting:"
+msgstr "Veuillez répondre pour cette réunion :"
+
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Attending"
+msgstr "Présent(e)"
+
+#. template/mail/meetings_rsvp_reminder_html.tmpl
+#. template/mail/meetings_time_changed_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Not attending"
+msgstr "Absent(e)"
+
+#. template/mail/meetings_rsvp_reminder_subject.tmpl
+msgid "Reminder: RSVP required for %1$s"
+msgstr "Rappel : une réponse est requise pour %1$s"
+
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+msgid "Choose the time for"
+msgstr "Choisir l'horaire pour"
+
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+msgid "All of the participants have now responded to scheduling options."
+msgstr "Tous les participants ont répondu aux options de planification."
+
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+msgid "The most popular time is:"
+msgid_plural "The most popular times are:"
+msgstr[0] "Les heures les plus populaires sont :"
+msgstr[1] "Les heures les plus populaires sont :"
+
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+msgid "Choose the final time on the meeting page."
+msgstr "Sélectionnez l'horaire définitif sur la page réunion."
+
+#. template/mail/meetings_scheduling_answers_received_html.tmpl
+msgid "Set the time for this meeting"
+msgstr "Régler l'horaire de cette réunion"
+
+#. template/mail/meetings_scheduling_answers_received_subject.tmpl
+msgid "Action required: choose the time for %1$s"
+msgstr "Action requise : sélectionner l'horaire pour %1$s"
+
+#. template/mail/meetings_scheduling_changed_html.tmpl
+msgid "Open scheduling options for"
+msgstr "Ouvrir les options de planification pour"
+
+#. template/mail/meetings_scheduling_changed_html.tmpl
+msgid "Open scheduling option for"
+msgstr "Ouvrir l'option de planification pour"
+
+#. template/mail/meetings_scheduling_changed_html.tmpl
+msgid ""
+"New time suggestions are waiting for your reply. You can respond on the "
+"meeting page."
+msgstr "De nouvelles suggestions d'horaires sont en attente de réponse de votre part. Vous pouvez répondre sur la page réunion."
+
+#. template/mail/meetings_scheduling_changed_html.tmpl
+msgid "Unanswered times:"
+msgstr "Les horaires non renseignés :"
+
+#. template/mail/meetings_scheduling_changed_html.tmpl
+msgid "Unanswered time:"
+msgstr "Temps sans réponse :"
+
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Answer now"
+msgstr "Répondez maintenant"
+
+#. template/mail/meetings_scheduling_changed_html.tmpl
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+msgid ""
+"%(B$Tip:%) To respond by email, reply to this message with the word "
+"SCHEDULE."
+msgstr "%(B$Conseil:%) Pour donner votre réponse par e-mail, répondez à ce message en indiquant le mot SCHEDULE."
+
+#. template/mail/meetings_scheduling_changed_subject.tmpl
+msgid "New scheduling options:"
+msgstr "Nouvelles options de planification :"
+
+#. template/mail/meetings_scheduling_changed_subject.tmpl
+msgid "New scheduling option:"
+msgstr "Nouvelle option de planification :"
+
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+msgid "Your scheduling response for"
+msgstr "Votre réponse pour l'événement planifié"
+
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+msgid "This is what we have received so far:"
+msgstr "Voici ce que nous avons reçu jusqu'à présent :"
+
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+msgid "You still have one unanswered suggestion."
+msgid_plural "You still have %1$s unanswered suggestions."
+msgstr[0] "Vous avez encore %1$s de suggestions sans réponse."
+msgstr[1] "Vous avez encore %1$s suggestions sans réponse."
+
+#. template/mail/meetings_scheduling_confirmation_html.tmpl
+msgid "To respond by email, reply to this message with the word SCHEDULE."
+msgstr "Pour donner votre réponse par e-mail, veuillez répondre à ce message en indiquant le mot PLANIFICATION."
+
+#. template/mail/meetings_scheduling_confirmation_subject.tmpl
+msgid "Confirmation: Your scheduling response received"
+msgid_plural "Confirmation: Your scheduling responses received"
+msgstr[0] "Confirmation : Vos réponses sur la programmation ont été reçues"
+msgstr[1] "Confirmation : Vos réponses sur la programmation ont été reçues"
+
+#. template/mail/meetings_scheduling_exception_html.tmpl
+msgid "Time is set for"
+msgstr "L'horaire est fixé à"
+
+#. template/mail/meetings_scheduling_exception_html.tmpl
+msgid "You already responded scheduling for"
+msgstr "Vous avez déjà répondu pour un événement planifié le"
+
+#. template/mail/meetings_scheduling_exception_html.tmpl
+msgid "No open scheduling options for"
+msgstr "Pas d'options de planification ouverte pour"
+
+#. template/mail/meetings_scheduling_exception_html.tmpl
+msgid "The meeting will be on %(B$%1$s%)"
+msgstr "La réunion se tiendra le %(B$%1$s%)"
+
+#. template/mail/meetings_scheduling_exception_html.tmpl
+msgid ""
+"To change your answers by email, reply RESCHEDULE to this message. You also "
+"can do this on the meeting page."
+msgstr "Pour modifier vos réponses par e-mail, répondez à ce message en indiquant RESCHEDULE. Il est également possible d'effectuer cette opération sur la page réunion."
+
+#. template/mail/meetings_scheduling_exception_html.tmpl
+msgid ""
+"The time suggestions for %1$s haven't been set up yet, or the meeting "
+"organizer has removed all the previous times."
+msgstr "Les suggestions de date pour %1$s n'ont pas encore été fixées, ou l'organisateur de la réunion a supprimé toutes les dates antérieures."
+
+#. template/mail/meetings_scheduling_exception_subject.tmpl
+msgid "The time for %1$s has been already set"
+msgstr "L'horaire pour %1$s est déjà fixé."
+
+#. template/mail/meetings_scheduling_exception_subject.tmpl
+msgid "No new scheduling options for %1$s"
+msgstr "Pas d'options de planification pour %1$s"
+
+#. template/mail/meetings_scheduling_exception_subject.tmpl
+msgid "No scheduling options for %1$s"
+msgstr "Pas d'options de planification pour %1$s"
+
+#. template/mail/meetings_scheduling_option_html.tmpl
+msgid "Scheduling option for"
+msgstr "Option de planification pour"
+
+#. template/mail/meetings_scheduling_option_html.tmpl
+msgid "Your previous answer:"
+msgstr "Votre réponse précédente :"
+
+#. template/mail/meetings_scheduling_option_html.tmpl
+msgid ""
+"To change your answer, reply to this message with either YES or NO depending"
+" on your availability. If you don't want to change it, don't do anything."
+msgstr "Pour modifier votre réponse, répondez à ce message par OUI ou NON en fonction de votre disponibilité. Si vous ne souhaitez pas la modifier, aucune action de votre part n'est requise."
+
+#. template/mail/meetings_scheduling_option_html.tmpl
+msgid "Or  manage your answers on the meeting page."
+msgstr "Ou gérez vos réponses sur la page réunion."
+
+#. template/mail/meetings_scheduling_option_subject.tmpl
+msgid "%1$s rescheduling: is %2$s ok for you?"
+msgstr "Modification de la planification de %1$s : est-ce que %2$s vous convient ?"
+
+#. template/mail/meetings_scheduling_option_subject.tmpl
+msgid "%1$s scheduling: is %2$s ok for you?"
+msgstr "Programmation de %1$s : est-ce que %2$s vous convient ?"
+
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+msgid "Scheduling reminder for"
+msgstr "Rappel de planification pour"
+
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+msgid "Don't forget to inform others about your availability."
+msgstr "N'oubliez pas d'informer les autres de votre disponibilité."
+
+#. template/mail/meetings_scheduling_reminder_html.tmpl
+msgid "Does this time suit you?"
+msgid_plural "Do these times suit you?"
+msgstr[0] "Ces horaires vous conviennent-ils ?"
+msgstr[1] "Ces horaires vous conviennent-ils ?"
+
+#. template/mail/meetings_scheduling_reminder_subject.tmpl
+msgid "Reminder: help to schedule %1$s"
+msgstr "Rappel : contribuez à planifier %1$s"
+
+#. template/mail/meetings_setup_error_data_html.tmpl
+msgid "Unfortunately we could not process the meeting invitation sent to %1$s"
+msgstr "Nous n'avons pas pu traiter l'invitation à la réunion envoyée à %1$s"
+
+#. template/mail/meetings_setup_error_data_html.tmpl
+msgid "The invite didn't contain adequate information for creating a meeting."
+msgstr "L'invitation ne contenait pas d'informations adéquates pour créer une réunion."
+
+#. template/mail/meetings_setup_error_data_html.tmpl
+#. template/mail/meetings_setup_error_noical_html.tmpl
+#. template/mail/meetings_setup_error_parse_html.tmpl
+msgid "Please contact our support if the problem persists."
+msgstr "Veuillez contacter notre service assistance si le problème persiste."
+
+#. template/mail/meetings_setup_error_data_subject.tmpl
+msgid "Problems processing the meeting invitation"
+msgstr "Il y a des problèmes dans le traitement de l'invitation à la réunion"
+
+#. template/mail/meetings_setup_error_noical_html.tmpl
+msgid ""
+"Unfortunately we could not process the meeting invitation sent to %1$s. We "
+"could not find the ICS calendar data in your email."
+msgstr "Nous n'avons malheureusement pas été en mesure de traiter l'invitation à la réunion envoyée à %1$s. Nous n'avons pas trouvé les données du calendrier ICS dans votre e-mail."
+
+#. template/mail/meetings_setup_error_noical_subject.tmpl
+#. template/mail/meetings_setup_error_parse_subject.tmpl
+#. template/mail/meetings_setup_error_right_subject.tmpl
+msgid "Problem with your meeting invitation"
+msgstr "Il y a un problème avec l'invitation à la réunion"
+
+#. template/mail/meetings_setup_error_parse_html.tmpl
+#. template/mail/meetings_setup_error_right_html.tmpl
+msgid ""
+"Unfortunately we could not process the meeting invitation sent to %1$s."
+msgstr "Nous n'avons malheureusement pas pu traiter l'invitation à la réunion envoyée à %1$s ."
+
+#. template/mail/meetings_setup_error_parse_html.tmpl
+msgid "Meetin.gs could not parse the calendar file contained in your email."
+msgstr "Meetin.gs n'a pas pu lire le fichier calendrier joint à votre e-mail."
+
+#. template/mail/meetings_setup_error_right_html.tmpl
+msgid ""
+"It seems that you don't have a Meetin.gs account yet. Please click below to "
+"sign up and start having awesome meetings now."
+msgstr "Il semble que vous n'ayez pas encore de compte Meetin.gs. Veuillez cliquer ci-dessous dès maintenant afin de vous enregistrer et commencer à organiser de supers réunions."
+
+#. template/mail/meetings_setup_error_right_html.tmpl
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Sign up"
+msgstr "Inscrivez-vous"
+
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid ""
+"Here's your login link to Meetin.gs. Keep in mind, that this link is "
+"personal. You can use it whenever you need to login. If you lose it, you can"
+" request a new link from our site"
+msgstr "Voici le lien de votre identifiant sur Meetin.gs. Rappelez-vous que ce lien est personnel. Vous pouvez l'utiliser dès que vous souhaitez vous connecter. Si vous le perdez, vous pouvez demander un nouveau lien depuis notre site"
+
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid ""
+"A few suggestions on what to do next to get the most out of the service, "
+"improve your productivity and get meetings done:"
+msgstr "Quelques suggestions sur ce que vous pouvez faire maintenant pour profiter de tous les avantages du service, améliorer votre productivité et effectuer des réunions :"
+
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid "Keep track of meetings while on the move:"
+msgstr "Continuez à suivre vos réunions lors de vos déplacements :"
+
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid ""
+"%(B$Manage meetings right on your browser%) and schedule meetings with "
+"people on LinkedIn and more - Install the %(L$Chrome extension%)"
+msgstr "%(B$Gérez les réunions sur votre navigateur%) et organisez des réunions avec des gens sur LinkedIn et plus - Installez l'%(L$extension Chrome%)"
+
+#. template/mail/meetings_signup_welcome_html.tmpl
+msgid "%(B$Save time scheduling meetings%) - Share your %(L$Meet Me page%)"
+msgstr "%(B$Passez moins de temps à programmer les réunions%) - Partagez votre%(L$page Rencontrez-Moi%)"
+
+#. template/mail/meetings_signup_welcome_subject.tmpl
+msgid "Meetin.gs: login information and next steps"
+msgstr "Meetin.gs : informations de connexion et prochaines étapes"
+
+#. template/mail/meetings_time_changed_html.tmpl
+msgid "Important changes to"
+msgstr "Des modifications importantes sur"
+
+#. template/mail/meetings_time_changed_html.tmpl
+msgid "The meeting time has been set."
+msgstr "L'horaire de la réunion a été fixé."
+
+#. template/mail/meetings_time_changed_html.tmpl
+msgid "The meeting has new time - update your calendar."
+msgstr "L'horaire de la réunion a été modifié - mettez votre calendrier à jour. "
+
+#. template/mail/meetings_time_changed_html.tmpl
+msgid "The meeting time has been set - update your calendar."
+msgstr "La réunion a été fixée - mettez à jour votre calendrier."
+
+#. template/mail/meetings_time_changed_html.tmpl
+msgid "The meeting time has been removed."
+msgstr "L'horaire de cette réunion à été supprimé."
+
+#. template/mail/meetings_time_changed_subject.tmpl
+msgid "Attention: Your RSVP required for %1$s"
+msgstr "Attention : votre réponse est requise pour %1$s"
+
+#. template/mail/meetings_time_changed_subject.tmpl
+msgid "Attention: Time has been updated for %1$s"
+msgstr "Attention : La date pour %1$s a été mise à jour"
+
+#. template/mail/meetings_time_changed_subject.tmpl
+msgid "Attention: Time has been set for %1$s"
+msgstr "Attention : Date a été fixée pour %1$s"
+
+#. template/mail/meetings_time_changed_subject.tmpl
+msgid "Attention: Time has been removed from %1$s"
+msgstr "Attention : Date a été enlevée de %1$s"
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "Your PRO trial is expiring soon"
+msgstr "Votre version PRO d'essai expire bientôt"
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "Your PRO trial is expiring tomorrow"
+msgstr "Votre version PRO d'essai expire demain"
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "Meetin.gs PRO trial just expired"
+msgstr "Version d'essai Meetin.gs PRO vient d'expirer"
+
+#. template/mail/meetings_trial_end_html.tmpl
+#. template/mail/meetings_trial_extend_html.tmpl
+msgid "Meetin.gs is the smartest way to meet - online or face to face."
+msgstr "Meetin.gs est la façon la plus intelligente de se réunir - en ligne ou en face à face."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid ""
+"%(B$After %1$s%) your account will be downgraded to the limited version."
+msgstr "%(B$Après %1$s%) votre compte sera déclassé à la version limitée."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid ""
+"%(B$Your trial with Meetin.gs PRO will expire tomorrow.%) Your account will "
+"be downgraded to the limited version."
+msgstr "%(B$Votre essai Meetin.gs PRO expire demain.%) Votre compte sera rétrogradé à la version limitée."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid ""
+"%(B$Your trial with Meetin.gs PRO has expired%) and your account has been "
+"downgraded to the limited version."
+msgstr "%(B$Votre essai Meetin.gs PRO a expiré%) et votre compte a été rétrogradé à la version limitée."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "Upgrade now"
+msgstr "Mettez à jour maintenant"
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid ""
+"Upgrade Meetin.gs now to secure a seamless transition after your trial ends."
+" We will give you free credit for the time you have left on your trial."
+msgstr "Mettez maintenant Meetin.gs à jour pour vous assurer une transition homogène lorsque votre version d'essai aura expiré. Nous vous offrirons du crédit pour compenser le temps qu'il vous restait sur la version d'essai."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "What's included in Meetin.gs PRO?"
+msgstr "Que contient Meetin.gs PRO ?"
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "Unlimited meeting schedulers."
+msgstr "Un nombre illimité d'organisateurs de réunions."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "Expanded live communication tools."
+msgstr "Des outils de communication en direct étendus."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "Visual customization and branding."
+msgstr "Personnalisation visuelle et image de marque."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "Unlimited meeting participants."
+msgstr "Un nombre de participants par réunion illimité."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "Unlimited meeting materials."
+msgstr "Un nombre de documents de réunion illimité."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid "...and more."
+msgstr "…et plus."
+
+#. template/mail/meetings_trial_end_html.tmpl
+msgid ""
+"For the full description of features take a look at our %(L$plans and "
+"pricing%)"
+msgstr "Pour obtenir la description complète des fonctionnalités, faites un tour sur nos %(L$abonnements et tarifs%)"
+
+#. template/mail/meetings_trial_end_subject.tmpl
+msgid "Your Meetin.gs trial is about to expire"
+msgstr "Votre essai Meetin.gs est sur le point de se terminer"
+
+#. template/mail/meetings_trial_end_subject.tmpl
+msgid "Meetin.gs pro trial will expire tomorrow"
+msgstr "Votre essai Meetin.gs pro expire demain"
+
+#. template/mail/meetings_trial_end_subject.tmpl
+msgid "Meetin.gs pro trial expired"
+msgstr "Votre essai Meetin.gs pro a expiré"
+
+#. template/mail/meetings_trial_extend_html.tmpl
+msgid "Your trial was about to expire but:"
+msgstr "Votre essai était sur le point de se terminer mais :"
+
+#. template/mail/meetings_trial_extend_html.tmpl
+msgid ""
+"We noticed that you have not really had the chance to get up to speed with "
+"Meetin.gs. That's why we decided to extend your Meetin.gs PRO trial with "
+"another 30 days."
+msgstr "Nous avons remarqué que vous n'avez pas vraiment eu l'occasion de pleinement tester Meetin.gs. C'est pourquoi nous avons décidé de prolonger votre essai Meetin.gs PRO de 30 jours supplémentaires."
+
+#. template/mail/meetings_trial_extend_html.tmpl
+msgid "Get started by organizing a meeting:"
+msgstr "Commencez par organiser une réunion :"
+
+#. template/mail/meetings_trial_extend_html.tmpl
+msgid "Organize a meeting now"
+msgstr "Organiser une réunion maintenant"
+
+#. template/mail/meetings_trial_extend_html.tmpl
+msgid ""
+"If there's anything we can help you with, please give us a shout by replying"
+" to this email."
+msgstr "Si nous pouvons vous aider en quoi que ce soit, n'hésitez pas à nous demander en répondant à cet e-mail."
+
+#. template/mail/meetings_trial_extend_subject.tmpl
+msgid "We have extended your Meetin.gs Pro trial"
+msgstr "Nous avons prolongé votre essai Meetin.gs Pro"
+
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+msgid "To complete your registration for matchmaking,  follow the link below."
+msgstr "Pour compléter votre inscription à l'événement, cliquez sur le lien ci-dessous."
+
+#. template/mail/meetings_validate_event_matchmaker_html.tmpl
+msgid "Complete registration"
+msgstr "Complétez l'inscription"
+
+#. template/mail/meetings_validate_event_matchmaker_subject.tmpl
+msgid "Confirm registration for matchmaking"
+msgstr "Confirmez votre inscription à la mise en relation"
+
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+msgid "Authorize Facebook"
+msgstr "Autoriser Facebook"
+
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+#. template/mail/meetings_verify_google_email_html.tmpl
+msgid "Your account is now up and running."
+msgstr "Votre compte est désormais opérationnel."
+
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+msgid ""
+"Use the following link to authorize Meetin.gs to connect with your Facebook "
+"account."
+msgstr "Autorisez Meetin.gs à se connecter à votre compte Facebook en utilisant le lien suivant."
+
+#. template/mail/meetings_verify_facebook_email_html.tmpl
+msgid "Connect to Facebook"
+msgstr "Connexion à Facebook"
+
+#. template/mail/meetings_verify_facebook_email_subject.tmpl
+msgid "Action required: Facebook connection authorization"
+msgstr "Action requise : autorisation de connexion à Facebook"
+
+#. template/mail/meetings_verify_google_email_html.tmpl
+msgid "Authorize Google"
+msgstr "Autoriser Google"
+
+#. template/mail/meetings_verify_google_email_html.tmpl
+msgid ""
+"Use the following link to authorize Meetin.gs to connect with your Google "
+"account."
+msgstr "Utilisez le lien suivant pour autoriser Meetin.gs à se connecter à votre compte Google."
+
+#. template/mail/meetings_verify_google_email_html.tmpl
+msgid "Connect to Google"
+msgstr "Connectez-vous à Google"
+
+#. template/mail/meetings_verify_google_email_subject.tmpl
+msgid "Action required: Google connection authorization"
+msgstr "Action requise : autorisation de connexion à Google"
+
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+msgid "One more thing,"
+msgstr "Encore une chose,"
+
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+msgid "Click continue to verify your email address"
+msgstr "Cliquez sur continuer pour vérifier votre adresse e-mail"
+
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+msgid ""
+"Your meeting is almost up and running. Click the following link to continue."
+msgstr "Votre réunion est presque prête. Cliquez sur le lien suivant pour continuer."
+
+#. template/mail/meetings_verify_temp_account_email_html.tmpl
+msgid ""
+"We still need you to verify your email address, so please click the "
+"following link to continue."
+msgstr "Nous avons encore besoin que vous vérifiez votre adresse e-mail, veuillez cliquer sur le lien suivant pour continuer."
+
+#. template/mail/meetings_verify_temp_account_email_subject.tmpl
+msgid "Action required: please verify your email address"
+msgstr "Action requise : veuillez vérifier votre adresse e-mail"
+
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+msgid "Your Meet Me page is almost ready"
+msgstr "Votre page Meet Me est presque prête"
+
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+msgid ""
+"Next you will be able to configure your Meet Me page and finish the sign up "
+"process."
+msgstr "Vous pourrez ensuite configurer votre page Meet Me et compléter le processus d'inscription."
+
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+msgid "Before we are all set..."
+msgstr "Avant que nous soyons tous prêts..."
+
+#. template/mail/meetings_verify_temp_account_transfer_html.tmpl
+msgid ""
+"Click continue to configure your Meet Me page and finish your sign up "
+"process."
+msgstr "Cliquer sur continuer pour configurer votre page Rencontrez-Moi et terminer le processus d'inscription."
+
+#. template/mail/meetings_verify_temp_account_transfer_subject.tmpl
+msgid "Verify your Meetin.gs account"
+msgstr "Vérifiez votre compte Meetin.gs"
+
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+msgid "Add to your account"
+msgstr "Ajoutez à votre compte"
+
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+msgid "Click the following link to add the meeting to your account."
+msgstr "Cliquez sur le lien suivant pour ajouter la réunion à votre compte."
+
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+msgid "After this you can invite people to join the meeting page."
+msgstr "Après ceci, vous pourrez lancer les invitations à vous rejoindre sur la page réunion."
+
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+msgid "Add meeting"
+msgstr "Ajouter une réunion"
+
+#. template/mail/meetings_verify_temp_meeting_transfer_html.tmpl
+msgid "If this isn't your meeting, you can ignore this message."
+msgstr "Si vous n'êtes pas concerné par cette réunion, ne tenez pas compte de ce message."
+
+#. template/mail/meetings_verify_temp_meeting_transfer_subject.tmpl
+msgid "Add %1$s to your Meetin.gs account"
+msgstr "Ajoutez %1$s à votre compte Meetin.gs"
+
+#. template/mail/meetings_visitor_invite_default_greeting_html.tmpl
+msgid ""
+"I am looking forward to meeting you. Feel free to share on the meeting page "
+"any comments, questions or documents you might have."
+msgstr "J'ai hâte de vous retrouver. N'hésitez pas à partager vos commentaires, questions ou documents éventuels sur la page réunion."
+
+#. template/mail/meetings_visitor_invite_default_greeting_html.tmpl
+msgid "Please let me know if you are coming."
+msgstr "Merci de me confirmer votre participation."
+
+#. template/mail/meetings_visitor_invite_default_greeting_html.tmpl
+msgid ""
+"I am looking forward to meet you. Feel free to share on the meeting page any"
+" comments, questions or documents you might have."
+msgstr "J'ai hâte de vous retrouver. N'hésitez pas à partager vos commentaires, questions ou documents éventuels sur la page réunion."
+
+#. template/mail/meetings_visitor_invite_default_greeting_html.tmpl
+msgid ""
+"Please answer to my scheduling suggestions so we can find a suitable time "
+"for our meeting."
+msgstr "Merci de répondre à mes suggestions de planification afin que nous convenions d'un horaire pour notre réunion."
+
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "%1$s confirmed the meeting"
+msgstr "%1$s a confirmé la réunion"
+
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "%1$s invited you to"
+msgstr "%1$s vous à invité à"
+
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Do these times suit you? Answer on the meeting page."
+msgstr "Ces horaires vous conviennent-ils ? Répondez sur la page réunion."
+
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid "Comment now"
+msgstr "Faites un commentaire maintenant"
+
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid ""
+"%(B$Tip:%) You can also choose suitable dates by replying to this message "
+"with SCHEDULE as the first word."
+msgstr "%(B$Tip:%) Vous pouvez aussi choisir des dates appropriées en répondant à ce message en mettant PROGRAMME comme premier mot."
+
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid ""
+"%(B$Tip:%) You can also add material by emailing attachments to %(L$%1$s%). "
+"The documents will automatically appear on the meeting page."
+msgstr "%(B$Tip:%) Vous pouvez aussi ajouter des données par mail à %(L$%1$s%). Les documents apparaîtront automatiquement sur la page de réunion."
+
+#. template/mail/meetings_visitor_invite_html.tmpl
+msgid ""
+"To learn more about operating Meetin.gs by email, reply to this email with "
+"%(B$EMAIL HELP%) as the first words of your reply. The help will arrive "
+"momentarily!"
+msgstr "Pour en savoir plus sur les opérations effectuées par Meetin.gs par e-mail, répondez à cet e-mail en indiquant %(B$EMAIL HELP%) au début de votre message. Vous bénéficierez d'une assistance au plus vite !"
+
+#. template/mail/meetings_visitor_invite_subject.tmpl
+msgid "You have joined"
+msgstr "Vous avez joint"
+
+#. template/mail/meetings_visitor_invite_subject.tmpl
+msgid "Meeting confirmed:"
+msgstr "Réunion confirmée :"
+
+#. template/mail/meetings_visitor_invite_subject.tmpl
+msgid "Invitation to schedule:"
+msgstr "Invitation à organiser :"
+
+#. template/mail/meetings_visitor_invite_subject.tmpl
+msgid "Meeting invitation:"
+msgstr "Invitation à la réunion :"
+
+#. template/special_meetings_external_navigation.tmpl
+msgid "LOG IN"
+msgstr "SE CONNECTER"
+
+#. template/special_meetings_external_navigation.tmpl
+msgid "Home"
+msgstr "Maison"
+
+#. template/special_meetings_external_navigation.tmpl
+msgid "About"
+msgstr "À propos"
+
+#. template/special_meetings_external_navigation.tmpl
+msgid "Features"
+msgstr "Paramètres"
+
+#. template/special_meetings_external_navigation.tmpl
+msgid "Pricing"
+msgstr "Évaluation"
+
+#. template/special_meetings_external_navigation.tmpl
+msgid "Press"
+msgstr "Appuyez"
+
+#. template/special_meetings_external_navigation.tmpl
+msgid "Blog"
+msgstr "Blog"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Add Participants"
+msgstr "Ajouter des participants"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Send Invitations"
+msgstr "Envoyer les invitations"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Fill Action Points"
+msgstr "Remplir le plan d'action"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Set a Title"
+msgstr "Définir un titre"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Suggest Dates"
+msgstr "Suggestion de dates"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Set the Location"
+msgstr "Définir le lieu"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Add Agenda"
+msgstr "Ajouter un programme"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "a moment ago"
+msgstr "il y a un instant"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "an hour ago"
+msgstr "il y a une heure"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "one hour ago"
+msgid_plural "%1$d hours ago"
+msgstr[0] "il y a %1$d heures"
+msgstr[1] "il y a %1$d heures"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "yesterday"
+msgstr "hier"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "on monday"
+msgstr "lundi"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "on tuesday"
+msgstr "mardi"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "on wednesday"
+msgstr "mercredi"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "on thursday"
+msgstr "jeudi"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "on friday"
+msgstr "vendredi"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "on saturday"
+msgstr "samedi"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "on sunday"
+msgstr "dimanche"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "one day ago"
+msgid_plural "%1$d days ago"
+msgstr[0] "il y a %1$s jours"
+msgstr[1] "il y a %1$s jours"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Last visited %1$s."
+msgstr "Dernière visite %1$s."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Email opened %1$s."
+msgstr "E-mail ouvert %1$s."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "RSVP request sent %1$s."
+msgstr "Demande de réponse envoyée %1$s."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Invitation sent %1$s."
+msgstr "Invitation envoyée %1$s."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Attending."
+msgstr "Présent(e)."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Not attending."
+msgstr "Absent(e)."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Not answered yet."
+msgstr "N'a pas encore répondu."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Presumedly attending."
+msgstr "Participation probable."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Answered suggested times."
+msgstr "Heures proposées répondues :"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Set as Attending."
+msgstr "Définir comme « présent(e) »."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Set as Not attending."
+msgstr "Définir comme « absent(e) »."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "User not invited yet."
+msgstr "Utilisateur non invité."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Mon"
+msgstr "Lun"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Tue"
+msgstr "Mar"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Wed"
+msgstr "Mer"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Thu"
+msgstr "Jeu"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Fri"
+msgstr "Ven."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Sat"
+msgstr "Sam"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Sun"
+msgstr "Dim"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Jan"
+msgstr "Jan"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Feb"
+msgstr "Fév"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Mar"
+msgstr "Mar"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Apr"
+msgstr "Avr"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "May"
+msgstr "Mai"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Jun"
+msgstr "juin"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Jul"
+msgstr "Jui"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Aug"
+msgstr "Aoû"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Sep"
+msgstr "Sep"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Oct"
+msgstr "Oct"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Nov"
+msgstr "Nov"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Dec"
+msgstr "Déc"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+#. OpenInteract2/Action/DicoleMeetingsWorker.pm
+msgid "This meeting is tentative. Wait for %1$s to confirm the meeting."
+msgstr "Cette réunion est provisoire. Attendez %1$s pour confirmer la réunion."
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "(tentative)"
+msgstr "(tentative)"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Action Points"
+msgstr "Plan d'action"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Previous Action Points"
+msgstr "Éléments d'action précédents"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Agenda"
+msgstr "Programme"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "Scheduling Discussion"
+msgstr "Discussion sur la programmation"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "%1$s and %2$s"
+msgstr "%1$s et %2$s"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Online"
+msgstr "En ligne"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Tool not set"
+msgstr "L'outil n'est pas prêt"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+#. OpenInteract2/Action/DicoleMeetingsWorker.pm
+msgid "Location not known"
+msgstr "Localisation inconnue"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "On Skype"
+msgstr "Sur Skype"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "On the phone"
+msgstr "Au téléphone"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "On Hangout"
+msgstr "Sur Hangout"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "On Lync"
+msgstr "Sur Lync"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "On a custom tool"
+msgstr "Sur un outil personnalisé"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Untitled meeting"
+msgstr "Réunion sans titre"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Meeting between %1$s"
+msgstr "Réunion entre %1$s"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Receive email notification when:"
+msgstr "Recevoir une notification par e-mail lorsque :"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Meeting invitation received"
+msgstr "Invitation à la réunion reçue"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Date or time changes"
+msgstr "Modifications de la date et de l'heure"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Meeting starts in 24 hours"
+msgstr "Réunion commence dans 24 heures"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Online meeting starts in 15min"
+msgstr "Réunion en ligne commence dans 15 min"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Action points should be filled"
+msgstr "Les points d'action devraient être remplis"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Meet Me request is received"
+msgstr "La demande « me rencontrer » a été reçue"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Included in daily digest email:"
+msgstr "Inclus dans l'e-mail de résumé quotidien :"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Meeting title changes"
+msgstr "Modifications du titre de la réunion"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Location changes"
+msgstr "Changements de lieu"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "New participants"
+msgstr "Nouveaux participants"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "New materials"
+msgstr "Nouveaux documents"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "New comments"
+msgstr "Nouveaux commentaires"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Calendar events and updates (iCal):"
+msgstr "Événements et mises à jour de calendrier (iCal) :"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Receive events and updates"
+msgstr "Recevoir les événements et les mises à jour"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Send me a push notification when:"
+msgstr "M'envoyer une notification quand :"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "Meeting invitation is received"
+msgstr "L'invitation à la réunion a été reçue"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "New participant is added"
+msgstr "Un nouveau participant a été ajouté"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "New material is added"
+msgstr "Un nouveau document a été ajouté"
+
+#. OpenInteract2/Action/DicoleMeetingsCommon.pm
+msgid "New comment is received"
+msgstr "Nouveau commentaire reçu"
+
+#. OpenInteract2/Action/DicoleMeetingsGlobal.pm
+msgid "Facebook connected succesfully!"
+msgstr "La connexion à Facebook a réussi !"
+
+#. OpenInteract2/Action/DicoleMeetingsGlobal.pm
+msgid "Google connected succesfully!"
+msgstr "Google connecté avec succès !"
+
+#. OpenInteract2/Action/DicoleMeetingsGlobal.pm
+msgid ""
+"Dropbox connected succesfully! Your files will start to sync in the "
+"background momentarily."
+msgstr "Dropbox connecté avec succès ! La synchronisation en arrière-plan de vos fichiers commencera sous peu."
+
+#. OpenInteract2/Action/DicoleMeetingsGlobal.pm
+msgid "Twitter connected succesfully!"
+msgstr "Twitter connecté avec succès !"
+
+#. OpenInteract2/Action/DicoleMeetingsGlobal.pm
+msgid "LinkedIn connected succesfully!"
+msgstr "LinkedIn connecté avec succès !"
+
+#. OpenInteract2/Action/DicoleMeetingsGlobal.pm
+msgid "You were removed from meeting %1$s"
+msgstr "Vous avez été retiré(e) de la réunion %1$s"
+
+#. OpenInteract2/Action/DicoleMeetingsGlobal.pm
+msgid "You have been removed from the mailing list!"
+msgstr "Vous n'êtes plus sur la liste de diffusion !"
+
+#. OpenInteract2/Action/DicoleMeetingsGlobal.pm
+msgid "You will again receive iCal emails!"
+msgstr "Vous recevrez à nouveau les e-mails iCal !"
+
+#. OpenInteract2/Action/DicoleMeetingsGlobal.pm
+msgid "You will no longer receive iCal emails!"
+msgstr "Vous ne recevrez plus d'e-mail iCal !"
+
+#. OpenInteract2/Action/DicoleMeetingsGlobal.pm
+msgid "Disabled email processing notifications."
+msgstr "Notifications du traitement des e-mails désactivées."
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+#. OpenInteract2/Action/DicoleMeetingsJSONP.pm
+msgid "You need to accept the Terms of Service!"
+msgstr "Vous devez accepter les conditions d'utilisation !"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+#. OpenInteract2/Action/DicoleMeetingsJSONP.pm
+msgid ""
+"We are sorry but the system did not understand the provided date. Please "
+"check the date and try again!"
+msgstr "Nous sommes désolés mais notre système n'a pas réussi à comprendre la date fournie. Merci de vérifier la date et de réessayer !"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s created successfully"
+msgstr "%1$s créé(e) avec succès"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of January"
+msgstr "%1$s de janvier"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of February"
+msgstr "%1$s de février"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of March"
+msgstr "%1$s de mars"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of April"
+msgstr "%1$s d'avril"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of May"
+msgstr "%1$s de mai"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of June"
+msgstr "%1$s de juin"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of July"
+msgstr "%1$s de juillet"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of August"
+msgstr "%1$s d'août"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of September"
+msgstr "%1$s de septembre"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of October"
+msgstr "%1$s d'octobre"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of November"
+msgstr "%1$s de novembre"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s of December"
+msgstr "%1$s de décembre"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "Tomorrow"
+msgstr "Demain"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "In %1$s days"
+msgstr "Dans %1$s jours"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "Your changes have been saved successfully."
+msgstr "Vous modifications ont été enregistrées avec succès."
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "Could not send invite to %1$s. No invites left!"
+msgstr "Impossible d'envoyer une invitation à %1$s. Vous n'avez plus d'invitations !"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "Invite sent to %1$s"
+msgstr "Invitation envoyée à %1$s"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "Please enter a valid email address."
+msgstr "Veuillez entrer une adresse e-mail valide."
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "We do not have a user with email %1$s."
+msgstr "Nous n'avons aucun utilisateur correspondant à l'e-mail %1$s."
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s added successfully"
+msgstr "%1$s ajouté(e) avec succès"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "%1$s successfully removed"
+msgstr "%1$s retiré(e) avec succès"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "Date already exists"
+msgstr "Cette date existe déjà"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "Too many proposals"
+msgstr "Trop de propositions"
+
+#. OpenInteract2/Action/DicoleMeetingsJSON.pm
+msgid "The date could not be parsed"
+msgstr "La date n'a pas pu être analysée"
+
+#. OpenInteract2/Action/DicoleMeetingsJSONP.pm
+msgid "Please give the meeting a title!"
+msgstr "Veuillez donner un titre à la réunion !"
+
+#. OpenInteract2/Action/DicoleMeetingsPayPalJSON.pm
+msgid "Congratulations! You are now using Meetin.gs PRO."
+msgstr "Félicitations ! Vous utilisez maintenant Meetin.gs PRO."
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Login"
+msgstr "Identifiant"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Schedule a meeting with %1$s"
+msgstr "Programmer une réunion avec %1$s"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Meetin.gs - Meet %1$s"
+msgstr "Meetin.gs - Rencontrez %1$s"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Share your Meet Me url"
+msgstr "Partagez votre URL « me rencontrer »"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Claim your Meet Me url"
+msgstr "Revendiquez votre URL « Me rencontrer »"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Meet me configuration"
+msgstr "Configuration de « me rencontrer »"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Check your email to log in"
+msgstr "Vérifiez vos e-mails pour vous connecter"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "%1$s has accepted your request"
+msgstr "%1$s a accepté votre demande"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Meeting request has been sent"
+msgstr "La demande de réunion a été envoyée"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Connecting accounts"
+msgstr "Connexion des comptes"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Connecting Google and Meetin.gs accounts"
+msgstr "Connexion des comptes Google et Meetin.gs"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "You already have an active meet me url and it was not changed."
+msgstr "Vous possédez déjà une URL « me rencontrer » active et elle n'a pas été modifiée."
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Provide your details"
+msgstr "Fournir vos informations"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Get our apps"
+msgstr "Téléchargez nos applis"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Buy Meetin.gs PRO"
+msgstr "Acheter Meetin.gs PRO"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "User settings"
+msgstr "Paramètres utilisateur"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Please check your email to continue"
+msgstr "Veuillez vérifier votre e-mail pour continuer"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Welcome back"
+msgstr "Bienvenue"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Analytics"
+msgstr "Statistiques"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Logout"
+msgstr "Déconnexion"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Check your inbox"
+msgstr "Vérifiez votre boîte de réception"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Account forwarded"
+msgstr "Compte transmis"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Agent Booking"
+msgstr ""
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Timeline"
+msgstr "Historique"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "The requested meeting could not be found. It might have been removed."
+msgstr "La réunion demandée n'a pas été trouvée. Elle pourrait avoir été annulée."
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "You are now \"Not Attending\"."
+msgstr "Vous êtes désormais « absent(e) »."
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "You are now \"Attending\"."
+msgstr "Vous êtes désormais « présent(e) »."
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "%1$s invited succesfully"
+msgstr "%1$s invité(e) avec succès"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "You need to log in to access Meetin.gs"
+msgstr "Vous devez vous connecter afin d'accéder à Meetin.gs"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "You need to log in to access this meeting"
+msgstr "Vous devez vous connecter pour accéder à cette réunion"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "%1$s is now succesfully authorized to log you in!"
+msgstr "%1$s est à présent autorisé à vous connecter !"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid ""
+"You already have an active meet me url. Please change the url again to "
+"verify the change"
+msgstr "Vous possédez déjà une URL « me rencontrer » active. Veuillez modifier l'URL à nouveau afin de vérifier la modification"
+
+#. OpenInteract2/Action/DicoleMeetings.pm
+msgid "Automatic emails disabled for this meeting"
+msgstr "Les e-mails automatiques sont désactivés pour cette réunion"
+
+#. OpenInteract2/Action/DicoleMeetingsWorker.pm
+msgid "SwipeToMeet PIN: %1$s"
+msgstr ""
+
+#. OpenInteract2/Action/DicoleMeetingsWorker.pm
+msgid "This is a one time verification PIN for secure login to SwipeToMeet."
+msgstr ""
+
+#. OpenInteract2/Action/DicoleMeetingsWorker.pm
+msgid ""
+"Someone else just reserved this time before you. Please refresh the page to "
+"see the current situation in this scheduler."
+msgstr "Quelqu'un vient de réserver cette date avant vous. Veuillez rafraîchir la page pour voir la situation actuelle dans ce planificateur."
+
+#. OpenInteract2/Action/DicoleMeetingsWorker.pm
+msgid "Meetin.gs subscription"
+msgstr "Abonnement à Meetin.gs"
+
+#. OpenInteract2/Action/DicoleMeetingsWorker.pm
+msgid "Meetin.gs monthly subscription"
+msgstr "Abonnement mensuel à Meetin.gs"
+
+#. OpenInteract2/Action/DicoleMeetingsWorker.pm
+msgid "Meetin.gs yearly subscription"
+msgstr "Abonnement annuel à Meetin.gs"
+
+#. OpenInteract2/Action/DicoleMeetingsWorker.pm
+msgid "Deleted Account"
+msgstr "Compte Supprimé"
+
+msgid "Cancel meeting:"
+msgstr "Cancel meeting:"
+
+msgid "Cancel meeting?"
+msgstr "Cancel meeting?"
+
+msgid "[CANCELLED]"
+msgstr "[CANCELLED]"
+
+#. template/mail/meetings_digest_email_html.tmpl
+msgid "On %1$s//context:meeting date"
+msgstr "%1$s"

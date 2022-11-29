@@ -1,0 +1,37 @@
+OpenInteract-1.99_04-patch-Dicole.patch
+
+Uncompress OpenInteract 1.99_04, move this patch to the root directory of the source
+and apply patch with the following command:
+
+patch -p1 < OpenInteract-1.99_04-patch-Dicole.patch
+
+------------------------------------------------------------------------------------
+
+The patch modifies the following files:
+
+lib/OpenInteract2/Config/Initializer.pm
+Just removes one very annoying log message to debug from warn.
+
+lib/OpenInteract2/I18N/Initializer.pm
+Implements the possibility to have what ever key as the message key, because
+Dicole uses string based keys. It's the standard way people do translation
+in the GNU Gettext world.
+
+lib/OpenInteract2/I18N.pm
+Changes the system so that instead of returning "Message error for '$key'"
+it returns the key itself in cases where no translation is found.
+This is to ensure that in incomplete translations the english version is
+displayed instead. Previously it reported the message error.
+Also moved from warn to debug the information of untranslated strings.
+
+lib/OpenInteract2/SQLInstall.pm
+Fixes the dbdata installation scheme which was broken, so that pre-inserted data
+enters the database correctly upon installation.
+
+lib/OpenInteract2/Setup.pm
+Fixes the problem that Setup Globaloverride did not work.
+This prevented the use of required action_override.ini and spops_override.ini,
+which are used to override existing OI2 package configurations.
+
+
+- Teemu Arina

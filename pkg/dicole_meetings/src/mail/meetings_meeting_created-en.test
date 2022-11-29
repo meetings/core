@@ -1,0 +1,24 @@
+[%#- Sent whenever a meeting is created. Might go away for certain meeting creation styles like discussed <a href="https://dicole.lighthouseapp.com/projects/91874/tickets/30-longer-and-variable-delays-with-digests">here</a> -%]
+
+[%- IF test_case == 'testitesti' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+meeting_title = 'JATKOT'
+meeting_url = 'http://www.meetin.gs'
+meeting_email = 'meeting_email@parameter.com'
+
+%]
+[%- END -%]
+
+[%- IF test_case == 'uusi käyttäjä' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+new_user = '1'
+meeting_title = 'JATKOT'
+meeting_url = 'http://www.meetin.gs'
+meeting_email = 'meeting_email@parameter.com'
+
+%]
+[%- END %]

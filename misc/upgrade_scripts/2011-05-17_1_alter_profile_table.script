@@ -1,0 +1,10 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_networking_profile add about_me text after personal_motto');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_networking_profile add meta_info text after about_me');
+}
+
+1;

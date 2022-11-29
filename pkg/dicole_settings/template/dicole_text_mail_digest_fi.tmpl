@@ -1,0 +1,23 @@
+[%# $Id: dicole_text_mail_digest_fi.tmpl,v 1.3 2008-08-25 00:34:11 amv Exp $ -%]
+Tiivistelmä [% IF group_name %]ryhmän [% group_name %][% ELSE %]henkilökohtaisen noutajasi [% END %]tapahtumista [% current_date %]
+-------------------------------------------------------------------------------
+
+Ohessa [% last_date %] jälkeen ilmestyneet tapahtumat.
+Mikäli haluat muokata sähköpostimuistutuksiasi, muokkaa asetuksiasi:
+[% settings_addr %]
+[% FOREACH tool = tool_digests %]
+
+[% tool.tool_name %]
+-------------------------------------------------------------------------------
+[% FOREACH content = tool.items_plain -%]
+[% content %]
+
+[%#
+2007-03-08 17:52 - I think this stuff is great - Teemu Arina
+  - http://ADDRESS/werwerwerwe
+-%]
+[% END %]
+[% END %]
+
+-------------------------------------------------------------------------------
+Älä vastaa, tämä on automaattinen viesti, joka on lähetetty Dicole KWE järjestelmästä.

@@ -1,0 +1,8 @@
+<div class="comment">
+<div class="avatar">[% IF itemparams.user_link %]<a href="[% itemparams.user_link %]"><img src="[% itemparams.user_avatar %]" alt="[% itemparams.user_name %]" /></a>[% ELSE %]<img src="[% itemparams.user_avatar %]" alt="[% itemparams.user_name %]" />[% END %]</div>
+<div class="actions">[% FOREACH item=itemparams.control_widgets %][% PROCESS dicole_base::include_widget widget = item %][% END %]</div>
+<div class="comment-content">
+<div class="metadata">[% IF itemparams.user_link %]<a class="people" href="[% itemparams.user_link %]">[% itemparams.user_name %]</a>[% ELSE %][% itemparams.user_name %][% END %] - [% itemparams.date %]</div>
+<div class="comment-message">[% itemparams.content %]</div>
+</div>
+</div>

@@ -1,0 +1,48 @@
+[% MTN.t('Reminder: help to schedule %1$s',[meeting_title]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Scheduling reminder for') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+[% IF meeting_time == "" && open_scheduling_options.size > 0 %]
+
+<<<p>>>
+[% MTN.t("Don't forget to inform others about your availability.") %]
+[% MTN.t('Does this time suit you?', 'Do these times suit you?', { plural => open_scheduling_options.size }) %]
+<<</p>>>
+
+<<<list>>>
+[% FOREACH option IN open_scheduling_options %]
+<<<item>>>
+[% option.timestring %]
+<<</item>>>
+[% END %]
+<<</list>>>
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=scheduling_reminder' %]
+[% text = MTN.t('Answer now') %]
+[% buttonright = 0 %]
+<<<blue_button>>>
+
+<<<br>>>
+
+<<<hr>>>
+
+<<<basic_info>>>
+
+[% END %]
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t('%(B$Tip:%) To respond by email, reply to this message with the word SCHEDULE.') %]<<</p>>>
+
+<<</html_wrapper>>>

@@ -1,0 +1,1 @@
+[% IF matchmaker_company && matchmaker_name == matchmaker_email %][% MTN.t('%1$s declined your request to meet.',[matchmaker_company]) %][% ELSIF matchmaker_company %][% MTN.t('%1$s from %2$s declined your request to meet.',[matchmaker_name, matchmaker_company]) %][% ELSE %][% MTN.t('%1$s declined your request to meet.',[matchmaker_name]) %][% END %]

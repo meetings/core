@@ -1,0 +1,34 @@
+<div id="js_admin_navi_container"></div>
+<div id="modal-change-timezone" class="modal-popup-admin">
+    <h2 class="modal-header"><%= MTN.t('Choose Your Timezone') %></h2>
+    <p class="modal-explanation"><%= MTN.t('When you select a new time zone, our service converts all your meeting starting times to match your new time zone setting.') %></p>
+    <div id="meetings_change_timezone_error_container" class="modal-error-container"></div>
+    <form id="meetings_change_timezone_form" class="meetings-form">
+        <fieldset>
+
+            <!-- Timezone select -->
+            <label for="timezone" class="small"><%= MTN.t('Time Zone:') %></label>
+            <div id="timezone-select-wrap">
+                <select name="timezone" id="meetings_change_timezone_dialog_select" class="chosen timezone-select">
+                    <% dojo.forEach( p.timezone_choices, function( tz ) { %>
+                    <option value="<%== tz %>"<%== ( tz == dicole.get_global_variable('meetings_user_timezone_name') ) ? ' selected="selected"' : '' %>><%== p.timezone_data[tz].readable_name %></option>
+                    <% } ); %>
+                </select>
+            </div>
+
+            <!-- Preview for selected timezone -->
+            <span id="meetings_change_timezone_dialog_select_preview" class="js_meetings_time_with_timezone_container">
+            </span>
+
+        </fieldset>
+    </form>
+
+    <!-- Save & cancel -->
+    <div class="form-save-and-cancel-wrapper">
+        <a href="#" class="js_meetings_change_timezone_submit" id="change-timezone-save-button">
+            <span class="button blue"><%= MTN.t('Save') %></span>
+            <span class="indicator"></span>
+        </a>
+    </div>
+    <a class="js_hook_refresh_page close-cross alpha_png" href="#"></a>
+</div>

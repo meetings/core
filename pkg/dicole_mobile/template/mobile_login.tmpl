@@ -1,0 +1,16 @@
+[%- WRAPPER dicole_mobile::mobile_main title = 'Dicole login' -%]
+<div class="toolbar anchorTop">Dicole Login</div>
+[%- IF login_message %]<div class="loginMessage">[% login_message %]</div>[% END -%]
+<center>
+<div class="loginBox">
+<img class="dicoleLogo" border="0" src="/images/iphone/dicole_logo.jpg">
+<form method="post" name="iphone_login" class="iphoneLoginForm">
+<div class="label">Username</div>
+<input type="text" name="login_login_name" value="[% login_name %]">
+<div class="label">Password</div>
+<input type="password" name="login_password">
+<input type="submit" name="login" value="Login" class="iphoneButton">
+</form>
+</div>
+</center>
+[%- END -%]

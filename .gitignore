@@ -1,0 +1,16 @@
+*.swp
+*.log
+*~
+.DS_Store
+
+
+Build
+MYMETA.yml
+MYMETA.json
+Makefile
+Makefile.old
+_build
+blib
+pm_to_blib
+\.sass\-cache
+bin/local_config_override

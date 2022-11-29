@@ -1,0 +1,870 @@
+use Dicole::Utils::JSON;
+use DateTime;
+
+our $limit_to_partner = '';
+my $cache = {};
+
+my $gatherers = {
+    monthly_first_invitations_to_a_real_meeting => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo ( _n_past_ym_list('-') ) {
+            my $users = _all_users();
+            my $count = 0;
+            for my $user ( @$users ) {
+                $count++ if $user->extra_first_invited_to_real_meeting_month eq $mo;
+            }
+            $mo =~ s/\-/_/;
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_first_real_meeting_creators => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo ( _n_past_ym_list('-') ) {
+            my $users = _all_users();
+            my $count = 0;
+            for my $user ( @$users ) {
+                $count++ if $user->extra_month_real_meetings_hit_1 eq $mo;
+            }
+            $mo =~ s/\-/_/;
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_first_real_meeting_creators_who_had_been_invited_to_a_real_meeting_before => sub {
+        my ( $self ) = @_;
+        my $data = [];
+        for my $mo ( _n_past_ym_list('-') ) {
+            my $users = _all_users();
+            my $count = 0;
+            for my $user ( @$users ) {
+                $count++ if $user->extra_month_real_meetings_hit_1 eq $mo && $user->extra_first_invited_to_real_meeting_epoch > 0 && $user->extra_first_invited_to_real_meeting_epoch < $user->extra_first_real_create_epoch;
+            }
+            $mo =~ s/\-/_/;
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_real_meeting_creators_who_were_old_real_creators => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo ( _n_past_ym_list() ) {
+            my $users = _all_users();
+            my $count = 0;
+            for my $user ( @$users ) {
+                next unless $user->get( "extra_created_real_meeting_$mo" );
+                next unless $user->get( "extra_was_old_real_creator_$mo" );
+                $count++;
+            }
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_real_meeting_creators_who_had_created_3_real_meetings_previously => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $users = _all_users();
+            my $mo = $mo_data->{"ym_"};
+            my $count = 0;
+            for my $user ( @$users ) {
+                next unless $user->get( "extra_created_real_meeting_$mo" );
+                next unless $user->extra_epoch_real_meetings_hit_3 && $user->extra_epoch_real_meetings_hit_3 < $mo_data->{begin_epoch};
+                $count++;
+            }
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_real_meeting_creators_who_were_old_users => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo ( _n_past_ym_list() ) {
+            my $users = _all_users();
+            my $count = 0;
+            for my $user ( @$users ) {
+                next unless $user->get( "extra_was_old_user_$mo" );
+                next unless $user->get( "extra_created_real_meeting_$mo" );
+                $count++;
+            }
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_real_meeting_creators => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo ( _n_past_ym_list() ) {
+            my $users = _all_users();
+            my $count = 0;
+            for my $user ( @$users ) {
+                next unless $user->get( "extra_created_real_meeting_$mo" );
+                $count++;
+            }
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_sent_friend_invitations => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo ( _n_past_ym_list() ) {
+            my $users = _all_users();
+            my $count = 0;
+            $count += $_->get("extra_friend_invites_sent_in_$mo") for @$users;
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_sent_invitations => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo ( _n_past_ym_list() ) {
+            my $users = _all_users();
+            my $count = 0;
+            $count += $_->get("extra_invites_sent_in_$mo") for @$users;
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_sent_invitations_to_new_users => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo ( _n_past_ym_list() ) {
+            my $users = _all_users();
+            my $count = 0;
+            $count += $_->get("extra_invites_to_new_users_sent_in_$mo") for @$users;
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_sent_invitations_to_users_with_no_real_meetings_created => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo ( _n_past_ym_list() ) {
+            my $users = _all_users();
+            my $count = 0;
+            $count += $_->get("extra_invites_to_users_with_no_real_create_sent_in_$mo") for @$users;
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_new_users => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        my $users = _all_users();
+
+        for my $mo ( _n_past_ym_list() ) {
+            my $count = 0;
+            for my $user ( @$users ) {
+                next if $user->extra_is_temporary_user;
+                my $ucmo = $user->extra_create_month;
+                $ucmo =~ s/\-/_/;
+                next unless $mo eq $ucmo;
+                $count++;
+            }
+            push @$data, { month => $mo, count => $count };
+        }
+        return $data;
+    },
+    monthly_tos_acceptions => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        my %data = ();
+        my $users = _all_users();
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $count = 0;
+            for my $user ( @$users ) {
+                next if $user->extra_is_temporary_user;
+                next unless $user->note_tos_accepted;
+                next unless $user->note_tos_accepted > $mo_data->{begin_epoch};
+                next unless $user->note_tos_accepted < $mo_data->{end_epoch};
+                $count++;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+
+        return $data;
+    },
+    total_users_by_month => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        my %data = ();
+        my $users = _all_users();
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $count = 0;
+            for my $user ( @$users ) {
+                next if $user->extra_is_temporary_user;
+                $count += 1 if $user->extra_create_epoch < $mo_data->{end_epoch};
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+
+        return $data;
+    },
+    total_users_who_have_created_a_real_meeting_by_month => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        my %data = ();
+        my $users = _all_users();
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $count = 0;
+            for my $user ( @$users ) {
+                next if $user->extra_is_temporary_user;
+                next unless $user->extra_first_real_create_epoch;
+                $count += 1 if $user->extra_first_real_create_epoch < $mo_data->{end_epoch};
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+
+        return $data;
+    },
+    total_users_who_have_created_5_real_meetings_by_month => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        my %data = ();
+        my $users = _all_users();
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $count = 0;
+            for my $user ( @$users ) {
+                next if $user->extra_is_temporary_user;
+                next unless $user->extra_epoch_real_meetings_hit_5;
+                $count += 1 if $user->extra_epoch_real_meetings_hit_5 < $mo_data->{end_epoch};
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+
+        return $data;
+    },
+    total_users_who_have_created_3_real_meetings_by_month => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        my %data = ();
+        my $users = _all_users();
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $count = 0;
+            for my $user ( @$users ) {
+                next if $user->extra_is_temporary_user;
+                next unless $user->extra_epoch_real_meetings_hit_3;
+                $count += 1 if $user->extra_epoch_real_meetings_hit_3 < $mo_data->{end_epoch};
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+
+        return $data;
+    },
+    total_users_who_have_been_invited_to_a_real_meeting_by_month => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        my %data = ();
+        my $users = _all_users();
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $count = 0;
+            for my $user ( @$users ) {
+                next if $user->extra_is_temporary_user;
+                next unless $user->extra_first_invited_to_real_meeting_epoch;
+                $count += 1 if $user->extra_first_invited_to_real_meeting_epoch < $mo_data->{end_epoch};
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+
+        return $data;
+    },
+    total_users_who_have_been_invited_to_or_created_a_real_meeting_by_month => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        my %data = ();
+        my $users = _all_users();
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $count = 0;
+            for my $user ( @$users ) {
+                next if $user->extra_is_temporary_user;
+                $count += 1 if ( $user->extra_first_invited_to_real_meeting_epoch && $user->extra_first_invited_to_real_meeting_epoch < $mo_data->{end_epoch} ) || ( $user->extra_first_real_create_epoch && $user->extra_first_real_create_epoch < $mo_data->{end_epoch} );
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+
+        return $data;
+    },
+    monthly_held_real_meetings => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $meetings = _all_meetings();
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->extra_is_real;
+                next unless $meeting->begin_date > $mo_data->{begin_epoch};
+                next unless $meeting->begin_date < $mo_data->{end_epoch};
+                $count += 1;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+        return $data;
+    },
+    monthly_held_real_meetings_with_agenda => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $meetings = _all_meetings();
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->extra_is_real;
+                next unless $meeting->extra_has_filled_agenda;
+                next unless $meeting->begin_date > $mo_data->{begin_epoch};
+                next unless $meeting->begin_date < $mo_data->{end_epoch};
+                $count += 1;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+        return $data;
+    },
+    monthly_held_real_meetings_with_agenda_and_ap => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $meetings = _all_meetings();
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->extra_is_real;
+                next unless $meeting->extra_has_filled_agenda;
+                next unless $meeting->extra_has_filled_action_points;
+                next unless $meeting->begin_date > $mo_data->{begin_epoch};
+                next unless $meeting->begin_date < $mo_data->{end_epoch};
+                $count += 1;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+        return $data;
+    },
+    monthly_meetings_created => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $meetings = _all_meetings();
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->created_date > $mo_data->{begin_epoch};
+                next unless $meeting->created_date < $mo_data->{end_epoch};
+                $count += 1;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+        return $data;
+    },
+    monthly_real_meetings_created => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $meetings = _all_meetings();
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->extra_is_real;
+                next unless $meeting->created_date > $mo_data->{begin_epoch};
+                next unless $meeting->created_date < $mo_data->{end_epoch};
+                $count += 1;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+        return $data;
+    },
+    monthly_real_meetings_created_with_agenda => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $meetings = _all_meetings();
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->extra_is_real;
+                next unless $meeting->extra_has_filled_agenda;
+                next unless $meeting->created_date > $mo_data->{begin_epoch};
+                next unless $meeting->created_date < $mo_data->{end_epoch};
+                $count += 1;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+        return $data;
+    },
+    monthly_real_meetings_created_with_agenda_and_ap => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $meetings = _all_meetings();
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->extra_is_real;
+                next unless $meeting->extra_has_filled_agenda;
+                next unless $meeting->extra_has_filled_action_points;
+                next unless $meeting->created_date > $mo_data->{begin_epoch};
+                next unless $meeting->created_date < $mo_data->{end_epoch};
+                $count += 1;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+        return $data;
+    },
+    total_meetings_created_by_month => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $meetings = _all_meetings();
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->created_date < $mo_data->{end_epoch};
+                $count += 1;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+        return $data;
+    },
+    total_real_meetings_created_by_month => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_past_month_data_list() ) {
+            my $meetings = _all_meetings();
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->extra_is_real;
+                next unless $meeting->created_date < $mo_data->{end_epoch};
+                $count += 1;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+        return $data;
+    },
+    future_scheduled_meetings_per_month => sub {
+        my ( $self ) = @_;
+
+        my $data = [];
+        for my $mo_data ( _n_now_and_future_month_data_list() ) {
+            my $meetings = _all_meetings();
+            my $count = 0;
+            for my $meeting ( @$meetings ) {
+                next unless $meeting->extra_is_real;
+                next unless $meeting->begin_date;
+                next unless $meeting->begin_date > $mo_data->{begin_epoch};
+                next unless $meeting->begin_date < $mo_data->{end_epoch};
+                $count += 1;
+            }
+            push @$data, { month => $mo_data->{"ym_"}, count => $count };
+        }
+        return $data;
+    },
+};
+
+for my $type ( 'any_user', 'old_user', 'old_real_creator' ) {
+    for my $meeting_count ( 1..12 ) {
+        for my $month_window ( 1,2,3,6 ) {
+            $gatherers->{"_monthly_users_who_created_${meeting_count}_real_meetings_as_${type}_in_a_${month_window}_month_window"} = sub {
+                my ( $self ) = @_;
+
+                my $data = [];
+                for my $mo_data ( _n_past_month_data_list() ) {
+                    my $users = _all_users();
+                    my $count = 0;
+                    for my $user ( @$users ) {
+                        my @ym_list = ();
+                        for my $past_count ( 1..$month_window ) {
+                            push @ym_list, "past_${past_count}_ym_";
+                        }
+
+                        my $found = 0;
+                        for my $which_ym ( @ym_list ) {
+                            next if $type eq 'old_user' && ! $user->get( "extra_was_old_user_" . $mo_data->{ $which_ym } );
+                            next if $type eq 'old_real_creator' && ! $user->get( "extra_was_old_real_creator_" . $mo_data->{ $which_ym } );
+                            $found += $user->get( "extra_created_real_meeting_" . $mo_data->{ $which_ym } ) || 0;
+                        }
+
+                        $count += 1 if $found >= $meeting_count;
+                    }
+                    push @$data, { month => $mo_data->{"ym_"}, count => $count };
+                }
+                return $data;
+            }
+        }
+    }
+}
+
+my $combiners = {
+    combined_total_users => sub {
+        my ( $self ) = @_;
+        return $self->_combine_by_month( [
+            { from => total_users_by_month => as => 'total' },
+            { from => total_users_who_have_been_invited_to_or_created_a_real_meeting_by_month => as => 'invited_to_or_created_real' },
+            { from => total_users_who_have_created_a_real_meeting_by_month => as => 'created_real' },
+            { from => total_users_who_have_created_3_real_meetings_by_month => as => 'created_3_real' },
+            { from => total_users_who_have_created_5_real_meetings_by_month => as => 'created_5_real' },
+        ] );
+    },
+    combined_monthly_first_real_meeting_creators => sub {
+        my ( $self ) = @_;
+        return $self->_combine_by_month( [
+            { from => monthly_first_real_meeting_creators => as => 'total' },
+            { from => monthly_first_real_meeting_creators_who_had_been_invited_to_a_real_meeting_before => as => 'former_real_meeting_participants' },
+        ] );
+    },
+    combined_monthly_real_meeting_creators => sub {
+        my ( $self ) = @_;
+        return $self->_combine_by_month( [
+            { from => monthly_real_meeting_creators => as => 'total' },
+            { from => monthly_real_meeting_creators_who_were_old_users => as => 'old_users' },
+            { from => monthly_real_meeting_creators_who_were_old_real_creators => as => 'old_creators' },
+            { from => monthly_real_meeting_creators_who_had_created_3_real_meetings_previously => as => 'old_3_creators' },
+        ] );
+    },
+    combined_monthly_sent_invitations => sub {
+        my ( $self ) = @_;
+        return $self->_combine_by_month( [
+            { from => monthly_sent_invitations => as => 'total' },
+            { from => monthly_sent_invitations_to_users_with_no_real_meetings_created => as => 'to_non_creators' },
+            { from => monthly_sent_invitations_to_new_users => as => 'to_new_users' },
+        ] );
+    },
+    combined_monthly_new_and_tos_accepted_users => sub {
+        my ( $self ) = @_;
+        return $self->_combine_by_month( [
+            { from => monthly_new_users => as => 'new_users' },
+            { from => monthly_tos_acceptions => as => 'tos_acceptions' },
+        ] );
+    },
+    combined_monthly_held_real_meetings => sub {
+        my ( $self ) = @_;
+        return $self->_combine_by_month( [
+            { from => monthly_held_real_meetings => as => 'held_meetings' },
+            { from => monthly_held_real_meetings_with_agenda => as => 'with_agenda' },
+            { from => monthly_held_real_meetings_with_agenda_and_ap => as => 'with_agenda_an_ap' },
+        ] );
+    },
+    combined_monthly_meetings_created => sub {
+        my ( $self ) = @_;
+        return $self->_combine_by_month( [
+            { from => monthly_meetings_created => as => 'created' },
+            { from => monthly_real_meetings_created => as => 'real' },
+            { from => monthly_real_meetings_created_with_agenda => as => 'real_with_agenda' },
+            { from => monthly_real_meetings_created_with_agenda_and_ap => as => 'real_with_agenda_an_ap' },
+        ] );
+    },
+    combined_total_meetings_created => sub {
+        my ( $self ) = @_;
+        return $self->_combine_by_month( [
+            { from => total_meetings_created_by_month => as => 'total' },
+            { from => total_real_meetings_created_by_month => as => 'real' },
+        ] );
+    },
+};
+
+#   for my $type ( 'any_user', 'old_user', 'old_real_creator' ) {
+#       for my $window_size ( 1, 2, 3, 6 ) {
+
+for my $type ( 'any_user', 'old_real_creator' ) {
+    for my $window_size ( 3 ) {
+        $combiners->{"combined_monthly_users_with_n_real_created_as_${type}_within_a_${window_size}_month_window"} = sub {
+            my ( $self ) = @_;
+            my $columns = [];
+            for my $meeting_count ( 1..12 ) {
+                push @$columns, { from => "_monthly_users_who_created_${meeting_count}_real_meetings_as_${type}_in_a_${window_size}_month_window", as => "${meeting_count}_real_created" };
+            }
+
+            return $self->_combine_by_month( $columns );        
+        };
+    }
+}
+
+sub _combine_by_month {
+    my ( $self, $columns ) = @_;
+
+    my $data_tree = {};
+    my @key_order = ( 'month' );
+    my @month_order = ();
+
+    for my $c ( @$columns ) {
+        my $target = $c->{from};
+        my $as = $c->{as} || $target;
+
+        push @key_order, $as;
+
+        my $data = $cache->{ "gathered_" . $target . $limit_to_partner } ||= $gatherers->{ $target }( $self );
+
+        for my $row ( @$data ) {
+            push @month_order, $row->{month} unless $data_tree->{ $row->{month} };
+            $data_tree->{ $row->{month} } ||= { month => $row->{month} };
+            $data_tree->{ $row->{month} }->{ $as } = $row->{count}; 
+        }
+    }
+
+    my $data = [];
+    for my $month ( @month_order ) {
+        my $row = { month => $month };
+        for my $key ( @key_order ) {
+            $row->{ $key } = $data_tree->{ $month }->{ $key };
+        }
+        push @$data, $row;
+    }
+
+    return ( $data, \@key_order );
+}
+
+sub _all_users {
+    $cache->{all_users} ||= CTX->lookup_object('user')->fetch_group();
+    return $cache->{all_users} unless $limit_to_partner;
+
+    if ( ! $cache->{"users_from_$limit_to_partner"} ) {
+        my $filtered = [];
+        for my $user ( @{ $cache->{all_users} } ) {
+            push( @$filtered, $user ) if $user->extra_creating_partner_name eq $limit_to_partner;
+        }
+        $cache->{"users_from_$limit_to_partner"} = $filtered; 
+    }
+
+    return $cache->{"users_from_$limit_to_partner"};
+}
+
+sub _all_meetings {
+    $cache->{all_meetings} ||= CTX->lookup_object('events_event')->fetch_group();
+    return $cache->{all_meetings} unless $limit_to_partner;
+
+    if ( ! $cache->{"meetings_from_$limit_to_partner"} ) {
+        my $filtered = [];
+        for my $meeting ( @{ $cache->{all_meetings} } ) {
+            push( @$filtered, $meeting ) if $meeting->extra_partner_name eq $limit_to_partner;
+        }
+        $cache->{"meetings_from_$limit_to_partner"} = $filtered; 
+    }
+
+    return $cache->{"meetings_from_$limit_to_partner"};
+}
+
+sub _n_past_ym_list {
+    my ( $delim, $n ) = @_;
+
+    $delim = '_' unless $delim && $delim eq '-';
+
+    my @data_list = _n_past_month_data_list( $n );
+
+    return ( map { $_->{"ym" . $delim} } @data_list );
+}
+
+sub _n_past_month_data_list {
+    my ( $n ) = @_;
+
+    $n ||= 14;
+
+    my @list = ();
+    for my $which (1..$n) {
+        unshift @list, _combined_month_data_params( 0 - $which );
+    }
+
+    return @list;
+}
+
+sub _n_now_and_future_month_data_list {
+    my ( $n ) = @_;
+
+    $n ||= 15;
+
+    my @list = ();
+    for my $which (0..$n) {
+        push @list, _combined_month_data_params( $which );
+    }
+
+    return @list;
+}
+
+sub _combined_month_data_params {
+    my ( $which ) = @_;
+
+    my @kv_params = ();
+
+    my $dt = DateTime->now;
+    $dt->add( months => $which );
+
+    push @kv_params, _dt_to_month_data_params( $dt );
+
+    for my $past ( 1..6 ) {
+        push @kv_params, _dt_to_month_data_params( $dt, "past_$past" );
+        $dt->subtract( months => 1 );
+    }
+
+    $dt = DateTime->now;
+    $dt->add( months => $which );
+
+    for my $future ( 1..6 ) {
+        push @kv_params, _dt_to_month_data_params( $dt, "future_$past" );
+        $dt->add( months => 1 );
+    }
+
+    return { @kv_params };
+}
+
+sub _dt_to_month_data_params {
+    my ( $dt, $prefix ) = @_;
+
+    $prefix ||= '';
+    $prefix = $prefix . "_" if $prefix;
+    
+    my $mo = $dt->month;
+    $mo = "0$mo" if $mo < 10;
+
+    my $begin_dt = DateTime->from_epoch( epoch => $dt->epoch );
+    $begin_dt->set( day => 1, hour => 0, minute => 0, second => 0 );
+    my $end_dt = DateTime->from_epoch( epoch => $begin_dt->epoch );
+    $end_dt->add( months => 1 );
+
+    return (
+        "${prefix}ym-" => $dt->year . "-" . $mo,
+        "${prefix}ym_" => $dt->year . "_" . $mo,
+        "${prefix}begin_epoch" => $begin_dt->epoch,
+        "${prefix}end_epoch" => $end_dt->epoch,
+    );
+}
+
+sub _write_jsonv_file_using_data {
+    my ( $self, $name, $data ) = @_;
+
+    my $content = "window.$name = " . Dicole::Utils::JSON->encode( $data ) . ';' . "\n";
+
+    mkdir 'build';
+    mkdir 'build/jsonv';
+    open F, ">build/jsonv/$name.jsonv";
+    print F $content;
+    close F;
+}
+
+sub _write_jsoncb_file_using_data {
+    my ( $self, $name, $data ) = @_;
+
+    my $content = "window.$name" . "_callback(" . Dicole::Utils::JSON->encode( $data ) . ');' . "\n";
+
+    mkdir 'build';
+    mkdir 'build/jsoncb';
+
+    open F, ">build/jsoncb/$name.jsoncb";
+    print F $content;
+    close F;
+}
+
+sub _write_cvs_file_using_data {
+    my ( $self, $name, $data, $keys ) = @_;
+
+    unless ( $keys && ref( $keys ) eq 'ARRAY' ) {
+        %keys = ();
+        for my $row ( @$data ) {
+            for my $key ( keys %$row ) {
+                $keys{ $key }++;
+            }
+        }
+
+        my $month = $keys{month};
+        delete $keys{month};
+
+        $keys = [ sort keys %keys ];
+        unshift @$keys, 'month' if $month;
+    }
+
+    my @rows = ( [ @$keys ] );
+    for my $row_data ( @$data ) {
+        my $row = [];
+        for my $key ( @$keys ) {
+            push @$row, $row_data->{ $key } // '';
+        }
+        push @rows, $row;
+    }
+
+    my $content = '';
+    for my $row ( @rows ) {
+        for my $value ( @$row ) {
+            $value =~ s/"/""/g;
+        }
+        $content .= '"' . join('";"', @$row ) . '"';
+        $content .= "\n";
+    }
+
+    mkdir 'build';
+    mkdir 'build/csv';
+    open F, ">build/csv/$name.csv";
+    print F $content;
+    close F;
+}
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    for my $target ( sort keys %$gatherers ) {
+        next if $target =~ /^_/;
+        print "Starting to gather $target...\n";
+        my $data = $cache->{ "gathered_" . $target } ||= $gatherers->{ $target }( $self );
+        $self->_write_jsonv_file_using_data( $target, $data );
+        $self->_write_jsoncb_file_using_data( $target, $data );
+        $self->_write_cvs_file_using_data( $target, $data );
+    }
+
+    for my $target ( sort keys %$combiners ) {
+        next if $target =~ /^_/;
+        print "Starting to combine $target...\n";
+        my ( $data, $keys ) = $combiners->{ $target }( $self );
+        $self->_write_jsonv_file_using_data( $target, $data );
+        $self->_write_jsoncb_file_using_data( $target, $data );
+        $self->_write_cvs_file_using_data( $target, $data, $keys );
+    }
+
+    for my $target ( sort keys %$combiners ) {
+        next if $target =~ /^_/;
+        print "Starting to partner combine $target...\n";
+        my ( $data, $keys ) = $combiners->{ $target }( $self );
+        my $m = shift @$keys;
+        unshift @$keys, 'partner';
+        unshift @$keys, $m;
+
+        for my $d ( @$data ) {
+            $d->{partner} = 'any';
+        }
+
+        for my $partner_name ( 'Seats2meet.com', 'Arctic Startup', 'KPN', 'SLUSH' ) {
+            $limit_to_partner = $partner_name;
+            my ( $partner_data ) = $combiners->{ $target }( $self, 'skip_cache' );
+            for my $d ( @$partner_data ) {
+                $d->{partner} = $partner_name;
+                push @$data, $d;
+            }
+            $limit_to_partner = '';
+        }
+
+        my $data = [ sort { $a->{month} cmp $b->{month} } @$data ];
+
+        $self->_write_jsonv_file_using_data( "partnerized_" . $target, $data );
+        $self->_write_jsoncb_file_using_data( "partnerized_" . $target, $data );
+        $self->_write_cvs_file_using_data( "partnerized_" . $target, $data, $keys );
+    }
+}
+
+1;
+

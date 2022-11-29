@@ -1,0 +1,8 @@
+<div class="sidebar_page_list">
+[% FOREACH page IN pages %]
+    <div class="sidebar_page_list_container">
+        <div><a href="[% page.show_url %]"><span class="sidebar_page_list_title">[% page.title | html %]</span></a></div>
+    </div>
+[% END %]
+</div>
+

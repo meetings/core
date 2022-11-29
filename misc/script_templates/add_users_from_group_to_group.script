@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $from_group = 2357;
+    my $to_group = 30815;
+    my $group_memberships = CTX->lookup_object('group_user')->fetch_group({
+        where => 'groups_id = ?',
+        value => [ $from_group ],
+    });
+    for my $memb ( @$group_memberships ) {    
+        print $memb->user_id . "\n";
+        CTX->lookup_action('groups_api')->e( add_user_to_group => {
+            user_id => $memb->user_id, group_id => $to_group,
+        } );
+    }
+}
+
+1;

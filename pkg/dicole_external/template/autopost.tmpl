@@ -1,0 +1,19 @@
+<html>
+<head>
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="PRAGMA" content="NO-CACHE" />
+</head>
+<body>
+<form method="post" action="[% itemparams.url %]" name="autopost">
+[% FOREACH param = itemparams.params %]
+<input type="hidden" name="[% param.key %]" value="[% param.value %]" />
+[% END %]
+</form>
+<script language="JavaScript">
+<!--
+document.autopost.submit()
+//-->
+</script>
+</body>
+</html>

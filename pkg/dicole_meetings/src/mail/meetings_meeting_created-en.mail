@@ -1,0 +1,37 @@
+[% MTN.t('Meeting created: %1$s',[meeting_title]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('You just created') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+[% squirrel = 'thief' %]
+<<<bubble>>>
+
+<<<p>>>
+[% IF new_user %]
+[% MTN.t('Welcome to Meetin.gs!') %]
+<<<br>>>
+[% MTN.t('Your awesome meeting page is now up and running. We also created a Meetin.gs account for you.') %]
+[% ELSE %]
+[% MTN.t('Your awesome meeting page is now up and running.') %]
+[% END %]
+<<</p>>>
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=meeting_created' %]
+[% showtext = 1 %]
+[% text = MTN.t('Open meeting page') %]
+<<<blue_button>>>
+
+[% squirrel = 'thief' %]
+<<<squrre>>>
+
+<<</bubble>>>
+
+[% tip = 1 %]
+<<<p>>>
+[% MTN.t('%(B$Ttip:%) You can add material by emailing attachments to %(L$%1$s%). The documents will automatically appear on the meeting page.',{ params => [meeting_email], L => { href => 'mailto:' _ meeting_email } }) %]
+<<</p>>>
+
+<<</html_wrapper>>>

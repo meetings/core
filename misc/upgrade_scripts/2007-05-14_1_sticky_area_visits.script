@@ -1,0 +1,44 @@
+
+
+sub execute {
+
+    my $dd = eval {CTX->lookup_action('dicole_domains') };
+    
+    if ( $dd  ) {
+        my $domains = CTX->lookup_object( 'dicole_domain' )->fetch_group() || [];
+    
+        for my $domain ( @$domains ) {
+            my $groups = CTX->lookup_object('groups')->fetch_group( {
+                from => [ 'dicole_domain_group', 'dicole_groups' ],
+                where => 'domain_id = ? AND' .
+                    ' dicole_groups.groups_id = dicole_domain_group.group_id',
+                value => [ $domain->id ],
+            } ) || [];
+
+	    add_stickies( $groups, $domain->id );      
+        }
+    }
+    else {
+        my $groups = CTX->lookup_object('groups')->fetch_group || [];
+        add_stickies( $groups, 0 );
+
+    }
+}
+
+sub add_stickies {
+    my ( $groups, $domain_id ) = @_;
+
+    for my $group ( @$groups ) {
+        my $users = $group->user || [];
+
+        for my $user ( @$users ) {
+            CTX->lookup_action('add_sticky_group_visit')->execute( {
+                user_id => $user->id,
+                group_id => $group->id,
+                domain_id => $domain_id,
+            } );
+        }
+    }
+}
+
+1;

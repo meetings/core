@@ -1,0 +1,30 @@
+<div id="summary_group_info">
+	<div id="summary_group_info_left">
+		<div id="summary_group_info_left_container">
+			<img src="[% image | html %]" alt="[% name | html %]" />
+			[% IF webpage %]<div id="group_show_webpage"><a href="[% webpage | html %]">[% webpage | html %]</a></div>[% END %]
+			<div id="group_show_social_links">
+				[% IF facebook %]<a id="group_show_facebook" href="[% facebook | html %]" class="facebook_icon"></a>[% END %]
+				[% IF youtube %]<a id="group_show_youtube" href="[% youtube | html %]" class="youtube_icon"></a>[% END %]
+				[% IF myspace %]<a id="group_show_myspace" href="[% myspace | html %]" class="myspace_icon"></a>[% END %]
+				[% IF twitter %]<a id="group_show_twitter" href="[% twitter | html %]" class="twitter_icon"></a>[% END %]
+			</div>
+		</div>
+	</div>
+	<div id="summary_group_info_right">
+		<div id="summary_group_info_right_container">
+			<h2 id="summary_group_name">[% name | html %]</h2>
+			[% IF location %]
+			<span id="summary_group_location">[% location | html %]</span>
+			<span id="summary_group_separator">/</span>
+			[% END %]
+			<span id="summary_group_members">[% number_of_members | html %] [% MSG("member(s)") | html %]</span>
+			<div id="summary_group_tags">
+			[% FOREACH tag IN tags %]
+				<span class="tag">[% tag | html %]</span>
+			[% END %]
+			</div>
+			<p id="summary_group_description">[% description %]</p>
+		</div>
+	</div>
+</div>

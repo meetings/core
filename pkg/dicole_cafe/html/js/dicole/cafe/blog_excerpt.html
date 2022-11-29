@@ -1,0 +1,36 @@
+	<div class="title">
+	    <% if( p.object_info_url ) { %>
+	        <a id="<%== p.id %>_blog-lightbox" href="<%== p.object_info_url || '#' %>" rel="lightbox"><%== cafe.get_rid_of_widows( p.title ) %></a>
+	    <% } else { %>
+	        <a target="_blank" href="<%== p.url || '#' %>"><%== cafe.get_rid_of_widows( p.title ) %></a>
+        <% } %>
+	</div>
+	
+	<div class="meta">
+		<div class="cafe_comments">
+			<a target="_blank" href="<%== p.comments_url || '#' %>" class="cafe_comments_count"><%= p.comment_count ? p.comment_count : '+' %></a>
+		</div>
+		<% if( p.touched_time ) { %>
+			<div class="timestamp" timestamp="<%= p.touched_time %>"><%= cafe.time_ago_in_minimal_format( p.touched_time ) %></div>
+		<% } else if( p.updated ) { %>
+			<div class="timestamp" timestamp="<%= p.updated %>"><%= cafe.time_ago_in_minimal_format( p.updated ) %></div>
+		<% } else { %>
+			<div class="timestamp" timestamp="<%= p.timestamp %>"><%= cafe.time_ago_in_minimal_format( p.timestamp ) %></div>
+		<% } %>
+	</div>
+	
+	<div class="author">
+		<div class="cafe_avatar">
+			<a target="_blank" href="<%== p.author_url || '#' %>"><img target="_blank" src="<%== p.author_image %>" title="<%== p.author_name %>"/></a>
+		</div>
+	</div>
+	
+	<% if( p.contributors.length > 0 ) { %>
+    	<div class="contributors">
+    		<% dojo.forEach( p.contributors, function (contributor) { %>
+    			<div class="cafe_avatar">
+    				<a target="_blank" href="<%== contributor.url || '#' %>"><img src="<%== contributor.image %>" title="<%== contributor.name %>"/></a>
+    			</div>
+    		<% } ); %>
+    	</div>
+    <% }; %>

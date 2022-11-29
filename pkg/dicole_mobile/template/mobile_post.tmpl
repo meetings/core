@@ -1,0 +1,10 @@
+[%- WRAPPER dicole_mobile::mobile_main title = 'Dicole: ' _ post.title -%]
+<div class="toolbar anchorTop">Post</div>
+<a class="button" href="/m/logout">Logout</a>
+<a id="homeButton" class="button" href="[% IF group %]/m/group_weblog/[% group.id %][% ELSE %]/m/blog_posts/[% END %]">Back</a>
+<div class="center">
+<div class="postTitle">[% post.title %]</div>
+<div class="postDate">[% author %] - [% post.date %]</div>
+<div class="postContent">[% IF post.abstract %][% post.abstract %]<br />[% END %][% post.content %]</div>
+</div>
+[% END %]

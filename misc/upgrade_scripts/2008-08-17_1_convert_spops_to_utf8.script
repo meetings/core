@@ -1,0 +1,44 @@
+use Encode;
+use Encode::Guess qw/iso-8859-1/;
+
+sub execute {
+    my ($self) = @_;
+
+    # just find all the spops files
+    my $spops_config = CTX->spops_config;
+    my @spops = keys %$spops_config;
+    
+    for my $spops ( sort @spops) {
+        next if $spops eq 'logged_action' || $spops eq 'feeds_items' || $spops eq 'feeds';
+        my $object = eval{ CTX->lookup_object( $spops ) };
+        next unless $object;
+        
+        $self->notify_observers(
+            progress => "Updating $spops objects.."
+        );
+        
+        my $iter = $object->fetch_iterator( {} );
+        
+        while ( $iter->has_next ) {
+            my $instance = $iter->get_next;
+            for my $key ( keys %$instance ) {
+                my $text = $instance->{$key};
+                next if ! defined( $text );
+                my $internal = eval { Encode::Guess::decode("Guess", $text) };
+                if ( $@ ) {
+                    if ( ! Encode::is_utf8( $text ) ) {
+                        $internal = Encode::decode_utf8( $text );
+                    }
+                    else {
+                        $internal = $text;
+                    }
+                }
+                my $utf8text = Encode::encode_utf8( $internal );
+                $instance->{$key} = $utf8text;
+            }
+            $instance->save({ skip_security => 1 });
+        }
+    }
+}
+
+1;

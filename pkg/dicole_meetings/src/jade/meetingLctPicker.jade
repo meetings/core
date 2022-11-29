@@ -1,0 +1,36 @@
+div#lct-picker.m-modal
+    div.modal-header
+        h3!=MTN.t('Live communication')
+    div.modal-content
+        p!=MTN.t('Choose the live communication tool for this meeting.')
+        p!=MTN.t('15 minutes before the meeting participants will receive a notification containing instructions and a link to join the meeting remotely.')
+        div.lctools
+            a.tool.skype(href='#',data-tool-name='skype')
+                i.ico-skype
+                !=MTN.t('Skype call')
+            a.tool.teleconf(href='#',data-tool-name='teleconf')
+                i.ico-teleconf
+                !=MTN.t('Teleconference')
+            a.tool.hangout(href='#',data-tool-name='hangout')
+                i.ico-hangout
+                | Google Hangouts
+                if( ! user.is_pro )
+                    span.pro
+            a.tool.lync(href='#',data-tool-name='lync')
+                i.ico-lync
+                | Microsoft Lync
+                if( ! user.is_pro )
+                    span.pro
+            a.tool.custom(href='#',data-tool-name='custom')
+                i.ico-custom
+                !=MTN.t('Custom Tool')
+                if( ! user.is_pro )
+                    span.pro
+            a.tool.disable(href='#')
+                i.ico-cross
+                !=MTN.t('Disable')
+    a.close-modal(href='#')
+        i.ico-cross
+
+
+

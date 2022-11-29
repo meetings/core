@@ -1,0 +1,21 @@
+#!/bin/sh
+
+cd pkg
+rm -f *.zip
+if [ $1 ]
+then
+	./export_package $1
+else
+	./export_package dicole_*
+fi
+rm -f *.log
+cd ..
+if [ -e "lib/OpenInteract2/Brick/" ]
+then
+	echo;
+else
+	mkdir lib/OpenInteract2/Brick/
+fi
+rm -f lib/OpenInteract2/Brick/*.pm
+perl build_bricks
+bin/update_manifest > /dev/null

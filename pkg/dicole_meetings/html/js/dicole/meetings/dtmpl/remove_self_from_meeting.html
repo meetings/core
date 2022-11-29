@@ -1,0 +1,22 @@
+<div id="modal-remove-self-from-meeting" class="m-modal">
+    <div class="modal-header">
+        <h3><%= MTN.t('Leave meeting') %></h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t('Are you sure you want to remove yourself from this meeting? You need to be invited to access it again.') %></p>
+        <form id="meetings_remove_self_from_meeting_form">
+            <input type="hidden" name="remove" value="yes" />
+        </form>
+    </div>
+    <!-- Save & cancel -->
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a href="#" class="button blue js_meetings_remove_self_from_meeting_submit">
+                <%= MTN.t('Yes') %>
+            </a>
+            <a href="#" class="button gray js_hook_showcase_close">
+                <%= MTN.t('No') %>
+            </a>
+        </div>
+    </div>
+</div>

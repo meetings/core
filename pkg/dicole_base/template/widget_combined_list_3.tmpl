@@ -1,0 +1,25 @@
+<div class="combined_list">
+[%- FOREACH cat = itemparams.elements %]
+<div class="separator">[% PROCESS dicole_base::include_widget widget = cat.content %]</div>
+<table>
+[%- lc = 1 %]
+[%- FOREACH topic = cat.elements %]
+[%- lc2 = 1 %]
+[%- FOREACH entry = topic.elements %]
+    <tr[% IF lc % 2 == 0 %] class="odd"[% END %]>
+        <td width="1%" class="topic">
+[%- IF lc2 == 1 %]
+[%- PROCESS dicole_base::include_widget widget = topic.content %]
+[%- END %]
+        </td>
+[%- lc = lc + 1 %]
+[%- lc2 = lc2 + 1 %]
+        <td width="99%" class="element">
+[%- PROCESS dicole_base::include_widget widget = entry.content %]
+        </td>
+[%- END %]
+    </tr>
+[%- END %]
+</table>
+[%- END %]
+</div>

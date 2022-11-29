@@ -1,0 +1,27 @@
+[%#
+sections => [
+	{
+		id => '0',
+		name => 'Section 1',
+		url => 'http://action_url_for_this_section/',
+		selected => 0
+	},
+	{
+		id => '1',
+		name => 'Section 2',
+		url => 'http://action_url_for_this_section/',
+		selected => 1
+	},
+	{
+		id => '2',
+		name => 'Section 3',
+		url => 'http://action_url_for_this_section/',
+		selected => 0,
+	}
+]
+%]
+<div class="subgroups_sections">
+[% FOREACH section IN sections %]
+	<a id="subgroups_section_[% section.id | html %]" class="subgroups_section[% IF section.selected %] subgroups_section_selected[% END %]" href="[% section.url | html %]"><span class="subgroups_section_icon"></span>[% section.name | html %]</a>
+[% END %]
+</div>

@@ -1,0 +1,13 @@
+$install_metadata = [ {
+        import_type => 'object',
+        spops_class => 'OpenInteract2::DicoleMetadata',
+        field_order => [ qw/ groups_id machine_name title copyright description status machine_url url / ]
+        },
+        [ 0,'dcmi','Dublin Core',
+        'Copyright 2003-06-02 Dublin Core Metadata Initiative. All Rights Reserved. http://www.dublincore.org/copyright/',
+        'metadata.dublin.desc',
+        'DCMI Recommendation',
+        'http://purl.org/dc/elements/1.1/',
+        'http://dublincore.org/documents/dces/'
+        ]
+];

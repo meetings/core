@@ -1,0 +1,236 @@
+<div class="showcase" id="attending-box">
+	<a class="close" id="close-attending-box" href="#"></a>
+	<h2>[% MSG('Good to have you with us!') | html %]</h2>
+	<form action="[% rsvp_url | html %]?rsvp=yes" method="post">
+        [% IF request_phone == 1 %]
+		<label for="phone">[% MSG('Please enter your phone number (required):') | html %]</label><br/>
+		<input id="phone" name="phone" value="[% prefill_phone | html %]" /><br/><br/>
+        [% END %]
+		<label for="attend_organization">[% MSG('What organization do you represent?') | html %]</label><br/>
+		<input id="attend_organization" name="organization" value="[% prefill_organization | html %]" /><br/><br/>
+		<label for="attend_organization_title">[% MSG('What is your title in the organization?') | html %]</label><br/>
+		<input id="attend_organization_title" name="organization_title" value="[% prefill_organization_title | html %]" /><br/><br/>
+	[% IF attend_info.length > 0 || show_itk_fields %]
+        [% IF show_itk_fields %]
+    		<label for="itk_address">[% 'Lähiosoite' | html %]</label><br/>
+	    	<input id="itk_address" name="itk_address" value="" /><br/><br/>
+            <label for="itk_area">[% 'Postinumero ja postitoimipaikka' | html %]</label><br/>
+    		<input id="itk_area" name="itk_area" value="" /><br/><br/>
+	    	<p style="margin-bottom: 10px">[% attend_info | html %]</p>
+
+
+<p>Ikä</p>
+<p>
+<select name="itk_age">
+<option class="fxoption" value="15-24">15-24</option>
+<option class="fxoption" value="25-44">25-44</option>
+<option class="fxoption" value="45-54">45-54</option>
+<option class="fxoption" value="55-64">55-64</option>
+<option class="fxoption" value="65-">65-</option>
+</select>
+</p>
+<br/>
+
+<p>Sukupuoli</p>
+<p>
+<select name="itk_gender">
+<option class="fxoption" value="Nainen">Nainen</option>
+<option class="fxoption" value="Mies">Mies</option>
+</select>
+</p>
+<br/>
+
+<p>Koulutustaso</p>
+<p>
+<select name="itk_education">
+<option class="fxoption" value="Perus">Perus</option>
+<option class="fxoption" value="Keski">Keski</option>
+<option class="fxoption" value="Keski+">Keski+</option>
+<option class="fxoption" value="Korkea">Korkea</option>
+</select>
+</p>
+<br/>
+
+            <p>Lisätietoja, kysymyksiä tai palautetta koulutuksen järjestäjälle</p> 
+    		<textarea name="attend_info" rows="1" cols="1"></textarea>
+        [% ELSE %]
+    		<p>[% attend_info | html %]</p>
+	    	<textarea name="attend_info" rows="1" cols="1"></textarea>
+        [% END %]
+	[% END %]
+		<a href="#" class="button"><span><input type="submit" value="[% MSG('Confirm attendance') | html %]" /></span></a>
+	</form>
+</div>
+<!--<div class="showcase" id="invite-box">
+	<a class="close" id="close-invite-box" href="#"></a>
+	<h2>[% MSG('Invite participants!') | html %]</h2>
+	<p>[% attend_info | html %]</p>
+	<form action="[% invite_url | html %]" method="post">
+		<label for="invite-participants-emails"><h3>[% MSG('Email addresses') | html %]</h3></label>
+		<textarea id="invite-participants-emails" name="emails" rows="1" cols="1" class="tip-field">[% MSG('Separate addresses with commas.') | html %]</textarea>
+		<label for="invite-participants-title"><h3>[% MSG('Title') | html %]</h3></label>
+		<input id="invite-participants-title" name="title" class="tip-field" value="[% MSG("Title") | html %]" />
+		<label for="invite-participants-greeting"><h3>[% MSG('Greeting') | html %]</h3></label>
+		<textarea id="invite-participants-greeting" name="greeting" rows="1" cols="1" class="tip-field">[% MSG('Hi, I invite you to participate in [_1], an event I am organizing.', title) | html %]</textarea>
+		<br />
+		<a class="button" style="float: right" href="#"><span><input type="submit" value="[% MSG('Send') | html %]" /></span></a>
+	</form>
+	[% IF invite_planners %]
+	<h2 style="clear: both;">[% MSG('Invite other planners!') | html %]</h2>
+	<p>[% attend_info | html %]</p>
+	<form action="[% invite_url | html %]" method="post">
+        <input type="hidden" name="as_planner" value="1" />
+		<label for="invite-planners-emails"><h3>[% MSG('Email addresses') | html %]</h3></label>
+		<textarea id="invite-planners-emails" name="emails" rows="1" cols="1" class="tip-field">[% MSG('Separate addresses with commas (,) or semicolons (;).') | html %]</textarea>
+		<label for="invite-planners-title"><h3>[% MSG('Title') | html %]</h3></label>
+		<input id="invite-planners-title" name="title" class="tip-field" value="[% MSG("Title") | html %]" />
+		<label for="invite-planners-greeting"><h3>[% MSG('Greeting') | html %]</h3></label>
+		<textarea id="invite-planners-greeting" name="greeting" rows="1" cols="1" class="tip-field">[% MSG('Welcome to participate as a planner to event [_1].', title) | html %]</textarea>
+		<br />
+		<a class="button" style="float: right" href="#"><span><input type="submit" value="[% MSG('Send') | html %]" /></span></a>
+	</form>
+	[% END %]
+</div>-->
+<div class="showcase" id="accept-box">
+	<a class="close" id="close-accept-box" href="#"></a>
+	<div id="accept-box-message" style="display: none">Message</div>
+	<div style="float: left; overflow: hidden; margin: 10px; width: 250px">
+		<h2>[% MSG('Existing user, log in') | html %]</h2>
+		<form id="invite-login-form" action="" method="post">
+            <input id="invite_url_after_login" type="hidden" name="url_after_login" value="[% url_after_login %]" />
+			<label for="login_login_name"><h3>[% MSG('Login name:') | html %]</h3></label>
+			<input id="invite_login_login_name" name="login_login_name" /><br/>
+			<label for="login_password"><h3>[% MSG('Password:') | html %]</h3></label>
+			<input id="invite_login_password" type="password" name="login_password" /><br/><br/>
+			<a class="button" href="#"><span><input id="invite-login-button" type="submit" value="[% MSG('Login') | html %]" /></span></a>
+		</form>
+        <a style="clear: both; display: block; padding-top: 20px; text-decoration: underline;" href="[% retrieve_password_url | html %]">[% MSG('Whoops, I forgot my password') | html %]</a>
+        [% IF facebook_connect_app_id %]<a id="facebook_login_button" class="big-button js_facebook_login" href="#"><span>[% MSG("Login with Facebook") | html %]</span></a>[% END %]
+	</div>
+    [% IF register_url %]
+	<div style="float: left; overflow: hidden; margin: 10px; width: 270px">
+		<h2>[% MSG('New user, register') | html %]</h2>
+		<!--<form id="register-form" action="[% register_url | html %]" method="post">
+			<input type="hidden" name="register" value="[% register_type | html %]" />
+			<label for="register_first_name"><h3>[% MSG('First name:') | html %]</h3></label>
+			<input id="register_first_name" name="first_name" /><br/>
+			<label for="register_last_name"><h3>[% MSG('Last name:') | html %]</h3></label>
+			<input id="register_last_name" name="last_name" /><br/>
+			<label for="register_email"><h3>[% MSG('Email:') | html %]</h3></label>
+			<input id="register_email" name="email" /><br/><br/>
+			<a class="button" href="#"><span><input id="register-submit-button" type="submit" value="[% MSG('Register') | html %]" /></span></a>
+		</form>-->
+		<a id="accept_register_button" class="big-button js_open_user_register_dialog" href="#"><span>[% MSG("Register (action)") | html %]</span></a>
+		[% IF facebook_connect_app_id %]<a id="facebook_register_button" class="big-button js_facebook_register" href="#"><span>[% MSG("Register with Facebook") | html %]</span></a>[% END %]
+	</div>
+    [% END %]
+</div>
+[% IF participants_url %]
+<div class="showcase" id="participant-box">
+    <a id="participants-url" href="[% participants_url | html %]" style="display: none"></a>
+    <a class="close" id="close-participant-box" href="#"></a>
+    <div style="padding: 0 10px">
+		<h2>[% MSG('Manage participants!') | html %]</h2>
+		<h3>[% MSG('Filter by') %]</h3>
+		<div style="overflow: hidden">
+			<a id="participant-yes" href="#" class="filter-button left-button"><span>[% MSG('Attending (manage)') | html %]</span></a>
+			<a id="participant-maybe" href="#" class="filter-button middle-button"><span>[% MSG('Maybe (manage)') | html %]</span></a>
+			<a id="participant-no" href="#" class="filter-button middle-button"><span>[% MSG('Not attending (manage)') | html %]</span></a>
+			<a id="participant-waiting" href="#" class="filter-button middle-button"><span>[% MSG('Waiting (manage)') | html %]</span></a>
+			<a id="participant-planner" href="#" class="filter-button right-button"><span>[% MSG('Planner (manage)') | html %]</span></a>
+		</div>
+		<h3 id="participants-number-none">[% MSG('No people match the criteria.') | html %]</h3>
+		<h3 id="participants-number-singular">[% MSG('One person matches the criteria.') | html %]</h3>
+		<h3 id="participants-number-plural"><span id="participants-number"></span> [% MSG('people match the criteria.') | html %]</h3>
+		<div style="overflow: hidden">
+			[% IF mail_users_url %]
+			<a id="mail-participants" href="#" class="button"><span>[% MSG('Mail these people') | html %]</span></a>
+			[% END %]
+			[% IF export_users_url %]
+			<a id="export-this-list" href="[% export_users_url | html %]" class="button"><span>[% MSG('Export this list') | html %]</span></a>
+			[% END %]
+		</div>
+		[% IF mail_users_url %]
+		<div id="mail-form" style="overflow: hidden; display: none">
+			<form action="[% mail_users_url %]" method="post">
+				<input id="mail-subject" name="subject" value="[% MSG('Subject') | html %]" class="tip-field" /><br/><br/>
+				<textarea id="mail-content" name="content"></textarea><br/>
+                <input type="checkbox" name="add_login_link" value="1" /> <span class="mail-login-link-text">[% MSG('Add a temporary login link at the end of the mail') | html %]</span><br/><br/>
+				<a href="#" class="button"><span><input type="submit" value="[% MSG('Send') | html %]" /></span></a>
+				<input id="target-users" type="hidden" name="target_users" />
+			</form>
+		</div>
+		[% END %]
+	</div>
+    <div id="participant-list-container">
+    [% FOREACH rsvp_list IN [ 'yes', 'no', 'maybe', 'waiting' ] %][% FOREACH user IN users.$rsvp_list %]
+        <div class="participant-rsvp-container" title="[% user.id | html %]" style="overflow: hidden">
+            <div id="participant-rsvp-[% user.id %]" class="participant-rsvp" style="overflow: hidden">
+                <a href="#" class="participant-yes left-button[% IF rsvp_list == 'yes' %] left-button-selected[% END %]"><span>[% MSG('Attending (manage)') | html %]</span></a>
+                <a href="#" class="participant-maybe middle-button[% IF rsvp_list == 'maybe' %] middle-button-selected[% END %]"><span>[% MSG('Maybe (manage)') | html %]</span></a>
+                <a href="#" class="participant-no right-button[% IF rsvp_list == 'no' %] right-button-selected[% END %]"><span>[% MSG('Not attending (manage)') | html %]</span></a>
+                <a href="#" class="participant-waiting[% IF rsvp_list == 'waiting' %] left-button-selected[% END %]" style="display: none"></a>
+                <a href="#" class="participant-planner[% IF user.is_planner %] left-button-selected[% END %]" style="display: none"></a>
+            </div>
+            <div class="user-bg alpha_png">
+				<a class="user" href="[% user.link | html %]" title="[% user.name | html %]">
+					<img src="[% user.image or '/images/theme/default/default-user-avatar-50px.png' | html %]" alt="[% user.name | html %]" />
+				</a>
+			</div>
+            <div class="participant-info">
+				<h3>
+					<a href="[% user.link | html %]" class="participant-name">[% user.name | html %]</a>
+					[% IF user.planner_status_change_url %]
+					<a href="[% user.planner_status_change_url | html %]" class="planner[% IF user.is_planner %] planner_is_planner[% END %]">[% MSG('planner') | html %]</a>
+					[% ELSIF user.is_planner %]
+					<span class="planner">[% MSG("planner") | html %]</span>
+					[% END %]
+				</h3>
+                <p class="participant-meta">
+                	[% IF user.organization %][% user.organization | html %][% IF user.organization_title %] ([% user.organization_title | html %])[% END %][% END %]
+                	[% IF user.phone %][% IF user.organization %], [% END %][% user.phone | html %][% END %]
+                </p>
+                [% IF user.attend_info.length > 0 %]<p class="participant-attend-info">[% user.attend_info | html %]</p>[% END %]
+            </div>
+        </div>
+    [% END %][% END %]
+    </div>
+</div>
+[% END %]
+[% IF show_tweets == 1 and sos_med_tag %]
+<div id="stupid-twitter-box">
+	<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script type="text/javascript">
+	new TWTR.Widget({
+	version: 2,
+	type: 'search',
+	search: '#[% sos_med_tag | html %]',
+	interval: 6000,
+	title: '#[% sos_med_tag | html %]',
+	subject: '',
+	width: 'auto',
+	height: 300,
+	theme: {
+		shell: {
+		background: '#8ec1da',
+		color: '#ffffff'
+		},
+		tweets: {
+		background: '#ffffff',
+		color: '#444444',
+		links: '#1985b5'
+		}
+	},
+	features: {
+		scrollbar: true,
+		loop: false,
+		live: true,
+		hashtags: true,
+		timestamp: true,
+		avatars: true,
+		behavior: 'all'
+	}
+	}).render().start();
+	</script>
+</div>
+[% END %]

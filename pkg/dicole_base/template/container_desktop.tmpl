@@ -1,0 +1,99 @@
+[% # $Id: container_desktop.tmpl,v 1.10 2010-04-01 17:30:10 amv Exp $ # -%]
+
+[%- DEFAULT
+	images.default				= '/images'
+	images.theme				= theme_images
+	images.navigation		= images.theme _ '/navigation'
+	images.toolicons			= images.theme _ '/content/toolicons'
+-%]
+
+[%- IF page.wrap_form -%]
+[%- page.form_params.id = page.form_params.name -%]
+<form [% FOREACH form_param = page.form_params %][% IF form_param.key %][% form_param.key %]="[% form_param.value %]" [% END %][% END %]>
+[%- END -%]
+
+[%-
+  FOREACH field = hiddenFields;
+    field.type = 'hidden';
+    PROCESS dicole_base::input_input itemparams = field;
+  END;
+-%]
+
+<!-- Desktop -->
+
+<div class="tool[% IF tool.custom_css_class %] [% tool.custom_css_class %][% END %]"><!-- tool -->
+<!-- ===== Tool info ===== -->
+
+    <div class="toolInfoContainer">
+        <div class="toolInfoLeft">
+
+            [%- IF tool.info.icon -%]
+            <img src="[%- tool.info.icon_path ? tool.info.icon_path : images.toolicons -%]/[%- tool.info.icon -%]" width="35" height="35" alt="[% tool.info.name %]" />
+            [%- END -%]
+
+            <div class="toolInfoLeftContent"> [% tool.info.name %]</div>
+        </div>
+
+        [%- IF tool.info.messages -%]
+            [%- FOREACH message = tool.info.messages -%]
+        <a class="toolInfoRight2 [% 'failure' IF message.code == '0' %][% 'success' IF message.code == '1' %][% 'warning' IF message.code == '2' %]" id="toolInfoRightBox_[% loop.count %]" href="#" onclick="document.getElementById('toolInfoRightBox_[% loop.count %]').style.display = 'none'; return false;" >
+            <span class="title2">[% message.title | html %]</span>
+            <span class="content2">[%- message.content | html -%]</span>
+        </a>
+            [%- END -%]
+        [%- END -%]
+
+    </div>
+    <div class="toolContainer">
+        <div class="toolContentContainer">
+            <table class="desktopBoxContainer">
+                <tr id="summaries">
+                [%- colnum = tool.summaries.size %]
+                [%- FOREACH column = tool.summaries -%]
+                    [%- current_col = loop.count %]
+                    <td class="desktopBoxSubContainer desktop_column_td desktop_[% colnum %]_column_td_[% current_col %]">
+                    <div class="desktopBoxSubContainerDiv desktop_column_div desktop_[% colnum %]_column_div_[% current_col %]">
+                    [%- FOREACH box = column.boxes %]
+                    <div id="[% box.box_id %]" class="box_container cb desktop_box[% IF box.class %] [% box.class %][% END %]"><div class="bt"><div></div></div><div class="i1"><div class="i2"><div class="i3">
+                        <table>
+                            <tr>
+                                <td class="desktopBoxTitle"><span class="desktopBoxTitleContent">[% box.name %]</span></td>
+                                <td class="desktopBoxControllers">
+                                [%- IF ! box.move_disabled %]
+                                    <a href="#" onclick="return moveBox('left',this)" title="Move this box to the previous column"><img src="[% images.theme %]/content/summary/arrow-left.png" /></a>
+                                    <a href="#" onclick="return moveBox('up',this)" title="Move this box up"><img src="[% images.theme %]/content/summary/arrow-up.png" /></a>
+                                    <a href="#" onclick="return moveBox('down',this)" title="Move this box down"><img src="[% images.theme %]/content/summary/arrow-down.png" /></a>
+                                    <a href="#" onclick="return moveBox('right',this)" title="Move this box to the next column"><img src="[% images.theme %]/content/summary/arrow-right.png" /></a>
+                                    <a href="[% box.submit %]" onclick="return moveBox('[% 'open' IF !box.content %][% 'close' IF box.content %]',this)" title="Open / close this box">[% IF !box.content %]<img src="[% images.theme %]/content/summary/box-open.png" />[% END %][% IF box.content %]<img src="[% images.theme %]/content/summary/box-close.png" />[% END %]</a>
+                                [%- END %]
+                                </td>
+                            </tr>
+                           [% IF box.content %]
+                           <tr>
+                               <td colspan="2" class="desktopBoxContent">
+                                   [%- IF box.form_params -%]
+                                   [%- box.form_params.id = box.form_params.name -%]
+                                   <form [% FOREACH form_param = box.form_params %][% IF form_param.key %][% form_param.key %]="[% form_param.value %]" [% END %][% END %]>
+                                   [%- END -%]
+                                   [%- FOREACH item = box.content %]
+                                   <div class="contentItemContainer blueLinks">
+                                   [%- PROCESS $item.template itemparams = item.params IF item.template %]
+                                   </div>
+                                   [%- END %]
+                                   [%- IF box.form_params %]</form>[%- END -%]
+                               </td>
+                           </tr>
+                           [% END %]
+                       </table>
+                   </div></div></div><div class="bb"><div></div></div></div>
+                   [%- END -%]
+                   </div>
+                   </td>
+              [% END %]
+               </tr>
+            </table>
+            <script defer="defer" src="/js/summarybox.js" type="text/javascript"></script>
+        </div>
+    </div>
+</div><!-- // tool -->
+[%- IF page.wrap_form -%]</form>[%- END -%]

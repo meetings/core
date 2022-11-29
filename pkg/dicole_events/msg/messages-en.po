@@ -1,0 +1,795 @@
+msgid "events_invite_mail_subject_template"
+msgstr "You have been invited to [% title %]"
+
+msgid "events_invite_mail_html_template"
+msgstr ""
+"<p>[% greeting_html %]</p>"
+"[% IF greeting_html %]<hr />[% END %]"
+"<p>[% sender_name | html %] has invited you to participate[% IF planner %]as a planner [% END %] in [% title or '?' | html %] at [% location or '?' | html %], on [% date_string || '?' | html %].</p>"
+"<p>[% IF planner %]As a planner you can manage participants and event settings. To manage the event, please see <a href=\"[% url | html %]\">[% url | html %]</a>[% ELSE %]This invitation is RSVP. To claim your seat and learn more about the event, please see <a href=\"[% url | html %]\">[% url | html %]</a>[% END %]</p>"
+"<p>[% abstract_html %]</p>"
+"<p>[% description_html %]</p>"
+
+msgid "events_invite_mail_text_template"
+msgstr ""
+"[% greeting_text %]\n"
+"[% IF greeting_text %]--------\n[% END %]"
+"[% sender_name %] has invited you to participate[% IF planner %]as a planner [% END %] in [% title or '?' %] at [% location or '?' %], on [% date_string || '?' %].\n"
+"[% IF planner %]As a planner you can manage participants and event settings. To manage the event, please see [% url %] [% ELSE %]This invitation is RSVP. To claim your seat and learn more about the event, please see [% url %] [% END %]\n\n"
+"[% abstract_text %]\n\n"
+"[% description_text %]"
+
+msgid "events_invite_notification_to_user_mail_subject_template"
+msgstr "You have been invited to [% title %]"
+
+msgid "events_invite_notification_to_user_mail_html_template"
+msgstr ""
+"<p>[% greeting_html %]</p>"
+"[% IF greeting_html %]<hr />[% END %]"
+"<p>[% sender_name | html %] has invited you to participate[% IF planner %]as a planner [% END %] in [% title or '?' | html %] at [% location or '?' | html %], on [% date_string || '?' | html %].</p>"
+"<p>[% IF planner %]As a planner you can manage participants and event settings. To manage the event, please see <a href=\"[% url | html %]\">[% url | html %]</a>[% ELSE %]This invitation is RSVP. To claim your seat and learn more about the event, please see <a href=\"[% url | html %]\">[% url | html %]</a>[% END %]</p>"
+"<p>[% abstract_html %]</p>"
+"<p>[% description_html %]</p>"
+
+msgid "events_invite_notification_to_user_mail_text_template"
+msgstr ""
+"[% greeting_text %]\n"
+"[% IF greeting_text %]--------\n[% END %]"
+"[% sender_name %] has invited you to participate[% IF planner %]as a planner [% END %] in [% title or '?' %] at [% location or '?' %], on [% date_string || '?' %].\n"
+"[% IF planner %]As a planner you can manage participants and event settings. To manage the event, please see [% url %] [% ELSE %]This invitation is RSVP. To claim your seat and learn more about the event, please see [% url %] [% END %]\n\n"
+"[% abstract_text %]\n\n"
+"[% description_text %]"
+
+
+msgid "A collection of events"
+msgstr "A collection of events"
+
+msgid "Add event"
+msgstr "Add event"
+
+msgid "Admin events"
+msgstr "Admin events"
+
+msgid "Events"
+msgstr "Events"
+
+msgid "Events rights"
+msgstr "Events rights"
+
+msgid "Events upcoming summary"
+msgstr "Events upcoming summary"
+
+msgid "Listing of 5 upcoming events"
+msgstr "Listing of 5 upcoming events"
+
+msgid "My events"
+msgstr "My events"
+
+msgid "My events tagged with: %1"
+msgstr "My events tagged with: %1"
+
+msgid "No events found."
+msgstr "No events found."
+
+msgid "Past events"
+msgstr "Past events"
+
+msgid "Past events tagged with: %1"
+msgstr "Past events tagged with: %1"
+
+msgid "Show more events"
+msgstr "Show more events"
+
+msgid "Upcoming events"
+msgstr "Upcoming events"
+
+msgid "Upcoming events tagged with: %1"
+msgstr "Upcoming events tagged with: %1"
+
+msgid "User can admin events"
+msgstr "User can admin events"
+
+msgid "User can view events"
+msgstr "User can view events"
+
+msgid "View events"
+msgstr "View events"
+
+msgid "%1 had already been invited to the event"
+msgstr "%1 had already been invited to the event"
+
+msgid "%1 was already a planner in the event"
+msgstr "%1 was already a planner in the event"
+
+msgid "Add events"
+msgstr "Add events"
+
+msgid "Anyone can attend, so invite your contacts! Share this event with:"
+msgstr "Anyone can attend, so invite your contacts! Share this event with:"
+
+msgid "Are you joining us?"
+msgstr "Are you joining us?"
+
+msgid "Attending"
+msgstr "Attending"
+
+msgid "Banner"
+msgstr "Banner"
+
+msgid "Create event"
+msgstr "Create event"
+
+msgid "Custom icon"
+msgstr "Custom icon"
+
+msgid "Delete event"
+msgstr "Delete event"
+
+msgid "Do you really want to delete this event?"
+msgstr "Do you really want to delete this event?"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Email addresses"
+msgstr "Email addresses"
+
+msgid "End"
+msgstr "End"
+
+msgid "Event deleted"
+msgstr "Event deleted"
+
+msgid "Event info"
+msgstr "Event info"
+
+msgid "Event is full"
+msgstr "Event is full"
+
+msgid "Extended description"
+msgstr "Extended description"
+
+msgid "Extra controls"
+msgstr "Extra controls"
+
+msgid "Extra info"
+msgstr "Extra info"
+
+msgid "First name:"
+msgstr "First name:"
+
+msgid "Good to have you with us!"
+msgstr "Good to have you with us!"
+
+msgid "Greeting"
+msgstr "Greeting"
+
+msgid "In order to accept your invite, you must %1login or register%2."
+msgstr "In order to accept your invite, you must %1login or register%2."
+
+msgid "In order to participate, please %1login%2."
+msgstr "In order to participate, please %1login%2."
+
+msgid "In order to participate, please %1login%2 or %3register%4"
+msgstr "In order to participate, please %1login%2 or %3register%4"
+
+msgid "Invalid phone number"
+msgstr "Invalid phone number"
+
+msgid "Invite other planners!"
+msgstr "Invite other planners!"
+
+msgid "Invite participants!"
+msgstr "Invite participants!"
+
+msgid "It will not show on the event list. Use the invite tool to send invitations."
+msgstr "It will not show on the event list. Use the invite tool to send invitations."
+
+msgid "Last name:"
+msgstr "Last name:"
+
+msgid "Limited"
+msgstr "Limited"
+
+msgid "Live now!"
+msgstr "Live now!"
+
+msgid "Location"
+msgstr "Location"
+
+msgid "Login!"
+msgstr "Login!"
+
+msgid "Login name:"
+msgstr "Login name:"
+
+msgid "Manage event"
+msgstr "Manage event"
+
+msgid "Manage Event"
+msgstr "Manage Event"
+
+msgid "Maybe"
+msgstr "Maybe"
+
+msgid "Maybe attending"
+msgstr "Maybe attending"
+
+msgid "More events"
+msgstr "More events"
+
+msgid "More media"
+msgstr "More media"
+
+msgid "More pages"
+msgstr "More pages"
+
+msgid "More posts"
+msgstr "More posts"
+
+msgid "New page"
+msgstr "New page"
+
+msgid "No date specified"
+msgstr "No date specified"
+
+msgid "[no name]"
+msgstr "[no name]"
+
+msgid "Not answered yet"
+msgstr "Not answered yet"
+
+msgid "Not attending"
+msgstr "Not attending"
+
+msgid "Not Attending"
+msgstr "Not attending"
+
+msgid "Off"
+msgstr "Off"
+
+msgid "Ok, count me in"
+msgstr "Ok, count me in"
+
+msgid "On"
+msgstr "On"
+
+msgid "Other tags"
+msgstr "Other tags"
+
+msgid "Other tags:"
+msgstr "Other tags:"
+
+msgid "Participants"
+msgstr "Participants"
+
+msgid "Participants can invite others?"
+msgstr "Participants can invite others"
+
+msgid "Participant visibilities"
+msgstr "Participant visibilities"
+
+msgid "Password:"
+msgstr "Password:"
+
+msgid "Please enter your phone number (required):"
+msgstr "Please enter your phone number (required):"
+
+msgid "Private"
+msgstr "Private"
+
+msgid "Register!"
+msgstr "Register!"
+
+msgid "Require participants to provide a phone number?"
+msgstr "Participants are required to provide a phone number"
+
+msgid "Save all changes"
+msgstr "Save all changes"
+
+msgid "Seats left:"
+msgstr "Seats:"
+
+msgid "Sending invitation to %1 failed : %2"
+msgstr "Sending invitation to %1 failed : %2"
+
+msgid "Sending invitation to user %1 failed"
+msgstr "Sending invitation to user %1 failed"
+
+msgid "Sent an invitation to user %1"
+msgstr "Sent an invitation to user %1"
+
+msgid "Short description"
+msgstr "Short description"
+
+msgid "Show full description"
+msgstr "Show full description"
+
+msgid "Social media tag"
+msgstr "Social media tag"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Stream"
+msgstr "Stream"
+
+msgid "This event is private"
+msgstr "This event is private"
+
+msgid "This event is public"
+msgstr "This event is visible"
+
+msgid "This is the tag people will use when posting about this event."
+msgstr "This is the tag people will use when posting about this event."
+
+msgid "To show a map, please type the event location to the location field."
+msgstr "To show a map, please type the event location to the location field."
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Unable to translate your location to map coordinates, please be more specific."
+msgstr "Unable to translate your location to map coordinates, please be more specific."
+
+msgid "Unknown error"
+msgstr "Unknown error"
+
+msgid "User can add events"
+msgstr "User can add events"
+
+msgid "Use this tag when posting about this event."
+msgstr "Use this tag when posting about this event."
+
+msgid "What information do you need the participants to fill in?"
+msgstr "What information do you need the participants to fill in?"
+
+msgid "Yes, delete"
+msgstr "Yes, delete"
+
+msgid "Your invitation has been processed"
+msgstr "Your invitation has been processed"
+
+msgid "attending"
+msgstr "attending"
+
+msgid "Back to event listing"
+msgstr "Back to event listing"
+
+msgid "Cancel and show event"
+msgstr "Cancel and show event"
+
+msgid "Hide full description"
+msgstr "Hide full description"
+
+msgid "maybe"
+msgstr "maybe"
+
+msgid "not attending"
+msgstr "not attending"
+
+msgid "State (accessibility)"
+msgstr "State"
+
+msgid "waiting"
+msgstr "waiting"
+
+msgid "New media (action)"
+msgstr "Add media object"
+
+msgid "Private (state)"
+msgstr "Private"
+
+msgid "Public (state)"
+msgstr "Visible"
+
+msgid "Accept your invite"
+msgstr "Accept your invite"
+
+msgid "Attending (manage)"
+msgstr "Attending"
+
+msgid "awating reply"
+msgstr "awating reply"
+
+msgid "Awaiting reply"
+msgstr "Awaiting reply"
+
+msgid "Event needs a title!"
+msgstr "Event needs a title!"
+
+msgid "Login or register"
+msgstr "Login or register"
+
+msgid "Manage"
+msgstr "Manage"
+
+msgid "Manage participants!"
+msgstr "Manage participants"
+
+msgid "Maybe (manage)"
+msgstr "Maybe"
+
+msgid "Not attending (manage)"
+msgstr "Not attending"
+
+msgid "planner"
+msgstr "planner"
+
+msgid "Registration end"
+msgstr "Registration end"
+
+msgid "Registration start"
+msgstr "Registration start"
+
+msgid "The event is full"
+msgstr "The event is full"
+
+msgid "This is this event\'s social media tag. Use this tag when posting about this event."
+msgstr "This is this event\'s social media tag. Use this tag when posting about this event."
+
+msgid "Anyone can join."
+msgstr "Anyone can join."
+
+msgid "Filter by"
+msgstr "Filter by"
+
+msgid "Only invited people can join."
+msgstr "Only invited people can join."
+
+msgid "Send"
+msgstr "Send"
+
+msgid "Separate addresses with commas."
+msgstr "Separate addresses with commas."
+
+msgid "Show past events"
+msgstr "Show past events"
+
+msgid "The event is full."
+msgstr "The event is full."
+
+msgid "The registration has closed."
+msgstr "The registration has closed."
+
+msgid "The registration has not started yet."
+msgstr "The registration has not started yet."
+
+msgid "Waiting (manage)"
+msgstr "Waiting"
+
+msgid "An invitation is needed to join. Use the Invite tool to send invitations."
+msgstr "An invitation is needed to join. Use the Invite tool to send invitations."
+
+msgid "An invitation is needed to join. You may request an invitation from the planners."
+msgstr "An invitation is needed to join. You may request an invitation from the planners."
+
+msgid "Anyone can join, so use the invite tool to invite your contacts!"
+msgstr "Anyone can join, so use the invite tool to invite your contacts!"
+
+msgid "No upcoming events found."
+msgstr "No upcoming events found."
+
+msgid "Social Media Tag"
+msgstr "Social Media Tag"
+
+msgid "It will show on the Events list. Anyone can join and invite others."
+msgstr "It will show on the Events list. Anyone can join and invite others."
+
+msgid "It will not show on the Events list and users must be invited in order to join. Use the Invite tool to send invitations."
+msgstr "It will not show on the Events list and users must be invited in order to join. Use the Invite tool to send invitations."
+
+msgid "Event details"
+msgstr "Event details"
+
+msgid "Planner (manage)"
+msgstr "Planner"
+
+msgid "Emails sent!"
+msgstr "Emails sent!"
+
+msgid "Export this list"
+msgstr "Export this list"
+
+msgid "Give Us Feedback"
+msgstr "Answer The Questionnaire"
+
+msgid "Mail these people"
+msgstr "Mail these people"
+
+msgid "people match the criteria."
+msgstr "people match the criteria."
+
+msgid "Copy event"
+msgstr "Copy event"
+
+msgid "Event created."
+msgstr "Event created."
+
+msgid "We\'ll scale the image to a width of 113 pixels."
+msgstr "We\'ll scale the image to a width of 113 pixels."
+
+msgid "We recommend you use an image 580 pixels wide. (If it\'s wider than that, we\'ll scale it down.)"
+msgstr "We recommend you use an image 580 pixels wide. (If it\'s wider than that, we\'ll scale it down.)"
+
+msgid "Attend"
+msgstr "Attend"
+
+msgid "Hi, I invite you to participate as a planner in %1, an event I am organizing."
+msgstr "Hi, I invite you to participate as a planner in %1, an event I am organizing."
+
+msgid "Hi, I invite you to participate in %1, an event I am organizing."
+msgstr "Hi, I invite you to participate in %1, an event I am organizing."
+
+msgid "(Copy) (single)"
+msgstr "(Copy)"
+
+msgid "Event copied"
+msgstr "Event copied"
+
+msgid "Event live stream"
+msgstr "Event live stream"
+
+msgid "In order to participate, please %1login or register%2"
+msgstr "In order to participate, please %1login or register%2"
+
+msgid "Invalid phone number. Please try attending again."
+msgstr "Invalid phone number. Please try attending again."
+
+msgid "Invitation is needed to participate?"
+msgstr "Invitation is needed to participate?"
+
+msgid "No media."
+msgstr "No media."
+
+msgid "No pages."
+msgstr "No pages."
+
+msgid "Only invited users can attend."
+msgstr "Only invited users can attend."
+
+msgid "Only invited users can attend, so use the invite tool to invite your contacts!"
+msgstr "Only invited users can attend, so use the invite tool to invite your contacts!"
+
+msgid "Sorry but attending requires an invite."
+msgstr "Sorry but attending requires an invite."
+
+msgid "Sorry but the event is full"
+msgstr "Sorry but the event is full"
+
+msgid "Welcome to participate as a planner to event %1."
+msgstr "Welcome to participate as a planner to event %1."
+
+msgid "Whoops, I forgot my password"
+msgstr "Whoops, I forgot my password"
+
+msgid "Attending status"
+msgstr "Attending status"
+
+msgid "Event name"
+msgstr "Event name"
+
+msgid "Back to event page"
+msgstr "Back to event page"
+
+msgid "No people match the criteria."
+msgstr "No people match the criteria."
+
+msgid "One person matches the criteria."
+msgstr "One person matches the criteria."
+
+msgid "Paste HTML embed code here."
+msgstr "Paste HTML embed code here."
+
+msgid "Registration will be open until %1"
+msgstr "Registration will be open until %1"
+
+msgid "Registration will start on %1."
+msgstr "Registration will start on %1."
+
+msgid "No participants yet."
+msgstr "No participants yet."
+
+msgid "Questionnaire"
+msgstr "Questionnaire"
+
+msgid "It will not show on the Events list and users must be invited in order to join."
+msgstr "It will not show on the Events list and users must be invited in order to join."
+
+msgid "Welcome! Please decide if you are going to join the event."
+msgstr "Welcome! Please decide if you are going to join the event."
+
+msgid "Attend info"
+msgstr "Attend info"
+
+msgid "What is your phone number?"
+msgstr "What is your phone number?"
+
+msgid "What is your title in the organization?"
+msgstr "What is your title in the organization?"
+
+msgid "What organization do you represent?"
+msgstr "What organization do you represent?"
+
+msgid "You need an invite to participate in this event. Invitations are sent through email and include a link for participation."
+msgstr "You need an invite to participate in this event. Invitations are sent through email and include a link for participation."
+
+msgid "Do you want to participate?"
+msgstr "Do you want to participate?"
+
+msgid "Untitled Event"
+msgstr "Untitled Event"
+
+msgid "Chat"
+msgstr "Chat"
+
+msgid "Chatters"
+msgstr "Chatters"
+
+msgid "Chat visibility"
+msgstr "Chat visibility"
+
+msgid "Comment events"
+msgstr "Comment events"
+
+msgid "Disable"
+msgstr "Disable"
+
+msgid "Enable"
+msgstr "Enable"
+
+msgid "Freeform HTML"
+msgstr "Freeform HTML"
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "Inline Media"
+msgstr "Inline Media"
+
+msgid "Send question"
+msgstr "Send question"
+
+msgid "User can comment events"
+msgstr "User can comment events"
+
+msgid "Write your question here"
+msgstr "Write your question here"
+
+msgid "Send (action)"
+msgstr "Send"
+
+msgid "This is the tag people will use when posting about this event. The maximum length of the social media tag is 15 characters."
+msgstr "This is the tag people will use when posting about this event. The maximum length of the social media tag is 15 characters."
+
+msgid "Existing user, log in"
+msgstr "Existing user, log in"
+
+msgid "Invite users to event %1"
+msgstr "Invite users to event %1"
+
+msgid "New user, register"
+msgstr "New user, register"
+
+msgid "Participant"
+msgstr "Participant"
+
+msgid "You have been invited to the event %1"
+msgstr "You have been invited to the event %1"
+
+msgid "This event is only for invited participants."
+msgstr "This event is only for invited participants."
+
+msgid "This event is private."
+msgstr "This event is private."
+
+msgid "Confirm attendance"
+msgstr "Confirm attendance"
+
+msgid "Planners"
+msgstr "Planners"
+
+msgid "%1 days, %2 hours, %3 minutes and %4 seconds until the event starts."
+msgstr "%1 days, %2 hours, %3 minutes and %4 seconds until the event starts."
+
+msgid "%1 hours, %2 minutes and %3 seconds until the event starts."
+msgstr "%1 hours, %2 minutes and %3 seconds until the event starts."
+
+msgid "%1 minutes and %2 seconds until the event starts."
+msgstr "%1 minutes and %2 seconds until the event starts."
+
+msgid "%1 seconds until the event starts."
+msgstr "%1 seconds until the event starts."
+
+msgid "Counter"
+msgstr "Counter"
+
+msgid "The event has started."
+msgstr "The event has started."
+
+msgid "Remove custom icon"
+msgstr "Remove custom icon"
+
+msgid "Show all"
+msgstr "Show all"
+
+msgid "Changes saved."
+msgstr "Changes saved."
+
+msgid "Phone"
+msgstr "Phone"
+
+msgid "Separate addresses with commas (,) or semicolons (;)."
+msgstr "Separate addresses with commas (,) or semicolons (;)."
+
+msgid "Add a temporary login link at the end of the mail"
+msgstr "Add a temporary login link at the end of the mail"
+
+msgid "You can log in to the event page using this link (valid for one day)"
+msgstr "You can log in to the event page using this link (valid for one day)"
+
+msgid "Export to calendar (ics)"
+msgstr "Export to calendar (ics)"
+
+msgid "This column"
+msgstr "This column"
+
+msgid "Title visible bith banner"
+msgstr "Title visible bith banner"
+
+msgid "We recommend you use an image 580 or 900 pixels wide. (If it\'s wider than that, we\'ll scale it down.)"
+msgstr "We recommend you use an image 580 or 900 pixels wide. (If it\'s wider than that, we\'ll scale it down.)"
+
+msgid "Promotional buttons"
+msgstr "Promotional buttons"
+
+msgid "log in (within sentence)"
+msgstr "log in"
+
+msgid "Please %1 or %2 to leave comments"
+msgstr "Please %1 or %2 to leave comments"
+
+msgid "Please %1 to leave comments"
+msgstr "Please %1 to leave comments"
+
+msgid "register (within sentence)"
+msgstr "register"
+
+msgid "Add users to event without sending email"
+msgstr "Add users to event without sending email"
+
+msgid "User %1 added without sending email"
+msgstr "User %1 added without sending email"
+
+msgid "Add users from the current area to event without sending email"
+msgstr "Add users from the current area to event without sending email"
+
+msgid "events_organizer_confirmation_subject_template"
+msgstr "[% user_name %] will be attending your event"
+
+msgid "events_organizer_confirmation_html_template"
+msgstr "<p>[% event_title %] has a new attendee: [% user_name %] ([% IF organization_title %][% organization_title %], [% END %][% organization %][% IF phone %], [% phone %][% END %], [% email %]).</p>\n<p>[%- IF in_html AND attend_info_html %]\nHere is the additional information [% user_name %] provided:</p>\n<p>[% attend_info_html %]</p>\n<p>[%- END %]\n[%- IF ! in_html AND attend_info_text %]\nHere is the additional information [% user_name %] provided:</p>\n<p>[% attend_info_text %]</p>\n<p>[%- END %]\nYou can access the event page through the following link for the next 24 hours, after this you will have to log in separately:\n[% IF in_html %]<br/><a href="[% url %]">Go to the page</a>[% ELSE %][% url %][% END %]</p>"
+
+msgid "events_organizer_confirmation_text_template"
+msgstr "[% event_title %] has a new attendee: [% user_name %] ([% IF organization_title %][% organization_title %], [% END %][% organization %][% IF phone %], [% phone %][% END %], [% email %]).\n\n[%- IF in_html AND attend_info_html %]\nHere is the additional information [% user_name %] provided:\n\n[% attend_info_html %]\n\n[%- END %]\n[%- IF ! in_html AND attend_info_text %]\nHere is the additional information [% user_name %] provided:\n\n[% attend_info_text %]\n\n[%- END %]\nYou can access the event page through the following link for the next 24 hours, after this you will have to log in separately:\n[% IF in_html %]<br/><a href="[% url %]">Go to the page</a>[% ELSE %][% url %][% END %]"
+
+msgid "events_user_confirmation_subject_template"
+msgstr "Your event participation has been registered"
+
+msgid "events_user_confirmation_html_template"
+msgstr "<p>Hello [% user_name %],</p>\n<p>Your participation to the event [% event_title %] has been registered.</p>\n<p>You can access the event page through the following link for the next 24 hours, after this you will have to log in separately:\n[% IF in_html %]<br/><a href="[% url %]">Go to the page</a>[% ELSE %][% url %][% END %]\n</p>"
+
+msgid "events_user_confirmation_text_template"
+msgstr "Hello [% user_name %],\n\nYour participation to the event [% event_title %] has been registered.\n\nYou can access the event page through the following link for the next 24 hours, after this you will have to log in separately:\n[% IF in_html %]<br/><a href="[% url %]">Go to the page</a>[% ELSE %][% url %][% END %]\n"
+
+msgid "Attendance successfully registered."
+msgstr "Attendance successfully registered."
+
+msgid "Change of attendance successfully registered."
+msgstr "Change of attendance successfully registered."
+
+msgid "Events past summary"
+msgstr "Events past summary"
+
+msgid "Listing of 5 past events"
+msgstr "Listing of 5 past events"

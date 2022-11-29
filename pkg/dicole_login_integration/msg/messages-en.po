@@ -1,0 +1,15 @@
+
+msgid "Go to Dicole"
+msgstr "Go to Dicole"
+
+msgid "Hello %1"
+msgstr "Hello %1"
+
+msgid "Login form"
+msgstr "Login form"
+
+msgid "Retrieve lost username or password"
+msgstr "Retrieve lost username or password"
+
+msgid "Welcome"
+msgstr "Welcome"

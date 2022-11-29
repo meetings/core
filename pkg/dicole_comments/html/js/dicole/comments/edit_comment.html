@@ -1,0 +1,17 @@
+<div id="modal-edit-comment" class="modal-popup">
+    <h2 class="modal-header"><%== dicole.msg('Edit comment') %></h2>
+	<form id="comments_edit_comment_form">
+	    <input type="hidden" name="post_id" value="<%= p.comment.id %>" />
+        <textarea name="content"><%== p.comment.content_plaintext %></textarea>
+    </form>
+	<!-- Save & cancel -->
+	<div class="form-save-and-cancel-wrapper">
+		<a href="#" class="js_comments_edit_comment_submit">
+			<span class="button pink"><%== dicole.msg('Save') %></span>
+		</a>
+		<a href="#" class="js_hook_showcase_close">
+			<span class="button gray"><%== dicole.msg('Cancel') %></span>
+		</a>
+	</div>
+    <div style="clear:both"></div>
+</div>

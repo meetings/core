@@ -1,0 +1,243 @@
+=head1 NAME
+
+Group Pages -  Implementation plan for Wiki-like group tool
+
+=head1 TASK INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.3 $
+
+=item B<Severity>
+
+Normal
+
+=item B<Priority>
+
+P2
+
+=item B<Risk factor>
+
+2
+
+=item B<Estimate>
+
+No estimate
+
+=item B<Status>
+
+Waiting for implementation.
+
+=back
+
+=head1 ABSTRACT
+
+This document describes the behaviour and implementation of a Wiki-like free form web page database for group context called Group Pages.
+
+=head1 DETAILS
+
+Wiki has become a widely used and loved tool for collaborative web content creation. The idea behind Wiki was to produce the easiest web page creation system that could possibly work. Group Pages will use some but not all ideas of the wiki concept (see: http://wiki.org/wiki.cgi?WhatIsWiki ) and combine them to dicole dependent functions to form a tool which can be used in dicole group context to produce material banks and collaborative content.
+
+
+
+=head2 BEHAVIOUR
+
+=over 4
+
+=item B<"Standard" Wiki behaviour>
+ 
+The standard Wiki behaviour is that you can type plaintext to form a link on a Wiki page by using two or more capital letters in a word of which one must begin the word (ie. ThisPage, AdditionalDocumentIsHere). After this plaintext has been saved to a page it appears on the page as having a ?-link after it. For example clicking an ?-mark after word NewPage takes you to an edit screen in which you can type text for the new page called NewPage you just created. Wiki also provides means to edit existing pages.
+
+After this feature there have been implemented a bunch of others, including [] tags to add bolding, italic, lists, pictures, custom links and other ways for experienced users to style their Wiki creations, version control for administrator, so called backlinks and categories, which provide the user a way to navigate to "parent" pages, different kinds of index pages, searching tools, last edited pages with timing, ways of deleting pages, user authentication.. And MUCH more..
+
+=item B<Group Pages behaviour>
+
+In Dicole group context the original Wiki which allows every user to edit the content of the sites might not always be the best alternative. Dicole is build with a powerfull rights management tools and they can be easily used to control the rights of the application. On different modes only group admins might be able to edit content or they might be given a possibility to lock certain pages. There could also be a possibility to make the Group Pages public or publicly readable only to all users even if the group itself is not public. Also special care should be taken that Group Pages can not be used for cross site scripting.
+
+I would like to keep the original idea of a very simple tool. There are however some familiar concepts like page listing and [] tags used also in forums which might be good to provide for normal users (with a nice help page). For administrators there could be some extra functionality like rights management and version control. When further developed the tool could contain things like backlinks, categories, parent paths and import/export functionality.
+
+=back
+
+
+
+=head2 IMPLEMENTATION
+
+I have made a preliminary database structure layout available. The idea is to have one set of tables which contain information for all groups. The sturcure now supports following features: caching the conversion of []-tags and page links, list of all pages, list of recently updated pages, "pages linking to this" and using any previous version as base of editing. Also searching and import/export should be possible wihtout modifications.
+
+The table layouts are:
+
+
+=over 4
+
+=item B<group_pages>
+
+This is a table holding information on the existing pages and their current versions and stats. Using ints in many of the columns is a bit overkill and medium & tiny ints would be preferable in many places, but I'm not sure how well using these types will translate across different databases. If there is need to speed up the queries the title can be defined as a fixed size variable after which the table is fixed size. However this will increase the database size and the apropriate maximum length for the title is hard to determine.
+
+
+* page_id (int, auto increment, unique)
+
+* group_id (int)
+
+* title (varchar)
+
+* version_id (int) - id of the most recent version of this page
+
+* last_modified (bigint) - copied from the most recent version
+
+* who_modified (int) - copied from the most recent version
+
+* locked (int)
+
+
+Table has indexes for:
+
+* [group_id, title] for finding the page, listing all pages and looking for existing links
+
+* [group_id, last_modified] for listing the most recent updates
+
+=back
+
+
+=over 4
+
+=item B<group_pages_content>
+
+This table holds the parsed content of every current version of every page.
+
+
+* page_id (int, unique)
+
+* content (text)
+
+
+Table has indexes for:
+
+* [page_id] for finding the contents of the current version of the page.
+
+=back
+
+
+=over 4 
+
+=item B<group_pages_version>
+
+This is a table holding version information for all pages. This table is not used when viewing the page. It is used when editing a page to display information of the old versions of the page in a dropdown which can be used to view old versions and use them as a base for your new version. This page does not contain the content of the version since it is not necessary in the listing and the table is thus fixed size.
+
+
+* version_id (int, auto increment, unique)
+
+* page_id (int)
+
+* version_number (int)
+
+* last_modified (bigint)
+
+* who_modified (int)
+
+
+Table has indexes for:
+
+* [page_id] for finding all versions of the edited page
+
+=back
+
+
+=over 4 
+
+=item B<group_pages_version_content>
+
+This table holds the content of every version of every page ever created. Amount of pages will be huge, but this table is queried only for one element at a time when editing for a unique id so it should not be too slow and shouldn't be used very often. group_pages_contents is used instead.
+
+
+* version_id (int, unique)
+
+* content (text)
+
+
+Table has indexes for:
+
+* [version_id] for finding the contents of the wanted version while editing
+
+=back
+
+
+=over 4 
+
+=item B<group_pages_links>
+
+This table tells which page links where. It is used to determine which page contents should be parsed again when an item is created, edited or deleted (if we want to allow deletion). It is also used to determine the "pages refering to this page". This table is NOT used to check if a linked page exists or not - it just lists which page links which inside group pages.
+
+
+* group_id (int, unique)
+
+* linking_title (varchar) - title of the page which holds the link
+
+* linked_title (varchar) - title of the page to which is being linked
+
+
+Table has indexes for:
+
+* [group_id, linking_title] for finding pages to parse again after edit (if links are removed) or delete.
+
+* [group_id, linked_title] for finding referring pages and pages to parse again after page creation and deletion.
+
+=back
+
+
+=over 4 
+
+=item B<group_pages_config>
+
+This table holds configuration information for the group pages tool.
+
+
+* group_id (int, unique)
+
+* start_page (varchar) - which page is displayed first
+
+* modify_policy (int) - specifies if all users, group users or privileged users can edit or lock pages ( NOTE: this might become obsolete or change depending on the implementation of rights management )
+
+* access_policy (int) - wether the pages are accessible for group members, dicole users or everyone (NOTE: same as above)
+
+
+Table has indexes for:
+
+* [group_id] for finding the right config
+
+=back
+
+
+
+=head2 PROBLEMS
+
+Questions yet to be answered...
+
+=over 4
+
+=item B<What features to include>
+
+Are the planned features adequate? Should there be an expert mode?
+
+=item B<Linking to files>
+
+How to use files from fileareas to provide inline images and attached documents (depends on the implementation of files-tool)
+
+=item B<What about security>
+
+What security options should the tool include? Do we need more than: "can edit pages" and "can lock pages"? (depends somewhat of the implementation of security-tool)
+
+=back
+
+=head1 NOTES AND STATUS
+
+Tool is ready to be implemented if nobody says otherwise ;)
+
+=head1 AUTHORS
+
+Antti Vähäkotamäki, E<lt>antti@ionstream.fiE<gt>

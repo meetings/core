@@ -1,0 +1,16 @@
+diff -uNr OpenInteract2/lib/OpenInteract2/I18N/Initializer.pm OpenInteract2-modified/lib/OpenInteract2/I18N/Initializer.pm
+--- OpenInteract2/lib/OpenInteract2/I18N/Initializer.pm	2005-03-30 07:13:51.000000000 +0700
++++ OpenInteract2-modified/lib/OpenInteract2/I18N/Initializer.pm	2005-07-12 02:54:07.592628328 +0700
+@@ -282,6 +282,12 @@
+     $log->is_debug &&
+         $log->debug( "Evaluated class $lang_class ok" );
+ 
++# Dicole patched
++use Unicode::MapUTF8;
++while ( my ( $key, $value ) = each %{ $messages } ) {
++  $messages->{ $key } = Unicode::MapUTF8::from_utf8( { -string => $value, -charset => 'iso-8859-1' } );
++}
++
+     $lang_class->_assign_messages( $messages );
+     $log->is_debug &&
+         $log->debug( "Assigned mesages to $lang_class ok" );

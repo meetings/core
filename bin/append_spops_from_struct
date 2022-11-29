@@ -1,0 +1,62 @@
+#!/usr/bin/perl
+use strict;
+
+if (!-d 'pkg') {
+	warn "Run in the source root";
+	die;
+}
+
+my $dir = $ARGV[0];
+if (!-d "pkg/$dir") {
+    warn "No such package: $dir";
+    die;
+}
+
+chdir( "pkg/$dir" );
+
+my @files = split $/, `find struct |grep .sql|egrep -v '\\..*\\.sql'`;
+
+for my $file (@files) {
+	print "Processing: $file", $/;
+
+	my %ini = (
+		field_discover => 'yes',
+		increment_field => 'yes',
+		is_secure => 'no'
+	);
+
+	$ini{base_table} = `grep CREATE $file`;
+	$ini{base_table} =~ s/.*(dicole_\w*) .*/$1/s;
+
+	my $spops_name = $ini{base_table};
+	$spops_name =~ s/dicole_//;
+
+	if (-f 'conf/spops.ini' && `grep '\\[$spops_name\\]' conf/spops.ini`) {
+		warn "[$spops_name] already exists in spops.ini! Skipping...", $/;
+		next;
+	}
+
+	my @parts = split "_", $spops_name;
+	$ini{class} = '';
+	$ini{class} .= ucfirst $_ for @parts;
+	$ini{class} = 'OpenInteract2::' . $ini{class};
+
+	$ini{id_field} = `grep '%%INCREMENT%%' $file`;
+	$ini{id_field} =~ s/^\s*([^\s]*)\s.*/$1/s;
+
+	if ( ! $ini{id_field} ) {
+		warn "No increment field in $file! Skipping...", $/;
+		next;
+	}
+
+	$ini{no_insert} = $ini{id_field};
+	$ini{no_update} = $ini{id_field};
+	
+	open INI, ">>", "conf/spops.ini" or die "Could not open spops.ini";
+	print INI $/, "[$spops_name]" , $/;
+	for ( qw(class field_discover id_field increment_field
+		is_secure no_insert no_update base_table ) ) {
+		my $out = sprintf('% -16s= %s', $_, $ini{$_});
+		print INI $out, $/;
+	}
+}

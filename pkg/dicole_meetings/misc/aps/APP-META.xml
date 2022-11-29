@@ -1,0 +1,336 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://apstandard.com/ns/1" version="1.2">
+    <id>meetin.gs.aps</id>
+    <name>Meetin.gs</name>
+    <version>1.0.9</version>
+    <release>22</release>
+
+    <homepage>http://meetin.gs/</homepage>
+
+    <vendor>
+        <name>Meetin.gs Ltd</name>
+        <homepage>http://meetin.gs/</homepage>
+    </vendor>
+
+    <packager>
+        <name>Meetin.gs Ltd</name>
+        <homepage>http://meetin.gs/</homepage>
+        <uri>http://meetin.gs/</uri>
+    </packager>
+
+    <presentation>
+        <summary>Meetin.gs - The smartest way to meet, online or face-to-face</summary>
+        <summary xml:lang="nl-NL">Meetin.gs - De slimste manier om mekaar te ontmoeten, online of face-to-face</summary>
+        <summary xml:lang="fr-FR">c-Meet - La façon la plus intelligente de se rencontrer, en ligne ou en face-à-face</summary>
+
+        <description>
+            Meetin.gs is a web service and mobile app for organizing business meetings. With Meetin.gs one can keep materials up-to-date and everyone on the same page without endless email loops. Users can manage meetings, meeting materials, agenda, and action points without the hassle.
+        </description>
+        <description xml:lang="nl-NL">
+            Meetin.gs is een webservice en mobiele app voor het organiseren van zakelijke bijeenkomsten. Met Meetin.gs kunt u materialen up-to-date houden, met iedereen op dezelfde pagina zonder eindeloze e-maillussen. Gebruikers kunnen bijeenkomsten, vergaderingsmaterialen, agenda en actiepunten beheren zonder enig gedoe.
+        </description>
+        <description xml:lang="fr-FR">
+            cMeet est un service internet et une application mobile pour organiser vos réunions d'affaires. Avec cMeet vous pouvez garder votre matériel à jour et tout le monde à la page sans email inutile. Les utilisateurs peuvent gérer des réunions, documents de réunion, l'ordre du jour et les points d'action sans aucun tracas.
+        </description>
+
+        <icon path="images/meetings_logo_64x.png" />
+
+        <screenshot path="images/meetings_page.png">
+            <description>Sample meeting page</description>
+            <description xml:lang="nl-NL">Voorbeeld ontmoetingspagina</description>
+            <description xml:lang="fr-FR">Exemple d'une page de réunion</description>
+        </screenshot>
+
+        <changelog>
+           <version version="1.0.9" release="22">
+                <entry>Altered a tag attributes for certification</entry>
+            </version>
+           <version version="1.0.9" release="21">
+                <entry>Linked deployment guide from github</entry>
+            </version>
+           <version version="1.0.9" release="20">
+                <entry>More verbose deployment guide link to pass validation</entry>
+            </version>
+           <version version="1.0.9" release="19">
+                <entry>Fixed packager name</entry>
+            </version>
+            <version version="1.0.9" release="18">
+                <entry>Added French</entry>
+            </version>
+            <version version="1.0.9" release="17">
+                <entry>Pass organization name with user data and add asterisk to email</entry>
+            </version>
+            <version version="1.0.9" release="16">
+                <entry>Added dutch translations</entry>
+            </version>
+            <version version="1.0.9" release="15">
+                <entry>Made user first and last names editable provision script</entry>
+            </version>
+            <version version="1.0.9" release="14">
+                <entry>Added user first and last names to provision script</entry>
+            </version>
+            <version version="1.0.9" release="13">
+                <entry>Added user language to provision script</entry>
+            </version>
+            <version version="1.0.9" release="12">
+                <entry>Removed more classes to really remove user email prefilling</entry>
+            </version>
+            <version version="1.0.9" release="11">
+                <entry>Added organization name prefill class</entry>
+            </version>
+            <version version="1.0.9" release="10">
+                <entry>Added organization name to provision script</entry>
+            </version>
+            <version version="1.0.9" release="9">
+                <entry>Added organization name and user language. Removed prefilling for user email as did not behave right</entry>
+            </version>
+            <version version="1.0.9" release="8">
+                <entry>Added subscription context to user provisioning</entry>
+            </version>
+            <version version="1.0.9" release="7">
+                <entry>Decoded json to array instead of object</entry>
+            </version>
+            <version version="1.0.9" release="6">
+                <entry>Fixed PHP global bug</entry>
+            </version>
+            <version version="1.0.9" release="5">
+                <entry>Fixed an another PHP syntax bug</entry>
+            </version>
+            <version version="1.0.9" release="4">
+                <entry>Fixed PHP syntax bug</entry>
+            </version>
+            <version version="1.0.9" release="3">
+                <entry>Added empty deployment-guide to pass new lint version</entry>
+            </version>
+            <version version="1.0.9" release="2">
+                <entry>Added company id to user provisioning</entry>
+            </version>
+            <version version="1.0.9" release="1">
+                <entry>Added company provisioning</entry>
+            </version>
+            <version version="1.0.0" release="8">
+                <entry>Removed base configure and reorganized pcs setting</entry>
+            </version>
+            <version version="1.0.0" release="7">
+                <entry>Configure account with auth token, required php 5.2, json and allow-url-fopen</entry>
+            </version>
+            <version version="1.0.0" release="6">
+                <entry>Removed disk usage, required php 5.5 but not soap</entry>
+            </version>
+            <version version="1.0.0" release="5">
+                <entry>Readded structured-output</entry>
+            </version>
+            <version version="1.0.0" release="4">
+                <entry>Removed structured-output</entry>
+            </version>
+            <version version="1.0.0" release="3">
+                <entry>Account service added</entry>
+            </version>
+            <version version="1.0.0" release="2">
+                <entry>Empty test license</entry>
+            </version>
+            <version version="1.0.0" release="1">
+                <entry>First release</entry>
+            </version>
+        </changelog>
+
+        <categories>
+            <category>Back office/Knowledge Management</category>
+        </categories>
+
+        <languages>
+            <language>en</language>
+        </languages>
+
+    </presentation>
+
+    <global-settings>
+      <group>
+          <setting id="meetings_provider_domain_url" type="string" default-value="https://meetin.gs/" regex="^(https:\/\/.+\/|)$">
+            <name>Provider domain URL</name>
+            <description>Change if you have a special provider domain. For example 'https://parallels.meetin.gs/'</description>
+            <error-message>Please provide a valid URL address starting with https://. Remember to include trailing slash (/).</error-message>
+        </setting>
+        <setting id="meetings_provider_key" type="string" optional="true" default-value="">
+            <name>Provider access key</name>
+            <description>Provide if you set a provider domain. For example 'abcdefghijkl12345'</description>
+        </setting>
+      </group>
+    </global-settings>
+
+    <service id="meetings_company" class="service">
+        <license must-accept="true">
+          <text>
+            <name>Empty test license</name>
+            <file>license.txt</file>
+          </text>
+        </license>
+
+        <presentation>
+            <name>Meetin.gs</name>
+            <summary>Meetin.gs</summary>
+            <infolinks>
+                <link class="official" href="http://meetin.gs">Official site</link>
+                <link xml:lang="nl-NL" class="official" href="http://www.meetin.gs/nl">Officiële site</link>
+                <link xml:lang="fr-FR" class="official" href="http://www.meetin.gs/fr">Site officiel</link>
+                <link class="support" href="http://support.meetin.gs">Support site</link>
+                <link xml:lang="nl-NL" class="support" href="http://support.meetin.gs/nl">Ondersteuning site</link>
+                <link xml:lang="fr-FR" class="support" href="http://support.meetin.gs/fr">Site de support</link>
+                <link class="deployment-guide" href="https://github.com/meetings/aps-deployment-guide">Package Deployment Guide</link>
+                <link xml:lang="nl-NL" class="deployment-guide" href="https://github.com/meetings/aps-deployment-guide">Package Uitrol Handleiding</link>
+                <link xml:lang="fr-FR" class="deployment-guide" href="https://github.com/meetings/aps-deployment-guide">Guide de déploiement des paquetages</link>
+            </infolinks>
+            <!--
+            <entry-points>
+                <entry dst="{host}/meetings/ext_login/" method="POST">
+                    <label>Launch Meetin.gs Admin</label>
+                    <variable name="host" value-of-setting="meetings_provider_domain_url" />
+                    <variable name="email" value-of-setting="admin_email" />
+                </entry>
+            </entry-points>
+            -->
+        </presentation>
+
+        <settings>
+            <group>
+                <setting id="subscription_id" type="string" visibility="hidden" protected="true" optional="true">
+                    <name>Id for subscription</name>
+                </setting>
+            </group>
+            <setting id="organization_name" class="organization-name" type="string">
+                <name>Organization name</name>
+                <name xml:lang="nl-NL">Organisatienaam</name>
+                <name xml:lang="fr-FR">Nom de l'organisation</name>
+                <description>Name of the organization</description>
+                <description xml:lang="nl-NL">Naam van de organisatie</description>
+                <description xml:lang="fr-FR">Nom de l'organisation</description>
+            </setting>
+        </settings>
+
+        <resources>
+        <!--
+            <resource id="disk_usage" class="mb">
+                <name>Disk space used by meeting materials</name>
+            </resource>
+        -->
+        </resources>
+
+        <requirements xmlns:php="http://apstandard.com/ns/1/php">
+            <php:version min="5.2" />
+            <php:allow-url-fopen>true</php:allow-url-fopen>
+            <php:function>json_decode</php:function>
+        </requirements>
+
+        <provision>
+            <configuration-script name="configure-company.php">
+                <script-language>php</script-language>
+                <structured-output/>
+            </configuration-script>
+            <verify-script name="verify.php">
+                <script-language>php</script-language>
+            </verify-script>
+        <!--
+            <resource-script name="report-resources.php">
+                <script-language>php</script-language>
+            </resource-script>
+        -->
+        </provision>
+
+
+
+
+        <service id="meetings_user" class="account">
+            <presentation>
+                <name>Meetin.gs User Account</name>
+                <name xml:lang="nl-NL">Meetin.gs gebruikersaccount</name>
+                <name xml:lang="fr-FR">Compte d'utilisateur cMeet</name>
+                <summary>Meetin.gs users Accounts</summary>
+                <summary xml:lang="nl-NL">Meetin.gs gebruikersaccounts</summary>
+                <summary xml:lang="fr-FR">Comptes d'utilisateurs cMeet</summary>
+                <entry-points>
+                    <entry dst="{host}meetings/ext_login/" method="POST" class="frontpage">
+                        <label>Launch Meetin.gs</label>
+                        <label xml:lang="nl-NL">Start Meetin.gs</label>
+                        <label xml:lang="fr-FR">Démarrer cMeet</label>
+                        <variable name="host" value-of-setting="meetings_provider_domain_url" />
+                        <variable name="email" value-of-setting="user_email" />
+                        <variable name="pcs" value-of-setting="user_token" />
+                    </entry>
+                </entry-points>
+            </presentation>
+
+            <settings>
+                <group>
+                    <setting id="user_token" type="string" visibility="hidden" protected="true" optional="true">
+                        <name>Secret User Token</name>
+                    </setting>
+                    <setting id="context_subscription_id" type="string" value-of-setting="subscription_id" visibility="hidden" protected="true" optional="true">
+                        <name>Id for organization subscription</name>
+                    </setting>
+                    <setting id="context_organization_name" type="string" value-of-setting="organization_name" visibility="hidden" protected="true" optional="true">
+                        <name>Organization name</name>
+                    </setting>
+                    <setting id="subscription_user_id" type="string" visibility="hidden" protected="true" optional="true">
+                        <name>Id for user subscription</name>
+                    </setting>
+                </group>
+
+                <group class="web">
+                    <setting id="user_email" class="value" type="string" track-old-value="true">
+                        <name>User's primary email address *</name>
+                        <name xml:lang="nl-NL">Primaire e-mailadres van gebruiker *</name>
+                        <name xml:lang="fr-FR">Adresse e-mail principale de l'utilisateur *</name>
+                        <description>This address identifies the user in the system</description>
+                        <description xml:lang="nl-NL">Dit adres identificeert de gebruiker in het systeem</description>
+                        <description xml:lang="fr-FR">Cette adresse identifie l'utilisateur dans le système</description>
+                    </setting>
+                    <setting optional="true" class="given-name" type="string" id="user_given_name">
+                        <name>User's first name</name>
+                        <name xml:lang="nl-NL">Voornaam gebruiker</name>
+                        <name xml:lang="fr-FR">Prénom de l'utilisateur</name>
+                    </setting>
+                    <setting optional="true" class="family-name" type="string" id="user_surname">
+                        <name>User's last name</name>
+                        <name xml:lang="nl-NL">Familienaam gebruiker</name>
+                        <name xml:lang="fr-FR">Nom de l'utilisateur</name>
+                    </setting>
+                    <setting id="user_language" class="locale" type="enum" default-value="nl">
+                        <name>Interface Language</name>
+                        <name xml:lang="nl-NL">Taal van de gebruikersinterface</name>
+                        <name xml:lang="fr-FR">Langue de l'interface de l'utilisateur</name>
+                        <choice id="nl">
+                            <name>Dutch</name>
+                            <name xml:lang="nl-NL">Nederlands</name>
+                            <name xml:lang="fr-FR">Néerlandais</name>
+                        </choice>
+                        <choice id="en">
+                            <name>English</name>
+                            <name xml:lang="nl-NL">Engels</name>
+                            <name xml:lang="fr-FR">Anglais</name>
+                        </choice>
+                        <choice id="fr">
+                            <name>French</name>
+                            <name xml:lang="nl-NL">Frans</name>
+                            <name xml:lang="fr-FR">Français</name>
+                        </choice>
+                    </setting>
+                </group>
+            </settings>
+
+            <requirements xmlns:php="http://apstandard.com/ns/1/php">
+                <php:version min="5.2" />
+                <php:allow-url-fopen>true</php:allow-url-fopen>
+                <php:function>json_decode</php:function>
+            </requirements>
+
+            <provision>
+                <configuration-script name="configure-user.php">
+                    <script-language>php</script-language>
+                    <structured-output/>
+                </configuration-script>
+            </provision>
+        </service>
+
+
+    </service>
+
+</application>

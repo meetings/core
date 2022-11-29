@@ -1,0 +1,45 @@
+<div id="modal-invite-participants" class="m-modal">
+    <div class="modal-header">
+        <h3><%= MTN.t('Add People to Your Meeting') %><span class="tip js_helper_tip"><%= MTN.t("(Don't worry, we won't send them anything yet)") %></span></h3>
+    </div>
+    <div class="modal-content">
+        <div id="meetings_invite_participants_error_container" class="form-validation-message"></div>
+
+        <!-- Social connect buttons -->
+        <div id="connect-buttons">
+            <% if ( dicole.get_global_variable('meetings_google_connected') === 0 ) { %>
+            <span class="get-contacts"><%= MTN.t('Get your contacts:') %></span>
+            <% var urls = dicole.get_global_variable('meetings_connect_urls') %>
+            <a href="<%== dicole.meetings.guides.active ? urls['ab_google_guiders'] : urls['ab_google'] %>">
+                <span class="google-connect-button"></span>
+            </a>
+            <% } %>
+            <% if ( false ) { %>
+            <a href="<%= urls['ab_linkedin'] %>">
+                <span class="linkedin-connect-button"></span>
+            </a>
+            <% } %>
+            <% if ( false ) { %>
+            <a href="<%= urls['ab_facebook'] %>">
+                <span class="facebook-connect-button"></span>
+            </a>
+            <% } %>
+        </div>
+
+        <!-- Helpers tip text -->
+        <form id="meetings_invite_participants_form" class="meetings-form">
+            <input name="users" id="invited-users-list" type="text" />
+        </form>
+
+    </div>
+
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a href="#" class="js_meetings_invite_participants_submit" id="invite-participants-submit">
+                <span class="indicator"></span>
+                <span class="button blue"><%= MTN.t('Confirm') %></span>
+            </a>
+            <a href="#" class="js_hook_showcase_close button gray"><%= MTN.t('Cancel') %></a>
+        </div>
+    </div>
+</div>

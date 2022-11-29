@@ -1,0 +1,433 @@
+
+msgid "%1 slides"
+msgstr "%1 slides"
+
+msgid "Add a comment"
+msgstr "Lisää kommentti"
+
+msgid "Add a presentation"
+msgstr "Lisää esitys"
+
+msgid "Add presentation info"
+msgstr "Lisää esityksen tiedot"
+
+msgid "Add presentations"
+msgstr "Lisää esityksiä"
+
+msgid "Admin presentations"
+msgstr "Hallinnoi esityksiä"
+
+msgid "A place to showcase presentations"
+msgstr "Paikka jossa esitellä esityksiä"
+
+msgid "Are you sure you want to delete the presentation?"
+msgstr "Haluatko varmasti poistaa esityksen?"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Best rated presentations"
+msgstr "Parhaiten arvioidut esitykset"
+
+msgid "Best rated presentations tagged with: %1"
+msgstr "Parhaiten arvioidut esitykset avainsanalla: %1"
+
+msgid "Bookmark"
+msgstr "Kirjanmerkki"
+
+msgid "Choose type"
+msgstr "Valitse laji"
+
+msgid "Comment presentations"
+msgstr "Kommentoi esityksiä"
+
+msgid "Confirmaition"
+msgstr "Vahvistus"
+
+msgid "Could not process URL. Sorry."
+msgstr "Osoitetta ei pystytty käsittelemään. Pahoittelumme."
+
+msgid "Custom"
+msgstr "Mukautettu"
+
+msgid "Edit presentation"
+msgstr "Muokkaa esitystä"
+
+msgid "Embed"
+msgstr "Lisää"
+
+msgid "Embed code"
+msgstr "HTML resurssin koodi"
+
+msgid "Embed custom HTML"
+msgstr "Vapaavalintainen HTML resurssi"
+
+msgid "Feature"
+msgstr "Nosta esille"
+
+msgid "Featured presentations"
+msgstr "Esillenostetut esitykset"
+
+msgid "Featured presentations tagged with: %1"
+msgstr "Esillenostetut esitykset avainsanalla: %1"
+
+msgid "Fetch"
+msgstr "Nouda"
+
+msgid "Fetch it from the internet"
+msgstr "Nouda internetistä"
+
+msgid "Filter by type"
+msgstr "Suodata lajin mukaan"
+
+msgid "Gizmo"
+msgstr "Gizmo"
+
+msgid "How would you like to add a presentation?"
+msgstr "Miten haluaisit lisätä esityksen?"
+
+msgid "Latest presentations"
+msgstr "Viimeisimmät esitykset"
+
+msgid "Latest presentations tagged with: %1"
+msgstr "Viimeisimmät esitykset avainsanalla: %1"
+
+msgid "length"
+msgstr "pituus"
+
+msgid "Length %1"
+msgstr "Pituus %1"
+
+msgid "Map"
+msgstr "Kartta"
+
+msgid "No presentations found."
+msgstr "Esityksiä ei löytynyt."
+
+msgid "No such presentation."
+msgstr "Kaivattua esitystä ei löydy"
+
+msgid "on %1"
+msgstr "on %1"
+
+msgid "Presentation created."
+msgstr "Esitys luotu."
+
+msgid "Presentation featured."
+msgstr "Presentation featured."
+
+msgid "Presentation info"
+msgstr "Esityksen tiedot"
+
+msgid "Presentation not featured anymore."
+msgstr "Presentation not featured anymore."
+
+msgid "Presentation removed."
+msgstr "Esitys poistettu."
+
+msgid "Presentations"
+msgstr "Esitykset"
+
+msgid "Presentations rights"
+msgstr "Esityksen oikeudet"
+
+msgid "Presentation updated"
+msgstr "Esitys päivitetty"
+
+msgid "presented by"
+msgstr "Esittäjä"
+
+msgid "Presented by %1"
+msgstr "Esittäjänä %1"
+
+msgid "Preview: %1"
+msgstr "Esikatselu: %1"
+
+msgid "Preview image"
+msgstr "Esikatselukuva"
+
+msgid "Rate presentations"
+msgstr "Arvioi esityksiä"
+
+msgid "Refetch"
+msgstr "Nouda uudelleen"
+
+msgid "Show more presentations"
+msgstr "Näytä lisää esityksiä"
+
+msgid "Slideshare"
+msgstr "Slideshare"
+
+msgid "Slideshow"
+msgstr "Kuvaesitys"
+
+msgid "Source URL"
+msgstr "Lähdeosoite"
+
+msgid "Supported services"
+msgstr "Tuetut palvelut"
+
+msgid "Tags:"
+msgstr "Avainsanat:"
+
+msgid "Unfeature"
+msgstr "Poista esillenosto"
+
+msgid "Unsupported URL"
+msgstr "Osoite ei ole tuettu"
+
+msgid "User can add presentations"
+msgstr "Käyttäjä voi lisätä esityksiä"
+
+msgid "User can admin presentations"
+msgstr "Käyttäjä voi hallinnoida esityksiä"
+
+msgid "User can comment presentations"
+msgstr "Käyttäjä voi kommentoida esityksiä"
+
+msgid "User can rate presentations"
+msgstr "Käyttäjä voi arvioida esityksiä"
+
+msgid "User can view presentations"
+msgstr "Käyttäjä voi selata esityksiä"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "View presentations"
+msgstr "Selaa esityksiä"
+
+
+msgid "You must fill the name."
+msgstr "Sinun tulee täyttää nimi."
+
+msgid "YouTube"
+msgstr "YouTube"
+
+msgid "Add a media resource"
+msgstr "Lisää mediaresurssi"
+
+msgid "Add media resource info"
+msgstr "Lisää mediaresurssin tiedot"
+
+msgid "Are you sure you want to delete the media resource?"
+msgstr "Oletko varma, että haluat poistaa mediaresurssin?"
+
+msgid "Best rated media resources"
+msgstr "Arvostetuimmat mediaresurssit"
+
+msgid "Best rated media resources tagged with: %1"
+msgstr "Parhaiten arvioidut mediaresurssit avainsanoilla: %1"
+
+msgid "Edit media resource"
+msgstr "Muokkaa mediaresurssia"
+
+msgid "Featured media resources"
+msgstr "Esittelyssä olevat mediaresurssit"
+
+msgid "Featured media resources tagged with: %1"
+msgstr "Esittelyssä olevat mediaresurssit avainsanoilla: %1"
+
+msgid "How would you like to add a media resource?"
+msgstr "Miten haluat lisätä mediaresurssin?"
+
+msgid "Latest media resources"
+msgstr "Uusimmat mediaresurssit"
+
+msgid "Latest media resources tagged with: %1"
+msgstr "Uusimmat mediaresurssit avainsanoilla: %1"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Media resource created."
+msgstr "Mediaresurssi luotu."
+
+msgid "Media resource featured."
+msgstr "Mediaresurssi nostettu esittelyyn."
+
+msgid "Media resource info"
+msgstr "Mediaresurssin tiedot"
+
+msgid "Media resource not featured anymore."
+msgstr "Mediaresurssi poistetu esittelystä."
+
+msgid "Media resource removed."
+msgstr "Mediaresurssi poistettu."
+
+msgid "Media resource updated"
+msgstr "Mediaresurssi päivitetty"
+
+msgid "No media resources found."
+msgstr "Mediaresursseja ei löytynyt."
+
+msgid "No such media resource."
+msgstr "Pyydettyä mediaresurssia ei löytynyt."
+
+msgid "Show more media resources"
+msgstr "Näytä lisää mediaresursseja"
+
+msgid "Best rated media"
+msgstr "Arvostetuimmat mediaresurssit"
+
+msgid "Featured media"
+msgstr "Esitellyt mediaresurssit"
+
+msgid "Latest media"
+msgstr "Uusimmat mediaresurssit"
+
+msgid "A place to showcase media resources"
+msgstr "Työkalu mediaresurssien hallintaan"
+
+msgid "%1 comments"
+msgstr "%1 kommenttia"
+
+msgid "by %1"
+msgstr "käyttäjältä %1"
+
+msgid "Contribute to presentations"
+msgstr "Kontribuoi mediaosioon"
+
+msgid "Latest media objects summary list"
+msgstr "Viimeisimpien medioiden yhteenvetolaatikko"
+
+msgid "Listing of 5 latest media objects"
+msgstr "Viimeisimmät mediat"
+
+msgid "No media found."
+msgstr "Mediaa ei löytynyt."
+
+msgid "Ovi"
+msgstr "Ovi"
+
+msgid "Upload a new file"
+msgstr "Lähetä uusi tiedosto koneeltasi"
+
+msgid "Uploaded by %1"
+msgstr "Lähettäjänä %1"
+
+msgid "Upload from your computer"
+msgstr "Lähetä tiedosto koneeltasi"
+
+msgid "New media"
+msgstr "Uudet mediat"
+
+msgid "Featured media summary"
+msgstr "Esillenostetun median yhteenvetolaatikko"
+
+msgid "Featured media (summary title)"
+msgstr "Esillenostettu media"
+
+msgid "You must fill both name and description."
+msgstr "Sekä nimi että kuvaus on täytettävä."
+
+msgid "Are you sure you want to delete the media object \"%1\"?"
+msgstr "Oletko varma, että haluat poistaa mediaobjektin \"%1\"?"
+
+msgid "Add content"
+msgstr "Lisää sisältöä"
+
+msgid "Add content info"
+msgstr "Lisää sisällön tietoja"
+
+msgid "Content created."
+msgstr "Sisältö luotu."
+
+msgid "Content featured."
+msgstr "Sisältö esillenostettu."
+
+msgid "Content info"
+msgstr "Sisällön tiedot"
+
+msgid "Content not featured anymore."
+msgstr "Sisältö poistettu esittelystä."
+
+msgid "Content removed."
+msgstr "Sisältö poistettu."
+
+msgid "Content updated"
+msgstr "Sisältö päivitetty"
+
+msgid "How would you like to add content?"
+msgstr "Kuinka haluaisit lisätä sisältöä?"
+
+msgid "No content found."
+msgstr "Sisältöä ei löytynyt."
+
+msgid "No such content."
+msgstr "Sisältöä ei löytynyt."
+
+msgid "Preview"
+msgstr "Esikatselu"
+
+msgid "Delete"
+msgstr "Poista"
+
+msgid "Edit content"
+msgstr "Muokkaa sisältöä"
+
+msgid "Image"
+msgstr "Kuva"
+
+msgid "Uploaded by"
+msgstr "Lähettäjänä"
+
+msgid "1 material"
+msgstr "1 materiaali"
+
+msgid "%1 materials"
+msgstr "%1 materiaalia"
+
+msgid "Browse materials"
+msgstr "Seaa materiaaleja"
+
+msgid "Filter results"
+msgstr "Rajaa tuloksia"
+
+msgid "Go"
+msgstr "Hae"
+
+msgid "Materials"
+msgstr "Materiaalit"
+
+msgid "Material tagsearch summary"
+msgstr "Materiaalihaku yhteenvedossa"
+
+msgid "Open"
+msgstr "Avaa"
+
+msgid "Or choose one from the list:"
+msgstr "Tai valitse avainsana listasta:"
+
+msgid "Other:"
+msgstr "Muut:"
+
+msgid "Related pages"
+msgstr "Aiheeseen liittyvät sivut"
+
+msgid "Search materials (summary title)"
+msgstr "Etsi materiaaleja"
+
+msgid "Type an additional keyword:"
+msgstr "Kirjoita lisättävä avainsana:"
+
+msgid "Back to search results"
+msgstr "Takaisin hakutuloksiin"
+
+msgid "Bookmark added succesfully."
+msgstr "Kirjanmerkki lisätty."
+
+msgid "Bookmark removed succesfully."
+msgstr "Kirjanmerkki poistettu."
+
+msgid "Document"
+msgstr "Dokumentti"
+
+msgid "start a new search"
+msgstr "aloita uusi haku"
+
+msgid "Unbookmark"
+msgstr "Poista kirjanmerkki"
+
+msgid "Who has bookmarked this"
+msgstr "Tämän kirjanmerkkeihinsä lisänneet"

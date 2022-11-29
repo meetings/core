@@ -1,0 +1,11 @@
+
+sub execute {
+my $gs = CTX->lookup_object('groups')->fetch_group({
+where => 'domain_id = 0 and groups_id < 8094 and groups_id > 3800',
+});
+for my $g (@$gs ) {
+CTX->lookup_object('dicole_domain_group')->new({group_id => $g->id, domain_id => 131})->save;
+}
+
+}
+1;

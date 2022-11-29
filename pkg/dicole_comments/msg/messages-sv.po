@@ -1,0 +1,141 @@
+msgid "comment_approval_email_subject_template"
+msgstr "Comment to approve: [% sender_first_name %] commented on [% object_name %][% IF group_name %] at [% group_name %][% END %] ([% server_name %])"
+
+msgid "comment_approval_email_text_template"
+msgstr ""
+"[% sender_name %] commented on [% object_name %]! Here is the comment:"
+""
+"[% comment_content_text %]"
+""
+""
+"Approve the comment from here:"
+""
+"[% object_url %]"
+
+msgid "comment_approval_email_html_template"
+msgstr ""
+"<p>[% sender_name | html %] <a href="[% comment_url | html %]">commented</a> on <a href="[% object_url | html %]">[% object_name | html %]</a>! Here is the comment:</p>"
+"[% comment_content_html %]"
+""
+"<p><b>Approve the comment <a href="[% comment_url | html %]">from here</a>!</b></p>"
+
+
+msgid "Submit comment"
+msgstr "Publicera kommentar"
+
+msgid "Comment content"
+msgstr "Kommentera innehållet"
+
+msgid "Write your comment:"
+msgstr "Skriv din kommentar:"
+
+msgid "Confirm comment delete"
+msgstr "Varmistetaanko?"
+
+msgid "Cancel comment delete"
+msgstr "Perutaanko?"
+
+msgid "Latest comments"
+msgstr "Viimeisimmät kommentit"
+
+msgid "blog post \\"%1\\""
+msgstr "blog post \\"%1\\""
+
+msgid "Group latest comments summary"
+msgstr "Group latest comments summary"
+
+msgid "media object \\"%1\\""
+msgstr "media object \\"%1\\""
+
+msgid "No comments found."
+msgstr "No comments found."
+
+msgid "page \\"%1\\""
+msgstr "page \\"%1\\""
+
+msgid "your media object \\"%1\\""
+msgstr "your media object \\"%1\\""
+
+msgid "your post \\"%1\\""
+msgstr "your post \\"%1\\""
+
+msgid "blog post \\"%1\\""
+msgstr "blog post \\"%1\\""
+
+msgid "Group latest discussions summary"
+msgstr "Group latest discussions summary"
+
+msgid "Hide more"
+msgstr "Hide more"
+
+msgid "Latest discussions"
+msgstr "Latest discussions"
+
+msgid "Show more"
+msgstr "Show more"
+
+msgid "Group latest discussion topic summary"
+msgstr "Group latest discussion topic summary"
+
+msgid "Latest discussion topics"
+msgstr "Latest discussion topics"
+
+msgid "Earlier discussions"
+msgstr "Earlier discussions"
+
+msgid "More recent discussions"
+msgstr "More recent discussions"
+
+msgid "Comment to media %1"
+msgstr "Comment to media %1"
+
+msgid "Comment to page %1"
+msgstr "Comment to page %1"
+
+msgid "Group latest comments summary with faces"
+msgstr "Group latest comments summary with faces"
+
+msgid "blog post \"%1\""
+msgstr "blog post \"%1\""
+
+msgid "event \"%1\""
+msgstr "event \"%1\""
+
+msgid "media object \"%1\""
+msgstr "media object \"%1\""
+
+msgid "page \"%1\""
+msgstr "page \"%1\""
+
+msgid "There are no discussions available."
+msgstr "There are no discussions available."
+
+msgid "your media object \"%1\""
+msgstr "your media object \"%1\""
+
+msgid "your post \"%1\""
+msgstr "your post \"%1\""
+
+msgid "Be the first to comment!"
+msgstr "Be the first to comment!"
+
+msgid "Delete comment"
+msgstr "Delete comment"
+
+msgid "Publish comment"
+msgstr "Publish comment"
+
+msgid "Publish comments "
+msgstr "Publish comments "
+
+msgid "User can publish comments in the group"
+msgstr "User can publish comments in the group"
+
+msgid "Your comment is waiting for approval and will be published shortly."
+msgstr "Your comment is waiting for approval and will be published shortly."
+
+msgid "Commenting is closed."
+msgstr "Commenting is closed."
+
+msgid "Comment to event %1"
+msgstr "Comment to event %1"

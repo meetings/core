@@ -1,0 +1,10 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_url_alias add additional text after task');
+}
+
+1;
+

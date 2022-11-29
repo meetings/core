@@ -1,0 +1,13 @@
+Changes
+conf/action.ini
+conf/spops.ini
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleEmails.pm
+OpenInteract2/Action/DicoleEmailsAPI.pm
+OpenInteract2/Action/DicoleEmailsCommon.pm
+OpenInteract2/App/DicoleEmails.pm
+OpenInteract2/SQLInstall/DicoleEmails.pm
+package.ini
+struct/dicole_emails_dispatch.sql
+struct/dicole_sent_email.sql

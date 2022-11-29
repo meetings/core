@@ -1,0 +1,343 @@
+/* /networking specific */
+
+#user_about_me p {
+    padding-left : 0px;
+    padding-bottom: 0px;
+}
+
+img.networking_profile {
+	padding: 4px;
+	margin: 0px 4px 10px 4px;
+	border: 1px solid rgb(230, 230, 230);
+}
+
+img.profile_image_55 {
+	background-image: url('images/default_profile_55.gif');
+	width: 55px;
+	height: 55px;
+}
+
+img.profile_image_90 {
+	background-image: url('images/default_profile_90.png');
+	width: 90px;
+	height: 90px;
+}
+
+div#networking_add_more_users {
+	text-align: right;
+	margin-top: 20px;
+}
+
+.networking_admins, .networking_active_users, .networking_most_active_users {
+	border: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Browsing specific */
+
+.filter_hide, 
+.filter_more_hide,
+.filter_show,
+.filter_more_show {
+	display: none;
+    line-height: 1px;
+    font-weight: bold;
+}
+
+.filter_open .filter_hide,
+.filter_closed .filter_show,
+.filter_more_open .filter_more_hide,
+.filter_more_closed .filter_more_show {
+    display: inline;
+}
+
+#browse_header {
+	min-height: 45px;
+}
+
+#browse_header .left h1 {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	color: #D49603 !important;
+	font-size: 20pt;
+}
+
+#browse_header .left {
+	float: left;
+}
+
+#browse_header .right {
+	float: right;
+	position: relative;
+	top: 10px;
+	padding: 9px 9px 9px 10px;
+	text-align: left;
+	background-color: #EDEDED;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-top: 1px solid;
+	border-color: #DCDCDC;
+
+	/* These need to be specified for each
+	 * border to work with all browsers */
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+
+	-khtml-border-radius-topright: 5px;
+	-khtml-border-radius-topleft: 5px;
+}
+
+#browse_filter_container {
+	background-color: #F1F1F1;
+	margin-bottom: 6px;
+	padding: 5px;
+	border: 1px solid #DCDCDC;
+}
+
+div#filter_more_container {
+	display: inline;
+}
+
+.browse_selected_tags {
+	overflow: hidden;
+	clear: left;
+	margin-bottom: 4px;
+}
+
+#browse_show_suggestions {
+	background: transparent;
+	color: #54A1C9;
+}
+
+html body #browse_show_suggestions a:hover,
+{
+	text-decoration: none !important;
+}
+
+.browse_item {
+	border-top: 1px solid #E3E3E3;
+	font-family: Helvetica,sans-serif;
+	font-size: 10pt;
+	height:auto !important;
+	clear: left;
+	overflow:hidden;
+	padding: 10px 5px;
+}
+
+/*
+.browse_item:nth-child(odd)
+{
+	background-color: #cfecf9;
+}
+
+.browse_item:nth-child(even)
+{
+	background-color: transparent;
+}
+*/
+
+.browse_item .left {
+	float: left;
+	overflow: hidden;
+}
+
+.browse_item .right {
+	float: right;
+	overflow: hidden;
+	width: 100px;
+}
+
+.browse_item .content {
+	margin-left: 55px;
+}
+
+.browse_item .abstract {
+	padding: 0;
+	margin: 10px 0
+}
+
+.browse div#browse_results_header
+{
+	border: 0;
+	padding: 0;
+	margin-bottom: 4px;
+}
+
+.browse #browse_results_header h2,
+.browse #browse_selected_tags h2 {
+	font-size: 9pt;
+	color: #666 !important;
+}
+.browse #browse_results_header h2 {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+#browse_results .item_content {
+	margin-left: 70px;
+}
+
+.browse_item h2 {
+	border: 0 none;
+	margin: 12px 0;
+	padding: 0;
+	font-size: 12pt;
+	color: #6DAACD;
+}
+
+#browse_selected_tags h2 {
+	border: 0 none;
+	margin: 6px 15px;
+	padding: 0;
+	font-size 9pt;
+	float: left;
+	color: #6DAACD;
+}
+
+span#browse_filter_with_keywords {
+	text-align: right;
+	margin: 0 1px 1px 0;
+}
+
+#browse_filter_with_keywords a {
+	color: #6C9FC8 !important;
+	text-decoration: none !important;
+	font-size: 9pt;
+}
+
+div#browse_show_more, div#browse_loading {
+	text-align: right;
+	margin-top: 20px;
+}
+
+#browse_loading {
+	display: none;
+}
+
+.browse_item .tags {
+	left: auto;
+	right: auto;
+	line-height: 1.95em !important;
+}
+
+.miniTagCloud .tag,
+.tag {
+	padding: 4px 8px !important;
+	margin: 0 1px 1px 0;
+	background-color: #DDD;
+	color: #333 !important;
+	font-size: 10pt;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#browse_filter_container #browse_selected_tags .tag
+{
+	background-color: #28B9F9;
+	color: white !important;
+}
+
+#browse_selected_tags .miniTagCloud {
+	text-align: left;
+}
+ 
+#browse_suggestions {
+	display: none;
+}
+
+#browse_no_results h2 {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	border-top: 1px solid #E3E3E3;
+	padding-top: 10px;
+}
+
+#browse_suggestions .tag {
+	font-size: 10pt;
+}
+
+#browse_suggestions .tag:hover, #browse_suggestions .miniTagCloud a:hover {
+	background-color: white !important;
+}
+
+#browse_suggestions .miniTagCloud {
+	text-align: center;
+}
+
+/* Tag cloud styles, still browsing specific */
+.tag_remover {
+	background-color: transparent;
+	color: white !important;
+	font-size: 10pt;
+	position: relative;
+	top: 0px;
+	left: -17px;
+	margin-right: -10px;
+}
+
+.tag_remover:hover, .tag_remover a:hover {
+	background: transparent;
+	background-image: none;
+	text-decoration: none !important;
+}
+
+.tag_separator {
+	color: #27B9F8;
+	font-size: 10pt;
+	font-weight: bold;
+	margin: 0 2px 0 4px;
+}
+
+.miniTagCloud .tagPrimary, 
+.miniTagCloud .tagSecondary, 
+.miniTagCloud .tagTertiary {
+	background-color: #E8E8E8;
+	font-size: 10pt;
+}
+
+.miniTagCloud .tagPrimary {
+	color: #4b4b4b !important;
+}
+
+.miniTagCloud .tagSecondary {
+	color: #7a7a7a !important;
+}
+
+.miniTagCloud .tagTertiary {
+	color: #b3b3b3 !important;
+}
+
+.tag:hover {
+	background: #37BCE4 url(/images/events/tag-hover.png) repeat-x scroll 0 0 !important;
+	color: white !important;
+	text-decoration:none !important;
+}
+
+.miniTagCloud {
+	line-height: 2.168em !important;
+	display: inline;
+}
+
+.miniTagCloud a:hover {
+	background: none;
+}
+
+.networking_show_profile_right .i3 .boxLegend {
+	display: none !important;
+}
+
+a.networking_mail_members_action {
+    display: none;
+}

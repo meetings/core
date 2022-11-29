@@ -1,0 +1,75 @@
+
+msgid "Embedded HTML"
+msgstr "Embedded HTML"
+
+msgid "Type the HTML:"
+msgstr "Type the HTML:"
+
+msgid "Active wiki pages:"
+msgstr "Active wiki pages:"
+
+msgid "Add image"
+msgstr "Add image"
+
+msgid "Clear"
+msgstr "Clear"
+
+msgid "External link"
+msgstr "External link"
+
+msgid "Internal link"
+msgstr "Internal link"
+
+msgid "Invisible save"
+msgstr "Invisible save"
+
+msgid "What did you change?"
+msgstr "What did you change?"
+
+msgid "Loading uploader..."
+msgstr "Loading..."
+
+msgid "Height"
+msgstr "Height"
+
+msgid "Insert"
+msgstr "Insert"
+
+msgid "Paste HTML here"
+msgstr "Paste HTML here"
+
+msgid "pixels"
+msgstr "pixels"
+
+msgid "Width"
+msgstr "Width"
+
+msgid "Image description:"
+msgstr "Image description:"
+
+msgid "Image location:"
+msgstr "Image location:"
+
+msgid "Image selector"
+msgstr "Image selector"
+
+msgid "Image URL:"
+msgstr "Image URL:"
+
+msgid "In line"
+msgstr "In line"
+
+msgid "Left"
+msgstr "Left"
+
+msgid "Link selector"
+msgstr "Link selector"
+
+msgid "Link URL:"
+msgstr "Link URL:"
+
+msgid "Right"
+msgstr "Right"
+
+msgid "Show more pages"
+msgstr "Show more pages"

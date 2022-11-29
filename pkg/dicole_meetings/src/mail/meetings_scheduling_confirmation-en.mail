@@ -1,0 +1,45 @@
+[% MTN.t('Confirmation: Your scheduling response received','Confirmation: Your scheduling responses received', { plural => answered_scheduling_options.size }) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Your scheduling response for') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>[% MTN.t('This is what we have received so far:') %]<<</p>>>
+
+<<<list>>>
+[% FOREACH answer IN answered_scheduling_options %]
+<<<item>>><<<bold>>>[% answer.option %]: [% answer.answer %]<<</bold>>>
+<<</item>>>
+[% END %]
+<<</list>>>
+
+
+[% IF open_scheduling_options.size > 0 %]
+
+<<<p>>>
+[% MTN.t('You still have one unanswered suggestion.','You still have %1$s unanswered suggestions.', { plural => open_scheduling_options.size }) %]
+[% MTN.t('To respond by email, reply to this message with the word SCHEDULE.') %]
+<<</p>>>
+
+<<<p>>>
+[% MTN.t('You can also respond on the meeting page.') %]
+<<</p>>>
+[% END %]
+
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=scheduling_confirmation' %]
+[% showtext = 1 %]
+[% text = MTN.t('View meeting') %]
+<<<blue_button>>>
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

@@ -1,0 +1,16 @@
+<div id="modal-remove-confirm" class="modal-popup">
+    <p><%== dicole.msg('Are you sure you want to remove the comment?') %></p>
+	<form id="comments_delete_comment_confirm_form">
+	    <input type="hidden" name="post_id" value="<%= p.comment.id %>" />
+    </form>
+	<!-- Save & cancel -->
+	<div class="form-save-and-cancel-wrapper">
+		<a href="#" class="js_comments_delete_comment_confirm_submit">
+			<span class="button pink"><%== dicole.msg('Remove') %></span>
+		</a>
+		<a href="#" class="js_hook_showcase_close">
+			<span class="button gray"><%== dicole.msg('Cancel') %></span>
+		</a>
+	</div>
+    <div style="clear:both"></div>
+</div>

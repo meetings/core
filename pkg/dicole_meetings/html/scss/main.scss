@@ -1,0 +1,12 @@
+$theme:blue;
+
+// Select color
+$color-select:#d6edf5;
+
+$color-drag:#02a7d2;
+
+// Main color (y-repeating bg)
+$color-main:#199acf;
+$color-main-hover:darken($color-main, 10%);
+$color-main-light:lighten($color-main, 40%);
+

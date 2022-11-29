@@ -1,0 +1,378 @@
+# translation of messages-en.po to
+# $Id: messages-en.po,v 1.22 2010-03-22 11:57:01 amv Exp $
+# , 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: messages-en\n"
+"Last-Translator: \n"
+"POT-Creation-Date: 2005-03-22 02:04:59+0000\n"
+"PO-Revision-Date: 2005-03-24 11:16+0200\n"
+"Language-Team:  <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+msgid "Default personal rights"
+msgstr "Default personal rights"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Clear search"
+msgstr "Clear search"
+
+msgid "Next"
+msgstr "Next"
+
+msgid "Previous"
+msgstr "Previous"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Add checked items"
+msgstr "Add checked items"
+
+msgid "Remove checked"
+msgstr "Remove checked"
+
+msgid "Check all"
+msgstr "Check all"
+
+msgid "Clear checkboxes"
+msgstr "Clear checkboxes"
+
+msgid "Nothing found."
+msgstr "Nothing found."
+
+msgid "Page:"
+msgstr "Page:"
+
+msgid "Search:"
+msgstr "Search:"
+
+msgid "Finish"
+msgstr "Finish"
+
+msgid "Success"
+msgstr "Success"
+
+msgid "Warning"
+msgstr "Warning"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "An error occured: %1"
+msgstr "An error occurred: %1"
+
+msgid "Creating document %1 failed: %1"
+msgstr "Creating document %1 failed: %1"
+
+msgid "Creating folder %1 failed: %2"
+msgstr "Creating folder %1 failed: %2"
+
+msgid "Default"
+msgstr "Default"
+
+msgid "Document %1 written."
+msgstr "Document %1 written."
+
+msgid "File %1 does not exist."
+msgstr "File %1 does not exist."
+
+msgid "File %1 is not in GZIP format."
+msgstr "File %1 is not in GZIP format."
+
+msgid "File %1 is not in TAR format."
+msgstr "File %1 is not in TAR format."
+
+msgid "File %1 is not in ZIP format."
+msgstr "File %1 is not in ZIP format."
+
+msgid "File %1 uncompressed."
+msgstr "File %1 uncompressed."
+
+msgid "File %1 uploaded."
+msgstr "File %1 uploaded."
+
+msgid "File upload field does not exist."
+msgstr "File upload field does not exist."
+
+msgid "Folder %1 already exists."
+msgstr "Folder %1 already exists."
+
+msgid "Folder %1 created."
+msgstr "Folder %1 created."
+
+msgid "Full screen"
+msgstr "Full screen"
+
+msgid "New document %1 created."
+msgstr "New document %1 created."
+
+msgid "Renamed %1 as %2."
+msgstr "Renamed %1 as %2."
+
+msgid "Renaming location failed: %1"
+msgstr "Renaming location failed: %1"
+
+msgid "Resolution:"
+msgstr "Resolution:"
+
+msgid "The following files already exist: %1"
+msgstr "The following files already exist: %1"
+
+msgid "Uncompression method for file %1 is not supported."
+msgstr "Uncompression method for file %1 is not supported."
+
+msgid "Writing document %1 failed: %2"
+msgstr "Writing document %1 failed: %2"
+
+msgid "%1 already exists."
+msgstr "%1 already exists."
+
+msgid "Valid XHTML 1.0"
+msgstr "Valid XHTML 1.0"
+
+msgid "Select"
+msgstr "Select"
+
+msgid "or add new"
+msgstr "or add new"
+
+msgid "The fields marked with arrows are required."
+msgstr "The fields marked with arrows are required."
+
+msgid "The passwords do not match."
+msgstr "The passwords do not match."
+
+msgid "The password is too short. Minimum password length is %1 characters."
+msgstr "The password is too short. Minimum password length is %1 characters."
+
+msgid "Browse..."
+msgstr "Browse..."
+
+msgid "Powered by Dicole Knowledge Work Environment"
+msgstr "Powered by Dicole Knowledge Work Environment"
+
+msgid "Link to file area"
+msgstr "Link to file area"
+
+msgid "Download"
+msgstr "Download"
+
+msgid "View"
+msgstr "View"
+
+msgid "Properties"
+msgstr "Properties"
+
+msgid "Save failed: %1"
+msgstr "Save failed: %1"
+
+msgid "Are you sure you want to remove the selected items?"
+msgstr "Are you sure you want to remove the selected items?"
+
+msgid "Confirmation"
+msgstr "Confirmation"
+
+msgid "Error during remove: %1"
+msgstr "Error during remove: %1"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Archive checked"
+msgstr "Archive checked"
+
+msgid "Are you sure you want to archive the selected items?"
+msgstr "Are you sure you want to archive the selected items?"
+
+msgid "Show archived"
+msgstr "Show archived"
+
+msgid "Error during archive: %1"
+msgstr "Error during archive: %1"
+
+msgid "Box title"
+msgstr "Box title"
+
+msgid "Restore checked"
+msgstr "Restore checked"
+
+msgid "Error during restore: %1"
+msgstr "Error during restore: %1"
+
+msgid "Show archive"
+msgstr "Show archive"
+
+msgid "Data was saved successfully."
+msgstr "Data was saved successfully."
+
+msgid "Steps"
+msgstr "Steps"
+
+msgid "Subscribe with feed reader"
+msgstr "Subscribe with feed reader"
+
+msgid "Personal compilations"
+msgstr "Personal compilations"
+
+msgid "Are you sure you want to remove the selected themes?"
+msgstr "Are you sure you want to remove the selected themes?"
+
+msgid "Default theme"
+msgstr "Default theme"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Error while installing theme: %1"
+msgstr "Error while installing theme: %1"
+
+msgid "File is not a valid theme package!"
+msgstr "File is not a valid theme package!"
+
+msgid "Installed version %1 of theme %2"
+msgstr "Installed version %1 of theme %2"
+
+msgid "List of themes"
+msgstr "List of themes"
+
+msgid "List themes"
+msgstr "List themes"
+
+msgid "Manage themes"
+msgstr "Manage themes"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "No image."
+msgstr "No image."
+
+msgid "Remove themes"
+msgstr "Remove themes"
+
+msgid "Screenshot"
+msgstr "Screenshot"
+
+msgid "Set as default theme"
+msgstr "Set as default theme"
+
+msgid "Show list of themes"
+msgstr "Show list of themes"
+
+msgid "Theme author"
+msgstr "Theme author"
+
+msgid "Theme details"
+msgstr "Theme details"
+
+msgid "Theme in ZIP format"
+msgstr "Theme in ZIP format"
+
+msgid "Theme manager"
+msgstr "Theme manager"
+
+msgid "Theme Manager"
+msgstr "Theme Manager"
+
+msgid "Themes registered in the system"
+msgstr "Themes registered in the system"
+
+msgid "This theme requires parent theme package %1 which is not present."
+msgstr "This theme requires parent theme package %1 which is not present."
+
+msgid "This theme version is already installed."
+msgstr "This theme version is already installed."
+
+msgid "Unable to find conf/theme.ini in theme package %1"
+msgstr "Unable to find conf/theme.ini in theme package %1"
+
+msgid "Upload theme in ZIP format"
+msgstr "Upload theme in ZIP format"
+
+msgid "Upload theme"
+msgstr "Upload theme"
+
+msgid "Upload"
+msgstr "Upload"
+
+msgid "User can manage themes installed in the system"
+msgstr "User can manage themes installed in the system"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Help"
+msgstr "Help"
+
+msgid "Generate password"
+msgstr "Generate password"
+
+msgid "Send password through email"
+msgstr "Send password through email"
+
+msgid "Email content for login credentials"
+msgstr "Email content for login credentials"
+
+msgid "Subject of login credentials email"
+msgstr "Subject of login credentials email"
+
+msgid "Calendar"
+msgstr "Calendar"
+
+msgid "Given date does not exist"
+msgstr "Given date does not exist"
+
+msgid "Powered by Dicole Community Platform"
+msgstr "Powered by Dicole Community Platform"
+
+msgid "You do not have the rights to access the page you tried to open. Contact your administrator for more information."
+msgstr "You do not have the rights to access the page you tried to open. Contact your administrator for more information."
+
+msgid "a moment ago (about_when)"
+msgstr "a moment ago"
+
+msgid "an hour ago (about_when)"
+msgstr "an hour ago"
+
+msgid "%1 hours ago (about_when)"
+msgstr "%1 hours ago"
+
+msgid "yesterday (about_when)"
+msgstr "yesterday"
+
+msgid "on monday (about_when)"
+msgstr "on monday"
+
+msgid "on tuesday (about_when)"
+msgstr "on tuesday"
+
+msgid "on wednesday (about_when)"
+msgstr "on wednesday"
+
+msgid "on thursday (about_when)"
+msgstr "on thursday"
+
+msgid "on friday (about_when)"
+msgstr "on friday"
+
+msgid "on saturday (about_when)"
+msgstr "on saturday"
+
+msgid "on sunday (about_when)"
+msgstr "on sunday"
+
+msgid "%1 days ago (about_when)"
+msgstr "%1 days ago"
+

@@ -1,0 +1,3 @@
+#!/bin/bash
+bin/translations/x_update_js_files
+bin/translations/x_update_mo_files

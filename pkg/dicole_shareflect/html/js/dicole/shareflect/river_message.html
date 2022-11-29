@@ -1,0 +1,17 @@
+	<div class="avatar">
+		<img src="<%= p.author.image %>" title="<%= p.author.name %>"/>
+	</div>
+
+	<h3><a href="#" class="author-name" id="show_author_<%= p.id %>"><%= p.author.name %></a> at <a href="#" class="location-name" show_id="location_<%= p.location.id %>"><%= p.location.title %></a></h3>
+
+	<div class="tools">
+	    <span class="timestamp"><%= p.timestamp %>10m</span>
+	    <a href="#" class="edit" style="display: none;">Edit</a>
+	</div>
+
+	<!--div class="type" style="font-family: Courier;">
+		<%= p.message_type %>
+	</div-->
+	<div class="desc">
+		<%= p.excerpt %> (ID: <%= p.id %>)
+	</div>

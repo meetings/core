@@ -1,0 +1,10 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_blogs_reposter add title TEXT after seed_id');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_blogs_reposter add append_title tinyint unsigned not null after apply_tags');
+}
+
+1;

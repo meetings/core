@@ -1,0 +1,279 @@
+=head1 NAME
+
+Coding Guidelines - Dicole Coding Guidelines
+
+=head1 ABSTRACT
+
+This document describes the Dicole coding guidelines: How to write code that is
+correctly formatted and follows all of the required guidelines.
+
+=head1 CODE LAYOUT
+
+There are some general guidelines for formatting that will make your programs
+easier to read, understand, and maintain for other Dicole developers. If we
+all follow the same formatting guidelines it is easier to start reading code
+written for Dicole.
+
+=over 4
+
+=item *
+
+Opening curly on same line as keyword:
+
+  if ($user eq 'sysadmin') {
+      # do stuff 
+  }
+
+=item *
+
+Space after semicolon, space around subscript inside brackets:
+
+  @array = ( '', '', '' );
+  $obj->new( example => 1 );
+
+=item *
+
+Line up corresponding items vertically:
+
+  $configuration = 'dicole.cfg';
+  $formatting    = 1;
+  $debug         = undef;
+
+=item *
+
+understandable identifiers in small caps:
+
+  $understand = 'this'; # Ok
+  $x = 'this'           # Wrong
+  $obj->understand;
+  
+=item *
+
+Separate words in longer indetifiers with spaces:
+
+  $understand_this = 5;
+  $obj->get_this;
+
+=item *
+
+Global variables and global-like methods are written in uppercase:
+
+  our $VERSION = '1.5';
+  $obj->VERSION( '1.5' );
+
+=item *
+
+Use mixed-case for class names:
+
+  package This::Is::It;
+
+=item *
+
+Use mixed-case for methods that usually only contain an object:
+
+  $obj->Data->data();
+
+=item *
+
+Use 4 as a virtual tab length instead of 8.
+
+=item *
+
+The maximum length of a line is 80 characters. 
+
+=item *
+
+Line up several hash arguments:
+
+  $obj->new(
+  	hello => 1,
+  	this  => 2,
+  	that  => 3
+  );
+
+=item *
+
+Short one-line blocks are ok:
+
+  if ( $new ) { old++ }
+
+=item *
+
+Use inline POD to document your code before every function:
+
+  =pod
+
+  =head1 METHODS
+
+  =head2 new( { action => ARRAYREF } )
+
+  Returns a new I<object>.
+
+  =cut
+
+  sub new {
+  	my ( $class, %args ) = @_;
+  	my $self = bless( {}, $class );
+  	$self->_init( %args );
+  	return $self;
+  } 
+
+=item *
+
+Define all private variables in the beginning of the function:
+
+  sub new {
+  	my ( $self, $that, @which ) = @_;
+	# stuff...
+  }
+
+=item *
+
+Group functions which do the same kind of thing.
+
+=item *
+
+Avoid big blocks and functions (over 15-20 lines of code). Try to use
+additional private functions where appropriate. Prefix private functions
+with an underscore:
+
+  sub _private { }
+
+=back
+
+=head1 CODING ISSUES
+
+=over 4
+
+=item *
+
+Always do error checking of return codes and system calls. Do error checking
+for SPOPS objects as well. Don't use I<die()> or I<warn()>, but instead use
+built-in error reporting functions like I<<$R->scrib>>, I<<$R->throw>> and in
+some cases I<Carp>:
+
+  use Carp;
+  croak( 'The program died.' );
+
+=item *
+
+Be consistent and void hackish implementations.
+
+=item *
+
+Avoid extensive use of regular expressions.
+
+=item *
+
+Use strict all times:
+
+  use strict;
+
+=item *
+
+Avoid global variables like a plague.
+
+=item *
+
+If you can do it in Perl you don't need external programs.
+
+=item *
+
+Use CPAN modules for more complex features. There is no need to reinvent
+the wheel.
+
+=item *
+
+If you have more than two function parameters, consider using a hash for
+passing the parameters. Named parameters are easier to remember.
+
+=item *
+
+Write cross-platform compatible code.
+
+=item *
+
+Comment your code where it is necessary for understanding. POD documentation of
+the function is usually sufficient but there are cases where an additional
+explanation is required.
+
+=item *
+
+Do not include HTML, Javascript or other layout code inside your script.
+Use templates for that purpouse.
+
+=item *
+
+Learn the underlying technology and functions. See documentation of
+Dicole Libraries, OpenInteract and SPOPS. 
+
+=back
+
+=head1 SECURITY ISSUES
+
+=over 4 
+
+=item *
+
+Always check user input and avoid shell commands.
+
+=item *
+
+If it is absolutely necessary to use back-ticks or functions like I<eval(),
+open(), unlink(), glob(), umask(), exec()> and I<system()>, check all variables
+before executing any of these.
+
+=back
+
+=head1 JAVASCRIPT
+
+Javascript is welcome but it should not be used too heavily. The Javascript
+should only add things that provide better usability and most of the times it
+shouldn't be an absolute requirement. If you write Javascript, make sure it
+works with all of the commonly used browsers (Konqueror, Mozilla, Netscape 4.x
+or higher, IE 4 or higher and Opera).
+
+=head1 XHTML
+
+Create XHTML 1.0 Transitional compliant code that looks the same with all
+browsers. Use CSS for layout. Avoid tables etc., use I<div> and I<span> tags.
+
+=head1 CSS
+
+Create cross-browser compatible CSS code. CSS is good but the same rule applies
+here as it applied for XHTML: it should look mostly the same with all of the
+commonly used browsers. CSS should be CSS Version 2 standard compliant.
+
+=head1 RECOMMENDED READING
+
+=over 4
+
+=item *
+
+perlstyle (Perl style tutorial) man-page
+
+=item *
+
+perlpod (POD documentation) man-page
+
+=item *
+
+perlport (Portability tutorial) man-page
+
+=item *
+
+perlsec (Security tutorial) man-page
+
+=item *
+
+L<http://www.w3.org/Security/Faq> - Lincoln Stein's World Wide Web Security FAQ
+
+=item *
+
+L<http://www.w3.org> - Official standards organization (XHTML, CSS etc..)
+
+=back
+
+=head1 AUTHORS
+
+Teemu Arina E<lt>teemu@ionstream.fiE<gt>

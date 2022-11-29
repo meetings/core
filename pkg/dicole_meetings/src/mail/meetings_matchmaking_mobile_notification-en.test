@@ -1,0 +1,12 @@
+[%#- Curretly sent only when Antti codes so - supposed to be sent to all people who have meetings in a matchmaking event -%]
+
+[%- IF test_case == 'testi' %]
+[%-
+server_host = 'http://dev.meetin.gs'
+user_name = 'Viivi Luoto'
+login_url = 'http://www.meetin.gs/linkki'
+matchmaking_custom_name = 'Slush matchmaking'
+matchmaking_event_name = 'Slush'
+
+%]
+[%- END -%]

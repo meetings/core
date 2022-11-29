@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for LANG in "en" "fi" "sv" "nl" "fr"
+do
+     mkdir -p template/locale/$LANG/LC_MESSAGES
+     msgfmt src/locale/desktop_back-$LANG.po -o template/locale/$LANG/LC_MESSAGES/desktop_back.mo
+done

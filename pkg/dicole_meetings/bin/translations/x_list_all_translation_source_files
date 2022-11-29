@@ -1,0 +1,9 @@
+#!/bin/bash
+
+find src/jade/*.jade
+find html/js/dicole/meetings/dtmpl/*.html
+find html/js | grep -E '\.js$' |grep -v 'templates.js'
+find template/mail/*subject.tmpl
+find template/mail/*html.tmpl
+find template/*.tmpl
+find OpenInteract2/Action/*.pm

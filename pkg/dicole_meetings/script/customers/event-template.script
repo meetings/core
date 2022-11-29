@@ -1,0 +1,249 @@
+use strict;
+
+my $data = {
+    domain_name => 'XXX.meetin.gs',
+    email_sender_name => '',
+    organizer_name => 'XXX',
+    event_name => 'XXX',
+    event_website => 'http://XXX',
+    event_logo => 'https://media.dicole.net/meetings_logos/XXX.png',
+    event_shorthand => 'XXX',
+    support_email => 'info@meetin.gs',
+    return_url => 'http://XXX',
+
+    time_zone => 'Europe/Helsinki',
+    spans => [
+        { start => '2016-02-11 09:30', end => '2016-02-11 17:00'},
+    ],
+    duration_minutes => 30,
+    buffer_minutes => 0,
+
+    force_location => 'XXX',
+
+    location_count => 0,
+    locations_description => '',
+    location_gap_minutes => 0,
+    location_name_prefix => '',
+    location_name_suffix => '',
+
+    profile_data_filters => [
+#        { "name" => "Filter by country", "key" => "country" },
+#        { "name" => "Country of production", "key" => "country_of_production" },
+#        { "name" => "Primary Offering", "key" => "primary_offering" },
+#        { "name" => "Secondary Offering", "key" => "secondary_offering" },
+#        { "name" => "Primary Platform", "key" => "primary_platform" },
+#        { "name" => "Secondary Platform", "key" => "secondary_platform" },
+        { "name" => "Filter by category", "key" => "category" },
+        { "name" => "Filter by revenues", "key" => "company_revenues", "first_values" => [ "Pre-product", "Pre-revenue", "< 0.1M", "0.1M - 0.5M", "0.5M - 1M", "1M - 5M", "5M-10M" ] },
+        { "name" => "Company size", "key" => "number_of_employees", "first_values" => [ "< 5", "5 - 10", "10 - 20", "20 - 50", "50 - 100", "100 - 500", "> 500" ] },
+        { "name" => "Current funding", "key" => "funding_received", "first_values" => [ "No funding", "< 20k", "20 - 50k", "50 - 100k", "100 - 200k", "> 200k"] },
+        { "name" => "Looking for", "key" => "funding_looking_for", "first_values" => ["< 20k", "20 - 50k", "50 - 100k", "100 - 200k", "> 200k"] },
+    ],
+    list_unregistered_profiles => 0,
+    force_location_from_profile_data => 0,
+
+    google_docs_key_for_location => "",
+    require_matching_profile_data_keys => { accepted => 1 },
+
+    prefill_profile_data_csv_url => 'https://docs.google.com/spreadsheets/d/XXX/pub?gid=0&single=true&output=csv',
+    prefill_profile_data_gapier_token => '',
+    users_gapier_token => '',
+    reservations_gapier_token => '',
+
+    custom_suggested_reason => " * Mutual introductions\n\n * Investment opportunity presentation\n\n * Questions & answers\n\n * Next steps\n\n\nThis is an automatically generated agenda. Feel free to edit it.",
+    custom_default_description => '',
+
+    registration_alias => 'XXX-matchmaking-registration',
+    listing_alias => 'XXX-matchmaking-list',
+
+    show_youtube_url => 1,
+    do_not_force_https => 0,
+    disable_action_points_incomplete_reminders => 0,
+    hide_app_promotion => 0,
+    unlock_location_changing => 0,
+    unlock_date_changing => 0,
+};
+
+sub execute {
+    my ( $s ) = @_;
+    my $domain_id = `d lc meetings_domain`;
+    my $self = CTX->lookup_action('meetings_api');
+
+    if ( $domain_id == 76 ) {
+        $data->{domain_name} =~ s/\./-dev./;
+    }
+
+    my $partner = $self->PARTNERS_BY_DOMAIN_ALIAS->{ $data->{domain_name} };
+
+    if ( ! $partner ) {
+        $partner = CTX->lookup_object('meetings_partner')->new({});
+    }
+    $partner->domain_id( $domain_id );
+    $partner->creator_id( 0 );
+    $partner->creation_date( time );
+    $partner->api_key( '' );
+    $partner->domain_alias( $data->{domain_name} );
+    $partner->localization_namespace( $data->{domain_name} );
+    $partner->name( $data->{organizer_name} );
+    $partner->save;
+
+    if ( my $l = $data->{event_logo} ) {
+        $self->_set_note( override_pro_themes => 1, $partner );
+        $self->_set_note( pro_theme_header_image => $l, $partner );
+    }
+
+    if ( $data->{hide_app_promotion} ) {
+        $self->_set_note( hide_app_promotion => 1, $partner );
+    }
+
+    if ( my $n =  $data->{email_sender_name} ) {
+        $self->_set_note( from_email => '"' . $n . '" <notifications@meetin.gs>', $partner );
+    }
+
+    # just in case this is used later somewhere
+    $self->PARTNERS_BY_ID->{ $partner->id } = $partner;
+
+    my $me = CTX->lookup_object('meetings_matchmaking_event')->fetch_group({
+        where => 'domain_id = ? AND custom_name = ?',
+        value => [ $domain_id, $data->{event_name} ],
+    })->[0];
+
+    if ( ! $me ) {
+        $me = CTX->lookup_object('meetings_matchmaking_event')->new({});
+    }
+
+    $me->domain_id( $domain_id );
+    $me->partner_id( $partner->id );
+    $me->custom_name( $data->{event_name} );
+    $me->organizer_name( $data->{organizer_name} );
+    $me->creator_id( 0 );
+    $me->creation_date( $me->creation_date || time );
+    $me->begin_date( 0 );
+    $me->end_date( 0 );
+    $me->organizer_url( $data->{event_website} );
+    $me->organizer_email( $data->{support_email} );
+
+    $me->save;
+
+
+    my $available_timespans = [];
+    for my $span ( @{ $data->{spans} } ) {
+        my $available_span = {};
+        for my $x ( qw( start end ) ) {
+            my ( $y, $m, $d, $h, $i ) = $span->{ $x } =~ /(....).(..).(..) (..).(..)/;
+            $available_span->{ $x } = new DateTime( year => $y, month => $m, day => $d, hour => $h, minute => $i, time_zone => $data->{time_zone} )->epoch;
+        }
+        push @$available_timespans, $available_span;
+    }
+
+    $self->_set_notes( {
+        force_vanity_url_path => $data->{event_shorthand},
+        force_time_zone => $data->{time_zone},
+        force_duration => $data->{duration_minutes},
+        force_buffer => 0,
+        force_available_timespans => $available_timespans,
+        locations_description => $data->{locations_description},
+        force_location => $data->{force_location},
+        force_online_conferencing_option => 'disabled',
+        default_background_image_url => '',
+        show_youtube_url => $data->{show_youtube_url} || 0,
+        organizer_return_url => $data->{return_url},
+        list_unregistered_profiles => $data->{list_unregistered_profiles},
+        force_location_from_profile_data => $data->{force_location_from_profile_data},
+        prefill_profile_data_csv_url => $data->{prefill_profile_data_csv_url},
+        prefill_profile_data_gapier_token => $data->{prefill_profile_data_gapier_token},
+        users_gapier_token => $data->{users_gapier_token},
+        reservations_gapier_token => $data->{reservations_gapier_token},
+        default_description => $data->{custom_default_description} || "Hello! I have made my calendar available for you to schedule a meeting at " . $data->{event_name} . ". Please click on the button below to suggest a time to meet me.",
+        suggested_reason => $data->{custom_suggested_reason} || " * Mutual introductions\n\n * Co-operation opportunity\n\n * Questions & answers\n\n * Next steps",
+        extra_user_matchmaker_html_url_base => '/meetings_raw/generic_company_html/?event_id=' . $me->id,
+        alternative_profile_data_keys => { "image" => "logo",  "title" => "company", "description" => "company_description" },
+        require_matching_profile_data_keys => $data->{require_matching_profile_data_keys},
+        google_docs_key_for_phone => "Phone",
+        google_docs_key_for_organization => "Company",
+        google_docs_key_for_location => $data->{google_docs_key_for_location},
+        profile_data_filters => $data->{profile_data_filters},
+        do_not_force_https => $data->{do_not_force_https},
+        disable_action_points_incomplete_reminders => $data->{disable_action_points_incomplete_reminders},
+        unlock_location_changing => $data->{unlock_location_changing},
+        unlock_date_changing => $data->{unlock_date_changing},
+    }, $me );
+
+
+    for my $alias_key ( qw( registration_alias listing_alias ) ) {
+        my $alias = $data->{ $alias_key };
+        my $ua = CTX->lookup_object('url_alias')->fetch_group( {
+            where => "domain_id = ? AND alias = ?",
+            value => [ $domain_id, $alias ],
+            order => 'creation_date desc'
+        } )->[0];
+
+        next if $ua && ( $ua->additional eq '["'. $me->id .'"]' );
+
+        $ua = CTX->lookup_object('url_alias')->new({});
+        $ua->domain_id( $domain_id );
+        $ua->group_id( 0 );
+        $ua->user_id( 0 );
+        $ua->creation_date( $ua->creation_date || time );
+        $ua->alias( $alias );
+        $ua->action( 'meetings' );
+        $ua->task( ( $alias_key eq 'registration_alias' ) ? 'wizard' : 'matchmaking_list' );
+        $ua->additional( '["'. $me->id .'"]' );
+        $ua->save;
+    }
+
+    my $locations = CTX->lookup_object('meetings_matchmaking_location')->fetch_group({
+        where => 'domain_id = ? AND matchmaking_event_id = ?',
+        value => [ $domain_id, $me->id ],
+    });
+
+    if ( my $c = $data->{location_count} ) {
+        my $availability_data = [];
+        for my $span ( @{ $data->{spans} } ) {
+            my $adata = {
+                mode => 'add',
+                recur_params => { freq => 'minutely', interval => ( ( $data->{location_gap_minutes} || 0 ) + $data->{duration_minutes} ) },
+                duration_params => { minutes => $data->{duration_minutes} },
+            };
+
+            for my $x ( qw( start end ) ) {
+                my ( $y, $m, $d, $h, $i ) = $span->{ $x } =~ /(....).(..).(..) (..).(..)/;
+                my $dt = DateTime->new( time_zone => $data->{time_zone}, year => $y, month => $m, day => $d, hour => $h, minute => $i );
+                $dt->subtract( minutes => 1 ) if $x eq 'end';
+                $adata->{ $x . '_params' } = {
+                    year => $dt->year, month => $dt->month, day => $dt->day,
+                    hour => $dt->hour, minute => $dt->minute, time_zone => $data->{time_zone},
+                };
+            };
+
+            push @$availability_data, $adata;
+        }
+
+        my $availability_json = Dicole::Utils::JSON->encode( $availability_data );
+        my %lookup = map { $_->name => $_ } @$locations;
+
+        for my $id ( 1..$c ) {
+            my $name = $data->{location_name_prefix} . $id . $data->{location_name_suffix};
+
+            my $l = delete $lookup{ $name };
+
+            $l ||= CTX->lookup_object('meetings_matchmaking_location')->new({});
+
+            $l->name( $name );
+            $l->domain_id( $domain_id );
+            $l->creator_id( 0 );
+            $l->matchmaking_event_id( $me->id );
+            $l->matchmaker_id( 0 );
+            $l->creation_date( $l->creation_date || time );
+            $l->deletion_date( 0 );
+            $l->availability_data( $availability_json );
+            $l->save;
+        }
+
+        for my $key ( keys %lookup ) {
+            $lookup{ $key }->remove;
+        }
+    }
+}
+
+1;

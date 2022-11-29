@@ -1,0 +1,51 @@
+[% IF suggestions.categories.size > 0 || suggestions.other.size > 0 %]
+
+[% IF tag_complete_url %]
+<div class="tagFilter">
+<a id="presentations_tagsearch_input_autofill_url" href="[% tag_complete_url %]" style="display:none"></a>
+[% MSG('Type an additional keyword:') | html %] <input id="presentations_tagsearch_input" class="f_dicole_autofill" />
+<a class="js_presentations_tagsearch_input_go" href="#">[% MSG('Filter') | html %]</a>
+<br/>
+[% END %]
+</div>
+<div>[% MSG('Or choose one from the list:') | html %] </div>
+[% IF suggestions.categories.size > 0 %]
+<div class="tagCategories">
+    <table class="tagCategoriesCenter"><tr>
+	    [%- FOREACH cat IN suggestions.categories %]
+        <td>
+        <div class="tagCategoryList">
+            <h3>[% cat.title %]</h3>
+    	    [%- FOREACH tag IN cat.tags %]
+    		    <a class="tag [% tag.class %]" href="#" title="[% tag.name | html %]">[% tag.name | html %]<span> ([% tag.weight %])</span></a>[% IF ! loop.last %]<br/>[% END %]
+    	    [%- END %]
+        </div>
+        </td>
+    	[%- END %]
+    </tr></table>
+</div>
+<div style="clear:both"></div>
+[% END %]
+<div>
+[% IF suggestions.other.size > 0 %]
+[% IF suggestions.categories.size > 0 %]
+<div class="miniTagCloudTitle">[% MSG("Other:") | html %]</div>
+[% END %]
+
+<div class="miniTagCloud js_open_more" id="js_prese_suggestion_cloud">
+	[%- FOREACH tag IN suggestions.other %]
+		<a class="tag [% tag.class %]" href="#" title="[% tag.name | html %]">[% tag.name | html %]<span> ([% tag.weight %])</span></a>
+	[%- END %]
+</div>
+[% IF suggestions.other.size < suggestions.other_full.size %]
+<div class="miniTagCloudMore"><a href="#" class="js_js_prese_suggestion_cloud_more_button" data-hide-on-more="true">[% MSG("Show more") | html %] &darr;</a></div>
+<div class="miniTagCloud js_js_prese_suggestion_cloud_more_container" style="display: none">
+	[%- FOREACH tag IN suggestions.other_full %]
+		<a class="tag [% tag.class %]" href="#" title="[% tag.name | html %]">[% tag.name | html %]<span> ([% tag.weight %])</span></a>
+	[%- END %]
+</div>
+[% END %]
+[% END %]
+</div>
+
+[% END %]

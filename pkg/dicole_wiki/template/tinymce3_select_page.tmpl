@@ -1,0 +1,71 @@
+            <div class="content"><!-- content -->
+                 <form accept-charset="utf-8" enctype="application/x-www-form-urlencoded" id="Form" method="post" name="Form" >
+<div class="toolPath blueLinks"><!-- toolPath --></div>
+<!-- ===== Tool content ===== -->
+
+<div class="toolContent i_am_a_happy_popup">
+    <table class="toolContentAlign">
+        <tr>        
+            <td width="">                <div class="toolContentBox">
+
+                    <span class="boxLegend">[% MSG('Page selector') %]</span>
+                    <div class="contentItemContainer blueLinks">[% MSG('Type page name:') %]
+                    </div>
+                    <div class="contentItemContainer blueLinks"><input type="text" id="page_input" name="page" />
+
+                    </div>
+                    <div style="display: none" class="contentItemContainer blueLinks">[% MSG('Select page header:') %]
+                    </div>
+                    <div style="display: none" class="contentItemContainer blueLinks"><select id="header_input" name="header"><option value="">[% MSG('No header (top of the page)') %]</option></select>
+
+                    </div>
+                    <div class="contentItemContainer blueLinks">[% MSG('Or select page from list:') %]
+                    </div>
+                    <div class="contentItemContainer blueLinks"><table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td style="width: 100%">
+<div width="100%" style=" height: 250px; overflow: auto;"><div style="margin: 2px">
+<div id="title_select_container"></div></div>
+</div>
+</td>
+<td style="width: 200px">
+<div style=" height: 250px; width: 200px;"><div style="margin: 2px">
+<div>
+<div class="verticalContent">
+
+    <a  id="latest_bar" href="" class="linkBar latest_pages">
+[% MSG('Latest pages') %]
+</a>
+
+</div>
+<div class="verticalContent">
+    <a  id="alphabetic_bar" href="" class="linkBar pages_alphabetically">
+[% MSG('Pages alphabetically') %]
+</a>
+
+</div>
+</div></div>
+</div>
+</td>
+</tr></table>
+
+                    </div>
+                    <div class="contentItemContainer blueLinks"><div  class="horizontalContent">
+<span class="horizontalContentItem">
+    <a href="" class="linkButton" onclick="execute_popup(); return false;">[% MSG('Choose') %]</a>
+
+</span>
+<span class="horizontalContentItem">
+    <a href="" class="linkButton" onclick="cancel_popup(); return false;">[% MSG('Cancel') %]</a>
+
+</span>
+
+</div>
+
+                    </div>
+                </div>            </td>        </tr>
+    </table>
+</div>
+</form>
+            </div>
+
+<script type="text/javascript">wiki_popup_init();</script>

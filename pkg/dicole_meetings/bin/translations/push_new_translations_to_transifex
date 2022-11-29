@@ -1,0 +1,12 @@
+#!/bin/bash
+bin/translations/update_target_pot_files $1
+ls -la src/locale/*.pot
+read -p "Are you ABSOLUTELY sure that the POT files above look healthy? Press y to continue: " -n 1
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    echo ""
+    exit 1
+fi
+echo ""
+
+tx push -s

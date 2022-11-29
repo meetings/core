@@ -1,0 +1,20 @@
+div#meeting-settings
+    // Required params:
+    div.setting-head
+        h3.setting-title
+            i.icon.ico-time
+            !=MTN.t('Choose your timezone')
+        p.setting-desc!=MTN.t('Setup the timezone you want to use.')
+    div.setting-content.m-form
+        p!=MTN.t("When you select a new time zone, our service converts all your meeting starting times to match your new time zone setting.")
+        label(for='timezone')!=MTN.t('Time Zone:')
+            select#timezone(name='timezone',class='chosen timezone-select')
+                each tz in dicole.get_global_variable('meetings_time_zone_data')['choices']
+                    if(user.time_zone == tz)
+                        option(value=tz,selected='selected')=dicole.get_global_variable('meetings_time_zone_data')['data'][tz].readable_name
+                    else
+                        option(value=tz)=dicole.get_global_variable('meetings_time_zone_data')['data'][tz].readable_name
+        p#js_timezone_preview=moment().utc().add('seconds', user.time_zone_offset).format('HH:mm dddd')
+    div.setting-footer
+        a.button.blue.save-timezone
+            span.label!=MTN.t('Save')

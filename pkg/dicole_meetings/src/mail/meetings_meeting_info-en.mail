@@ -1,0 +1,94 @@
+[% MTN.t('Info: %1$s',[meeting_title]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Information about') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>
+[% IF meeting_time != "" %]
+<<<bold>>>[% MTN.t('When:') %]<<</bold>>> [% meeting_time %]
+[% END %]
+
+[% IF meeting_location %]
+<<<br>>>
+<<<bold>>>[% MTN.t('Where:') %]<<</bold>>> [% meeting_location %]
+[% END %]
+
+[% IF in_text %]
+<<<br>>>
+[% MTN.t('Who:') %] [% meeting_participants %]
+[% END %]
+<<</p>>>
+
+<<<p>>>
+[% IF meeting_time == "" && scheduling_options.size > 0 %]
+<<<bold>>>[% MTN.t("Suggested time:", "Suggested times:",{ plural => scheduling_options.size }) %]<<</bold>>><<<br>>>
+[% FOREACH option IN scheduling_options %]
+[% option %]<<<br>>>
+[% END %]
+[% END %]
+<<</p>>>
+
+<<<p>>>
+[% IF meeting_time == "" && open_scheduling_options.size > 0 %]
+[% MTN.t('Please note that your help is needed to find a suitable time for %1$s. To help finding the right time, reply to this message with SCHEDULE.',[meeting_title]) %]
+
+[% MTN.t('You will then receive the suggested time by email. Please respond to the email with YES or NO.','You will then receive %1$s suggested times by email. Please respond to each of them with YES or NO.', { plural => open_scheduling_options.size, params => [open_scheduling_options.size] } ) %]
+
+<<</p>>>
+
+<<<p>>>[% MTN.t('You can also respond on the meeting page.') %]
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=meeting_info' %]
+[% text = MTN.t('View meeting') %]
+<<<blue_button>>>
+
+[% ELSE %]
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=meeting_info' %]
+[% text = MTN.t('View meeting') %]
+<<<blue_button>>>
+
+[% END %]<<</p>>>
+
+<<<p>>>[% MTN.t('Share materials by emailing them here:') %]<<<br>>>
+[% text = meeting_email %]
+[% url = "mailto:" _ meeting_email %]
+<<<mailto>>><<</p>>>
+
+<<<p>>>
+[% MTN.t('The materials you send as attachments will appear on the meeting page. The message you write in the text field of the same email will appear as a comment to that material. You can also share materials on the meeting page.') %]
+<<</p>>>
+
+[% IF ! in_html %]
+
+[% IF materials %]
+<<<p>>>[% MTN.t('Shared materials:') %]<<</p>>>
+<<<list>>>
+[% FOREACH material IN materials %]
+<<<item>>>
+[% IF in_html %]
+<a href="[% material.url %]">[% material.title %]</a> by <<<italic>>>[% material.author_name %]<<</italic>>> [% material.timestamp %]
+[% ELSE %]
+[% material.title %] by [% material.author_name %] [% material.timestamp %]
+[% END %]
+<<</item>>>
+[% END %]
+<<</list>>>
+[% END %]
+
+[% IF number_of_comments !=0 %]
+<<<p>>>
+[% MTN.t('%(B$%1$s%) comments have been shared.',[number_of_comments]) %]
+<<</p>>>
+[% END %]
+
+[% END %]
+
+<<</bubble>>>
+
+<<<summary_screenshot>>>
+
+<<</html_wrapper>>>

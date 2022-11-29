@@ -1,0 +1,9 @@
+[% IF in_html %]
+[% IF inthebubble %]
+[% hrmargins = 'margin-left:15px; margin-right:15px;' %]
+[% ELSE %]
+[% hrmargins = 'margin-left:50px; margin-right:50px;' %]
+[% END %]
+<hr style="color:#c0bebe;background:#c0bebe;min-height:0px;border-left:0px;border-right:0px;border-top:1px solid #c0bebe;border-bottom: 1px solid #ffffff; [% hrmargins %]"/>
+[% END %]
+---N---

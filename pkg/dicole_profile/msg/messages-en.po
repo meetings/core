@@ -1,0 +1,305 @@
+# $Id: messages-en.po,v 1.7 2009-01-07 14:42:33 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:10:29+0000\n"
+"PO-Revision-Date: 2005-03-22 02:10:29+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "-- Select --"
+msgstr "-- Select --"
+
+msgid "AIM screen name"
+msgstr "AIM screen name"
+
+msgid "Address"
+msgstr "Address"
+
+msgid "Basic contact information"
+msgstr "Basic contact information"
+
+msgid "Basic information"
+msgstr "Basic information"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Changes were saved."
+msgstr "Changes were saved."
+
+msgid "Cities worked"
+msgstr "Cities worked"
+
+msgid "City"
+msgstr "City"
+
+msgid "Contact information"
+msgstr "Contact information"
+
+msgid "Country"
+msgstr "Country"
+
+msgid "Date of birth"
+msgstr "Date of birth"
+
+msgid "Degree"
+msgstr "Degree"
+
+msgid "Deny editing profile of a user"
+msgstr "Deny editing profile of a user"
+
+msgid "Department or unit"
+msgstr "Department or unit"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Edit profile"
+msgstr "Edit profile"
+
+msgid "Edit profile of a user"
+msgstr "Edit profile of a user"
+
+msgid "Education"
+msgstr "Education"
+
+msgid "Education overview"
+msgstr "Education overview"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Failed modifying profile: %1"
+msgstr "Failed modifying profile: %1"
+
+msgid "Favorite books or publications"
+msgstr "Favorite books or publications"
+
+msgid "Favorite music, movies, artists..."
+msgstr "Favorite books, music, movies, artists..."
+
+msgid "Favorite events or tradeshows"
+msgstr "Favorite events or tradeshows"
+
+msgid "Fax number"
+msgstr "Fax number"
+
+msgid "Female"
+msgstr "Female"
+
+msgid "Full name"
+msgstr "Full name"
+
+msgid "Gender"
+msgstr "Gender"
+
+msgid "Hobbies"
+msgstr "Hobbies"
+
+msgid "Home phone"
+msgstr "Home phone"
+
+msgid "ICQ number"
+msgstr "ICQ number"
+
+msgid "Identification number"
+msgstr "Identification number"
+
+msgid "Interests"
+msgstr "Interests"
+
+msgid "International cooperation"
+msgstr "International cooperation"
+
+msgid "Jabber"
+msgstr "Jabber"
+
+msgid "Male"
+msgstr "Male"
+
+msgid "MSN profile"
+msgstr "MSN profile"
+
+msgid "Mobile phone"
+msgstr "Mobile phone"
+
+msgid "Not available."
+msgstr "Not available."
+
+msgid "Organization"
+msgstr "Organization"
+
+msgid "Organizations worked"
+msgstr "Organizations worked"
+
+msgid "Other degree"
+msgstr "Other degree"
+
+msgid "Past organization"
+msgstr "Past organization"
+
+msgid "Past title"
+msgstr "Past title"
+
+msgid "Personal"
+msgstr "Personal"
+
+msgid "Personal description"
+msgstr "Personal description"
+
+msgid "Personal heroes"
+msgstr "Personal heroes"
+
+msgid "Personal mantra"
+msgstr "Personal mantra"
+
+msgid "Personal weblog"
+msgstr "Personal weblog"
+
+msgid "Personal website"
+msgstr "Personal website"
+
+msgid "Phone"
+msgstr "Phone"
+
+msgid "Postal address"
+msgstr "Postal address"
+
+msgid "Postal code"
+msgstr "Postal code"
+
+msgid "Professional"
+msgstr "Professional"
+
+msgid "Professional description"
+msgstr "Professional description"
+
+msgid "Professional goals"
+msgstr "Professional goals"
+
+msgid "Professional history"
+msgstr "Professional history"
+
+msgid "Professional mantra"
+msgstr "Professional mantra"
+
+msgid "Professional mentors"
+msgstr "Professional mentors"
+
+msgid "Professional website"
+msgstr "Professional website"
+
+msgid "Profile"
+msgstr "Profile"
+
+msgid "Research done"
+msgstr "Research done"
+
+msgid "View profile"
+msgstr "View profile"
+
+msgid "Room number"
+msgstr "Room number"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "School"
+msgstr "School"
+
+msgid "Skills"
+msgstr "Skills"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Spoken languages"
+msgstr "Spoken languages"
+
+msgid "State"
+msgstr "State"
+
+msgid "Street address"
+msgstr "Street address"
+
+msgid "Target degree"
+msgstr "Target degree"
+
+msgid "Technical skills"
+msgstr "Technical skills"
+
+msgid "Telephone"
+msgstr "Telephone"
+
+msgid "Timezone"
+msgstr "Timezone"
+
+msgid "Title or position"
+msgstr "Title or position"
+
+msgid "Titles held"
+msgstr "Titles held"
+
+msgid "Unknown"
+msgstr "Unknown"
+
+msgid "User can edit profile"
+msgstr "User can edit profile"
+
+msgid "Image to upload in GIF or JPG format"
+msgstr "Image to upload in GIF or JPG format"
+
+msgid "Upload"
+msgstr "Upload"
+
+msgid "Upload image"
+msgstr "Upload image"
+
+msgid "Personal portrait"
+msgstr "Personal portrait"
+
+msgid "Professional portrait"
+msgstr "Professional portrait"
+
+msgid "Image uploaded."
+msgstr "Image uploaded."
+
+msgid "Error while converting image."
+msgstr "Error while converting image."
+
+msgid "Upload image in GIF or JPG format."
+msgstr "Upload image in GIF or JPG format."
+
+msgid "Error while uploading file. Upload does not exist."
+msgstr "Error while uploading file. Upload does not exist."
+
+msgid "Upload failed: %1"
+msgstr "Upload failed: %1"
+
+msgid "No image."
+msgstr "No image."
+
+msgid "Profile image"
+msgstr "Profile image"
+
+msgid "Image to upload"
+msgstr "Image to upload"
+
+msgid "Show profile"
+msgstr "Show profile"
+
+msgid "Personal profile includes the professional and personal profiles and contact information of a user."
+msgstr "Personal profile includes the professional and personal profiles and contact information of a user."
+
+msgid "Welcome %1! Today is %2 and the time is %3."
+msgstr "Welcome %1! Today is %2 and the time is %3."
+
+msgid "Welcome!"
+msgstr "Welcome!"

@@ -1,0 +1,17 @@
+div.input-row
+    div.input-label-row
+        span Tapaamisten pituus:
+
+div.input-row
+    span.input-label Etutaso 0-1
+    select.object-field(x-data-object-field='etutaso0-1_length_minutes')
+        option(value='60',selected='60'==(typeof(admin_setting)=='undefined'?undefined:admin_setting['etutaso0-1_length_minutes'])?'selected':undefined) 1 tunti
+        option(value='90',selected='90'==(typeof(admin_setting)=='undefined'?undefined:admin_setting['etutaso0-1_length_minutes'])?'selected':undefined) 1,5 tuntia
+        option(value='120',selected='120'==(typeof(admin_setting)=='undefined'?undefined:admin_setting['etutaso0-1_length_minutes'])?'selected':undefined) 2 tuntia
+
+div.input-row
+    span.input-label Etutaso 2-4
+    select.object-field(x-data-object-field='etutaso2-4_length_minutes')
+        option(value='60',selected='60'==(typeof(admin_setting)=='undefined'?undefined:admin_setting['etutaso2-4_length_minutes'])?'selected':undefined) 1 tunti
+        option(value='90',selected='90'==(typeof(admin_setting)=='undefined'?undefined:admin_setting['etutaso2-4_length_minutes'])?'selected':undefined) 1,5 tuntia
+        option(value='120',selected='120'==(typeof(admin_setting)=='undefined'?undefined:admin_setting['etutaso2-4_length_minutes'])?'selected':undefined) 2 tuntia

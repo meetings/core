@@ -1,0 +1,69 @@
+<div id="modal-matchmaking-confirm" class="m-modal">
+<div class="modal-header">
+    <h3><%= MTN.t('Confirm the time') %></h3>
+</div>
+<div class="modal-content">
+    <!-- If time zone differs -->
+    <% if( p.user_agent_timezone !== p.original_matchmaker_timezone) { %>
+
+    <!-- their timezone -->
+    <div style="<%= p.matchmaker_timezone !== p.original_matchmaker_timezone ? 'display:none' : '' %>" class="timezone_theirs">
+        <p class="weekday_day_month"><%== p.time_parts.weekday_readable %>, <%== p.time_parts.day_and_month_readable %></p>
+        <p class="time times_ampm" style="<%= p.default_time_display === '24h' ? 'display:none' : '' %>"><%== p.time_parts.start_time_ampm %> &mdash; <%== p.time_parts.end_time_ampm %></p>
+        <p class="time times_24h" style="<%= p.default_time_display === 'am_pm' ? 'display:none' : '' %>"><%== p.time_parts.start_time_24h %> &mdash; <%== p.time_parts.end_time_24h %></p>
+        <p class="in_days"><%== p.time_parts.in_days_readable %></p>
+        <p class="controls">
+            <a style="<%= p.default_time_display === '24h' ? 'display:none' : '' %>" class="times_change_24h" href="#"><%= MTN.t('12h clock') %><i class="ico-schedule"></i></a>
+            <a style="<%= p.default_time_display === 'am_pm' ? 'display:none' : '' %>" class="times_change_ampm" href="#"><%= MTN.t('24h clock') %><i class="ico-schedule"></i></a> &nbsp; 
+            <a class="timezone_change_users" href="#"><%== p.time_parts.timezone_readable %> <span style="text-decoration:underline;"><%= MTN.t('show in my timezone') %></span></a>
+        </p>
+    </div>
+
+    <!-- user timezone -->
+    <div style="<%= p.matchmaker_timezone !== p.original_matchmaker_timezone ? '' : 'display:none' %>" class="timezone_users">
+        <p class="weekday_day_month"><%== p.user_time_parts.weekday_readable %>, <%== p.user_time_parts.day_and_month_readable %></p>
+        <p class="time times_ampm" style="<%= p.default_time_display === '24h' ? 'display:none' : '' %>"><%== p.user_time_parts.start_time_ampm %> &mdash; <%== p.user_time_parts.end_time_ampm %></p>
+        <p class="time times_24h" style="<%= p.default_time_display === 'am_pm' ? 'display:none' : '' %>"><%== p.user_time_parts.start_time_24h %> &mdash; <%== p.user_time_parts.end_time_24h %></p>
+        <p class="in_days"><%== p.user_time_parts.in_days_readable %></p>
+        <p class="controls">
+            <a style="<%= p.default_time_display === '24h' ? 'display:none' : '' %>" class="times_change_24h" href="#"><%= MTN.t('12h clock') %><i class="ico-schedule"></i></a>
+            <a style="<%= p.default_time_display === 'am_pm' ? 'display:none' : '' %>" class="times_change_ampm" href="#"><%= MTN.t('24h clock') %><i class="ico-schedule"></i></a> &nbsp; 
+            <a class="timezone_change_theirs" href="#"><%== p.user_time_parts.timezone_readable %> <span style="text-decoration:underline;"><%= MTN.t('show in their timezone') %></span></a>
+        </p>
+    </div>
+
+    <% } else { %>
+    <p class="weekday_day_month"><%== p.time_parts.weekday_readable %>, <%== p.time_parts.day_and_month_readable %></p>
+    <p class="time times_ampm" style="<%= p.default_time_display === '24h' ? 'display:none' : '' %>"><%== p.time_parts.start_time_ampm %> &mdash; <%== p.time_parts.end_time_ampm %></p>
+    <p class="time times_24h" style="<%= p.default_time_display === 'am_pm' ? 'display:none' : '' %>"><%== p.time_parts.start_time_24h %> &mdash; <%== p.time_parts.end_time_24h %></p>
+    <p class="in_days"><%== p.time_parts.in_days_readable %></p>
+    <p class="controls">
+        <a style="<%= p.default_time_display === '24h' ? 'display:none' : '' %>" class="times_change_24h" href="#"><%= MTN.t('12h clock') %><i class="ico-schedule"></i></a>
+        <a style="<%= p.default_time_display === 'am_pm' ? 'display:none' : '' %>" class="times_change_ampm" href="#"><%= MTN.t('24h clock') %><i class="ico-schedule"></i></a> &nbsp; 
+        <%== p.time_parts.timezone_readable %>
+    </p>
+
+    <% } %>
+   <% if ( ! p.quickmeet ) { %>
+    
+    <p><%= MTN.t('You have %(B$15 minutes%) to complete this form. Leave a note or preliminary agenda on why you want to meet.') %></p>
+    <form id="meetings_matchmaking_confirm_form" action="#" class="m-form">
+        <label for="meetme-agenda"><%= MTN.t('Why do you want to meet and what the proposed agenda will be?') %></label>
+        <textarea id="meetme-agenda" name="agenda" rows="10" cols="30"><%== p.event_data && p.event_data.suggested_reason ? p.event_data.suggested_reason : '' %></textarea>
+    </form>
+
+
+    <% } %>
+    </div>
+    <div class="modal-footer">
+        <div class="buttons right">
+            <a class="button pink matchmaking-submit" href="#">
+                <%= MTN.t('Confirm') %>
+            </a>
+            <a class="button gray cancel-lock" href="#">
+                <%= MTN.t('Cancel') %>
+            </a>
+        </div>
+    </div>
+</div>
+

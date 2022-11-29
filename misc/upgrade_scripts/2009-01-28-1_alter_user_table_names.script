@@ -1,0 +1,8 @@
+
+sub execute {
+    my ( $self ) = @_;
+    Dicole::Utils::SQL->execute_sql('alter table sys_user add middle_name varchar(50) after first_name');
+    Dicole::Utils::SQL->execute_sql('alter table sys_user add name varchar(150) after last_name');
+}
+
+1;

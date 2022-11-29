@@ -1,0 +1,270 @@
+# $Id: messages-fi.po,v 1.15 2007-05-29 09:43:14 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:07:45+0000\n"
+"PO-Revision-Date: 2005-03-22 02:07:45+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add page"
+msgstr "Lisää sivu"
+
+msgid "Front page"
+msgstr "Etusivu"
+
+msgid "Configuration saved."
+msgstr "Asetukset tallennettu."
+
+msgid "Configure wiki"
+msgstr "Wikin asetusten määritys"
+
+msgid "Content"
+msgstr "Sisältö"
+
+msgid "Create wiki pages"
+msgstr "Wikisivujen luonti"
+
+msgid "Deny wiki moderation"
+msgstr "Poista wikisivujen muokkaus käytöstä"
+
+msgid "Deny wiki use"
+msgstr "Poista wiki käyttöoikeus"
+
+msgid "Edit wiki pages"
+msgstr "Wikisivujen muokkaus"
+
+msgid "Edit page"
+msgstr "Muokkaa sivua"
+
+msgid "Failed to create page: %1"
+msgstr "Sivun: %1 luonti epäonnistui"
+
+msgid "Failed to save page: %1"
+msgstr "Sivun: %1 tallennus epäonnistui"
+
+msgid "Go to start page"
+msgstr "Siirry aloitussivulle"
+
+msgid "Group does not have a front page!"
+msgstr "Ryhmällä ei ole etusivua!"
+
+msgid "Wiki"
+msgstr "Wiki"
+
+msgid "Wiki configuration"
+msgstr "wikin asetukset"
+
+msgid "Wiki front page"
+msgstr "Wikin etusivu"
+
+msgid "Wiki system for collaborative document writing."
+msgstr "Wiki-järjestelmä on yhteisöllisen kirjoittamisen työkalu."
+
+msgid "Wiki moderator"
+msgstr "Wikin ylläpitäjä"
+
+msgid "Wiki user"
+msgstr "Wiki käyttäjä"
+
+msgid "Last modified"
+msgstr "Viimeinen muokkaus"
+
+msgid "List pages"
+msgstr "Listaa sivut"
+
+msgid "Lock wiki pages"
+msgstr "Wikisivujen lukinta"
+
+msgid "Lock page"
+msgstr "Lukitse sivu"
+
+msgid "No pages found."
+msgstr "Sivuja ei ole saatavilla."
+
+msgid "Page %1 information"
+msgstr "Sivun %1 tiedot"
+
+msgid "Page has been created."
+msgstr "Sivu luotiin onnistuneesti."
+
+msgid "Page has been saved."
+msgstr "Sivu tallennettiin onnistuneesti."
+
+msgid "Page information"
+msgstr "Sivun tiedot"
+
+msgid "Page is locked!"
+msgstr "Sivu on lukittu!"
+
+msgid "Page listing"
+msgstr "Sivujen listaus"
+
+msgid "Page with this name exists already!"
+msgstr "Samanniminen sivu on jo olemassa!"
+
+msgid "Page you requested does not exist!"
+msgstr "Hakemaasi sivua ei ole saatavilla!"
+
+msgid "Read wiki"
+msgstr "Wikin lukeminen"
+
+msgid "Recently changed wiki pages"
+msgstr "Viimeksi päivitetyt wikisivut"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Select base version:"
+msgstr "Valitse pohjaversio:"
+
+msgid "Settings"
+msgstr "Asetukset"
+
+msgid "Title"
+msgstr "Otsikko"
+
+msgid "Unlock page"
+msgstr "Poista sivun lukitus"
+
+msgid "User can configure wiki tool in this group"
+msgstr "Käyttäjä voi muokata wiki-työkalua tässä ryhmässä"
+
+msgid "User can create wiki pages in this group"
+msgstr "Käyttäjä voi luoda wikisivuja tässä ryhmässä"
+
+msgid "User can edit wiki pages in this group"
+msgstr "Käyttäjä voi muokata wikisivuja tässä ryhmässä"
+
+msgid "User can lock and unlock wiki pages in this group"
+msgstr "Käyttäjä voi lukita ja vapauttaa wikisivuja tässä ryhmässä"
+
+msgid "User can read wiki in this group"
+msgstr "Käyttäjä voi lukea wikisivuja tässä ryhmässä"
+
+msgid "Show page"
+msgstr "Näytä sivu"
+
+msgid "Page %1 has been locked."
+msgstr "Sivu %1 on lukittu."
+
+msgid "Page %1 has been unlocked."
+msgstr "Lukitus on poistettu sivulta %1."
+
+msgid "Remove page"
+msgstr "Poista sivu"
+
+msgid "This page and its version history will be completely removed. Are you sure you want to remove this page?"
+msgstr "Tämä sivu ja sen koko versiohistoria poistetaan kokonaan. Oletko varma, että haluat poistaa tämän sivun?"
+
+msgid "Front page cannot be removed."
+msgstr "Wikin etusivua ei voi poistaa."
+
+msgid "Error removing page %1."
+msgstr "Sivun %1 poistaminen epäonnistui."
+
+msgid "Page %1 successfully removed."
+msgstr "Sivu %1 on onnistuneesti poistettu."
+
+msgid "User can remove wiki pages in this group"
+msgstr "Käyttäjä voi poistaa wikisivuja tässä ryhmässä"
+
+msgid "Remove wiki pages"
+msgstr "Wikisivujen poisto"
+
+msgid "This page was last modified %1 by %2"
+msgstr "Tätä sivua muokkasi viimeksi %2 ajankohtana %1"
+
+msgid "Configuration"
+msgstr "Ominaisuudet"
+
+msgid "Last author"
+msgstr "Viimeisin muokkaaja"
+
+msgid "Page preview"
+msgstr "Sivun esikatselu"
+
+msgid "This is a preview page! It is not yet saved!"
+msgstr "Tämä on esikatselu! Sivua ei ole vielä tallennettu!"
+
+msgid "Somebody has changed this page after you started editing it!"
+msgstr "Joku on muuttanut sivua sen jälkeen kun aloit muokkaamaan sitä!"
+
+msgid "Preview"
+msgstr "Esikatselu"
+
+msgid "Forum designated for wiki discussions"
+msgstr "Wikisivuja varten tarkoitettu keskustelualue"
+
+msgid "Discussion"
+msgstr "Keskustelu"
+
+msgid "Number of messages in discussion: %1"
+msgstr "Viestien lukumäärä keskustelussa: %1"
+
+msgid "Last post by: %1 - %2"
+msgstr "Viimeisin viesti: %1 - %2"
+
+msgid "Start discussion"
+msgstr "Aloita keskustelu"
+
+msgid "Select discussion forum"
+msgstr "Valitse keskustelualue"
+
+msgid "Front page not yet created."
+msgstr "Wikin etusivua ei ole vielä määritelty."
+
+msgid "Front page"
+msgstr "Etusivu"
+
+msgid "Wiki rights"
+msgstr "Wikin oikeudet"
+
+msgid "Version history"
+msgstr "Versiohistoria"
+
+msgid "Show current page"
+msgstr "Näytä tämänhetkinen sivu"
+
+msgid "Changes from version %d to version %d"
+msgstr "Muutokset versiosta %d versioon %d"
+
+msgid "Requested version does not exists!"
+msgstr "Pyydettyä versiota ei ole olemassa!"
+
+msgid "Limit feed access by IP addresses (each on a separate line)"
+msgstr "Rajoita syötteen käyttö IP osoitteiden mukaan (yksi per rivi)"
+
+msgid "Recent changes"
+msgstr "Viimeisimmät muutokset"
+
+msgid "Conflicts during merging of concurrent edits. Edit not saved yet!"
+msgstr "Ongelmia yhdenaikaisten muokkausten yhdistämisessä! Sivua ei ole vielä tallennettu!"
+
+
+msgid ">>>>>>>>>> BEGINNING OF A CONFLICT"
+msgstr ">>>>>>>>>> ONGELMAKOHDAN ALKU"
+
+msgid ">>>>>>>>>> You wrote:"
+msgstr ">>>>>>>>>> Sinä kirjoitit:"
+
+msgid ">>>>>>>>>> %s wrote:"
+msgstr ">>>>>>>>>> %s kirjoitti:"
+
+msgid ">>>>>>>>>> END OF A CONFLICT"
+msgstr ">>>>>>>>>> ONGELMAKOHDAN LOPPU"
+
+msgid "Export all pages to a file"
+msgstr "Vie kaikki sivut tiedostoon"
+
+msgid "Old wiki"
+msgstr "Vanha wiki"
+
+msgid "Old wiki rights"
+msgstr "Vanhan wikin oikeudet"

@@ -1,0 +1,89 @@
+[% in_basic_info = 1 %] 
+
+[% IF in_html %]
+<table style="margin-top:15px;margin-bottom:15px;margin-left:15px;margin-right:15px;line-height:25px; font-size:15px; color:#4a4a4a;font-family:arial;">
+<tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+<td>
+[% ELSE %]
+---N---
+[% END %]
+
+[% IF ! disable_time %]
+<<<bold>>>[% MTN.t('When') %]<<</bold>>>: [% IF meeting_time %][% meeting_time %][% ELSE %][% MTN.t('Not known yet') %][% END %]<<<br>>>
+[% END %]
+
+<<<bold>>>[% MTN.t('Where') %]<<</bold>>>: [% IF meeting_location_string %][% meeting_location_string %][% ELSE %][% MTN.t('Not set') %][% END %]<<<br>>>
+
+[% IF lahixcustxz_hack %]
+[% IF lahixcustxz_hack.birthdate %]<<<bold>>>[% 'Syntymäpäivä' %]<<</bold>>>: [% lahixcustxz_hack.birthdate %]<<<br>>>[% END %]
+[% IF lahixcustxz_hack.address %]<<<bold>>>[% 'Osoite' %]<<</bold>>>: [% lahixcustxz_hack.address %]<<<br>>>[% END %]
+[% IF lahixcustxz_hack.area %]<<<bold>>>[% 'Postitoimipaikka' %]<<</bold>>>: [% lahixcustxz_hack.area %]<<<br>>>[% END %]
+[% IF lahixcustxz_hack.notes %]<<<bold>>>[% 'Viesti varaajalta' %]<<</bold>>>: [% lahixcustxz_hack.notes %]<<<br>>>[% END %]
+[% END %]
+
+[% IF in_text && meeting_participants %]
+<<<bold>>>[% MTN.t('Who') %]<<</bold>>>: [% meeting_participants %]
+<<<br>>>
+[% END %]
+
+[% IF in_html %]
+
+[% url = meeting_url %]
+[% showtext = 1 %]
+[% text = MTN.t('Open meeting page') %]
+<<<blue_button>>>
+</td>
+</tr>
+
+
+[% IF ics_url && gcal_url && ! calendar_links_disabled %]
+[% IF in_html %]
+<tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+<td colspan="2" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;font-size:15px; color:#4a4a4a; font-family:Arial,Verdana,sans-serif;">
+<<<bold>>>[% MTN.t('Add to calendar') %]: <<</bold>>>
+<a href="[% ics_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+MS Outlook
+</a> | 
+<a href="[% gcal_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+[% MTN.t('Google calendar') %]
+</a> | 
+<a href="[% ics_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+[% MTN.t('Other ICS') %]
+</a>
+</td>
+</tr>
+[% ELSE %]
+[% MTN.t('Calendar links:') %]---N---
+[% ics_url %]---N---
+[% gcal_url %]---N---
+[% END %]
+[% END %]
+
+[% IF allow_meeting_cancel %]
+[% IF in_html %]
+<tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+<td colspan="2" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;font-size:15px; color:#4a4a4a; font-family:Arial,Verdana,sans-serif;">
+<a href="[% meeting_cancel_url %]" style="font-family:Arial, Helvetica, sans-serif; color:[% theme_color %]; text-decoration:none;">
+[% MTN.t('Cancel meeting?') %]
+</a>
+</td>
+</tr>
+[% ELSE %]
+[% MTN.t('Cancel meeting:') %]---N---
+[% meeting_cancel_url %]---N---
+[% END %]
+[% END %]
+
+</table>
+[% ELSE %]
+---N---
+[% END %]
+
+[% IF ! in_html && basic_info_button_right %]
+[% url = meeting_url %]
+[% showtext = 1 %]
+[% text = MTN.t('Open meeting page') %]
+[% buttonright = 1 %]
+<<<blue_button>>>
+[% END %]
+[% in_basic_info = 0 %] 

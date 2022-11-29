@@ -1,0 +1,1 @@
+use_default_function => in_html ? 'L' : 'TL', style => in_html ? 'color:' _ theme_color _ '; font-family:Arial,Verdana,sans-serif;text-decoration:underline;' : ''

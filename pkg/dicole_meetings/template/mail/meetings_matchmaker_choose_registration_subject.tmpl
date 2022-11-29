@@ -1,0 +1,1 @@
+[% IF matchmaker_company && matchmaker_name == matchmaker_email %][% to_be_met = matchmaker_company %][% ELSIF matchmaker_company %][% to_be_met = matchmaker_name _ ' from ' _ matchmaker_company %][% ELSE %][% to_be_met = matchmaker_name %][% END %][% MTN.t('Confirm your request for a meeting with %1$s', [to_be_met]) %]

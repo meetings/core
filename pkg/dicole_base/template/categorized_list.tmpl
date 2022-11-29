@@ -1,0 +1,134 @@
+[% # $Id: categorized_list.tmpl,v 1.16 2009-03-10 01:22:23 amv Exp $ # %]
+
+[% DEFAULT
+
+itemparams.categories =>
+	[
+		{
+			name => 'July 2004'
+			href => 'http://www.ionstream.fi'
+			topics =>
+				[
+					{
+						name => '30th'
+						href => 'http://www.ionstream.fi'
+						entries =>
+							[
+								[
+									{
+										template => ''
+										width => '40%' # optional
+										params => ''
+									}
+								],
+								[
+									{
+										template => ''
+										width => '40%' # optional
+										params => ''
+									}
+								]
+							],
+					},
+					{
+						name => ''
+						href => 'http://www.ionstream.fi'
+						entries =>
+							[
+								[
+									{
+										template => ''
+										width => '40%' # optional
+										params => ''
+									}
+								],
+								[
+									{
+										template => ''
+										width => '40%' # optional
+										params => ''
+									}
+								]
+							],
+					},
+					{
+						name => '30th'
+						href => 'http://www.ionstream.fi'
+						entries =>
+							[
+								[
+									{
+										template => ''
+										width => '40%' # optional
+										params => ''
+									}
+								],
+								[
+									{
+										template => ''
+										width => '40%' # optional
+										params => ''
+									}
+								]
+							],
+					},
+					{
+						name => ''
+						href => 'http://www.ionstream.fi'
+						entries =>
+							[
+								[
+									{
+										template => ''
+										width => '40%' # optional
+										params => ''
+									}
+								],
+								[
+									{
+										template => ''
+										width => '40%' # optional
+										params => ''
+									}
+								],
+								[
+									{
+										template => ''
+										width => '40%' # optional
+										params => ''
+									}
+								],
+							],
+					}
+				]
+		}
+	]
+%]
+
+<div class="categorizedList">
+[% FOREACH cat = itemparams.categories %]
+[% lc = 0 %]
+					<div class="level_1_separator">[% IF cat.href %]<a href="[% cat.href %]" alt="[% cat.name %]">[% END %][% cat.name %][% '</a>' IF cat.href %]</div>
+					<table>
+	[% FOREACH topic = cat.topics %]
+		[% FOREACH entryLine = topic.entries %]
+						<tr class="[% IF lc % 2 == '1' %]odd[% END %][% ' newTopic' IF topic.name && loop.count == 1 %]">
+							<td width="1%" class="topic">
+								[% IF topic.name && loop.count == 1 %]
+									[% IF topic.href %]<a href="[% topic.href %]" alt="[% topic.name %]">[% END %]
+										[% topic.name %]
+									[% '</a>' IF topic.href %]
+								[% END %]
+							</td>
+			[% lc = lc + 1 %]
+			[% FOREACH entry = entryLine %]
+							<td width="[% IF entry.width %][% entry.width %][% ELSIF loop.count == '1' %]70%[% ELSIF loop.count == '1' %]29%[% END %]"[% IF entry.no_wrap %] class="desktopNoWrap"[% END %]>
+								[% PROCESS $entry.template itemparams = entry.params %]
+							</td>
+			[% END %]
+						</tr>
+		[% END %]
+	[% END %]
+					</table>
+[% END %]
+</div>

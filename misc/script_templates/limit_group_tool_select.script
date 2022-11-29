@@ -1,0 +1,22 @@
+my @tools = qw/group_files group_grouppages group_weblog group_forums group_virtualconference/;
+sub execute {
+	my ( $self ) = @_;
+	for my $toolid ( @tools ) {
+		my $tools =CTX->lookup_object('tool')->fetch_group( {
+			where => 'toolid = ?',
+			value => [$toolid],
+		} );
+                my $tool = shift @$tools;
+
+		my $groups = CTX->lookup_object('groups')->fetch_group( {
+			from => ['dicole_group_tool'],
+			where => 'dicole_group_tool.tool_id = ? AND dicole_group_tool.groups_id = dicole_groups.groups_id',
+			value => [ $tool->id ],
+		});
+                my @group_ids = map {$_->id} @$groups;
+		push @group_ids, '-1' unless scalar @group_ids;
+		$tool->groups_ids( join ",", @group_ids );
+                $tool->save;
+	}
+}
+

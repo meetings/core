@@ -1,0 +1,10 @@
+Osallistumisesi on rekisteröity
+
+Tervehdys [% user_name %],
+
+Osallistumisesi tapahtumaan [% event_title %] on rekisteröity.
+
+Pääset tapahtuman sivulle allaolevan linkin kautta seuraavan 24 tunnin ajan. Tämän jälkeen järjestelmä vaatii erillisen kirjautumisen.
+[% IF in_html %]<br/><a href="[% url %]">Mene sivulle</a>[% ELSE %][% url %][% END %]
+
+

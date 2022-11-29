@@ -1,0 +1,20 @@
+sub execute {
+    my $groups = CTX->lookup_object('groups')->fetch_group || [];
+    for my $group ( @$groups ) {
+        my $settings = Dicole::Settings->new(
+            tool => 'wiki', group => 1, group_id => $group->id
+        );
+        $settings->fetch_settings;
+        eval {
+            my $fp = $settings->setting('starting_page');
+            my $page = OpenInteract2::Action::DicoleWikiCommon->_fetch_page(
+                $fp, undef, $group->id
+            ) if $fp;
+            OpenInteract2::Action::DicoleWiki->_add_page_as_summary_page(
+                $page, $group->id
+            ) if $page;
+        };
+    }
+}
+
+1;

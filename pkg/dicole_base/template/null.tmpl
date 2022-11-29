@@ -1,0 +1,29 @@
+[%#- $Id: null.tmpl,v 1.11 2009-01-07 14:42:33 amv Exp $ -%]
+[%#-
+
+Null template used to present normal text when template is required
+
+	The template accepts the following information in itemparams:
+	{
+		no_filter	=> undef || def
+		text		=> 'text'
+	}
+
+
+-%]
+
+[%- UNLESS itemparams.no_filter %]
+[%- IF itemparams.html_line_break %]
+   [% itemparams.text = itemparams.text | html | html_line_break %]
+[%- ELSE %]
+   [% itemparams.text = itemparams.text | html | html_break %]
+[%- END %]
+[%- END %]
+[%- IF itemparams.preformatted %]<pre>[% END %]
+[%- IF itemparams.selected %]<span class="fieldRequiredMarker">&raquo;</span>[% END %]
+[%- IF itemparams.attributes %]<span [% FOREACH attr = itemparams.attributes -%]
+	[%- IF attr.value %] [% attr.key %]="[% attr.value | html %]"
+		[%- ELSE %] [% attr.key %]="[% attr.key %]"[% END %]
+	[%- END %]>
+[%- END %][% itemparams.text %][% '</span>' IF itemparams.attributes %]
+[% IF itemparams.preformatted %]</pre>[% END %]

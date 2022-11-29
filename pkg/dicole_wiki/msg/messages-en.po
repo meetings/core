@@ -1,0 +1,588 @@
+
+msgid "Browse pages"
+msgstr "Browse pages"
+
+msgid "Changed by %1"
+msgstr "Changed by %1"
+
+msgid "Create page"
+msgstr "Create page"
+
+msgid "Creating page '%1'"
+msgstr "Creating page '%1'"
+
+msgid "Wiki"
+msgstr "Wiki"
+
+msgid "Wiki system for collaborative document writing."
+msgstr "Wiki system for collaborative document writing."
+
+msgid "Group does not have a starting page!"
+msgstr "Group does not have a starting page!"
+
+msgid "Latest pages"
+msgstr "Latest pages"
+
+msgid "Links on this page"
+msgstr "Links on this page"
+
+msgid "Links to this page"
+msgstr "Links to this page"
+
+msgid "Locked by %1"
+msgstr "Locked by %1"
+
+msgid "New page creation"
+msgstr "New page creation"
+
+msgid "None"
+msgstr "None"
+
+msgid "Orphaned pages"
+msgstr "Orphaned pages"
+
+msgid "Or select page from list:"
+msgstr "Or select page from list:"
+
+msgid "Page already exists!"
+msgstr "Page already exists!"
+
+msgid "Page created!"
+msgstr "Page created!"
+
+msgid "Pages"
+msgstr "Pages"
+
+msgid "Pages alphabetically"
+msgstr "Pages alphabetically"
+
+msgid "Page selector"
+msgstr "Page selector"
+
+msgid "Pages linked to starting page"
+msgstr "Pages linked to starting page"
+
+msgid "Select page to use as base:"
+msgstr "Select page to use as base:"
+
+msgid "Sidebar page"
+msgstr "Sidebar page"
+
+msgid "Structure of wiki"
+msgstr "Structure of wiki"
+
+msgid "Type page name:"
+msgstr "Type page name:"
+
+msgid "Type the name of the page:"
+msgstr "Type the name of the page:"
+
+msgid "Wiki page %1"
+msgstr "Wiki page %1"
+
+msgid "Starting page"
+msgstr "Starting page"
+
+msgid "Reserving lock.."
+msgstr "Reserving lock.."
+
+msgid "Starting page not yet created."
+msgstr "Starting page not yet created."
+
+msgid "Back"
+msgstr "Back"
+
+msgid "Lock wiki pages"
+msgstr "Lock wiki pages"
+
+msgid "Page you requested does not exist"
+msgstr "Page you requested does not exist"
+
+msgid "User can read wiki in this group"
+msgstr "User can read wiki in this group"
+
+msgid "Description:"
+msgstr "Description:"
+
+msgid "History for page %1"
+msgstr "History for page %1"
+
+msgid "Minor edit"
+msgstr "Minor edit"
+
+msgid "Time"
+msgstr "Time"
+
+msgid "Minor"
+msgstr "Minor"
+
+msgid "Creation"
+msgstr "Creation"
+
+msgid "Change history"
+msgstr "Change history"
+
+msgid "Page"
+msgstr "Page"
+
+msgid "Edit chapter"
+msgstr "Edit chapter"
+
+msgid "Edit text"
+msgstr "Edit text"
+
+msgid "Are you sure you want to cancel editing and lose all the changes you have made?"
+msgstr "Are you sure you want to cancel editing and lose all the changes you have made?"
+
+msgid "Cancel editing"
+msgstr "Cancel editing"
+
+msgid "Continue editing"
+msgstr "Continue editing"
+
+msgid "Could not parse file:"
+msgstr "Could not parse file:"
+
+msgid "Created pages:"
+msgstr "Created pages:"
+
+msgid "Import pages"
+msgstr "Import pages"
+
+msgid "Some pages already existed:"
+msgstr "Some pages already existed:"
+
+msgid "You should type a short description of the changes you have made in the text area below. This way other people can get a quick overview of recent changes. If you have made only small changes of which others require no notification (like fixed a typing error) you can just check the \"Minor edit\" checkbox."
+msgstr "You should type a short description of the changes you have made in the text area below. This way other people can get a quick overview of recent changes. If you have made only small changes of which others require no notification (like fixed a typing error) you can just check the \"Minor edit\" checkbox."
+
+msgid "No changes found."
+msgstr "No changes found."
+
+msgid "Changes for page %1"
+msgstr "Changes for page %1"
+
+msgid "Page actions"
+msgstr "Page actions"
+
+msgid "Show changes"
+msgstr "Show changes"
+
+msgid "Locked by you"
+msgstr "Locked by you"
+
+msgid "Printable page"
+msgstr "Printable page"
+
+msgid "Resume interrupted editing"
+msgstr "Resume interrupted editing"
+
+msgid "No header (top of the page)"
+msgstr "No header (top of the page)"
+
+msgid "Select page header:"
+msgstr "Select page header:"
+
+msgid "Contents"
+msgstr "Contents"
+
+msgid "Edit beginning"
+msgstr "Edit beginning"
+
+msgid "Edit whole page"
+msgstr "Edit whole page"
+
+msgid "hide"
+msgstr "hide"
+
+msgid "show"
+msgstr "show"
+
+msgid "No page name specified!"
+msgstr "No page name specified!"
+
+msgid "Previous changes"
+msgstr "Previous changes"
+
+msgid "Are you sure that you want to delete the page '%1' and it's version history?"
+msgstr "Are you sure that you want to delete the page '%1' and it's version history?"
+
+msgid "Confirm removing page '%1'"
+msgstr "Confirm removing page '%1'"
+
+msgid "Page '%1' succesfully deleted"
+msgstr "Page '%1' succesfully deleted"
+
+msgid "Please note that the following pages are currently linking to this page:"
+msgstr "Please note that the following pages are currently linking to this page:"
+
+msgid "Yes, I am sure"
+msgstr "Yes, I am sure"
+
+msgid "close"
+msgstr "close"
+
+msgid "Loading content.."
+msgstr "Loading content.."
+
+msgid "preview"
+msgstr "preview"
+
+msgid "Missing linked pages"
+msgstr "Missing linked pages"
+
+msgid "Search results"
+msgstr "Search results"
+
+msgid "Search wiki"
+msgstr "Search"
+
+msgid "Wiki reader"
+msgstr "Wiki reader"
+
+msgid "Could not save changes because page is locked."
+msgstr "Could not save changes because page is locked."
+
+msgid "Latest changes in Wiki."
+msgstr "Latest changes in Wiki."
+
+msgid "Page is being edited so it could not be locked."
+msgstr "Page is being edited so it could not be locked."
+
+msgid "Page locked."
+msgstr "Page locked."
+
+msgid "Page unlocked."
+msgstr "Page unlocked."
+
+msgid "Add page to summary"
+msgstr "Add page to summary"
+
+msgid "Bring pages to summary"
+msgstr "Bring pages to summary"
+
+msgid "Page added to summary."
+msgstr "Page added to summary."
+
+msgid "Page removed from summary."
+msgstr "Page removed from summary."
+
+msgid "Remove page from summary"
+msgstr "Remove page from summary"
+
+msgid "User can manage summary wiki pages"
+msgstr "User can manage summary wiki pages"
+
+msgid "This page needs content! You can add text, pictures and other interesting stuff by clicking %1 on the right."
+msgstr "This page needs content! You can add text, pictures and other interesting stuff by clicking %1 on the right."
+
+msgid "You have not saved or cancelled the edit and the part you were editing is still locked. If you continue others can not edit the part until your lock expires."
+msgstr "You have not saved or cancelled the edit and the part you were editing is still locked. If you continue others can not edit the part until your lock expires."
+
+msgid "Version changes"
+msgstr "Version changes"
+
+msgid "Updates in wiki"
+msgstr "Updates in wiki"
+
+msgid "No pages matched your search"
+msgstr "No pages matched your search"
+
+msgid "Wiki latest changes summary"
+msgstr "Wiki latest changes summary"
+
+msgid "Could not revert since the page is locked."
+msgstr "Could not revert since the page is locked."
+
+msgid "Revert failed because the page is currenty being edited."
+msgstr "Revert failed because the page is currenty being edited."
+
+msgid "Revert succesful"
+msgstr "Revert succesful"
+
+msgid "Revert to this version"
+msgstr "Revert to this version"
+
+msgid "( version %1 )"
+msgstr "( version %1 )"
+
+msgid "Revert"
+msgstr "Revert"
+
+msgid "Next version"
+msgstr "Next version"
+
+msgid "Page change history"
+msgstr "Page change history"
+
+msgid "Previous version"
+msgstr "Previous version"
+
+msgid "No attachments."
+msgstr "No attachments."
+
+msgid "No tags yet."
+msgstr "No tags yet."
+
+msgid "Page info"
+msgstr "Page info"
+
+msgid "Pages by tag %1"
+msgstr "Pages by tag %1"
+
+msgid "Page tags"
+msgstr "Page tags"
+
+msgid "Info for page %1"
+msgstr "Info for page %1"
+
+msgid "Add Attachment"
+msgstr "Add Attachment"
+
+msgid "Attachments updated"
+msgstr "Attachments updated"
+
+msgid "Descrption: "
+msgstr "Descrption: "
+
+msgid "Information about this page"
+msgstr "Information about this page"
+
+msgid "Minor edit: "
+msgstr "Minor edit: "
+
+msgid "Pages by tag"
+msgstr "Pages by tag"
+
+msgid "Settings of wikipage:"
+msgstr "Settings of wikipage:"
+
+msgid "Contributors"
+msgstr "Contributors"
+
+msgid "Edit info for page %1"
+msgstr "Edit info for page %1"
+
+msgid "(empty description will automatically result in a minor edit)"
+msgstr "(empty description will automatically result in a minor edit)"
+
+msgid "Disable comments"
+msgstr "Disable comments"
+
+msgid "Disable page comments"
+msgstr "Disable page comments"
+
+msgid "Enable comments"
+msgstr "Enable comments"
+
+msgid "Page comments disabled."
+msgstr "Page comments disabled."
+
+msgid "Page comments enabled."
+msgstr "Page comments enabled."
+
+msgid "Remove any page attachments"
+msgstr "Remove any page attachments"
+
+msgid "Remove comments"
+msgstr "Remove comments"
+
+msgid "User can enable and disable individual page comments"
+msgstr "User can enable and disable individual page comments"
+
+msgid "User can remove any wiki page attachments in this group"
+msgstr "User can remove any wiki page attachments in this group"
+
+msgid "User can remove comments to any wiki page"
+msgstr "User can remove comments to any wiki page"
+
+msgid "User can write comments to any wiki page"
+msgstr "User can write comments to any wiki page"
+
+msgid "Wiki commenting"
+msgstr "Wiki commenting"
+
+msgid "Write comments"
+msgstr "Write comments"
+
+msgid "Choose"
+msgstr "Choose"
+
+msgid "Show comments"
+msgstr "Show comments"
+
+msgid "Support"
+msgstr "Support"
+
+msgid "support(s)"
+msgstr "support(s)"
+
+msgid "Unsupport"
+msgstr "Unsupport"
+
+msgid "Write your comment here"
+msgstr "Write your comment here"
+
+msgid "You can only comment uncommented sections within a paragraph."
+msgstr "You can only comment uncommented sections within a paragraph."
+
+msgid "Remove annotations"
+msgstr "Remove annotations"
+
+msgid "User can remove annotations on any wiki page"
+msgstr "User can remove annotations on any wiki page"
+
+msgid "User can write annotations to any wiki page"
+msgstr "User can write annotations to any wiki page"
+
+msgid "Wiki annotating"
+msgstr "Wiki annotating"
+
+msgid "Write annotations"
+msgstr "Write annotations"
+
+msgid "Comment (action)"
+msgstr "Comment"
+
+msgid "%1 support(s) (by %2)"
+msgstr "%1 support(s) (by %2)"
+
+msgid "Comments to marked sections"
+msgstr "Comments to marked sections"
+
+msgid "Comments to the whole page"
+msgstr "Comments to the whole page"
+
+msgid "Disable annotations"
+msgstr "Disable annotations"
+
+msgid "Enable annotations"
+msgstr "Enable annotations"
+
+msgid "Page annotations disabled."
+msgstr "Page annotations disabled."
+
+msgid "Page annotations enabled."
+msgstr "Page annotations enabled."
+
+msgid "Printable page with comments"
+msgstr "Printable page with comments"
+
+msgid "support"
+msgstr "support"
+
+msgid "supports"
+msgstr "supports"
+
+msgid "Are you sure you want to remove this comment?"
+msgstr "Are you sure you want to remove this comment?"
+
+msgid "Browse page versions"
+msgstr "Browse page versions"
+
+msgid "User can see older versions of pages"
+msgstr "User can see older versions of pages"
+
+msgid "Yes, remove the comment"
+msgstr "Yes, remove the comment"
+
+msgid "New page name:"
+msgstr "New page name:"
+
+msgid "Renaming page '%1'"
+msgstr "Renaming page '%1'"
+
+msgid "Rename page"
+msgstr "Rename page"
+
+msgid "%1 (wiki front page title)"
+msgstr "%1"
+
+msgid "Wiki starting page in summary"
+msgstr "Wiki starting page in summary"
+
+msgid "The wiki starting page is currently empty. You can add content to the starting page by entering the wiki tool from the top navigation."
+msgstr "The wiki starting page is currently empty. You can add content to the starting page by entering the wiki tool from the top navigation."
+
+msgid "Configure wiki"
+msgstr "Configure wiki"
+
+msgid "Create wiki pages"
+msgstr "Create wiki pages"
+
+msgid "Creator"
+msgstr "Creator"
+
+msgid "Deny wiki moderation"
+msgstr "Deny wiki moderation"
+
+msgid "Deny wiki use"
+msgstr "Deny wiki use"
+
+msgid "Edit wiki pages"
+msgstr "Edit wiki pages"
+
+msgid "Last modified"
+msgstr "Last modified"
+
+msgid "Limit feed access by IP addresses (each on a separate line)"
+msgstr "Limit feed access by IP addresses (each on a separate line)"
+
+msgid "Lock page"
+msgstr "Lock page"
+
+msgid "No pages found."
+msgstr "No pages found."
+
+msgid "Read wiki"
+msgstr "Read wiki"
+
+msgid "Remove page"
+msgstr "Remove page"
+
+msgid "Remove wiki pages"
+msgstr "Remove wiki pages"
+
+msgid "Rename"
+msgstr "Rename"
+
+msgid "Requested version does not exists!"
+msgstr "Requested version does not exists!"
+
+msgid "Show current page"
+msgstr "Show current page"
+
+msgid "Unlock page"
+msgstr "Unlock page"
+
+msgid "User can configure wiki tool in this group"
+msgstr "User can configure wiki tool in this group"
+
+msgid "User can create wiki pages in this group"
+msgstr "User can create wiki pages in this group"
+
+msgid "User can edit wiki pages in this group"
+msgstr "User can edit wiki pages in this group"
+
+msgid "User can lock and unlock wiki pages in this group"
+msgstr "User can lock and unlock wiki pages in this group"
+
+msgid "User can remove wiki pages in this group"
+msgstr "User can remove wiki pages in this group"
+
+msgid "Wiki moderator"
+msgstr "Wiki moderator"
+
+msgid "Wiki rights"
+msgstr "Wiki rights"
+
+msgid "Wiki user"
+msgstr "Wiki user"
+
+msgid "Wiki summaries separately"
+msgstr "Wiki summaries separately"
+
+msgid "Wiki summary pages separately without icon."
+msgstr "Wiki summary pages separately without icon."
+
+msgid "Show annotations by default"
+msgstr "Show annotations by default"

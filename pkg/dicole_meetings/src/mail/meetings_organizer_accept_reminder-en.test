@@ -1,0 +1,25 @@
+[% IF test_case == 'kutsuja' %]
+[%
+
+meeting_title = 'Festarit'
+meeting_url = 'www.meetin.gs'
+
+invited_user_name = 'Pikku Myy'
+invited_user_address = 'pikku.myy@muumilaakso.fi'
+
+%]
+[% END %]
+
+[% IF test_case == 'ei-kutsuja' %]
+[%
+
+meeting_title = 'Vuosikokous'
+meeting_url = 'ww.meetin.gs'
+
+invited_user_address = 'seppo.taalasmaa@kotikatu.fi'
+invited_user_name = 'Seppo Taalasmaa'
+inviting_user = 'Pekka Pätkälä'
+not_inviter = '1'
+
+%]
+[% END %]

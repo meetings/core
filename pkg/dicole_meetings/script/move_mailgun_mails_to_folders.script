@@ -1,0 +1,103 @@
+#!/usr/bin/env perl
+
+use 5.010;
+use strict;
+use warnings;
+use Data::Dump qw/dump/;
+
+use Mail::IMAPClient;
+
+use DateTime                0.66    ();
+use DateTime::Format::Mail  0.3001  ();
+
+our $DEBUG   = $ENV{DEBUG}   || 0;
+our $VERBOSE = $ENV{VERBOSE} || 0;
+
+my $imap;
+
+sub info  { say @_ if $VERBOSE }
+sub debug { say @_ if $DEBUG   }
+
+sub execute {
+    my ($self, $domain_id) = @_;
+
+    $imap = Mail::IMAPClient->new(
+        Server   => 'imap.mailgun.org',
+        User     => 'postmaster@mtn.mailgun.org',
+        Password => 'pumpuli',
+        Starttls => 1,
+        Uid      => 1
+    ) or die "Could not initialize IMAP client: $@\n";
+
+    $imap->Debug($DEBUG);
+
+    $" = ", "; # "
+
+    $imap->select('INBOX') or die "Could not select INBOX: $@\n";
+
+    my @messages = $imap->messages;
+
+    info "Processing " . @messages . " messages";
+
+    for my $message (@messages) {
+        my $envelope   = $imap->get_envelope($message);
+        my $message_id = $envelope->messageid;
+
+        info "Message $message_id";
+
+        my $dispatches = CTX->lookup_object('meetings_dispatched_email')->fetch_group({
+            where => 'message_id = ? and domain_id = ?',
+            value => [ $message_id, $domain_id ]
+        });
+
+        info "Message has " . @$dispatches . " records in database";
+
+        if (@$dispatches > 1) {
+            warn "Skipping duplicate message ID: $message_id\n";
+        }
+        elsif (@$dispatches == 0) {
+            my $date_string = $imap->date($message);
+            my $date = eval { DateTime::Format::Mail->parse_datetime($date_string) };
+
+            if ($date) {
+                if ($date < DateTime->now->subtract(minutes => 5)) {
+                    warn "Message $message_id is ignored\n";
+
+                    move($message, 'ignored');
+                } else {
+                    info "Skipping new mail $message_id to give main system time to process it";
+                }
+            } else {
+                warn "Could not parse message '$message_id' mail date '$date_string': $@\n";
+
+                move($message, 'error');
+            }
+        }
+        else {
+            my $dispatch = $dispatches->[0];
+
+            if ($dispatch->completed_date) {
+                move($message, 'completed');
+            } else {
+                warn "Seen but unprocessed message ID: $message_id\n";
+
+                move($message, 'incomplete');
+            }
+        }
+
+    }
+
+    info "Cleaning up...";
+
+    $imap->expunge or warn "Could not expunge deleted mails: $@\n";
+}
+
+sub move {
+    my ($message, $to) = @_;
+
+    my $ret = $imap->move($to, $message) or warn "Could not move message UID $message to '$to': $@\n";
+
+    info "Moved UID $message to '$to'" if $ret;
+}
+
+1;

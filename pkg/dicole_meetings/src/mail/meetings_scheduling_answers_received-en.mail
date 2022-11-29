@@ -1,0 +1,41 @@
+[% MTN.t('Action required: choose the time for %1$s',[meeting_title]) %] 
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Choose the time for') %]
+<<<text_and_logo>>>
+<<<h1>>>[% meeting_title %]<<</h1>>>
+
+<<<bubble>>>
+
+<<<p>>>
+[% MTN.t('All of the participants have now responded to scheduling options.') %]
+<<</p>>>
+
+<<<p>>>
+[% MTN.t('The most popular time is:', 'The most popular times are:', { plural => best_times.size }) %]
+<<</p>>>
+
+<<<list>>>
+[% FOREACH time IN best_times %]
+<<<item>>>
+<<<bold>>>[% time %]<<</bold>>>
+<<</item>>>
+[% END %]
+<<</list>>>
+
+<<<p>>>
+[% MTN.t('Choose the final time on the meeting page.') %]
+<<</p>>>
+
+[% url = meeting_url _ '&utm_source=notifications&utm_medium=email&utm_campaign=scheduling_answers_received' %]
+[% text = MTN.t('Set the time for this meeting') %]
+<<<blue_button>>>
+
+<<<br>>>
+
+<<</bubble>>>
+
+<<<br>>>
+
+<<</html_wrapper>>>

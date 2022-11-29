@@ -1,0 +1,219 @@
+use Dicole::Meta;
+use Dicole::Security qw( :receiver :target :check );
+use Dicole::Settings;
+
+my $dry = 1;
+
+sub execute {
+    my ( $self ) = @_;
+
+#1. create domain manually
+
+    my $group_id = 584;
+    my $from_domain_id = 80;
+    my $to_domain_id = 125;
+
+#    my $id_list = CTX->lookup_action('groups_api')->e( member_id_list => { group_id => $group_id } );
+#    my $original_group_users = CTX->lookup_object('user')->fetch_group({
+#        where => Dicole::Utils::SQL->column_in( user_id => $id_list ),
+#    });
+
+#### These are done on the fly on the new user object correspondence lookup so no need to do on the fly
+#2. Create new users for the new domain based on group memberships
+#    $self->_copy_user_object_to_domain( $_, $to_domain_id ) for @$original_group_users;
+#    $self->_fix_rights_and_settings( $_, $from_domain_id, $to_domain_id) for @$original_group_users;
+#3. Copy profiles for these users to domain
+#4. Copy profile attachments to these users
+#    $self->_copy_profile_object_from_domain_to_domain( $_, $from_domain_id, $to_domain_id ) for @$original_group_users;
+
+#5. update ALL objects linked to given group to new users
+#6. update ALL objects linked to given group to have new domain_id
+
+    _log( "preloading blogs" );
+    Dicole::Meta->preload_associations( 'blogs_entry' );
+    _log( "preloading weblogs" );
+    Dicole::Meta->preload_associations( 'weblog_posts' );
+
+    my $infos = Dicole::Meta->spops_special_info;
+    for my $key ( sort {$a cmp $b } keys %$infos ) {
+        # Do this separately to make sure it is the last one
+        next if $key eq 'group_user';
+        next unless $infos->{$key}->{domain_id_field} || $infos->{$key}->{user_id_field_list};
+        _log( ".... updating $key" );
+        $self-> _fix_domain_transfer_fields_by_key( $key, $from_domain_id, $to_domain_id, $group_id );
+    }
+
+    _log( ".... updating group_user" );
+    $self-> _fix_domain_transfer_fields_by_key( 'group_user', $from_domain_id, $to_domain_id, $group_id );
+    
+#7. rebuild all tag indexes ?
+#8. rebuild statistics ?
+
+
+}
+
+sub _fix_domain_transfer_fields_by_key {
+    my ( $self, $key, $from_domain_id, $to_domain_id, $group_id ) = @_;
+
+    my $objects = Dicole::Meta->get_objects_associated_with_group( $key, $group_id, $from_domain_id );
+    my $info = Dicole::Meta->spops_special_info->{ $key };
+    for my $object ( @$objects ) {
+        if ( my $domain_field = $info->{domain_id_field} ) {
+            if ( $object->get( $domain_field ) == $from_domain_id ) {
+                _log( "$key domain " . $object->id );
+                $object->set( $domain_field, $to_domain_id ) unless $dry;
+            }
+        }
+        if ( my $user_fields = $info->{user_id_field_list} ) {
+            for my $user_field ( @$user_fields ) {
+                if ( $object->get( $user_field ) ) {
+                    my $new_user = eval { $self->_resolve_corresponding_user_for_domain(
+                        $object->get( $user_field ), $from_domain_id, $to_domain_id
+                    ) };
+                    next if $@;                    
+                    next if $object->get( $user_field ) == $new_user->id && ! $dry;
+                    _log( "$key user " . $object->id . ': ' . $object->get( $user_field ) . " to " . $new_user->id );
+                    $object->set( $user_field, $new_user->id ) unless $dry;
+                }
+            } 
+        }
+        $object->save;
+    }    
+}
+
+sub _copy_user_object_to_domain {
+    my ( $self, $original_user, $to_domain_id ) = @_;
+
+    return $original_user if $dry;
+
+    my $new_user = CTX->lookup_object('user')->new;
+    for my $field ( keys %{ CTX->lookup_object( 'user' )->field } ) {
+        next if $field eq 'user_id';
+        $new_user->set( $field, $original_user->get( $field ) );
+    }
+    $new_user->save;
+
+    CTX->lookup_action( 'domains_api' )->e( add_user_to_domain => {
+        user_id => $new_user->id, domain_id => $to_domain_id
+    } );
+
+    return $new_user;
+}
+
+sub _fix_rights_and_settings {
+    my ( $self, $original_user, $from_domain_id, $to_domain_id, $new_user ) = @_;
+
+    return if $dry;
+
+    $new_user ||= $self->_resolve_corresponding_user_for_domain( $original_user, $from_domain_id, $to_domain_id );
+
+    if ( my $coll = Dicole::Security->collection_by_idstring( 'default_personal_rights' ) ) {
+        my $sec = CTX->lookup_object( 'dicole_security' )->new;
+
+        $sec->{receiver_user_id} = $new_user->id;
+        $sec->{target_user_id} = $new_user->id;
+        $sec->{collection_id} = $coll->id;
+        $sec->{target_type} = TARGET_USER;
+        $sec->{receiver_type} = RECEIVER_USER;
+
+        $sec->save;
+    }
+
+    my $old_value = Dicole::Settings->fetch_single_setting(
+        user_id => $original_user->id,
+        tool => 'settings_reminders',
+        attribute => 'group_default',
+    );
+
+    Dicole::Settings->store_single_setting(
+        user_id => $new_user->id,
+        tool => 'settings_reminders',
+        attribute => 'group_default',
+        value => $old_value,
+    );
+   
+}
+
+sub _copy_profile_object_from_domain_to_domain {
+    my ( $self, $original_user, $from_domain_id, $to_domain_id, $new_user ) = @_;
+
+    return if $dry;
+
+    $new_user ||= $self->_resolve_corresponding_user_for_domain( $original_user, $from_domain_id, $to_domain_id );
+
+    my $original_profile = CTX->lookup_action('networking_api')->e( user_profile_object => {
+        user_id => $original_user->id, domain_id => $from_domain_id,
+    } );
+
+    my $new_profile = CTX->lookup_action('networking_api')->e( user_profile_object => {
+        user_id => $new_user->id, domain_id => $to_domain_id,
+    } );
+
+    for my $field ( keys %{ CTX->lookup_object( 'networking_profile' )->field } ) {
+        next if $field eq 'profile_id';
+        next if $field eq 'domain_id';
+        next if $field eq 'user_id';
+        next if $field =~ /^portrait/;
+           
+        $new_profile->set( $field, $original_profile->get( $field ) );
+    }
+
+    if ( $original_profile->portrait && $original_profile->portrait =~ /^\d+$/ ) {
+        my $new_portrait = CTX->lookup_action('attachments_api')->e( copy => {
+            attachment_id => $original_profile->portrait,
+            object => $new_profile,
+            group_id => 0,
+            user_id => 0,
+            domain_id => $to_domain_id,
+        } );
+
+        $new_profile->portrait( $new_portrait->id );
+    }
+
+    $new_profile->save; 
+
+    CTX->lookup_action('tags_api')->e( clone_tags => {
+        from_object => $original_profile,
+        from_domain_id => $from_domain_id,
+        from_user_id => 0,
+        from_group_id => 0,
+        to_object => $new_profile,
+        to_domain_id => $to_domain_id,
+        to_user_id => 0,
+        to_group_id => 0,
+    } );
+}
+
+our $corresponding_users = {};
+
+sub _resolve_corresponding_user_for_domain {
+    my ( $self, $user, $from_domain_id, $to_domain_id ) = @_;
+
+    my $user_id = ref( $user ) ? $user->id : $user;
+
+    return $corresponding_users->{ $user_id }{ $domain_id } if $corresponding_users->{ $user_id }{ $domain_id };
+
+    my $user_object = Dicole::Utils::User->ensure_object( $user );
+    _log( 'Fetching user ' . $user_object->email );
+
+    my $new_user_object = Dicole::Utils::User->fetch_user_by_login_in_domain( $user_object->login_name, $to_domain_id );
+    $new_user_object ||= Dicole::Utils::User->fetch_user_by_login_in_domain( $user_object->email, $to_domain_id );
+
+    if ( ! $new_user_object ) {
+        _log( 'Creating user ' . $user_object->email );
+
+        $new_user_object = $self->_copy_user_object_to_domain( $user_object, $to_domain_id );
+        $self->_fix_rights_and_settings( $user_object, $from_domain_id, $to_domain_id, $new_user_object );
+        $self->_copy_profile_object_from_domain_to_domain( $user_object, $from_domain_id, $to_domain_id, $new_user_object );
+    }
+
+    return $corresponding_users->{ $user_id }{ $domain_id } = $new_user_object;
+}
+
+sub _log {
+    my ( $string ) = @_;
+
+    print $string . "\n";
+}
+
+1;

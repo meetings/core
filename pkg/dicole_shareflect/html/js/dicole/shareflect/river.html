@@ -1,0 +1,36 @@
+<div class="header">
+    <h2><%= p.title %></h2>
+</div>
+<div class="tools">
+    <ul>
+    	<li><a href="#" class="close">Close</a></li>
+    	<li style="display: none;"><a href="#" class="edit" show_id="edit_<%= p.dom_id %>">Edit</a></li>
+    	<ul id="edit_<%= p.dom_id %>" class="edit_river_controls" style="display: none;">
+    	    <li><a href="#" id="new_message_<%= p.dom_id %>">New message</a></li>
+    	    <li><a href="#" id="reply_to_last_message_<%= p.dom_id %>">Reply to last message</a></li>
+    	    <li><a href="#" id="close_<%= p.dom_id %>">Close river</a></li>
+    	    <li><a href="#" id="duplicate_<%= p.dom_id %>">Duplicate river</a></li>
+    	    <li><a href="#" id="filter_<%= p.dom_id %>">Filter view</a></li>
+    	</ul>
+    </ul>
+</div>
+
+<div class="content">
+	<% dojo.forEach( p.users, function (user) { %>
+		<div class="user">
+			<div class="avatar">
+				<img src="<%= user.image %>" title="<%= user.name %>"/>
+			</div>
+			<h3><a href="#" class="user-name" show_id="user_<%= user.id %>"><%= user.name %></a></h3>
+		</div>
+	<% } ); %>
+
+	<% dojo.forEach( p.locations, function (location) { %>
+		<div class="location">
+			<div class="avatar">
+				<img src="<%= location.image %>" title="<%= location.title %>"/>
+			</div>
+			<h3><a href="#" class="location-name" show_id="location_<%= location.id %>"><%= location.title %></a></h3>
+		</div>
+	<% } ); %>
+</div>

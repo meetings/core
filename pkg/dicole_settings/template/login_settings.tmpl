@@ -1,0 +1,24 @@
+[% IF facebook_connect_app_id %]
+<div id="facebook_connect">
+	[% IF facebook_connected %]
+	<a id="facebook_disconnect_button" href="#">[% MSG("Disconnect from Facebook") | html %]</a>
+	[% ELSE %]
+	<a id="facebook_connect_button" href="#">[% MSG("Connect to Facebook") | html %]</a>
+	[% END %]	
+</div>
+[% END %]
+<div id="password_change">
+	<label for="old_password">
+		[% MSG("Old password") | html %]
+		<input id="old_password" name="old_password" type="password" />
+	</label><br/>
+	<label for="password">
+		[% MSG("New password") | html %]
+		<input id="password" name="password" type="password" />
+	</label><br/>
+	<label for="password_confirm">
+		[% MSG("Confirm new password") | html %]
+		<input id="password_confirm" name="password_confirm" type="password" />
+	</label><br/>
+	<input class="submitButton" type="submit" value="[% MSG("Save") | html %]" name="change" />
+</div>

@@ -1,0 +1,15 @@
+[meetings_core.desktop_front]
+file_filter = src/locale/desktop_front-<lang>.po
+source_file = src/locale/desktop_front.pot
+source_lang = en
+type = PO
+
+[meetings_core.desktop_back]
+file_filter = src/locale/desktop_back-<lang>.po
+source_file = src/locale/desktop_back.pot
+source_lang = en
+type = PO
+
+[main]
+host = https://www.transifex.com
+

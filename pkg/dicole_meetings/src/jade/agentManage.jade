@@ -1,0 +1,13 @@
+#agent-admin.m-modal
+    .modal-header
+        h3 
+            i.ico-profile
+            span!='Tapaamisten hallinta'||MTN.t('Manage meetings')
+
+    .modal-content
+        .area-listing
+            each area, index in shared_accounts
+                a.area-button.select-area(href="#",x-data-area=area.safe_uid)=area.name
+                - if ( index < shared_accounts.length - 1 ) {
+                    =' - '
+                - }

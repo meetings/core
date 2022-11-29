@@ -1,0 +1,17 @@
+[%# $Id: widget_hiddenblock.tmpl,v 1.3 2009-01-07 14:42:33 amv Exp $ -%]
+[%#-
+    The template accepts the following information in itemparams:
+    {
+        id => 'id',
+        class => undef,
+        visible => undef,
+        content => {
+            raw => undef,
+            template => 'mytemplate',
+            params => {},
+        },
+    }
+-%]
+<div [% IF itemparams.id %] id="[% itemparams.id %]"[% END %] class="[% IF ! itemparams.visible %]hiddenBlock[% IF itemparams.class %] [% END %][% END %][% IF itemparams.class %][% itemparams.class %][% END %]">
+[% PROCESS dicole_base::include_widget widget = itemparams.content %]
+</div>

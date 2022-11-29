@@ -1,0 +1,10 @@
+<div id="fancy_radios_[% name | html %]" class="fancy_radios" style="overflow: hidden">
+	[% first = values.shift %]
+	[% last = values.pop %]
+	<a id="[% name | html %],[% first | html %]" href="#" class="alpha_png left-button[% IF selected == first %] left-button-selected[% END %]"><span class="alpha_png">[% value_names.$first | html %]</span></a>
+	[% FOREACH value IN values %]
+	<a id="[% name | html %],[% value | html %]" href="#" class="alpha_png middle-button[% IF selected == value %] middle-button-selected[% END %]"><span class="alpha_png">[% value_names.$value | html %]</span></a>
+	[% END %]
+	<a id="[% name | html %],[% last | html %]" href="#" class="alpha_png right-button[% IF selected == last %] right-button-selected[% END %]"><span class="alpha_png">[% value_names.$last | html %]</span></a>
+	<input id="[% name | html %]_field" type="hidden" name="[% name | html %]" value="[% selected | html %]" />
+</div>

@@ -1,0 +1,4 @@
+PARTNER; Email is sent when updates are made to a meeting. Normally once a day and every hour when meeting will happen in 24h. 15 minutes before the meeting a mail is sent. After a meeting a digest will be sent IF action points are filled OR new updates are made during or after the meeting.
+
+Planned: a digest is sent to participants if organizer replies to action point reminder email or via a button in the UI
+

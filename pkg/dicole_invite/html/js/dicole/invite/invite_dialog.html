@@ -1,0 +1,48 @@
+<div id="invite_dialog">
+	<a id="invite_dialog_close" href="#"></a>
+	<h1><%== p.dialog_title ? p.dialog_title : dicole.msg("Invite users to [_1]", [p.group_name]) %></h1>
+	<h2>
+		<%== dicole.msg("Invite users by email") %>
+		<span id="invite_dialog_separator"> - </span>
+		<span id="invite_dialog_email_tip"><%== dicole.msg("separate email addresses by commas (,) or semicolons (;)") %></span>
+	</h2>
+	<textarea id="invite_dialog_emails" name="emails"></textarea>
+	<a id="invite_dialog_browse_users_toggle" href="#"><%== dicole.msg("Invite existing users...") %></a>
+	<div id="invite_dialog_browse_users_container">
+		<div id="invite_dialog_browse_users_tools">
+			<input id="invite_dialog_search_users" class="tip-field" value="<%== dicole.msg("Search") %>" />
+			<select id="invite_dialog_groups"></select>
+		</div>
+		<div style="clear:both"></div>
+		<div id="invite_dialog_browse_users_list"></div>
+		<div id="invite_dialog_browse_users_settings">
+			<div id="invite_dialog_selected_users">
+				<span id="invite_dialog_selected_users_number">0</span> 
+				<span id="invite_dialog_selected_users_text"><%== dicole.msg("user(s) selected") %></span>
+			</div>
+			<div id="invite_dialog_selected_users_list"></div>
+			<% if(!p.disable_force) { %>
+			<label id="invite_dialog_add_instantly_label" for="invite_dialog_add_instantly">
+				<input id="invite_dialog_add_instantly" type="checkbox" />
+				<%== p.add_instantly_text ? p.add_instantly_text : dicole.msg("Add these users to the group immediately.") %>
+			</label>
+			<label style="display: none;" id="invite_dialog_send_invitation_label" for="invite_dialog_send_invitation">
+				<input style="display: none;" id="invite_dialog_send_invitation" type="checkbox" disabled="disabled" />
+				<%== dicole.msg("Send an invitation to these users") %>
+			</label>
+			<% } %>
+		</div>
+	</div>
+	<a id="invite_dialog_title_toggle" href="#"><%== dicole.msg("Customize the title to the invite...") %></a>
+	<div id="invite_dialog_title_container"><input id="invite_dialog_title" value="<%== p.default_subject %>" /></div>
+	<a id="invite_dialog_message_toggle" href="#"><%== dicole.msg("Add an additional message to the invite...") %></a>
+	<div id="invite_dialog_message_container"><textarea id="invite_dialog_message"></textarea></div>
+	<div id="invite_dialog_tools">
+		<label id="invite_dialog_user_level_label" for="invite_dialog_user_level">
+			<%== dicole.msg("Invited users will have the following user level") %>
+		</label>
+		<select id="invite_dialog_user_level"></select>
+		<a id="invite_dialog_send_button" href="#" class="big-button"><span><%== dicole.msg("Send") %></span></a>
+	</div>
+	<div style="clear:both"></div>
+</div>

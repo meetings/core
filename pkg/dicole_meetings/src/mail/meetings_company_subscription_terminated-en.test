@@ -1,0 +1,11 @@
+[%- IF test_case == 'account terminated' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+user_name ='Jonathan Davis'
+login_url = 'http://www.meetin.gs/'
+organization = 'Acme Corp'
+
+
+%]
+[% END %]

@@ -1,0 +1,18 @@
+[% MTN.t("Reminder: You have been invited to Meetin.gs") %]
+
+<<<html_wrapper>>>
+
+<<<p>>>[% MTN.t("%1\$s invited you to Meetin.gs but you have not activated your account yet.",[inviting_user_name]) %]<<</p>>>
+<<<p>>>[% MTN.t("Why register?") %]<<</p>>>
+<<<list>>>
+<<<item>>>[% MTN.t("avoid endless email chains") %]<<</item>>>
+<<<item>>>[% MTN.t("schedule online meetings with ease") %]<<</item>>>
+<<<item>>>[% MTN.t("distribute meeting materials and notes") %]<<</item>>>
+<<</list>>>
+
+<<<p>>>[% MTN.t("It is free. Register your account here:") %]<<</p>>>
+[% url = register_url  %]
+[% text = MTN.t('Register to Meetin.gs') %]
+<<<blue_button>>>
+
+<<</html_wrapper>>>

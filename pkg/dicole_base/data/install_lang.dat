@@ -1,0 +1,8 @@
+$install_lang = [ {
+	import_type => 'object',
+	spops_class => 'OpenInteract2::DicoleLang',
+	field_order => [ qw/ lang_id lang_code lang_name charset / ]
+	},
+	[ 1,'en','English','utf-8' ],
+	[ 2,'fi','Finnish','utf-8' ],
+];

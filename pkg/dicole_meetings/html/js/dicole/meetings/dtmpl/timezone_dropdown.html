@@ -1,0 +1,6 @@
+<select name="timezone" class="chosen timezone-select js_meetings_change_timezone">
+    <% dojo.forEach( p.timezone_choices, function( tz ) { %>
+    <option value="<%== tz %>"<%== ( tz == p.timezone_name ) ? ' selected="selected"' : '' %>><%== p.timezone_data[tz].readable_name %></option>
+    <% } ); %>
+</select>
+

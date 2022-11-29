@@ -1,0 +1,77 @@
+# $Id: messages-sv.po,v 1.4 2010-07-20 03:59:47 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:11:18+0000\n"
+"PO-Revision-Date: 2005-03-22 02:11:18+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Personal summary"
+msgstr "Personal summary"
+
+msgid "Group summary"
+msgstr "Group summary"
+
+msgid "Summary"
+msgstr "Summary"
+
+msgid "Add freeform summaries"
+msgstr "Add freeform summaries"
+
+msgid "Deny group summary use"
+msgstr "Deny group summary use"
+
+msgid "Freeform summaries"
+msgstr "Freeform summaries"
+
+msgid "Group summary managing"
+msgstr "Group summary managing"
+
+msgid "Manage freeform boxes"
+msgstr "Manage freeform boxes"
+
+msgid "Manage Group summary"
+msgstr "Manage Group summary"
+
+msgid "Summary config"
+msgstr "Summary config"
+
+msgid "Freeform summary details"
+msgstr "Freeform summary details"
+
+msgid "New freeform summary details"
+msgstr "New freeform summary details"
+
+msgid "Group summary box moving"
+msgstr "Group summary box moving"
+
+msgid "Move boxes"
+msgstr "Move boxes"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Revert to default summary layout"
+msgstr "Revert to default summary layout"
+
+msgid "Set your summary layout as default layout"
+msgstr "Set your summary layout as default layout"
+
+msgid "Store this as default summary layout"
+msgstr "Store this as default summary layout"
+
+msgid "Summary page navigation item"
+msgstr "Summary page navigation item"
+
+msgid "Wether to show the summary page navigation item"
+msgstr "Wether to show the summary page navigation item"
+
+msgid "Dicole community platform (invite system name)"
+msgstr "Dicole community platform (invite system name)"

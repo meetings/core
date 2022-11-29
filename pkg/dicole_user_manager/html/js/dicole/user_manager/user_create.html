@@ -1,0 +1,127 @@
+<form id="user_create" action="#" class="js_validate">
+	<a id="user_create_close" href="#" title="<%== dicole.msg('Close') %>"></a>
+	<h2><%== dicole.msg("Register a new account") %></h2>
+	<div id="user_create_photo">
+		<div id="user_create_photo_bg"><img id="user_create_photo_image" src="/images/theme/default/default-user-avatar-200px.png" /></div>
+		<div id="user_create_photo_progress_bar"></div>
+		<div id="user_create_photo_upload_button"></div>
+		<a id="user_create_photo_cancel_button" href="#" class="flash_button"><span><%== dicole.msg("Cancel upload") %></span></a>
+        <span id="user_create_photo_info_text"><%== dicole.msg("Optimal image size is 200x200px.") %></span>
+        <input type="hidden" id="user_create_photo_draft_id" name="user_photo_draft_id" />
+        <% dicole.msg("Upload a photo") %>
+	</div>
+	<div>
+		<div class="input_field user_first_name_container">
+			<label for="user_first_name" class="required"><%== dicole.msg("First name") %> <span class="required_star">*</span></label>
+			<input id="user_first_name" type="text" name="user_first_name" class="js_validate_not_empty" />
+		</div>
+		<div class="input_field user_last_name_container">
+			<label for="user_last_name" class="required"><%== dicole.msg("Last name") %> <span class="required_star">*</span></label>
+			<input id="user_last_name" type="text" name="user_last_name" class="js_validate_not_empty" />
+        </div>
+        <% if(p.require_location) { %>
+        <div id="user_location_field" class="input_field user_location_container">
+			<label for="user_location" class="required"><%== dicole.msg("Location") %> <span class="required_star">*</span></label></label>
+			<input id="user_location" type="text" name="user_location" class="js_validate_not_empty" />
+		</div>
+        <% }%>
+   		<div class="input_field user_email_container">
+			<label for="user_email" class="required"><%== dicole.msg("E-Mail") %> <span class="required_star">*</span></label>
+			<input id="user_email" type="text" name="user_email" class="js_validate_not_empty js_validate_email" />
+		</div>
+		<div class="input_field user_organization_container">
+			<label for="user_organization"><%== dicole.msg("Organization") %></label>
+			<input id="user_organization" type="text" name="user_organization" />
+		</div>
+		<div class="input_field user_role_container">
+			<label for="user_role"><%== dicole.msg("Role") %></label>
+			<input id="user_role" type="text" name="user_role" />
+		</div>
+        <% if( ! p.require_location) { %>
+        <div id="user_location_field" class="input_field user_location_container">
+			<label for="user_location"><%== dicole.msg("Location") %></label>
+			<input id="user_location" type="text" name="user_location" />
+		</div>
+        <% }%>
+	</div>
+	<div style="clear:both"></div>
+	<div id="tags_field" class="tags_container">
+	<h3 class="user_create_tags_header"><%== dicole.msg("Tags") %></h3>
+	<div id="tags" class="tags tag_control">
+		<input type="hidden" name="tags" id="tag_data_tags" value="[]" />
+		<input type="hidden" name="tags_old" id="tag_data_old_tags" value="[]" />
+		<div class="tag_list_container js-disable-commas" id="tag_list_tags"></div>
+		<div class="tag_add_input_container" id="tag_add_input_container_tags">
+			<input class="tag_add_input_field" name="tags_add_tags_input_field" id="tag_add_input_field_tags" type="text" value="" />
+			<a id="tag_add_input_submit_tags" class="button" href="#"><span><%== dicole.msg("Add tag") %></span></a>
+		</div>
+	</div>
+	</div>
+	<div style="clear:both"></div>
+    <h3 class="user_about_me_header"><%== dicole.msg("About") %></h3>
+	<div class="user_about_me_container">
+    	<div class="input_field">
+        	<textarea id="user_about_me" name="user_about_me" cols="40" rows="4"></textarea>
+    	</div>
+    </div>
+	<div style="clear:both"></div>
+	<h3 class="user_create_links_header"><%== dicole.msg("Links") %></h3>
+	<div class="user_create_links_container">
+		<div class="input_field user_phone_container">
+			<label for="user_phone"><%== dicole.msg("Phone") %></label>
+			<input id="user_phone" type="text" name="user_phone" />
+		</div>
+		<div class="input_field user_skype_container">
+			<label for="user_skype"><%== dicole.msg("Skype") %></label>
+			<input id="user_skype" type="text" name="user_skype" />
+		</div>
+		<div class="input_field user_facebook_container">
+			<label for="user_facebook"><%== dicole.msg("Facebook-page") %></label>
+			<span class="input_prefix">http://www.facebook.com/</span>
+			<input id="user_facebook" type="text" name="user_facebook" />
+		</div>
+		<div class="input_field user_linkedin_container">
+			<label for="user_linkedin"><%== dicole.msg("LinkedIn-page") %></label>
+			<span class="input_prefix">http://www.linkedin.com/</span>
+			<input id="user_linkedin" type="text" name="user_linkedin" />
+		</div>
+		<div class="input_field user_twitter_container">
+			<label for="user_twitter"><%== dicole.msg("Twitter-page") %></label>
+			<span class="input_prefix">http://www.twitter.com/</span>
+			<input id="user_twitter" type="text" name="user_twitter" />
+		</div>
+		<div class="input_field user_webpage_container">
+			<label for="user_webpage"><%== dicole.msg("Other webpage") %></label>
+			<span class="input_prefix">http://</span>
+			<input id="user_webpage" type="text" name="user_webpage" />
+        </div>
+    </div>
+    <% if(p.registration_question) { %>
+	<div style="clear:both"></div>
+	<h3 class="user_register_question_header"><%== dicole.msg("Question to prevent SPAM registrations") %></h3>
+    <div class="user_register_question_container">
+		<div class="input_field register_question_container">
+            <label for="register_question" id="register_question_label">
+                <%== p.registration_question %> <span class="required_star">*</span>
+			</label>
+            <input id="register_question" type="text" name="register_question" class="js_validate_not_empty" />
+		</div>
+	</div>
+    <% } %>
+    <% if(p.tos_url) { %>
+    <div class="user_create_tos_query_container">
+		<div class="input_field accept_eula_container">
+			<label for="accept_eula" id="accept_eula_label">
+				<input id="accept_eula" type="checkbox" name="accept_eula" class="js_validate_checked" />
+				<%= dicole.msg("I accept the <a href=\"[_1]\">terms of service</a>", [p.tos_url]) %>
+			</label>
+		</div>
+	</div>
+    <% } %>
+	<a href="#" class="big-button js_submit"><span><input id="user_create_button" type="submit" value="<%== dicole.msg("Create your account") %>" class="js_submit" /></span></a>
+	<span class="required_info">
+		<span class="required_star">*</span>
+		<%== dicole.msg("Please fill the fields marked with the star to complete the registration.") %>
+	</span>
+	<input id="facebook_user_id" type="hidden" name="facebook_user_id" />
+</form>

@@ -1,0 +1,604 @@
+
+/* Whole header, both popups */
+
+#header {
+    font-size: 13px;
+}
+
+#header .fileActionPopup {
+    width: auto;
+    /* IE hack to limit menu size since it does not shrink to content */
+    width: expression('250px');
+    background: none;
+    border: 0px;
+}
+
+#header .fileActionPopup span, #header .fileActionPopup a {
+    color: #999;
+    display: block;
+    background: none;
+    border: 0px;
+}
+
+#header .fileActionPopup .cb.menutitle {
+    font-size: 130%;
+    font-weight: bold;
+    color: #555;
+}
+
+#header .fileActionPopup .menutitleicon {
+    padding-left: 33px;
+    height: 26px;
+    background-repeat: no-repeat;
+}
+
+#header .fileActionPopup .menutitletext {
+    padding-top: 3px;
+    height: 23px;
+}
+
+#header .fileActionPopup a {
+    line-height: 0.9em;
+    text-align: left;
+    font-size: 110%;
+    font-weight: bold;
+    float: none;
+    display: block;
+    padding: 8px 6px 8px 6px;
+    margin: 0px 0px 0px 0px;
+    height: auto;
+    color: #999;
+    width: auto;
+}
+
+#header .fileActionPopup a.iconvisible {
+    padding-left: 34px;
+}
+
+#header .fileActionPopup a:hover, #header .fileActionPopup a:hover span {
+    color: #000;
+}
+
+/* Top Block */
+
+#topblock {
+	font-family: "Palatino", Georgia, Arial, Helvetica, sans-serif;
+	height: 28px;
+	background-image: url(/images/nice_navigation/topbar-bg.png);
+}
+
+#topblockright {
+    float: right;
+}
+
+#topblock .separator, #topblock a {
+    display: block;
+    float: left;
+}
+
+#topblock .separator {
+    height: 28px;
+    width: 1px;
+    background-image: url(/images/nice_navigation/topbar-separator.png);
+}
+
+#topblock a {
+    font-size: 135%;
+    height: 25px;
+    padding: 3px 15px 0px 15px;
+    color: #666;
+}
+
+#topblock a:hover {
+    background-image: url(/images/nice_navigation/topbar-selected.png);
+}
+
+#topblock .fileActionPopup a:hover {
+    background: white;
+}
+
+
+ /* Icons Other areas ICONS */
+
+#topblock .fileActionPopup .menutitleicon.blogs {
+    background-image: url(/images/nice_navigation/menu-blogs.png);
+}
+
+#topblock .fileActionPopup .menutitleicon.groups {
+    background-image: url(/images/nice_navigation/menu-groups.png);
+}
+
+#topblock .fileActionPopup .menutitleicon.other {
+    background-image: url(/images/nice_navigation/menu-other.png);
+}
+
+ /* Top block shadow */
+
+#topblockshadow {
+    height: 5px;
+    background-image: url(/images/nice_navigation/topbar-shadow.png);
+    clear: both;
+}
+
+/* Area Block */
+
+#areablock {
+    background-image: url(/images/nice_navigation/top-bg.png);
+    height: 90px;
+    clear: both;
+}
+
+#areablock h1 {
+    display:block;
+    float: left;
+    font-family: "Georgia", Arial, Helvetica, sans-serif;
+    padding: 18px 0px 0px 28px;
+    letter-spacing: -2px;
+    font-size: 38px;
+}
+
+#tools {
+    float: right;
+}
+
+#tools .separator, #tools a {
+    display: block;
+    float: left;
+}
+
+#tools .separator {
+    width: 1px;
+    height: 90px;
+    background-image: url(/images/nice_navigation/top-separator.png);
+}
+
+#tools a {
+    font-family: Verdana, Arial, sans-serif;
+    width: 110px;
+    color: #333;
+    padding-top: 65px;
+    padding-bottom: 10px;
+    line-height: 1em;
+	text-align: center;
+	font-size: 14px;
+	text-decoration: none;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+}
+
+#tools a:hover, #tools a.selected {
+    filter:alpha(opacity=100);
+    -moz-opacity:0.9999;
+    opacity: 0.9999;
+}
+
+ #tools a.selected {
+     font-weight: bold;
+}
+
+ /* Icons Header ICONS */
+
+#tools a.summary {
+    background: url(/images/nice_navigation/summary-icon.png) no-repeat center 10px;
+    background-image: expression('url(/images/nice_navigation/summary-icon.gif)');
+}
+
+#tools a.wikis {
+    background: url(/images/nice_navigation/wiki-icon.png) no-repeat center 10px;
+    background-image: expression('url(/images/nice_navigation/wiki-icon.gif)');
+}
+
+#tools a.blogs {
+    background: url(/images/nice_navigation/blog-icon.png) no-repeat center 10px;
+    background-image: expression('url(/images/nice_navigation/blog-icon.gif)');
+}
+
+#tools a.aggregator {
+    background: url(/images/nice_navigation/feed-icon.png) no-repeat center 10px;
+    background-image: expression('url(/images/nice_navigation/feed-icon.gif)');
+}
+
+#tools a.other {
+    background: url(/images/nice_navigation/other-icon.png) no-repeat center 10px;
+    background-image: expression('url(/images/nice_navigation/other-icon.gif)');
+}
+
+#tools a .dropdown_arrow {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background: url(/images/nice_navigation/down-arrow.gif);
+    position: relative;
+    top: -38px;
+    left: 68px;
+    left: expression('28px');
+    margin-bottom: -24px;
+}
+
+
+ /* TOOLS FILEACTIONPOPUP */
+
+#tools .fileActionPopup a {
+    display: block;
+    background: none;
+    border: 0px;
+    font-weight: normal;
+    filter:alpha(opacity=100);
+    -moz-opacity:1;
+    opacity: 1;
+}
+
+ /* Icons mini-Tools ICONS */
+
+#tools .fileActionPopup .summary {
+    background: url(/images/nice_navigation/summary-icon-small.png) no-repeat 1px 1px;
+    background-image: expression('url(/images/nice_navigation/summary-icon-small.gif)');
+}
+
+#tools .fileActionPopup .wikis {
+    background: url(/images/nice_navigation/wiki-icon-small.png) no-repeat 1px 1px;
+    background-image: expression('url(/images/nice_navigation/wiki-icon-small.gif)');
+}
+
+#tools .fileActionPopup .blogs {
+    background: url(/images/nice_navigation/blog-icon-small.png) no-repeat 1px 1px;
+    background-image: expression('url(/images/nice_navigation/blog-icon-small.gif)');
+}
+
+#tools .fileActionPopup .aggregator {
+    background: url(/images/nice_navigation/feed-icon-small.png) no-repeat 1px 1px;
+    background-image: expression('url(/images/nice_navigation/feed-icon-small.gif)');
+}
+
+#tools .fileActionPopup .other {
+    background: url(/images/nice_navigation/other-icon-small.png) no-repeat 1px 1px;
+    background-image: expression('url(/images/nice_navigation/other-icon-small.gif)');
+}
+
+
+
+/* Normal styling */
+.menuborder.cb {
+    margin: 0px;
+}
+    /* Top corners and border */
+.menuborder .bt {
+    height:2px;
+    margin:0 0 0 2px;
+    background:url(/images/nice_navigation/menuborder-box.png) no-repeat 100% 0;
+}
+.menuborder .bt div {
+    position:relative;
+    left:-2px;
+    width:2px;
+    height:2px;
+    background:url(/images/nice_navigation/menuborder-box.png) no-repeat 0 0;
+    font-size:0;
+    line-height:0;
+}
+
+    /* Bottom corners and border */
+.menuborder .bb {
+    height:2px;
+    margin:0 0 0 2px;
+    background:url(/images/nice_navigation/menuborder-box.png) no-repeat 100% 100%;
+}
+.menuborder .bb div {
+    position:relative;
+    left:-2px;
+    width:2px;
+    height:2px;
+    background:url(/images/nice_navigation/menuborder-box.png) no-repeat 0 100%;
+    font-size:0;
+    line-height:0;
+}
+
+    /* Left border */
+.menuborder .i1 {
+    padding:0 0 0 2px;
+    background:url(/images/nice_navigation/menuborder-borders.png) repeat-y 0 0;
+}
+    /* Right border */
+.menuborder .i2 {
+    padding:0 2px 0 0;
+    background:url(/images/nice_navigation/menuborder-borders.png) repeat-y 100% 0;
+}
+    /* Wrapper for the content. Use it to set the background colour and insert some padding between the borders and the content. */
+.menuborder .i3 {
+    display:block;
+    margin:0;
+    padding:1px 1px;
+    background: #d6e3e5;
+}
+    /* Make the content wrapper auto clearing so it will contain floats (see http://positioniseverything.net/easyclearing.html). */
+.menuborder .i3:after {
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.menuborder .i3 {display:inline-block;}
+.menuborder .i3 {display:block;}
+
+
+
+.menutitle.cb {
+    margin: 0px;
+}
+.menutitle .bt {
+    height:1px;
+    margin:0 0 0 2px;
+    background:url(/images/nice_navigation/menutitle-box.png) no-repeat 100% 0;
+}
+.menutitle .bt div {
+    position:relative;
+    left:-2px;
+    width:2px;
+    height:1px;
+    background:url(/images/nice_navigation/menutitle-box.png) no-repeat 0 0;
+    font-size:0;
+    line-height:0;
+}
+.menutitle .bb {
+    height:1px;
+    margin:0 0 0 2px;
+    background:url(/images/nice_navigation/menutitle-box.png) no-repeat 100% 100%;
+}
+.menutitle .bb div {
+    position:relative;
+    left:-2px;
+    width:2px;
+    height:1px;
+    background:url(/images/nice_navigation/menutitle-box.png) no-repeat 0 100%;
+    font-size:0;
+    line-height:0;
+}
+.menutitle .i1 {
+    padding:0 0 0 1px;
+    background:url(/images/nice_navigation/menutitle-box.png) repeat-y 0 -1px;
+}
+.menutitle .i2 {
+    padding:0 1px 0 0;
+    background:url(/images/nice_navigation/menutitle-box.png) repeat-y 100% -1px;
+}
+.menutitle .i3 {
+    display:block;
+    margin:0;
+    padding: 0px;
+    background: url(/images/nice_navigation/menutitle-box.png) -2px -1px;
+}
+.menutitle .i3:after {
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.menutitle .i3 {display:inline-block;}
+.menutitle .i3 {display:block;}
+
+
+
+.menucontent.cb {
+    margin: 0px 0px;
+}
+.menucontent .bt {
+    height:1px;
+    margin:0 0 0 2px;
+    background:url(/images/nice_navigation/menucontent-box.png) no-repeat 100% 0;
+}
+.menucontent .bt div {
+    position:relative;
+    left:-2px;
+    width:2px;
+    height:1px;
+    background:url(/images/nice_navigation/menucontent-box.png) no-repeat 0 0;
+    font-size:0;
+    line-height:0;
+}
+.menucontent .bb {
+    height:1px;
+    margin:0 0 0 2px;
+    background:url(/images/nice_navigation/menucontent-box.png) no-repeat 100% 100%;
+}
+.menucontent .bb div {
+    position:relative;
+    left:-2px;
+    width:2px;
+    height:1px;
+    background:url(/images/nice_navigation/menucontent-box.png) no-repeat 0 100%;
+    font-size:0;
+    line-height:0;
+}
+.menucontent .i1 {
+    padding:0 0 0 1px;
+    background:url(/images/nice_navigation/menucontent-borders.png) repeat-y 0 0;
+}
+.menucontent .i2 {
+    padding:0 1px 0 0;
+    background:url(/images/nice_navigation/menucontent-borders.png) repeat-y 100% 0;
+}
+.menucontent .i3 {
+    display:block;
+    margin:0;
+    padding: 0px;
+    background: #fff;
+}
+.menucontent .i3:after {
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.menucontent .i3 {display:inline-block;}
+.menucontent .i3 {display:block;}
+
+
+
+
+/* NICE TABS :) */
+
+div.nice_tabs {
+    height: 36px;
+    background: url(/images/nice_navigation/tab-bg.gif) 100% 100% repeat-x;
+}
+
+.nice_tabs .i3 {
+    height: 27px;
+}
+
+.nice_tabs a {
+    font-size: 125%;
+    display: block;
+    padding: 8px 4px 0px 4px;
+    color: #EEE;
+}
+
+.nice_tabs .selected a {
+    padding: 5px 4px 0px 4px;
+}
+
+
+.nice_tabs a:hover {
+    color: #333;
+}
+
+.nice_tabs .selected a:hover {
+    color: #EEE;
+}
+
+/* .. and the borders */
+
+
+/* Normal styling */
+.nice_tabs .cb {
+    margin: 0px 5px;
+}
+    /* Top corners and border */
+.nice_tabs .bt {
+    height:3px;
+    margin:0 0 0 3px;
+    background:url(/images/nice_navigation/nice_tabs-box.png) no-repeat 100% 0;
+}
+.nice_tabs .bt div {
+    position:relative;
+    left:-3px;
+    width:3px;
+    height:3px;
+    background:url(/images/nice_navigation/nice_tabs-box.png) no-repeat 0 0;
+    font-size:0;
+    line-height:0;
+}
+
+    /* Bottom corners and border */
+.nice_tabs .bb {
+    height:3px;
+    margin:0 0 0 3px;
+    background:url(/images/nice_navigation/nice_tabs-box.png) no-repeat 100% 100%;
+}
+.nice_tabs .bb div {
+    position:relative;
+    left:-3px;
+    width:3px;
+    height:3px;
+    background:url(/images/nice_navigation/nice_tabs-box.png) no-repeat 0 100%;
+    font-size:0;
+    line-height:0;
+}
+
+    /* Left border */
+.nice_tabs .i1 {
+    padding:0 0 0 3px;
+    background:url(/images/nice_navigation/nice_tabs-box.png) repeat-y 0 -3px;
+}
+    /* Right border */
+.nice_tabs .i2 {
+    padding:0 3px 0 0;
+    background:url(/images/nice_navigation/nice_tabs-box.png) repeat-y 100% -3px;
+}
+    /* Wrapper for the content. Use it to set the background colour and insert some padding between the borders and the content. */
+.nice_tabs .i3 {
+    display:block;
+    margin:0;
+    padding:1px 1px;
+    background: url(/images/nice_navigation/nice_tabs-box.png) -3px -3px;
+}
+    /* Make the content wrapper auto clearing so it will contain floats (see http://positioniseverything.net/easyclearing.html). */
+.nice_tabs .i3:after {
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.nice_tabs .i3 {display:inline-block;}
+.nice_tabs .i3 {display:block;}
+
+
+
+/* Normal styling */
+.nice_tabs .selected .cb {
+    margin: 0px 5px;
+}
+    /* Top corners and border */
+.nice_tabs .selected .bt {
+    height:3px;
+    margin:0 0 0 3px;
+    background:url(/images/nice_navigation/nice_tabs-selected-box.png) no-repeat 100% 0;
+}
+.nice_tabs .selected .bt div {
+    position:relative;
+    left:-3px;
+    width:3px;
+    height:3px;
+    background:url(/images/nice_navigation/nice_tabs-selected-box.png) no-repeat 0 0;
+    font-size:0;
+    line-height:0;
+}
+
+    /* Bottom corners and border */
+.nice_tabs .selected .bb {
+    height:3px;
+    margin:0 0 0 3px;
+    background:url(/images/nice_navigation/nice_tabs-selected-box.png) no-repeat 100% 100%;
+}
+.nice_tabs .selected .bb div {
+    position:relative;
+    left:-3px;
+    width:3px;
+    height:3px;
+    background:url(/images/nice_navigation/nice_tabs-selected-box.png) no-repeat 0 100%;
+    font-size:0;
+    line-height:0;
+}
+
+    /* Left border */
+.nice_tabs .selected .i1 {
+    padding:0 0 0 3px;
+    background:url(/images/nice_navigation/nice_tabs-selected-box.png) repeat-y 0 -3px;
+}
+    /* Right border */
+.nice_tabs .selected .i2 {
+    padding:0 3px 0 0;
+    background:url(/images/nice_navigation/nice_tabs-selected-box.png) repeat-y 100% -3px;
+}
+    /* Wrapper for the content. Use it to set the background colour and insert some padding between the borders and the content. */
+.nice_tabs .selected .i3 {
+    display:block;
+    margin:0;
+    padding:1px 1px;
+    background: url(/images/nice_navigation/nice_tabs-selected-box.png) -3px -3px;
+}
+    /* Make the content wrapper auto clearing so it will contain floats (see http://positioniseverything.net/easyclearing.html). */
+.nice_tabs .selected .i3:after {
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.nice_tabs .selected .i3 {display:inline-block;}
+.nice_tabs .selected .i3 {display:block;}

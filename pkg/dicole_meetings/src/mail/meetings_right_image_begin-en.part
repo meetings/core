@@ -1,0 +1,7 @@
+[% IF in_html %]
+[% inthebubble = 1 %]
+<table cellspacing="0" cellpadding="0" style="width:530px; margin-left:35px; margin-top:0px; margin-right:35px; margin-bottom:15px;border-collapse:collapse;border-spacing:0;">
+<tr>
+<td width="254" style="width:254px; margin-bottom:0px; text-align:left; vertical-align:top;" valign="top">
+[% ELSE %]
+[% END %]

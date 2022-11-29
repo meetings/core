@@ -1,0 +1,13 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_dispatched_email add completed_date bigint after processed_date');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_dispatched_email add message_id text after sent_date');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_dispatched_email add index (message_id(64), completed_date)');
+}
+
+
+1;
+

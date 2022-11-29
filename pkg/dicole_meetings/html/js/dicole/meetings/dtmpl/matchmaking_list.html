@@ -1,0 +1,75 @@
+<div id="matchmaking-list" class="matchmaking modal-popup">
+    <h2><i class="ico-schedule"></i><%= MTN.t('Matchmaking') %></h2>
+
+    <% if( p.event.profile_data_filters ) { %>
+    <div class="filter">
+        <div class="inline-form-row">
+        <% $.each( p.processed_filters, function(i,f){ %>
+        <% if( i !== 0 && i % 2 === 0 ) { %>
+        <div style="clear:both;"></div></div>
+        <div class="inline-form-row">
+        <% } %>
+        <label for="filter_<%== i %>" class="smaller"><%== f.name %></label>
+        <select  name="track" class="filter-menu" id="filter_<%== i %>" tabindex="3" data-placeholder="<%= MTN.t('Choose') %>" data-track-key="<%== f.key%>">
+            <option value="" selected></option>
+            <% $.each( f.values, function(n,v){ %>
+            <option value="<%== v %>"><%== v %></option>
+            <% }); %>
+        </select>
+        <% }); %>
+        <div style="clear:both;"></div></div>
+    </div>
+    <% } %>
+    <div class="divider"></div>
+
+    <div id="matchmaking-startups">
+        <% dojo.forEach ( p.matchmakers, function( m ) { %>
+            <% if ( ! m.desktop_url && 0 ) { return } %>
+            <div class="startup"<% $.each( m.filter_attributes, function( ii, fa ) { %> data-search-<%== fa.key %>="<%== fa.string %>"<% } ); %>>
+            <div class="left">
+                <% if( m.image ) { %>
+                <div class="logo lazy" data-original="<%== m.image %>" style="background-image:url(/images/meetings/logo_loading.jpg);"></div>
+                <% } else { %>
+                <div class="img"><%== m.title %></div>
+                <% } %>
+                <% if ( m.website ) { %>
+                <a target="_blank" href="<%== m.website %>"><%= MTN.t('Website') %></a>
+                <% } %>
+                <% if ( m.youtube_url ) { %>
+                <a target="_blank" class="pitch" href="<%== m.youtube_url %>"><%= MTN.t('Watch video') %></a>
+                <% } %>
+            </div>
+            <div class="right">
+                <h3><%== m.title %><% if( m.country ) { %> <span class="country"><%== m.country %></span><% } %></h3>
+                <div class="wrap">
+                    <textarea id="" name="" rows="10" cols="30" readonly><%= m.description %></textarea>
+                    <div class="arrow-outer"><div class="arrow-inner"></div></div>
+                </div>
+                <% dojo.forEach ( m.contacts, function( c ) { %>
+                <div class="info">
+                    <img class="lazy" data-original="<%== c.contact_image ? c.contact_image : '/images/theme/default/default-user-avatar-36px.png' %>" src="/images/theme/default/default-user-avatar-36px.png" alt="" />
+                    <% if ( c.contact_name ) { %>
+                    <p class="name"><%== c.contact_name %></p>
+                    <% } %>
+                    <% if ( c.contact_title ) { %>
+                    <p class="title"><%== c.contact_title %></p>
+                    <% } %>
+                   <% if ( c.desktop_url ){ %>
+                   <div class="links">
+                       <a href="<%= c.desktop_url %>" target="_blank" class="schedule button gray"><%= c.desktop_calendar_url ? MTN.t('More info') : MTN.t('Schedule') %></a>
+                       <% if ( c.desktop_calendar_url ){ %>
+                       <a href="<%= c.desktop_calendar_url %>" target="_blank" class="schedule button blue"><%= MTN.t('Schedule') %></a>
+                       <% } %>
+                    </div>
+                    <% } %>
+                </div>
+                <% }); %>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <% }); %>
+    </div>
+</div>
+<% if( p.back_link && p.back_link_text ) { %>
+<div class="matchmaking-link"><a href="<%== p.back_link %>">&laquo; <%== p.back_link_text %></a></div>
+<% } %>

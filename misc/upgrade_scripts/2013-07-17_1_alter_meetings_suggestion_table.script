@@ -1,0 +1,10 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_meetings_meeting_suggestion add vanished_date bigint unsigned not null after disabled_date');
+}
+
+1;
+

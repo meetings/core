@@ -1,0 +1,84 @@
+--- OpenInteract-1.99_06_old/lib/OpenInteract2/Request.pm	2005-03-22 09:41:24.000000000 +0200
++++ OpenInteract-1.99_06/lib/OpenInteract2/Request.pm	2005-03-22 08:51:16.000000000 +0200
+@@ -382,26 +382,25 @@
+         push @lang, ref( $session_lang ) eq 'ARRAY'
+                          ? @{ $session_lang } : $session_lang;
+     }
+-    elsif ( my @param_lang = $self->param( $lang_config->{choice_param_name} ) ) {
++
++    if ( my @param_lang = $self->param( $lang_config->{choice_param_name} ) ) {
+         $log->is_debug &&
+             $log->debug( "Added language from request parameter ",
+                          "'$lang_config->{choice_param_name}'" );
+-        push @lang, @param_lang;
+-    }
+-    else {
+-        $log->is_debug &&
+-            $log->debug( "Added default language: $lang_config->{default_language}" );
+-        push @lang, $lang_config->{default_language};
++        unshift @lang, @param_lang;
+     }
+ 
+-
+     if ( my @browser_lang = $self->_find_browser_languages ) {
+         $log->is_debug &&
+             $log->debug( "Added language to head from browser: ",
+                          join( ', ', @browser_lang ) );
+-        unshift @lang, @browser_lang;
++        push @lang, @browser_lang;
+     }
+ 
++    $log->is_debug &&
++        $log->debug( "Added default language: $lang_config->{default_language}" );
++    push @lang, $lang_config->{default_language};
++
+     $self->{_user_language} = \@lang;
+     $log->is_debug &&
+         $log->debug( "Request property 'language' now: ",
+--- OpenInteract-1.99_06_old/lib/OpenInteract2/I18N.pm	2005-03-18 06:09:48.000000000 +0200
++++ OpenInteract-1.99_06/lib/OpenInteract2/I18N.pm	2005-03-22 07:19:36.000000000 +0200
+@@ -31,8 +31,13 @@
+         }
+     };
+     if ( $@ ) {
+-        $log->error( "Failed to translate '$key': $@" );;
+-        return "Message error for '$key'";
++        if ( $log->is_debug ) {
++            $log->debug( "Failed to translate '$key': $@" );;
++            return "Message error for '$key'";
++        }
++        else {
++            return $key;
++        }
+     }
+     $log->is_debug &&
+         $log->debug( "Message for key '$key': '$msg'; given ",
+--- OpenInteract-1.99_06_old/lib/OpenInteract2/I18N/Initializer.pm	2005-03-18 06:09:50.000000000 +0200
++++ OpenInteract-1.99_06/lib/OpenInteract2/I18N/Initializer.pm	2005-03-22 09:45:55.000000000 +0200
+@@ -145,7 +145,8 @@
+     while ( my ( $key, $value ) = each %{ $file_messages } ) {
+         if ( $all_messages->{ $lang }{ $key } ) {
+             my $source = $all_messages->{ $lang }{SOURCE}{ $key };
+-            $log->warn(
++            $log->is_debug &&
++            $log->debug(
+                 "DUPLICATE MESSAGE KEY FOUND. Key '$key' from ",
+                 "'$file' was already found in message file ",
+                 "'$source' read in earlier. Existing key WILL NOT BE ",
+@@ -207,6 +208,7 @@
+     open( GETTEXT, '<', $gettext_file )
+         || oi_error "Failed to open gettext file: $!";
+     my $msg = Locale::Maketext::Lexicon::Gettext->parse( <GETTEXT> );
++    delete $msg->{''};
+     close( GETTEXT );
+     if ( $log->is_debug ) {
+         $log->debug( "Read following messages from '$gettext_file': " );
+@@ -291,7 +293,7 @@
+ 
+ %Lexicon = (
+ [% FOREACH msg_key = messages.keys -%]
+-  '[% msg_key %]' => qq{[% messages.$msg_key %]},
++  qq{[% msg_key %]} => qq{[% messages.$msg_key %]},
+ [% END -%]
+ );
+ 

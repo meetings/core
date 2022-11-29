@@ -1,0 +1,11 @@
+div#summary-connecting.tab
+    div#google-connecting.m-modal
+        div.modal-header
+            h3 
+                i.ico-calendar
+                !=MTN.t('Connecting your calendar')
+            
+        div.modal-content
+            p!=MTN.t('We are now importing your calendar items.')
+            p(style="text-align:center; margin-bottom:40px;")!=MTN.t('Please wait.')
+            div#loader

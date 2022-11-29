@@ -1,0 +1,80 @@
+<div id="presentations_tag_browser" class="browse tag_browser_control">
+
+    <div id="browse_header">
+    	<div class="left">
+	    	<h1>
+                <span>[% MSG('Materials') %]</span>
+
+    <a id="presentations_newtagsearch_input_autofill_url" href="[% tag_complete_url %]" style="display:none"></a>
+    <input id="presentations_newtagsearch_input" class="f_dicole_autofill js_tip_field" value="[% MSG('start a new search') %]" />
+    <a id="presentations_newtagsearch_input_go" class="js_presentations_newtagsearch_input_go" href="#">[% MSG('Go') %]</a>
+
+    <script>
+        dicole_autofiller_add_event("presentations_newtagsearch_input", 'on_select', function( id, tag, val ) {
+            document.location = '[% go_url_base | html %]?tags=' + encodeURIComponent( tag.name );
+        } );
+        dicole_autofiller_add_event("presentations_newtagsearch_input", 'on_go', function( id, val ) {
+            document.location = '[% go_url_base | html %]?tags=' + encodeURIComponent( val );
+        } );
+    </script>
+
+            </h1>
+    	</div>
+	    <div class="right">
+    		<span id="browse_filter_with_keywords">
+	    		<a href="#" id="filter_link">[% MSG('Filter with keywords') | html %] 
+		    	<span class="filter_hide">x</span><span class="filter_show">&darr;</span></a>
+    		</span>
+	    </div>
+    </div>
+
+	<div id="browse_filter_container" style="clear:both">
+
+		<div id="browse_selected_container">
+			<span id="browse_selected_tags">
+				<h2 class="title">[%- MSG('with keywords') | html -%]</h2>
+                <span id="browse_selected_tags_container">
+                    [%- PROCESS dicole_presentations::component_list_taglist links = keywords -%]
+                </span>
+			</span>
+
+			<span id="filter_more_container">
+				<a class="tag_separator">+</a>
+				<a href="#" id="filter_more">[%- MSG('filter more') | html %] <span class="filter_more_hide">x</span><span class="filter_more_show">&darr;</span></a>
+			</span>
+		</div>
+
+		<div id="browse_suggestions">
+			[%- PROCESS dicole_presentations::component_list_tagcloud -%]
+		</div>
+
+        <div style="clear:both"></div>
+
+	</div>
+
+	<div id="browse_results_header" style="clear:both">
+		<h2>
+			<span id="browse_result_count">[% (result_count == 1) ? MSG('1 material') : MSG('[_1] materials', result_count ) | html %]</span>
+		</h2>
+	</div>
+
+	<div id="browse_results">
+		[% INCLUDE dicole_presentations::component_list_materials %]
+	</div>
+
+    <div style="clear:both"></div>
+
+	<div id="browse_show_more">
+		<a class="filter" href="#">&uarr;[% MSG('Filter results') | html %]</a> <a class="show" href="#">&darr;[% MSG('Show more') | html %]</a>
+	</div>
+	<div id="browse_loading">
+		[% MSG('Loading...') | html %]
+	</div>
+
+	[%- IF objects.size == 0 && 0 -%]
+		<div id="browse_no_results">
+			<h2>[% MSG('No results') | html %]</h2>
+		</div>
+	[%- END -%]
+</div>
+

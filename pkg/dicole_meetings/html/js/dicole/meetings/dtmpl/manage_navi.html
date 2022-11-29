@@ -1,0 +1,20 @@
+<div id="manage-navi">
+    <a href="<%== p.basic_url %>" data-target="manage_basic" class="js_meetings_manage_change <% if (p.selected == "manage_basic" ) { %>selected<% } %>">
+        <%= MTN.t('Basic Information') %>
+    </a>
+    <% if ( p.participant_rights_url ) { %>
+    <a href="<%== p.participant_rights_url %>" data-target="manage_participant_rights" class="js_meetings_manage_change <% if (p.selected == "manage_participant_rights" ) { %>selected<% } %>">
+        <%= MTN.t('Participant Rights') %>
+    </a>
+    <% } %>
+    <% if ( p.email_url ) { %>
+    <a href="<%== p.email_url %>" data-target="manage_email" class="js_meetings_manage_change <% if (p.selected == "manage_email" ) { %>selected<% } %>">
+        <%= MTN.t('Email Settings') %>
+    </a>
+    <% } %>
+    <% if ( p.remove_url ) { %>
+    <a href="<%== p.remove_url %>" data-target="manage_remove" class="js_meetings_manage_change <% if (p.selected == "manage_remove" ) { %>selected<% } %>">
+        <%= MTN.t('Remove Meeting') %>
+    </a>
+    <% } %>
+</div>

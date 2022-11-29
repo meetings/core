@@ -1,0 +1,376 @@
+[%#- $Id: navigation.tmpl,v 1.29 2009-01-07 14:42:33 amv Exp $ # -%]
+[% FILTER replace( '\n\s*\n', "\n" ) %]
+[%#-
+
+The navigation tree will go down to tool selection level in the Personal and Admin section.
+This is also the case with the ALL of the groups.
+
+# name = name of the tree element
+# icons = list of icons for adding more visuality, these icons are used as backgrounds, basic icons next to the name which ever is suitable for the specific element
+# link = onclick relative or absolute link
+# active = the active var is deffed when an element should be active, in general this should also be applied to all levels beneath the active element (towards the trunk of the branch)
+# sub_tree = next level of items belonging below this one
+
+
+
+tree =
+[
+
+  {
+    name = 'This is default data',
+    icons = [ 'icon.gif', 'icon2.gif' ],
+    link = '/baz?foo=3',
+active = '1',
+    sub_tree =
+    [
+      {
+        name = 'Group area: Group 1 Name',
+        icons = [ 'icon.gif' ],
+        link = '/foo?baz=1',
+active = '1',
+        sub_tree =
+        [
+          {
+            name = 'Summary',
+            icons = [ 'icon.gif' ],
+            link = '/foo?baz=1',
+active = '1',
+            sub_tree =
+            [
+              {
+                name = 'Desktop',
+                icons = [ 'icon.gif' ],
+                link = '/foo?baz=1',
+active = '1',
+              },
+            ],
+          },
+          {
+            name = 'Tools',
+            icons = [ 'icon.gif' ],
+            link = '/biz?bar=1',
+            sub_tree =
+            [
+              {
+                name = 'Group 1 Tool 1',
+                icons = [ 'icon.gif' ],
+                link = '/biz?bar=1',
+              },
+              {
+                name = 'Group 1 tool 2',
+                icons = [ 'icon.gif' ],
+                link = '/biz?bar=1',
+              },
+            ],
+          },
+          {
+            name = 'Config',
+            icons = [ 'icon.gif' ],
+            link = '/buz?beer=1',
+            sub_tree =
+            [
+              {
+                name = 'Kick users',
+                icons = [ 'icon.gif' ],
+                link = '/buz?beer=1',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name = 'Group area: Group 2 Name',
+        icons = '',
+        link = '/foo?baz=2',
+        sub_tree =
+        [
+          {
+            name = 'Summary',
+            icons = [ 'icon.gif' ],
+            link = '/foo?baz=2',
+            sub_tree =
+            [
+              {
+                name = 'Desktop',
+                icons = [ 'icon.gif' ],
+                link = '/foo?baz=2',
+
+              },
+            ],
+          },
+          {
+            name = 'Tools',
+            icons = [ 'icon.gif' ],
+            link = '/biz?bar=2',
+            sub_tree =
+            [
+              {
+                name = 'Group 2 Tool 1',
+                icons = [ 'icon.gif' ],
+                link = '/biz?bar=2',
+              },
+              {
+                name = 'Group 2 tool 2',
+                icons = [ 'icon.gif' ],
+                link = '/biz?bar=2',
+              },
+            ],
+          },
+          {
+            name = 'Config',
+            icons = [ 'icon.gif' ],
+            link = '/buz?beer=2',
+            sub_tree =
+            [
+              {
+                name = 'Kick users',
+                icons = [ 'icon.gif' ],
+                link = '/buz?beer=2',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name = 'Personal',
+    icons = [ '' ],
+    link = '/foo?bar=2',
+
+    sub_tree =
+    [
+      {
+        name = 'Personal area of Usario Letto',
+        icons = [ ],
+        link = '/foo?baz=2',
+
+        sub_tree =
+        [
+          {
+            name = 'Summary',
+            icons = [ 'icon.gif' ],
+            link = '/foo?baz=2',
+
+            sub_tree =
+            [
+              {
+                name = 'Desktop',
+                icons = [ 'icon.gif' ],
+                link = '/foo?baz=3',
+              },
+            ],
+          },
+          {
+            name = 'Tools',
+            icons = [ 'icon.gif' ],
+            link = '/biz?bar=2',
+            sub_tree =
+            [
+              {
+                name = 'User Manager',
+                icons = [ 'icon.gif' ],
+                link = '/biz?bar=3',
+              },
+              {
+                name = 'Security Manager',
+                icons = [ 'icon.gif' ],
+                link = '/biz?bar=4',
+              },
+            ],
+          },
+          {
+            name = 'Config',
+            icons = [ 'icon.gif' ],
+            link = '/buz?beer=2',
+            sub_tree =
+            [
+              {
+                name = 'Change password',
+                icons = [ 'icon.gif' ],
+                link = '/buz?beer=2',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+]
+-%]
+
+[%- tree = navigation -%]
+[%- imagepath = '/images/theme/default/navigation/' -%]
+[%- imagepathTab = '/images/theme/default/navigation/icons/16x16/' -%]
+
+<div id="navContainer" class="navContainer"><!-- navContainer -->
+    <div class="navPriContainer"><!-- navPriContainer -->
+
+[%#- Generating primary level navigation items -%]
+[%#- 1. looping through the tree to find the active area type and inserting the name in the top navigation -%]
+
+        <div class="navPriContent_1"><!-- navPriContent_1 -->
+            <div class="tabs"><!-- tabs -->
+                <ul>
+
+[%- FOREACH tab = tree -%]
+                    [%- IF tab.active == '1' -%][%- mainarea.name = tab.name -%][%- END -%]
+
+                    <li [%-# 'class="selected"' IF tab.active == '1' && !tab.icons.0 -%][%- IF tab.active == '1' -%]class="selectedPic" style="background:url([%- imagepath -%]unselected_left.gif) no-repeat left top;"[%- END -%][%- IF tab.active != '1' -%]class="unselectedPic" style="background:url([%- imagepath -%]selected_left.gif) no-repeat left top;"[%- END -%]>
+
+                        <a href="[%- tab.link-%]" [%- IF tab.active == '1' -%]style="background:url([%- imagepath -%]unselected_right.gif) no-repeat right top;"[%- END -%][%- IF tab.active != '1' -%]style="background:url([%- imagepath -%]selected_right.gif) no-repeat right top;"[%- END -%]>[%- tab.name %]</a>
+
+                    </li>
+[%- END -%]
+
+                </ul>
+            </div><!-- // tabs -->
+        </div><!-- // navSecContent_1 -->
+        <div class="navPriContent_2"><!-- navPriContent_2 -->
+            <div class="searchHelpLogout"><!-- searchHelpLogout -->
+                <!--Haku: <input type="text" />-->
+                    <a class="linkButton" href="http://www.dicole.com/?page_id=21" title="[% MSG( 'Feedback' ) %]" target="_blank">
+                        [% MSG( 'Feedback' ) %]
+                    </a>
+                    <a class="linkButton" href="/xlogout/" title="[% MSG( 'Log out' ) %]">
+                        [% MSG( 'Log out' ) %]
+                    </a>
+            </div><!-- // searchHelpLogout -->
+        </div><!-- // navPriContent_2 -->
+    </div><!-- // navPriContainer -->
+<!-- navMid -->
+
+[%#- Generating middle level navigation items %]
+[%#- 1. looping through the tree to find the active area and inserting the name of the area  in the mid navigation %]
+[%#- 2. looping through the tree to see if the second level list has more than one child and which child is active, if yes = create dropdown menu from all the childrens' names on that level and assign selected to the active child %]
+[%- menuCount = 0 -%][%-# Enabling the javascript function hideAllMenus to loop with ++ to hide the drop down menus -%]
+
+    [%- FOREACH area = tree -%]
+        [%- IF area.active == '1' -%]
+    <div class="navMid">
+        <div class="dropDownMenu"><!-- dropDownMenu -->
+            <ul>
+            [%- FOREACH children = area.sub_tree -%]
+                [%- IF children.sub_tree -%]
+                    [% FOREACH item = children.sub_tree %]
+                        [% IF item.link %][% hasLinks = '1' %][% END %]
+                        [% LAST IF item.link %]
+                    [% END %]
+                [% END %]
+                <li class="parent[%- IF children.active == '1' -%] parentActive[% ELSE %] parentNonActive[% END %]" [%- IF children.sub_tree && hasLinks == '1' -%][%- menuCount = menuCount + 1 -%][%- END -%]>
+                        <a class="parentLink [%- 'active' IF children.active == '1' -%]" href="[% '#' IF !children.link %][% children.link %]">[%- IF children.icons.0 -%]<img src="[%- imagepathTab -%][%- children.icons.0 -%][%-#- dropdown item can only have one icon -%]" alt="[%- children.name -%]" title="[%- children.name -%]" /> [%- END -%][%- children.name -%][%- IF children.sub_tree && hasLinks == '1' -%] <img src="[% imagepathTab %]downarrow.gif" width="16" height="16" border="0" />[% END %]</a>
+
+
+                            [% IF children.sub_tree && hasLinks == '1' %]
+
+                        <ul id="[%- menuCount -%]">
+
+                                [%- FOREACH item = children.sub_tree -%]
+                                    [%- IF item.link -%]
+                            <li>
+                                <a href="[%- item.link-%]">
+                                    [%- IF item.icons.0 -%]
+                                    <img src="[%- imagepathTab -%][%- item.icons.0 -%][%-#- dropdown item can only have one icon -%]" alt="[%- item.name -%]" title="[%- item.name -%]" />
+                                    [%- END -%]
+                                    <span>[%- item.name -%]</span>
+
+                                </a>
+                            </li>
+                                    [%- END -%]
+                                [%- END -%]
+                        </ul>
+                            [% hasLinks = '0' %]
+                        [% END %]
+                    </li>
+                    [%- END -%]
+            </ul>
+        </div><!-- // dropDownMenu -->
+    </div><!-- // navMid -->
+        [%- END -%]
+
+
+        [%- FOREACH children = area.sub_tree -%]
+            [%- FOREACH gchildren = children.sub_tree -%]
+                [%- IF gchildren.active == '1' -%]
+
+
+    <div class="navSecContainer"><!-- navSecContainer -->
+                [%- IF gchildren.sub_tree.size %][%#- Skips secondary menu if no dropdowns present -%]
+[%#- Generating secondary level navigation items %]
+[%#- 1. looping through the tree to find the active area and its children %]
+[%#- 2. looping through the children and inserting upper level children as the title of the list and its children as the corresponding list elements  %]
+
+        <div class="navSecContent_1"><!-- navSecContent_1 -->
+            <div class="dropDownMenu"><!-- dropDownMenu -->
+                <ul>
+                    [%- FOREACH grandchildren = gchildren.sub_tree -%]
+                        [%- IF grandchildren.sub_tree -%]
+                            [% FOREACH item = grandchildren.sub_tree %]
+                                [% IF item.link %][% hasLinks = '1' %][% END %]
+                                [% LAST IF item.link %]
+                            [% END %]
+                        [% END %]
+
+                    <li class="parent[%- IF children.active == '1' -%] parentActive[% ELSE %] parentNonActive[% END %]" [%- IF grandchildren.sub_tree && hasLinks == '1' -%][%- menuCount = menuCount + 1 -%][%- END -%]>
+                        <a class="parentLink [%- 'active' IF grandchildren.active == '1' -%]" href="[% '#' IF !grandchildren.link %][% grandchildren.link %]">[%- IF grandchildren.icons.0 -%]<img src="[%- imagepathTab -%][%- grandchildren.icons.0 -%][%-#- dropdown item can only have one icon -%]" alt="[%- grandchildren.name -%]" title="[%- grandchildren.name -%]" /> [%- END -%][%- grandchildren.name -%][%- IF grandchildren.sub_tree && hasLinks == '1' -%] <img src="[% imagepathTab %]downarrow.gif" width="16" height="16" border="0" />[% END %]</a>
+
+
+                            [% IF grandchildren.sub_tree && hasLinks == '1' %]
+
+                        <ul id="[%- menuCount -%]">
+
+                                [%- FOREACH item = grandchildren.sub_tree -%]
+                            <li>
+                                <a href="[%- item.link-%]">
+                                    [%- IF item.icons.0 -%]
+                                    <img src="[%- imagepathTab -%][%- item.icons.0 -%][%-#- dropdown item can only have one icon -%]" alt="[%- item.name -%]" title="[%- item.name -%]" />
+                                    [%- END -%]
+                                    <span>[%- item.name -%]</span>
+
+                                </a>
+                                [% IF item.sub_tree.0 %]
+                                <ul>
+                                        [% FOREACH subItem = item.sub_tree %]
+                                    <li>
+                                        <a href="[%- subItem.link-%]">
+                                            [%- IF subItem.icons.0 -%]
+                                            <img src="[%- imagepathTab -%][%- subItem.icons.0 -%][%-#- dropdown item can only have one icon -%]" alt="[%- subItem.name -%]" title="[%- subItem.name -%]" />
+                                            [%- END -%]
+                                            <span>[%- subItem.name -%]</span>
+                                        </a>
+                                    </li>
+                                        [% END %]
+                                </ul>
+                                    [% END %]
+                            </li>
+                                [%- END -%]
+                        </ul>
+                            [% hasLinks = '0' %]
+                        [% END %]
+                    </li>
+                    [%- END -%]
+                </ul>
+            </div><!-- // dropDownMenu -->
+        </div><!-- // navSecContent_1 -->
+                [%- END -%]
+                [%- IF gchildren.sub_tree.size || ! gchildren.link -%]
+        <div class="navSecContent_2"><!-- navSecContent_2 -->
+                    [%- IF gchildren.active == '1' -%]
+                <div class="navSecTitle">
+                        [%- IF gchildren.icons.0 -%]
+                    <img src="[%- imagepathTab -%][%- gchildren.icons.0 -%]" alt="[%- gchildren.name -%]" title="[%- gchildren.name -%]" />
+                        [%- END -%]
+                    [%- gchildren.name -%]
+                </div>
+                    [%- END -%]
+        </div><!-- // navSecContent_2 -->
+                [%- END -%]
+    </div><!-- // navSecContainer -->
+            [%- END -%]
+        [%- END -%]
+    [%- END -%]
+[%- END -%]
+
+</div><!-- // navContainer -->
+<script defer="defer" src="/js/dropDowns.js" type="text/javascript"></script>
+[% END %]

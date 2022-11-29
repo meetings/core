@@ -1,0 +1,78 @@
+CREATE TABLE dicole_profile (
+ profile_id            %%INCREMENT%%,
+ user_id                int unsigned not null,
+
+ organization           text,
+ organization_unit      text,
+ title                  tinytext,
+ identity_code          tinytext,
+
+ homephone_number       tinytext,
+ telephone_number       tinytext,
+ mobile_number          tinytext,
+ fax_number             tinytext,
+ icq_number             tinytext,
+ aim_screenname         tinytext,
+ msn_profile            tinytext,
+ jabber                 tinytext,
+ skype                  tinytext,
+ weblog_url             text,
+ mail                   tinytext,
+
+ street_address         text,
+ room_no                tinytext,
+ postal_address         text,
+ state                  tinytext,
+ postal_code            tinytext,
+ city                   tinytext,
+ country                tinytext,
+
+ home_postal_address    text,
+ home_state             tinytext,
+ home_postal_code       tinytext,
+ home_city              tinytext,
+ home_country           tinytext,
+
+ timezone               tinytext,
+ spoken_languages       text,
+
+ date_of_birth          tinytext,
+ gender                 tinytext,
+
+ past_organization      text,
+ past_title             tinytext,
+
+ school                 tinytext,
+ degree                 tinytext,
+ other_degree           tinytext,
+ target_degree          tinytext,
+
+ personal_image         tinytext,
+ personal_education     text,
+ personal_interests     text,
+ personal_hobbies       text,
+ personal_heroes        text,
+ personal_favourites    text,
+ personal_description   text,
+ personal_line          tinytext,
+ personal_website       text,
+
+ pro_image              tinytext,
+ pro_line               tinytext,
+ pro_cities_worked      text,
+ pro_orgs_worked        text,
+ pro_titles_held        text,
+ pro_teaching           text,
+ pro_tech               text,
+ pro_research           text,
+ pro_international      text,
+ pro_mentors            text,
+ pro_goals              text,
+ pro_description        text,
+ pro_website            text,
+ pro_events             text,
+ pro_skills             text,
+
+ unique                 ( profile_id ),
+ primary key            ( profile_id )
+)

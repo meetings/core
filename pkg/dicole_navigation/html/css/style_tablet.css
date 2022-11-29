@@ -1,0 +1,84 @@
+.tool_2_column_td_1 { width: 230px !important }
+.tool_2_column_div_1 { width: 230px !important }
+
+.tool_2_column_td_2 { width: 413px !important }
+.tool_2_column_div_2 { width: 413px !important }
+
+
+.desktop_2_column_td_1 { width: 230px !important }
+.desktop_2_column_div_1 { width: 230px !important }
+
+.desktop_2_column_td_2 { width: 400px !important }
+.desktop_2_column_div_2 {
+width: 400px !important;
+}
+
+.desktop_2_column_div_1 img {
+max-width: 80%;
+}
+
+.desktop_2_column_div_2 img {
+max-width: 80%;
+}
+
+.tool_2_column_div_1 img {
+max-width: 80%;
+}
+
+.tool_2_column_div_2 img {
+max-width: 80%;
+}
+
+.verticalContent input[type="text"] {
+width: 97%;
+}
+
+.content { width: 99%;
+border: 0px;
+}
+
+#navi_actions {
+width: 250px;
+}
+
+.mceEditor {
+	width: 380px !important;
+	margin-left: 5px !important;
+}
+
+#navi_tools a {
+text-align: center;
+width: 60px !important;
+padding-right: 5px;
+padding-left: 5px;
+font-size: 10px;
+}
+
+
+.networking_profile_portrait_border img {
+max-width: 183px;
+}
+
+.networking_profile_portrait_border {
+max-width: 187px;
+}
+
+.footer { width: 97%; border-right: 0px; }
+
+#navi_tools {
+width: auto;
+}
+
+#navi_tools a .dropdown_arrow {
+    left: 50px;
+}
+
+
+.miniTagCloud a {
+	white-space: normal;
+}
+
+.footer {
+width: 96%;
+}
+

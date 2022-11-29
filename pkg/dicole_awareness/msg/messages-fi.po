@@ -1,0 +1,209 @@
+# $Id: messages-fi.po,v 1.13 2010-04-08 19:22:13 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:10:29+0000\n"
+"PO-Revision-Date: 2005-03-22 02:10:29+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Online members"
+msgstr "Paikalla olevat jäsenet"
+
+msgid "Adds a summary of online group members."
+msgstr "Lisää yhteenvedon ryhmän paikalla olevista jäsenistä"
+
+msgid "Online group members"
+msgstr "Paikalla olevat jäsenet"
+
+msgid "No online members."
+msgstr "Ei paikalla olevia jäseniä."
+
+msgid "Unknown"
+msgstr "Tuntematon"
+
+msgid "Offline"
+msgstr "Offline-tila"
+
+msgid "Online"
+msgstr "Online-tila"
+
+msgid "Away"
+msgstr "Poistunut"
+
+msgid "Not Available"
+msgstr "Ei tavoitettavissa"
+
+msgid "Do Not Disturb"
+msgstr "Älä häiritse"
+
+msgid "Invisible"
+msgstr "Näkymätön"
+
+msgid "Skype Me"
+msgstr "Soita minulle"
+
+msgid "Skype menu for user"
+msgstr "Skype -valikko käyttäjälle"
+
+msgid "Call user"
+msgstr "Soita käyttäjälle"
+
+msgid "Add user to contact list"
+msgstr "Lisää käyttäjä kontakteihin"
+
+msgid "Start a text chat with user"
+msgstr "Aloita tekstikeskustelu käyttäjän kanssa"
+
+msgid "Show the Skype profile of user"
+msgstr "Näytä käyttäjän profiili"
+
+msgid "Send a file to user"
+msgstr "Lähetä tiedosto käyttäjälle"
+
+msgid "Online users"
+msgstr "Paikalla olevat käyttäjät"
+
+msgid "%1 seconds ago"
+msgstr "%1 sekunttia sitten"
+
+msgid "No online users."
+msgstr "Ei käyttäjiä paikalla."
+
+msgid "%1 day(s)"
+msgstr "%1 päivä(ä)"
+
+msgid "%1 day(s) ago"
+msgstr "%1 päivä(ä) sitten"
+
+msgid "%1 days ago"
+msgstr "%1 päivää sitten"
+
+msgid "1 day ago"
+msgstr "1 päivä sitten"
+
+msgid "%1 hour(s)"
+msgstr "%1 tunti(a)"
+
+msgid "%1 hour(s) ago"
+msgstr "%1 tunti(a) sitten"
+
+msgid "%1 hours ago"
+msgstr "%1 tuntia sitten"
+
+msgid "1 hour ago"
+msgstr "1 tunti sitten"
+
+msgid "%1 minute(s)"
+msgstr "%1 minuutti(a)"
+
+msgid "%1 minute(s) ago"
+msgstr "%1 minuutti(a) sitten"
+
+msgid "%1 minutes ago"
+msgstr "%1 minuuttia sitten"
+
+msgid "1 minute ago"
+msgstr "1 minuutti sitten"
+
+msgid "%1 second(s)"
+msgstr "%1 sekunti(a)"
+
+msgid "Gives raports of usage"
+msgstr "Tuottaa raportteja käytöstä"
+
+msgid "Mail information"
+msgstr "Viestin tiedot"
+
+msgid "Mail members"
+msgstr "Lähetä sähköpostia jäsenille"
+
+msgid "Message sent to you succesfully."
+msgstr "Viesti lähetettiin sinulle."
+
+msgid "Messages were sent succesfully."
+msgstr "Viestit lähetettiin."
+
+msgid "Now"
+msgstr "Nyt"
+
+msgid "Raports"
+msgstr "Raportit"
+
+msgid "Sender address"
+msgstr "Lähettäjän osoite"
+
+msgid "Sender name"
+msgstr "Lähettäjän nimi"
+
+msgid "Send mail"
+msgstr "Lähetä viesti"
+
+msgid "Send mail to group users"
+msgstr "Lähetä posti ryhmän käyttäjille"
+
+msgid "Send test mail to self"
+msgstr "Lähetä testiviesti itselle"
+
+msgid "Some messages could not be sent: %1"
+msgstr "Joidenkin viestien lähetyksessä ilmeni ongelmia: %1"
+
+msgid "User can send mail to group users"
+msgstr "Käyttäjä voi lähettää sähköpostia ryhmien käyttäjille"
+
+msgid "You must fill all fields."
+msgstr "Kaikki kentät tulee täyttää."
+
+msgid "Activity"
+msgstr "Aktiivisuus"
+
+msgid "Blog posts"
+msgstr "Blogiviestit"
+
+msgid "Daily usage"
+msgstr "Päivittäinen käyttö"
+
+msgid "Domain reports"
+msgstr "Käyttöraportit"
+
+msgid "Group reports"
+msgstr "Ryhmän käyttöraportit"
+
+msgid "Report"
+msgstr "Raportti"
+
+msgid "User based usage"
+msgstr "Käyttö käyttäjittäin"
+
+msgid "Weekly usage"
+msgstr "Käyttö viikoittain"
+
+msgid "Weekly Usage"
+msgstr "Käyttö viikoittain"
+
+msgid "Wiki edits"
+msgstr "Wikin muokkaukset"
+
+msgid "See domain reports"
+msgstr "Katso domainin raportit"
+
+msgid "See group reports"
+msgstr "Katso ryhmän raportit"
+
+msgid "Total"
+msgstr "Kaikki"
+
+msgid "User can see domain reports"
+msgstr "Käyttäjä voi nähdä domainin raportit"
+
+msgid "User can see group reports"
+msgstr "Käyttäjä voi nähdä ryhmän raportit"
+
+msgid "Show more users"
+msgstr "Näytä lisää käyttäjiä"

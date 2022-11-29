@@ -1,0 +1,105 @@
+#!/usr/bin/perl
+
+use strict;
+use Cwd;
+use Data::Dumper;
+use File::Spec;
+
+my $pkg = @ARGV[0];
+
+unless ($pkg && -d "pkg/$pkg") {
+    die "no such package or script not run in source root\n";
+}
+
+my %values = ();
+
+chdir("pkg/$pkg");
+
+my $package = (split /=\s*/, `grep 'sql_in' package.ini`)[1];
+chomp $package;
+
+die "No sql_installer defined for $pkg\n" if !$package;
+
+$values{package} = $package;
+
+if ( -d 'struct' ) {
+    my @struct = split /\s+/s, `ls struct|grep -v CVS`;
+
+    my %files = ();
+    for my $file (@struct) {
+        if ($file =~ /\.sqlite\.sql/) { push @{$files{sqlite}}, $file; }
+        elsif ($file =~ /\.pg\.sql/) { push @{$files{pg}}, $file; }
+        elsif ($file =~ /\.sql/) { push @{$files{default}}, $file; }
+    }
+
+    if (scalar(%files)) {
+        my $files = Data::Dumper::Dumper(\%files);
+        $files =~ s/^[^\n]*\n|\n[^\n]*\n$//gs;
+        $values{files} = $files;
+    }
+}
+if ( -f 'conf/spops.ini' ) {
+    my @spops = split /\s+/s, `cat conf/spops.ini`;
+    @spops = grep /^\[\S*\]$/, @spops;
+    $_ =~ s/\[(.*)\]/$1/ for @spops;
+
+    if (scalar(@spops)) {
+        my $structure = Data::Dumper::Dumper(\@spops);
+        $structure =~ s/^[^\n]*\n|\n[^\n]*\n$//gs;
+        $values{structure} = $structure;
+    }
+}
+if ( -d 'data' ) {
+    my @data = split /\s+/s, `ls data|grep -v CVS`;
+    if (scalar(@data)) {
+        my $data = Data::Dumper::Dumper(\@data);
+        $data =~ s/^[^\n]*\n|\n[^\n]*\n$//gs;
+        $values{data} = $data;
+    }
+}
+
+my $template = <<'TEMPLATE';
+package <<package>>;
+
+use strict;
+use base qw( OpenInteract2::SQLInstall );
+
+my %FILES = (
+<<files>>
+);
+
+sub get_structure_set {
+    return [
+<<structure>>
+    ];
+}
+
+sub get_structure_file {
+    my ( $self, $set, $type ) = @_;
+    return $FILES{pg}     if ( $type eq 'Pg' );
+    return $FILES{sqlite} if ( $type eq 'SQLite' );
+    return $FILES{default};
+}
+
+sub get_data_file {
+    return [
+<<data>>
+    ];
+}
+
+1;
+TEMPLATE
+
+for my $key (qw/ package files structure data /) {
+    $template =~ s/<<$key>>/$values{$key}/;
+}
+
+my @package = split /::/, $package;
+my $pfile = File::Spec->catfile(@package);
+$pfile .= '.pm';
+
+open F, ">$pfile" or die "Could not open $pfile for writing.\n";
+print F $template;
+close F;
+
+1;

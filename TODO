@@ -1,0 +1,89 @@
+Dicole TODO list
+------------------
+
+ + searching or sorting a special type column (Dropdown, Date) or
+   a column that has a has_a relation to another object
+   do not work as they should. For example, searching something
+   that is in a dropdown-type column searches for values,
+   not the actual visible content. Also, searching date-
+   type columns searches through the epochs, not the
+   search equivalent epoch.
+
+ + date checking (is date valid?) should be implemented and moved
+   to code from the templates to make error handling
+   even possible :)
+
+ + In Generictool::Browse, modifying default_limit_size and limit_size
+   has no effect. Only way to change limit size is through set_limits
+   which is stupid. Is it anyway necessary to store the limit size
+   in the session? Limit start is understandable to restore the previously
+   browsed page.
+
+ * Get rid of uri_query ;) This affects many places. Form should always
+   have action without parameters. Store sort, browse and search params
+   in session (uri without params + page number + list number needed
+   to specify different lists in wizard advanced select pages)
+
+ * Generictool should not use views. Makes things too complicated.
+   This affects sessionstore and advancedselect (at least).
+
+ * Create common application features that utilize Generictool.
+
+ * Content objects should have better interfaces. More content objects
+   wanted for example for simple lists. They may use the old list
+   templates.
+
+ * Finish up documentation and make the documentation follow the new
+   style.
+
+ * Non-selected tools should not be usable. This requires some trick
+   to check - maybe an added parameter in action.ini specifying tool?
+
+ * Implement at least task level security for every tool.
+
+ * Tools and securities should not use advanced select but a simple
+   select. Maybe a categorized select view should be added?
+
+ * There are some weirdless with advanced select in lists that have
+   multiple pages of items.
+
+ * When user gets removed all security information concerning that
+   user should be deleted from the user security table
+
+ * Make desktop RSS feed compatible.
+
+ * Create a GUI for adding new group/personal tools. Allow providing
+   a RSS feed.
+
+ * Implement group deleting. Clear securities, tools, memberships etc.
+
+ * Language selection in user manager should be generated according to
+   available languages. System default language should be the default
+   language in the dropdown.
+
+ * Make this monster easier to install ;)
+
+Dicole known bugs
+-----------------
+
+The following bugs are known to exist in the softare:
+
+ * Renaming files with odd characters has odd results
+
+ * File area does not ask confirmation when deleting something
+
+ * Latest files does not show changes in file contents, only changes to
+   metadata
+
+ * Uncompressing from zip files does not create new metadata for files
+
+ * Adding files directly to disk or through SMB shares does not add metadata
+   for files
+
+ * Copying files or performing archive operations in SMB shares does not work
+
+ * Clicking "Tree view" tab in file area brings up the root folder, not the
+   home folder
+
+------------------
+$Id: TODO,v 1.54 2009-01-07 14:42:32 amv Exp $

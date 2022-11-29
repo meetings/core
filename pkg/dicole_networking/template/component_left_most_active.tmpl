@@ -1,0 +1,59 @@
+[%#
+most_active_users => [
+	{ 
+		name => 'Pekka Puupaa', 
+		image_55 => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+	{ 
+		name => 'Kuuppa Hajalla', 
+		image_55 => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+	{ 
+		name => 'Janne Porkka', 
+		image_55 => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+	{ 
+		name => 'John Elastinen', 
+		image_55 => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+	{ 
+		name => 'James Potkukelkka', 
+		image_55 => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+	{ 
+		name => 'Kallion Kingi Jolla on Kovin Pitka Nimi', 
+		image_55 => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	},
+	{ 
+		name => 'Keisari Kuolema', 
+		image_55 => '/images/default_profile_55.gif',
+		url => 'http://www.dicole.com',
+	}
+]
+%]
+
+<div class="networking_admins">
+	[%- FOREACH user IN most_active_users %]
+
+	[%- IF user.url -%]
+		<a href="[% user.url | html %]">
+	[%- END -%]
+
+	[%- IF user.image_55 %]
+		<img class="networking_profile" src="[% user.image_55 | html %]" title="[% user.name | html %]" />
+	[%- ELSE -%]
+		<img class="networking_profile" src="/images/default_profile_55.png" title="[% user.name | html %]" />
+	[%- END %]
+
+	[%- IF user.url -%]
+	</a>
+	[%- END -%]
+
+	[%- END %]
+</div>

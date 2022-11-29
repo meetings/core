@@ -1,0 +1,83 @@
+
+div.input-row
+    span.input-label Toimiston nimi
+    input.object-field.open-focus-target(x-data-object-field='name',size=40,value=typeof(office)=='undefined'?undefined:office.name,disabled=typeof(office)=='undefined'?undefined:'disabled')
+
+div.input-row
+    span.input-label Alaryhmä
+    input.object-field(x-data-object-field='subgroup',size=40,value=typeof(office)=='undefined'?undefined:office.subgroup,disabled=typeof(office)=='undefined'?undefined:'disabled')
+
+div.input-row
+    span.input-label Yhteinen email
+    input.object-field(x-data-object-field='group_email',size=40,value=typeof(office)=='undefined'?undefined:office.group_email)
+
+
+div.input-row
+    div.input-label-row
+        span.input-label Aukioloajat:
+
+div.input-row
+    span.input-label MA
+    input.object-field(x-data-object-field='open_mon',size=25,value=typeof(office)=='undefined'?undefined:office.open_mon)
+    span.input-hint (esim. "9:00-17:00" tai "9:00-11:00; 12:00-19:00")
+
+div.input-row
+    span.input-label TI
+    input.object-field(x-data-object-field='open_tue',size=25,value=typeof(office)=='undefined'?undefined:office.open_tue)
+
+div.input-row
+    span.input-label KE
+    input.object-field(x-data-object-field='open_wed',size=25,value=typeof(office)=='undefined'?undefined:office.open_wed)
+
+div.input-row
+    span.input-label TO
+    input.object-field(x-data-object-field='open_thu',size=25,value=typeof(office)=='undefined'?undefined:office.open_thu)
+
+div.input-row
+    span.input-label PE
+    input.object-field(x-data-object-field='open_fri',size=25,value=typeof(office)=='undefined'?undefined:office.open_fri)
+
+    
+div.input-row
+    div.input-label-row
+        span.input-label Osoite:
+
+
+div.input-row
+    span.input-label Suomi
+    input.object-field(x-data-object-field='address_fi',size=40,value=typeof(office)=='undefined'?undefined:office.address_fi)
+div.input-row
+    span.input-label Svenska
+    input.object-field(x-data-object-field='address_sv',size=40,value=typeof(office)=='undefined'?undefined:office.address_sv)
+div.input-row
+    span.input-label English
+    input.object-field(x-data-object-field='address_en',size=40,value=typeof(office)=='undefined'?undefined:office.address_en)
+
+div.input-row
+    div.input-label-row
+        span.input-label Saapumisohjeet:
+
+div.input-row
+    span.input-label Suomi
+    input.object-field(x-data-object-field='instructions_fi',size=100,value=typeof(office)=='undefined'?undefined:office.instructions_fi)
+div.input-row
+    span.input-label Svenska
+    input.object-field(x-data-object-field='instructions_sv',size=100,value=typeof(office)=='undefined'?undefined:office.instructions_sv)
+div.input-row
+    span.input-label English
+    input.object-field(x-data-object-field='instructions_en',size=100,value=typeof(office)=='undefined'?undefined:office.instructions_en)
+    
+    
+div.input-row
+    div.input-label-row
+        span.input-label Verkkosivu:
+
+div.input-row
+    span.input-label Suomi
+    input.object-field(x-data-object-field='website_fi',size=100,value=typeof(office)=='undefined'?undefined:office.website_fi)
+div.input-row
+    span.input-label Svenska
+    input.object-field(x-data-object-field='website_sv',size=100,value=typeof(office)=='undefined'?undefined:office.website_sv)
+div.input-row
+    span.input-label English
+    input.object-field(x-data-object-field='website_en',size=100,value=typeof(office)=='undefined'?undefined:office.website_en)

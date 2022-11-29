@@ -1,0 +1,19 @@
+<div id="matchmaking-success" class="matchmaking modal-popup">
+    <h2><i class="icon-refresh"></i>
+        <%= MTN.t('Thank you for registering for matchmaking') %>
+    </h2>
+
+    <p><%= MTN.t('You will soon receive requests to meet from matchmaking participants.') %></p>
+
+    <p><%= MTN.t("%(B$The invitations will be sent from info@meetin.gs %). Make sure you add %(B$info@meetin.gs%) to your email client's address book to ensure safe delivery of the invitation emails.") %></p>
+
+    <p><%= MTN.t('You should also subscribe to the ICS calendar feed to get upcoming meetings automatically into your calendar.') %></p>
+
+    <p><a href="#" class="js_meetings_ics_feed_instructions_open" style="text-decoration:underline;"><%= MTN.t('Subscribe to ICS calendar feed') %></a></p>
+
+    <p><%= MTN.t('If you have any questions, you can contact us at %(L$%(B$%1$s%)%).',{ params : [ dicole.get_global_variable('meetings_organizer_email') ], L : { href : 'mailto:' + dicole.get_global_variable('meetings_organizer_email') } } ) %></p>
+    <div class="center">
+        <a href="<%= dicole.get_global_variable('meetings_organizer_url') %>" class="button blue"><%= MTN.t('Return to website') %></a>
+    </div>
+</div>
+

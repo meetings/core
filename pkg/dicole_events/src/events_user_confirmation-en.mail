@@ -1,0 +1,8 @@
+Your event participation has been registered
+
+Hello [% user_name %],
+
+Your participation to the event [% event_title %] has been registered.
+
+You can access the event page through the following link for the next 24 hours, after this you will have to log in separately:
+[% IF in_html %]<br/><a href="[% url %]">Go to the page</a>[% ELSE %][% url %][% END %]

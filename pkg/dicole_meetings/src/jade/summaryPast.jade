@@ -1,0 +1,20 @@
+div#summary-past.tab
+    div.loader
+    div.tab-items
+        div#past-yesterday.section
+        div#past-this-week.section
+        div#past-last-week.section
+        div#past-all.section
+        - if ( ! dicole.get_global_variable('meetings_user_is_visitor') ) {
+        div.section
+            div.line.vertical
+            div.row
+                div.line.horizontal1
+                div.badge.bl
+                    i.ico-add
+                a.action.create-meeting(href="#")
+                    i.ico-schedule
+                    br
+                    !=MTN.t('Organize a new meeting')
+        - }
+    p.bottom-tip!=MTN.t('Looking for %(L$Future meetings%)?', { L : { href : '#', classes : 'upcoming' } } )

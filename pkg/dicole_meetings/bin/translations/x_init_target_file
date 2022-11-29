@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+my $target_file = $ARGV[0];
+
+my @lines = ( 'msgid ""' );
+push @lines, 'msgstr ""',
+    '"MIME-Version:1.0\n"',
+    '"Content-Type:text/plain; charset=utf-8\n"',
+    '"Content-Transfer-Encoding:8bit\n"',
+    '',
+    '';
+
+open FILE, ">$target_file";
+print FILE join( "\n", @lines );
+close FILE;

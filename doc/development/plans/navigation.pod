@@ -1,0 +1,390 @@
+=head1 NAME
+
+Plan for Dicole navigation
+
+=head1 TASK INFORMATION
+
+=over 4
+
+=item B<Date>
+
+$Date: 2009-01-07 14:42:32 $
+
+=item B<Revision>
+
+$Revision: 1.10 $
+
+=item B<Severity>
+
+Critical
+
+=item B<Priority>
+
+P1
+
+=item B<Risk factor>
+
+2
+
+=item B<Estimate>
+
+No estimate.
+
+=item B<Status>
+
+New
+
+=back
+
+=head1 ABSTRACT
+
+This document explains how different Dicole navigation components will be
+implemented.
+
+=head1 DETAILS
+
+The main navigation consists of top navigation, section navigation and tool
+navigation:
+
+=head2 Top Navigation
+
+Top navigation is a way to identify the different major sections in Dicole. The
+top navigation sections are divided as tabs as follows (usually in the left side
+of the top navigation):
+
+=over 4
+
+=item B<Personal>
+
+Personal section. Each user has a a summary page, a collection of personal tools
+and a configuration section under this section.
+
+=item B<Groups>
+
+Groups section. This section contains all different groups, navigation of
+groups and logic for management and interaction in groups. Each group has a
+a summary page, a collection of group tools and a configuration section.
+
+=item B<Admin>
+
+Admin section. This section is only for the Dicole administrators so it is only
+displayed to users who have required permissions to administration tools. The
+admin section contains a summary page, a collection of admin tools and a
+configuration section. These tools allow administrators to administrate and
+modify the behaviour of the whole Dicole environment.
+
+=back
+
+The top navigation also includes a I<Log out> button (usually in the right side
+of the top navigation). 
+
+Beneath the top navigation there might be an optional banner picture, which
+gives an identity for the environment. The banner might also be
+section-specific. For example, in personal section the user might want to
+customize the personal view and select a different kind of top banner for her
+personal section.
+
+=head2 Section Navigation
+
+The section navigation contains navigation items specific to each top navigation
+section. All dropdown options may contain icons in addition to text.
+
+Navigation for I<personal section>:
+
+=over 4
+
+=item B<Summary>
+
+This is the summary page of personal section. It contains summaries of each tool
+in the personal section. For example it might display 10 last news items of the
+news tool.
+
+=item B<Tools>
+
+This is a dropdown that allows selecting one of the available tools in the
+personal section.
+
+=item B<Configuration>
+
+This is a dropdown that allows selecting one of the available configuration
+tools in the personal section. The basic configuration tools are I<Profile>,
+I<Select tools> and I<Change password>.
+
+=back 
+
+Navigation for I<groups section>:
+
+=over 4
+
+=item B<Summary>
+
+A summary page of the current selected group.
+
+=item B<Tools>
+
+Dropdown for selecting different kind of group-specific tools.
+
+=item B<Configuration>
+
+This dropdown allows configuring the current selected group.
+
+=item B<Other groups>
+
+This dropdown has functions I<Select group> and I<Browse
+groups>.
+
+=back
+
+Navigation for I<admin section>:
+
+=over 4
+
+=item B<Summary>
+
+This is the summary page of administration section. It contains summaries of each tool
+in the administration section. For example it might display online users in the
+system.
+
+=item B<Tools>
+
+This is a dropdown that allows selecting one of the available tools in the
+administration section.
+
+=item B<Configuration>
+
+This is a dropdown that allows selecting one of the available configuration
+tools in the administration section.
+
+=back
+
+=head2 Tool Navigation
+
+The tool navigation is consistent among all basic tools. There are special cases
+like the summary pages which do not follow the tool navigation specifications
+but such cases should be well argumented.
+
+The tool navigation is divided into four parts, each part over of another.
+
+=over 4
+
+=item B<1st level>
+
+The first level contains the icon and the name of the tool. 
+
+Next to that information appears the return messages of the tool, for example
+"User has been successfully added". There are three different return messages
+which each one is identified with different color and/or associated icon. The
+return message levels are I<error>, I<success> and I<info/notice>.
+
+=item B<2nd level>
+
+Distinct tool functionality divided as tabs. There is an additional tab for
+configuration if the tool requires such functionality.
+
+=item B<3rd level>
+
+The inner tool path which allows alternate navigation inside the tool. This
+functionality has expert feature. See section L<Expert Mode> for more
+information.
+
+=item B<4th level>
+
+The real functionality of the tool is implemented with boxes. Each box has a
+legend which identifies basic behaviour of each box. The implementation of the
+functionality in the boxes is free for the developer to choose but some
+common sense for usability and commonly used interface elements should be used.
+
+=back
+						
+=head2 Expert Mode
+
+The interface also introduces an expert mode which may be turned on through the
+configuration options in personal section. The expert mode exists for more
+advanced Dicole users who would like to user more complicated navigation
+benefits that further improve the navigation experience.
+
+The features of expert mode are:
+
+=over 4
+
+=item *
+
+the group section contains a dropdown where the user may instantly select the
+active group. In normal mode there is only the name of the current active group
+in place of the dropdown.
+
+=item *
+
+Some new configuration options also become available in personal section. For
+example, the user may customize the personal section and user interface theme,
+colors and layout.
+
+=item *
+
+Some parts of the text becomes clickable shortcuts, which are not available in
+the normal mode. For example parts of the inner tool path becomes clickable.
+
+=back
+
+More expert mode features will be introduced later.
+
+=head2 Themes
+
+With themes we mean a way for changing the layout of the system. Themes do not
+change functionality, although they may change the place where the functionality
+appears.
+
+Usually the first requirement is a way to modify the general layout of the
+system. This is especially true for corporations who would like to express their
+corporate identity by modifying the general theme and layout of the system.
+
+After a while every individual wants to control the layout of the
+environment they have used to work with. This is similar to changing the desktop
+wallpaper of a system profile. Also, some groups inside the environment might
+want to create their own identity.
+
+These are all important parts of profiling we should implement in Dicole as
+explained below.
+
+B<Theme implementation>
+
+Basically we will implement system-wide themes with pure CSS files. Since our
+functionality is implemented with XHTML which doesn't tell us anything about the
+visual presentation we may quite freely modify the general layout by introducing
+a theme based on CSS which is included in our page after the general CSS
+(default theme), like this:
+
+  <link href="/theme/default/theme.css" rel="stylesheet" type="text/css">
+  <link href="/theme/my_theme/theme.css" rel="stylesheet" type="text/css">
+
+Themes may also include images because CSS allows defining background images
+with certain rules. Also, the interface has some tool specific images like
+icons, which should be possible to modify. That's why each theme should be
+packaged with theme-specific images. 
+
+All theme files and images are stored under C</theme/> directory, which is the
+same for each website. Under the directory there will be a directory with the
+name of the installed theme. The directory structure for such a theme is similar
+to following:
+
+  theme_name/.meta
+  theme_name/theme.css
+  theme_name/content/toolicons/
+  theme_name/navigation/
+
+File C<.meta> contains the name of the theme and some other meta-data of the
+theme.
+
+File C<theme.css> contains the theme itself. You may also store other C<.css>
+files in this theme root directory but only one is suggested.
+
+Directory C<content> contains all images used in the system. Usually these are
+icons, which for example the C<toolicons> directory contains.
+
+Directory C<navigation> contains navigation related images like different kind
+of top banners.
+
+B<User/group specific theme implementation>
+
+User may modify the layout of everything that appears under the I<personal> tab
+with a custom C<.css> file. This file may be generated with a layout
+customization tool which will become available under the I<configuration>
+section in the I<personal> section. It allows selecting some basic colors,
+borders and backgrounds. The system generates a new user-specific C<.css> file
+for the user, which is always included after other themes when the user has
+the I<personal> tab active: 
+
+  <link href="/theme/default/theme.css" rel="stylesheet" type="text/css">
+  <link href="/theme/my_theme/theme.css" rel="stylesheet" type="text/css">
+  <link href="/theme/users/34/theme.css" rel="stylesheet" type="text/css">
+
+As you might see, the user specific themes are stored similarly under the
+C</theme/users/> directory with the user id as the directory name.
+
+The user may also directly edit the C<.css> file through the browser, further
+expanding the possibilities of personal theme creation. This is an expert
+feature available for those who would like to break the limits of the simple
+C<.css> generation tool.
+
+The same functionality is available for groups as well. In that case the C<.css>
+file is included like this:
+
+  <link href="/theme/default/theme.css" rel="stylesheet" type="text/css">
+  <link href="/theme/my_theme/theme.css" rel="stylesheet" type="text/css">
+  <link href="/theme/groups/12/theme.css" rel="stylesheet" type="text/css">
+
+As you might notice, directories I<default>, I<groups> and I<users> under
+the directory I<theme> are reserved names and one can not install themes which
+have reserved names.
+
+=head2 Printable Versions
+
+The system should also support printable versions of each page. A printable
+version is a special template with the current page included in. The special
+template doesn't have an interface or anything else unnecessary for printing
+purposes. The template should also automatically open the print dialog, if
+possible.
+
+The tool itself should be able to affect the options for printing the current
+page. For example, a calendar tool might implement a different kind of printable
+version for a calendar view in PDF format, which is more practical than a simple
+print of the same HTML page. As such, the tool should be able to I<add new>
+items in the row of printable options in addition to the system provided
+versions.
+
+=head2 Send current page to a Friend
+
+The system should allow the user to send the current page to someone through
+e-mail. The user should be able to choose if the current page is sent as a link
+or as simple text attached to the e-mail. The implementation is similar as
+described in L<Printable Versions> section.
+
+=head1 OBJECTIVES
+
+The objectives of the implementation is flexibility. Although "We Know What is
+Good for You", the details of the navigation as we introduced them should be
+possible to modify with ease. 
+
+Adding new dropdowns and options to top and secondary navigation or changing
+their color shouldn't be too hard. Everything should be easy to
+configure with configuration files or by changing the database items. There is
+no need to implement tools for modifying the functionality if it's not the
+general interest. We don't know yet what the general interest is, so making
+everything simple and flexible enough should be the main objective of our
+implementation of the navigation.
+
+=head1 NOTES AND STATUS
+
+This section should be filled with information and status of the current
+implementation of the specifications. If you do any work to implement the
+specifications or have anything to comment on, please fill in here.
+
+I<Jan 19 2004>
+
+We have implemented the dropdown navigation in our former project from which we
+derived Dicole project itself. The XHTML system is in place and we have
+implemented the default theme with some browser specific parts. It might be a
+good idea to allow themes to contain browser specific work-a-round CSS files. 
+
+Tony is working on a new cross-browser compatible CSS implementation that
+has only one CSS file that works for all browsers. This is the level of
+compatibility we expect from the default theme but more complicated themes
+derived from the default theme might require browser-specific features and
+implementation.
+
+Once the new CSS implementation is ready, it will be implemented in the current
+development tree and associated I<Template Toolkit> templates will be updated.
+
+Tool navigation is mostly implemented with L<Dicole::Navigation::Tabs> and
+L<Dicole::Navigation::Path>. Top navigation and secondary navigation still
+requires some handler code before they are usable.
+
+For top navigation we have to think how it could be implemented so that the
+users are able to dynamically change the top navigation, for example for adding
+new tabs that link outside of Dicole.
+
+I<- Teemu>
+
+=head1 AUTHORS
+
+Teemu Arina, E<lt>teemu@ionstream.fiE<gt>

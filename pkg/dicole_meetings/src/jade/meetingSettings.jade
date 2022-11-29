@@ -1,0 +1,43 @@
+div.two-column-settings
+    div.m-modal
+        div.modal-header
+            h3!=MTN.t('Meeting settings')
+        div.modal-content
+            div.horizontal-divider
+            div.settings
+                div.setting.email.left
+                    i.ico-mail
+                    div.info
+                        h3.title!=MTN.t('Email settings')
+                        p!=MTN.t('Manage meeting email notifications.')
+                div.setting.right.rights
+                    if( user && user.is_pro )
+                        i.ico-profile
+                        div.info
+                            h3.title!=MTN.t('Participant rights')
+                            p!=MTN.t('Decide what participants are allowed to do.')
+                    else
+                        i.ico-pro
+                        div.info
+                            h3.title.pro!=MTN.t('Upgrade to PRO')
+                            p!=MTN.t('Customize meetings and get all the benefits of the full suite!')
+        // TODO: Remove
+        a.close-modal(href='#')
+            i.ico-cross
+    div.remove-area.normal
+        i.ico-cross
+        div.info
+            h3.title!=MTN.t('Remove meeting')
+            p!=MTN.t('If you remove this meeting, you and the participants will no longer be able to access this meeting and its content.')
+        a.button.blue.remove!=MTN.t('Remove')
+    div.remove-area.confirm
+        div.info
+            p
+                a.button.blue.remove!=MTN.t('Remove')
+                a.button.gray.cancel-remove!=MTN.t('Cancel')
+    div.remove-area.removing
+        div.info
+            p!=MTN.t("Removing meeting...")
+    div.remove-area.removed
+        div.info
+            p!=MTN.t("Removing meeting... done. Redirecting to timeline.")

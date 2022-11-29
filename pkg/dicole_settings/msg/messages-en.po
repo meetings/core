@@ -1,0 +1,146 @@
+# $Id: messages-en.po,v 1.7 2010-07-28 13:45:44 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:10:08+0000\n"
+"PO-Revision-Date: 2005-03-22 02:10:08+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Administrator is not allowed to change the password."
+msgstr "Administrator is not allowed to change the password."
+
+msgid "Change password"
+msgstr "Change password"
+
+msgid "Change your password"
+msgstr "Change your password"
+
+msgid "Enter passwords"
+msgstr "Enter passwords"
+
+msgid "New password"
+msgstr "New password"
+
+msgid "New password saved."
+msgstr "New password saved."
+
+msgid "Old password"
+msgstr "Old password"
+
+msgid "Old password is not correct."
+msgstr "Old password is not correct."
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Verify password"
+msgstr "Verify password"
+
+msgid "Account settings"
+msgstr "Account settings"
+
+msgid "User account settings"
+msgstr "User account settings"
+
+msgid "Account settings modification failed: %1"
+msgstr "Account settings modification failed: %1"
+
+msgid "Starting page after login"
+msgstr "Starting page after login"
+
+msgid "Personal summary"
+msgstr "Personal summary"
+
+msgid "Timezone"
+msgstr "Timezone"
+
+msgid "Change general settings"
+msgstr "Change general settings"
+
+msgid "Daily"
+msgstr "Daily"
+
+msgid "Deny change general settings"
+msgstr "Deny change general settings"
+
+msgid "Deny password change"
+msgstr "Deny password change"
+
+msgid "Deny setting reminders"
+msgstr "Deny setting reminders"
+
+msgid "Email reminders"
+msgstr "Email reminders"
+
+msgid "Monthly"
+msgstr "Monthly"
+
+msgid "Old password authentication failed"
+msgstr "Old password authentication failed"
+
+msgid "Password modification failed"
+msgstr "Password modification failed"
+
+msgid "Password modification failed: %1"
+msgstr "Password modification failed: %1"
+
+msgid "Passwords don't match"
+msgstr "Passwords don't match"
+
+msgid "Personal feed reader"
+msgstr "Personal feed reader"
+
+msgid "Set reminders"
+msgstr "Set reminders"
+
+msgid "Subscribe to email reminders"
+msgstr "Subscribe to email reminders"
+
+msgid "Weekly"
+msgstr "Weekly"
+
+msgid "No reminders"
+msgstr "No reminders"
+
+msgid "Default when joining a group"
+msgstr "Default when joining a group"
+
+msgid "Digest for group %1 (%2)"
+msgstr "Digest for group %1 (%2)"
+
+msgid "Digest for personal feed reader (%1)"
+msgstr "Digest for personal feed reader (%1)"
+
+msgid "Digest for %1 (%2)"
+msgstr "Digest for %1 (%2)"
+
+msgid "Confirm new password"
+msgstr "Confirm new password"
+
+msgid "Connect to Facebook"
+msgstr "Connect to Facebook"
+
+msgid "Disconnect from Facebook"
+msgstr "Disconnect from Facebook"
+
+msgid "Facebook account connected."
+msgstr "Facebook account connected."
+
+msgid "Facebook account disconnected."
+msgstr "Facebook account disconnected."
+
+msgid "Login settings"
+msgstr "Login settings"
+
+msgid "-- Select --"
+msgstr "-- Select --"

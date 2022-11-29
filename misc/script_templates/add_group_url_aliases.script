@@ -1,0 +1,39 @@
+sub execute {
+    my ( $self ) = @_;
+
+for my $gid ( 859 ) {
+
+    my %aliases = (
+	english => [],
+	english_summary => [ groupsummary => 'summary' ],
+	english_discussions => [ 'blogs' ],
+	english_collections => [ 'wiki' ],
+	english_people => [ 'networking' ],
+	english_materials => [ 'presentations' ],
+#	uutiset => [ blogs => 'new' ],
+#	uutinen => [ blogs => 'show' ],
+#	tilaisuudet => [ events => '' ],
+#	tulevat_tilaisuudet => [ events => 'upcoming' ],
+#	menneet_tilaisuudet => [ events => 'past' ],
+#	tilaisuus => [ events => 'show' ],
+    );
+
+    my $domain_id = Dicole::Utils::Domain->domain_id_for_group_id( $gid );
+
+    for my $alias ( keys %aliases ) {
+        my $parts = $aliases{ $alias };
+	my $ua = CTX->lookup_object('url_alias')->new( {
+	    domain_id => $domain_id,
+	    group_id => $gid,
+	    user_id => 0,
+	    alias => $alias,
+	    action => $parts->[0] || '',
+	    task => $parts->[1] || '',
+	    creation_date => time,
+	} )->save;
+    }    
+}
+    
+}
+
+1;

@@ -1,0 +1,10 @@
+<div id="matchmaking-success" class="m-modal">
+    <div class="modal-header">
+        <h3><i class="icon-refresh"></i><%= MTN.t('Check your inbox to continue') %></h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t('We have sent you an email to %(B$%1$s%) from %(B$info@meetin.gs%).', { params : [ p.user_email], B : { classes : 'email' } }) %></p>
+        <p><%= MTN.t('Open the email and %(B$confirm your request to meet%) by following the link in the email. If you have not received the email, please check your spam folder.') %></p>
+        <p><%= MTN.t("You have %(B$24 hours%) to confirm, after which the reservation we're holding will be released to others.") %></p>
+    </div>
+</div>

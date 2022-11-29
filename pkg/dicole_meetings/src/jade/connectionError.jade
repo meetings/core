@@ -1,0 +1,8 @@
+div#connection-error.m-modal
+    div.modal-header
+        h3!=MTN.t('Sorry')
+    div.modal-content
+        p!=MTN.t('Unfortunately we are unable to connect to our servers.')
+    div.modal-footer
+        div.buttons.right
+            a.button.blue.retry(href='#')!=MTN.t('Try again')

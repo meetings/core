@@ -1,0 +1,41 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+chdir( shift @{[split("\n", `d iwd`)]} );
+
+my $static;
+if ( $ARGV[-1] =~ /^\d+$/ ) {
+    $static = pop @ARGV;
+}
+else {
+    $static = `perl -ne 'print if s/static_file_version = //' conf/server.ini`;
+    chomp $static;
+    $static++;
+}
+
+`perl -pi -e 's/(static_file_version = )\\d+/\$\{1\}$static/' conf/server.ini`;
+
+chdir( shift @{[split("\n", `d swd`)]} );
+system "git", "fetch";
+my $packages = `git diff origin --name-only|grep '^pkg'|perl -pe 's/^pkg.(\\w*).*/\$1/'|sort|uniq|xargs echo`;
+chomp $packages;
+my @packages = ( @ARGV, split / /, $packages );
+
+system "git", "pull";
+
+system qw/git submodule update/;
+
+my @submodules = map { /path '([^']+)'/ } `git submodule update`;
+
+for (@submodules) {
+    print "Installing $_\n";
+    `cd "$_" && cpanm --notest .`;
+}
+
+system "d", "l";
+system "devinst2", @packages if scalar( @packages );
+system "d", "a";
+
+print "New static version number: $static\n";

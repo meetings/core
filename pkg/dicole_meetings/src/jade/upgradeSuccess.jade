@@ -1,0 +1,18 @@
+div#upgrade-page.m-modal
+    div.modal-header
+        h3!=MTN.t("Thank you, you're awesome!")
+    div.modal-content
+        p!=MTN.t("Thank you for upgrading to Meetin.gs PRO. We really appreciate it!")
+        p!=MTN.t('We have sent you an email with a login link and further instructions and tips on how to get the most out of your PRO subscription.')
+        p!=MTN.t('You will also get a receipt of your transaction in a separate email.')
+    div.modal-footer
+        div.buttons.right
+            if( app.auth.user )
+                a.button.blue(href="/meetings/summary")
+                    span.label!=MTN.t('Continue')
+            else
+                a.button.blue(href="/meetings/login")
+                    span.label!=MTN.t('Log in')
+
+
+

@@ -1,0 +1,19 @@
+[% IF events.size %]
+[% FOREACH event IN events %]
+	<div class="front_event_box">
+		<div class="front_event_image_bg">
+			<a href="[% event.link | html %]" title="[% event.title | html %]" class="front_event_image">
+				<img src="[% event.image OR '/images/theme/default/event-default-logo.png' | html %]" alt="[% event.title | html %]" />
+			</a>
+		</div>
+		<div class="front_event_info">
+			<a class="front_event_link" href="[% event.link | html %]">[% event.title | html %]</a>
+			<span class="front_event_date">[% event.date | html %]</span>
+		</div>
+	</div>
+[% END %]
+<a href="[% show_events_url | html %]" class="big-button alpha_png"><span class="alpha_png">[% MSG("Show all") | html %]</span></a>
+<div style="clear:both"></div>
+[% ELSE %]
+[% MSG("No events found.") | html %]
+[% END %]

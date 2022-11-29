@@ -1,0 +1,13 @@
+[%- IF test_case == 'koeviikko' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+week_before = '1'
+user_name = 'Super Muumi'
+expiration_date = '25.11.11'
+upgrade_url = 'www.meat.in.gs'
+features_url = 'www.meat.in.gs'
+promo_unsubscribe_url = 'fuck yall'
+
+%]
+[% END %]

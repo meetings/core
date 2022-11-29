@@ -1,0 +1,77 @@
+[% IF requester_company && requester_name == requester_email %][% requestor = requester_company %][% ELSIF requester_company %][% requestor = requester_name _ ' from ' _ requester_company %][%ELSE %][% requestor = requester_name %][% END %][% MTN.t('Please respond to the meeting request from %1$s', [requestor]) %]
+
+<<<html_wrapper>>>
+
+[% action_text = MTN.t('Hello,')  %]
+
+<<<text_and_logo>>>
+
+[% squirrel = 'thief' %]
+<<<p>>>
+[% IF requester_company && requester_name == requester_email %][% requestor = requester_company %][% ELSIF requester_company %][% requestor = requester_name _ ' from ' _ requester_company %][%ELSE %][% requestor = requester_name %][% END %]
+[% MTN.t('%1$s is still waiting for your response.',[requestor]) %]
+<<</p>>>
+<<<bubble>>>
+<<<p>>><<<bold>>>[% MTN.t('Please, respond as soon as possible.') %]<<</bold>>><<</p>>>
+
+[% IF decline_url %]
+[% decline_url = decline_url _ '&utm_source=matchmaking&utm_medium=email&utm_campaign=matchmaker_confirm_reminder' %]
+[% END %]
+[% IF accept_url %]
+[% accept_url = accept_url _ '&utm_source=matchmaking&utm_medium=email&utm_campaign=matchmaker_confirm_reminder' %]
+[% END %]
+
+<<<rsvp_matchmaking>>>
+
+<<<p>>><<<bold>>>What is this about?<<</bold>>><<</p>>>
+
+[% IF greeting_message_text && greeting_message_html %]
+
+<<<p>>>
+[% MTN.t('%1$s proposed the following agenda:',[requestor]) %]
+<<</p>>>
+
+<<<p>>>
+
+[% IF in_html %]
+[% greeting_message_html %]
+[% ELSE %]
+[% greeting_message_text %]
+[% END %]
+<<</p>>>
+<<<hr>>>
+[% END %]
+
+
+
+<<<p>>><<<bold>>>[% MTN.t('Title://context:meeting title') %]<<</bold>>> [%meeting_title%]
+<<<br>>>
+<<<bold>>>[% MTN.t('Where:') %]<<</bold>>> [%meeting_location%]
+<<<br>>>
+<<<bold>>>[% MTN.t('When:') %]<<</bold>>> [%meeting_time%]<<</p>>>
+
+[% tip = 1 %]
+<<<p>>>[% MTN.t('Please answer as soon as possible. Accepting the meeting request will take you to the online meeting page to send the invitation. If you decline the request, you will get the opportunity to respond why you cannot meet.') %]<<</p>>>
+
+
+[% IF decline_url %]
+[% decline_url = decline_url _ '&utm_source=matchmaking&utm_medium=email&utm_campaign=matchmaker_confirm_reminder' %]
+[% END %]
+[% IF accept_url %]
+[% accept_url = accept_url _ '&utm_source=matchmaking&utm_medium=email&utm_campaign=matchmaker_confirm_reminder' %]
+[% END %]
+
+<<<rsvp_matchmaking>>>
+
+[% IF rsvp_required %]
+<<<br>>>
+<<<hr>>>
+[% END %]
+[% tip = 1 %]
+<<<p>>>[% MTN.t('Meetin.gs - The smartest way to meet') %]<<</p>>>
+<<</bubble>>>
+
+<<<br>>>
+
+
+<<</html_wrapper>>>

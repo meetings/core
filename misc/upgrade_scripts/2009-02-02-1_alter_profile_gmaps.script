@@ -1,0 +1,9 @@
+
+sub execute {
+    my ( $self ) = @_;
+    Dicole::Utils::SQL->execute_sql('alter table dicole_networking_profile add gmaps_location text');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_networking_profile add gmaps_lat double');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_networking_profile add gmaps_lng double');
+}
+
+1;

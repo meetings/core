@@ -1,0 +1,23 @@
+div#meetme-background-selector.m-modal
+    div.modal-header
+        h3!=MTN.t('Select background')
+    div.modal-content
+        div.backgrounds
+            - for (var i = 0; i < app.meetme_themes.length; i++) {
+                if( model.background_theme == i || ( ! model.background_theme && i === 0 ) )
+                    div.background.active(data-theme-id=i,data-image=app.meetme_themes[i].image,style='background-image:url("'+app.meetme_themes[i].image+'");')
+                else
+                    div.background(data-theme-id=i,data-image=app.meetme_themes[i].image,style='background-image:url("'+app.meetme_themes[i].image+'");')
+            - }
+            if ( model.background_theme === 'c' || model.background_theme === 'u' )
+                - var bg_url = model.background_preview_url || model.background_image_url;
+                div#own-bg.background(data-theme-id=model.background_theme,style='background-image:url('+bg_url+')',data-upload-id=model.background_upload_id,data-upload-image=model.background_image_url).active
+                    div.progress-bar
+            else
+                div#own-bg.background(data-theme-id='c',style='display:none;')
+                    div.progress-bar
+        span.upload-button.button.blue!=MTN.t('Upload your own')
+            input(type='file',name='file')#fileupload-bg
+        p.upload-button-help(style='display:inline-block; margin-left: 30px') (min. 1024x768, .jpg, .png)
+    a.close-modal(href='#')
+        i.ico-cross

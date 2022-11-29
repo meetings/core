@@ -1,0 +1,81 @@
+[%#
+'show_all_url' => '/Dicole/subgroups/browse/144',
+most_active_groups => [
+	{
+		name => 'Bändi 4',
+		location => 'Seinäjoki',
+		size => 3,
+		image => '/images/default_profile.png',
+		url => 'http://www.dicole.com',
+	},
+	{
+		name => 'Bändi 2',
+		location => 'Turku',
+		size => 6,
+		image => '/images/default_profile.png',
+		url => 'http://www.dicole.com',
+	},
+	{
+		name => 'Bändi 5',
+		location => 'Helsinki',
+		size => 8,
+		image => '/images/default_profile.png',
+		url => 'http://www.dicole.com',
+	},
+],
+filter_tags => [
+		{
+		name => 'Rock',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Blues',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Pop',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+		{
+		name => 'Räppi',
+		class => 'tagPrimary'
+		link => 'http://www.dicole.com'
+		},
+]
+%]
+
+<!--<pre>[% dump %]</pre>-->
+
+[%- INCLUDE dicole_groups::component_subgroups_sections -%]
+
+<span class="boxLegend">[%- MSG('Most active areas') -%]</span>
+[% IF most_active_groups.size > 0 %]
+<div id="subgroups_active">
+	[%- FOREACH group IN most_active_groups %]
+	<div class="subgroup subgroup_active">
+		<div class="subgroup_active_image_bg"><a href="[% group.url | html %]"><img class="subgroup_active_image" src="[% group.image | html %]" /></a></div>
+		<h2 class="title"><a href="[% group.url %]">[% group.name | html %]</a></h2>
+		<span class="location">[% group.location | html %]</span>
+	</div>
+	[% IF NOT (loop.count % 3) %]<div style="clear:both"></div>[% END %]
+	[%- END %]
+
+	<div id="subgroups_add_more_users">
+		<a href="[%- show_all_url | html %]">&darr; [% MSG('Show all areas') | html %]</a>
+	</div>
+</div>
+
+<span class="boxLegend">[% MSG('Filter areas') | html %]</span>
+<div>
+	<span class="miniLinkCloud miniTagCloud">
+	[%- FOREACH tag IN filter_tags %]
+		<a class="tag [% tag.class %]" href="[% tag.link %]">[% tag.name %]</a>
+	[%- END %]
+	</span>
+</div>
+[% ELSE %]
+<span class="subgroups_not_found">[% MSG('No areas found.') | html %]</span>
+[% END %]

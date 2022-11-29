@@ -1,0 +1,41 @@
+#!/usr/bin/perl
+
+unless ( -d 'pkg' and $ENV{OPENINTERACT2} ) {
+    die "You must be in dicole source root to use this script and your".
+        "OPENINTERACT2 environment variable must be set!\n";
+}
+
+my @a = ();
+my $status = 0;
+my $sql = 0;
+
+my %pushed = ();
+
+for ( @ARGV ) {
+    if ( $_ eq '--show_status' ) {
+        $status = 1;
+    }
+    elsif ( $_ eq '--install_sql' ) {
+        $sql = 1;
+    }
+    else {
+        my $dir = $_;
+        $dir = 'dicole_' . $dir unless -d "pkg/$dir";
+        if ( -d "pkg/$dir" ) {
+            push @a, $dir unless $pushed{ $dir };
+            $pushed{ $dir }++;
+        }
+        else {
+            print "Not found: " . $dir . $/;
+        }
+    }
+}
+
+unless ( scalar( @a ) ) {
+    print "Usage: $0 [--show_status] [--install_sql] package_name package_name ...\n";
+    exit;
+}
+
+my $packages = join ",", @a;
+my $command = "oi2_manage install_dicole_package --package=$packages --show_status=$status --install_sql=$sql";
+system($command);

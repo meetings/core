@@ -1,0 +1,53 @@
+div#sell-subscription.m-modal
+    if( mode === 'general_trial')
+        div.modal-header
+            h3!=MTN.t('Free gift! Access the full suite for 30 days.')
+        div.modal-content.trial
+            p!=MTN.t('Have a good look at our service at your convenience without any commitments. Embrace the full potential offered for increased meeting productivity and let us know what you think.')
+
+            div.pro-trial-upgrade
+                div.star-box
+                    h3!=MTN.t('Free')
+                    p!=MTN.t('1 month trial')
+            h3.pro-header!=MTN.t('Explore the full suite for free for 30 days with the following benefits:')
+            ul.pro-list
+                li!=MTN.t('Save everyone from the pain of scheduling meetings.')
+                li!=MTN.t('Avoid the hassle by gathering all the meeting materials into one place.')
+                li!=MTN.t('No more access codes: Join in with phone, Skype, Lync and Hangouts with a single tap.')
+                li!=MTN.t('Be notified of meeting updates in an instant.')
+            p(style='margin-top:14px;')!=MTN.t('Do you want to hear more or extend your trial? %(L$Schedule a meeting%) with our Head of Customer Happiness Antti and he will be happy to assist you.',{ L : { href : 'http://meetin.gs/meet/amv' }})
+            div(style='clear:both;')
+
+        div.modal-footer 
+            div.buttons.right
+                a(href='#').start-trial.button.blue!=MTN.t('Ok, lets go!')
+    else
+        div.modal-header
+            h3!=MTN.t('Start a free 30 day Meetin.gs PRO trial')
+        div.modal-content.trial
+            if( mode === 'meetme' )
+                p!=MTN.t('Additional Meet Me pages is a Meetin.gs PRO feature. We offer you a free 30 day trial including multiple Meet Me pages and other great PRO features. Would you like to start your free trial now?')
+            else if( mode === 'lct' )
+                p!=MTN.t('Google Hangouts, Microsoft Lync and custom options are PRO features. We offer you a free 30 day trial including all live communication tools and other great PRO features. Would you like to start your free trial now?')
+            else if( mode === 'invite' )
+                p!=MTN.t('Meetings with more than 6 participants are a PRO feature. We offer you a free 30 day trial including including all the benefits of Meetin.gs PRO.')
+            else if( mode === 'settings' )
+                p!=MTN.t('Configuring user rights on a per meeting basis is a PRO feature. We offer you a free 30 day trial including the user rights configuration and other great PRO features. Would you like to start your free trial now?')
+                p!=MTN.t('Have a good look at our service at your convenience without any commitments. Embrace the full potential offered for increased meeting productivity and let us know what you think.')
+
+            div.pro-trial-upgrade
+                div.star-box
+                    h3!=MTN.t('Free')
+                    p!=MTN.t('1 month trial')
+            h3.pro-header!=MTN.t('Benefits for upgrading:')
+            ul.pro-list
+                li!=MTN.t('Unlimited meeting schedulers')
+                li!=MTN.t('Expanded live communication tools')
+                li!=MTN.t('Visual customization and branding')
+                li!=MTN.t('Unlimited meeting participants')
+                li!=MTN.t('Unlimited meeting materials')
+
+        div.modal-footer 
+            div.buttons.right
+                a(href='#').start-trial.button.blue!=MTN.t('Start trial')
+                a(href='#').button.gray.close.js_hook_showcase_close!=MTN.t('Cancel')

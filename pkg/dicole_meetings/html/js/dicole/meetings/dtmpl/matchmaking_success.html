@@ -1,0 +1,45 @@
+<div id="matchmaking-success" class="m-modal">
+    <% if( p.quickmeet ) { %>
+    <div class="modal-header">
+        <h3><%= MTN.t("Thank you!") %></h3>
+    </div>
+    <div class="modal-content">
+        
+        <p><img class="portrait" src="<%= p.image %>" alt="<%= p.name %>"><%= MTN.t('%(B$%1$s%) is now preparing the online meeting page where you can further discuss details, create an agenda, and share materials before the actual meeting.', { params : [ p.name ], escape_params : 1 } ) %></p>
+        <p style="margin-left:64px;"><%= MTN.t('When ready, we will send you an automated notification containing a link to the meeting page.') %></p>
+
+        <p style="margin-left:64px;" class="title"><%= MTN.t('Title://context:meeting title') %> <%== p.title %></p>
+        <p style="margin-left:64px;" class="time"><%= MTN.t('When:') %> <%== p.time %></p>
+
+    </div>
+
+    <% } else { %>
+    <div class="modal-header">
+        <h3><%= MTN.t("We've sent the meeting request") %></h3>
+    </div>
+    <div class="modal-content">
+        <p><%= MTN.t('%1$s will now accept or decline your request.', { params : [ p.name ], escape_params : 1 } ) %></p>
+
+        <p class="title"><%= MTN.t('Title://context:meeting title') %> <%== p.title %></p>
+        <p class="time"><%= MTN.t('When:') %> <%== p.time %></p>
+        <p class="time"><%= MTN.t('Where:') %> <%== p.location %></p>
+        <p class="location"><%= MTN.t('Who:') %> <%== p.name %> <%== (p.email == p.name) ? '' : '('+p.email+')' %></p>
+
+        <p class="cal-links"><%= MTN.t('Add to calendar:') %> <a href="<%== p.calendar_url %>">MS Outlook</a> | <a target="_blank" href="<%== p.gcal_url %>"><%= MTN.t('Google calendar') %></a> | <a href="<%== p.calendar_url %>"><%= MTN.t('Other ICS') %></a></p>
+
+        <p><%= MTN.t('What happens next? The recipient will now accept or decline your request to meet. We will send you a notification when we have a response.') %></p>
+
+        <% if( p.matchmaking_event ) { %>
+        <p>
+        <a class="button blue" href="<%= p.matchmaking_list_url %>"><%= MTN.t('Back to matchmaking list') %></a>
+        </p>
+        <% } %>
+        <% if( dicole.get_global_variable('meetings_user_meetme_fragment') === '' ) { %>
+        <p class="bold"><%= MTN.t("Do you want to have a similar meeting page? It's easy and works with your calendar.") %></p>
+        <a href="/meetings/wizard" class="button blue"><%= MTN.t('Claim your free Meet Me page now') %></a>
+        <% } %>
+    </div>
+    <% } %>
+</div>
+<div class="matchmaking-link">
+</div>

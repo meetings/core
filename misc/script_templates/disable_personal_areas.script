@@ -1,0 +1,68 @@
+
+use Dicole::Utility;
+
+sub execute {
+    my ( $self, $params ) = @_;
+    
+    my $domains = CTX->lookup_object('dicole_domain')->fetch_group || [];
+    
+    for my $domain ( @$domains ) {
+        my $domain_id = $domain->id;
+        my $group_ids = CTX->lookup_action('dicole_domains')->groups_by_domain( $domain->id );
+        $group_ids = [ sort { $a <=> $b } @$group_ids ];
+        my $user_ids = CTX->lookup_action('dicole_domains')->users_by_domain( $domain->id );
+        
+        for my $user_id ( @$user_ids ) {
+            my $user = eval { CTX->lookup_object('user')->fetch( $user_id ) };
+            next unless $user;
+            
+            my $starting_group_id = Dicole::Settings->fetch_single_setting(
+                user_id => $user_id,
+                tool => 'login',
+                attribute => 'starting_group_' . $domain_id,
+            );
+            
+            $starting_group_id ||= $user->starting_page;
+            
+            if ( $starting_group_id ) {
+                $starting_group_id = 0 unless
+                    CTX->lookup_action('dicole_domains')->execute( group_belongs_to_domain => {
+                        group_id => $starting_group_id,
+                        domain_id => $domain_id,
+                    } );
+            }
+            
+            if ( ! $starting_group_id ) {
+                for my $gid ( @$group_ids ) {
+                    if ( Dicole::Utility->user_belongs_to_group( $user_id, $gid ) ) {
+                        $starting_group_id = $gid;
+                        last;
+                    }
+                }
+            }
+            
+            if ( $starting_group_id ) {
+                Dicole::Settings->store_single_setting(
+                    user_id => $user_id,
+                    tool => 'login',
+                    attribute => 'starting_group_' . $domain_id,
+                    value => $starting_group_id,
+                );
+                print "Setting starting group to $starting_group_id for user $user_id in domain $domain_id" . $/;
+            }
+            else {
+                print "No viable group found for user $user_id in domain $domain_id" . $/;
+            }
+        }
+        
+        print "Disabling personal areas for domain $domain_id." . $/;
+        
+        Dicole::Settings->store_single_setting(
+            tool => 'domain_user_manager_' . $domain_id,
+            attribute => 'hide_personal',
+            value => 1,
+        );
+    }
+}
+
+1;

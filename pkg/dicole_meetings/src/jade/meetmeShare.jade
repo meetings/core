@@ -1,0 +1,111 @@
+div#meetme-share.meetme-setup
+    - var ts = ( user.organization_title != '' && user.organization != '' ) ? user.organization_title + ', ' + user.organization : user.organization + user.organization_title;
+    h2.divider.fat!=MTN.t('Share your %(B$meet me%) page')
+    div.buttons
+        if( user.new_user_flow )
+            a.button.pink.continue!=MTN.t('Continue')
+        else
+            a.button.gray.return!=MTN.t('Back')
+    div.section.share-url-and-signature
+        p.select!=MTN.t('Choose Meet Me Page to share:')
+            select#mm-select.chosen(style='width:200px;')
+                if( ! selected_matchmaker_path )
+                    option(value='', selected='selected')!=MTN.t('Meet Me Cover Page')
+                else
+                    option(value='')!=MTN.t('Meet Me Cover Page')
+                - var mms = _.filter( matchmakers, function(o){ return o.last_active_epoch === 0 || o.last_active_epoch * 1000 > new Date().getTime() })
+                each mm in mms
+                    if( mm.vanity_url_path == selected_matchmaker_path )
+                        option(value=mm.vanity_url_path, selected='selected')=mm.name || MTN.t('Default Meet Me page')
+                    else
+                        option(value=mm.vanity_url_path)=mm.name || MTN.t('Default Meet Me page')
+        p.url.meetings-form URL: 
+            input.url-input(value=share_url,readonly='readonly')
+            a#copy-url.button.blue!=MTN.t('Copy to clipboard')
+        p!=MTN.t('Copy and paste the following tagline to your email signature:')
+        //-textarea#signature-area='--\n'+user.name+'\n'+ts+'\n'+MTN.t('Schedule a meeting: %1$s', { params : [ share_url ] })
+        textarea='--\n'+user.name+'\n'+ts+'\n'+'Schedule a meeting: '+share_url
+
+    h2.divider!=MTN.t('Share with your social networks')
+    div.section.networks
+        p!=MTN.t('Share the Meet Me page with the contacts in your social networks:')
+        div.twitter
+            a.twitter-share-button(data-count="none",data-related="meetin_gs",href="https://twitter.com/share",data-url=share_url,data-text!=MTN.t("Here's my Meet Me page where you can book a meeting with me easily:")) Tweet
+        div.linkedin
+            script(type="IN/Share",data-url=share_url,data-size="large" )
+        a.facebook(href='https://www.facebook.com/sharer/sharer.php?u='+share_url,target='_blank')
+        div.gplus
+            div#gplus.g-plus(data-action="share",data-annotation="none",data-href=share_url)
+
+    h2.divider!=MTN.t('Generate a %(B$meet me%) button')
+    div.section.generate-button
+        p!=MTN.t('Get your %(B$meet me%) button to share your availability on your website.')
+        p.choose!=MTN.t('Choose the button:')
+        div.meetme-buttons
+            div.button-group
+                div.button
+                    input(name="mmbutton",type="radio",data-type='schedule',data-color='blue')
+                    script(type='MTN/app',data-user=user.matchmaker_fragment,data-scheduler=selected_matchmaker_path || '',data-color='blue',data-type='schedule')
+                    div.clickjacker
+                div.button
+                    input(name="mmbutton",type="radio",data-type='schedule',data-color='silver')
+                    script(type='MTN/app',data-user=user.matchmaker_fragment,data-scheduler=selected_matchmaker_path || '',data-color='silver',data-type='schedule')
+                    div.clickjacker
+                div.button
+                    input(name="mmbutton",type="radio",data-type='schedule',data-color='gray')
+                    script(type='MTN/app',data-user=user.matchmaker_fragment,data-scheduler=selected_matchmaker_path || '',data-color='gray',data-type='schedule')
+                    div.clickjacker
+                div.button
+                    input(name="mmbutton",type="radio",data-type='schedule',data-color='dark')
+                    script(type='MTN/app',data-user=user.matchmaker_fragment,data-scheduler=selected_matchmaker_path || '',data-color='dark',data-type='schedule')
+                    div.clickjacker
+            div.button-group
+                div.button
+                    input(name="mmbutton",type="radio",data-type='meetme',data-color='blue')
+                    script(type='MTN/app',data-user=user.matchmaker_fragment,data-scheduler=selected_matchmaker_path || '',data-color='blue',data-type='meetme')
+                    div.clickjacker
+                div.button
+                    input(name="mmbutton",type="radio",data-type='meetme',data-color='silver')
+                    script(type='MTN/app',data-user=user.matchmaker_fragment,data-scheduler=selected_matchmaker_path || '',data-color='silver',data-type='meetme')
+                    div.clickjacker
+                div.button
+                    input(name="mmbutton",type="radio",data-type='meetme',data-color='gray')
+                    script(type='MTN/app',data-user=user.matchmaker_fragment,data-scheduler=selected_matchmaker_path || '',data-color='gray',data-type='meetme')
+                    div.clickjacker
+                div.button
+                    input(name="mmbutton",type="radio",data-type='meetme',data-color='dark')
+                    script(type='MTN/app',data-user=user.matchmaker_fragment,data-scheduler=selected_matchmaker_path || '',data-color='dark',data-type='meetme')
+                    div.clickjacker
+        p.code-help!=MTN.t('Copy and paste the code below into the HTML of your site:')
+        textarea#meetme-code
+
+    if (dicole.get_global_variable('meetings_feature_quickmeet') && current_matchmaker )
+        h2.divider!=MTN.t('Generate and send quickmeet links')
+        div.section.manage-quickmeet
+            form.m-form
+                p
+                    label(for="quickmeet_email") Email
+                        input(id="quickmeet_email",name="email",value="")
+                p
+                    label(for="quickmeet_name") Name
+                        input(id="quickmeet_name",name="name",value="")
+                p
+                    label(for="quickmeet_organization") Organization
+                        input(id="quickmeet_organization",name="organization",value="")
+                p
+                    label(for="quickmeet_title") Title
+                        input(id="quickmeet_title",name="title",value="")
+                p
+                    label(for="quickmeet_phone") Phone
+                        input(id="quickmeet_phone",name="phone",value="")
+                p
+                    label(for="quickmeet_meeting_title") Meeting title
+                        input(id="quickmeet_meeting_title",name="text",value="")
+                p
+                    label(for="quickmeet_message") Custom message
+                        textarea(id="quickmeet_message",name="text",value="")
+                p
+                    input#js_add_quickmeet(type="submit",name="save",value="add")
+
+            div#quickmeets-container
+

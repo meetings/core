@@ -1,0 +1,40 @@
+div.footer
+    div.footer-left
+        // TODO check if user is pro and add class normal or pro 
+        span.logo.normal
+        - if( view_type !== 'clean' )
+            div.pages
+                ul
+                    - if( view_type === 'ext' )
+                        li.first
+                            a#user-guide-menu-open.js_meetings_user_guide_menu_open(href="#")!=MTN.t('Getting Started')
+                        li
+                            a#website-link(target="_blank",href="http:///www.meetin.gs/#frontpage")!=MTN.t('Website')
+                    - else if( view_type === 'matchmaking' )
+                        li.first!=MTN.t('Powered by %(L$Meetin.gs%)', { L : { href : 'http://meetin.gs'} })
+                    - else if( view_type !== 'clean' )
+                        li.first
+                            a#website-link(target="_blank",href="http:///www.meetin.gs/#frontpage")!=MTN.t('Website')
+
+    div.footer-right
+        - if( view_type !== 'clean' && view_type !== 'matchmaking'  )
+            div.contact
+                ul
+                    li.first
+                        a#blog-link(href="http://www.meetin.gs/blog",target="_blank")!=MTN.t('Blog')
+                    li
+                        a#gsfn-open(href="http://support.meetin.gs/",target="_blank")!=MTN.t('Support')
+                    li
+                        a#facebook-open(href="http://www.facebook.com/pages/Meetings/182909251746386",target="_blank") Facebook
+                    li
+                        a#twiter-open(href="http://twitter.com/meetin_gs/",target="_blank") Twitter
+                    li
+                        a(href="mailto:info@meetin.gs")!=MTN.t('Contact')
+        div.policies
+            ul
+                li.first
+                    a(target="_blank",href="http://www.meetin.gs/privacy/")!=MTN.t('Privacy Policy')
+                li
+                    a(target="_blank",href="http://www.meetin.gs/takedown-policy/")!=MTN.t('Takedown policy')
+                li
+                    a(target="_blank",href="http://www.meetin.gs/terms-of-service/")!=MTN.t('Terms of Service')

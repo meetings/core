@@ -1,0 +1,6 @@
+<% dojo.forEach( p.materials, function (material) { %>
+    <div class="form-row">
+        <input class="js_previous_material_select" type="checkbox" id="<%= material.material_id %>" name="<%= material.material_id %>"/>
+        <label for="<%= material.material_id %>"><%== dicole.meetings_common.truncate_text( material.title, 25 ) %></label>
+    </div>
+<% }); %>

@@ -1,0 +1,10 @@
+[% IF in_html %]
+<table cellspacing="0" cellpadding="0" style="width:[% IF inthebubble %]460[% ELSE %]530[% END %]px; margin-left:35px; margin-top:0px; margin-right:35px; margin-bottom:15px;border-collapse:collapse;border-spacing:0;">
+<tr>
+<td height="50" style="height:50px;margin-bottom:0px; text-align:right;">
+<img align="right" src="[% IF squirrel == 'thief' %][% server_host %]/images/meetings/email/thief_squirrel.png[% END %][% IF squirrel == 'pro' %][% server_host %]/images/meetings/email/pro_squirrel.png[% END %]" height="50" style="display:block;border:0;margin-top:0px;"/>
+</td>
+</tr>
+</table>
+[% inthebubble = 1 %]
+[% END %]

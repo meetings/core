@@ -1,0 +1,32 @@
+[%#- $Id: button.tmpl,v 1.9 2009-01-07 14:42:32 amv Exp $ -%]
+
+[%#- 
+	The template accepts the following information in itemparams:
+	{
+		type 	= submit || confirm_submit
+		name 	= XHTML attribute name
+		value	= XHTML attribute value || text in normal anchor link
+		href	= XTHML attribute href
+		link	= XHTML attribute href deprecated
+		confirm_box =
+			{
+				title	=> title of the confirmation box
+				name	=> name is used for both identifying the confirmBoxContainer and the submit button name
+				msg 	=> message that is displayed in the confirmation box
+			}
+	}
+%]
+[%- DEFAULT
+	itemparams.type = ''
+-%]
+
+[% IF itemparams.type == 'submit' %]
+	<input type="submit" name="[% itemparams.name %]" value="[% itemparams.value %]" class="submitButton" />
+[% ELSIF itemparams.type == 'confirm_submit' %]
+	<a href="#" onclick="return showConfirm('confirm_[% itemparams.confirm_box.name %]', this);" class="linkButton">[% itemparams.value %]</a>
+	[%- PROCESS dicole_base::confirmbox itemparams = itemparams.confirm_box -%]
+[% ELSIF itemparams.type == 'onclick_button' %]
+        <input type="button" onclick="[% IF itemparams.href; itemparams.href; ELSE; itemparams.link; END; %]" name="[% itemparams.name %]" value="[% itemparams.value %]" class="submitButton" />
+[% ELSE %]
+	<a href="[% IF itemparams.href; itemparams.href; ELSE; itemparams.link; END; %]" class="linkButton">[% itemparams.value %]</a>
+[% END %]

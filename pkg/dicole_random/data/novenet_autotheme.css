@@ -1,0 +1,46 @@
+body {
+    
+    background-image: none;
+    
+    
+    background-color: #DDDDDD;
+    
+}
+
+
+
+#navi_logo_link {
+	
+	background: transparent url("http://work-dev.dicole.net/images/novetos/novetos_logo.jpg") no-repeat scroll 20px 60px;
+	
+	
+	
+}
+
+
+
+
+
+#navi_logo_text {
+    color: #000000;
+    font-size: 12px;
+    
+    
+    
+    padding-left: 150px;
+    padding-top: 65px;
+}
+
+
+
+
+
+#navi_actions {
+    display: none;
+}
+
+
+
+
+
+

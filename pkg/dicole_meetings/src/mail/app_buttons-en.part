@@ -1,0 +1,43 @@
+[% IF ! hide_app_promotion %]
+
+[% IF customize_for_cmeet %]
+[% iphone_url = 'http://mtn.gs/cmeetiphone' %]
+[% android_url = 'http://mtn.gs/cmeetandroid' %]
+[% ELSE %]
+[% iphone_url = 'http://bit.ly/swipetomeet-ios' %]
+[% android_url = 'http://bit.ly/swipetomeet-android' %]
+[% END %]
+
+[% IF in_html %]
+<table style="margin-top:20px;margin-bottom:10px;margin-left:35px;margin-right:35px;line-height:25px; font-size:15px; color:#4a4a4a;font-family:arial;width:530px;">
+    <tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+        <td valign="top" width="10%" colspan="1" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px; vertical-align:top; width:10%; padding-top:5px;">
+            <img src="[% server_host %]/images/meetings/email/phone.png" alt="" />
+        </td>
+        <td valign="top" width="90%" colspan="1" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px; vertical-align:top; width:90%;">
+            <h4 style="margin-top:0px;margin-bottom:10px; padding-top:0px; padding-bottom:0px;">[% MTN.t('Meetings on the move') %]</h4>
+            <p style="margin-top:10px;margin-bottom:0px; padding-top:0px; padding-bottom:0px;">[% IF customize_for_cmeet %][% MTN.t('In order to stay always connected we recommend to download the free mobile app and receive meeting details and updates straight to your mobile phone:') %][% ELSE %][% MTN.t('Download SwipeToMeet app by Meetin.gs to receive meeting details and updates straight to your mobile device:') %][% END %]</p>
+        </td>
+    </tr>
+</table>
+<table style="margin-top:10px;margin-bottom:15px;margin-left:35px;margin-right:35px;line-height:25px; font-size:15px; color:#4a4a4a;font-family:arial;width:530px;">
+    <tr style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px;">
+        <td colspan="1" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px; vertical-align:top;width:40%;">
+            <a href="[% iphone_url %]" target="_blank">
+                <img src="[% server_host %]/images/meetings/email/app_store.png" alt="App Store"/>
+            </a>
+        </td>
+        <td colspan="1" style="margin-top:0px;margin-bottom:0px;padding-bottom:0px;padding-top:0px; vertical-align:top;">
+            <a href="[% android_url %]" target="_blank">
+                <img src="[% server_host %]/images/meetings/email/google_play.png" alt="Google Play"/>
+            </a>
+        </td>
+    </tr>
+</table>
+[% ELSE %]
+[% MTN.t('Meetings on the move for iPhone and android:') %]<<<br>>>
+iPhone [% iphone_url %]<<<br>>>
+Android [% android_url %]
+[% END %]
+
+[% END %]

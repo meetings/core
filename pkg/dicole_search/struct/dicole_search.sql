@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS dicole_search (
+  search_id  %%INCREMENT%%,
+  domain_id int unsigned not null,
+  group_id int unsigned not null,
+  creator_id int unsigned not null,
+  object_id int unsigned not null,
+  creation_date bigint unsigned not null,
+  last_modified bigint unsigned not null,
+  object_type TINYTEXT,
+  combined_text MEDIUMTEXT,
+  title_text MEDIUMTEXT,
+  content_text MEDIUMTEXT,
+  tag_text MEDIUMTEXT,
+  unique    ( search_id ),
+  primary key   ( search_id ),
+  key           ( domain_id ),
+  key           ( group_id ),
+  key           ( creator_id ),
+  key           ( object_id ),
+  key           ( creation_date),
+  key           ( last_modified )
+)

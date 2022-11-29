@@ -1,0 +1,77 @@
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_id = $params ? $params : 0;
+
+    # fetch all the feeds which have personal  feed/feed topic
+    my $feeds = CTX->lookup_object('feeds')->fetch_group( {
+        where => 'url like "/personal_weblog/feed%"',
+    });
+    # for each feed
+    for my $feed ( @$feeds ) {
+        # fetch using groups
+        my $users = CTX->lookup_object('feeds_users')->fetch_group( {
+            where => 'feed_id = ?',
+            value => [ $feed->id ],
+        }) || [];
+        
+        my %gidhash = map { $_->group_id ? ( $_->group_id => 1 ) : () } @$users;
+        my @group_ids = keys %gidhash;
+        
+        # fetch post ids
+        my $items = CTX->lookup_object('feeds_items')->fetch_group( {
+            where => 'feed_id = ?',
+            value => [ $feed->id ],
+        });
+        
+        my %pidhash = ();
+        for my $item ( @$items ) {
+        
+            my ( $topic, $id ) = $item->link =~ /\/personal_weblog\/show(_topic)?\/\d+\/\d+\/(\d+)/;
+            $pidhash{ $id } = 1 if $id;
+        }
+        my @post_ids = keys %pidhash;
+        
+        # if not published yet
+        for my $pid ( @post_ids ) {
+            for my $gid ( @group_ids ) {
+                my $pub = CTX->lookup_object('blogs_published')->fetch_count( {
+                    where => 'group_id = ? AND post_id = ?',
+                    value => [ $gid, $pid ],
+                } );
+                next if $pub;
+                
+                my $post = CTX->lookup_object('weblog_posts')->fetch( $pid );
+                next unless $post;
+                
+                # check that post belongs to a user in the group and that the group
+                # belongs to the domain (if specified).
+                next unless Dicole::Utility->user_belongs_to_group( $post->user_id, $gid );
+                
+                if ( $domain_id ) {
+                    my $ok = eval { CTX->lookup_action('dicole_domains')->execute( group_belongs_to_domain => {
+                        group_id => $gid, domain_id => $domain_id,
+                    } ) };
+                    next unless $ok;
+                }
+                
+                # publish posts to group and set edited date to now if not published yet
+                $post->edited_date( time - 1 );
+                $post->save;
+                
+                my $publish = CTX->lookup_object('blogs_published')->new;
+                $publish->group_id( $gid );
+                $publish->post_id( $pid );
+                $publish->save;
+                
+                print "Added post $pid to group $gid" . $/;
+            }
+        }
+    }
+    
+    # run update_blogs
+    CTX->lookup_action('update_blogs_entries')->execute;
+}
+
+1;

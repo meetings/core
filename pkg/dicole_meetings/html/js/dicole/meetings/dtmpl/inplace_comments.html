@@ -1,0 +1,17 @@
+<!-- Publish comments -->
+<div class="inplace-comments-publish">
+	<div class="inplace-chat-input-wrapper iciw-closed">
+    <textarea id="inplace_comments_input_<%== p.comment_thread_id %>" class="js_autogrow inplace_chat_input"><%= MTN.t('Write your comment here...') %></textarea>
+	</div>
+    <div class="publish-button" style="display:none;">
+        <a href="#" id="inplace_comments_submit_<%== p.comment_thread_id %>" class="inplace_chat_submit">
+            <span class="button-notop blue"><%= MTN.t('Add comment') %></span>
+            <span class="indicator"></span>
+        </a>
+    </div>
+</div>
+
+<!-- Material comments -->
+<div id="inplace_comments_container_<%== p.comment_thread_id %>" class="inplace_chat_container comments-not-loaded">
+    <div class="ajax_loader"><img src="/images/meetings/ajax_loader.gif" alt="Loading..."/></div>
+</div>

@@ -1,0 +1,21 @@
+[%#- Sent when user tries to connect facebook to an existing account without being logged in -%]
+
+[%- IF test_case == 'facebook testi'  %]
+[%- 
+
+server_host = 'http://dev.meetin.gs'
+user_name = 'Lawrence of Arabia'
+authorize_url = 'http://meetin.gs/facebook-conncet-feature-url'
+
+%]
+[%- END -%]
+
+[%- IF test_case == 'uusi käyttäjä' %]
+[%-
+
+server_host = 'http://dev.meetin.gs'
+new_user= '1'
+authorize_url = 'http://meetin.gs/facebook-conncet-feature-url'
+
+%]
+[% END %]

@@ -1,0 +1,15 @@
+[%- IF test_case == 'uusiosallistuja' %]
+[%-
+
+url = 'www.onlinepressconference.net'
+user_name = 'Alpo Suhonen'
+event_title = 'How does "Dr Doom" see the current economic situation? Online conference with economist Nouriel Roubini'
+attend_info_html = '<p>well hello there</p>'
+attend_info_text = 'well hello there'
+organization = 'SUPO'
+organization_title = 'Urkkija'
+phone = '+358404441234'
+email = 'alpo@supo.fi'
+
+%]
+[%- END %]

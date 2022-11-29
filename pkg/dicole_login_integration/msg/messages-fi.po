@@ -1,0 +1,15 @@
+
+msgid "Go to Dicole"
+msgstr "Siirry Dicoleen"
+
+msgid "Hello %1"
+msgstr "Hei %1"
+
+msgid "Login form"
+msgstr "Kirjautuminen"
+
+msgid "Retrieve lost username or password"
+msgstr "Kadonnut käyttäjätunnus tai salasana?"
+
+msgid "Welcome"
+msgstr "Tervetuloa"

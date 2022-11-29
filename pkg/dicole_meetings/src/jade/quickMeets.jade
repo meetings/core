@@ -1,0 +1,5 @@
+each qm in quickmeets
+    div.quickmeet
+        h3.title=qm.email
+        p.url=qm.full_url
+        a.qm-send(href='#',data-id=qm.id)!=MTN.t('Send invite')

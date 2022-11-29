@@ -1,0 +1,88 @@
+#profile-wizard.m-modal
+    .modal-header
+        h3 
+            i.ico-profile
+            !=MTN.t('Provide your details')
+    .modal-content
+        div#edit-profile-container
+            form.meetings-form
+                input#draft_id(type="hidden", name="draft_id")
+                input#event_id(type="hidden", name="event_id")
+                #facebook-form-fill-section(style=(openProfile ? "display: none" : ""))
+                    div#social-logins
+                        a#login-google.button(href="#")
+                            img#google-signup-image(src="/images/meetings/btn_google_signin_dark_normal_web.png")
+                    div#manual-config-text
+                        p 
+                            a.open-profile-form(href="#")!=MTN.t('Do not connect - provide your information manually.')
+                #profile-edit-section(style=(openProfile ? "" : "display: none"))
+                    div#photo-container
+                        .profile-image-wrap
+                            img#profile-image(src=model.image, style=(model.image ? "" : "display: none"))
+                        a#upload-button.button.blue 
+                            span.text!=MTN.t('Upload photo')
+                            input#fileupload(type="file",name="file") 
+
+                    .form-row
+                        label.smaller(for="email")!=MTN.t('Email')
+                        - var email_str = model.email || locals.suggestEmail || '';
+                        if( lockEmail )
+                            input#profile-email(type="text", disabled='disabled', value=email_str)
+                            input(type="hidden", value=email_str, name="email")
+                        else
+                            input#profile-email(type="text", name="email", value=email_str)
+                        span.required *
+                    .form-row
+                        label.smaller(for="first_name")!=MTN.t('First name')
+                        input#profile-first-name(type="text", name="first_name", value=model.first_name)
+                        span.required *
+
+                    .form-row
+                        label.smaller(for="last_name")!=MTN.t('Last name')
+                        input#profile-last-name(type="text", name="last_name", value=model.last_name)
+                        span.required *
+
+                    .form-row
+                        label.smaller(for="organization")!=MTN.t('Organization')
+                        input#profile-organization(type="text", name="organization", value=model.organization)
+                        span.required *
+
+                    .form-row
+                        label.smaller(for="organization_title")!=MTN.t('Title//context:organizational title')
+                        input#profile-organization-title(type="text", name="organization_title", value=model.organization_title)
+
+                    .form-row
+                        label.smaller(for="phone")!=MTN.t('Phone')
+                        input#profile-phone(type="text", name="phone", value=model.phone)
+
+                    .form-row
+                        label.smaller(for="skype")!=MTN.t('Skype')
+                        input#profile-skype(type="text", name="skype", value=model.skype)
+
+                    .form-row
+                        label.smaller(for="linkedin")!=MTN.t('LinkedIn')
+                        input#profile-linkedin(style="width:258px;", type="text", name="linkedin", value=model.linkedin,placeholder!=MTN.t("Copy & paste your LinkedIn URL here"))
+                    .form-row
+                        label.smaller(for="timezone")!=MTN.t('Time zone')
+                        - var ua_tz = app.options.ua_time_zone.name();
+                        - var tz_data = dicole.get_global_variable('meetings_time_zone_data')
+                        select#timezone-select.chosen(style='width:270px;',name='timezone')
+                            each tz, i in tz_data.choices
+                                if( tz === ua_tz )
+                                    option(value=tz,selected="selected")=tz_data.data[tz].readable_name
+                                else
+                                    option(value=tz)=tz_data.data[tz].readable_name
+                        p.time!=MTN.t('Time for this time zone:')
+                            span#current-time=moment.utc(d.getTime() + ua_tz_offset_value * 1000).format('hh:mm A')
+                    .form-row.last
+                        label(style='width:100%')
+                            input.newsletter(type='checkbox',checked='checked',style='margin-right:15px')
+                            !=MTN.t('Subscribe to our newsletter to receive important service updates')
+                    div(style='clear:both;')
+
+    .modal-footer
+        .buttons.left
+            p!=MTN.t('By continuing you accept the %(L$Terms of Service%).', { L : { href : 'http://www.meetin.gs/terms-of-service/' , target : '_blank' }})
+        .buttons.right
+            a.save-profile-data(style=(openProfile ? "" : "display: none")).button.blue!=MTN.t('Save & continue')
+

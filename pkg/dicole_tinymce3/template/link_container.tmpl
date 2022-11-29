@@ -1,0 +1,20 @@
+<a id="[% editor_id %]_dicole_wiki_name_autofill_url" href="[% wiki_autofill_url | html %]"></a>
+<div class="external_link">[% MSG('External link') %]</div>
+<div>
+    <input class="dicole_link_href_input" type="text" id="[% editor_id %]_dicole_link_href" />
+    <a class="dicole_tinymce3_submit_small_outer dicole_link_href_submit" href="#" onclick="return false;" id="[% editor_id %]_dicole_link_href_submit"><span class="dicole_tinymce3_submit_small_inner">[% MSG('Link') %]</span></a>
+</div>
+<div class="internal_link">[% MSG('Internal link') %]</div>
+<div>
+    <input class="dicole_link_wiki_input f_dicole_autofill" type="text" id="[% editor_id %]_dicole_wiki_name" />
+    <a class="dicole_tinymce3_submit_small_outer dicole_link_wiki_submit" href="#" onclick="return false;" id="[% editor_id %]_dicole_wiki_name_submit"><span class="dicole_tinymce3_submit_small_inner">[% MSG('Link') %]</span></a>
+</div>
+<div id="[% editor_id %]_wiki_page_list_container" class="wiki_page_list_container">
+<span class="recent_wiki_pages_title">[% MSG( 'Active wiki pages:' ) %] </span>
+[% FOREACH page IN wiki_recent_pages %]
+[% IF ! loop.first %], [% END %]<a href="" onclick="return false;" class="f_recent_wiki_page_link" title="[% page.readable_title | html %]">[% page.readable_title | html %]</a>
+[% END %]
+[% IF wiki_recent_pages.size > 3 %]
+ ... <a id="[% editor_id %]_wiki_show_more_url" onclick="return false;" href="[% wiki_show_more_url | html %]">[% MSG('Show more pages') %]</a>
+[% END %]
+</div>

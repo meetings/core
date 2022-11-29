@@ -1,0 +1,3 @@
+Nimi[% FOREACH block = blocks %];[% block.name %][% END %]
+[% FOREACH t IN information %][% t.name %][% FOREACH block = blocks %];[% key = block.key; t.$key or 0 %][% END %] 
+[% END %]

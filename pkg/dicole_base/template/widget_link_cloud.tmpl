@@ -1,0 +1,9 @@
+<span class="miniLinkCloud miniTagCloud">
+[%- FOREACH item = itemparams.links %]
+    [%- IF item.link %] 
+        <a class="[% item.class %]" href="[% item.link %]">[% item.name %]</a> 
+    [%- ELSE %]
+        <span class="[% item.class %]">[% item.name %]</span>
+    [%- END %]
+[%- END %]
+</span>

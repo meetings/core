@@ -1,0 +1,49 @@
+
+my $domain_id = 76;
+
+sub execute {
+    my ( $self, $params ) = @_;
+
+    my $domain_host = Dicole::URL->get_domain_url( $domain_id );
+ 
+    my $users_who_have_used = {};
+    my $users_who_have_used_more_than_three_times = {};
+    my $daily_usage_stats = CTX->lookup_object('statistics_action')->fetch_group({
+        where => 'action = ? AND domain_id = ? AND group_id = ?',
+        value => [ 'user_active_daily', $domain_id, 0 ] ,
+    });
+    
+    foreach (@$daily_usage_stats) {
+        $users_who_have_used->{$_->user_id} += 1;
+        if( $users_who_have_used->{$_->user_id} == 2 ){
+            $users_who_have_used_more_than_one_time->{$_->user_id} = 1;
+        }
+    }
+    
+    CTX->lookup_action('meetings_api')->e( send_campaign_email => {
+        domain_id => $domain_id,
+#        dry_run => 1,
+#        single_send_limit => 10,
+#        skip_sent_check => 1,
+#        limit_to_users => ['a@dicole.com'],
+        template_key_base => 'meetings_feedback_letter',
+        exclude_user_checker => sub {
+            my ( $self, $user ) = @_;
+            return 1 unless $users_who_have_used_more_than_one_time->{ $user->user_id };
+            return 1 unless $self->_get_note_for_user('meetings_invited_to_beta_by', $user, $domain_id );
+            return 0;
+        },
+        template_params_generator => sub {
+            my ( $self, $user ) = @_;
+
+            my $params = {
+                day_count => $users_who_have_used->{$user->user_id},
+            };
+
+            return $params;
+        },
+    } );
+}
+
+1;
+

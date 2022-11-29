@@ -1,0 +1,16 @@
+Changes
+conf/action.ini
+conf/spops.ini
+MANIFEST			This list of files
+MANIFEST.SKIP
+OpenInteract2/Action/DicoleAttachment.pm
+OpenInteract2/Action/DicoleDraftAttachmentAPI.pm
+OpenInteract2/Action/DicoleDraftAttachmentCommon.pm
+OpenInteract2/Action/DicoleDraftAttachmentJSON.pm
+OpenInteract2/Action/DicoleDraftAttachmentRaw.pm
+OpenInteract2/App/DicoleAttachment.pm
+OpenInteract2/SQLInstall/DicoleAttachment.pm
+package.ini
+struct/dicole_attachment.sql
+struct/dicole_draft_container.sql
+template/attachment_list.tmpl

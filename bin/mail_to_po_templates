@@ -1,0 +1,138 @@
+#!/usr/bin/perl
+
+# TODO: copied from development_common (self removed) - refactor somewhere (NOTE: added a part!)
+sub _prepare_template_params {
+    my ( $pkgdir, $content, $lang ) = @_;
+
+    for ( 1..10 ) {
+        $content =~ s/<<<(\/?)(\w*)>>>/_include_part( $pkgdir, $2, $lang, $1 )/eg;
+        last unless $content =~ /<<<\/?\w*>>>/;
+    }
+
+    my ( $subject, $content ) = split /\n\n/, $content, 2;
+
+    # NOTE: This has been added to input the strings correctly to msgstr
+    $content =~ s/([\\"])/\\$1/g;
+    
+    $content =~ s/\n//g;
+    $content =~ s/\-\-\-n\-\-\-/\n/ig;
+
+    return {
+        subject => $subject,
+        html => $content,
+        text => $content,
+    };
+}
+
+# TODO: copied from development_common (self removed) - refactor somewhere
+sub _include_part {
+    my ( $dir, $base, $lang, $ending ) = @_;
+
+    my $d = $dir;
+    my $b = $base;
+    my ( $fp ) = $d =~ /.*\/(\w+)\/?$/;
+
+    my $p = $fp;
+    $p =~ s/dicole_//;
+
+    $b .= '_end' if $ending;
+
+    my $file = "$d/src/mail/$b-$lang.part";
+    $file = "$d/src/mail/${p}_$b-$lang.part" unless -f $file;
+    $file = "$d/src/mail/${fp}_$b-$lang.part" unless -f $file;
+
+    if ( ! $ending ) {
+        $b .= '_begin';
+
+        $file = "$d/src/mail/$b-$lang.part" unless -f $file;
+        $file = "$d/src/mail/${p}_$b-$lang.part" unless -f $file;
+        $file = "$d/src/mail/${fp}_$b-$lang.part" unless -f $file;
+    }
+
+    return `cat $file` if -f $file;
+
+    die "Could not find referenced part: $dir + $base + $lang + [$ending]";
+}
+
+my $arg = shift @ARGV;
+my $limit = scalar( @ARGV ) ? { map { $_ => 1 } @ARGV } : undef;
+my $update_only = $limit && $limit->{"-u"};
+
+$limit = undef if $update_only && scalar( @ARGV ) == 1;
+
+for my $pkg ( $arg  ) {
+    my $dir = ( -d "pkg/$pkg" ) ? "pkg/$pkg" : "pkg/dicole_$pkg";
+    unless ( -d $dir ) {
+        print "Could not find package $pkg - Check the spelling and make sure you are running this in source root!\n";
+        next;
+    }
+    next unless -d "$dir/src/mail/";
+
+    my $files = `ls $dir/src/mail/*.mail`;
+    for my $file ( split /\n/, $files ) {
+        chomp $file;
+        my ( $base, $lang ) = $file =~ /.*\/(.*)\-(\w+)\.mail/;
+        next unless $base;
+        next if $limit && ! $limit->{$base};
+	next if $update_only && `git status -s $file` =~ /^\?\?/;
+
+        my $content = `cat $file`;
+        my $template = _prepare_template_params( $dir, $content, $lang );
+
+        $template->{text} =~ s/\n/\\n/g;
+        $template->{html} =~ s/\n/\\n/g;
+
+        system "mkdir", "-p", "$dir/msg";
+        my $pofile = "$dir/msg/messages-$lang.po";
+        system "touch", $pofile;
+        my $pocontent = `cat $pofile`;
+
+        for my $target ( qw( subject html text ) ) {
+            my $id = $base . '_' . $target . '_template' ;
+            my @new_lines = ();
+            my @old_lines = split /\n/, $pocontent;
+
+            my $match_found = 0;
+
+            while ( @old_lines ) {
+                my $line = shift @old_lines;
+                if ( ! $match_found ) {
+                    if ( $line =~ /^\s*msgid\s*\"$id\"/ ) {
+                        push @new_lines, $line;
+                        push @new_lines, 'msgstr "' . $template->{$target} . '"';
+                        print "Replacing $id\n";
+                        $match_found = 1;
+                    }
+                    else {
+                        push @new_lines, $line;
+                    }
+                }
+                else {
+                    if ( $line =~ /^\s*msgid/ ) {
+                        push @new_lines, '';
+                        push @new_lines, $line;
+                        last;
+                    }
+                }
+            }
+
+            push @new_lines, @old_lines;
+
+            if ( ! $match_found ) {
+                print "Inserting $id\n";
+                push @new_lines, '' if $new_lines[-1];
+                push @new_lines, 'msgid "' . $id . '"';
+                push @new_lines, 'msgstr "' . $template->{$target} . '"';
+                push @new_lines, '';
+            }
+
+            push @new_lines, '' if $new_lines[-1];
+
+            $pocontent = join "\n", @new_lines;
+        }
+
+        open F, ">$pofile";
+        print F $pocontent;
+        close F;
+    }
+}

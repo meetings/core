@@ -1,0 +1,138 @@
+# $Id: messages-en.po,v 1.13 2010-06-30 23:22:10 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-22 02:09:37+0000\n"
+"PO-Revision-Date: 2005-03-22 02:09:37+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Admin area"
+msgstr "Admin area"
+
+msgid "Group area"
+msgstr "Group area"
+
+msgid "My Area"
+msgstr "My Area"
+
+msgid "My groups"
+msgstr "My groups"
+
+msgid "Other groups"
+msgstr "Other groups"
+
+msgid "Personal area"
+msgstr "Personal area"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Summary"
+msgstr "Summary"
+
+msgid "Tools"
+msgstr "Tools"
+
+msgid "Log out"
+msgstr "Log out"
+
+msgid "Feedback"
+msgstr "Feedback"
+
+msgid "Change area"
+msgstr "Change area"
+
+msgid "Logout"
+msgstr "Logout"
+
+msgid "My area"
+msgstr "My area"
+
+msgid "Visited blogs"
+msgstr "Visited blogs"
+
+msgid "Visited general areas"
+msgstr "Visited general areas"
+
+msgid "Visited groups"
+msgstr "Visited groups"
+
+msgid "Dicole"
+msgstr "Dicole"
+
+msgid "%%groupname%%"
+msgstr "%%groupname%%"
+
+msgid "Other areas"
+msgstr "Other areas"
+
+msgid "My weblog"
+msgstr "My weblog"
+
+msgid "Admin (action)"
+msgstr "Admin"
+
+msgid "Write weblog"
+msgstr "Write weblog"
+
+msgid "Blog (action)"
+msgstr "Blog"
+
+msgid "Write to my weblog"
+msgstr "Write to my weblog"
+
+msgid "Write to weblog"
+msgstr "Write to weblog"
+
+msgid "Domain managing"
+msgstr "Domain managing"
+
+msgid "Look settings"
+msgstr "Look settings"
+
+msgid "Custom CSS"
+msgstr "Custom CSS"
+
+msgid "Logged in as"
+msgstr "Logged in as"
+
+msgid "Login (header)"
+msgstr "Login"
+
+msgid "Login (submit)"
+msgstr "Login"
+
+msgid "Log in to participate"
+msgstr "Log in to participate"
+
+msgid "Join area"
+msgstr "Join area"
+
+msgid "Remember me on this machine"
+msgstr "Remember me on this machine"
+
+msgid "Login (action)"
+msgstr "Login"
+
+msgid "Connect with Facebook"
+msgstr "Connect with Facebook"
+
+msgid "Login with your Facebook account"
+msgstr "Login with your Facebook account"
+
+msgid "You are not yet a member of area \"%1\". By joining the area your profile will be visible in the people -section and you can participate more!"
+msgstr "You are not yet a member of area \"%1\". By joining the area your profile will be visible in the people -section and you can participate more!"
+
+msgid "Join this group!"
+msgstr "Join this group!"
+
+
+msgid "Personal"
+msgstr "Personal"

@@ -1,0 +1,591 @@
+
+msgid "%1 Comments"
+msgstr "%1 Comments"
+
+msgid "Best rated posts"
+msgstr "Best rated posts"
+
+msgid "Blog following tool"
+msgstr "Blog following tool"
+
+msgid "Blogs"
+msgstr "Blogs"
+
+msgid "Blogs rights"
+msgstr "Blogs rights"
+
+msgid "Choose view"
+msgstr "Choose view"
+
+msgid "Comment blogs"
+msgstr "Comment blogs"
+
+msgid "Demote"
+msgstr "Demote"
+
+msgid "Discuss"
+msgstr "Discuss"
+
+msgid "Edit post"
+msgstr "Edit post"
+
+msgid "Entry removed"
+msgstr "Entry removed"
+
+msgid "Entry updated"
+msgstr "Entry updated"
+
+msgid "Feature blogs"
+msgstr "Feature blogs"
+
+msgid "Featured post"
+msgstr "Featured post"
+
+msgid "Featured posts"
+msgstr "Featured posts"
+
+msgid "Featured posts tagged with: %1"
+msgstr "Featured posts tagged with: %1"
+
+msgid "Filter by tag"
+msgstr "Filter by tag"
+
+msgid "Posts by %1"
+msgstr "Posts by %1"
+
+msgid "Posts by %2 tagged with: %1"
+msgstr "Posts by %2 tagged with: %1"
+
+msgid "Posts by contacts"
+msgstr "Posts by contacts"
+
+msgid "Posts by contacts tagged with: %1"
+msgstr "Posts by contacts tagged with: %1"
+
+msgid "Manage others comments to blogs"
+msgstr "Manage others comments to blogs"
+
+msgid "Most promoted posts"
+msgstr "Most promoted posts"
+
+msgid "Most promoted posts tagged with: %1"
+msgstr "Most promoted posts tagged with: %1"
+
+msgid "My posts"
+msgstr "My posts"
+
+msgid "New posts"
+msgstr "New posts"
+
+msgid "New posts tagged with: %1"
+msgstr "New posts tagged with: %1"
+
+msgid "No, I changed my mind"
+msgstr "No, I changed my mind"
+
+msgid "Popular tags"
+msgstr "Popular tags"
+
+msgid "Post"
+msgstr "Post"
+
+msgid "Write a post"
+msgstr "Write a post"
+
+msgid "Promote"
+msgstr "Promote"
+
+msgid "Promote blogs"
+msgstr "Promote blogs"
+
+msgid "Publish"
+msgstr "Publish"
+
+msgid "Rate blogs"
+msgstr "Rate blogs"
+
+msgid "Read blogs"
+msgstr "Read blogs"
+
+msgid "Read more"
+msgstr "Read more"
+
+msgid "Remove comments from blogs"
+msgstr "Remove comments from blogs"
+
+msgid "Search by tag"
+msgstr "Search by tag"
+
+msgid "Suggested tags"
+msgstr "Suggested tags"
+
+msgid "Syndication feed (RSS 2.0)"
+msgstr "Syndication feed (RSS 2.0)"
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "User can comment blogs"
+msgstr "User can comment blogs"
+
+msgid "User can feature blogs"
+msgstr "User can feature blogs"
+
+msgid "User can promote and demote blogs"
+msgstr "User can promote and demote blogs"
+
+msgid "User can rate blogs"
+msgstr "User can rate blogs"
+
+msgid "User can read the blogs"
+msgstr "User can read the blogs"
+
+msgid "User can remove comments from blogs"
+msgstr "User can remove comments from blogs"
+
+msgid "Yes, I am sure that I want to delete the message permanently"
+msgstr "Yes, I am sure that I want to delete the message permanently"
+
+msgid "You are about to delete a message"
+msgstr "You are about to delete a message"
+
+msgid "You must fill both title and content."
+msgstr "You must fill both title and content."
+
+msgid "You must have at least one tag."
+msgstr "You must have at least one tag."
+
+msgid "New post"
+msgstr "New post"
+
+msgid "Add tag"
+msgstr "Add tag"
+
+msgid "tagged with: %1"
+msgstr "tagged with: %1"
+
+msgid "Blogs featured post summary"
+msgstr "Blogs featured post summary"
+
+msgid "Blogs new comments summary"
+msgstr "Blogs new comments summary"
+
+msgid "Blogs new posts summary"
+msgstr "Blogs new posts summary"
+
+msgid "Comment by %1"
+msgstr "Comment by %1"
+
+msgid "Comment to %1"
+msgstr "Comment to %1"
+
+msgid "Latest blog comments"
+msgstr "Latest blog comments"
+
+msgid "Latest blog entries and comments."
+msgstr "Latest blog entries and comments."
+
+msgid "Latest blog posts"
+msgstr "Latest posts"
+
+msgid "No blog comments found."
+msgstr "No blog comments found."
+
+msgid "No blog posts found."
+msgstr "No blog posts found."
+
+msgid "Unknown user"
+msgstr "Unknown user"
+
+msgid "Show more posts"
+msgstr "Show more posts"
+
+msgid "The message you requested does not exist."
+msgstr "The message you requested does not exist."
+
+msgid "%1 post(s)"
+msgstr "%1 post(s)"
+
+msgid "Active seeds"
+msgstr "Active topics"
+
+msgid "Add popular tags"
+msgstr "Add popular tags"
+
+msgid "Add seed to summary"
+msgstr "Add seed to summary"
+
+msgid "Add suggested tags"
+msgstr "Add suggested tags"
+
+msgid "All seeds"
+msgstr "All topics"
+
+msgid "Be the first to add one!"
+msgstr "Be the first to add one!"
+
+msgid "Browse all posts"
+msgstr "Browse all posts"
+
+msgid "Browse my own posts"
+msgstr "Browse my own posts"
+
+msgid "Browse posts by contacts"
+msgstr "Browse posts by contacts"
+
+msgid "Change seed"
+msgstr "Change topic"
+
+msgid "Closed seeds"
+msgstr "Closed topics"
+
+msgid "Closing comment"
+msgstr "Closing comment"
+
+msgid "Create a seed"
+msgstr "Create a topic"
+
+msgid "Create seeds"
+msgstr "Create topics"
+
+msgid "Custom creator string"
+msgstr "Custom creator string"
+
+msgid "Edit seed"
+msgstr "Edit topic"
+
+msgid "Edit seeds"
+msgstr "Edit topics"
+
+msgid "Enable promoting"
+msgstr "Enable promoting"
+
+msgid "Enable rating"
+msgstr "Enable rating"
+
+msgid "Most recent post on %1"
+msgstr "Most recent post on %1"
+
+msgid "Move posts between seeds"
+msgstr "Move posts between topics"
+
+msgid "Move post to seed \"%1\""
+msgstr "Move post to seed \"%1\""
+
+msgid "My own posts"
+msgstr "My own posts"
+
+msgid "My own posts tagged with: %1"
+msgstr "My own posts tagged with: %1"
+
+msgid "No posts found."
+msgstr "No posts found."
+
+msgid "No seeds found."
+msgstr "No topics found."
+
+msgid "Organized by %1"
+msgstr "Organized by %1"
+
+msgid "Post seed assigned."
+msgstr "Post topic assigned."
+
+msgid "Post to seed \"%1\""
+msgstr "Post to topic \"%1\""
+
+msgid "Remove post from seed"
+msgstr "Remove post from topic"
+
+msgid "Remove seed"
+msgstr "Remove topic"
+
+msgid "Remove seed from summary"
+msgstr "Remove topic from summary"
+
+msgid "Reopen seed"
+msgstr "Reopen topic"
+
+msgid "Seed"
+msgstr "Topic"
+
+msgid "Seed added to summary."
+msgstr "Topic added to summary."
+
+msgid "Seed closed."
+msgstr "Topic closed."
+
+msgid "Seed created"
+msgstr "Topic created"
+
+msgid "Seed guide"
+msgstr "Topic guide"
+
+msgid "Seed has been closed and no further contributions will be accepted."
+msgstr "Topic has been closed and no further contributions will be accepted."
+
+msgid "Seed information"
+msgstr "Topic information"
+
+msgid "Seed promoted."
+msgstr "Topic promoted."
+
+msgid "Seed promotion removed."
+msgstr "Topic promotion removed."
+
+msgid "Seed removed."
+msgstr "Topic removed."
+
+msgid "Seed removed from summary."
+msgstr "Topic removed from summary."
+
+msgid "Seed reopened."
+msgstr "Topic reopened."
+
+msgid "Seed updated"
+msgstr "Topic updated"
+
+msgid "Select new seed"
+msgstr "Select new topic"
+
+msgid "Select seed to post to"
+msgstr "Select topic to post to"
+
+msgid "Show seeds"
+msgstr "Show topics"
+
+msgid "Unpromote seed"
+msgstr "Unpromote topic"
+
+msgid "User can create seeds"
+msgstr "User can create topics"
+
+msgid "User can edit other's seeds"
+msgstr "User can edit other's topics"
+
+msgid "User change post seeds"
+msgstr "User change post topics"
+
+msgid "Views"
+msgstr "Views"
+
+msgid "Write a post without a seed"
+msgstr "Write a post without a topic"
+
+msgid "You are moving post titled \"%1\" into a new seed. Please select one of the options below:"
+msgstr "You are moving post titled \"%1\" into a new topic. Please select one of the options below:"
+
+msgid "You can not edit a post in a closed seed."
+msgstr "You can not edit a post in a closed topic."
+
+msgid "You can not post to a closed seed."
+msgstr "You can not post to a closed topic."
+
+msgid "You must fill both title and description."
+msgstr "You must fill both title and description."
+
+msgid "Seeds tagged with: %1"
+msgstr "Topics tagged with: %1"
+
+msgid "All seeds tagged with: %1"
+msgstr "All topics tagged with: %1"
+
+msgid "Closed seeds tagged with: %1"
+msgstr "Closed topics tagged with: %1"
+
+msgid "Close seed"
+msgstr "Close topic"
+
+msgid "Create"
+msgstr "Create"
+
+msgid "Promoted"
+msgstr "Promoted"
+
+msgid "Promote seed"
+msgstr "Promote topic"
+
+msgid "Add attachment"
+msgstr "Add attachment"
+
+msgid "Attachments"
+msgstr "Attachments"
+
+msgid "The file you requested does not exist."
+msgstr "The file you requested does not exist."
+
+msgid "No tags."
+msgstr "No tags."
+
+msgid "(Drag & drop links and images to the editor window)"
+msgstr "(Drag & drop links and images to the editor window)"
+
+msgid "Save & continue editing"
+msgstr "Save & continue editing"
+
+msgid "Publish & continue editing"
+msgstr "Publish & continue editing"
+
+msgid "Add missing tags"
+msgstr "Add missing tags"
+
+msgid "Add tags to post"
+msgstr "Add tags to post"
+
+msgid "Add tags to posts"
+msgstr "Add tags to posts"
+
+msgid "Click to add popular tags"
+msgstr "Click to add popular tags"
+
+msgid "Click to add suggested tags"
+msgstr "Click to add suggested tags"
+
+msgid "Save tag changes"
+msgstr "Save tag changes"
+
+msgid "Tags of post \"%1\""
+msgstr "Tags of post \"%1\""
+
+msgid "Tags updated."
+msgstr "Tags updated."
+
+msgid "The user whose files you requested does not exist."
+msgstr "The user whose files you requested does not exist."
+
+msgid "User add tags to posts"
+msgstr "User add tags to posts"
+
+msgid "User can change post seeds"
+msgstr "User can change post seeds"
+
+msgid "Add tags to post \"%1\""
+msgstr "Add tags to post \"%1\""
+
+msgid "Post information"
+msgstr "Post information"
+
+msgid " tagged with: %1"
+msgstr " tagged with: %1"
+
+msgid "Write a message"
+msgstr "Write a message"
+
+msgid " tagged with: "
+msgstr " tagged with: "
+
+msgid " Posts by contacts "
+msgstr " Posts by contacts "
+
+msgid "Delete message"
+msgstr "Delete message"
+
+msgid " Featured posts "
+msgstr " Featured posts "
+
+msgid "Posts tagged with: %1"
+msgstr "Posts tagged with: %1"
+
+msgid " Featured posts  "
+msgstr " Featured posts  "
+
+msgid "Best rated posts tagged with: %1"
+msgstr "Best rated posts tagged with: %1"
+
+msgid "My posts tagged with: %1"
+msgstr "My posts tagged with: %1"
+
+msgid "Click to add tags popular elsewhere"
+msgstr "Click to add tags popular elsewhere"
+
+msgid "Click to add tags popular in this seed"
+msgstr "Click to add tags popular in this topic"
+
+msgid "Contribute to blogs"
+msgstr "Contribute to blogs"
+
+msgid "Manage blogs"
+msgstr "Manage blogs"
+
+msgid "Post to blogs"
+msgstr "Post to blogs"
+
+msgid "User can post to blogs"
+msgstr "User can post to blogs"
+
+msgid "Seeds"
+msgstr "Topics"
+
+msgid "Feature post"
+msgstr "Feature post"
+
+msgid "Unfeature post"
+msgstr "Unfeature post"
+
+msgid "Reseed"
+msgstr "Switch topic"
+
+msgid "Posts by tag"
+msgstr "Posts by tag"
+
+msgid "Reposter saved."
+msgstr "Reposter saved."
+
+msgid "Topics by tag"
+msgstr "Topics by tag"
+
+msgid "Exclude posts from mail digest"
+msgstr "Exclude posts from mail digest"
+
+msgid "Exclude posts from summary"
+msgstr "Exclude posts from summary"
+
+msgid "Source:"
+msgstr "Source:"
+
+msgid "1 star out of 1"
+msgstr "1 star out of 1"
+
+msgid "1 star out of 2"
+msgstr "1 star out of 2"
+
+msgid "1 star out of 3"
+msgstr "1 star out of 3"
+
+msgid "1 star out of 4"
+msgstr "1 star out of 4"
+
+msgid "1 star out of 5"
+msgstr "1 star out of 5"
+
+msgid "Conversations"
+msgstr "Conversations"
+
+msgid "Latest conversation comments"
+msgstr "Latest conversation comments"
+
+msgid "Latest conversations"
+msgstr "Latest conversations"
+
+msgid "No conversation comments found."
+msgstr "No conversation comments found."
+
+msgid "No conversations found."
+msgstr "No conversations found."
+
+msgid "Edit message"
+msgstr "Edit message"
+
+msgid "Posts"
+msgstr "Posts"
+
+msgid "No comments"
+msgstr "No comments"
+
+msgid "One comment"
+msgstr "One comment"
+
+msgid "Related events"
+msgstr "Related events"
+
+msgid "Move to an another topic"
+msgstr "Move to an another topic"

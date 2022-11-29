@@ -1,0 +1,75 @@
+div.input-row
+    span.input-label Email
+    input.object-field(x-data-object-field='email',size=40,value=typeof(admin_user)=='undefined'?undefined:admin_user.email,disabled=typeof(admin_user)=='undefined'?undefined:'disabled')
+
+div.input-row
+    span.input-label AD tunnus
+    input.object-field(x-data-object-field='ad_account',size=40,value=typeof(admin_user)=='undefined'?undefined:admin_user.ad_account)
+
+div.input-row
+    span.input-label Nimi
+    input.object-field(x-data-object-field='name',size=40,value=typeof(admin_user)=='undefined'?undefined:admin_user.name)
+
+    
+div.input-row
+    span.input-label Titteli
+    input.object-field(x-data-object-field='title',size=40,value=typeof(admin_user)=='undefined'?undefined:admin_user.title)
+
+
+div.input-row
+    span.input-label Tiimi
+    input.object-field(x-data-object-field='team',size=40,value=typeof(admin_user)=='undefined'?undefined:admin_user.team)
+
+div.input-row
+    span.input-label Esimies
+    select.object-field(x-data-object-field='supervisor')
+        option(value='') Ei
+        each u in users
+            option(value=u.email,selected=u.email==(typeof(admin_user)=='undefined'?undefined:admin_user.supervisor)?'selected':undefined)=u.email
+
+div.input-row
+    span.input-label Puhelinnumero
+    input.object-field(x-data-object-field='phone',size=40,value=typeof(admin_user)=='undefined'?undefined:admin_user.phone)                    
+    
+
+div.input-row
+    div.input-label-row
+        span Käyttöoikeudet:
+
+div.input-row
+    span.input-label Varaaminen
+    select.object-field(x-data-object-field='booking_rights')
+        option(value='') Ei
+        option(value=selected_area,selected=selected_area==(typeof(admin_user)=='undefined'?undefined:admin_user.booking_rights)?'selected':undefined)=selected_area_name
+        option(value='_all',selected='_all'==(typeof(admin_user)=='undefined'?undefined:admin_user.booking_rights)?'selected':undefined) Kaikki yhtiöt
+
+div.input-row
+    span.input-label Varausten muokkaaminen
+    select.object-field(x-data-object-field='manage_rights')
+        option(value='') Ei
+        option(value=selected_area,selected=selected_area==(typeof(admin_user)=='undefined'?undefined:admin_user.manage_rights)?'selected':undefined)=selected_area_name
+        option(value='_all',selected='_all'==(typeof(admin_user)=='undefined'?undefined:admin_user.manage_rights)?'selected':undefined) Kaikki yhtiöt
+
+div.input-row
+    span.input-label Käyttäjähallinta
+    select.object-field(x-data-object-field='admin_rights',disabled=typeof(admin_user)=='undefined'?undefined:(admin_user.admin_rights=='_all' && areas != '_all')?'disabled':undefined)
+        option(value='') Ei
+        option(value=selected_area,selected=selected_area==(typeof(admin_user)=='undefined'?undefined:admin_user.admin_rights)?'selected':undefined)=selected_area_name
+        - if ( areas == '_all' || ( typeof(admin_user)!='undefined' && admin_user.admin_rights=='_all' ) ) {
+            option(value='_all',selected='_all'==(typeof(admin_user)=='undefined'?undefined:admin_user.admin_rights)?'selected':undefined) Kaikki yhtiöt
+        - }
+div.input-row
+    span.input-label Käyttö sisäverkon ulkopuolelta
+    select.object-field(x-data-object-field='access_outside_intranet',disabled=(areas != '_all')?'disabled':undefined)
+        option(value='') Ei
+        option(value='allow',selected='allow'==(typeof(admin_user)=='undefined'?undefined:admin_user.access_outside_intranet)?'selected':undefined) Kyllä
+
+- if ( typeof(admin_user)!=='undefined' ) {
+    div.input-row
+        div.input-label-row
+            span Erityiset muutostyöt:
+            
+    div.input-row
+        span.input-label Vaihtunut Email
+        input.object-field(x-data-object-field='changed_email',size=40,value=typeof(admin_user)=='undefined'?undefined:admin_user.changed_email)
+- }

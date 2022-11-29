@@ -1,0 +1,23 @@
+[%# $Id: dicole_text_mail_digest_sv.tmpl,v 1.2 2008-12-04 15:47:06 amv Exp $ -%]
+Sammandrag [% IF group_name %]för gruppen [% group_name %][% ELSE %]till din personliga aggregator [% END %]för händelser [% current_date %]
+-------------------------------------------------------------------------------
+
+Här är händelser som inträffat efter [% last_date %].
+Om du vill ändra inställningarna för dina epostsammandrag, ändra dina inställningar:
+[% settings_addr %]
+[% FOREACH tool = tool_digests %]
+
+[% tool.tool_name %]
+-------------------------------------------------------------------------------
+[% FOREACH content = tool.items_plain -%]
+[% content %]
+
+[%#
+2007-03-08 17:52 - I think this stuff is great - Teemu Arina
+  - http://ADDRESS/werwerwerwe
+-%]
+[% END %]
+[% END %]
+
+-------------------------------------------------------------------------------
+Detta är en automatisk rapport sammanställd av Dicole DKWE, svara inte på detta epostmeddelande.

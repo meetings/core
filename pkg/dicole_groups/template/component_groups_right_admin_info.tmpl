@@ -1,0 +1,163 @@
+[%# 
+	group_image = "#"
+	group_name = "Ryhmänimi"
+	group_location = "Sijainti"
+	group_description = "Description"
+	tags_json = "[\"tag1\", \"tag2\", \"tag3\"]"
+	tags_old_json = "[]"
+	tags = ["tag1", "tag2", "tag3"]
+	group_facebook = "fakebook"
+	group_myspace = "myspace"
+	group_twitter = "twitter"
+	group_webpage = "webpage"
+	group_visibility = "all"
+%]
+<div id="group_info">
+	<div id="group_info_photo">
+		<div id="group_info_photo_bg"><img id="group_info_photo_image" src="[% group_image | html %]" /></div>
+		<div id="group_info_photo_progress_bar"></div>
+		<div id="group_info_photo_upload_button"></div>
+		<a id="group_info_photo_cancel_button" href="#" class="flash_button"><span>[% MSG("Cancel upload") | html %]</span></a>
+		<input type="hidden" id="group_info_photo_draft_id" name="group_photo_draft_id" />
+	</div>
+	<h3>[% MSG("Area info") | html %]</h3>
+	<div>
+		<div class="input_field">
+			<label for="group_name">[% MSG("Area name") | html %]</label>
+			<input id="group_name" type="text" name="group_name" value="[% group_name | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="group_location">[% MSG("Area location") | html %]</label>
+			<input id="group_location" type="text" name="group_location"  value="[% group_location | html %]"/>
+		</div>
+		<div class="input_field">
+			<label for="group_description">[% MSG("Area description") | html %]</label>
+			<textarea id="group_description" name="group_description">[% group_description | html %]</textarea>
+		</div>
+	</div>
+	<h3>[% MSG("Area tags") | html %]</h3>
+	<div id="tags" class="tags tag_control">
+		<input type="hidden" name="tags" id="tag_data_tags" value="[% tags_json | html %]" />
+		<input type="hidden" name="tags_old" id="tag_data_old_tags" value="[% tags_old_json | html %]" />
+		<div class="tag_list_container js-disable-commas" id="tag_list_tags">
+	[% FOREACH tag IN tags %]
+			<a class="tag">[% tag | html %]</a>
+	[% END %]
+		</div>
+		<div style="clear:both"></div>
+		<div class="tag_add_input_container" id="tag_add_input_container_tags">
+			<input class="tag_add_input_field" name="tags_add_tags_input_field" id="tag_add_input_field_tags" type="text" value="" />
+			<a id="tag_add_input_submit_tags" class="button" href="#"><span>[% MSG('Add tag') %]</span></a>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+	<h3>[% MSG("Links") | html %]</h3>
+	<div>
+		<div class="input_field">
+			<label for="group_facebook">[% MSG("Facebook-page") | html %]</label>
+			<span class="input_prefix">http://www.facebook.com/</span>
+			<input id="group_facebook" type="text" name="group_facebook" value="[% group_facebook | html %]"/>
+		</div>
+		<div class="input_field">
+			<label for="group_youtube">[% MSG("YouTube-page") | html %]</label>
+			<span class="input_prefix">http://www.youtube.com/</span>
+			<input id="group_youtube" type="text" name="group_youtube" value="[% group_youtube | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="group_myspace">[% MSG("MySpace-page") | html %]</label>
+			<span class="input_prefix">http://www.myspace.com/</span>
+			<input id="group_myspace" type="text" name="group_myspace" value="[% group_myspace | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="group_twitter">[% MSG("Twitter-page") | html %]</label>
+			<span class="input_prefix">http://www.twitter.com/</span>
+			<input id="group_twitter" type="text" name="group_twitter" value="[% group_twitter | html %]" />
+		</div>
+		<div class="input_field">
+			<label for="group_webpage">[% MSG("Other webpage") | html %]</label>
+			<span class="input_prefix">http://</span>
+			<input id="group_webpage" type="text" name="group_webpage" value="[% group_webpage | html %]" />
+		</div>
+	</div>
+	<h3>[% MSG("Area settings") | html %]</h3>
+	<div>
+		<div id="group_custom_banner">
+			<label for="group_custom_banner_draft_id">[% MSG("Group custom banner") | html %]</label>
+			<div id="group_custom_banner_bg"><img id="group_custom_banner_image" src="[% group_custom_banner or '/images/theme/default/default-banner.png' | html %]" /></div>
+			<div id="group_custom_banner_progress_bar"></div>
+			<div id="group_custom_banner_upload_button"></div>
+			<a id="group_custom_banner_cancel_button" href="#" class="flash_button"><span>[% MSG("Cancel upload") | html %]</span></a>
+			<input type="hidden" id="group_custom_banner_draft_id" name="group_custom_banner_draft_id" />
+		</div>
+	</div>
+    [% IF show_admin_settings %]
+	<h3>[% MSG("Admin only settings") | html %]</h3>
+	<div class="admin_settings">
+		<div style="background:white;padding:5px 10px;">
+		    <div class="input_field">
+	    		<label for="group_visibility">[% MSG("Area visibility") | html %]</label>
+    			<div id="fancy_radios_group_visibility" class="fancy_radios" style="overflow: hidden">
+				    <a id="group_visibility,all" href="#" class="alpha_png left-button [% IF group_visibility == "all" %]left-button-selected[% END %]"><span class="alpha_png">[% MSG("Public") | html %]</span></a>
+			    	<a id="group_visibility,none" href="#" class="alpha_png right-button [% IF group_visibility == "none" %]right-button-selected[% END %]"><span class="alpha_png">[% MSG("Hidden") | html %]</span></a>
+		    		<input id="group_visibility" type="hidden" name="group_visibility" value="[% group_visibility | html %]" />
+	    		</div>
+    		</div>
+			<div class="input_field">
+				<label for="workspace_disabled">[% MSG("Area workspace disabled") | html %]</label>
+				<div id="fancy_radios_workspace_disabled" class="fancy_radios" style="overflow: hidden">
+					<a id="workspace_disabled,yes" href="#" class="alpha_png left-button [% IF workspace_disabled == "yes" %]left-button-selected[% END %]"><span class="alpha_png">[% MSG("Yes") | html %]</span></a>
+					<a id="workspace_disabled,no" href="#" class="alpha_png right-button [% IF workspace_disabled == "no" %]right-button-selected[% END %]"><span class="alpha_png">[% MSG("No") | html %]</span></a>
+					<input id="workspace_disabled" type="hidden" name="workspace_disabled" value="[% workspace_disabled | html %]" />
+				</div>
+			</div>
+			<div class="input_field">
+				<label for="parent_group">[% MSG("Parent group") | html %]</label>
+				<select id="parent_group" name="parent_group">
+				[% FOREACH pg IN parent_groups %]
+					<option value="[% pg.value | html %]"[% IF pg.value == parent_group %] selected[% END %]>[% pg.name | html %]</option>
+				[% END %]
+				</select>
+			</div>
+			<div class="input_field">
+				<label for="group_type">[% MSG("Group type") | html %]</label>
+				<select id="group_type" name="group_type">
+				[% FOREACH gt IN group_types %]
+					<option value="[% gt.value | html %]"[% IF gt.value == group_type %] selected[% END %]>[% gt.name | html %]</option>
+				[% END %]
+				</select>
+			</div>
+            <div class="input_field">
+                <label for="group_auto_user_email_domains">[% MSG("Add users with these email domains: (separate with , )") | html %]</label>
+                <input id="group_auto_user_email_domains" type="text" name="group_auto_user_email_domains" value="[% group_auto_user_email_domains | html %]" />
+            </div>
+<!--
+			<div class="input_field">
+				<label for="subgroups_disabled">[% MSG("Subgroup creation disabled") | html %]</label>
+				<div id="fancy_radios_subgroups_disabled" class="fancy_radios" style="overflow: hidden">
+					<a id="subgroups_disabled,all" href="#" class="alpha_png left-button [% IF subgroups_disabled == "all" %]left-button-selected[% END %]"><span class="alpha_png">[% MSG("Yes") | html %]</span></a>
+					<a id="subgroups_disabled,none" href="#" class="alpha_png right-button [% IF subgroups_disabled == "none" %]right-button-selected[% END %]"><span class="alpha_png">[% MSG("No") | html %]</span></a>
+					<input id="subgroups_disabled" type="hidden" name="subgroups_disabled" />
+				</div>
+			</div>
+			<div class="input_field">
+				<label for="subgroup_parent">[% MSG("Subgroup parent") | html %]</label>
+				<select id="subgroup_parent" name="subgroup_parent">
+				[% FOREACH subgroup_parent IN subgroup_parents %]
+					<option value="[% subgroup_parent.value | html %]">[% subgroup_parent.name | html %]</option>
+				[% END %]
+				</select>
+			</div>
+			<div class="input_field">
+				<label for="subgroup_type">[% MSG("Subgroup type") | html %]</label>
+				<select id="subgroup_type" name="subgroup_type">
+				[% FOREACH subgroup_type IN subgroup_types %]
+					<option value="[% subgroup_type.value | html %]">[% subgroup_type.name | html %]</option>
+				[% END %]
+				</select>
+			</div>
+-->
+		</div>
+	</div>
+    [% END %]
+	<input type="submit" name="save" value="[% MSG('Save') | html %]" />
+</div>

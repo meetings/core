@@ -1,0 +1,49 @@
+<div id="modal-mobile-upload-instructions" class="modal-popup">
+
+    <!-- Add materials -->
+    <% if ( dicole.get_global_variable('meetings_user_can_add_material') ) { %>
+    <h2 class="modal-header"><%= MTN.t('Mobile Upload Instructions') %></h2>
+    <p class="explanation"><%= MTN.t('You can mail materials to:') %></p>
+    <p class="mail">
+    <a href="mailto:<%== dicole.get_global_variable('meetings_short_email') %>" class="mail-link-style"><%== dicole.get_global_variable('meetings_short_email') %></a>
+    <span data-tooltip-width="300" data-tooltip-nodeid="mail-tutorial-tooltip" class="help-icon js_tooltip"> </span>
+    </p>
+    <div id="mail-tutorial-tooltip" style="display:none;">
+        <b><%= MTN.t('Mail Integration') %></b>
+        <br/><%= MTN.t("You can add comments and material by mailing to the meeting's unique address. Text will be added as meeting notes and attachments as meeting materials.") %>
+    </div>
+    <% } %>
+    <!-- Join meeting -->
+    <% if ( dicole.get_global_variable('meetings_join_password') ) { %>
+    <hr />
+    <p class="explanation"><%= MTN.t('You can join the meeting by sending this email:') %></p>
+    <p class="mail">
+    <%= MTN.t('To:') %><a href="mailto:<%== dicole.get_global_variable('meetings_short_email') %>"><%== dicole.get_global_variable('meetings_short_email') %></a>
+    <span data-tooltip-width="300" data-tooltip-nodeid="password-tooltip" class="help-icon js_tooltip"> </span>
+    </p>
+    <p class="password">
+    <%= MTN.t('Subject:') %> <span><%= MTN.t('JOIN') %> <%== dicole.get_global_variable('meetings_join_password') ? dicole.get_global_variable('meetings_join_password') : '' %></span>
+    </p>
+
+    <% if(dicole.get_global_variable('meetings_is_admin')) { %>
+    <!-- <p class="explanation2">
+        <a href="<%== dicole.get_global_variable('meetings_manage_urls').password_url %>" class="js_meetings_manage_password_open">
+            <%== dicole.get_global_variable('meetings_join_password') ? 'Change password' : 'Set password' %>
+        </a>
+    </p> -->
+    <% } %>
+
+    <!-- <p class="explanation2">
+        <a class="fullscreen" href="<%== dicole.get_global_variable('meetings_join_guide_url') %>" class="js_homescreensafe">
+            Show fullscreen instructions
+        </a>
+    </p> -->
+    <div id="password-tooltip" style="display:none;">
+        <b><%= MTN.t('Easy way for others to invite themselves') %></b><br/>
+        <% var pswd = dicole.get_global_variable('meetings_join_password') ? dicole.get_global_variable('meetings_join_password') : ''; %>
+        <%= MTN.t("Sometimes you don't know the email addresses for all of the people you are meeting with. If you are in the meeting with them, you can just share the meeting email address from above and ask them to send in an email with JOIN %1$s as the subject.", { params : [ pswd ]}) %> 
+    </div>
+    <% } %>
+    <a href="#" class="js_hook_showcase_close close-cross alpha_png"></a>
+</div>
+

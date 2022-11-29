@@ -1,0 +1,904 @@
+
+
+.desktop_2_column_div_2 .desktopBoxTitle a {
+font-size: 17px !important;
+}
+
+
+body {
+	font-family: "Georgia", "Arial";
+background: white;
+}
+
+.box_container {
+	border: 0;	
+}
+
+.desktop_2_column_td_2 {
+padding-right: 25px !important;
+}
+
+.desktopBoxTitle {
+	font-family: "Rockwell", "Georgia", "Arial";
+	text-transform: none;
+	text-align: left;
+	border: 0;
+	background: transparent;
+  letter-spacing: 0px !important;
+}
+
+/*
+.desktopBoxControllers {
+display: none;
+}
+*/
+
+
+.desktopBoxTitle a {
+	color: #959595 !important;
+	font-size: 17px;
+}
+
+.desktop_box .i3 {
+	background: transparent;	
+}
+
+.toolContainer {
+	background: transparent;	
+}
+
+.content {
+	background: transparent;
+	border: 0;	
+}
+
+span.desktopHyperlinkText {
+	color: #6dac50;
+	font-size: 11px;	
+}
+
+div.toolContentBox {
+	border: 0;
+	background: transparent;	
+}
+
+.desktopBoxTitle, div.toolContentBox span.boxLegend {
+	font-family: "Rockwell", "Georgia", "Arial";
+	text-transform: none;
+	text-align: left;
+	border: 0;
+	background: transparent;
+	color: #959595 !important;
+	font-size: 17px;
+}
+
+div.toolContentBox span.boxLegend {
+	color: #959595 !important;
+border-bottom: 1px solid #d3d5d4 !important;
+  letter-spacing: 0 !important;
+}
+
+.tool_2_column_div_2 {
+padding-right: 10px;
+}
+.tool_2_column_div_2 div.toolContentBox span.boxLegend { 
+	color: #f7403a !important;
+font-size: 17px;
+border: 0px !important;
+}
+
+div.wiki_content_container {
+	font-size: 14px;
+	color: #535353;	
+}
+
+
+.horizontalContent span.horizontalContentItem a{
+	color: #299bb4;	
+}
+
+.content {
+	width: 960px;
+	font-size: 14px;	
+}
+
+.toolContainer {
+	width: 960px;
+	margin: 0 auto;
+	float: none;	
+}
+
+.desktopBoxControllers {
+background: transparent;
+border: 0;
+}
+
+
+input.submitButton, #tag_add_input_submit_tags, input.submitButton:active {
+background: #f7c339;
+color: #a46000;
+letter-spacing: 0px;
+text-transform: none;
+	font-family:Rockwell,Georgia,serif;
+padding: 2px;
+padding-left: 4px;
+padding-right: 4px;
+border: 0px;
+  -moz-border-radius-bottomleft: 3px !important;
+  -moz-border-radius-bottomright: 3px !important;
+  -moz-border-radius-topleft: 3px !important;
+  -moz-border-radius-topright: 3px !important;
+}
+
+input.submitButton:hover, #tag_add_input_submit_tags:hover {
+background: #f7c339;
+color: #76490a;
+}
+
+
+a.linkButton, a.linkButton:active, a.linkButton:visited, a.linkButton:link, .loginLink {
+background: #f7c339;
+color: #a46000;
+letter-spacing: 0px;
+
+text-transform: none;
+font-weight: normal;
+	font-family:Rockwell,Georgia,serif;
+padding: 3px;
+padding-left: 7px;
+padding-right: 7px;
+border: 0px;
+  -moz-border-radius-bottomleft: 3px !important;
+  -moz-border-radius-bottomright: 3px !important;
+  -moz-border-radius-topleft: 3px !important;
+  -moz-border-radius-topright: 3px !important;
+}
+
+a.linkButton:hover, .loginLink:hover {
+color: #76490a;
+background: #f7c339;
+}
+
+body { background: white url(/images/bantora/bgr_ee_top.gif) repeat-x scroll 0 0 !important; }
+
+.horizontalContent span.horizontalContentItem a {
+color: #959595;
+}
+
+.horizontalContent span.horizontalContentItem a.linkButton {
+color: #a46000 !important;
+}
+
+input[type=text], input[type=password], textarea, select {
+border: 1px dotted #89af76;
+background: #fcfdfe;
+}
+
+.networking_profile_card {
+background:white none repeat scroll 0 0;
+border-color:#89af76 #89af76 #89af76;
+border-style:dotted;
+border-bottom-style: solid;
+border-width:1px 1px 2px;
+float:left;
+height:120px;
+margin-bottom:12px;
+margin-left:5px;
+margin-right:5px;
+width:270px;
+color: #959595;
+}
+
+.networking_profile_card_info a {
+color:#6dac50 !important;
+font-size:16px;
+font-family: rockwell;
+font-weight:normal;
+}
+
+.wiki_attachments_container {
+background: #edf6fa;
+padding: 20px;
+  -moz-border-radius: 8px !important;
+}
+
+.wiki_attachments_container .definitionHeader {
+display: none;
+}
+
+.wiki_attachments_container input.submitButton {
+margin-top: 10px;
+}
+
+.wiki_attachments_list_container {
+background: white;
+padding: 10px;
+border: 1px dotted #b9b9b9;
+margin-bottom: 15px;
+}
+
+.qt_temp_disabled {
+list-style-type: none;
+}
+.qt_temp_floating {
+list-style-type: none;
+}
+
+body {
+  background: #f2f2f2 url('/images/dicole_light/topbar.png') repeat-x 0 0 !important;
+}
+
+.content {
+  width: 982px;
+margin:0px 0px;
+}
+style {
+  display: none;
+}
+.tool {
+  background: transparent url('/images/dicole_light/contentbackground.png') repeat-y 0 0;
+}
+.toolContainer {
+  background: transparent url('/images/dicole_light/contentbottom.png') no-repeat bottom left;
+  width: 960px;
+  padding: 0 11px 34px 11px;
+}
+.toolContentContainer {
+  float: none;
+  height: 100%;
+}
+
+/* Header */
+
+#navi_header {
+  margin: 37px 0 0 0;
+  background: transparent url('/images/dicole_light/contentbackground.png') repeat-y 0 0;
+border: none !important;
+}
+
+#navi_logout_link {
+margin-right: 16px;
+}
+
+#navi_login_link {
+margin-right: 16px;
+}
+
+#navi_actions {
+margin-top: 0px;
+margin-left: 10px;
+}
+
+/* General */
+
+.desktopBoxContent {
+  background-color: transparent;
+}
+
+/* Titles */
+
+
+
+/* Networking */
+
+
+
+/* Footer */
+
+.footer {
+  border: none;
+  background-color: transparent;
+}
+
+
+/* ***************** */
+
+body, .desktopBoxTitle, .networking_profile_card_info a {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6,
+.desktopBoxTitle,
+.desktopBoxTitle a,
+.boxLegend,
+.boxLegend a,
+body div.toolContentBox span.boxLegend,
+body .tool_2_column_div_2 div.toolContentBox span.boxLegend {
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: #d49603 !important;
+  border-bottom: none;
+}
+.desktopBoxTitle a:hover {
+  border-bottom: 2px solid #d49603;
+}
+
+
+.networking_profile_prof_description_title {
+color:#D49603 !important;
+font-size: 16px;
+letter-spacing: 2px;
+padding-bottom: 4px;
+border-bottom: 1px solid #ccc;
+margin-bottom: 6px;
+display: block;
+}
+
+.combined_list .element a.summary_list_author {
+color: gray !important;
+}
+
+.combined_list .element a.summary_list_title {
+font-size: 16px;
+}
+
+.blogs_seed_listing_promoted {
+display: none;
+}
+
+
+.desktop_3_column_div_3 {
+width: 280px !important;
+background: white;
+}
+
+body {
+  text-align: center;
+  background-image: none !important;
+  font-size: smaller;
+}
+.content {
+  width: 972px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 100%;
+}
+.toolContainer {
+  width: 972px;
+}
+#navi_header {
+  margin-top: 0px !important;
+}
+
+/* Summary column widths */
+
+table.desktopBoxContainer {
+  width: 970px;
+  overflow: hidden;
+}
+
+.desktop_3_column_td_1 {
+  width: 190px !important;
+}
+.desktop_3_column_div_1 {
+  width: auto !important;
+}
+.combined_list .element a.summary_list_title {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.desktop_3_column_td_2 {
+  width: 460px !important;
+  overflow: hidden;
+}
+
+.desktop_3_column_td_3, .desktop_3_column_div_3 {
+  width: 200px !important;
+}
+
+.desktopBoxContent {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+td.desktopBoxTitle {
+  padding: 8px 0;
+}
+/* Make images certain max length in left column */
+.tool_2_column_td_1 embed,
+.tool_2_column_td_1 object,
+.tool_2_column_td_1 img {
+	max-width: 340px;
+	/* IE Hack */
+	width:expression(if(this.clientWidth>340)this.width=340);
+}
+
+.desktop_3_column_td_1 embed, .desktop_3_column_td_3 embed,
+.desktop_3_column_td_1 object, .desktop_3_column_td_3 object, 
+.desktop_3_column_td_1 img, .desktop_3_column_td_3 img  {
+	max-width: 240px;
+	/* IE Hack */
+	width:expression(if(this.clientWidth>240)this.width=240);
+}
+
+.desktop_3_column_td_3 .contentItemContainer p { padding-left: 3px }
+
+p {
+  line-height: 150% !important;
+}body {
+    
+    background-image: none;
+    
+    
+    background-color: #FFFFFF;
+    
+}
+
+
+
+#navi_logo_link {
+	
+	background: transparent url("http://j-impact.fi/2012/assets/img/j-impact-logo.png") no-repeat scroll 20px 30px;
+	
+	
+	
+}
+
+
+
+#navi_logo_text {
+	display: none;
+}
+
+
+
+
+
+
+
+#navi_actions {
+    display: none;
+}
+
+
+
+
+
+#navi_tools a {
+    color: #000;
+}
+#navi_tools a:visited {
+    color: #000;
+}
+
+
+
+.no_group_admin_extras .wiki_search_box, .no_group_admin_extras .wiki_navigation_box, .no_group_admin_extras .wiki_backlink_box, .no_group_admin_extras .wiki_actions_box, .no_group_admin_extras .wiki_show_tags_box, .no_group_admin_extras .wiki_show_info_box, .no_group_admin_extras .wiki_attachments_box, .no_group_admin_extras .wiki_tag_cloud_box, .no_group_admin_extras .wiki_change_box, .no_group_admin_extras .wiki_comments_container_box, .no_group_admin_extras .wiki_link_box {
+	display: none !important;
+}
+
+
+/** REQUIRED CONTENT HIDE FOR TUUMA **/
+
+.user_about_me_header, .user_about_me_container,
+.input_field.user_role_container,
+.input_field.user_location_container,
+.user_create_links_container,
+.user_create_links_header,
+.tags_container {
+display: none;
+}
+
+.events_show_info_container_rsvp .middle-button {
+display: none;
+}
+
+.events_show_info_container_rsvp .seats {
+display: none;
+}
+
+.action_networking_task_show_profile .tool_2_column_td_1 { display: none; }
+
+/** POSSIBLY RELEVANT STYLES **/
+
+.content { width: 953px; } /** fixes opera paddings **/
+
+#description h3 {
+font-weight: bold;
+}
+
+#event-info #description, #event-info #abstract {
+padding-left: 30px;
+padding-right: 30px;
+font-size: 10pt;
+}
+
+
+
+/** RANDOM VISUAL FIXES **/
+
+div.contentItemContainer {
+padding: 0px;
+}
+
+.toolContentBox-cb .bt {
+display:none;
+}
+.toolContentBox-cb .i3 {
+padding-top: 0px;
+}
+
+/** By Jussi **/
+
+    @font-face {
+        font-family: "GeoSlab";
+        font-style: normal;
+        font-weight: normal;
+        src: url("/images/tuuma/fonts/235229_0_0.woff") format("embedded-opentype"), url("/images/tuuma/fonts/235229_0_0.woff") format("woff"), url("/images/tuuma/fonts/235229_0_0.ttf") format("truetype");
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #000000;
+        font-family: 'GeoSlab',sans-serif;
+        font-weight: normal;
+        text-rendering: optimizelegibility;
+    }
+    div.content{width:980px;}
+    html body{
+        background:none !important;
+        background-image:url(/images/tuuma/valmennus-taustakuva.jpg) !important;
+        background-position: center 173px !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+
+    .dcp-header div.header{
+        background: none repeat scroll 0 0 #FFFFFF;
+        height: 173px;
+        overflow: hidden;
+        position: relative;
+        width: 100%; }
+    .dcp-header .inner {
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        width: 980px; }
+    .dcp-header div.header .inner {
+        border-bottom: 1px solid #1F1E21;
+        height: 173px; }
+    .dcp-header #logo {
+        border: medium none;
+        left: 10px;
+        position: absolute;
+        top: 87px; }
+    .dcp-header a, .dcp-header a:active {
+        border-bottom: 1px solid #F86300;
+        color: #F86300;
+        text-decoration: none; }
+
+    div.top-nav{
+        position: absolute;
+        right: 10px;
+        top: 113px;
+    }
+    div.login-etc{
+        position:relative;
+        padding-top:20px;
+        margin-bottom:20px;
+        text-align:right;
+    }
+    div.dcp-controls ul{
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+    }
+    div.dcp-controls ul li:first-child:before {
+        content: "";
+        margin: 0;
+    }
+    div.dcp-controls ul li:before {
+        color: #000000;
+        content: "// ";
+        font-size: 14px;
+        margin: 0;
+    }
+    div.dcp-controls ul li{
+        display: inline;
+    }
+    div.dcp-controls ul li a{
+        border: medium none;
+        color: #000000;
+        font-family: 'GeoSlab';
+        font-size: 14px;
+        padding: 10px 6px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    div.dcp-controls ul li a:hover {
+        border: medium none;
+        color: #F86300;
+    }
+    div.dcp-controls  ul li.active a{
+        border: medium none;
+        color: #F86300;
+    }
+
+    #content div.aside {
+        float: left;
+        margin: 0 0 0 10px;
+        width: 320px;
+    }
+    #page-label {
+        margin-bottom: 40px;
+    }
+    p.page-label {
+        background: none repeat scroll 0 0 #F86300;
+        color: #FFFFFF;
+        display: inline-block;
+        font-family: 'GeoSlab';
+        font-size: 22px;
+        font-weight: 100;
+        height: 34px;
+        line-height: 34px;
+        margin: 0;
+        padding: 0 15px;
+    }
+    div.aside .promo {
+        float: left;
+        margin: 30px 0 0;
+    }
+    #content #main-content {
+        background-color:#fff;
+        float: right;
+        margin: 72px 0px 15px 0;
+        position: relative;
+        width: 635px;
+    }
+    #content{
+        border-bottom:2px solid #999;
+        height:250px;
+    }
+
+    /* Login stuffs */
+    div#light .loginHeader {
+        background-color: #000;
+        font-weight: bold;
+        color:#fff;
+    }
+    div#light #light_login_button{
+        background-color:#F86300;
+        color:#fff;
+    }
+    .loginTitle{
+        color:#000;
+    }
+    #light_login_button{
+        font-family:arial;
+    }
+    div#light {
+        border-bottom: 10px solid #000;
+        border-top: 5px solid #000;
+    }
+    .loginLinks a{
+        color:#F86300;
+    }
+    .loginLinks a:hover{
+        background:transparent !important;
+        color:#F86300;
+    }
+
+    .page-intro{
+        padding:15px 15px 25px 15px;
+    }
+    .page-intro h1{
+        font-size:15px;
+        font-family:'GeoSlab';
+        color:#000000 !important;
+    }
+    .page-intro p{
+        color:#000;
+    }
+
+    /* Left Menu */
+    .events_listing_navigation div.contentItemContainer{
+        border:none;
+        border-radius:0px;
+        background:none;
+
+    }
+    .tool_2_column_td_1 div.blueLinks div.verticalContent{
+        width:325px;
+        margin-bottom:4px;
+    }
+    a.linkBar.selected, a.linkBar.selected:hover{
+        background-color:#000000;
+        background-image:none !important;
+        border:none;
+        color:#ffffff !important;
+        font-family:'GeoSlab';
+        font-weight:normal;
+        padding:6px;
+    }
+    a.linkBar{
+        background-color:#f86300;
+        border:none;
+        color:#ffffff !important;
+        font-family:'GeoSlab';
+        font-weight:normal;
+        padding:6px;
+    }
+    a.linkBar:hover{
+        background-color:#000000;
+        background-image:none !important;
+        border:none;
+        color:#ffffff !important;
+        font-family:'GeoSlab';
+        font-weight:normal;
+        padding:6px;
+    }
+    /* General */
+    div.toolContainer{
+        padding:0px;
+    }
+    td.tool_2_column_td_1{
+        padding-left:0px;
+    }
+    div.events_listing_navigation{
+        background-color:transparent !important;
+        margin-top:0px;
+        padding-left:0px;
+        margin-left:0px;
+        margin-bottom:0px;
+    }
+    div.tool_2_column_div_1 div.events_listing_tags{
+        margin-top:0px;
+        margin-left:0px;
+        background:#fff;
+        width:285px;
+        padding:20px !important;
+    }
+    div.events_listing_tags span.boxLegend{
+        display:none !important;
+    }
+    .event .event-content .tags .tag, .tagPrimary, #event-info .tag, #event-edit .tag{
+        color:#999 !important;
+        font-size:10px;
+        font-family:arial;
+        border-radius:0px;
+    }
+    .tag:hover, .event .event-content .tags .tag:hover, .miniTagCloud a:hover, #event-info .tag:hover, #event-edit .tag:hover{
+        color:#fff !important;
+        background:#F86300 !important;
+    }
+
+    /* Center content */
+    .toolContainer{
+        width:980px;
+    }
+    .tool,.toolContainer{
+        background:none;
+    }
+    div.toolContent{
+        margin-right:0px;
+    }
+    div.tool_2_column_div_2 div.toolContentBox{
+        background-color:#fff;
+        margin-top:0px;
+        margin-left:10px;
+        width:608px;
+    }
+    .tool_2_column_div_2{
+        padding-right:0px;
+    }
+    div.bt{display:none;}
+    div.bb{display:none;}
+    div.contentItemContainer{
+        padding:0px;
+    }
+    div.contentItemContainer span.boxLegend{
+        height:22px;
+        background-color:#000;
+        font-size:15px;
+        font-family:'GeoSlab';
+        color:#fff !important;
+    }
+    div.contentItemContainer span.boxLegend span.boxLegend2Text{
+        padding-left:20px;
+        font-size:15px;
+        font-family:'GeoSlab';
+        color:#fff !important;
+        font-weight:normal;
+    }
+    .yellow-button{
+        height:20px;
+        line-height:20px;
+        font-size:14px;
+        background:none;
+
+    }
+    .yellow-button span{
+
+        height:20px;
+        line-height:20px;
+        font-size:14px;
+        background:none;
+    }
+    .event .event-content .title,  .event .event-content .title a{
+        color:#000 !important;
+    }
+    .event .right .social-media-tag, #event-info .social-media-tag{
+        color:#ccc !important;
+        background:#444 !important;
+        border-radius:0px;
+        font:12px Arial;
+        font-weight:normal;
+        padding:5px;
+    }
+    #event-info .social-media-tag{
+        margin:10px 0px;
+    }
+    .event .event-content .date.live{
+        color:#000;
+    }
+    body.action_events_task_show div.tool{
+        background-color:#fff;
+    }
+    .action_events h1,.action_events h3,.action_events h2{
+        color:#000 !important;
+    }
+    }
+    #main-content a{
+        color:#F86300 !important;
+    }
+    body.action_events_task_show .blueLinks a,  body.action_events_task_show .blueLinks a:visited,  body.action_events_task_show .blueLinks a:link,  body.action_events_task_show .blueLinks a:active{
+        color:#F86300 !important;
+    }
+
+.footer{
+text-align:center;
+}
+.domain_custom_footer_html{
+margin:0 auto;
+width: 980px;
+text-align:right;
+}
+span.tuuma_footer{
+background:#000000;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    width:617px;
+font-family:'GeoSlab';
+font-size:14px;
+color:#fff;
+float:right;/
+}
+/
+span.tuuma_footer a{
+font-family:'GeoSlab';
+font-size:14px;
+color:#fff;
+}
+.events_more_container{
+min-height:20px;
+}
+
+.events_more_container a span{
+color:#F86300;
+}
+
+.event .event-content .tags .tag, .tagPrimary, #event-info .tag, #event-edit .tag{
+color:#333333 !important;
+}
+
+.miniTagCloud a{
+    border-radius: 0 0 0 0;
+    color: #333333 !important;
+    font-family: arial;
+    font-size: 10px;
+    background-color: #DDDDDD;
+    margin: 0 1px 1px 0;
+    padding: 4px 8px !important;
+}
+div.tags a.tag{
+color: #333333 !important;
+}
+
+html body {
+background-image:none !important;
+}
+
+.page-bg			{ position: fixed; left: 0; top: 0px; width: 100%; height: 100%; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; z-index: -1; } 
+.page-bg		{ background-image: url(/images/tuuma/valmennus-taustakuva.jpg); }
+
+.page-top-white{
+background:#fff; height: 173px; position: absolute; top: 0px; left: 0px; width:100%;
+}
+ 

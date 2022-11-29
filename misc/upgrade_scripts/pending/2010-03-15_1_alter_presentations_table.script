@@ -1,0 +1,9 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_presentations_prese add scribd_thumbnail_timestamp_start bigint unsigned after scribd_thumbnail_timestamp');
+}
+
+1;

@@ -1,0 +1,8 @@
+
+sub execute {
+    my ( $self ) = @_;
+    Dicole::Utils::SQL->execute_sql('alter table dicole_networking_profile add extra_city text');
+    Dicole::Utils::SQL->execute_sql('alter table dicole_networking_profile add extra_country text');
+}
+
+1;

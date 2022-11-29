@@ -1,0 +1,34 @@
+<!-- Before meeting -->
+<% if( p.elapsed_time <= 0) { %>
+    <% if ( p.seconds_before_event < 60*2 ) { %>
+    <span class="meeting-time-info">- Meeting is starting within minutes</span>
+    <% } else if ( p.seconds_before_event < 60*60*2 ) { %>
+    <span class="meeting-time-info">- Meeting starts in <%== Math.floor( p.seconds_before_event / 60 ) %> minutes</span>
+    <% } else if ( p.seconds_before_event < 60*60*48 ) { %>
+    <span class="meeting-time-info">- Meeting starts in <%== Math.floor( p.seconds_before_event / 60 / 60 ) %> hours <!-- and <%== Math.floor( ( p.seconds_before_event % ( 60 * 60 ) ) / 60 ) %> minutes --></span>
+    <% } else { %>
+    <span class="meeting-time-info">- Meeting starts in <%== Math.floor( p.seconds_before_event / 60 / 60 / 24 ) %> days</span>
+    <% } %>
+<% } %>
+
+<!-- During Meeting -->
+<% if( p.elapsed_time > 0 && p.seconds_left >= 0 ) { %>
+<div class="progress-bar-container">
+    <div class="progress-bar" style="width:<%== Math.floor( p.duration_percent ) %>%;"></div>
+</div>
+<div id="time-tooltip" style="display:none;">
+    Time elapsed:
+    <%== Math.floor(p.elapsed_time / 60) %> m
+</div>
+<% var hours = Math.floor(p.seconds_left / (60 * 60)); %>
+<% var divisor_for_minutes = p.seconds_left % (60 * 60); %>
+<% var minutes = Math.floor(divisor_for_minutes / 60); %>
+
+<span class="time-text"><%==  (hours > 0) ? hours+'h' : '' %> <%== (minutes > 0) ? minutes+'min' : '' %> left
+<% } %>
+
+<!-- After Meeting -->
+<% if( p.seconds_left < 0 && false) { %>
+<span class="meeting-time-info">- Meeting has ended <!-- <%== Math.floor( Math.abs(p.seconds_left) / 60 ) %> --></span>
+<% } %>
+

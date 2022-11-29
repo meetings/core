@@ -1,0 +1,80 @@
+[%#- Sent to user who selected a matchmaking option to inform that the organizer has been sent a request to confirm the date -%]
+
+[%- IF test_case == 'testi' %]
+[%-
+
+meeting_slots = '0'
+user_name = 'Mr. Investor'
+matchmaker_name = 'Antti Penttinen'
+matchmaker_company = 'United Cauliflower'
+server_host = 'http://dev.meetin.gs'
+confirm_url = 'http://dev.meetin.gs/meetings/confirm/'
+matchmaking_event = 'Arctic15 startup matchmaking'
+matchmaker_email = 'antti.penttinen@unitedcauliflower.fi'
+meeting_title = 'Tavvattaan'
+
+%]
+
+[% END %]
+
+[%- IF test_case == 'testi2' %]
+[%-
+
+meeting_slots = '2'
+user_name = 'Mr. Investor'
+matchmaker_name = 'antti.penttinen@unitedcauliflower.fi'
+matchmaker_company = 'United Cauliflower'
+server_host = 'http://dev.meetin.gs'
+confirm_url = 'http://dev.meetin.gs/meetings/confirm/'
+matchmaking_event = 'Arctic15 startup matchmaking'
+matchmaker_email = 'antti.penttinen@unitedcauliflower.fi'
+
+%]
+
+[% END %]
+
+[%- IF test_case == 'no_company' %]
+[%-
+
+meeting_slots = '2'
+user_name = 'Mr. Investor'
+matchmaker_name = 'Antti Penttinen'
+matchmaker_company = ''
+server_host = 'http://dev.meetin.gs'
+confirm_url = 'http://dev.meetin.gs/meetings/confirm/'
+matchmaking_event = 'Arctic15 startup matchmaking'
+
+%]
+
+[% END %]
+
+[%- IF test_case == 'Meet_Me' %]
+[%-
+
+meeting_slots = '2'
+user_name = 'Mr. Investor'
+matchmaker_name = 'Antti Penttinen'
+matchmaker_company = ''
+server_host = 'http://dev.meetin.gs'
+confirm_url = 'http://dev.meetin.gs/meetings/confirm/'
+
+
+%]
+
+[% END %]
+
+
+[%- IF test_case == 'infinite_slots' %]
+[%-
+
+meeting_slots = '-1'
+user_name = 'Mr. Investor'
+matchmaker_name = 'Antti Penttinen'
+matchmaker_company = ''
+server_host = 'http://dev.meetin.gs'
+confirm_url = 'http://dev.meetin.gs/meetings/confirm/'
+matchmaking_event = 'Pioneers matchmaking'
+
+%]
+
+[% END %]

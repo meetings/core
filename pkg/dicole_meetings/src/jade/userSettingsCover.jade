@@ -1,0 +1,44 @@
+div.setting-head(style='border:none;')
+    h3.setting-title!=MTN.t('Manage your settings')
+div.two-column-settings
+    div.modal-content
+        div.horizontal-divider
+        div.vertical-divider
+        div.vertical-divider.second
+        if ( ! dicole.get_global_variable('meetings_user_is_visitor') )
+            div.vertical-divider.third
+
+        div.settings
+            div.setting.left.login.midrow(data-href='/meetings/user/settings/login')
+                i.ico-password
+                div.info
+                    h3.title!=MTN.t('Login methods')
+                    p!=MTN.t('Setup login with Google, Facebook or password.')
+            if ( ! dicole.get_global_variable('meetings_user_is_visitor') )
+                div.setting.right.calendar.midrow(data-href='/meetings/user/settings/calendar')
+                    i.ico-calendar
+                    div.info
+                        h3.title!=MTN.t('Calendar integration')
+                        p!=MTN.t('Integrate your calendar with Meetin.gs.')
+            if ( ! dicole.get_global_variable('meetings_user_is_visitor') )
+                div.setting.left.timeline.midrow(data-href='/meetings/user/settings/timeline')
+                    i.ico-timeline
+                    div.info
+                        h3.title!=MTN.t('Timeline')
+                        p!=MTN.t('Manage which of your calendars are shown on the timeline.')
+            div.setting.right.timezone.midrow(data-href='/meetings/user/settings/regional')
+                i.ico-language
+                div.info
+                    h3.title!=MTN.t('Regional settings')
+                    p!=MTN.t('Change your time zone and language.')
+            if ( ! dicole.get_global_variable('meetings_user_is_visitor') )
+                div.setting.left.branding.midrow(data-href='/meetings/user/settings/branding')
+                    i.ico-brush
+                    div.info
+                        h3.title!=MTN.t('Branding')
+                        p!=MTN.t('Customize the look and feel.')
+            div.setting.right.midrow.account(data-href='/meetings/user/settings/account')
+                i.ico-pro
+                div.info
+                    h3.title!=MTN.t('Account')
+                    p!=MTN.t('Manage your account & subscription.')

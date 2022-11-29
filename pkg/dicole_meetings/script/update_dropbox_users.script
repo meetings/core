@@ -1,0 +1,15 @@
+sub execute {
+    my ( $self, $domain_id ) = @_;
+
+    my $users = CTX->lookup_object('user')->fetch_group({
+        where => "notes LIKE '%dropbox%'",
+    }); 
+
+    for my $user ( @$users ) {
+        eval { CTX->lookup_action('meetings_api')->e( sync_user_meetings_with_dropbox => {
+            user_id => $user->id, domain_id => $domain_id,
+        } );  };
+    }
+}
+
+1;

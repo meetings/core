@@ -1,0 +1,62 @@
+<div class="showcase" id="invite_accept_dialog">
+	<% if ( p.banner_url ) { %><div id="invite_accept_dialog_banner" align="center"><img src="<%== p.banner_url %>" alt="Banner" /></div><% } %>
+	<div id="invite_accept_dialog_message"><%== dicole.msg("You have been invited to join [_1]. Please log in to claim this invite if you are already registered. Otherwise you can create a new account by pressing the register button.", [p.invite_target_name || "?"]) %></div>
+	<div id="invite_accept_dialog_headers">
+		<h2 id="invite_accept_dialog_login_header">
+			<span id="invite_accept_dialog_login_header_content">
+				<%== dicole.msg('Existing user, log in') %>
+			</span>
+		</h2>
+		<h2 id="invite_accept_dialog_register_header">
+			<span id="invite_accept_dialog_register_header_content">
+				<%== dicole.msg('New user, register') %>
+			</span>
+		</h2>
+	</div>
+	<div id="invite_accept_dialog_container">
+		<div id="invite_accept_dialog_login_container">
+			<div id="invite_accept_dialog_message_box"></div>
+			<div id="invite_accept_dialog_login_content">
+				<form id="invite-login-form" action="" method="post">
+					<input id="invite_url_after_login" type="hidden" name="url_after_login" value="<%== p.url_after_login %>" />
+					<label for="invite_login_login_name">
+						<h3><%== dicole.msg('Login name:') %></h3>
+						<input id="invite_login_login_name" name="login_login_name" />
+					</label>
+					<br/><br/>
+					<label for="invite_login_password">
+						<h3><%== dicole.msg('Password:') %></h3>
+						<input id="invite_login_password" type="password" name="login_password" /><br/>
+					</label>
+					<br/>
+					<label for="invite_login_remember">
+						<input id="invite_login_remember" type="checkbox" name="login_remember" />
+						<%== dicole.msg("Remember me on this computer") %>
+					</label>
+					<br/><br/>
+					<a class="button" href="#"><span><input id="invite-login-button" type="submit" value="<%== dicole.msg('Login') %>" /></span></a>
+				</form>
+				<div style="clear:both"></div>
+				<a id="invite_accept_dialog_forgot_password" href="<%== p.retrieve_password_url %>"><%== dicole.msg('Whoops, I forgot my password') %></a>
+			</div>
+		</div>
+		<div id="invite_accept_dialog_register_container">
+			<div id="invite_accept_dialog_register_content">
+				<a id="accept_register_button" class="big-button js_open_user_register_dialog" href="#"><span><%== dicole.msg("Register (action)") %></span></a>
+				<% if(p.facebook_connect_app_id) { %><a id="facebook_register_button" class="big-button js_facebook_register" href="#"><span><%== dicole.msg("Register with Facebook") %></span></a><% } %>
+			</div>
+		</div>
+	</div>
+	<div id="invite_accept_dialog_footer">
+		<div id="invite_accept_dialog_facebook">
+			<% if(p.facebook_connect_app_id) { %><a id="facebook_login_button" class="big-button js_facebook_login" href="#"><span><%== dicole.msg("Login with Facebook") %></span></a><% } %>
+		</div>
+		<div id="invite_accept_dialog_links">
+			<% if ( p.privacy_policy_url ) { p.bull = true; %><a href="<%== p.privacy_policy_url %>"><%== dicole.msg("Privacy Policy") %></a><% } %>
+			<% if ( p.bull && p.terms_of_usage_url ) { %><span class="invite_accept_dialog_footer_links_separator">&bull;</span><% } %>
+			<% if ( p.terms_of_usage_url ) { p.bull = true; %><a href="<%== p.terms_of_usage_url %>"><%== dicole.msg("Terms of Usage") %></a><% } %>
+			<% if ( p.bull && p.service_description_url ) { %><span class="invite_accept_dialog_footer_links_separator">&bull;</span><% } %>
+			<% if ( p.service_description_url ) { %><a href="<%== p.service_description_url %>"><%== dicole.msg("Service Description") %></a><% } %>
+		</div>
+	</div>
+</div>

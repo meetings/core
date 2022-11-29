@@ -1,0 +1,103 @@
+<div id="appearance-settings">
+    <div class="setting-head">
+        <h3 class="setting-title"><i class="icon ico-brush"></i><%= MTN.t('Branding') %></h3>
+        <p class="setting-desc"><%= MTN.t('Customize your appearance (change logo, background image and colors) to match your brand.') %></p>
+    </div>
+    <div class="setting-content">
+        <% if( p.is_pro ) { %>
+        <% dicole.meetings.themes = p.style_preview_urls; %>
+        <% dicole.meetings.bg_positions = p.background_position_map; %>
+        <% dicole.meetings.current_theme = p.theme; %>
+        <% dicole.meetings.user_defaults['theme'] = p.theme; %>
+        <% dicole.meetings.user_defaults['theme_header_image_url'] = p.theme_header_image_url; %>
+        <% dicole.meetings.user_defaults['theme_background_image_url'] = p.theme_background_image_url; %>
+
+        <!-- Header logo -->
+        <div class="setting-section">
+            <h3 class="setting-sub-title"><%= MTN.t('Header image') %></h3>
+            <div id="theme-upload-logo">
+                <div id="theme-upload-logo-col1">
+
+                    <input type="hidden" value="0" name="theme_header_image_draft_id" id="js_logo_upload_draft_id">
+                    <span class="upload button blue">
+                        <span class="progress-text"><%= MTN.t('Upload logo') %></span>
+                        <input id="logo-upload" type="file" name="file" />
+                        <div class="progress-bar"></div>
+                    </span>
+
+                </div>
+
+                <div id="theme-upload-logo-col2">
+                    <div id="logo-image-container">
+                        <img class="img" src="<%= p.custom_header_image_url ? p.custom_header_image_url : '" style="display:none;' %>" alt="Logo image" id="js_logo_upload_image" />
+                    </div>
+
+                    <div id="theme-reset-logo">
+                        <a href="#" class="js_reset_uploaded_logo">
+                            <span class="button gray"><%= MTN.t('Reset logo') %></span>
+                        </a>
+                    </div>
+                    <p><%= MTN.t('Maximum dimensions are 180 px by 40 px. Images larger than that will be scaled down. We support png and gif with transparency.') %></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Theme -->
+        <div class="setting-section">
+            <h3 class="setting-sub-title"><%= MTN.t('Highlight color') %></h3>
+            <div class="theme-setting">
+                <input type="hidden" value="<%= p.theme %>" name="theme" id="theme">
+
+                <% var active = p.custom_theme || 'blue' %>
+                <% dojo.forEach( p.available_themes, function( theme ) { %>
+                <div class="theme-select-bg <%= (active == theme) ? 'selected' : '' %>">
+                    <a href="#" class="theme-select js_theme_select_option <%== theme %>" data-theme-name="<%== theme %>">...</a>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+
+        <div class="setting-section">
+            <h3 class="setting-sub-title"><%= MTN.t('Background image')%></h3>
+            <div class="theme-setting" style="height:80px">
+                <div id="theme-bg-upload">
+
+                    <input type="hidden" value="0" name="theme_background_image_draft_id" id="js_bg_upload_draft_id">
+                    <span class="upload button blue">
+                        <span class="progress-text"><%= MTN.t('Upload image') %></span>
+                        <input id="bg-upload" type="file" name="file" />
+                        <div class="progress-bar"></div>
+                    </span>
+                </div>
+
+                <div id="theme-bg-preview">
+                    <img src="<%= p.custom_background_image_url ? p.custom_background_image_url : '" style="display:none;' %>" width="120" height="120" alt="Background image" id="js_bg_upload_image" />
+                </div>
+
+                <div id="theme-bg-settings">
+                    <a href="#" class="js_reset_uploaded_bg">
+                        <span class="button gray"><%= MTN.t('Remove image') %></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="setting-footer">
+            <a href="#" class="save-appearance button blue">
+                <span class="label"><%= MTN.t('Save') %></span>
+            </a>
+        </div>
+        <% } else { %>
+            <div class="modal-content">
+            <% if(p.subscription_type !== 'trial' && ! p.is_free_trial_expired ) { %>
+            <p><%= MTN.t('Try out this and all the other features included in the full suite by activating your free 30-day trial.')%></p>
+            <% } else { %>
+            <p><%= MTN.t('Upgrade your account to Meetin.gs PRO and start using this and all the other features included in the full suite.')%></p>
+            <% } %>
+            <p><a href="#" class="button blue upgrade"><%= MTN.t('Upgrade now') %></a></p>
+            <p><%= MTN.t('Learn more about %(L$paid subscriptions%).',{ L : { "href" : app.helpers.getPricingLink(), "class" : 'underline', "target" : '_blank' }}) %></p>
+            </div>
+        </div>
+        <% } %>
+</div>
+

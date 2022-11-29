@@ -1,0 +1,385 @@
+
+body {
+    color: #444444;
+}
+
+.dropDownMenu ul ul {
+        border: 1px solid #be0000;
+}
+
+.dropDownMenu a {
+        color: #303030;
+}
+
+input, select, textarea {
+        border: 1px solid #be0000;
+        background-color: rgb(255,255,255);
+}
+
+.blueLinks a, .blueLinks a:visited, .blueLinks a:link, .blueLinks a:active {
+        color: #be0000;
+}
+
+div.tree .unread a {
+        color: #1A73BF;
+}
+
+.categorizedList a.unread {
+        color: #1A73BF;
+}
+
+/* Changes the personal - group bar background color */
+div.navMid {
+	background: url('/images/theme/demo/pattern.png') 100% 50%;
+    border-color: #FBD782;
+    border-bottom: 0px solid #CC0000;
+    border-top: 2px solid black;
+}
+
+.navMid .dropDownMenu li.parent {
+	background-color: transparent;
+	margin: 2px;
+	padding-right: 0px;
+}
+
+.navMid .dropDownMenu .parentLink {
+	color: #ffc3c3;
+	font-weight: bold;
+	letter-spacing: 0.3pt;
+}
+
+.navMid .dropDownMenu .parentLink img {
+	display: inline;
+}
+
+.navMid .dropDownMenu .parentActive a.parentLink {
+	color: white;
+}
+
+/* Background color of dropdowns */
+.dropDownMenu ul ul {
+        background-color: #F2F2F2;
+        -moz-border-radius-bottomleft: 3px;
+        -moz-border-radius-bottomright: 3px;
+}
+
+/* dropdown highlight color */
+.dropDownMenu ul ul a:hover {
+        background-color: #CFCACE;
+}
+
+/* background of group toolbar */
+.navSecContainer {
+	background: url('/images/theme/demo/pattern2.png') 100% 50%;
+        color: #4E4E4E;
+	letter-spacing: 0.3pt;
+        background-color: whitesmoke;
+        border-top: 2px solid black;
+        border-bottom: 1px dashed gray;
+}
+
+.navSecContainer a {
+	color: #4E4E4E;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0.5pt;
+
+}
+
+.navSecContainer ul li ul li a {
+	color: #4E4E4E;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0px;
+
+}
+
+/* delimeters between group toolbar menus */
+.dropDownMenu li.parent {
+        border-right: 0px solid #CFCACE;
+        border-left: 0px solid #CFCACE;
+}
+
+/* Selected tab color */
+div.tabs .selected a {
+        -moz-border-radius-topleft: 3px;
+        -moz-border-radius-topright: 3px;
+	color: white;
+	font-weight: bold;
+	background: url('/images/theme/demo/tab.png') repeat-x;
+	position: relative;
+	top: 1px;
+}
+
+div.tabs li.selected a {
+	padding: 4px;
+	margin-top: -2px;
+}
+
+.tabsBottom {
+        background: #cd0000;
+	border: 0px;
+}
+
+/* Unselected tab colors */
+div.tabs li a:hover {
+	background: url('/images/theme/demo/tab.png') repeat-x;
+        -moz-border-radius-topleft: 3px;
+        -moz-border-radius-topright: 3px;
+	color: white;
+	font-weight: bold;
+}
+
+div.tabs li a {
+	color: white;
+	font-weight: bold;
+	padding: 4px;
+	background: url('/images/theme/demo/tab_inactive.png') repeat-x;
+	border: 0px solid #E7E7E7;
+	position: relative;
+       -moz-border-radius-topleft: 3px;
+        -moz-border-radius-topright: 3px;
+}
+
+/* body:last-child hack applies style only for Mozilla and Safari */
+body:last-child div.tabs li {
+    position: relative;
+    top: 0px;
+}
+
+/* Tool path color */
+.toolPath {
+        background: #cd0000;
+	height: 1px;
+	border: 0px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+/* Tool content colors */
+.toolContent {
+    background-image: url('/images/theme/default/boxbg.gif');
+    background-color: #f1f1f2;
+    background-repeat: repeat-x;
+    background-position: top;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+	border: 1px solid #c0c0c0;
+}
+
+div.toolContentBox {
+    background: #FEFEFE;
+    border: 1px solid #E2E2E2;
+    -moz-border-radius: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 6px;
+	margin-top: 15px;
+}
+
+div.toolContentBox span.boxLegend {
+    background: #FEFEFE;
+	border: 1px solid #E2E2E2;
+    -moz-border-radius: 5px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+/*	width: 1%;*/
+    top: -13px;
+}
+
+/* body:last-child hack applies style only for Mozilla and Safari */
+body:last-child div.toolContentBox span.boxLegend {
+    top: -8px;
+    width: auto;
+    display: inline;
+}
+
+/* Tool content listing colors */
+.even {
+         background: #F9F9F9;
+}
+
+table.keyValueListing tr.odd:hover, table.keyValueListing tr.even:hover {
+        background-color: #F9F9F9;
+}
+
+/* Desktop title color */
+.desktopBoxTitle {
+	padding: 3px;
+	border-style: none;
+	border-top: 1px solid #cb0000;
+	border-bottom: 1px solid #CCCCCC;
+	background: url('/images/theme/demo/pattern2.png') 100% 50%;
+}
+
+.desktopBoxControllers {
+	border-style: none;
+	border-top: 1px solid #cb0000;
+	border-bottom: 1px solid #CCCCCC;
+	background: url('/images/theme/demo/pattern2.png') 100% 50%;
+}
+
+/* Desktop box content color */
+.desktopBoxContent {
+/*        background: #F8F8F8; */
+border: 0px;
+		padding: 0px;
+}
+
+/* Submit button color */
+input.submitButton {
+        background-color: #CFCACE;
+	background: url(/images/theme/demo/pattern2.png) 100% 50%;
+        border: 2px solid #B4B4B4;
+        -moz-border-top-colors: #B4B4B4 white;
+        -moz-border-left-colors: #B4B4B4 white;
+        -moz-border-bottom-colors: #787878 #AAAAAA;
+        -moz-border-right-colors: #787878 #AAAAAA;
+}
+
+input.submitButton:hover {
+        background: #E0E0E0;
+        -moz-border-top-colors: #B4B4B4 white;
+        -moz-border-left-colors: #B4B4B4 white;
+        -moz-border-bottom-colors: #787878 #AAAAAA;
+        -moz-border-right-colors: #787878 #AAAAAA;
+}
+
+a.linkButton, a.linkButton:active, a.linkButton:visited, a.linkButton:link {
+        background-color: #CFCACE;
+	background: url(/images/theme/demo/pattern2.png) 100% 50%;
+        border: 2px solid #B4B4B4;
+	color: black;
+        -moz-border-top-colors: #B4B4B4 white;
+        -moz-border-left-colors: #B4B4B4 white;
+        -moz-border-bottom-colors: #787878 #AAAAAA;
+        -moz-border-right-colors: #787878 #AAAAAA;
+}
+
+a.linkButton:hover {
+        background: #E0E0E0;
+        -moz-border-top-colors: #B4B4B4 white;
+        -moz-border-left-colors: #B4B4B4 white;
+        -moz-border-bottom-colors: #787878 #AAAAAA;
+        -moz-border-right-colors: #787878 #AAAAAA;
+}
+
+div.confirmBoxTitle {
+	background: url('/images/theme/demo/pattern.png') 100% 50%;
+	color: white;
+}
+
+div.tree div.selected {
+        background: #F9F9F9;
+}
+
+div.tree div:hover {
+        background: #F9F9F9;
+}
+
+/* Changes top container background color */
+.navContainer {
+/*        height: 48px;*/
+        background: white;
+}
+
+/* Hides Dicole tab */
+.navPriContent_1 {
+        visibility: hidden;
+}
+
+.navPriContainer {
+background-color: white;
+        height: 63px;
+        background: url('/images/theme/demo/logo.gif') left center;
+	margin-left: 2px;
+        background-repeat: no-repeat;
+}
+
+.navContainer .tabs ul {
+        visibility: hidden;
+}
+
+.navPriContent_2 {
+        margin-top: 35px;
+        margin-right: 0px;
+}
+
+.searchHelpLogout a.linkButton {
+background: transparent;
+	-moz-border-radius: 0px;
+	font-size: 110%;
+	color: #cd0000;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	margin-left: 10px;
+}
+
+.searchHelpLogout a.linkButton:hover {
+	color: black;
+	-moz-border-bottom-colors: #cd0000 #cd0000;
+	border-bottom: 1px solid #cd0000;
+}
+
+.fieldFilledUnknown {
+        background: white;
+}
+
+.fieldFilledFocus {
+        background: #FFF6EB;
+}
+
+.reserved:hover {
+	background: #E7E7E7;
+}
+
+/* File menu topic */
+.fileActionPopup span {
+	background: url('/images/theme/demo/pattern2.png') 100% 50%;
+	color: white;
+}
+
+/* File menu highlight */
+.fileActionPopup a:hover {
+	background: whitesmoke;
+}
+
+/* Message boxes, metas and abstract boxes */
+.messageContainer .meta {
+        background: white;
+}
+
+.categorizedList tr:hover {
+        background-color: white;
+}
+
+.categorizedList tr {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+td.desktopBoxSubContainer {
+    padding: 0 7px 0 7px;
+	border-left: 1px solid #CCCCCC;
+}
+
+table.desktopBoxContainer {
+    border-right: 1px solid #CCCCCC;
+}
+
+.categorizedList tr.odd {
+        background-color: white;
+}
+
+.textQuoted {
+        background-color: white;
+}
+
+.textAbstract {
+        background-color: white;
+}
+
+.textQuotedList {
+        background-color: white;
+}
+*/

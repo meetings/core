@@ -1,0 +1,9 @@
+use Dicole::Utils::SQL;
+
+sub execute {
+    my ( $self ) = @_;
+
+    Dicole::Utils::SQL->execute_sql('alter table dicole_custom_localization add namespace_area int unsigned not null default 0 after namespace_key');
+}
+
+1;

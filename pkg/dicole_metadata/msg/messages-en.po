@@ -1,0 +1,536 @@
+# $Id: messages-en.po,v 1.4 2009-01-07 14:42:33 amv Exp $
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Dicole\n"
+"Last-Translator: Teemu Arina <teemu@dicole.com>\n"
+"POT-Creation-Date: 2005-03-24 09:12:25+0000\n"
+"PO-Revision-Date: 2005-03-24 09:12:25+0000\n"
+"Language-Team: Dicole <info@dicole.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Dicole\n"
+
+
+msgid "Add type"
+msgstr "Add type"
+
+msgid "Add type set"
+msgstr "Add type set"
+
+msgid "Are you sure you want to remove the selected type sets?"
+msgstr "Are you sure you want to remove the selected type sets?"
+
+msgid "Are you sure you want to remove the selected types?"
+msgstr "Are you sure you want to remove the selected types?"
+
+msgid "Changes were saved."
+msgstr "Changes were saved."
+
+msgid "Comment"
+msgstr "Comment"
+
+msgid "Confirmation"
+msgstr "Confirmation"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "Definition"
+msgstr "Definition"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Edit type"
+msgstr "Edit type"
+
+msgid "Edit type details"
+msgstr "Edit type details"
+
+msgid "Edit type set"
+msgstr "Edit type set"
+
+msgid "Edit type set details"
+msgstr "Edit type set details"
+
+msgid "Error during delete: %s"
+msgstr "Error during delete: %s"
+
+msgid "Failed adding type set: %s"
+msgstr "Failed adding type set: %s"
+
+msgid "Failed adding type: %s"
+msgstr "Failed adding type: %s"
+
+msgid "Failed editing type set: %s"
+msgstr "Failed editing type set: %s"
+
+msgid "Failed editing type: %s"
+msgstr "Failed editing type: %s"
+
+msgid "Icon"
+msgstr "Icon"
+
+msgid "List of custom type sets"
+msgstr "List of custom type sets"
+
+msgid "List of global metadata sets"
+msgstr "List of global metadata sets"
+
+msgid "List of global type sets"
+msgstr "List of global type sets"
+
+msgid "List of metadata fields"
+msgstr "List of metadata fields"
+
+msgid "List of types"
+msgstr "List of types"
+
+msgid "Machine-readable specification"
+msgstr "Machine-readable specification"
+
+msgid "Metadata editor"
+msgstr "Metadata editor"
+
+msgid "Metadata sets"
+msgstr "Metadata sets"
+
+msgid "Metadata with id %s does not exist."
+msgstr "Metadata with id %s does not exist."
+
+msgid "New type details"
+msgstr "New type details"
+
+msgid "New type set details"
+msgstr "New type set details"
+
+msgid "Remove selected type sets"
+msgstr "Remove selected type sets"
+
+msgid "Remove selected types"
+msgstr "Remove selected types"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Save and add new"
+msgstr "Save and add new"
+
+msgid "Selected type sets removed."
+msgstr "Selected type sets removed."
+
+msgid "Selected types removed."
+msgstr "Selected types removed."
+
+msgid "Short name"
+msgstr "Short name"
+
+msgid "Show metadata fields"
+msgstr "Show metadata fields"
+
+msgid "Show metadata sets"
+msgstr "Show metadata sets"
+
+msgid "Show type"
+msgstr "Show type"
+
+msgid "Show type details"
+msgstr "Show type details"
+
+msgid "Show type set"
+msgstr "Show type set"
+
+msgid "Show type set details"
+msgstr "Show type set details"
+
+msgid "Show type sets"
+msgstr "Show type sets"
+
+msgid "Show types"
+msgstr "Show types"
+
+msgid "Show typesets"
+msgstr "Show typesets"
+
+msgid "Status of the definition"
+msgstr "Status of the definition"
+
+msgid "Type details"
+msgstr "Type details"
+
+msgid "Type has been saved."
+msgstr "Type has been saved."
+
+msgid "Type set details"
+msgstr "Type set details"
+
+msgid "Type set has been saved."
+msgstr "Type set has been saved."
+
+msgid "Type sets"
+msgstr "Type sets"
+
+msgid "Typeset with id %s does not exist."
+msgstr "Typeset with id %s does not exist."
+
+msgid "Use metadata editor"
+msgstr "Use metadata editor"
+
+msgid "User can use the metadata editor tool in this group"
+msgstr "User can use the metadata editor tool in this group"
+
+msgid "Website"
+msgstr "Website"
+
+msgid "Recommended"
+msgstr "Recommended"
+
+msgid "(c) Ionstream Oy / Dicole. All rights reserved."
+msgstr "(c) Ionstream Oy / Dicole. All rights reserved."
+
+msgid "Dicole general types"
+msgstr "Dicole general types"
+
+msgid "typeset.gentypes.desc"
+msgstr "This is the deafult dicole set designed for loose discussions,  which seldom evolve into deepending discussions."
+
+msgid "Dicole PBL types"
+msgstr "Dicole PBL types"
+
+msgid "typeset.pbltypes.desc"
+msgstr "Problem-based learning (PBL) is an instructional method that encourages students to define problems and  develop deepening understanding of the problem and its solution.<br /><br />  The basic aim of the method is to teach students to learn effectively in a group. Students start with a problem, work  cooperatively in groups to seek solutions and to develop and refine more specific problems and again work to solve them.<br /><br />  PBL enables students to think critically and analytically while searching for information from various sources. The goal is to initiate the learners curiosity on the subject at hand and to search solutions to problems as  individuals in a collaborative manner.<br /><br />  Working with the initial problem might bring new problems. The deepening problems arise from the students'  need to understand and they are often the most valued problems of the process. These problems may be solved as  part of the initial problem and are important in order to understand the solution of the initial problem.<br /><br />  When setting up problems, use more complex approach to the topic being taught. Fact-seeking questions do not always  result in advancement of understanding. New information usually emerges through solving problems in areas of incomplete  and conflicting theories."
+
+msgid "DCMI Type Vocabulary"
+msgstr "DCMI Type Vocabulary"
+
+msgid "DCMI Recommendation"
+msgstr "DCMI Recommendation"
+
+msgid "Copyright 2004-06-14 Dublin Core Metadata Initiative. All Rights Reserved. http://www.dublincore.org/copyright/"
+msgstr "Copyright 2005-06-14 Dublin Core Metadata Initiative. All Rights Reserved. http://www.dublincore.org/copyright/"
+
+msgid "typeset.dmitypes.desc"
+msgstr "The DCMI Type Vocabulary provides a general, cross-domain list of approved terms that may be used  as values for the Resource Type element to identify the genre of a resource."
+
+msgid "Collection"
+msgstr "Collection"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Dataset"
+msgstr "Dataset"
+
+msgid "Event"
+msgstr "Event"
+
+msgid "Interactive Resource"
+msgstr "Interactive Resource"
+
+msgid "Moving Image"
+msgstr "Moving Image"
+
+msgid "Physical Object"
+msgstr "Physical Object"
+
+msgid "Service"
+msgstr "Service"
+
+msgid "Sound"
+msgstr "Sound"
+
+msgid "Software"
+msgstr "Software"
+
+msgid "Still Image"
+msgstr "Still Image"
+
+msgid "Announcement"
+msgstr "Announcement"
+
+msgid "Hyperlink"
+msgstr "Hyperlink"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "Idea"
+msgstr "Idea"
+
+msgid "Plan"
+msgstr "Plan"
+
+msgid "Question"
+msgstr "Question"
+
+msgid "Solution"
+msgstr "Solution"
+
+msgid "Urgent"
+msgstr "Urgent"
+
+msgid "Clarification"
+msgstr "Clarification"
+
+msgid "Deepening problem"
+msgstr "Deepening problem"
+
+msgid "Expert source"
+msgstr "Expert source"
+
+msgid "Initial problem"
+msgstr "Initial problem"
+
+msgid "My experiment"
+msgstr "My experiment"
+
+msgid "My theory"
+msgstr "My theory"
+
+msgid "Organize and evaluate"
+msgstr "Organize and evaluate"
+
+msgid "Summary"
+msgstr "Summary"
+
+msgid "Verified information"
+msgstr "Verified information"
+
+msgid "types.gentypes.announcement"
+msgstr "You have new information you would like to announce."
+
+msgid "types.gentypes.hyperlink"
+msgstr "You have a useful link to another web resource."
+
+msgid "types.gentypes.idea"
+msgstr "You have an idea you would like to share with others."
+
+msgid "types.gentypes.normal"
+msgstr "A normal message. Use this type if there was no other appropriate message type available."
+
+msgid "types.gentypes.plan"
+msgstr "You have a plan with implementation details."
+
+msgid "types.gentypes.question"
+msgstr "You have a question you would like to ask."
+
+msgid "types.gentypes.solution"
+msgstr "You have a solution to a problem."
+
+msgid "types.gentypes.urgent"
+msgstr "You have something urgent or very important to say."
+
+msgid "types.gentypes.clarification"
+msgstr "You have a question about some of the presented information or you need to  understand some details in solving the problem. You may also clarify a given point to others."
+
+msgid "types.pbltypes.deepening"
+msgstr "A new deepening problem has emerged from the initial problem. The new problem is  required to be solved as part of the initial problem. Set a context and goals for the problem and explain it to your group."
+
+msgid "types.pbltypes.expert"
+msgstr "You have interviewed an expert who is very familiar with the area that the initial problem  touches and would like to share the information you have gathered from the expert. The expert might also be  some other specialist in the field with useful new information for the problem. Remember to mention your source."
+
+msgid "types.pbltypes.initial"
+msgstr "In Problem-Based Learning you start with an initial problem. Explain your interests in the  problem, the context and frame of your problem and the goals in solving the problem. Anchor your problem to  real-world situations, if possible."
+
+msgid "types.pbltypes.experiment"
+msgstr "You have learned something during your own experiments and would like to share the  results with others. You may have tried a theory in practice or accidentally crossed new information related  to the subject while working on something else."
+
+msgid "types.pbltypes.theory"
+msgstr "You have your own working theory, explanation or hyphothesis concerning the problem. You  possibly have new theoretical information which is a result of experiments, collected data and other  verified information. Remember that your theory is not supposed to be a fact. Wrong answers (incomplete  theory, erroneous assumptions, conflicting ideas etc.) are actually good answers and part of the collective  understanding of the subject."
+
+msgid "types.pbltypes.organize"
+msgstr "It is important to organize and evaluate the process itself. With this message type you  may evaluate where the discussion is going, what methods your group has used and how and where the team should  progress next. You might also want to focus on explaining where deepening understanding of the presented  material might be obtained."
+
+msgid "types.pbltypes.summary"
+msgstr "With a summary you piece together the relevant information the group has gathered in a  deepening problem or initial problem. Try to join different pieces together in a logical flow in your summary.  Your summary may aim to solve the initial problem, summarize part of the problem or explain a new problem to  be solved in a completely new discussion."
+
+msgid "types.pbltypes.information"
+msgstr "You have gathered new information from a verified source (literature, press, study  etc.). Remember to mention the exact source of the information and your estimation of the credibility of your source  and on what merits."
+
+msgid "types.dcmitypes.collection"
+msgstr "A collection is an aggregation of items. The term collection means that the resource  is described as a group; its parts may be separately described and navigated."
+
+msgid "types.dcmitypes.dataset"
+msgstr "A dataset is information encoded in a defined structure (for example, lists, tables, and  databases), intended to be useful for direct machine processing."
+
+msgid "types.dcmitypes.event"
+msgstr "An event is a non-persistent, time-based occurrence. Metadata for an event provides  descriptive information that is the basis for discovery of the purpose, location, duration, responsible agents,  and links to related events and resources. The resource of type event may not be retrievable if the described  instantiation has expired or is yet to occur. Examples - exhibition, web-cast, conference, workshop,  open-day, performance, battle, trial, wedding, tea-party, conflagration."
+
+msgid "types.dcmitypes.image"
+msgstr "An image is a primarily symbolic visual representation other than text. For example  - images and photographs of physical objects, paintings, prints, drawings, other images and graphics,  animations and moving pictures, film, diagrams, maps, musical notation. Note that image may include  both electronic and physical representations."
+
+msgid "types.dcmitypes.interactive"
+msgstr "An interactive resource is a resource which requires interaction from the  user to be understood, executed, or experienced. For example - forms on web pages, applets, multimedia  learning objects, chat services, virtual reality."
+
+msgid "types.dcmitypes.movingimage"
+msgstr "A series of visual representations that, when shown in succession, impart an  impression of motion. Examples of moving images are: animations, movies, television programs, videos,  zoetropes, or visual output from a simulation."
+
+msgid "types.dcmitypes.physical"
+msgstr "An inanimate, three-dimensional object or substance. For example -- a computer,  the great pyramid, a sculpture. Note that digital representations of, or surrogates for, these things  should use Image, Text or one of the other types."
+
+msgid "types.dcmitypes.service"
+msgstr "A service is a system that provides one or more functions of value to the  end-user. Examples include: a photocopying service, a banking service, an authentication service,  interlibrary loans, a Z39.50 or Web server."
+
+msgid "types.dcmitypes.software"
+msgstr "Software is a computer program in source or compiled form which may be  available for installation non-transiently on another machine. For software which exists only  to create an interactive environment, use interactive instead."
+
+msgid "types.dcmitypes.sound"
+msgstr "A sound is a resource whose content is primarily intended to be rendered  as audio. For example - a music playback file format, an audio compact disc, and recorded  speech or sounds."
+
+msgid "types.dcmitypes.stillimage"
+msgstr "A static visual representation. Examples of still images are:  paintings, drawings, graphic designs, plans and maps."
+
+msgid "types.dcmitypes.text"
+msgstr "A text is a resource whose content is primarily words for reading.  For example - books, letters, dissertations, poems, newspapers, articles, archives of  mailing lists. Note that facsimiles or images of texts are still of the genre text."
+
+msgid "Dublin Core"
+msgstr "Dublin Core"
+
+msgid "Copyright 2003-06-02 Dublin Core Metadata Initiative. All Rights Reserved. http://www.dublincore.org/copyright/"
+msgstr "Copyright 2003-06-02 Dublin Core Metadata Initiative. All Rights Reserved. http://www.dublincore.org/copyright/"
+
+msgid "metadata.dublin.desc"
+msgstr "The Dublin Core metadata element set is a standard for cross-domain  information resource description. Here an information resource is defined to be \"anything  that has identity \". This is the definition used in Internet RFC 2396, \"Uniform Resource  Identifiers (URI): Generic Syntax \", by Tim Berners-Lee et al. There are no fundamental  restrictions to the types of resources to which Dublin Core metadata can be assigned."
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Creator"
+msgstr "Creator"
+
+msgid "Subject and keywords"
+msgstr "Subject and keywords"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Publisher"
+msgstr "Publisher"
+
+msgid "Contributor"
+msgstr "Contributor"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Resource type"
+msgstr "Resource type"
+
+msgid "Resource identifier"
+msgstr "Resource identifier"
+
+msgid "Source"
+msgstr "Source"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Relation"
+msgstr "Relation"
+
+msgid "Coverage"
+msgstr "Coverage"
+
+msgid "Rights management"
+msgstr "Rights management"
+
+msgid "A name given to the resource."
+msgstr "A name given to the resource."
+
+msgid "An entity primarily responsible for making the content of the resource."
+msgstr "An entity primarily responsible for making the content of the resource."
+
+msgid "A topic of the content of the resource."
+msgstr "A topic of the content of the resource."
+
+msgid "An account of the content of the resource."
+msgstr "An account of the content of the resource."
+
+msgid "An entity responsible for making the resource available."
+msgstr "An entity responsible for making the resource available."
+
+msgid "An entity responsible for making contributions to the content of the resource."
+msgstr "An entity responsible for making contributions to the content of the resource."
+
+msgid "Information about rights held in and over the resource."
+msgstr "Information about rights held in and over the resource."
+
+msgid "The extent or scope of the content of the resource."
+msgstr "The extent or scope of the content of the resource."
+
+msgid "A reference to a related resource."
+msgstr "A reference to a related resource."
+
+msgid "A language of the intellectual content of the resource."
+msgstr "A language of the intellectual content of the resource."
+
+msgid "A reference to a resource from which the present resource is derived."
+msgstr "A reference to a resource from which the present resource is derived."
+
+msgid "An unambiguous reference to the resource within a given context."
+msgstr "An unambiguous reference to the resource within a given context."
+
+msgid "The physical or digital manifestation of the resource."
+msgstr "The physical or digital manifestation of the resource."
+
+msgid "A date of an event in the lifecycle of the resource."
+msgstr "A date of an event in the lifecycle of the resource."
+
+msgid "The nature or genre of the content of the resource."
+msgstr "The nature or genre of the content of the resource."
+
+msgid "fields.dublin.title"
+msgstr "Typically, Title will be a name by which the resource is formally known."
+
+msgid "fields.dublin.creator"
+msgstr "Examples of Creator include a person, an organization, or a service.  Typically, the name of a Creator should be used to indicate the entity."
+
+msgid "fields.dublin.subject"
+msgstr "Typically, Subject will be expressed as keywords, key phrases  or classification codes that describe a topic of the resource. Recommended best  practice is to select a value from a controlled vocabulary or formal classification scheme."
+
+msgid "fields.dublin.description"
+msgstr "Examples of Description include, but is not limited to: an abstract,  table of contents, reference to a graphical representation of content or a free-text account  of the content."
+
+msgid "fields.dublin.publisher"
+msgstr "Examples of Publisher include a person, an organization, or a service.  Typically, the name of a Publisher should be used to indicate the entity."
+
+msgid "fields.dublin.contributor"
+msgstr "Examples of Contributor include a person, an organization, or a  service. Typically, the name of a Contributor should be used to indicate the entity."
+
+msgid "fields.dublin.date"
+msgstr "Typically, Date will be associated with the creation or availability of  the resource. Recommended best practice for encoding the date value is defined in a profile  of ISO 8601 [W3CDTF] and includes (among others) dates of the form YYYY-MM-DD."
+
+msgid "fields.dublin.type"
+msgstr "Type includes terms describing general categories, functions, genres,  or aggregation levels for content. Recommended best practice is to select a value from  a controlled vocabulary (for example, the DCMI Type Vocabulary [DCT1]). To describe the  physical or digital manifestation of the resource, use the FORMAT element."
+
+msgid "fields.dublin.format"
+msgstr "Typically, Format may include the media-type or dimensions of the  resource. Format may be used to identify the software, hardware, or other equipment  needed to display or operate the resource. Examples of dimensions include size and  duration. Recommended best practice is to select a value from a controlled vocabulary  (for example, the list of Internet Media Types [MIME] defining computer media formats)."
+
+msgid "fields.dublin.identifier"
+msgstr "Recommended best practice is to identify the resource by means  of a string or number conforming to a formal identification system. Formal identification  systems include but are not limited to the Uniform Resource Identifier (URI) (including  the Uniform Resource Locator (URL)), the Digital Object Identifier (DOI) and the  International Standard Book Number (ISBN)."
+
+msgid "fields.dublin.source"
+msgstr "The present resource may be derived from the Source resource in whole  or in part. Recommended best practice is to identify the referenced resource by means of a  string or number conforming to a formal identification system."
+
+msgid "fields.dublin.language"
+msgstr "Recommended best practice is to use RFC 3066 [RFC3066] which, in  conjunction with ISO639 [ISO639]), defines two- and three-letter primary language tags  with optional subtags. Examples include \"en \" or \"eng \" for English, \"akk \" for Akkadian \",  and \"en-GB \" for English used in the United Kingdom."
+
+msgid "fields.dublin.relation"
+msgstr "Recommended best practice is to identify the referenced resource by  means of a string or number conforming to a formal identification system."
+
+msgid "fields.dublin.coverage"
+msgstr "Typically, Coverage will include spatial location (a place name or  geographic coordinates), temporal period (a period label, date, or date range) or  jurisdiction (such as a named administrative entity). Recommended best practice is to  select a value from a controlled vocabulary (for example, the Thesaurus of Geographic  Names [TGN]) and to use, where appropriate, named places or time periods in preference  to numeric identifiers such as sets of coordinates or date ranges."
+
+msgid "fields.dublin.rights"
+msgstr "Typically, Rights will contain a rights management statement for the  resource, or reference a service providing such information. Rights information often  encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights.  If the Rights element is absent, no assumptions may be made about any rights held in or  over the resource."
+
+msgid "Metadata rights"
+msgstr "Metadata rights"
